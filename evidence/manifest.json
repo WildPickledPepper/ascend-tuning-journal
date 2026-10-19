@@ -46,6 +46,26 @@
     {
       "artifact": "qwen38-down-movement/backend-calibration-nd2nz.json",
       "sha256": "e0d8af252453f58f73e9dcf7edfd6ab940c71b98898ec88af88276ed8fdba2a7"
+    },
+    {
+      "artifact": "qwen38-down-reuse/experiment-summary.json",
+      "sha256": "4ee82d474093c16e014d5669c6b6d07e9f66e88554baff37b5f678967b36c1de"
+    },
+    {
+      "artifact": "qwen38-down-reuse/paired-bench.json",
+      "sha256": "fe3ba9541fbe6cec9c7a0f6f343d832faf4ab9b4a9b8e1fec617311603e80789"
+    },
+    {
+      "artifact": "qwen38-down-reuse/backend-source-api-instructions-dynamic.json",
+      "sha256": "04f66153a8ed19b6089765cf1cdf3f20313f30f6545e2f65be77e771f46b6a70"
+    },
+    {
+      "artifact": "qwen38-down-reuse/backend-cann.json",
+      "sha256": "384ea905f879e59cc12d50275ba6fbb07588463bd8bcd5e281e8eb7c910aa760"
+    },
+    {
+      "artifact": "qwen38-down-reuse/backend-pipeline.json",
+      "sha256": "e8e18cb6378c3105303d160e82fc2ee22e6c334608c2322e70a1416d73bc1a94"
     }
   ]
 }

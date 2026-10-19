@@ -15,3 +15,9 @@ private/
 .env
 .env.*
 __pycache__/
+*.so
+*.log
+core
+core.*
+kernels/down-reuse/validation.json
+kernels/down-reuse/paired-bench.json

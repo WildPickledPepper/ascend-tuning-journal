@@ -10,6 +10,8 @@
 - `2026-10-19/down-movement.json`：21.5625% 分解、23 核核验及结构推演。
 - `2026-10-19/backend-instruction-focus.json`：编译版后端返回的关键指令记录。
 - `2026-10-19/calibration.json`：两个上板探针的后端内存计数。
+- `2026-10-19/down-reuse-experiment.json`：独立 BF16 内核的修改、23 核计数、交替图回放基准及正确性差异。
+- `2026-10-19/down-reuse-instructions.json`：修改版仿真指令的编译版后端返回字段，保留 PC、次数与处理字节。
 
 `manifest.json` 记录原始摘要的产物名称和 SHA256；仓库文件经过字段筛选，不应与原始文件逐字节相同。
 

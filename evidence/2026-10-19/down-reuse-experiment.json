@@ -1,0 +1,1042 @@
+{
+  "target": "BF16 down projection M=1 K=17408 N=5120",
+  "physical_device": 7,
+  "kernel_status": "independent implementation measured; not integrated into model",
+  "source_files": {
+    "down_reuse.asc": "b28cb9f2cb78aab71a2a5528fc06b80bb60979b84c68edee38129d733854c5c5",
+    "build.sh": "627b9deab014d0d3cc193b4c3560d6d78141fe230a4771a9f8e859105763c8d2",
+    "validate.py": "8e26c44e22abfbe9065a3dff7737a256019be631694860a01413915c311631f0",
+    "paired_bench.py": "9545e2e0bfb8f9ff673e85bd21ef6760acdfc4b0b31c3900ac3a4ba5520a06a9",
+    "launch_acl.py": "416a93ccc30894685b8d349b04511b6ec4772593f53c850878802b9057a89331",
+    "backend-query.cjs": "127dd4aa9bf5bfba41c067bfb8d7298655b876af737922587aa9cb2397fc46ec",
+    "backend-instructions.cjs": "0950afd0cc3932e5f2ad89938acbc90f804a7bf4aa42739342b580b4a6fb36f3"
+  },
+  "backend_device": {
+    "cann": {
+      "task_duration_us": 151.36302185058594,
+      "gm_l1_total_bytes": 216694784,
+      "cores": [
+        {
+          "core": 0,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7800960
+        },
+        {
+          "core": 1,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7800832
+        },
+        {
+          "core": 2,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7800832
+        },
+        {
+          "core": 3,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7799808
+        },
+        {
+          "core": 4,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7799808
+        },
+        {
+          "core": 5,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7799808
+        },
+        {
+          "core": 6,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7800832
+        },
+        {
+          "core": 7,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7800832
+        },
+        {
+          "core": 8,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7800832
+        },
+        {
+          "core": 9,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7799808
+        },
+        {
+          "core": 10,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7799808
+        },
+        {
+          "core": 11,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7799808
+        },
+        {
+          "core": 12,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7800832
+        },
+        {
+          "core": 13,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7800832
+        },
+        {
+          "core": 14,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7799808
+        },
+        {
+          "core": 15,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7799808
+        },
+        {
+          "core": 16,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7800832
+        },
+        {
+          "core": 17,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7800832
+        },
+        {
+          "core": 18,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7801856
+        },
+        {
+          "core": 19,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7799808
+        },
+        {
+          "core": 20,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7800832
+        },
+        {
+          "core": 21,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7798784
+        },
+        {
+          "core": 22,
+          "gm_l1_accounted_bytes": 8355840,
+          "l2_read_miss_bytes": 6684672
+        }
+      ]
+    },
+    "baseline": {
+      "task_duration_us": 171.9434356689453,
+      "gm_l1_total_bytes": 216694784,
+      "cores": [
+        {
+          "core": 0,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7822592
+        },
+        {
+          "core": 1,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 2,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 3,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 4,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 5,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 6,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 7,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 8,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 9,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 10,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 11,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 12,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 13,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 14,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 15,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 16,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7810176
+        },
+        {
+          "core": 17,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 18,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 19,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 20,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 21,
+          "gm_l1_accounted_bytes": 9469952,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 22,
+          "gm_l1_accounted_bytes": 8355840,
+          "l2_read_miss_bytes": 6684800
+        }
+      ]
+    },
+    "reuse": {
+      "task_duration_us": 144.96290588378906,
+      "gm_l1_total_bytes": 185417728,
+      "cores": [
+        {
+          "core": 0,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 1,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7800064
+        },
+        {
+          "core": 2,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 3,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 4,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 5,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 6,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 7,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 8,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 9,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 10,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 11,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 12,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 13,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 14,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 15,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 16,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 17,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 18,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 19,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 20,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 21,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 22,
+          "gm_l1_accounted_bytes": 6995968,
+          "l2_read_miss_bytes": 6718592
+        }
+      ]
+    },
+    "pipeline": {
+      "task_duration_us": 138.60276794433594,
+      "gm_l1_total_bytes": 185417728,
+      "cores": [
+        {
+          "core": 0,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7800064
+        },
+        {
+          "core": 1,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 2,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 3,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 4,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7799936
+        },
+        {
+          "core": 5,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 6,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 7,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 8,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 9,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 10,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 11,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 12,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 13,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 14,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 15,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 16,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 17,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 18,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 19,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 20,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 21,
+          "gm_l1_accounted_bytes": 8110080,
+          "l2_read_miss_bytes": 7798912
+        },
+        {
+          "core": 22,
+          "gm_l1_accounted_bytes": 6995968,
+          "l2_read_miss_bytes": 6717568
+        }
+      ]
+    }
+  },
+  "simulator_core0_instructions": {
+    "clear": 2,
+    "input_ND2NZ": 34,
+    "weight_ND2NZ": 68,
+    "MMAD": 544
+  },
+  "paired_graph_benchmark": {
+    "started": "2026-10-19T06:48:17.137102+00:00",
+    "physical_device": 7,
+    "dtype": "BF16",
+    "profiler": false,
+    "graph_replay": true,
+    "weights": 4,
+    "weight_bytes_each": 178257920,
+    "calls_per_replay": 4,
+    "paired_rounds": 40,
+    "median_us_per_call": {
+      "cann": 154.509998857975,
+      "0": 174.73749816417694,
+      "2": 151.6750007867813,
+      "3": 142.41499453783035
+    },
+    "paired_median_speedup_cann_over_pipeline": 1.0852887658927242,
+    "samples": [
+      {
+        "cann": 180.92499673366547,
+        "0": 177.73500084877014,
+        "2": 151.91000699996948,
+        "3": 143.01499724388123
+      },
+      {
+        "3": 142.89000630378723,
+        "2": 153.29499542713165,
+        "0": 174.1899996995926,
+        "cann": 154.35999631881714
+      },
+      {
+        "cann": 153.98499369621277,
+        "0": 174.55999553203583,
+        "2": 153.42499315738678,
+        "3": 142.15999841690063
+      },
+      {
+        "3": 142.47499406337738,
+        "2": 151.12000703811646,
+        "0": 175.29000341892242,
+        "cann": 154.85000610351562
+      },
+      {
+        "cann": 157.0499986410141,
+        "0": 175.53499341011047,
+        "2": 151.81000530719757,
+        "3": 142.2249972820282
+      },
+      {
+        "3": 141.5950059890747,
+        "2": 153.09999883174896,
+        "0": 174.73499476909637,
+        "cann": 155.0150066614151
+      },
+      {
+        "cann": 153.83000671863556,
+        "0": 174.7799962759018,
+        "2": 152.9950052499771,
+        "3": 142.8299993276596
+      },
+      {
+        "3": 142.01000332832336,
+        "2": 151.25000476837158,
+        "0": 174.61499571800232,
+        "cann": 154.46500480175018
+      },
+      {
+        "cann": 156.9100022315979,
+        "0": 174.88999664783478,
+        "2": 150.57000517845154,
+        "3": 142.5050050020218
+      },
+      {
+        "3": 142.33000576496124,
+        "2": 156.47999942302704,
+        "0": 176.42000317573547,
+        "cann": 153.8649946451187
+      },
+      {
+        "cann": 154.14999425411224,
+        "0": 175.13500154018402,
+        "2": 152.33999490737915,
+        "3": 143.43999326229095
+      },
+      {
+        "3": 142.4649953842163,
+        "2": 150.58499574661255,
+        "0": 174.36499893665314,
+        "cann": 153.38000655174255
+      },
+      {
+        "cann": 156.40999376773834,
+        "0": 175.63000321388245,
+        "2": 150.5350023508072,
+        "3": 142.33000576496124
+      },
+      {
+        "3": 142.11499691009521,
+        "2": 153.09500694274902,
+        "0": 174.8799979686737,
+        "cann": 156.47999942302704
+      },
+      {
+        "cann": 154.11999821662903,
+        "0": 175.17000436782837,
+        "2": 151.33999288082123,
+        "3": 142.31500029563904
+      },
+      {
+        "3": 139.79500532150269,
+        "2": 148.24500679969788,
+        "0": 171.5649962425232,
+        "cann": 151.62000060081482
+      },
+      {
+        "cann": 150.82000195980072,
+        "0": 173.04499447345734,
+        "2": 148.30000698566437,
+        "3": 143.4199959039688
+      },
+      {
+        "3": 139.6850049495697,
+        "2": 148.10000360012054,
+        "0": 172.14499413967133,
+        "cann": 151.39499306678772
+      },
+      {
+        "cann": 151.5350043773651,
+        "0": 174.7400015592575,
+        "2": 151.57000720500946,
+        "3": 144.12499964237213
+      },
+      {
+        "3": 138.80500197410583,
+        "2": 151.77999436855316,
+        "0": 174.77500438690186,
+        "cann": 154.31499481201172
+      },
+      {
+        "cann": 154.2149931192398,
+        "0": 176.5349954366684,
+        "2": 153.3450037240982,
+        "3": 143.07500422000885
+      },
+      {
+        "3": 143.095001578331,
+        "2": 151.32500231266022,
+        "0": 174.36499893665314,
+        "cann": 157.80000388622284
+      },
+      {
+        "cann": 154.55499291419983,
+        "0": 176.15999281406403,
+        "2": 150.6749987602234,
+        "3": 142.3649936914444
+      },
+      {
+        "3": 142.3099935054779,
+        "2": 150.9850025177002,
+        "0": 174.53500628471375,
+        "cann": 154.21000123023987
+      },
+      {
+        "cann": 155.23500740528107,
+        "0": 175.90999603271484,
+        "2": 152.6149958372116,
+        "3": 143.0799961090088
+      },
+      {
+        "3": 142.84999668598175,
+        "2": 152.22500264644623,
+        "0": 176.68500542640686,
+        "cann": 156.83500468730927
+      },
+      {
+        "cann": 155.53000569343567,
+        "0": 174.49499666690826,
+        "2": 150.9850025177002,
+        "3": 142.25000143051147
+      },
+      {
+        "3": 142.8000032901764,
+        "2": 152.84499526023865,
+        "0": 174.52000081539154,
+        "cann": 155.82500398159027
+      },
+      {
+        "cann": 154.3699949979782,
+        "0": 175.41000247001648,
+        "2": 153.22500467300415,
+        "3": 142.7849978208542
+      },
+      {
+        "3": 142.2400027513504,
+        "2": 152.05000340938568,
+        "0": 173.98500442504883,
+        "cann": 154.74000573158264
+      },
+      {
+        "cann": 154.59999442100525,
+        "0": 177.5600016117096,
+        "2": 151.04499459266663,
+        "3": 143.05999875068665
+      },
+      {
+        "3": 143.40999722480774,
+        "2": 151.40500664710999,
+        "0": 177.38500237464905,
+        "cann": 151.37000381946564
+      },
+      {
+        "cann": 151.13000571727753,
+        "0": 170.4549938440323,
+        "2": 152.71499752998352,
+        "3": 140.42499661445618
+      },
+      {
+        "3": 140.48999547958374,
+        "2": 152.9500037431717,
+        "0": 172.56499826908112,
+        "cann": 151.60000324249268
+      },
+      {
+        "cann": 157.59000182151794,
+        "0": 172.35499620437622,
+        "2": 148.95999431610107,
+        "3": 143.7149941921234
+      },
+      {
+        "3": 139.63499665260315,
+        "2": 148.03500473499298,
+        "0": 172.0000058412552,
+        "cann": 156.65499866008759
+      },
+      {
+        "cann": 155.62500059604645,
+        "0": 176.7749935388565,
+        "2": 148.22499454021454,
+        "3": 143.60499382019043
+      },
+      {
+        "3": 139.3750011920929,
+        "2": 148.24000000953674,
+        "0": 172.7450042963028,
+        "cann": 157.17999637126923
+      },
+      {
+        "cann": 151.82499587535858,
+        "0": 170.68499326705933,
+        "2": 152.70499885082245,
+        "3": 139.18499648571014
+      },
+      {
+        "3": 143.98500323295593,
+        "2": 152.43999660015106,
+        "0": 173.98999631404877,
+        "cann": 156.55499696731567
+      }
+    ],
+    "scope": "standalone operator, not model throughput; CANN bitwise differences remain under investigation"
+  },
+  "latency_reduction_pct": 7.827975153415368,
+  "validation": [
+    {
+      "seed": 32,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": false,
+          "max_abs_vs_cann": 7.62939453125e-06,
+          "mismatches_vs_cann": 1
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": false,
+          "max_abs_vs_cann": 7.62939453125e-06,
+          "mismatches_vs_cann": 1
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": false,
+          "max_abs_vs_cann": 7.62939453125e-06,
+          "mismatches_vs_cann": 1
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": false,
+          "max_abs_vs_cann": 7.62939453125e-06,
+          "mismatches_vs_cann": 1
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true,
+      "mismatch_details": {
+        "indices": [
+          1614
+        ],
+        "cann": [
+          0.00173187255859375
+        ],
+        "independent": [
+          0.001739501953125
+        ],
+        "float64_dot": [
+          0.001664255280047655
+        ],
+        "float64_rounded_bf16": [
+          0.0016632080078125
+        ]
+      }
+    },
+    {
+      "seed": 49,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": false,
+          "max_abs_vs_cann": 0.25,
+          "mismatches_vs_cann": 2
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": false,
+          "max_abs_vs_cann": 0.25,
+          "mismatches_vs_cann": 2
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": false,
+          "max_abs_vs_cann": 0.25,
+          "mismatches_vs_cann": 2
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": false,
+          "max_abs_vs_cann": 0.25,
+          "mismatches_vs_cann": 2
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true,
+      "mismatch_details": {
+        "indices": [
+          2720,
+          2742
+        ],
+        "cann": [
+          -32.75,
+          -0.79296875
+        ],
+        "independent": [
+          -32.5,
+          -0.7890625
+        ],
+        "float64_dot": [
+          -32.62504361663014,
+          -0.7910567070357502
+        ],
+        "float64_rounded_bf16": [
+          -32.75,
+          -0.79296875
+        ]
+      }
+    },
+    {
+      "seed": 71,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": false,
+          "max_abs_vs_cann": 6.103515625e-05,
+          "mismatches_vs_cann": 1
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": false,
+          "max_abs_vs_cann": 6.103515625e-05,
+          "mismatches_vs_cann": 1
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": false,
+          "max_abs_vs_cann": 6.103515625e-05,
+          "mismatches_vs_cann": 1
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": false,
+          "max_abs_vs_cann": 6.103515625e-05,
+          "mismatches_vs_cann": 1
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true,
+      "mismatch_details": {
+        "indices": [
+          4380
+        ],
+        "cann": [
+          0.0108642578125
+        ],
+        "independent": [
+          0.01080322265625
+        ],
+        "float64_dot": [
+          0.010869938414543867
+        ],
+        "float64_rounded_bf16": [
+          0.0108642578125
+        ]
+      }
+    },
+    {
+      "seed": 0,
+      "kind": "zero",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 1,
+      "kind": "one",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    }
+  ],
+  "cann_bitwise_parity": false,
+  "model_quality_evaluation": "not run",
+  "model_throughput": "not measured with custom kernel",
+  "limitations": [
+    "Fixed M=1 K=17408 N=5120 only; independent CANN implementation, not a patch to vendor binary.",
+    "All four independent modes are bitwise identical on the five tested cases; CANN comparison has 4 differing BF16 outputs among 25600 outputs per mode. Cause is not fully established.",
+    "Direct ctypes launch is tested with TASK_QUEUE_ENABLE=0 only; serving uses queued dispatch and needs a proper custom operator integration.",
+    "Simulator config launch failed with 107000; application launch completed kernel and generated trace, followed by signal 11 during child teardown. Counts cross-checked against backend and device PMU; simulator times are not speed claims.",
+    "Initial raw event timing includes CPU launch overhead and is not used as the performance result. Final benchmark is interleaved graph replay, four distinct weights, 40 paired rounds.",
+    "No global CANN, driver, other account files, or other cards modified; model service stopped and devices 6/7 have no processes at final check 2026-10-19T06:53:11Z."
+  ]
+}

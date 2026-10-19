@@ -1,0 +1,114 @@
+[
+  {
+    "Source": "SET_2D Src:UNDEF,Dst:L1,XD:X19=0,XM:X3,Dtype:B16,id:6",
+    "Address": "0x1bcfefd8",
+    "Instructions Executed": 1,
+    "Process Bytes": -1,
+    "Cycles": 78
+  },
+  {
+    "Source": "SET_2D Src:UNDEF,Dst:L1,XD:X5,XM:X3,Dtype:B16,id:9",
+    "Address": "0x1bcfefe0",
+    "Instructions Executed": 1,
+    "Process Bytes": -1,
+    "Cycles": 144
+  },
+  {
+    "Source": "MOV_OUT_TO_L1_MULTI_ND2NZ Src:OUT,Dst:L1,XD:X19=0,XN:X2,XM:X10,XT:X5,Dtype:B16,id:10",
+    "Address": "0x1bcff030",
+    "Instructions Executed": 1,
+    "Process Bytes": 1024,
+    "Cycles": 587
+  },
+  {
+    "Source": "MOV_OUT_TO_L1_MULTI_ND2NZ Src:OUT,Dst:L1,XD:X5,XN:X3,XM:X13,XT:X12,Dtype:B16,id:11",
+    "Address": "0x1bcff0c4",
+    "Instructions Executed": 1,
+    "Process Bytes": 114688,
+    "Cycles": 1668
+  },
+  {
+    "Source": "MOV_OUT_TO_L1_MULTI_ND2NZ Src:OUT,Dst:L1,XD:X2,XN:X0,XM:X14,XT:X10,Dtype:B16,id:12",
+    "Address": "0x1bcff0d0",
+    "Instructions Executed": 1,
+    "Process Bytes": 114688,
+    "Cycles": 3129
+  },
+  {
+    "Source": "MOV_OUT_TO_L1_MULTI_ND2NZ Src:OUT,Dst:L1,XD:X3,XN:X5,XM:X12,XT:X11,Dtype:B16,id:13",
+    "Address": "0x1bcff178",
+    "Instructions Executed": 33,
+    "Process Bytes": 33792,
+    "Cycles": 44372
+  },
+  {
+    "Source": "MOV_OUT_TO_L1_MULTI_ND2NZ Src:OUT,Dst:L1,XD:X3,XN:X12,XM:X13,XT:X11,Dtype:B16,id:14",
+    "Address": "0x1bcff1dc",
+    "Instructions Executed": 33,
+    "Process Bytes": 3784704,
+    "Cycles": 101051
+  },
+  {
+    "Source": "MOV_OUT_TO_L1_MULTI_ND2NZ Src:OUT,Dst:L1,XD:X5,XN:X10,XM:X3,XT:X11,Dtype:B16,id:15",
+    "Address": "0x1bcff1f0",
+    "Instructions Executed": 33,
+    "Process Bytes": 3784704,
+    "Cycles": 148337
+  },
+  {
+    "Source": "MMAD dtype:BF16F32XD",
+    "Address": "0x1bcff2e8",
+    "Instructions Executed": 68,
+    "Process Bytes": -1,
+    "Cycles": 3332
+  },
+  {
+    "Source": "MMAD dtype:BF16F32XD",
+    "Address": "0x1bcff30c",
+    "Instructions Executed": 68,
+    "Process Bytes": -1,
+    "Cycles": 3332
+  },
+  {
+    "Source": "MMAD dtype:BF16F32XD",
+    "Address": "0x1bcff330",
+    "Instructions Executed": 68,
+    "Process Bytes": -1,
+    "Cycles": 3332
+  },
+  {
+    "Source": "MMAD dtype:BF16F32XD",
+    "Address": "0x1bcff354",
+    "Instructions Executed": 68,
+    "Process Bytes": -1,
+    "Cycles": 3332
+  },
+  {
+    "Source": "MMAD dtype:BF16F32XD",
+    "Address": "0x1bcff378",
+    "Instructions Executed": 68,
+    "Process Bytes": -1,
+    "Cycles": 3332
+  },
+  {
+    "Source": "MMAD dtype:BF16F32XD",
+    "Address": "0x1bcff39c",
+    "Instructions Executed": 68,
+    "Process Bytes": -1,
+    "Cycles": 3332
+  },
+  {
+    "Source": "MMAD dtype:BF16F32XD",
+    "Address": "0x1bcff3c0",
+    "Instructions Executed": 68,
+    "Process Bytes": -1,
+    "Cycles": 3332
+  },
+  {
+    "Source": "MMAD dtype:BF16F32XD",
+    "Address": "0x1bcff3ec",
+    "Instructions Executed": 68,
+    "Process Bytes": -1,
+    "Cycles": 3332
+  }
+]
