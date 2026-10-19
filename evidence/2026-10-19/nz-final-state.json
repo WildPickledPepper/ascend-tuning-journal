@@ -1,0 +1,11 @@
+{
+  "status": "NZ experiment ended; original MTP ND restored on card 6; card 7 baseline kept",
+  "health": {
+    "card6_port8039": true,
+    "card7_port8038": true
+  },
+  "restoration_benchmark": "Stopped at user instruction; no completed restoration throughput result claimed",
+  "stopped_client_pid": 574295,
+  "custom_kernel_enabled": false,
+  "observed_utc": "2026-10-19T08:51:18.649480+00:00"
+}

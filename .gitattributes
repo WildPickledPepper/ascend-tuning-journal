@@ -1,3 +1,4 @@
 kernels/down-reuse/* text eol=lf
 experiments/mtp/* text eol=lf
 experiments/community-matmul/* text eol=lf
+experiments/nz-model/* text eol=lf

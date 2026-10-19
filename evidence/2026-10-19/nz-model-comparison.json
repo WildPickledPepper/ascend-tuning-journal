@@ -1,0 +1,391 @@
+{
+  "model": "Qwen3.8-27B",
+  "architecture": "Qwen3_5ForConditionalGeneration",
+  "dtype": "BF16",
+  "physical_device": 6,
+  "TP": 1,
+  "concurrency": 1,
+  "main_graph_mode": "FULL_DECODE_ONLY",
+  "capture_sizes": [
+    2
+  ],
+  "speculative_config": {
+    "method": "qwen3_5_mtp",
+    "num_speculative_tokens": 1,
+    "enforce_eager": true
+  },
+  "weight_nz_mode": {
+    "nd": 1,
+    "nz": 2
+  },
+  "custom_kernel_enabled": false,
+  "profiler_during_benchmarks": false,
+  "summaries": {
+    "nd": {
+      "mode": "nd",
+      "requests": 8,
+      "dtype": "BF16",
+      "physical_device": 6,
+      "graph": "FULL_DECODE_ONLY",
+      "profiler_during_benchmark": false,
+      "median_decode_tokens_per_s": 31.20711829497102,
+      "median_ttft_s": 0.3929188300971873,
+      "median_elapsed_s": 4.463898495072499,
+      "per_prompt": {
+        "0": {
+          "median_decode_tokens_per_s": 31.45120425390229
+        },
+        "1": {
+          "median_decode_tokens_per_s": 31.00760958989003
+        }
+      }
+    },
+    "nz": {
+      "mode": "nz",
+      "requests": 8,
+      "dtype": "BF16",
+      "physical_device": 6,
+      "graph": "FULL_DECODE_ONLY",
+      "profiler_during_benchmark": false,
+      "median_decode_tokens_per_s": 29.052652312999022,
+      "median_ttft_s": 0.391089765005745,
+      "median_elapsed_s": 4.770782480016351,
+      "per_prompt": {
+        "0": {
+          "median_decode_tokens_per_s": 29.302998719315028
+        },
+        "1": {
+          "median_decode_tokens_per_s": 28.85113444210166
+        }
+      }
+    }
+  },
+  "decode_speed_gain_pct": -6.903764588604089,
+  "request_time_change_pct": 6.874797562771806,
+  "samples": {
+    "nd": [
+      31.461304542134357,
+      31.022404934827904,
+      31.47756654044631,
+      30.992814244952154,
+      31.360051945236975,
+      30.984191848926905,
+      31.441103965670226,
+      31.054184644705067
+    ],
+    "nz": [
+      29.236786398970267,
+      28.85793259350151,
+      29.282611367867965,
+      28.797003500875412,
+      29.330598760454095,
+      28.84433629070181,
+      29.323386070762094,
+      28.868518227027778
+    ]
+  },
+  "acceptance": {
+    "nd": {
+      "counters_delta": {
+        "vllm:spec_decode_num_drafts_total": 744.0,
+        "vllm:spec_decode_num_draft_tokens_total": 744.0,
+        "vllm:spec_decode_num_accepted_tokens_total": 639.0,
+        "vllm:spec_decode_num_accepted_tokens_per_pos_total": 639.0
+      },
+      "accepted_fraction": 0.8588709677419355,
+      "mean_tokens_per_verification": 1.8588709677419355,
+      "scope": "warmups, 8 benchmarks and 3 output checks; excludes profiler"
+    },
+    "nz": {
+      "counters_delta": {
+        "vllm:spec_decode_num_drafts_total": 744.0,
+        "vllm:spec_decode_num_draft_tokens_total": 744.0,
+        "vllm:spec_decode_num_accepted_tokens_total": 639.0,
+        "vllm:spec_decode_num_accepted_tokens_per_pos_total": 639.0
+      },
+      "accepted_fraction": 0.8588709677419355,
+      "mean_tokens_per_verification": 1.8588709677419355,
+      "scope": "warmups, 8 benchmarks and 3 output checks; excludes profiler"
+    }
+  },
+  "output_comparisons": [
+    {
+      "label": "benchmark_p0_r0",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "benchmark_p1_r0",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "benchmark_p0_r1",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "benchmark_p1_r1",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "benchmark_p0_r2",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "benchmark_p1_r2",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "benchmark_p0_r3",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "benchmark_p1_r3",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "output_check_0",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 96,
+      "candidate_tokens": 96
+    },
+    {
+      "label": "output_check_1",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 96,
+      "candidate_tokens": 96
+    },
+    {
+      "label": "output_check_2",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 25,
+      "candidate_tokens": 25
+    }
+  ],
+  "all_tested_token_ids_equal": true,
+  "all_tested_text_equal": true,
+  "completed_utc": "2026-10-19T08:46:17.774239+00:00",
+  "limitations": [
+    "Same card, sequential ND then NZ; no randomized crossover.",
+    "Two short prompts, 4 repetitions each; not a broad workload or quality evaluation.",
+    "Token equality covers tested prompts only; BF16 is not a universal bitwise guarantee.",
+    "Separate 32-token profiling requests excluded from reported speed.",
+    "Stream timestamps include chunked arrival of accepted MTP tokens."
+  ],
+  "nd_vs_prior_non_mtp_baseline": [
+    {
+      "label": "benchmark_p0_r0",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "benchmark_p1_r0",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "benchmark_p0_r1",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "benchmark_p1_r1",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "benchmark_p0_r2",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "benchmark_p1_r2",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "benchmark_p0_r3",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "benchmark_p1_r3",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "output_check_0",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 96,
+      "candidate_tokens": 96
+    },
+    {
+      "label": "output_check_1",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 96,
+      "candidate_tokens": 96
+    },
+    {
+      "label": "output_check_2",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 25,
+      "candidate_tokens": 25
+    }
+  ],
+  "nz_vs_prior_non_mtp_baseline": [
+    {
+      "label": "benchmark_p0_r0",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "benchmark_p1_r0",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "benchmark_p0_r1",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "benchmark_p1_r1",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "benchmark_p0_r2",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "benchmark_p1_r2",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "benchmark_p0_r3",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "benchmark_p1_r3",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 128,
+      "candidate_tokens": 128
+    },
+    {
+      "label": "output_check_0",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 96,
+      "candidate_tokens": 96
+    },
+    {
+      "label": "output_check_1",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 96,
+      "candidate_tokens": 96
+    },
+    {
+      "label": "output_check_2",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "reference_tokens": 25,
+      "candidate_tokens": 25
+    }
+  ]
+}

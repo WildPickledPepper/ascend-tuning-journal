@@ -1,0 +1,470 @@
+{
+  "nd": {
+    "commands": [
+      "operator/statistic",
+      "operator/more_info"
+    ],
+    "matrix_groups": [
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"2,5120;34816,5120\"",
+        "totalTime": "317534.540",
+        "count": "1105",
+        "avgTime": "287.360",
+        "maxTime": "299.920",
+        "minTime": "273.640"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"2,17408;5120,17408\"",
+        "totalTime": "168110.200",
+        "count": "1105",
+        "avgTime": "152.140",
+        "maxTime": "161.340",
+        "minTime": "147.060"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"2,5120;16384,5120\"",
+        "totalTime": "110874.140",
+        "count": "816",
+        "avgTime": "135.880",
+        "maxTime": "143.120",
+        "minTime": "130.300"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"2,6144;5120,6144\"",
+        "totalTime": "62186.100",
+        "count": "1105",
+        "avgTime": "56.280",
+        "maxTime": "71.160",
+        "minTime": "48.100"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"1,5120;248320,5120\"",
+        "totalTime": "36249.900",
+        "count": "19",
+        "avgTime": "1907.890",
+        "maxTime": "1917.140",
+        "minTime": "1898.720"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"2,5120;14336,5120\"",
+        "totalTime": "34040.780",
+        "count": "289",
+        "avgTime": "117.790",
+        "maxTime": "129.920",
+        "minTime": "113.680"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"2,5120;248320,5120\"",
+        "totalTime": "32539.840",
+        "count": "17",
+        "avgTime": "1914.110",
+        "maxTime": "1923.540",
+        "minTime": "1905.660"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"26,5120;34816,5120\"",
+        "totalTime": "20797.700",
+        "count": "65",
+        "avgTime": "319.960",
+        "maxTime": "338.140",
+        "minTime": "290.540"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"26,17408;5120,17408\"",
+        "totalTime": "9967.560",
+        "count": "65",
+        "avgTime": "153.350",
+        "maxTime": "159.900",
+        "minTime": "147.360"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"2,5120;96,5120\"",
+        "totalTime": "8163.320",
+        "count": "816",
+        "avgTime": "10.000",
+        "maxTime": "14.720",
+        "minTime": "9.740"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"26,5120;16384,5120\"",
+        "totalTime": "6788.580",
+        "count": "48",
+        "avgTime": "141.430",
+        "maxTime": "145.200",
+        "minTime": "137.220"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"26,6144;5120,6144\"",
+        "totalTime": "4017.160",
+        "count": "65",
+        "avgTime": "61.800",
+        "maxTime": "77.100",
+        "minTime": "53.780"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"26,5120;14336,5120\"",
+        "totalTime": "2049.440",
+        "count": "17",
+        "avgTime": "120.560",
+        "maxTime": "123.580",
+        "minTime": "118.640"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"2,10240;5120,10240\"",
+        "totalTime": "1664.740",
+        "count": "17",
+        "avgTime": "97.930",
+        "maxTime": "100.140",
+        "minTime": "96.020"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"26,5120;96,5120\"",
+        "totalTime": "510.460",
+        "count": "48",
+        "avgTime": "10.630",
+        "maxTime": "11.020",
+        "minTime": "10.400"
+      },
+      {
+        "opType": "GemmaRmsNorm",
+        "opName": "GemmaRmsNorm",
+        "accCore": "AI_VECTOR_CORE",
+        "inputShape": "\"2,5120;5120\"",
+        "totalTime": "284.780",
+        "count": "68",
+        "avgTime": "4.190",
+        "maxTime": "4.860",
+        "minTime": "3.360"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"26,10240;5120,10240\"",
+        "totalTime": "90.300",
+        "count": "1",
+        "avgTime": "90.300",
+        "maxTime": "90.300",
+        "minTime": "90.300"
+      },
+      {
+        "opType": "GemmaRmsNorm",
+        "opName": "GemmaRmsNorm",
+        "accCore": "AI_VECTOR_CORE",
+        "inputShape": "\"26,5120;5120\"",
+        "totalTime": "29.720",
+        "count": "4",
+        "avgTime": "7.430",
+        "maxTime": "8.760",
+        "minTime": "5.680"
+      }
+    ],
+    "ffn_detail_examples": [
+      {
+        "shape": "\"2,5120;34816,5120\"",
+        "returned_samples": 20,
+        "representative": {
+          "name": "aclnnMatmul_MatMulCommon_MatMulV2",
+          "type": "MatMulV2",
+          "duration": "299.920",
+          "inputShape": "\"2,5120;34816,5120\"",
+          "inputType": "DT_BF16;DT_BF16",
+          "inputFormat": "ND;ND",
+          "outputType": "DT_BF16"
+        }
+      },
+      {
+        "shape": "\"2,17408;5120,17408\"",
+        "returned_samples": 20,
+        "representative": {
+          "name": "aclnnMatmul_MatMulCommon_MatMulV2",
+          "type": "MatMulV2",
+          "duration": "161.340",
+          "inputShape": "\"2,17408;5120,17408\"",
+          "inputType": "DT_BF16;DT_BF16",
+          "inputFormat": "ND;ND",
+          "outputType": "DT_BF16"
+        }
+      }
+    ]
+  },
+  "nz": {
+    "commands": [
+      "operator/statistic",
+      "operator/more_info"
+    ],
+    "matrix_groups": [
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmulWeightNz_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"2,5120;320,2176,16,16\"",
+        "totalTime": "337672.200",
+        "count": "1105",
+        "avgTime": "305.590",
+        "maxTime": "320.920",
+        "minTime": "288.520"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmulWeightNz_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"2,17408;1088,320,16,16\"",
+        "totalTime": "183289.040",
+        "count": "1105",
+        "avgTime": "165.870",
+        "maxTime": "182.840",
+        "minTime": "148.040"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmulWeightNz_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"2,5120;320,1024,16,16\"",
+        "totalTime": "126781.880",
+        "count": "816",
+        "avgTime": "155.370",
+        "maxTime": "170.140",
+        "minTime": "138.560"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmulWeightNz_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"2,6144;384,320,16,16\"",
+        "totalTime": "68373.940",
+        "count": "1105",
+        "avgTime": "61.880",
+        "maxTime": "73.360",
+        "minTime": "46.760"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmulWeightNz_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"2,5120;320,896,16,16\"",
+        "totalTime": "48960.880",
+        "count": "289",
+        "avgTime": "169.410",
+        "maxTime": "184.720",
+        "minTime": "157.240"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"1,5120;248320,5120\"",
+        "totalTime": "36374.480",
+        "count": "19",
+        "avgTime": "1914.450",
+        "maxTime": "1935.040",
+        "minTime": "1899.740"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"2,5120;248320,5120\"",
+        "totalTime": "32525.600",
+        "count": "17",
+        "avgTime": "1913.270",
+        "maxTime": "1919.760",
+        "minTime": "1903.020"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmulWeightNz_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"26,5120;320,2176,16,16\"",
+        "totalTime": "24619.400",
+        "count": "65",
+        "avgTime": "378.760",
+        "maxTime": "400.560",
+        "minTime": "347.140"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmulWeightNz_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"26,17408;1088,320,16,16\"",
+        "totalTime": "11012.620",
+        "count": "65",
+        "avgTime": "169.420",
+        "maxTime": "182.980",
+        "minTime": "151.780"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmulWeightNz_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"26,5120;320,1024,16,16\"",
+        "totalTime": "8547.900",
+        "count": "48",
+        "avgTime": "178.080",
+        "maxTime": "186.560",
+        "minTime": "171.780"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmulWeightNz_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"2,5120;320,6,16,16\"",
+        "totalTime": "8238.400",
+        "count": "816",
+        "avgTime": "10.100",
+        "maxTime": "14.000",
+        "minTime": "9.820"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmulWeightNz_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"26,6144;384,320,16,16\"",
+        "totalTime": "4576.780",
+        "count": "65",
+        "avgTime": "70.410",
+        "maxTime": "86.160",
+        "minTime": "58.280"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmulWeightNz_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"26,5120;320,896,16,16\"",
+        "totalTime": "2920.060",
+        "count": "17",
+        "avgTime": "171.770",
+        "maxTime": "180.560",
+        "minTime": "164.540"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmulWeightNz_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"2,10240;640,320,16,16\"",
+        "totalTime": "2044.760",
+        "count": "17",
+        "avgTime": "120.280",
+        "maxTime": "124.260",
+        "minTime": "117.680"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmulWeightNz_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"26,5120;320,6,16,16\"",
+        "totalTime": "517.000",
+        "count": "48",
+        "avgTime": "10.770",
+        "maxTime": "11.220",
+        "minTime": "10.540"
+      },
+      {
+        "opType": "GemmaRmsNorm",
+        "opName": "GemmaRmsNorm",
+        "accCore": "AI_VECTOR_CORE",
+        "inputShape": "\"2,5120;5120\"",
+        "totalTime": "304.200",
+        "count": "68",
+        "avgTime": "4.470",
+        "maxTime": "5.520",
+        "minTime": "3.600"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmulWeightNz_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"26,10240;640,320,16,16\"",
+        "totalTime": "116.440",
+        "count": "1",
+        "avgTime": "116.440",
+        "maxTime": "116.440",
+        "minTime": "116.440"
+      },
+      {
+        "opType": "GemmaRmsNorm",
+        "opName": "GemmaRmsNorm",
+        "accCore": "AI_VECTOR_CORE",
+        "inputShape": "\"26,5120;5120\"",
+        "totalTime": "33.700",
+        "count": "4",
+        "avgTime": "8.430",
+        "maxTime": "11.780",
+        "minTime": "5.240"
+      }
+    ],
+    "ffn_detail_examples": [
+      {
+        "shape": "\"2,5120;320,2176,16,16\"",
+        "returned_samples": 20,
+        "representative": {
+          "name": "aclnnMatmulWeightNz_MatMulCommon_MatMulV2",
+          "type": "MatMulV2",
+          "duration": "320.920",
+          "inputShape": "\"2,5120;320,2176,16,16\"",
+          "inputType": "DT_BF16;DT_BF16",
+          "inputFormat": "ND;FRACTAL_NZ",
+          "outputType": "DT_BF16"
+        }
+      },
+      {
+        "shape": "\"2,17408;1088,320,16,16\"",
+        "returned_samples": 20,
+        "representative": {
+          "name": "aclnnMatmulWeightNz_MatMulCommon_MatMulV2",
+          "type": "MatMulV2",
+          "duration": "182.840",
+          "inputShape": "\"2,17408;1088,320,16,16\"",
+          "inputType": "DT_BF16;DT_BF16",
+          "inputFormat": "ND;FRACTAL_NZ",
+          "outputType": "DT_BF16"
+        }
+      }
+    ]
+  }
+}
