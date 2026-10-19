@@ -1,0 +1,80 @@
+{
+  "source": "compiled Insight operator/statistic, grouped by input shape",
+  "stages": {
+    "baseline": {
+      "physical_device": 7,
+      "profile_output_tokens": 32,
+      "decode_matmul_rows": [
+        {
+          "opType": "MatMulV2",
+          "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+          "accCore": "AI_CORE",
+          "inputShape": "\"1,5120;34816,5120\"",
+          "totalTime": "560172.160",
+          "count": "1984",
+          "avgTime": "282.340",
+          "maxTime": "294.390",
+          "minTime": "266.960"
+        },
+        {
+          "opType": "MatMulV2",
+          "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+          "accCore": "AI_CORE",
+          "inputShape": "\"1,17408;5120,17408\"",
+          "totalTime": "301265.100",
+          "count": "1984",
+          "avgTime": "151.850",
+          "maxTime": "163.160",
+          "minTime": "146.120"
+        }
+      ],
+      "calls_per_group": 1984,
+      "layers_including_mtp_head": 64,
+      "decode_rounds_inferred": 31,
+      "ffn_kernel_total_ms": 861.43726,
+      "profiled_ttft_s": 0.4324138700030744,
+      "profiled_elapsed_s": 1.9714664100902155
+    },
+    "mtp": {
+      "physical_device": 6,
+      "profile_output_tokens": 32,
+      "decode_matmul_rows": [
+        {
+          "opType": "MatMulV2",
+          "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+          "accCore": "AI_CORE",
+          "inputShape": "\"2,5120;34816,5120\"",
+          "totalTime": "317469.840",
+          "count": "1105",
+          "avgTime": "287.300",
+          "maxTime": "298.900",
+          "minTime": "273.000"
+        },
+        {
+          "opType": "MatMulV2",
+          "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+          "accCore": "AI_CORE",
+          "inputShape": "\"2,17408;5120,17408\"",
+          "totalTime": "168077.120",
+          "count": "1105",
+          "avgTime": "152.110",
+          "maxTime": "160.060",
+          "minTime": "146.820"
+        }
+      ],
+      "calls_per_group": 1105,
+      "layers_including_mtp_head": 65,
+      "decode_rounds_inferred": 17,
+      "ffn_kernel_total_ms": 485.54696,
+      "profiled_ttft_s": 0.46856553002726287,
+      "profiled_elapsed_s": 1.5011895600473508
+    }
+  },
+  "ffn_total_time_reduction_pct": 43.63524976850896,
+  "explanation": "Baseline: 31 decode rounds x 64 layers. MTP: 17 x (64 main + 1 draft). MTP GDN count 816 = 48 x 17 independently supports the main-model round count.",
+  "limitations": [
+    "Kernel sums are not end-to-end critical-path durations.",
+    "MTP FFN rows include its draft layer.",
+    "No HBM PMU bytes collected in this comparison."
+  ]
+}

@@ -23,3 +23,8 @@
 - `2026-10-19/down-korder-validation.json`：修正 K 顺序后的 25 案例、4 版本逐位检查字段。
 - `2026-10-19/down-final-state.json`：异步提交检查及停止后的资源状态。
 - `2026-10-19/down-model-source-manifest.json`：本轮保留的小型源摘要 SHA256。
+
+- `2026-10-19/mtp-comparison.json`：单用户 BF16 MTP 的速度、接受率、逐项输出对比与限制。
+- `2026-10-19/mtp-backend.json`：编译版 Insight 的 M=1/2、FFN 调用次数与累计耗时。
+- `2026-10-19/mtp-service-state.json`：基线与 MTP 两服务的健康状态。
+- `2026-10-19/mtp-source-manifest.json`：本轮摘要来源 SHA256 与运行时代码版本。

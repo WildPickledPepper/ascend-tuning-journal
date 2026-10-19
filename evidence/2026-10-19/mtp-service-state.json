@@ -1,0 +1,17 @@
+{
+  "checked_utc": "2026-10-19T07:56:08.435654+00:00",
+  "services": {
+    "baseline": {
+      "port": 8038,
+      "physical_device": 7,
+      "healthy": true,
+      "bind": "localhost"
+    },
+    "mtp": {
+      "port": 8039,
+      "physical_device": 6,
+      "healthy": true,
+      "bind": "localhost"
+    }
+  }
+}

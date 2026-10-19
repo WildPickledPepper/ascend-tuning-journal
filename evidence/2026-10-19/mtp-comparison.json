@@ -1,0 +1,221 @@
+{
+  "model": "Qwen3.8-27B",
+  "architecture": "Qwen3_5ForConditionalGeneration",
+  "dtype": "BF16",
+  "physical_devices": {
+    "baseline": 7,
+    "mtp": 6
+  },
+  "TP": 1,
+  "concurrency": 1,
+  "graph_mode": "FULL_DECODE_ONLY",
+  "capture_sizes": {
+    "baseline": [
+      1
+    ],
+    "mtp": [
+      2
+    ]
+  },
+  "speculative_config": {
+    "method": "qwen3_5_mtp",
+    "num_speculative_tokens": 1,
+    "enforce_eager": true
+  },
+  "custom_kernel_enabled": false,
+  "summaries": {
+    "baseline": {
+      "mode": "baseline",
+      "requests": 8,
+      "dtype": "BF16",
+      "physical_device": 7,
+      "graph": "FULL_DECODE_ONLY",
+      "profiler_during_benchmark": false,
+      "median_decode_tokens_per_s": 20.248772778297784,
+      "median_ttft_s": 0.3668847400113009,
+      "median_elapsed_s": 6.6451845149858855,
+      "per_prompt": {
+        "0": {
+          "median_decode_tokens_per_s": 20.25073428047166
+        },
+        "1": {
+          "median_decode_tokens_per_s": 20.24610594081775
+        }
+      }
+    },
+    "mtp": {
+      "mode": "mtp",
+      "requests": 8,
+      "dtype": "BF16",
+      "physical_device": 6,
+      "graph": "FULL_DECODE_ONLY",
+      "profiler_during_benchmark": false,
+      "median_decode_tokens_per_s": 31.136453797010034,
+      "median_ttft_s": 0.3816634850227274,
+      "median_elapsed_s": 4.459480875055306,
+      "per_prompt": {
+        "0": {
+          "median_decode_tokens_per_s": 31.397066627772773
+        },
+        "1": {
+          "median_decode_tokens_per_s": 30.959929922758853
+        }
+      }
+    }
+  },
+  "per_prompt": {
+    "0": {
+      "samples": {
+        "baseline": [
+          20.250402606126038,
+          20.251065954817282,
+          20.25384006988222,
+          20.249667009929354
+        ],
+        "mtp": [
+          31.480713582957453,
+          31.461620115290035,
+          31.256719964360354,
+          31.332513140255507
+        ]
+      },
+      "medians": {
+        "baseline": 20.25073428047166,
+        "mtp": 31.397066627772773
+      },
+      "gain_pct": 55.041620678662625
+    },
+    "1": {
+      "samples": {
+        "baseline": [
+          20.246028462309134,
+          20.208580364183913,
+          20.246183419326368,
+          20.24787854666621
+        ],
+        "mtp": [
+          31.01618762965972,
+          30.94778151083913,
+          30.972078334678574,
+          30.807480262146715
+        ]
+      },
+      "medians": {
+        "baseline": 20.24610594081775,
+        "mtp": 30.959929922758853
+      },
+      "gain_pct": 52.9179488305511
+    }
+  },
+  "speed_gain_pct": 53.76958464555166,
+  "acceptance": {
+    "scope": "warmups, benchmarks and output checks, before profiler",
+    "counters_delta": {
+      "vllm:spec_decode_num_drafts_total": 744.0,
+      "vllm:spec_decode_num_draft_tokens_total": 744.0,
+      "vllm:spec_decode_num_accepted_tokens_total": 639.0,
+      "vllm:spec_decode_num_accepted_tokens_per_pos_total": 639.0
+    },
+    "draft_acceptance_rate": 0.8588709677419355,
+    "mean_tokens_per_verification": 1.8588709677419355
+  },
+  "output_comparisons": [
+    {
+      "label": "benchmark_p0_r0",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "baseline_tokens": 128,
+      "mtp_tokens": 128,
+      "first_difference_index": null
+    },
+    {
+      "label": "benchmark_p1_r0",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "baseline_tokens": 128,
+      "mtp_tokens": 128,
+      "first_difference_index": null
+    },
+    {
+      "label": "benchmark_p0_r1",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "baseline_tokens": 128,
+      "mtp_tokens": 128,
+      "first_difference_index": null
+    },
+    {
+      "label": "benchmark_p1_r1",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "baseline_tokens": 128,
+      "mtp_tokens": 128,
+      "first_difference_index": null
+    },
+    {
+      "label": "benchmark_p0_r2",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "baseline_tokens": 128,
+      "mtp_tokens": 128,
+      "first_difference_index": null
+    },
+    {
+      "label": "benchmark_p1_r2",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "baseline_tokens": 128,
+      "mtp_tokens": 128,
+      "first_difference_index": null
+    },
+    {
+      "label": "benchmark_p0_r3",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "baseline_tokens": 128,
+      "mtp_tokens": 128,
+      "first_difference_index": null
+    },
+    {
+      "label": "benchmark_p1_r3",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "baseline_tokens": 128,
+      "mtp_tokens": 128,
+      "first_difference_index": null
+    },
+    {
+      "label": "output_check_0",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "baseline_tokens": 96,
+      "mtp_tokens": 96,
+      "first_difference_index": null
+    },
+    {
+      "label": "output_check_1",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "baseline_tokens": 96,
+      "mtp_tokens": 96,
+      "first_difference_index": null
+    },
+    {
+      "label": "output_check_2",
+      "token_ids_equal": true,
+      "text_equal": true,
+      "baseline_tokens": 25,
+      "mtp_tokens": 25,
+      "first_difference_index": null
+    }
+  ],
+  "all_tested_token_ids_equal": true,
+  "completed_utc": "2026-10-19T07:55:46.518402+00:00",
+  "limitations": [
+    "Short deterministic single-user requests, not a broad quality evaluation.",
+    "Timing uses streamed token timestamps; accepted tokens can arrive in chunks.",
+    "Acceptance counters include warmups and output checks; timing summary uses eight benchmarks only.",
+    "Different rented 910B2 devices: baseline on 7, MTP on 6; performance requests staggered, no randomized crossover.",
+    "Weight-byte amortization is a model of reuse, not an HBM counter measurement."
+  ]
+}

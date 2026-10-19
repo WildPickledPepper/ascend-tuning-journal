@@ -1,0 +1,26 @@
+{
+  "sources": [
+    {
+      "artifact": "receipts/mtp-comparison.json",
+      "sha256": "d57bc720bd7a27ca137c4bb274d8f4fb72fefe5aab6306b3929a94334881dc6e"
+    },
+    {
+      "artifact": "baseline-backend-matmuls.json",
+      "sha256": "d9c082087a5e3afedad45164ca4f66130abe36fdf75bc96b94ed1e93be57b0e9"
+    },
+    {
+      "artifact": "mtp-backend-matmuls.json",
+      "sha256": "b3e0958dc1afb07c853090ae3527b058111aabebc981c7a240084d7572e916c6"
+    },
+    {
+      "artifact": "service-state.json",
+      "sha256": "5093473480a321f01f381e383122edb3efcd525d4610bbd31062593a63824e3d"
+    }
+  ],
+  "runtime_source_revisions": {
+    "vllm": "568afb3",
+    "vllm-ascend": "f2f74a16c"
+  },
+  "reference": "https://docs.vllm.ai/projects/ascend/en/v0.26.0rc1/tutorials/models/Qwen3.5-27B-Qwen3.6-27B.html",
+  "note": "Local paths, raw request receipts, full profiler captures and credentials are not published."
+}
