@@ -25,6 +25,7 @@
 - 新增 MTP 对照：保持 BF16 与原 CANN，8 次正式请求速度中位数 **20.249 → 31.136 token/s（+53.77%）**；候选接受率 **85.89%**，8 次性能请求＋3 次输出检查 token ID 全部一致，仅覆盖本次样本。
 - Insight 后端确认：矩阵乘 M=1→2、单次耗时接近，相同 32-token 采样的主模型 decode 轮数 **31→17**；含草稿层的两组 FFN 累计内核时间 **861.437→485.547 ms**。
 - 最近检查（**15:56:08**）：基线 7 号卡 localhost:8038、MTP 6 号卡 localhost:8039，两个服务健康且保留；未修改共享 CANN 和驱动。
+- MTP 后瓶颈已复核：矩阵乘合计约 **73.1%** 的连续解码窗口，其中两组 FFN **46.3%**；另有 **12.7%** 无设备计算任务区间，主要新增在主模型图之后的草稿/采样流程。[分析与口径](experiments/mtp/bottleneck.md)。
 - [MTP 配置与脚本](experiments/mtp/README.md)、[MTP 结果与边界](experiments/mtp/results.md)、[MTP 证据](evidence/2026-10-19/mtp-comparison.json)。
 - [实验代码与当前限制](kernels/down-reuse/README.md)、[整模型实验摘要](evidence/2026-10-19/down-model-ab.json)。
 

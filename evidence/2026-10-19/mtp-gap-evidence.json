@@ -1,0 +1,178 @@
+{
+  "samples": [
+    {
+      "gap": {
+        "duration_ms": 1.06444,
+        "offset_ms": 116.50026
+      },
+      "overlapping_cpu_ops": [
+        {
+          "name": "aten::to",
+          "overlap_us": 39.93
+        },
+        {
+          "name": "aten::_to_copy",
+          "overlap_us": 37.54
+        },
+        {
+          "name": "aten::sub",
+          "overlap_us": 34.96
+        },
+        {
+          "name": "aten::eq",
+          "overlap_us": 28.78
+        },
+        {
+          "name": "aten::diff",
+          "overlap_us": 28.62
+        },
+        {
+          "name": "aten::fill_",
+          "overlap_us": 26.96
+        },
+        {
+          "name": "aten::copy_",
+          "overlap_us": 26.37
+        },
+        {
+          "name": "aten::fill_",
+          "overlap_us": 26.01
+        },
+        {
+          "name": "aten::fill_",
+          "overlap_us": 21.03
+        },
+        {
+          "name": "aten::fill_",
+          "overlap_us": 20.24
+        },
+        {
+          "name": "aten::copy_",
+          "overlap_us": 17.24
+        },
+        {
+          "name": "aten::to",
+          "overlap_us": 15.76
+        }
+      ]
+    },
+    {
+      "gap": {
+        "duration_ms": 1.03868,
+        "offset_ms": 489.5471
+      },
+      "overlapping_cpu_ops": [
+        {
+          "name": "aten::to",
+          "overlap_us": 39.38
+        },
+        {
+          "name": "aten::_to_copy",
+          "overlap_us": 36.99
+        },
+        {
+          "name": "aten::sub",
+          "overlap_us": 35.05
+        },
+        {
+          "name": "aten::diff",
+          "overlap_us": 29.47
+        },
+        {
+          "name": "aten::eq",
+          "overlap_us": 27.93
+        },
+        {
+          "name": "aten::fill_",
+          "overlap_us": 26.21
+        },
+        {
+          "name": "aten::fill_",
+          "overlap_us": 24.72
+        },
+        {
+          "name": "aten::copy_",
+          "overlap_us": 21.25
+        },
+        {
+          "name": "aten::copy_",
+          "overlap_us": 17.16
+        },
+        {
+          "name": "aten::fill_",
+          "overlap_us": 16.46
+        },
+        {
+          "name": "aten::to",
+          "overlap_us": 15.54
+        },
+        {
+          "name": "aten::empty_strided",
+          "overlap_us": 15.1
+        }
+      ]
+    },
+    {
+      "gap": {
+        "duration_ms": 1.03388,
+        "offset_ms": 365.1086
+      },
+      "overlapping_cpu_ops": [
+        {
+          "name": "aten::to",
+          "overlap_us": 42.81
+        },
+        {
+          "name": "aten::diff",
+          "overlap_us": 40.58
+        },
+        {
+          "name": "aten::_to_copy",
+          "overlap_us": 40.39
+        },
+        {
+          "name": "aten::sub",
+          "overlap_us": 35.97
+        },
+        {
+          "name": "aten::fill_",
+          "overlap_us": 30.01
+        },
+        {
+          "name": "aten::fill_",
+          "overlap_us": 27.76
+        },
+        {
+          "name": "aten::eq",
+          "overlap_us": 26.68
+        },
+        {
+          "name": "aten::copy_",
+          "overlap_us": 20.1
+        },
+        {
+          "name": "aten::fill_",
+          "overlap_us": 16.42
+        },
+        {
+          "name": "aten::narrow",
+          "overlap_us": 15.73
+        },
+        {
+          "name": "aten::fill_",
+          "overlap_us": 15.52
+        },
+        {
+          "name": "aten::empty_strided",
+          "overlap_us": 15.34
+        }
+      ]
+    }
+  ],
+  "interpretation": "Largest compute gaps coincide with small CPU copy/conversion/indexing operations.",
+  "limitations": [
+    "Nested CPU scopes overlap; do not sum their durations.",
+    "Three samples do not establish causal attribution of all no-compute time.",
+    "A host/profiled eager path has additional measurement overhead."
+  ]
+}

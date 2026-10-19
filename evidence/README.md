@@ -28,3 +28,6 @@
 - `2026-10-19/mtp-backend.json`：编译版 Insight 的 M=1/2、FFN 调用次数与累计耗时。
 - `2026-10-19/mtp-service-state.json`：基线与 MTP 两服务的健康状态。
 - `2026-10-19/mtp-source-manifest.json`：本轮摘要来源 SHA256 与运行时代码版本。
+
+- `2026-10-19/mtp-bottleneck.json`：MTP 后连续解码占比、逐轮图内/图后窗口、PMU 与只读 SQL 返回。
+- `2026-10-19/mtp-gap-evidence.json`：三段最大设备计算空档与 CPU 小操作的重叠样本及限制。
