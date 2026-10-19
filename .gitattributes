@@ -3,3 +3,4 @@ experiments/mtp/* text eol=lf
 experiments/community-matmul/* text eol=lf
 experiments/nz-model/* text eol=lf
 experiments/nz-context/* text eol=lf
+experiments/nz-runtime/* text eol=lf

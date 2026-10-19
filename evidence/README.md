@@ -37,3 +37,6 @@
 - `2026-10-19/nz-*.json`：官方 NZ 整模型对照、编译版后端、逻辑形状匹配、恢复与按用户要求停止复测的状态。
 
 - `2026-10-19/nz-context-*.json`：同卡 kernel/PMU、L2 干预和同地址真实权重对照，保留未支持的解释及当前根因边界。
+
+- `2026-10-19/nz-runtime-comparison.json`：真实 ELF/TilingData、同层 X/W/Y 地址、原生 DMA 仿真参数、两层反复读与 64 层工作集的上板 PMU/MemoryAccess、Insight 返回交叉验证；没有声称已取得 TLB 或 HBM 通道根因。
+- `2026-10-19/nz-runtime-source-manifest.json`：本次归档主机观察器、隔离探针、参数比较与后端查询脚本的 SHA256。
