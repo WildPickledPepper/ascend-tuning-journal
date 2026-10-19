@@ -9,7 +9,7 @@
     "paired_bench.py": "9545e2e0bfb8f9ff673e85bd21ef6760acdfc4b0b31c3900ac3a4ba5520a06a9",
     "launch_acl.py": "416a93ccc30894685b8d349b04511b6ec4772593f53c850878802b9057a89331",
     "backend-query.cjs": "127dd4aa9bf5bfba41c067bfb8d7298655b876af737922587aa9cb2397fc46ec",
-    "backend-instructions.cjs": "0950afd0cc3932e5f2ad89938acbc90f804a7bf4aa42739342b580b4a6fb36f3"
+    "backend-instructions.cjs": "42b4513c7f3ee8c1134b5a937e60b5f6b1959c040f15727703920e5078f5221e"
   },
   "backend_device": {
     "cann": {

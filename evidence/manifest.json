@@ -49,7 +49,7 @@
     },
     {
       "artifact": "qwen38-down-reuse/experiment-summary.json",
-      "sha256": "4ee82d474093c16e014d5669c6b6d07e9f66e88554baff37b5f678967b36c1de"
+      "sha256": "765bf14bd9280e7e383f3c4878aa6296ec0b1a14be69181661654e17ab3d3a34"
     },
     {
       "artifact": "qwen38-down-reuse/paired-bench.json",

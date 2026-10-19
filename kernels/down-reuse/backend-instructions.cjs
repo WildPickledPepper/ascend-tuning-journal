@@ -13,4 +13,3 @@ ws.onopen=async()=>{try{
   const data=await rpc('source',command,{coreName:'core0.cubecore0'});const file=command.replaceAll('/','-')+'.json';fs.writeFileSync(path.join(out,'backend-'+file),JSON.stringify(data,null,2));console.log(command,data.result,JSON.stringify(data.body).slice(0,1800));
  }
  }catch(e){console.error(e);process.exitCode=1}finally{clearTimeout(timer);ws.close()}};
-
