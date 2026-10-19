@@ -1,0 +1,32 @@
+{
+  "micro": {
+    "2,5120;34816,5120": {
+      "MatMulV2_ND_ND_FP16_FP16_false_true_all_98499": 8
+    },
+    "2,5120;320,2176,16,16": {
+      "MatMulV2_NDNZ_ND_FP16_FP16_false_true_all_229571": 8
+    },
+    "2,17408;5120,17408": {
+      "MatMulV2_ND_ND_FP16_FP16_false_true_all_98513": 8
+    },
+    "2,17408;1088,320,16,16": {
+      "MatMulV2_NDNZ_ND_FP16_FP16_false_true_all_229585": 8
+    }
+  },
+  "model_nd": {
+    "2,5120;34816,5120": {
+      "MatMulV2_ND_ND_FP16_FP16_false_true_all_98499": 1105
+    },
+    "2,17408;5120,17408": {
+      "MatMulV2_ND_ND_FP16_FP16_false_true_all_98513": 1105
+    }
+  },
+  "model_nz": {
+    "2,5120;320,2176,16,16": {
+      "MatMulV2_NDNZ_ND_FP16_FP16_false_true_all_229571": 1105
+    },
+    "2,17408;1088,320,16,16": {
+      "MatMulV2_NDNZ_ND_FP16_FP16_false_true_all_229585": 1105
+    }
+  }
+}

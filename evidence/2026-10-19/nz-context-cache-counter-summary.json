@@ -1,0 +1,77 @@
+{
+  "source": "Compiled Insight operator/more_info, ordered by startTime; warmup kernels excluded",
+  "measurements": [
+    {
+      "state": "repeat",
+      "input_shape": "\"2,5120;34816,5120\"",
+      "measured_kernels": 8,
+      "read_hit_fraction": 0.0015161098546065167,
+      "read_hits": 33836.0,
+      "read_miss_allocates": 22283808.0,
+      "mean_kernel_us": 275.76
+    },
+    {
+      "state": "repeat",
+      "input_shape": "\"2,5120;320,2176,16,16\"",
+      "measured_kernels": 8,
+      "read_hit_fraction": 0.0015121741038078755,
+      "read_hits": 33748.0,
+      "read_miss_allocates": 22283788.0,
+      "mean_kernel_us": 237.9525
+    },
+    {
+      "state": "repeat",
+      "input_shape": "\"2,17408;5120,17408\"",
+      "measured_kernels": 8,
+      "read_hit_fraction": 0.018003178150899787,
+      "read_hits": 204336.0,
+      "read_miss_allocates": 11145660.0,
+      "mean_kernel_us": 151.1175
+    },
+    {
+      "state": "repeat",
+      "input_shape": "\"2,17408;1088,320,16,16\"",
+      "measured_kernels": 8,
+      "read_hit_fraction": 0.017865268698082422,
+      "read_hits": 202740.0,
+      "read_miss_allocates": 11145536.0,
+      "mean_kernel_us": 133.05749999999998
+    },
+    {
+      "state": "other_reads",
+      "input_shape": "\"2,5120;34816,5120\"",
+      "measured_kernels": 8,
+      "read_hit_fraction": 0.0015143267787783474,
+      "read_hits": 33796.0,
+      "read_miss_allocates": 22283712.0,
+      "mean_kernel_us": 274.52
+    },
+    {
+      "state": "other_reads",
+      "input_shape": "\"2,5120;320,2176,16,16\"",
+      "measured_kernels": 8,
+      "read_hit_fraction": 0.001510570227714698,
+      "read_hits": 33712.0,
+      "read_miss_allocates": 22283688.0,
+      "mean_kernel_us": 245.48999999999998
+    },
+    {
+      "state": "other_reads",
+      "input_shape": "\"2,17408;5120,17408\"",
+      "measured_kernels": 8,
+      "read_hit_fraction": 0.017824348722330435,
+      "read_hits": 202268.0,
+      "read_miss_allocates": 11145580.0,
+      "mean_kernel_us": 150.725
+    },
+    {
+      "state": "other_reads",
+      "input_shape": "\"2,17408;1088,320,16,16\"",
+      "measured_kernels": 8,
+      "read_hit_fraction": 0.017773057315545352,
+      "read_hits": 201676.0,
+      "read_miss_allocates": 11145612.0,
+      "mean_kernel_us": 140.1275
+    }
+  ]
+}

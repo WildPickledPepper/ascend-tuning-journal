@@ -1,0 +1,152 @@
+{
+  "micro": {
+    "groups": {
+      "2,5120;34816,5120": {
+        "calls": 8,
+        "block_nums": [
+          "23"
+        ],
+        "means": {
+          "Duration(us)": 275.6575,
+          "aic_mte2_time(us)": 261.525125,
+          "aic_mte1_time(us)": 78.87725,
+          "aic_mac_time(us)": 31.799,
+          "aic_scalar_time(us)": 87.9555,
+          "aicore_time(us)": 266.163125
+        }
+      },
+      "2,5120;320,2176,16,16": {
+        "calls": 8,
+        "block_nums": [
+          "23"
+        ],
+        "means": {
+          "Duration(us)": 245.5375,
+          "aic_mte2_time(us)": 232.81525,
+          "aic_mte1_time(us)": 77.95025,
+          "aic_mac_time(us)": 31.799,
+          "aic_scalar_time(us)": 90.91137499999999,
+          "aicore_time(us)": 237.534125
+        }
+      },
+      "2,17408;5120,17408": {
+        "calls": 8,
+        "block_nums": [
+          "23"
+        ],
+        "means": {
+          "Duration(us)": 150.745,
+          "aic_mte2_time(us)": 127.081125,
+          "aic_mte1_time(us)": 45.363625,
+          "aic_mac_time(us)": 22.32675,
+          "aic_scalar_time(us)": 95.71724999999999,
+          "aicore_time(us)": 145.662
+        }
+      },
+      "2,17408;1088,320,16,16": {
+        "calls": 8,
+        "block_nums": [
+          "23"
+        ],
+        "means": {
+          "Duration(us)": 139.64,
+          "aic_mte2_time(us)": 116.032125,
+          "aic_mte1_time(us)": 46.4915,
+          "aic_mac_time(us)": 22.878625,
+          "aic_scalar_time(us)": 97.87587500000001,
+          "aicore_time(us)": 134.596875
+        }
+      }
+    },
+    "ai_core_freq_mhz_counts": [
+      [
+        1800,
+        3
+      ]
+    ]
+  },
+  "model_nd": {
+    "groups": {
+      "2,5120;34816,5120": {
+        "calls": 1105,
+        "block_nums": [
+          "23"
+        ],
+        "means": {
+          "Duration(us)": 287.3615746606335,
+          "aic_mte2_time(us)": 271.9224986425339,
+          "aic_mte1_time(us)": 78.7857294117647,
+          "aic_mac_time(us)": 31.799,
+          "aic_scalar_time(us)": 88.3190814479638,
+          "aicore_time(us)": 275.3355846153846
+        }
+      },
+      "2,17408;5120,17408": {
+        "calls": 1105,
+        "block_nums": [
+          "23"
+        ],
+        "means": {
+          "Duration(us)": 152.13592760180995,
+          "aic_mte2_time(us)": 127.86392579185521,
+          "aic_mte1_time(us)": 45.46427149321267,
+          "aic_mac_time(us)": 22.375235294117648,
+          "aic_scalar_time(us)": 96.16618099547512,
+          "aicore_time(us)": 144.57897918552035
+        }
+      }
+    },
+    "ai_core_freq_mhz_counts": [
+      [
+        800,
+        1
+      ],
+      [
+        1800,
+        3
+      ]
+    ]
+  },
+  "model_nz": {
+    "groups": {
+      "2,5120;320,2176,16,16": {
+        "calls": 1105,
+        "block_nums": [
+          "23"
+        ],
+        "means": {
+          "Duration(us)": 305.58570135746606,
+          "aic_mte2_time(us)": 282.8834850678733,
+          "aic_mte1_time(us)": 78.0040705882353,
+          "aic_mac_time(us)": 31.798999095022623,
+          "aic_scalar_time(us)": 91.46216923076923,
+          "aicore_time(us)": 286.4984742081448
+        }
+      },
+      "2,17408;1088,320,16,16": {
+        "calls": 1105,
+        "block_nums": [
+          "23"
+        ],
+        "means": {
+          "Duration(us)": 165.87243438914027,
+          "aic_mte2_time(us)": 140.8643809954751,
+          "aic_mte1_time(us)": 46.47778280542986,
+          "aic_mac_time(us)": 22.81154027149321,
+          "aic_scalar_time(us)": 98.35687330316742,
+          "aicore_time(us)": 157.75556561085972
+        }
+      }
+    },
+    "ai_core_freq_mhz_counts": [
+      [
+        800,
+        1
+      ],
+      [
+        1800,
+        3
+      ]
+    ]
+  }
+}
