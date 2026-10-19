@@ -1,0 +1,106 @@
+{
+  "backend_endpoint": "ws://127.0.0.1:9099",
+  "frontend_used": false,
+  "operators": [
+    {
+      "name": "gate-up",
+      "model_module": "mlp.gate_up_proj",
+      "decode": {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"1,5120;34816,5120\"",
+        "totalTime": "271361.520",
+        "count": "960",
+        "avgTime": "282.670",
+        "maxTime": "293.040",
+        "minTime": "271.860"
+      },
+      "prefill": {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"26,5120;34816,5120\"",
+        "totalTime": "20310.400",
+        "count": "64",
+        "avgTime": "317.350",
+        "maxTime": "329.760",
+        "minTime": "291.020"
+      },
+      "weight_bytes": 356515840,
+      "input_bytes": 10240,
+      "arithmetic_intensity_flops_per_weight_byte": 1.0,
+      "calls_per_decode_token": 64,
+      "original_decode_mte2_ratio": 0.9875887952070546,
+      "original_decode_mac_ratio": 0.11820402198762861,
+      "isolated_device": 7,
+      "isolated_block_num": 23,
+      "isolated_duration_us": 272.4254455566406,
+      "gm_read_request_bytes_including_cache_hits": 356760192,
+      "external_read_miss_bytes_proxy": 356526208,
+      "miss_bytes_minus_weight_and_input": 128,
+      "gm_to_l1_bytes": 362168320,
+      "gm_to_l1_vs_weight_ratio": 1.0158547794117647,
+      "L2_read_hit_pct": 0.06558579271086389,
+      "external_read_GB_s_proxy": 1308.7111127652493,
+      "core_min_max_us": [
+        204.03833,
+        271.582214
+      ],
+      "duration_occupancy_balance": 0.9628635713171586,
+      "gm_l1_interface_usage_pct_mean": 21.219377
+    },
+    {
+      "name": "down",
+      "model_module": "mlp.down_proj",
+      "decode": {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"1,17408;5120,17408\"",
+        "totalTime": "145890.580",
+        "count": "960",
+        "avgTime": "151.970",
+        "maxTime": "157.880",
+        "minTime": "146.660"
+      },
+      "prefill": {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"26,17408;5120,17408\"",
+        "totalTime": "9820.380",
+        "count": "64",
+        "avgTime": "153.440",
+        "maxTime": "159.740",
+        "minTime": "148.220"
+      },
+      "weight_bytes": 178257920,
+      "input_bytes": 34816,
+      "arithmetic_intensity_flops_per_weight_byte": 1.0,
+      "calls_per_decode_token": 64,
+      "original_decode_mte2_ratio": 0.8984768791111469,
+      "original_decode_mac_ratio": 0.1623937843204144,
+      "isolated_device": 7,
+      "isolated_block_num": 23,
+      "isolated_duration_us": 148.86297607421875,
+      "gm_read_request_bytes_including_cache_hits": 179868288,
+      "external_read_miss_bytes_proxy": 178292864,
+      "miss_bytes_minus_weight_and_input": 128,
+      "gm_to_l1_bytes": 216694784,
+      "gm_to_l1_vs_weight_ratio": 1.215625,
+      "L2_read_hit_pct": 0.8758764635598244,
+      "external_read_GB_s_proxy": 1197.6978339537452,
+      "core_min_max_us": [
+        126.930557,
+        148.15889
+      ],
+      "duration_occupancy_balance": 0.9821713411571331,
+      "gm_l1_interface_usage_pct_mean": 22.843908695652175
+    }
+  ],
+  "FFN_weight_GB_per_token": 34.22552064,
+  "decode_FFN_us_per_layer": 434.64,
+  "prefill_FFN_us_per_layer_26_tokens": 470.79,
+  "validation": "Both original groups contain 960 rows; all 46 block-memory responses succeeded; backend byte sums equal all-block CSV counters."
+}

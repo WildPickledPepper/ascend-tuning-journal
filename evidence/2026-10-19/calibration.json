@@ -1,0 +1,308 @@
+{
+  "zero": {
+    "source": "backend-calibration-zero.json",
+    "kernel_name": "probe_zero__kernel0",
+    "soc": "Ascend910B2",
+    "blockDim": "1",
+    "deviceId": "7",
+    "memoryUnit": [
+      {
+        "request": "1",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.319311",
+        "bandwidthSuffix": "",
+        "memoryPath": "0"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "(theoretical value)",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "(theoretical value)",
+        "memoryPath": "1"
+      },
+      {
+        "request": "64",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "15.481727",
+        "bandwidth": "40.871758",
+        "bandwidthSuffix": "",
+        "memoryPath": "2"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "0.000000",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "3"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "4"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "5"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "6"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "7"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "8"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "9"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "10"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "11"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "35"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "36"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "37"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "38"
+      }
+    ]
+  },
+  "nd2nz": {
+    "source": "backend-calibration-nd2nz.json",
+    "kernel_name": "probe_nd2nz__kernel0",
+    "soc": "Ascend910B2",
+    "blockDim": "1",
+    "deviceId": "7",
+    "memoryUnit": [
+      {
+        "request": "10",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "1.138338",
+        "bandwidthSuffix": "",
+        "memoryPath": "0"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "(theoretical value)",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "(theoretical value)",
+        "memoryPath": "1"
+      },
+      {
+        "request": "32",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "2.759607",
+        "bandwidth": "7.285363",
+        "bandwidthSuffix": "",
+        "memoryPath": "2"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "0.000000",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "3"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "4"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "5"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "6"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "7"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "8"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "9"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "10"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "11"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "35"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "36"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "37"
+      },
+      {
+        "request": "0",
+        "requestSuffix": "",
+        "display": true,
+        "peakRatio": "NA",
+        "bandwidth": "0.000000",
+        "bandwidthSuffix": "",
+        "memoryPath": "38"
+      }
+    ]
+  }
+}

@@ -1,0 +1,328 @@
+{
+  "model": "Qwen3.8-27B",
+  "mode": "FULL_DECODE_ONLY",
+  "phase_boundary": "First hardware MODEL_EXECUTE marks start of graph decode after prefill. All compute streams included; 15 graph iterations for 16 output tokens.",
+  "prefill_compute_window": {
+    "span_ms": 416.06656,
+    "compute_union_ms": 91.31866,
+    "no_compute_ms": 324.7479,
+    "compute_fraction": 0.219480892672557,
+    "kernel_calls": 3111,
+    "matmul_calls": 305,
+    "matmul_sum_ms": 45.32090000000001,
+    "top_types": [
+      {
+        "type": "MatMulV2",
+        "calls": 305,
+        "total_ms": 45.32090000000004
+      },
+      {
+        "type": "Transpose",
+        "calls": 672,
+        "total_ms": 12.557520000000004
+      },
+      {
+        "type": "recompute_w_u_fwd_kernel",
+        "calls": 48,
+        "total_ms": 4.86792
+      },
+      {
+        "type": "IndexPutV2",
+        "calls": 48,
+        "total_ms": 3.54238
+      },
+      {
+        "type": "Index",
+        "calls": 67,
+        "total_ms": 3.20184
+      },
+      {
+        "type": "ChunkGatedDeltaRuleFwdH",
+        "calls": 48,
+        "total_ms": 3.0209600000000005
+      },
+      {
+        "type": "solve_tril_16x16_kernel",
+        "calls": 48,
+        "total_ms": 2.767000000000001
+      },
+      {
+        "type": "ChunkFwdO",
+        "calls": 48,
+        "total_ms": 1.79112
+      },
+      {
+        "type": "ZerosLike",
+        "calls": 192,
+        "total_ms": 1.4379399999999998
+      },
+      {
+        "type": "CausalConv1d",
+        "calls": 48,
+        "total_ms": 1.34378
+      },
+      {
+        "type": "merge_16x16_to_64x64_inverse_kernel",
+        "calls": 48,
+        "total_ms": 1.3159199999999995
+      },
+      {
+        "type": "SwiGlu",
+        "calls": 64,
+        "total_ms": 1.0579
+      },
+      {
+        "type": "Slice",
+        "calls": 368,
+        "total_ms": 1.0202799999999994
+      },
+      {
+        "type": "fused_gdn_gating_kernel",
+        "calls": 48,
+        "total_ms": 0.8962200000000002
+      },
+      {
+        "type": "chunk_scaled_dot_kkt_fwd_kernel",
+        "calls": 48,
+        "total_ms": 0.8716400000000002
+      },
+      {
+        "type": "ConcatD",
+        "calls": 48,
+        "total_ms": 0.8691199999999999
+      },
+      {
+        "type": "AddRmsNormBias",
+        "calls": 128,
+        "total_ms": 0.8665399999999999
+      },
+      {
+        "type": "l2norm_fwd_kernel2_loop",
+        "calls": 96,
+        "total_ms": 0.7132400000000003
+      },
+      {
+        "type": "_fused_norm_gate_kernel",
+        "calls": 48,
+        "total_ms": 0.5625600000000002
+      },
+      {
+        "type": "_clear_ssm_states_kernel",
+        "calls": 48,
+        "total_ms": 0.4782599999999999
+      }
+    ]
+  },
+  "decode_compute_window": {
+    "span_ms": 746.579341,
+    "compute_union_ms": 737.04784,
+    "no_compute_ms": 9.531501,
+    "compute_fraction": 0.9872331037351862,
+    "kernel_calls": 18882,
+    "matmul_calls": 4575,
+    "matmul_sum_ms": 633.6584399999999,
+    "top_types": [
+      {
+        "type": "MatMulV2",
+        "calls": 4575,
+        "total_ms": 633.6584399999992
+      },
+      {
+        "type": "RecurrentGatedDeltaRule",
+        "calls": 720,
+        "total_ms": 16.40546
+      },
+      {
+        "type": "Transpose",
+        "calls": 720,
+        "total_ms": 15.263800000000005
+      },
+      {
+        "type": "fused_gdn_gating_kernel",
+        "calls": 720,
+        "total_ms": 13.33920000000001
+      },
+      {
+        "type": "ConcatD",
+        "calls": 720,
+        "total_ms": 11.736919999999985
+      },
+      {
+        "type": "CausalConv1d",
+        "calls": 720,
+        "total_ms": 7.849680000000004
+      },
+      {
+        "type": "FusedInferAttentionScore",
+        "calls": 240,
+        "total_ms": 6.095000000000001
+      },
+      {
+        "type": "AddRmsNormBias",
+        "calls": 1920,
+        "total_ms": 5.890279999999998
+      },
+      {
+        "type": "Add",
+        "calls": 2428,
+        "total_ms": 4.996800000000011
+      },
+      {
+        "type": "SwiGlu",
+        "calls": 960,
+        "total_ms": 4.84338000000001
+      },
+      {
+        "type": "l2norm_fwd_kernel2",
+        "calls": 1440,
+        "total_ms": 2.9035799999999976
+      },
+      {
+        "type": "Index",
+        "calls": 269,
+        "total_ms": 2.7739799999999977
+      },
+      {
+        "type": "_fused_norm_gate_kernel",
+        "calls": 720,
+        "total_ms": 2.737379999999999
+      },
+      {
+        "type": "split_qkv_rmsnorm_mrope_kernel",
+        "calls": 240,
+        "total_ms": 1.9196600000000008
+      },
+      {
+        "type": "ZerosLike",
+        "calls": 720,
+        "total_ms": 1.6659400000000057
+      },
+      {
+        "type": "Slice",
+        "calls": 480,
+        "total_ms": 1.129180000000001
+      },
+      {
+        "type": "IndexCheck",
+        "calls": 269,
+        "total_ms": 0.8439599999999998
+      },
+      {
+        "type": "ScatterPaKvCache",
+        "calls": 240,
+        "total_ms": 0.6338599999999999
+      },
+      {
+        "type": "Sigmoid",
+        "calls": 240,
+        "total_ms": 0.60864
+      },
+      {
+        "type": "Mul",
+        "calls": 240,
+        "total_ms": 0.5799199999999998
+      }
+    ]
+  },
+  "median_decode_iteration_ms": 49.78318,
+  "decode_matmul_shapes": [
+    {
+      "input_and_weight_shape": "\"1,5120;34816,5120\"",
+      "calls": 960,
+      "total_ms": 271.36152,
+      "mean_us": 282.66824999999994,
+      "mte2_weighted_ratio": 0.9872958813762537,
+      "mac_weighted_ratio": 0.11722729280113112,
+      "aicore_mean_us": 271.24753125,
+      "mte2_mean_us": 267.79331666666667,
+      "mac_mean_us": 31.798997916666668,
+      "blocks": {
+        "23": 960
+      }
+    },
+    {
+      "input_and_weight_shape": "\"1,17408;5120,17408\"",
+      "calls": 960,
+      "total_ms": 145.89058000000034,
+      "mean_us": 151.96935416666702,
+      "mte2_weighted_ratio": 0.8976204829674381,
+      "mac_weighted_ratio": 0.16135110697345867,
+      "aicore_mean_us": 144.42296666666667,
+      "mte2_mean_us": 129.63550104166666,
+      "mac_mean_us": 23.300659375,
+      "blocks": {
+        "23": 960
+      }
+    },
+    {
+      "input_and_weight_shape": "\"1,5120;16384,5120\"",
+      "calls": 720,
+      "total_ms": 97.35334000000005,
+      "mean_us": 135.21297222222228,
+      "mte2_weighted_ratio": 0.9726349345589982,
+      "mac_weighted_ratio": 0.12425815056781825,
+      "aicore_mean_us": 125.90799305555555,
+      "mte2_mean_us": 122.45940972222222,
+      "mac_mean_us": 15.644,
+      "blocks": {
+        "22": 720
+      }
+    },
+    {
+      "input_and_weight_shape": "\"1,6144;5120,6144\"",
+      "calls": 960,
+      "total_ms": 54.93871999999991,
+      "mean_us": 57.227833333333244,
+      "mte2_weighted_ratio": 0.9400713747972291,
+      "mac_weighted_ratio": 0.13196439523891365,
+      "aicore_mean_us": 47.988511458333335,
+      "mte2_mean_us": 45.116175,
+      "mac_mean_us": 6.328,
+      "blocks": {
+        "23": 960
+      }
+    },
+    {
+      "input_and_weight_shape": "\"1,5120;248320,5120\"",
+      "calls": 15,
+      "total_ms": 28.739880000000003,
+      "mean_us": 1915.9920000000004,
+      "mte2_weighted_ratio": 0.9948663981895538,
+      "mac_weighted_ratio": 0.11693303451510582,
+      "aicore_mean_us": 1859.8519333333334,
+      "mte2_mean_us": 1849.9808666666668,
+      "mac_mean_us": 217.35193333333333,
+      "blocks": {
+        "24": 15
+      }
+    },
+    {
+      "input_and_weight_shape": "\"1,5120;14336,5120\"",
+      "calls": 240,
+      "total_ms": 28.236779999999992,
+      "mean_us": 117.65324999999997,
+      "mte2_weighted_ratio": 0.9669879348849272,
+      "mac_weighted_ratio": 0.11818701282511677,
+      "aicore_mean_us": 110.793575,
+      "mte2_mean_us": 107.136025,
+      "mac_mean_us": 13.093987499999999,
+      "blocks": {
+        "23": 240
+      }
+    },
+    {
+      "input_and_weight_shape": "\"1,5120;96,5120\"",
+      "calls": 720,
+      "total_ms": 7.137619999999997,
+      "mean_us": 9.913361111111108,
+      "mte2_weighted_ratio": 0.5306164407743763,
+      "mac_weighted_ratio": 0.15184313818892062,
+      "aicore_mean_us": 9.0966,
+      "mte2_mean_us": 4.8258833333333335,
+      "mac_mean_us": 1.381026388888889,
+      "blocks": {
+        "6": 720
+      }
+    }
+  ]
+}

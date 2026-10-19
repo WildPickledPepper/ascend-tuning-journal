@@ -1,0 +1,11 @@
+{
+  "model": "Qwen3.8-27B",
+  "physical_npu": 6,
+  "sampling_hz": 100,
+  "steady_decode_samples": 605,
+  "read_tool_MB_s_time_weighted": 997529.4513912518,
+  "tool_MB_definition": "1048576 bytes; confirmed from installed HbmModel.SCALE",
+  "read_decimal_GB_s": 1045.985442022033,
+  "sampled_decode_tokens_per_s": 20.295774963025423,
+  "note": "Separate system-counter run. Four HBM units summed at each timestamp; steady decode only. No board bandwidth ceiling was measured."
+}

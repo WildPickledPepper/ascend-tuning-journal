@@ -1,0 +1,32 @@
+{
+  "model": "Qwen3.8-27B",
+  "physical_npu": 6,
+  "dtype": "bfloat16",
+  "max_model_len": 4096,
+  "max_num_seqs": 1,
+  "benchmark_prompt_tokens": 26,
+  "benchmark_output_tokens": 64,
+  "baseline_repeats": 3,
+  "requested_graph_mode": "FULL_DECODE_ONLY",
+  "cudagraph_capture_sizes": [
+    1
+  ],
+  "eager_benchmark": {
+    "mode": "eager",
+    "baseline_repeats": 3,
+    "median_decode_tokens_per_s": 5.5451033877608715,
+    "median_ttft_s": 0.5356887200614437,
+    "median_elapsed_s": 11.89732108998578,
+    "profiler_stopped": true
+  },
+  "graph_benchmark": {
+    "mode": "graph",
+    "baseline_repeats": 3,
+    "median_decode_tokens_per_s": 20.280409627010357,
+    "median_ttft_s": 0.38821829995140433,
+    "median_elapsed_s": 3.495020919945091,
+    "profiler_stopped": true
+  },
+  "median_decode_speedup": 3.6573546440582496,
+  "first_64_token_responses_exact_match": true
+}

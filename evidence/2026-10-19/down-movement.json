@@ -1,0 +1,239 @@
+{
+  "model": "Qwen3.8-27B",
+  "dtype": "BF16 unchanged",
+  "target": "mlp.down_proj M=1 K=17408 N=5120",
+  "kernel": "MatMulV2_ND_ND_FP16_FP16_false_true_all_98513",
+  "measurement_device": 7,
+  "simulator": "Ascend910B2, captured binary+160-byte TilingData, original blockdim 23, parsed core0",
+  "total_weight_bytes": 178257920,
+  "extra_zero_initialization_bytes": 25624576,
+  "extra_nd2nz_transaction_bytes": 12812288,
+  "gm_l1_total_bytes": 216694784,
+  "extra_pct_of_weight": 21.5625,
+  "zero_pct_of_weight": 14.375,
+  "nd_pct_of_weight": 7.1875,
+  "instruction_counts_core0": {
+    "SET_2D": 68,
+    "activation_ND2NZ": 68,
+    "weight_ND2NZ": 68,
+    "activation_unique_source_blocks": 34,
+    "activation_source_bytes": 69632,
+    "weight_source_bytes": 7798784
+  },
+  "simulator_instruction_time_us": {
+    "clear": 2.946666643023491,
+    "activation_copy": 12.43111090362072,
+    "weight_copy": 73.07055586576462
+  },
+  "calibration": {
+    "zero": {
+      "gm_l1_accounted_bytes": 16384,
+      "backend_requests": 64,
+      "main_read_KiB_including_prologue": 0.5
+    },
+    "nd2nz": {
+      "gm_l1_accounted_bytes": 8192,
+      "backend_requests": 32,
+      "main_read_KiB_including_prologue": 1.625
+    }
+  },
+  "core_data": [
+    {
+      "core": 0,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 1,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 2,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 3,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 4,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 5,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 6,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 7,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 8,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 9,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 10,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 11,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 12,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 13,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 14,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 15,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 16,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 17,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 18,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 19,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 20,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 21,
+      "weight_rows": 224,
+      "weight_bytes": 7798784,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 9469952
+    },
+    {
+      "core": 22,
+      "weight_rows": 192,
+      "weight_bytes": 6684672,
+      "zero_bytes": 1114112,
+      "nd2nz_accounted_bytes": 557056,
+      "observed_bytes": 8355840
+    }
+  ],
+  "hoist_zero_structural_proof": {
+    "matching_buffer_images_after_each_copy": 68,
+    "original_clear_count_per_core": 68,
+    "hoisted_clear_count_per_core": 2,
+    "predicted_reduction_in_counter_bytes_all_cores": 24870912
+  },
+  "limitations": [
+    "No optimized full-kernel recompilation or hardware latency comparison performed.",
+    "Hoisting proof covers the captured M=1 fixed-shape A-buffer write pattern; must not generalize to all MatMul shapes.",
+    "Simulator instruction timings are not measured device speedups.",
+    "Calibration uses float16 storage solely to exercise identical B16 movement instructions; deployed model remains BF16.",
+    "Device TimelineDetail failed with 107001; original hardware counters and successful captured-kernel simulator trace are used separately."
+  ]
+}

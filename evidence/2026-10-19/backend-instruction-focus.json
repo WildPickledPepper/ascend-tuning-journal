@@ -1,0 +1,41 @@
+[
+  {
+    "Source": "SET_2D Src:UNDEF,Dst:L1,XD:X2=0,XM:X3,Dtype:B16,id:5",
+    "Pipe": "MTE2",
+    "AscendC Inner Code": "",
+    "Address": "0x1bdcd650",
+    "UB Write Conflict": -1,
+    "Process Bytes": -1,
+    "UB Read Conflict": -1,
+    "Instructions Executed": 68,
+    "GPR Count": 16,
+    "Cycles": 5304,
+    "Vector Utilization Percentage": -1
+  },
+  {
+    "Source": "MOV_OUT_TO_L1_MULTI_ND2NZ Src:OUT,Dst:L1,XD:X6=0,XN:X7,XM:X2,XT:X4,Dtype:B16,id:6",
+    "Pipe": "MTE2",
+    "AscendC Inner Code": "",
+    "Address": "0x1bdcda64",
+    "UB Write Conflict": -1,
+    "Process Bytes": 69632,
+    "UB Read Conflict": -1,
+    "Instructions Executed": 68,
+    "GPR Count": 19,
+    "Cycles": 22376,
+    "Vector Utilization Percentage": -1
+  },
+  {
+    "Source": "MOV_OUT_TO_L1_MULTI_ND2NZ Src:OUT,Dst:L1,XD:X1,XN:X2,XM:X0,XT:X3,Dtype:B16,id:7",
+    "Pipe": "MTE2",
+    "AscendC Inner Code": "",
+    "Address": "0x1bdcde34",
+    "UB Write Conflict": -1,
+    "Process Bytes": 7798784,
+    "UB Read Conflict": -1,
+    "Instructions Executed": 68,
+    "GPR Count": 16,
+    "Cycles": 131527,
+    "Vector Utilization Percentage": -1
+  }
+]

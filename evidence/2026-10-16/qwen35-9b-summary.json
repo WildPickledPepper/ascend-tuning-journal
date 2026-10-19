@@ -1,0 +1,45 @@
+{
+  "source": "qwen-profile/profile-summary.json",
+  "model": "Qwen3.5-9B",
+  "physical_npu": 6,
+  "requests": [
+    {
+      "label": "warmup_not_profiled",
+      "usage": {
+        "prompt_tokens": 26,
+        "total_tokens": 34,
+        "completion_tokens": 8
+      },
+      "elapsed_s": 1.1967052499530837,
+      "ttft_s": 0.6322917299694382,
+      "decode_tokens_per_s": 12.406516895257177
+    },
+    {
+      "label": "baseline_not_profiled",
+      "usage": {
+        "prompt_tokens": 26,
+        "total_tokens": 42,
+        "completion_tokens": 16
+      },
+      "elapsed_s": 1.5968893900280818,
+      "ttft_s": 0.2747684799833223,
+      "decode_tokens_per_s": 11.346954277372364
+    },
+    {
+      "label": "profiled_request",
+      "usage": {
+        "prompt_tokens": 26,
+        "total_tokens": 42,
+        "completion_tokens": 16
+      },
+      "elapsed_s": 2.0058946600183845,
+      "ttft_s": 0.3522744500078261,
+      "decode_tokens_per_s": 9.072015162078285
+    }
+  ],
+  "db_integrity": "ok",
+  "compute_totals": {
+    "calls": 11241,
+    "total_ms": 268.85356
+  }
+}

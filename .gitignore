@@ -1,0 +1,17 @@
+# 原始数据与本地产物
+raw/
+generated/
+private/
+*.db
+*.db-wal
+*.db-shm
+*.bin
+*.o
+*.zip
+*.safetensors
+*.pt
+*.pem
+*.key
+.env
+.env.*
+__pycache__/

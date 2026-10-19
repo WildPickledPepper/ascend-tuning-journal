@@ -1,0 +1,51 @@
+{
+  "recorded_date": "2026-10-19",
+  "timezone": "Asia/Shanghai",
+  "type": "derived_and_sanitized_summaries",
+  "sources": [
+    {
+      "artifact": "npu6-demo/capture-summary.json",
+      "sha256": "c5902b4b5312ecdbfbdf966f96c5a058dd6fd963803ee4a1ab81bf3bc4f168d0"
+    },
+    {
+      "artifact": "qwen-profile/profile-summary.json",
+      "sha256": "26d1adf596e6a4e9e8615039f3ba74e9692f795108ca5345f2ae760d5263abf9"
+    },
+    {
+      "artifact": "qwen35-27b/offline-validation.json",
+      "sha256": "f782f362f0ebe636a63d3f76f554ac3023c6ec48d7ad518fc68efc211aad1199"
+    },
+    {
+      "artifact": "qwen38-eager-vs-graph/comparison-summary.json",
+      "sha256": "2986b3a0da453993ea318577b032e058b74cd8b992d1d64b9d9284fcbea24572"
+    },
+    {
+      "artifact": "qwen38-graph-bottleneck/graph-phase-diagnosis.json",
+      "sha256": "3eaf9477ae4cd558f4979cac75f6ad41db86c2a1155bd9f5d26982c1f408d40f"
+    },
+    {
+      "artifact": "qwen38-graph-bottleneck/hbm-summary.json",
+      "sha256": "5efb5c8179ea8aeaedfacf7d9f8041fa60fd124f3f668bd3b76a552bacafe89a"
+    },
+    {
+      "artifact": "qwen38-matmul-deep/analysis-summary.json",
+      "sha256": "52f07bc0cdaa5551c20ed76c931a6e8babe2872905cd5c1284eb76d22649a6a1"
+    },
+    {
+      "artifact": "qwen38-down-movement/movement-breakdown.json",
+      "sha256": "a0683499a3a22cb73538d677314ea134afda17edba7c470889bda63da8114fb8"
+    },
+    {
+      "artifact": "qwen38-down-movement/focused-backend-instructions.json",
+      "sha256": "69245827056b7831d9143b6077da94ae1325f9f5417c8021dbe3ce691f6e6bdd"
+    },
+    {
+      "artifact": "qwen38-down-movement/backend-calibration-zero.json",
+      "sha256": "19d6a8e5965c3f4e1233dfdb87af4b3746b6e854bd54ef0ec600ee3ac61a1381"
+    },
+    {
+      "artifact": "qwen38-down-movement/backend-calibration-nd2nz.json",
+      "sha256": "e0d8af252453f58f73e9dcf7edfd6ab940c71b98898ec88af88276ed8fdba2a7"
+    }
+  ]
+}
