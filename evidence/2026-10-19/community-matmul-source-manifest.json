@@ -1,0 +1,24 @@
+{
+  "status": "isolated native operator probe complete; full-model change not performed",
+  "runtime": {
+    "torch": "2.10.0+cpu",
+    "torch_npu": "2.10.0.post4",
+    "CANN": "9.1.0",
+    "vllm": "568afb3",
+    "vllm_ascend": "f2f74a16c"
+  },
+  "sources": [
+    "https://docs.vllm.ai/projects/ascend/en/v0.26.0rc1/user_guide/configuration/additional_config.html",
+    "https://github.com/vllm-project/vllm-ascend/issues/1563"
+  ],
+  "files": [
+    {
+      "path": "experiments/community-matmul/check_nz.py",
+      "sha256": "794902725c5b322c60dd6bded6b39a824d782cf9459ba68534c5eabcc99566f1"
+    },
+    {
+      "path": "evidence/2026-10-19/community-matmul-nz.json",
+      "sha256": "291f8a35355c6cf7c93cd9763611152efdaaa2fd8b0b0378ce3e19468e016505"
+    }
+  ]
+}

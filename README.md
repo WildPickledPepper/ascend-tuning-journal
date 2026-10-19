@@ -27,6 +27,7 @@
 - 最近检查（**15:56:08**）：基线 7 号卡 localhost:8038、MTP 6 号卡 localhost:8039，两个服务健康且保留；未修改共享 CANN 和驱动。
 - MTP 后瓶颈已复核：矩阵乘合计约 **73.1%** 的连续解码窗口，其中两组 FFN **46.3%**；另有 **12.7%** 无设备计算任务区间，主要新增在主模型图之后的草稿/采样流程。[分析与口径](experiments/mtp/bottleneck.md)。
 - [MTP 配置与脚本](experiments/mtp/README.md)、[MTP 结果与边界](experiments/mtp/results.md)、[MTP 证据](evidence/2026-10-19/mtp-comparison.json)。
+- 社区方案核对：官方 `weight_nz_mode=2` 可对 BF16 权重预排 NZ。相同 FFN 形状的独立原生算子对照中，单次耗时下降 **12.1%～14.4%**，239616 个所测输出逐位一致；**尚未完成整模型验证，也未修改两个模型服务**。[方法与限制](experiments/community-matmul/README.md)。
 - [实验代码与当前限制](kernels/down-reuse/README.md)、[整模型实验摘要](evidence/2026-10-19/down-model-ab.json)。
 
 这里的状态是历史记录，不是实时监控。详细配置、测量条件和限制见当天日志。

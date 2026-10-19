@@ -31,3 +31,5 @@
 
 - `2026-10-19/mtp-bottleneck.json`：MTP 后连续解码占比、逐轮图内/图后窗口、PMU 与只读 SQL 返回。
 - `2026-10-19/mtp-gap-evidence.json`：三段最大设备计算空档与 CPU 小操作的重叠样本及限制。
+- `2026-10-19/community-matmul-nz.json`：官方 BF16 ND/NZ 路径的独立算子对照，包含全部 40 轮成对计时；不是整模型成绩。
+- `2026-10-19/community-matmul-source-manifest.json`：本次原生探针与结果摘要的来源哈希、版本和社区文档。
