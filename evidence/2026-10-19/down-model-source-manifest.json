@@ -1,0 +1,29 @@
+{
+  "sources": [
+    {
+      "artifact": "receipts/model-ab-summary.json",
+      "sha256": "f32bdc9f9874ba954482fb3eb2e8c2fa1cbcf996e6089e714fdf38ece3a96a37"
+    },
+    {
+      "artifact": "korder-validation.json",
+      "sha256": "c2516acee1d801ac493d22c479593ce4dbc4c229273b2e25fe24af2b5067458a"
+    },
+    {
+      "artifact": "original-core-k-orders.json",
+      "sha256": "329ad795ee4e19446d35a545bf06e81801ad0c87735149c9b71ec601a82fb5fa"
+    },
+    {
+      "artifact": "baseline-a-backend-down-summary.json",
+      "sha256": "e6b7f98304ab42f5c2c133e3b4c16029727c9b6c9a3301a07a79829aa9430c31"
+    },
+    {
+      "artifact": "optimized-b-backend-down-summary.json",
+      "sha256": "612a95c87ac33b2a77cf4a85d24e8381ef3c41b3c313f7410dc4b0a0adcaf9d4"
+    },
+    {
+      "artifact": "optimized-c-backend-down-summary.json",
+      "sha256": "03c55cbc931b773ce75fd2a860061c4b0450dce582885893e68f7a233c1960b7"
+    }
+  ],
+  "note": "Published summaries omit paths and raw captures; hashes identify the retained local source artifacts."
+}

@@ -1,0 +1,285 @@
+{
+  "model": "Qwen3.8-27B",
+  "dtype": "BF16",
+  "physical_device": 7,
+  "TP": 1,
+  "concurrency": 1,
+  "graph_mode": "FULL_DECODE_ONLY",
+  "modified_scope": "single-token 17408->5120 BF16 down projections only",
+  "order": [
+    "baseline-a",
+    "optimized-b (invalid routing, excluded)",
+    "baseline-a2",
+    "optimized-c"
+  ],
+  "benchmark_output_tokens": 128,
+  "benchmark_requests_per_stage": 8,
+  "reference_baseline": "baseline-a2 final 4 requests, after isolated dispatch test completed",
+  "reference_baseline_samples": 4,
+  "profiler_during_benchmark": false,
+  "summaries": {
+    "baseline-a": {
+      "mode": "baseline-a",
+      "requests": 8,
+      "dtype": "BF16",
+      "physical_device": 7,
+      "graph": "FULL_DECODE_ONLY",
+      "profiler_during_benchmark": false,
+      "median_decode_tokens_per_s": 20.237845953805287,
+      "median_ttft_s": 0.37659648002590984,
+      "median_elapsed_s": 6.6521449200809,
+      "per_prompt": {
+        "0": {
+          "median_decode_tokens_per_s": 20.232558015649374
+        },
+        "1": {
+          "median_decode_tokens_per_s": 20.23798051728121
+        }
+      }
+    },
+    "baseline-a2": {
+      "mode": "baseline-a2",
+      "requests": 8,
+      "dtype": "BF16",
+      "physical_device": 7,
+      "graph": "FULL_DECODE_ONLY",
+      "profiler_during_benchmark": false,
+      "median_decode_tokens_per_s": 20.297095504412383,
+      "median_ttft_s": 0.358054650016129,
+      "median_elapsed_s": 6.614270055084489,
+      "per_prompt": {
+        "0": {
+          "median_decode_tokens_per_s": 20.29896169117516
+        },
+        "1": {
+          "median_decode_tokens_per_s": 20.29575692029062
+        }
+      }
+    },
+    "optimized-c": {
+      "mode": "optimized-c",
+      "requests": 8,
+      "dtype": "BF16",
+      "physical_device": 7,
+      "graph": "FULL_DECODE_ONLY",
+      "profiler_during_benchmark": false,
+      "median_decode_tokens_per_s": 20.442863103481187,
+      "median_ttft_s": 0.35817475500516593,
+      "median_elapsed_s": 6.570521355024539,
+      "per_prompt": {
+        "0": {
+          "median_decode_tokens_per_s": 20.443652813073406
+        },
+        "1": {
+          "median_decode_tokens_per_s": 20.44065799474896
+        }
+      }
+    }
+  },
+  "reference_baseline_tps": 20.29817611626094,
+  "reference_baseline_ttft_s": 0.34207928500836715,
+  "optimized_vs_reference_pct": 0.7128078226907197,
+  "verified_custom_submissions": 128,
+  "eligible_layers": 64,
+  "per_prompt": {
+    "0": {
+      "samples": {
+        "baseline-a": [
+          20.227833156631654,
+          20.240063181932676,
+          20.237282874667095,
+          20.22716356539584
+        ],
+        "baseline-a2": [
+          20.30211867360398,
+          20.298291805313294
+        ],
+        "optimized-c": [
+          20.446311489137074,
+          20.44353073758244,
+          20.443774888564377,
+          20.443268756637288
+        ]
+      },
+      "medians": {
+        "baseline-a": 20.232558015649374,
+        "baseline-a2": 20.300205239458638,
+        "optimized-c": 20.443652813073406
+      },
+      "reference_baseline_tps": 20.300205239458638,
+      "optimized_vs_reference_pct": 0.7066311494030586,
+      "baseline_drift_pct": 0.3343483496102584
+    },
+    "1": {
+      "samples": {
+        "baseline-a": [
+          20.240112212241364,
+          20.237837681653712,
+          20.238106808605558,
+          20.237854225956863
+        ],
+        "baseline-a2": [
+          20.298060427208586,
+          20.29613058161618
+        ],
+        "optimized-c": [
+          20.4392643504483,
+          20.441918414513687,
+          20.442457450325083,
+          20.439397574984234
+        ]
+      },
+      "medians": {
+        "baseline-a": 20.23798051728121,
+        "baseline-a2": 20.297095504412383,
+        "optimized-c": 20.44065799474896
+      },
+      "reference_baseline_tps": 20.297095504412383,
+      "optimized_vs_reference_pct": 0.7073055861877897,
+      "baseline_drift_pct": 0.29209923925312964
+    }
+  },
+  "output_comparisons": [
+    {
+      "label": "benchmark_p0_r0",
+      "baseline_tokens": 128,
+      "optimized_tokens": 128,
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_different_token_index": null
+    },
+    {
+      "label": "benchmark_p1_r0",
+      "baseline_tokens": 128,
+      "optimized_tokens": 128,
+      "token_ids_equal": false,
+      "text_equal": false,
+      "first_different_token_index": 97
+    },
+    {
+      "label": "benchmark_p0_r1",
+      "baseline_tokens": 128,
+      "optimized_tokens": 128,
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_different_token_index": null
+    },
+    {
+      "label": "benchmark_p1_r1",
+      "baseline_tokens": 128,
+      "optimized_tokens": 128,
+      "token_ids_equal": false,
+      "text_equal": false,
+      "first_different_token_index": 97
+    },
+    {
+      "label": "benchmark_p0_r2",
+      "baseline_tokens": 128,
+      "optimized_tokens": 128,
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_different_token_index": null
+    },
+    {
+      "label": "benchmark_p1_r2",
+      "baseline_tokens": 128,
+      "optimized_tokens": 128,
+      "token_ids_equal": false,
+      "text_equal": false,
+      "first_different_token_index": 97
+    },
+    {
+      "label": "benchmark_p0_r3",
+      "baseline_tokens": 128,
+      "optimized_tokens": 128,
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_different_token_index": null
+    },
+    {
+      "label": "benchmark_p1_r3",
+      "baseline_tokens": 128,
+      "optimized_tokens": 128,
+      "token_ids_equal": false,
+      "text_equal": false,
+      "first_different_token_index": 97
+    },
+    {
+      "label": "output_check_0",
+      "baseline_tokens": 96,
+      "optimized_tokens": 96,
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_different_token_index": null
+    },
+    {
+      "label": "output_check_1",
+      "baseline_tokens": 96,
+      "optimized_tokens": 96,
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_different_token_index": null
+    },
+    {
+      "label": "output_check_2",
+      "baseline_tokens": 25,
+      "optimized_tokens": 25,
+      "token_ids_equal": false,
+      "text_equal": false,
+      "first_different_token_index": 22
+    }
+  ],
+  "baseline_repeat_output_comparisons": [
+    {
+      "label": "benchmark_p0_r0",
+      "token_ids_equal": true
+    },
+    {
+      "label": "benchmark_p1_r0",
+      "token_ids_equal": true
+    },
+    {
+      "label": "benchmark_p0_r1",
+      "token_ids_equal": true
+    },
+    {
+      "label": "benchmark_p1_r1",
+      "token_ids_equal": true
+    },
+    {
+      "label": "benchmark_p0_r2",
+      "token_ids_equal": true
+    },
+    {
+      "label": "benchmark_p1_r2",
+      "token_ids_equal": true
+    },
+    {
+      "label": "benchmark_p0_r3",
+      "token_ids_equal": true
+    },
+    {
+      "label": "benchmark_p1_r3",
+      "token_ids_equal": true
+    }
+  ],
+  "all_tested_outputs_equal": false,
+  "all_baseline_repeats_equal": true,
+  "completed_utc": "2026-10-19T07:24:38.467991+00:00",
+  "limitations": [
+    "Short deterministic single-user requests; not a broad model quality evaluation.",
+    "Initial optimized-b attempt did not execute custom kernels and is excluded from optimization claims.",
+    "An isolated dispatch verification overlapped early baseline-a2 requests; only its final 4 clean requests are the primary reference. Full baseline-a is also retained.",
+    "Four optimized performance requests per prompt; stage ordering and baseline drift are reported explicitly.",
+    "Raw profiler captures are separate from performance requests."
+  ],
+  "stage": "optimized-c BEFORE per-core K-order correction",
+  "accepted_model_optimization": false,
+  "latest_stage": {
+    "name": "optimized-d",
+    "status": "interrupted_by_user",
+    "completed_model_validation": false,
+    "default_deployment": false
+  },
+  "stopped_route": "User explicitly stopped rewriting kernels; experiment services stopped."
+}

@@ -16,3 +16,10 @@
 `manifest.json` 记录原始摘要的产物名称和 SHA256；仓库文件经过字段筛选，不应与原始文件逐字节相同。
 
 上板、仿真、推导分别标注；不上传模型权重、完整 trace/DB、CANN 内核二进制和服务器登录信息。完整原始产物仍保存在原采集环境。
+
+- `2026-10-19/down-model-ab.json`：整模型 A/B/A2/C，包含未命中路由、输出失败、D 阶段中止与基线筛选限制。
+- `2026-10-19/down-model-backend.json`：编译版 Insight 返回的原 CANN 与自写 decode 统计。
+- `2026-10-19/down-original-k-orders.json`：原 CANN 全部 23 核的 K 块顺序。
+- `2026-10-19/down-korder-validation.json`：修正 K 顺序后的 25 案例、4 版本逐位检查字段。
+- `2026-10-19/down-final-state.json`：异步提交检查及停止后的资源状态。
+- `2026-10-19/down-model-source-manifest.json`：本轮保留的小型源摘要 SHA256。

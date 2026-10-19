@@ -1,0 +1,21 @@
+{
+  "checked_at_utc": "2026-10-19T07:36:23Z",
+  "checked_at_shanghai": "2026-10-19T15:36:23+08:00",
+  "physical_devices": {
+    "6": "no process",
+    "7": "no process"
+  },
+  "model_api": "stopped during cleanup",
+  "kernel_development": "stopped at user request",
+  "optimized_d_model_validation": "interrupted, not passed",
+  "shared_CANN_modified": false,
+  "bridge_validation": {
+    "source": "korder-bridge-test.log",
+    "observed_utc": "2026-10-19T07:30:37Z",
+    "queued_launch": true,
+    "graph_capture_replay": true,
+    "changed_input_dependency": true,
+    "submitted": 2,
+    "reference_mismatches": 0
+  }
+}

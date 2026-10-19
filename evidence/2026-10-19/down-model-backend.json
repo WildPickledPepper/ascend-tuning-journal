@@ -1,0 +1,81 @@
+{
+  "source": "compiled Insight operator/statistic, grouped by input shape",
+  "units": "microseconds",
+  "profiler_separate_from_benchmark": true,
+  "stages": {
+    "baseline-a": [
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"1,17408;5120,17408\"",
+        "totalTime": "145786.110",
+        "count": "960",
+        "avgTime": "151.860",
+        "maxTime": "157.300",
+        "minTime": "145.860"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"26,17408;5120,17408\"",
+        "totalTime": "9720.830",
+        "count": "64",
+        "avgTime": "151.890",
+        "maxTime": "158.180",
+        "minTime": "146.760"
+      }
+    ],
+    "optimized-b": [
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"1,17408;5120,17408\"",
+        "totalTime": "145731.230",
+        "count": "960",
+        "avgTime": "151.800",
+        "maxTime": "162.560",
+        "minTime": "146.640"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"26,17408;5120,17408\"",
+        "totalTime": "9854.800",
+        "count": "64",
+        "avgTime": "153.980",
+        "maxTime": "160.880",
+        "minTime": "148.880"
+      }
+    ],
+    "optimized-c": [
+      {
+        "opType": "down_pipeline",
+        "opName": "down_pipeline",
+        "accCore": "AI_CORE",
+        "inputShape": "N/A",
+        "totalTime": "135611.630",
+        "count": "960",
+        "avgTime": "141.260",
+        "maxTime": "155.800",
+        "minTime": "135.540"
+      },
+      {
+        "opType": "MatMulV2",
+        "opName": "aclnnMatmul_MatMulCommon_MatMulV2",
+        "accCore": "AI_CORE",
+        "inputShape": "\"26,17408;5120,17408\"",
+        "totalTime": "9712.060",
+        "count": "64",
+        "avgTime": "151.750",
+        "maxTime": "162.700",
+        "minTime": "145.920"
+      }
+    ]
+  },
+  "optimized_b_valid": false,
+  "optimized_c_before_korder_fix": true
+}

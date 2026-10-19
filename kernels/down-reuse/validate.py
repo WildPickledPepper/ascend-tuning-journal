@@ -4,6 +4,7 @@ import torch
 import torch_npu
 
 p=argparse.ArgumentParser();p.add_argument('--profile',type=int);p.add_argument('--bench',action='store_true')
+p.add_argument('--extra-seeds',type=int,default=0)
 a=p.parse_args()
 assert os.environ.get('ASCEND_RT_VISIBLE_DEVICES')=='7'
 assert os.environ.get('TASK_QUEUE_ENABLE')=='0', 'Direct ACL test launch requires synchronous Torch dispatch.'
@@ -37,7 +38,7 @@ if a.profile is not None:
     print('profile_complete',a.profile,flush=True)
     raise SystemExit
 
-for seed,kind in [(32,'normal'),(49,'normal'),(71,'normal'),(0,'zero'),(1,'one')]:
+for seed,kind in [(32,'normal'),(49,'normal'),(71,'normal'),(0,'zero'),(1,'one')]+[(100+i,'normal') for i in range(a.extra_seeds)]:
     torch.manual_seed(seed)
     x=torch.randn(1,17408,dtype=torch.bfloat16,device='npu')
     w=torch.randn(5120,17408,dtype=torch.bfloat16,device='npu')

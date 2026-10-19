@@ -1,0 +1,1045 @@
+{
+  "started": "2026-10-19T07:29:30.849935+00:00",
+  "physical_device": 7,
+  "dtype": "bfloat16",
+  "shape": {
+    "M": 1,
+    "K": 17408,
+    "N": 5120
+  },
+  "modes": {
+    "0": "independent baseline",
+    "1": "hoisted zero",
+    "2": "input reuse + hoisted zero",
+    "3": "reuse + pipelined prefetch"
+  },
+  "cases": [
+    {
+      "seed": 32,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 49,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 71,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 0,
+      "kind": "zero",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 1,
+      "kind": "one",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 100,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 101,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 102,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 103,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 104,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 105,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 106,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 107,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 108,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 109,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 110,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 111,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 112,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 113,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 114,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 115,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 116,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 117,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 118,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    },
+    {
+      "seed": 119,
+      "kind": "normal",
+      "results": [
+        {
+          "mode": 0,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 1,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 2,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        },
+        {
+          "mode": 3,
+          "finite": true,
+          "guard_intact": true,
+          "equal_cann": true,
+          "max_abs_vs_cann": 0.0,
+          "mismatches_vs_cann": 0
+        }
+      ],
+      "baseline_hoist_equal": true,
+      "baseline_reuse_equal": true,
+      "baseline_pipeline_equal": true
+    }
+  ],
+  "cann_bitwise_parity": true,
+  "integration_allowed": true
+}
