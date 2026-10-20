@@ -1,0 +1,357 @@
+{
+  "mode": "device",
+  "input": "application",
+  "device": "Ascend910B2",
+  "dtype": "BF16",
+  "M": 8,
+  "captures": {
+    "nd-up": {
+      "source": "OPPROF_20261020093248_ODJBMLPKJMEGAKPB",
+      "basic": [
+        {
+          "Op Name": "MatMulV2_ND_ND_FP16_FP16_false_true_all_98499",
+          "Op Type": "cube",
+          "Task Duration(us)": "279.045593",
+          "Block Dim": "23",
+          "Mix Block Dim": "NA",
+          "Current Freq": "1800",
+          "Rated Freq": "1800",
+          "": ""
+        }
+      ],
+      "mean_across_23_blocks": {
+        "aic_time(us)": 266.7196853043478,
+        "aic_mte2_time(us)": 263.62654573913045,
+        "aic_mte1_time(us)": 78.84316452173913,
+        "aic_cube_time(us)": 28.11980647826087
+      },
+      "mte2_active_bw_coverage": {
+        "nonzero_blocks": [
+          2,
+          5,
+          8,
+          11,
+          14,
+          17,
+          20
+        ],
+        "zero_blocks": [
+          0,
+          1,
+          3,
+          4,
+          6,
+          7,
+          9,
+          10,
+          12,
+          13,
+          15,
+          16,
+          18,
+          19,
+          21,
+          22
+        ],
+        "nonzero_mean_GB_s": 54.79330928571429,
+        "status": "partial coverage or mapping anomaly; zero rows are not physical zero bandwidth"
+      },
+      "GM_to_L1_request_KiB": 350000.0,
+      "L2_read_hit_percent_mean": 0.5092167391304347,
+      "csv_sha256": {
+        "OpBasicInfo": "1740692d3729efc3a52c75cf5d30d8ce4ba75b4989e2a87715f633bed3ae851c",
+        "PipeUtilization": "63d8c0fe91230ac31a21eff7bdc472524fb8deae7f3c2c05e0e2496c9f5c37c9",
+        "L2Cache": "e267f4296fa8e824f37891696b28d68d6b2701a4b34b8a273bc4f67fac2a540f",
+        "Memory": "af215fe49c60dba151fae04e9b487236c53481e8818a7d5f736fda16cf0d925f",
+        "ResourceConflictRatio": "5f1ca6b602f2795bb020fe0b47db8a56703894595455c22ad7a6922cb0e97c06"
+      }
+    },
+    "nd-down": {
+      "source": "OPPROF_20261020093320_ULIWNTLXBYZBPVXK",
+      "basic": [
+        {
+          "Op Name": "MatMulV2_ND_ND_FP16_FP16_false_true_all_98513",
+          "Op Type": "cube",
+          "Task Duration(us)": "145.802917",
+          "Block Dim": "23",
+          "Mix Block Dim": "NA",
+          "Current Freq": "1800",
+          "Rated Freq": "1800",
+          "": ""
+        }
+      ],
+      "mean_across_23_blocks": {
+        "aic_time(us)": 142.90589539130434,
+        "aic_mte2_time(us)": 126.52946734782608,
+        "aic_mte1_time(us)": 45.50533839130435,
+        "aic_cube_time(us)": 18.880579652173914
+      },
+      "mte2_active_bw_coverage": {
+        "nonzero_blocks": [
+          2,
+          5,
+          8,
+          11,
+          14,
+          17,
+          20
+        ],
+        "zero_blocks": [
+          0,
+          1,
+          3,
+          4,
+          6,
+          7,
+          9,
+          10,
+          12,
+          13,
+          15,
+          16,
+          18,
+          19,
+          21,
+          22
+        ],
+        "nonzero_mean_GB_s": 61.092234,
+        "status": "partial coverage or mapping anomaly; zero rows are not physical zero bandwidth"
+      },
+      "GM_to_L1_request_KiB": 186592.0,
+      "L2_read_hit_percent_mean": 6.570341652173913,
+      "csv_sha256": {
+        "OpBasicInfo": "e23d5d8ad44045708f5878ee275efb7234ecfdd6cb89829a03acd2c06e3f3441",
+        "PipeUtilization": "3cb67aa6d8a8373aa6677c78245382ebbed6aaeb0a73528aeccd78bda993de4a",
+        "L2Cache": "91d89cda594f381aaa132fa39cb9c85e066d2c1c0efd0001ec6d190b040aec0c",
+        "Memory": "54f6eb09d2c47f649989f4e09f6d864e4769b51198f2468d5a87563710bc5a55",
+        "ResourceConflictRatio": "d62d4de1822eff3e341278f40e95f9b8f444437de5a96ee7f3a590943acca8cd"
+      }
+    },
+    "nz-up": {
+      "source": "OPPROF_20261020093353_UNGZVAPXEXIWMUNI",
+      "basic": [
+        {
+          "Op Name": "MatMulV2_NDNZ_ND_FP16_FP16_false_true_all_229571",
+          "Op Type": "cube",
+          "Task Duration(us)": "240.964813",
+          "Block Dim": "23",
+          "Mix Block Dim": "NA",
+          "Current Freq": "1800",
+          "Rated Freq": "1800",
+          "": ""
+        }
+      ],
+      "mean_across_23_blocks": {
+        "aic_time(us)": 235.63961330434782,
+        "aic_mte2_time(us)": 232.4349517826087,
+        "aic_mte1_time(us)": 78.28417895652174,
+        "aic_cube_time(us)": 28.11980647826087
+      },
+      "mte2_active_bw_coverage": {
+        "nonzero_blocks": [
+          2,
+          5,
+          8,
+          11,
+          14,
+          17,
+          20
+        ],
+        "zero_blocks": [
+          0,
+          1,
+          3,
+          4,
+          6,
+          7,
+          9,
+          10,
+          12,
+          13,
+          15,
+          16,
+          18,
+          19,
+          21,
+          22
+        ],
+        "nonzero_mean_GB_s": 62.388431000000004,
+        "status": "partial coverage or mapping anomaly; zero rows are not physical zero bandwidth"
+      },
+      "GM_to_L1_request_KiB": 350000.0,
+      "L2_read_hit_percent_mean": 0.5092169130434783,
+      "csv_sha256": {
+        "OpBasicInfo": "50c9e01ce97be5a63c90ff99e30a8ca072440a26dd2154f9702858a8ee4c7bc9",
+        "PipeUtilization": "a92505411a90a299861b83a7e8068f4e95d88b03d427566d8ce6f96aac529111",
+        "L2Cache": "fecf52121ae43a05360063975f01d6313c8763ff0fc436fcbd18860756a64b2c",
+        "Memory": "f02e1c63be83f455a078db0e525c6212d0a6351d41e58422ead28bb4be549560",
+        "ResourceConflictRatio": "fd2919009cce5d5f47908ac3731dbf553e443c171e70d6d000aa65cb102bbac4"
+      }
+    },
+    "nz-down": {
+      "source": "OPPROF_20261020093428_PMEMHJVOGDAGXQUI",
+      "basic": [
+        {
+          "Op Name": "MatMulV2_NDNZ_ND_FP16_FP16_false_true_all_229585",
+          "Op Type": "cube",
+          "Task Duration(us)": "133.762680",
+          "Block Dim": "23",
+          "Mix Block Dim": "NA",
+          "Current Freq": "1800",
+          "Rated Freq": "1800",
+          "": ""
+        }
+      ],
+      "mean_across_23_blocks": {
+        "aic_time(us)": 129.86417847826087,
+        "aic_mte2_time(us)": 113.149565,
+        "aic_mte1_time(us)": 46.521376869565216,
+        "aic_cube_time(us)": 19.136618391304346
+      },
+      "mte2_active_bw_coverage": {
+        "nonzero_blocks": [
+          2,
+          5,
+          8,
+          11,
+          14,
+          17,
+          20
+        ],
+        "zero_blocks": [
+          0,
+          1,
+          3,
+          4,
+          6,
+          7,
+          9,
+          10,
+          12,
+          13,
+          15,
+          16,
+          18,
+          19,
+          21,
+          22
+        ],
+        "nonzero_mean_GB_s": 68.84605842857142,
+        "status": "partial coverage or mapping anomaly; zero rows are not physical zero bandwidth"
+      },
+      "GM_to_L1_request_KiB": 186592.0,
+      "L2_read_hit_percent_mean": 6.570587521739131,
+      "csv_sha256": {
+        "OpBasicInfo": "a418b6c03f33165cdf05316ed02abceb42b7fef2951937062271c50f2b8df1df",
+        "PipeUtilization": "52a4e3b44070d558296606b276c3ff2006b91cb87f77ac4bbb789807d2d37bc7",
+        "L2Cache": "62c34540edfcf568615693453945603b068a6debd3b0c6cc7e5a516b32e8b20b",
+        "Memory": "d84d4ad72179cf1f16ac2320a88dee49a03696ad68f511c07eec7902ecad2383",
+        "ResourceConflictRatio": "d45880ee440219c4936024c1dac995b96bfc798208cea350291b97f72c683415"
+      }
+    }
+  },
+  "launches": {
+    "nd": {
+      "key": 98499,
+      "blocks": 23,
+      "tiling_words": [
+        5120,
+        8,
+        34816,
+        320,
+        1,
+        2176,
+        1,
+        1,
+        6,
+        1,
+        23,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        16,
+        80,
+        4,
+        1,
+        20,
+        320,
+        16,
+        20,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        14,
+        0,
+        22,
+        2779096485
+      ],
+      "first152_sha256": "a2e938ecf3bfb153dd703ac8299ad835019e2ffb0e13b290a694349ac918969f"
+    },
+    "nz": {
+      "key": 229571,
+      "blocks": 23,
+      "tiling_words": [
+        5120,
+        8,
+        34816,
+        320,
+        1,
+        2176,
+        1,
+        1,
+        6,
+        1,
+        23,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        16,
+        80,
+        4,
+        1,
+        20,
+        320,
+        16,
+        20,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        14,
+        0,
+        30,
+        2779096485
+      ],
+      "first152_sha256": "a2e938ecf3bfb153dd703ac8299ad835019e2ffb0e13b290a694349ac918969f"
+    }
+  },
+  "limits": [
+    "Independent native probes, not real 64-layer model measurements or a speed benchmark.",
+    "One profiled call per layout/shape; no distribution or end-to-end improvement claimed.",
+    "Pipeline activity times overlap and cannot be added to form wall time.",
+    "ND/NZ total-time difference includes layout and memory-transaction changes, not pure conversion time.",
+    "Current data do not split physical HBM service, L2 lookup and ND2NZ execution into additive times.",
+    "Failed captures with memory allocation error 207001 are excluded from effective metrics."
+  ]
+}

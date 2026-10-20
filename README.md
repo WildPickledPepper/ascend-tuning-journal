@@ -17,6 +17,8 @@
 
 ## 最近一次记录的状态
 
+- **MTE2内部拆分尚未完成**：[原生ND/NZ补采](experiments/mte2-breakdown/README.md)。同形状升维279.046→240.965μs、主要分块参数相同，但该差额不是纯转换耗时。MemoryDetail排除内存不足失败轮后，仍有16/23核活跃带宽字段为零的覆盖或映射异常。不能把“供数通路主导”直接写成“HBM物理带宽已打满”。17:38:39确认原6/7服务均健康，7号卡未重启。[证据](evidence/2026-10-20/mte2-breakdown-native.json)。
+
 - **最新搬运实采已完成**：[当前ND/M8诊断](experiments/nd-m8-hardware/README.md)。15份采样、35个Insight分组核验通过。small/full的TLB miss虽增加，矩阵乘均约215.5μs/次、HBM约1.243TB/s，未复现旧NZ/M2的TLB退化；当前优先关注GM→L1权重读取。真实主FFN约28.82ms/轮，草稿词表投影另约13.34ms/轮。17:08:04已恢复原服务。[证据](evidence/2026-10-20/nd-m8-memory-diagnosis.json)。
 
 - 新核验：[1GB显存大页](experiments/hugepage-audit/README.md)软件支持，但两种1g子进程配置均因无可用预分配资源回退2MB；1GiB内存池块不代表物理大页。原服务未重启，未测加速。[证据](evidence/2026-10-20/hugepage-allocation-audit.json)。
