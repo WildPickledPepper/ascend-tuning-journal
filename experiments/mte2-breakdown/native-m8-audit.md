@@ -153,6 +153,6 @@ export LD_PRELOAD="$ADAPTER"
 export NATIVE_M8_RETILE=1 NATIVE_M8_PRESERVE_L1=1 NATIVE_M8_BALANCE_L0=1
 ```
 
-这是host参数适配，不是重新编译NPU内核。只用于本页已审计版本及形状；不建议在其他版本直接加载。Git提交后按用户要求清理6号卡，清理状态另记回执。
+这是host参数适配，不是重新编译NPU内核。只用于本页已审计版本及形状；不建议在其他版本直接加载。实验记录及代码先以`26efb0b`推送，随后19:42:23按用户要求结束本账号6号模型进程树，确认6/7卡均无活动进程、旧服务及实验服务关闭，未恢复任何模型服务。模型文件与原始采样保留。[清理回执](../../evidence/2026-10-20/native-m8-cleanup.json)。
 
 复算入口：[DBI与tiling核对](audit_native_m8.py)、[实验host适配器](native_m8_retile.cpp)、[数值与图回放验证](validate_native_m8.py)、[图审计](native_graph_audit.py)、[整模型对照](compare_native_model.py)、[Insight与框架采样核对](analyze_native_model_profiles.py)、[过滤证据导出](export_native_m8.py)。原始地址、权重、ELF、完整trace/DB和服务进程信息留在私有数据区。
