@@ -58,3 +58,5 @@
 - `2026-10-20/vllm-mtp7-gsm128-result.json`：单卡BF16 MTP7草稿图完整128题，57.198token/s、服务端TTFT341.543ms、原评分121/128；逐题过滤数据、4个长度截断、3个解析误判、接受位置计数与恢复回执。
 
 - `2026-10-20/hugepage-allocation-audit.json`：三个分配器子进程与物理1GB页回退核验，不是模型性能成绩。
+
+- `2026-10-20/nd-m8-memory-diagnosis.json`：当前ND/M8真实请求SMMU及14份隔离硬件采集、35个Insight矩阵分组交叉校验；修正大页优先级。

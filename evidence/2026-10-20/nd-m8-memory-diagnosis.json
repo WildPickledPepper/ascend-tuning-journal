@@ -1,0 +1,1667 @@
+{
+  "kind": "Device measurements: current BF16 ND/M8 MTP7 memory diagnosis",
+  "device": "Ascend910B2",
+  "physical_device": 6,
+  "single_card": true,
+  "configuration": {
+    "num_speculative_tokens": 7,
+    "draft_use_cuda_graph": true,
+    "draft_enforce_eager": false,
+    "main_graph_mode": "FULL_DECODE_ONLY",
+    "main_capture_sizes": [
+      8
+    ],
+    "dtype": "torch.bfloat16",
+    "kv_cache_dtype": "auto",
+    "mamba_cache_dtype": "bfloat16",
+    "mamba_ssm_cache_dtype": "bfloat16",
+    "tp_size": 1,
+    "context_length": 4096,
+    "max_num_seqs": 1,
+    "prefix_caching": false,
+    "gpu_memory_utilization": 0.97,
+    "wrappers": [
+      {
+        "is_draft_runnable": true,
+        "callable": "AscendSpecDecodeBaseProposer._run_merged_draft",
+        "runtime_mode": "FULL",
+        "entries": [
+          {
+            "batch_descriptor": "BatchDescriptor(num_tokens=8, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+            "captured": true
+          }
+        ]
+      },
+      {
+        "is_draft_runnable": false,
+        "callable": "Qwen3_5ForConditionalGeneration",
+        "runtime_mode": "FULL",
+        "entries": [
+          {
+            "batch_descriptor": "BatchDescriptor(num_tokens=8, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+            "captured": true
+          }
+        ]
+      }
+    ]
+  },
+  "data_checks": {
+    "profile-bandwidth-full": {
+      "status": "valid",
+      "stop_metadata": true,
+      "end_info": true,
+      "config": {
+        "common_config": {
+          "activities": [
+            "ProfilerActivity.CPU",
+            "ProfilerActivity.NPU"
+          ],
+          "schedule": {},
+          "record_shapes": true,
+          "profile_memory": false,
+          "with_stack": false,
+          "with_flops": false,
+          "with_modules": false
+        },
+        "experimental_config": {
+          "_profiler_level": "Level1",
+          "_aic_metrics": "ACL_AICORE_MEMORY_BANDWIDTH",
+          "_l2_cache": true,
+          "_msprof_tx": false,
+          "_mstx": false,
+          "_data_simplification": false,
+          "record_op_args": false,
+          "_export_type": [
+            "text",
+            "db"
+          ],
+          "_host_sys": [],
+          "_op_attr": true,
+          "_gc_detect_threshold": null,
+          "_mstx_domain_include": [],
+          "_mstx_domain_exclude": [],
+          "_sys_io": false,
+          "_sys_interconnection": false
+        }
+      },
+      "kernel_csv_sha256": "eb9965a3ca61b51deeab0973f3926f92b2368a75bf67ea97182ffe427b2845df"
+    },
+    "profile-conflict-full": {
+      "status": "valid",
+      "stop_metadata": true,
+      "end_info": true,
+      "config": {
+        "common_config": {
+          "activities": [
+            "ProfilerActivity.CPU",
+            "ProfilerActivity.NPU"
+          ],
+          "schedule": {},
+          "record_shapes": true,
+          "profile_memory": false,
+          "with_stack": false,
+          "with_flops": false,
+          "with_modules": false
+        },
+        "experimental_config": {
+          "_profiler_level": "Level1",
+          "_aic_metrics": "ACL_AICORE_RESOURCE_CONFLICT_RATIO",
+          "_l2_cache": true,
+          "_msprof_tx": false,
+          "_mstx": false,
+          "_data_simplification": false,
+          "record_op_args": false,
+          "_export_type": [
+            "text",
+            "db"
+          ],
+          "_host_sys": [],
+          "_op_attr": true,
+          "_gc_detect_threshold": null,
+          "_mstx_domain_include": [],
+          "_mstx_domain_exclude": [],
+          "_sys_io": false,
+          "_sys_interconnection": false
+        }
+      },
+      "kernel_csv_sha256": "5f84fa1c628e7b70c4faf753306b03e10fe1dd480a87076ed20d42b17d2c5689"
+    },
+    "profile-l0-full": {
+      "status": "valid",
+      "stop_metadata": true,
+      "end_info": true,
+      "config": {
+        "common_config": {
+          "activities": [
+            "ProfilerActivity.CPU",
+            "ProfilerActivity.NPU"
+          ],
+          "schedule": {},
+          "record_shapes": true,
+          "profile_memory": false,
+          "with_stack": false,
+          "with_flops": false,
+          "with_modules": false
+        },
+        "experimental_config": {
+          "_profiler_level": "Level1",
+          "_aic_metrics": "ACL_AICORE_L0B_AND_WIDTH",
+          "_l2_cache": true,
+          "_msprof_tx": false,
+          "_mstx": false,
+          "_data_simplification": false,
+          "record_op_args": false,
+          "_export_type": [
+            "text",
+            "db"
+          ],
+          "_host_sys": [],
+          "_op_attr": true,
+          "_gc_detect_threshold": null,
+          "_mstx_domain_include": [],
+          "_mstx_domain_exclude": [],
+          "_sys_io": false,
+          "_sys_interconnection": false
+        }
+      },
+      "kernel_csv_sha256": "8e4fc54af08da168e6780a70ceea8457922a1c2af9684a92afe9a2c1c33fb7ad"
+    },
+    "profile-l2-adjacent": {
+      "status": "valid",
+      "stop_metadata": true,
+      "end_info": true,
+      "config": {
+        "common_config": {
+          "activities": [
+            "ProfilerActivity.CPU",
+            "ProfilerActivity.NPU"
+          ],
+          "schedule": {},
+          "record_shapes": true,
+          "profile_memory": false,
+          "with_stack": false,
+          "with_flops": false,
+          "with_modules": false
+        },
+        "experimental_config": {
+          "_profiler_level": "Level1",
+          "_aic_metrics": "ACL_AICORE_L2_CACHE",
+          "_l2_cache": true,
+          "_msprof_tx": false,
+          "_mstx": false,
+          "_data_simplification": false,
+          "record_op_args": false,
+          "_export_type": [
+            "text",
+            "db"
+          ],
+          "_host_sys": [],
+          "_op_attr": true,
+          "_gc_detect_threshold": null,
+          "_mstx_domain_include": [],
+          "_mstx_domain_exclude": [],
+          "_sys_io": false,
+          "_sys_interconnection": false
+        }
+      },
+      "kernel_csv_sha256": "60f22e66b57aec6f2298c4a9f7d7ffbea9833db2f56fa394f49ada4523a7b54a"
+    },
+    "profile-l2-full": {
+      "status": "valid",
+      "stop_metadata": true,
+      "end_info": true,
+      "config": {
+        "common_config": {
+          "activities": [
+            "ProfilerActivity.CPU",
+            "ProfilerActivity.NPU"
+          ],
+          "schedule": {},
+          "record_shapes": true,
+          "profile_memory": false,
+          "with_stack": false,
+          "with_flops": false,
+          "with_modules": false
+        },
+        "experimental_config": {
+          "_profiler_level": "Level1",
+          "_aic_metrics": "ACL_AICORE_L2_CACHE",
+          "_l2_cache": true,
+          "_msprof_tx": false,
+          "_mstx": false,
+          "_data_simplification": false,
+          "record_op_args": false,
+          "_export_type": [
+            "text",
+            "db"
+          ],
+          "_host_sys": [],
+          "_op_attr": true,
+          "_gc_detect_threshold": null,
+          "_mstx_domain_include": [],
+          "_mstx_domain_exclude": [],
+          "_sys_io": false,
+          "_sys_interconnection": false
+        }
+      },
+      "kernel_csv_sha256": "c3f7ed9bf4cb037f3598176ffe57a83ea6de1bbae6d6b75208890c4c114afacd"
+    },
+    "profile-l2-small": {
+      "status": "valid",
+      "stop_metadata": true,
+      "end_info": true,
+      "config": {
+        "common_config": {
+          "activities": [
+            "ProfilerActivity.CPU",
+            "ProfilerActivity.NPU"
+          ],
+          "schedule": {},
+          "record_shapes": true,
+          "profile_memory": false,
+          "with_stack": false,
+          "with_flops": false,
+          "with_modules": false
+        },
+        "experimental_config": {
+          "_profiler_level": "Level1",
+          "_aic_metrics": "ACL_AICORE_L2_CACHE",
+          "_l2_cache": true,
+          "_msprof_tx": false,
+          "_mstx": false,
+          "_data_simplification": false,
+          "record_op_args": false,
+          "_export_type": [
+            "text",
+            "db"
+          ],
+          "_host_sys": [],
+          "_op_attr": true,
+          "_gc_detect_threshold": null,
+          "_mstx_domain_include": [],
+          "_mstx_domain_exclude": [],
+          "_sys_io": false,
+          "_sys_interconnection": false
+        }
+      },
+      "kernel_csv_sha256": "f47580c895daab651271686b81d5672462240d49b8bb6062d698f99ecdeb58f4"
+    },
+    "profile-l2-sweep2": {
+      "status": "valid",
+      "stop_metadata": true,
+      "end_info": true,
+      "config": {
+        "common_config": {
+          "activities": [
+            "ProfilerActivity.CPU",
+            "ProfilerActivity.NPU"
+          ],
+          "schedule": {},
+          "record_shapes": true,
+          "profile_memory": false,
+          "with_stack": false,
+          "with_flops": false,
+          "with_modules": false
+        },
+        "experimental_config": {
+          "_profiler_level": "Level1",
+          "_aic_metrics": "ACL_AICORE_L2_CACHE",
+          "_l2_cache": true,
+          "_msprof_tx": false,
+          "_mstx": false,
+          "_data_simplification": false,
+          "record_op_args": false,
+          "_export_type": [
+            "text",
+            "db"
+          ],
+          "_host_sys": [],
+          "_op_attr": true,
+          "_gc_detect_threshold": null,
+          "_mstx_domain_include": [],
+          "_mstx_domain_exclude": [],
+          "_sys_io": false,
+          "_sys_interconnection": false
+        }
+      },
+      "kernel_csv_sha256": "38cdfe770e157b0778f94eafbf813a56f4af9e81f346a25392eb9be71495cb55"
+    },
+    "profile-memory-adjacent": {
+      "status": "valid",
+      "stop_metadata": true,
+      "end_info": true,
+      "config": {
+        "common_config": {
+          "activities": [
+            "ProfilerActivity.CPU",
+            "ProfilerActivity.NPU"
+          ],
+          "schedule": {},
+          "record_shapes": true,
+          "profile_memory": false,
+          "with_stack": false,
+          "with_flops": false,
+          "with_modules": false
+        },
+        "experimental_config": {
+          "_profiler_level": "Level1",
+          "_aic_metrics": "ACL_AICORE_MEMORY_ACCESS",
+          "_l2_cache": true,
+          "_msprof_tx": false,
+          "_mstx": false,
+          "_data_simplification": false,
+          "record_op_args": false,
+          "_export_type": [
+            "text",
+            "db"
+          ],
+          "_host_sys": [],
+          "_op_attr": true,
+          "_gc_detect_threshold": null,
+          "_mstx_domain_include": [],
+          "_mstx_domain_exclude": [],
+          "_sys_io": false,
+          "_sys_interconnection": false
+        }
+      },
+      "kernel_csv_sha256": "1fa00a38bf5baa99a16d9d1993b30a112d49d01601283f846e1bcf128c0a61c9"
+    },
+    "profile-memory-full": {
+      "status": "valid",
+      "stop_metadata": true,
+      "end_info": true,
+      "config": {
+        "common_config": {
+          "activities": [
+            "ProfilerActivity.CPU",
+            "ProfilerActivity.NPU"
+          ],
+          "schedule": {},
+          "record_shapes": true,
+          "profile_memory": false,
+          "with_stack": false,
+          "with_flops": false,
+          "with_modules": false
+        },
+        "experimental_config": {
+          "_profiler_level": "Level1",
+          "_aic_metrics": "ACL_AICORE_MEMORY_ACCESS",
+          "_l2_cache": true,
+          "_msprof_tx": false,
+          "_mstx": false,
+          "_data_simplification": false,
+          "record_op_args": false,
+          "_export_type": [
+            "text",
+            "db"
+          ],
+          "_host_sys": [],
+          "_op_attr": true,
+          "_gc_detect_threshold": null,
+          "_mstx_domain_include": [],
+          "_mstx_domain_exclude": [],
+          "_sys_io": false,
+          "_sys_interconnection": false
+        }
+      },
+      "kernel_csv_sha256": "3d40f49550c04cd424bf5946ace726b3cf636e6e2999ad25b3611dcc5b5fc56e"
+    },
+    "profile-memory-small": {
+      "status": "valid",
+      "stop_metadata": true,
+      "end_info": true,
+      "config": {
+        "common_config": {
+          "activities": [
+            "ProfilerActivity.CPU",
+            "ProfilerActivity.NPU"
+          ],
+          "schedule": {},
+          "record_shapes": true,
+          "profile_memory": false,
+          "with_stack": false,
+          "with_flops": false,
+          "with_modules": false
+        },
+        "experimental_config": {
+          "_profiler_level": "Level1",
+          "_aic_metrics": "ACL_AICORE_MEMORY_ACCESS",
+          "_l2_cache": true,
+          "_msprof_tx": false,
+          "_mstx": false,
+          "_data_simplification": false,
+          "record_op_args": false,
+          "_export_type": [
+            "text",
+            "db"
+          ],
+          "_host_sys": [],
+          "_op_attr": true,
+          "_gc_detect_threshold": null,
+          "_mstx_domain_include": [],
+          "_mstx_domain_exclude": [],
+          "_sys_io": false,
+          "_sys_interconnection": false
+        }
+      },
+      "kernel_csv_sha256": "9d06d38db22c218942f53287965a1a152a06ea194e4b3350efbdc485a4cde90d"
+    },
+    "profile-model-pipe": {
+      "status": "valid",
+      "stop_metadata": true,
+      "end_info": true,
+      "config": {
+        "common_config": {
+          "activities": [
+            "ProfilerActivity.CPU",
+            "ProfilerActivity.NPU"
+          ],
+          "schedule": {},
+          "record_shapes": true,
+          "profile_memory": false,
+          "with_stack": false,
+          "with_flops": false,
+          "with_modules": false
+        },
+        "experimental_config": {
+          "_profiler_level": "Level1",
+          "_aic_metrics": "ACL_AICORE_PIPE_UTILIZATION",
+          "_l2_cache": true,
+          "_msprof_tx": false,
+          "_mstx": false,
+          "_data_simplification": false,
+          "record_op_args": false,
+          "_export_type": [
+            "text",
+            "db"
+          ],
+          "_host_sys": [],
+          "_op_attr": true,
+          "_gc_detect_threshold": null,
+          "_mstx_domain_include": [],
+          "_mstx_domain_exclude": [],
+          "_sys_io": false,
+          "_sys_interconnection": false
+        }
+      },
+      "kernel_csv_sha256": "76a96e62601ef176a4d828fbf4417d60603588e85258914a3037ab45b910f7c2"
+    },
+    "profile-tlb-adjacent": {
+      "status": "valid",
+      "stop_metadata": true,
+      "end_info": true,
+      "config": {
+        "common_config": {
+          "activities": [
+            "ProfilerActivity.CPU",
+            "ProfilerActivity.NPU"
+          ],
+          "schedule": {},
+          "record_shapes": true,
+          "profile_memory": false,
+          "with_stack": false,
+          "with_flops": false,
+          "with_modules": false
+        },
+        "experimental_config": {
+          "_profiler_level": "Level1",
+          "_aic_metrics": "ACL_AICORE_PIPE_UTILIZATION",
+          "_l2_cache": true,
+          "_msprof_tx": false,
+          "_mstx": false,
+          "_data_simplification": false,
+          "record_op_args": false,
+          "_export_type": [
+            "text",
+            "db"
+          ],
+          "_host_sys": [],
+          "_op_attr": true,
+          "_gc_detect_threshold": null,
+          "_mstx_domain_include": [],
+          "_mstx_domain_exclude": [],
+          "_sys_io": false,
+          "_sys_interconnection": false
+        }
+      },
+      "kernel_csv_sha256": "0ac48ce6ae78a03557522fafb4b44389c0ea5454a0f36536b0a38c0df52be228"
+    },
+    "profile-tlb-full": {
+      "status": "valid",
+      "stop_metadata": true,
+      "end_info": true,
+      "config": {
+        "common_config": {
+          "activities": [
+            "ProfilerActivity.CPU",
+            "ProfilerActivity.NPU"
+          ],
+          "schedule": {},
+          "record_shapes": true,
+          "profile_memory": false,
+          "with_stack": false,
+          "with_flops": false,
+          "with_modules": false
+        },
+        "experimental_config": {
+          "_profiler_level": "Level1",
+          "_aic_metrics": "ACL_AICORE_PIPE_UTILIZATION",
+          "_l2_cache": true,
+          "_msprof_tx": false,
+          "_mstx": false,
+          "_data_simplification": false,
+          "record_op_args": false,
+          "_export_type": [
+            "text",
+            "db"
+          ],
+          "_host_sys": [],
+          "_op_attr": true,
+          "_gc_detect_threshold": null,
+          "_mstx_domain_include": [],
+          "_mstx_domain_exclude": [],
+          "_sys_io": false,
+          "_sys_interconnection": false
+        }
+      },
+      "kernel_csv_sha256": "44840e33d086107fdbeeb1b08be878db22362f6ddb49d6e88537d0d6faa8ee3e"
+    },
+    "profile-tlb-small": {
+      "status": "valid",
+      "stop_metadata": true,
+      "end_info": true,
+      "config": {
+        "common_config": {
+          "activities": [
+            "ProfilerActivity.CPU",
+            "ProfilerActivity.NPU"
+          ],
+          "schedule": {},
+          "record_shapes": true,
+          "profile_memory": false,
+          "with_stack": false,
+          "with_flops": false,
+          "with_modules": false
+        },
+        "experimental_config": {
+          "_profiler_level": "Level1",
+          "_aic_metrics": "ACL_AICORE_PIPE_UTILIZATION",
+          "_l2_cache": true,
+          "_msprof_tx": false,
+          "_mstx": false,
+          "_data_simplification": false,
+          "record_op_args": false,
+          "_export_type": [
+            "text",
+            "db"
+          ],
+          "_host_sys": [],
+          "_op_attr": true,
+          "_gc_detect_threshold": null,
+          "_mstx_domain_include": [],
+          "_mstx_domain_exclude": [],
+          "_sys_io": false,
+          "_sys_interconnection": false
+        }
+      },
+      "kernel_csv_sha256": "b2ba19e96dd6820085d2069c88494d6decab05f367835c8ee84dde15e2522173"
+    },
+    "profile-tlb-sweep2": {
+      "status": "valid",
+      "stop_metadata": true,
+      "end_info": true,
+      "config": {
+        "common_config": {
+          "activities": [
+            "ProfilerActivity.CPU",
+            "ProfilerActivity.NPU"
+          ],
+          "schedule": {},
+          "record_shapes": true,
+          "profile_memory": false,
+          "with_stack": false,
+          "with_flops": false,
+          "with_modules": false
+        },
+        "experimental_config": {
+          "_profiler_level": "Level1",
+          "_aic_metrics": "ACL_AICORE_PIPE_UTILIZATION",
+          "_l2_cache": true,
+          "_msprof_tx": false,
+          "_mstx": false,
+          "_data_simplification": false,
+          "record_op_args": false,
+          "_export_type": [
+            "text",
+            "db"
+          ],
+          "_host_sys": [],
+          "_op_attr": true,
+          "_gc_detect_threshold": null,
+          "_mstx_domain_include": [],
+          "_mstx_domain_exclude": [],
+          "_sys_io": false,
+          "_sys_interconnection": false
+        }
+      },
+      "kernel_csv_sha256": "754e2ceb3ae1c66fdaefd5cde6917ad912c382a96255814218a99930fdc208b8"
+    }
+  },
+  "backend_cross_checks": [
+    {
+      "capture": "model-pipe",
+      "shape": "\"8,5120;34816,5120\"",
+      "count": 4118,
+      "backend_mean_us": 295.49,
+      "csv_mean_us": 295.4918844099077
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"1,5120;248320,5120\"",
+      "count": 422,
+      "backend_mean_us": 1906.58,
+      "csv_mean_us": 1906.5829383886255
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"8,17408;5120,17408\"",
+      "count": 4118,
+      "backend_mean_us": 153.3,
+      "csv_mean_us": 153.30291403593978
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"8,5120;16384,5120\"",
+      "count": 2784,
+      "backend_mean_us": 137.1,
+      "csv_mean_us": 137.1027514367816
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"8,6144;5120,6144\"",
+      "count": 4118,
+      "backend_mean_us": 56.59,
+      "csv_mean_us": 56.590320543953375
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"8,5120;14336,5120\"",
+      "count": 1334,
+      "backend_mean_us": 119.9,
+      "csv_mean_us": 119.89853073463269
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"8,5120;248320,5120\"",
+      "count": 57,
+      "backend_mean_us": 1942.3,
+      "csv_mean_us": 1942.3038596491228
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"8,10240;5120,10240\"",
+      "count": 406,
+      "backend_mean_us": 91.8,
+      "csv_mean_us": 91.80221674876847
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"8,5120;96,5120\"",
+      "count": 2784,
+      "backend_mean_us": 10.13,
+      "csv_mean_us": 10.126745689655172
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"121,5120;34816,5120\"",
+      "count": 71,
+      "backend_mean_us": 373.35,
+      "csv_mean_us": 373.35267605633805
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"114,5120;34816,5120\"",
+      "count": 71,
+      "backend_mean_us": 370.4,
+      "csv_mean_us": 370.39830985915495
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"121,17408;5120,17408\"",
+      "count": 71,
+      "backend_mean_us": 182.02,
+      "csv_mean_us": 182.01774647887325
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"114,17408;5120,17408\"",
+      "count": 71,
+      "backend_mean_us": 179.69,
+      "csv_mean_us": 179.6943661971831
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"121,5120;16384,5120\"",
+      "count": 48,
+      "backend_mean_us": 163.32,
+      "csv_mean_us": 163.32291666666666
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"114,5120;16384,5120\"",
+      "count": 48,
+      "backend_mean_us": 162.04,
+      "csv_mean_us": 162.04375
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"8,5120;5120\"",
+      "count": 1276,
+      "backend_mean_us": 5.39,
+      "csv_mean_us": 5.394388714733543
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"121,6144;5120,6144\"",
+      "count": 71,
+      "backend_mean_us": 69.63,
+      "csv_mean_us": 69.62788732394367
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"114,6144;5120,6144\"",
+      "count": 71,
+      "backend_mean_us": 68.45,
+      "csv_mean_us": 68.44619718309859
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"121,5120;14336,5120\"",
+      "count": 23,
+      "backend_mean_us": 137.45,
+      "csv_mean_us": 137.4513043478261
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"114,5120;14336,5120\"",
+      "count": 23,
+      "backend_mean_us": 136.0,
+      "csv_mean_us": 136.00260869565219
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"121,10240;5120,10240\"",
+      "count": 7,
+      "backend_mean_us": 97.16,
+      "csv_mean_us": 97.16285714285715
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"114,10240;5120,10240\"",
+      "count": 7,
+      "backend_mean_us": 96.06,
+      "csv_mean_us": 96.06
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"114,5120;96,5120\"",
+      "count": 48,
+      "backend_mean_us": 11.96,
+      "csv_mean_us": 11.96125
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"121,5120;96,5120\"",
+      "count": 48,
+      "backend_mean_us": 11.9,
+      "csv_mean_us": 11.902083333333334
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"121,5120;5120\"",
+      "count": 22,
+      "backend_mean_us": 10.99,
+      "csv_mean_us": 10.992727272727272
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"114,5120;5120\"",
+      "count": 22,
+      "backend_mean_us": 10.64,
+      "csv_mean_us": 10.64090909090909
+    },
+    {
+      "capture": "model-pipe",
+      "shape": "\"2,4;2,4;4,4\"",
+      "count": 1,
+      "backend_mean_us": 4.88,
+      "csv_mean_us": 4.88
+    },
+    {
+      "capture": "tlb-small",
+      "shape": "\"8,5120;34816,5120\"",
+      "count": 384,
+      "backend_mean_us": 279.93,
+      "csv_mean_us": 279.93255208333335
+    },
+    {
+      "capture": "tlb-small",
+      "shape": "\"8,17408;5120,17408\"",
+      "count": 384,
+      "backend_mean_us": 151.64,
+      "csv_mean_us": 151.64328125
+    },
+    {
+      "capture": "tlb-full",
+      "shape": "\"8,5120;34816,5120\"",
+      "count": 384,
+      "backend_mean_us": 277.8,
+      "csv_mean_us": 277.79859375
+    },
+    {
+      "capture": "tlb-full",
+      "shape": "\"8,17408;5120,17408\"",
+      "count": 384,
+      "backend_mean_us": 153.85,
+      "csv_mean_us": 153.8540625
+    },
+    {
+      "capture": "l2-full",
+      "shape": "\"8,5120;34816,5120\"",
+      "count": 384,
+      "backend_mean_us": 277.88,
+      "csv_mean_us": 277.8784375
+    },
+    {
+      "capture": "l2-full",
+      "shape": "\"8,17408;5120,17408\"",
+      "count": 384,
+      "backend_mean_us": 153.98,
+      "csv_mean_us": 153.98125
+    },
+    {
+      "capture": "l2-adjacent",
+      "shape": "\"8,5120;34816,5120\"",
+      "count": 768,
+      "backend_mean_us": 278.97,
+      "csv_mean_us": 278.968515625
+    },
+    {
+      "capture": "l2-adjacent",
+      "shape": "\"8,17408;5120,17408\"",
+      "count": 768,
+      "backend_mean_us": 126.04,
+      "csv_mean_us": 126.041796875
+    }
+  ],
+  "model_smmu_validation": {
+    "raw_records_checked_against_official_csv": 128145,
+    "keys": 24881,
+    "rate_absolute_tolerance": 5.1e-07
+  },
+  "model_requests": {
+    "0": {
+      "rounds": 26,
+      "target_up": {
+        "shape": "\"8,5120;34816,5120\"",
+        "model_id": "1502",
+        "calls": 1664,
+        "mean_us": 296.93811298076923,
+        "total_ms": 494.1050199999992,
+        "mte2_us": 282.46870492788463,
+        "mac_us": 31.799,
+        "smmu_samples": 1664,
+        "smmu_identity_failures": 0,
+        "smmu_misses_per_call": 192.55168269230768,
+        "smmu_requests_per_call": 701157.0006009615,
+        "smmu_miss_ratio": 0.0002746199246777422
+      },
+      "target_down": {
+        "shape": "\"8,17408;5120,17408\"",
+        "model_id": "1502",
+        "calls": 1664,
+        "mean_us": 153.31013221153847,
+        "total_ms": 255.10806000000002,
+        "mte2_us": 129.04996033653848,
+        "mac_us": 22.39522235576923,
+        "smmu_samples": 1664,
+        "smmu_identity_failures": 0,
+        "smmu_misses_per_call": 107.73617788461539,
+        "smmu_requests_per_call": 374182.5018028846,
+        "smmu_miss_ratio": 0.0002879241476165277
+      },
+      "target_ffn_ms_per_round": 28.815887692307662,
+      "draft_lm_head_ms_per_round": 13.337379230769235,
+      "all_decode_matmul_ms_per_round": 61.60850923076919
+    },
+    "2": {
+      "rounds": 31,
+      "target_up": {
+        "shape": "\"8,5120;34816,5120\"",
+        "model_id": "1502",
+        "calls": 1984,
+        "mean_us": 297.2126915322581,
+        "total_ms": 589.6699799999993,
+        "mte2_us": 282.44062197580644,
+        "mac_us": 31.799,
+        "smmu_samples": 1984,
+        "smmu_identity_failures": 0,
+        "smmu_misses_per_call": 192.7857862903226,
+        "smmu_requests_per_call": 701157,
+        "smmu_miss_ratio": 0.00027495380676556406
+      },
+      "target_down": {
+        "shape": "\"8,17408;5120,17408\"",
+        "model_id": "1502",
+        "calls": 1984,
+        "mean_us": 153.30764112903225,
+        "total_ms": 304.16236000000026,
+        "mte2_us": 129.0449445564516,
+        "mac_us": 22.395858366935485,
+        "smmu_samples": 1984,
+        "smmu_identity_failures": 0,
+        "smmu_misses_per_call": 107.81350806451613,
+        "smmu_requests_per_call": 374182.5015120968,
+        "smmu_miss_ratio": 0.00028813081218077933
+      },
+      "target_ffn_ms_per_round": 28.833301290322567,
+      "draft_lm_head_ms_per_round": 13.34234,
+      "all_decode_matmul_ms_per_round": 61.62285612903224
+    }
+  },
+  "hardware": {
+    "dtype": "BF16",
+    "physical_device": 6,
+    "M": 8,
+    "weight_format": "ND",
+    "custom_kernel": false,
+    "counter_source": "msprof --l2 / PyTorch Profiler l2_cache=True; native socpmu.data records",
+    "smmu_record_format": "<8B4H8Q, 80 bytes, installed CANN platform_version=5",
+    "smmu_events": [
+      "0x2",
+      "0x8a",
+      "0x8b",
+      "0x8c",
+      "0x8d"
+    ],
+    "formulas": {
+      "requests": "event[1] (0x8a)",
+      "misses": "event[0] (0x2)",
+      "hits": "event[3]+event[4] (0x8c+0x8d)",
+      "miss_rate": "sum(misses)/sum(requests)"
+    },
+    "stability_selection": "Six graph replays; exclude first two replays within each shape/position group",
+    "profiles": {
+      "small": {
+        "up": {
+          "all": {
+            "samples": 256,
+            "requests_per_call": 701176.6640625,
+            "misses_per_call": 1.171875,
+            "miss_rate": 1.6712977770970768e-06,
+            "mean_duration_us": 279.84,
+            "mean_mte2_us": 262.48362109375,
+            "mean_mac_us": 31.799
+          }
+        },
+        "down": {
+          "all": {
+            "samples": 256,
+            "requests_per_call": 374187.87109375,
+            "misses_per_call": 0.2265625,
+            "miss_rate": 6.054779363579009e-07,
+            "mean_duration_us": 151.535546875,
+            "mean_mte2_us": 128.70709765625,
+            "mean_mac_us": 22.395625
+          }
+        }
+      },
+      "full": {
+        "up": {
+          "all": {
+            "samples": 256,
+            "requests_per_call": 701176.671875,
+            "misses_per_call": 127.11328125,
+            "miss_rate": 0.0001812856678618377,
+            "mean_duration_us": 277.68046875,
+            "mean_mte2_us": 262.10889453125,
+            "mean_mac_us": 31.799
+          }
+        },
+        "down": {
+          "all": {
+            "samples": 256,
+            "requests_per_call": 374187.87109375,
+            "misses_per_call": 71.21484375,
+            "miss_rate": 0.00019031841823691193,
+            "mean_duration_us": 153.78140625,
+            "mean_mte2_us": 128.994359375,
+            "mean_mac_us": 22.396765625
+          }
+        }
+      },
+      "sweep2": {
+        "up": {
+          "all": {
+            "samples": 512,
+            "requests_per_call": 701166.8515625,
+            "misses_per_call": 115.369140625,
+            "miss_rate": 0.0001645387832695002,
+            "mean_duration_us": 277.585546875,
+            "mean_mte2_us": 262.043013671875,
+            "mean_mac_us": 31.799
+          }
+        },
+        "down": {
+          "all": {
+            "samples": 512,
+            "requests_per_call": 374176.435546875,
+            "misses_per_call": 64.578125,
+            "miss_rate": 0.00017258736484999725,
+            "mean_duration_us": 153.6082421875,
+            "mean_mte2_us": 128.87396875,
+            "mean_mac_us": 22.39839453125
+          }
+        }
+      },
+      "adjacent": {
+        "up": {
+          "0": {
+            "samples": 256,
+            "requests_per_call": 701176.0390625,
+            "misses_per_call": 174.08203125,
+            "miss_rate": 0.0002482715060867661,
+            "mean_duration_us": 277.96859375,
+            "mean_mte2_us": 262.262796875,
+            "mean_mac_us": 31.799
+          },
+          "1": {
+            "samples": 256,
+            "requests_per_call": 701157.828125,
+            "misses_per_call": 156.16015625,
+            "miss_rate": 0.00022271755371767782,
+            "mean_duration_us": 280.18875,
+            "mean_mte2_us": 263.07790625,
+            "mean_mac_us": 31.799
+          }
+        },
+        "down": {
+          "0": {
+            "samples": 256,
+            "requests_per_call": 374187.27734375,
+            "misses_per_call": 97.06640625,
+            "miss_rate": 0.0002594059502478199,
+            "mean_duration_us": 154.1025,
+            "mean_mte2_us": 129.19423046875,
+            "mean_mac_us": 22.397085937499998
+          },
+          "1": {
+            "samples": 256,
+            "requests_per_call": 374165.9375,
+            "misses_per_call": 76.88671875,
+            "miss_rate": 0.00020548829020546533,
+            "mean_duration_us": 98.006796875,
+            "mean_mte2_us": 49.32401953125,
+            "mean_mac_us": 22.08918359375
+          }
+        }
+      }
+    },
+    "l2_cache": {
+      "small": {
+        "up": {
+          "all": {
+            "samples": 256,
+            "read_hit_rate": 0.005059628736422099,
+            "hits_per_call": 14167.41015625,
+            "misses_per_call": 2785921.46875
+          }
+        },
+        "down": {
+          "all": {
+            "samples": 256,
+            "read_hit_rate": 0.06565416749751647,
+            "hits_per_call": 98010.37109375,
+            "misses_per_call": 1394817.5
+          }
+        }
+      },
+      "full": {
+        "up": {
+          "all": {
+            "samples": 256,
+            "read_hit_rate": 0.0050596329003818625,
+            "hits_per_call": 14167.421875,
+            "misses_per_call": 2785921.46875
+          }
+        },
+        "down": {
+          "all": {
+            "samples": 256,
+            "read_hit_rate": 0.06565416749751647,
+            "hits_per_call": 98010.37109375,
+            "misses_per_call": 1394817.5
+          }
+        }
+      },
+      "sweep2": {
+        "up": {
+          "all": {
+            "samples": 512,
+            "read_hit_rate": 0.0050561806949950125,
+            "hits_per_call": 14157.705078125,
+            "misses_per_call": 2785921.234375
+          }
+        },
+        "down": {
+          "all": {
+            "samples": 512,
+            "read_hit_rate": 0.06564717751849657,
+            "hits_per_call": 97999.185546875,
+            "misses_per_call": 1394817.25
+          }
+        }
+      },
+      "adjacent": {
+        "up": {
+          "0": {
+            "samples": 256,
+            "read_hit_rate": 0.005059407082003657,
+            "hits_per_call": 14166.78515625,
+            "misses_per_call": 2785921.234375
+          },
+          "1": {
+            "samples": 256,
+            "read_hit_rate": 0.0050529431830184995,
+            "hits_per_call": 14148.59375,
+            "misses_per_call": 2785921.234375
+          }
+        },
+        "down": {
+          "0": {
+            "samples": 256,
+            "read_hit_rate": 0.06565394240929419,
+            "hits_per_call": 98009.99609375,
+            "misses_per_call": 1394817.28125
+          },
+          "1": {
+            "samples": 256,
+            "read_hit_rate": 0.9999993301205636,
+            "hits_per_call": 1492804.9375,
+            "misses_per_call": 1.0
+          }
+        }
+      }
+    },
+    "unprofiled_timing": {
+      "small": 215.49711376428604,
+      "full": 215.47383069992065,
+      "sweep2": 215.37503600120544,
+      "adjacent": 202.26207375526428
+    },
+    "source_hashes": {
+      "small/socpmu.data.6.slice_0": "4cb9fa52453380f69b7c24047bcf36af70272583ddc7e4c48ab2a4708c0f933c",
+      "full/socpmu.data.6.slice_0": "452387e75b708ef1008fe9e66b6d769dd785b43dc0d65db00b0eeb9500bec9d1",
+      "sweep2/socpmu.data.6.slice_0": "ca901c365c0d43e4aa61312afee3acfdf6145d3b7548afe68c6276e68370b73f",
+      "adjacent/socpmu.data.6.slice_0": "8726509d66b92ced215ad28642ef990bf66496c793b784abae05e4c4be8afe58"
+    },
+    "same_addresses_verified": true,
+    "working_sets": {
+      "small": {
+        "calls_per_graph": 128,
+        "total_logical_weight_bytes": 34225520640,
+        "distinct_logical_weight_bytes": 1069547520
+      },
+      "full": {
+        "calls_per_graph": 128,
+        "total_logical_weight_bytes": 34225520640,
+        "distinct_logical_weight_bytes": 34225520640
+      },
+      "sweep2": {
+        "calls_per_graph": 256,
+        "total_logical_weight_bytes": 68451041280,
+        "distinct_logical_weight_bytes": 34225520640
+      },
+      "adjacent": {
+        "calls_per_graph": 256,
+        "total_logical_weight_bytes": 68451041280,
+        "distinct_logical_weight_bytes": 34225520640
+      }
+    },
+    "capture_utc": {
+      "small": {
+        "started_utc": "2026-10-20T09:01:32.198387+00:00",
+        "completed_utc": "2026-10-20T09:01:40.816171+00:00"
+      },
+      "full": {
+        "started_utc": "2026-10-20T09:01:40.858954+00:00",
+        "completed_utc": "2026-10-20T09:01:49.362719+00:00"
+      },
+      "sweep2": {
+        "started_utc": "2026-10-20T09:01:49.398604+00:00",
+        "completed_utc": "2026-10-20T09:01:58.259748+00:00"
+      },
+      "adjacent": {
+        "started_utc": "2026-10-20T09:01:58.296336+00:00",
+        "completed_utc": "2026-10-20T09:02:07.074508+00:00"
+      }
+    },
+    "hbm": [
+      {
+        "label": "hbm-small-0",
+        "order": "small",
+        "active_start_ns": 1792487019864045680,
+        "active_end_ns": 1792487021961781480,
+        "trimmed_ns_each_edge": 100000000,
+        "graphs": 76,
+        "active_seconds": 2.0977358,
+        "read_TB_per_s": 1.2425349287207403,
+        "max_unit_imbalance_fraction": 7.103930777309623e-05,
+        "units": [
+          {
+            "hbm_id": 0,
+            "mode": "read",
+            "samples": 190,
+            "mean_MiB_per_s": 296239.48039044015
+          },
+          {
+            "hbm_id": 0,
+            "mode": "write",
+            "samples": 190,
+            "mean_MiB_per_s": 364.7623454334391
+          },
+          {
+            "hbm_id": 1,
+            "mode": "read",
+            "samples": 190,
+            "mean_MiB_per_s": 296234.8042379772
+          },
+          {
+            "hbm_id": 1,
+            "mode": "write",
+            "samples": 190,
+            "mean_MiB_per_s": 364.29206225254933
+          },
+          {
+            "hbm_id": 2,
+            "mode": "read",
+            "samples": 190,
+            "mean_MiB_per_s": 296255.8491649115
+          },
+          {
+            "hbm_id": 2,
+            "mode": "write",
+            "samples": 190,
+            "mean_MiB_per_s": 360.97125105538834
+          },
+          {
+            "hbm_id": 3,
+            "mode": "read",
+            "samples": 190,
+            "mean_MiB_per_s": 296243.51496531157
+          },
+          {
+            "hbm_id": 3,
+            "mode": "write",
+            "samples": 190,
+            "mean_MiB_per_s": 360.24402861225116
+          }
+        ],
+        "hbm_clocks_MHz": [
+          1600
+        ],
+        "memory_telemetry_before": {
+          "DDR Clock Speed(MHz)": "0",
+          "HBM Clock Speed(MHz)": "1600",
+          "HBM Temperature(C)": "44"
+        }
+      },
+      {
+        "label": "hbm-full-1",
+        "order": "full",
+        "active_start_ns": 1792487023232089460,
+        "active_end_ns": 1792487025329012730,
+        "trimmed_ns_each_edge": 100000000,
+        "graphs": 76,
+        "active_seconds": 2.09692327,
+        "read_TB_per_s": 1.2429729860482641,
+        "max_unit_imbalance_fraction": 6.775752706907241e-05,
+        "units": [
+          {
+            "hbm_id": 0,
+            "mode": "read",
+            "samples": 190,
+            "mean_MiB_per_s": 296345.48297892755
+          },
+          {
+            "hbm_id": 0,
+            "mode": "write",
+            "samples": 190,
+            "mean_MiB_per_s": 360.93456537643937
+          },
+          {
+            "hbm_id": 1,
+            "mode": "read",
+            "samples": 190,
+            "mean_MiB_per_s": 296338.55366429925
+          },
+          {
+            "hbm_id": 1,
+            "mode": "write",
+            "samples": 190,
+            "mean_MiB_per_s": 360.05555666146154
+          },
+          {
+            "hbm_id": 2,
+            "mode": "read",
+            "samples": 190,
+            "mean_MiB_per_s": 296358.633461984
+          },
+          {
+            "hbm_id": 2,
+            "mode": "write",
+            "samples": 190,
+            "mean_MiB_per_s": 359.399378782194
+          },
+          {
+            "hbm_id": 3,
+            "mode": "read",
+            "samples": 190,
+            "mean_MiB_per_s": 296348.7426758027
+          },
+          {
+            "hbm_id": 3,
+            "mode": "write",
+            "samples": 190,
+            "mean_MiB_per_s": 359.9576246537895
+          }
+        ],
+        "hbm_clocks_MHz": [
+          1600
+        ],
+        "memory_telemetry_before": {
+          "DDR Clock Speed(MHz)": "0",
+          "HBM Clock Speed(MHz)": "1600",
+          "HBM Temperature(C)": "45"
+        }
+      },
+      {
+        "label": "hbm-small-2",
+        "order": "small",
+        "active_start_ns": 1792487026630141210,
+        "active_end_ns": 1792487028727835000,
+        "trimmed_ns_each_edge": 100000000,
+        "graphs": 76,
+        "active_seconds": 2.09769379,
+        "read_TB_per_s": 1.2425211189370937,
+        "max_unit_imbalance_fraction": 4.8376731281943053e-05,
+        "units": [
+          {
+            "hbm_id": 0,
+            "mode": "read",
+            "samples": 190,
+            "mean_MiB_per_s": 296239.5629047022
+          },
+          {
+            "hbm_id": 0,
+            "mode": "write",
+            "samples": 190,
+            "mean_MiB_per_s": 362.0107796664281
+          },
+          {
+            "hbm_id": 1,
+            "mode": "read",
+            "samples": 190,
+            "mean_MiB_per_s": 296233.25393676583
+          },
+          {
+            "hbm_id": 1,
+            "mode": "write",
+            "samples": 190,
+            "mean_MiB_per_s": 359.4421523052322
+          },
+          {
+            "hbm_id": 2,
+            "mode": "read",
+            "samples": 190,
+            "mean_MiB_per_s": 296247.58506543055
+          },
+          {
+            "hbm_id": 2,
+            "mode": "write",
+            "samples": 190,
+            "mean_MiB_per_s": 360.36896211494053
+          },
+          {
+            "hbm_id": 3,
+            "mode": "read",
+            "samples": 190,
+            "mean_MiB_per_s": 296240.07681576314
+          },
+          {
+            "hbm_id": 3,
+            "mode": "write",
+            "samples": 190,
+            "mean_MiB_per_s": 360.3714776852113
+          }
+        ],
+        "hbm_clocks_MHz": [
+          1600
+        ],
+        "memory_telemetry_before": {
+          "DDR Clock Speed(MHz)": "0",
+          "HBM Clock Speed(MHz)": "1600",
+          "HBM Temperature(C)": "45"
+        }
+      },
+      {
+        "label": "hbm-full-3",
+        "order": "full",
+        "active_start_ns": 1792487029988313390,
+        "active_end_ns": 1792487032085442560,
+        "trimmed_ns_each_edge": 100000000,
+        "graphs": 76,
+        "active_seconds": 2.09712917,
+        "read_TB_per_s": 1.2428858277838675,
+        "max_unit_imbalance_fraction": 6.601451481402582e-05,
+        "units": [
+          {
+            "hbm_id": 0,
+            "mode": "read",
+            "samples": 189,
+            "mean_MiB_per_s": 296325.46634709544
+          },
+          {
+            "hbm_id": 0,
+            "mode": "write",
+            "samples": 189,
+            "mean_MiB_per_s": 360.5814479457598
+          },
+          {
+            "hbm_id": 1,
+            "mode": "read",
+            "samples": 189,
+            "mean_MiB_per_s": 296318.33737654256
+          },
+          {
+            "hbm_id": 1,
+            "mode": "write",
+            "samples": 189,
+            "mean_MiB_per_s": 359.709133096883
+          },
+          {
+            "hbm_id": 2,
+            "mode": "read",
+            "samples": 189,
+            "mean_MiB_per_s": 296337.89926449594
+          },
+          {
+            "hbm_id": 2,
+            "mode": "write",
+            "samples": 189,
+            "mean_MiB_per_s": 358.87312990874494
+          },
+          {
+            "hbm_id": 3,
+            "mode": "read",
+            "samples": 189,
+            "mean_MiB_per_s": 296326.58919466205
+          },
+          {
+            "hbm_id": 3,
+            "mode": "write",
+            "samples": 189,
+            "mean_MiB_per_s": 359.8153491942512
+          }
+        ],
+        "hbm_clocks_MHz": [
+          1600
+        ],
+        "memory_telemetry_before": {
+          "DDR Clock Speed(MHz)": "0",
+          "HBM Clock Speed(MHz)": "1600",
+          "HBM Temperature(C)": "45"
+        }
+      }
+    ],
+    "hbm_query": "SELECT hbmid,event_type,COUNT(*),AVG(bandwidth),MIN(bandwidth),MAX(bandwidth)\nFROM HBMbwData WHERE timestamp BETWEEN ? AND ?\nGROUP BY hbmid,event_type ORDER BY hbmid,event_type LIMIT 12",
+    "hbm_units": "HBMbwData values interpreted as MiB/s from installed CANN HbmModel.SCALE; aggregated result converted to decimal TB/s",
+    "platform_l2_size_bytes": 201326592,
+    "limits": [
+      "Controlled isolated graphs use torch.mm(out=), exported as aclnnMm; actual model uses F.linear, exported as aclnnMatmul. Their absolute time difference is not assigned to TLB or any unmeasured tiling change.",
+      "No per-miss stall-cycle timing is available. Controlled cold/warm comparisons test whether increased TLB misses materially increase the observed total runtime.",
+      "MemoryAccess counters describe GM/request and on-chip traffic, not a direct measurement of physical HBM transactions. Physical HBM bandwidth is taken from the separate device-6 system capture.",
+      "HBM bandwidth describes isolated FFN graph phases, not complete-model bandwidth or an established hardware ceiling.",
+      "No new normal model throughput result or optimization claim; model requests were profiled."
+    ],
+    "memory_access": {
+      "small": {
+        "up": {
+          "aic_read_main_memory_datas(KB)": 350011.111328125,
+          "aic_write_main_memory_datas(KB)": 544.0,
+          "aic_GM_to_L1_datas(KB)": 350000.0,
+          "aic_L0C_to_L1_datas(KB)": 0.0,
+          "aic_L0C_to_GM_datas(KB)": 544.0,
+          "aic_GM_to_UB_datas(KB)": 0.0,
+          "aic_UB_to_GM_datas(KB)": 0.0
+        },
+        "down": {
+          "aic_read_main_memory_datas(KB)": 186603.48388671875,
+          "aic_write_main_memory_datas(KB)": 114.0,
+          "aic_GM_to_L1_datas(KB)": 186592.0,
+          "aic_L0C_to_L1_datas(KB)": 0.0,
+          "aic_L0C_to_GM_datas(KB)": 80.0,
+          "aic_GM_to_UB_datas(KB)": 0.0,
+          "aic_UB_to_GM_datas(KB)": 0.0
+        }
+      },
+      "full": {
+        "up": {
+          "aic_read_main_memory_datas(KB)": 350011.111328125,
+          "aic_write_main_memory_datas(KB)": 544.0,
+          "aic_GM_to_L1_datas(KB)": 350000.0,
+          "aic_L0C_to_L1_datas(KB)": 0.0,
+          "aic_L0C_to_GM_datas(KB)": 544.0,
+          "aic_GM_to_UB_datas(KB)": 0.0,
+          "aic_UB_to_GM_datas(KB)": 0.0
+        },
+        "down": {
+          "aic_read_main_memory_datas(KB)": 186603.48388671875,
+          "aic_write_main_memory_datas(KB)": 114.0,
+          "aic_GM_to_L1_datas(KB)": 186592.0,
+          "aic_L0C_to_L1_datas(KB)": 0.0,
+          "aic_L0C_to_GM_datas(KB)": 80.0,
+          "aic_GM_to_UB_datas(KB)": 0.0,
+          "aic_UB_to_GM_datas(KB)": 0.0
+        }
+      },
+      "adjacent": {
+        "up": {
+          "aic_read_main_memory_datas(KB)": 350009.8662109375,
+          "aic_write_main_memory_datas(KB)": 544.0,
+          "aic_GM_to_L1_datas(KB)": 350000.0,
+          "aic_L0C_to_L1_datas(KB)": 0.0,
+          "aic_L0C_to_GM_datas(KB)": 544.0,
+          "aic_GM_to_UB_datas(KB)": 0.0,
+          "aic_UB_to_GM_datas(KB)": 0.0
+        },
+        "down": {
+          "aic_read_main_memory_datas(KB)": 186602.07592773438,
+          "aic_write_main_memory_datas(KB)": 114.0,
+          "aic_GM_to_L1_datas(KB)": 186592.0,
+          "aic_L0C_to_L1_datas(KB)": 0.0,
+          "aic_L0C_to_GM_datas(KB)": 80.0,
+          "aic_GM_to_UB_datas(KB)": 0.0,
+          "aic_UB_to_GM_datas(KB)": 0.0
+        }
+      }
+    },
+    "extra_metric_groups": {
+      "conflict": {
+        "up": {
+          "aic_total_cycles": 10988698.8359375
+        },
+        "down": {
+          "aic_total_cycles": 6026096.546875
+        }
+      },
+      "bandwidth": {
+        "up": {
+          "aic_total_cycles": 10983673.3203125,
+          "aic_l1_read_bw(GB/s)": 115.734734375,
+          "aic_l1_write_bw(GB/s)": 27.35199609375,
+          "aic_main_mem_read_bw(GB/s)": 0.85486328125,
+          "aic_main_mem_write_bw(GB/s)": 0.001,
+          "aic_l2_read_bw(GB/s)": 0.0,
+          "aic_l2_write_bw(GB/s)": 0.0
+        },
+        "down": {
+          "aic_total_cycles": 6024121.046875,
+          "aic_l1_read_bw(GB/s)": 113.4804453125,
+          "aic_l1_write_bw(GB/s)": 26.587265625,
+          "aic_main_mem_read_bw(GB/s)": 0.8310390624999999,
+          "aic_main_mem_write_bw(GB/s)": 0.002,
+          "aic_l2_read_bw(GB/s)": 0.0,
+          "aic_l2_write_bw(GB/s)": 0.0
+        }
+      },
+      "l0": {
+        "up": {
+          "aic_total_cycles": 10987088.1640625,
+          "aic_l0a_read_bw(GB/s)": 13.59991796875,
+          "aic_l0a_write_bw(GB/s)": 6.89994140625,
+          "aic_l0b_read_bw(GB/s)": 54.3996171875,
+          "aic_l0b_write_bw(GB/s)": 108.79916015625,
+          "aic_l0c_read_bw_cube(GB/s)": 26.8598046875,
+          "aic_l0c_write_bw_cube(GB/s)": 27.1997890625
+        },
+        "down": {
+          "aic_total_cycles": 6024384.6796875,
+          "aic_l0a_read_bw(GB/s)": 14.261921875,
+          "aic_l0a_write_bw(GB/s)": 14.261921875,
+          "aic_l0b_read_bw(GB/s)": 49.60658984375,
+          "aic_l0b_write_bw(GB/s)": 99.21319140625,
+          "aic_l0c_read_bw_cube(GB/s)": 24.71210546875,
+          "aic_l0c_write_bw_cube(GB/s)": 24.803328125
+        }
+      }
+    },
+    "shapes": {
+      "up": "\"8,5120;34816,5120\"",
+      "down": "\"8,17408;5120,17408\""
+    }
+  },
+  "restoration": {
+    "restored_utc": "2026-10-20T09:08:04.210373+00:00",
+    "baseline_unchanged": true,
+    "both_services_healthy": true,
+    "experiment_closed": true
+  },
+  "conclusions": [
+    "The old NZ/M2 translation-locality regression is not reproduced by current ND/M8. Up miss counts increase from 1.17 to 127.11 but paired FFN graph time stays 215.50 vs 215.47 us/call.",
+    "The main-model FFN kernels remain dominated by GM-to-L1/MTE2 activity. Actual target up/down times are about 297/153 us; this is distinct from a measured pure-HBM or pure-TLB duration.",
+    "Isolated FFN HBM read bandwidth is about 1.243 TB/s for both small and 64-layer working sets, with balanced units and stable 1600 MHz clocks.",
+    "Immediately repeated down projections benefit from nearly 100% L2 data hits, decreasing 154.10 to 98.01 us. This controlled cache benefit is not directly available to sequential 64-layer autoregressive execution.",
+    "The draft vocabulary projection costs about 13.34 ms/verification round, in addition to 28.82 ms of target FFN matrix multiplications. Both are major BF16 weight-reading workloads."
+  ]
+}
