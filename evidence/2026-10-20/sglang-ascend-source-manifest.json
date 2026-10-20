@@ -1,0 +1,22 @@
+{
+  "files": [
+    {
+      "path": "experiments/sglang-ascend/ascend_client.py",
+      "sha256": "358a279ede7b45fa17141f81b4ad657c9beffc44aff264c9a6efa00ab3f4f58f"
+    },
+    {
+      "path": "experiments/sglang-ascend/export_sglang.py",
+      "sha256": "fa4f81ed135dd54df4187e564e09c161ce7ebd07624c171ac994b910dfd25216"
+    },
+    {
+      "path": "experiments/sglang-ascend/run_client.sh",
+      "sha256": "a6c8a384137645a0b0b0bcdb66a73e6bdc0cad1523edda841788ffc9f597c23a"
+    },
+    {
+      "path": "experiments/sglang-ascend/start_sglang.sh",
+      "sha256": "fa5d63e521e0869685977bcd51d73e09e608322be0e177c6e0731c9ee5e5163b"
+    }
+  ],
+  "sglang_source_tar_sha256": "fffbc4231a96c2a047e6744cf881b6074a58cf5ef000c603c164e8ab76bbe11c",
+  "measured_runtime_helpers_match_remote_receipt": true
+}

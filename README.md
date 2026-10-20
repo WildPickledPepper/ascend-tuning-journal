@@ -11,16 +11,17 @@
 | [早期记录](journal/undated-history.md) | MindStudio/Insight、示例仓库和分析环境准备，部分操作未保留准确时间 |
 | [2026-10-16](journal/2026-10-16.md) | 服务器环境、6 号卡小例子、9B 推理采样、27B 离线准备 |
 | [2026-10-19](journal/2026-10-19.md) | 27B 部署；图模式；HBM/矩阵乘；内核实验停止；MTP；NZ 回退与差异补采 |
-| [2026-10-20](journal/2026-10-20.md) | 实采 TLB/HBM 定位 NZ 退化；单卡 BF16 DFlash2 与同版本 MTP 对照 |
+| [2026-10-20](journal/2026-10-20.md) | 实采 TLB/HBM 定位 NZ 退化；DFlash2/MTP 采样归因；SGLang 昇腾双卡四题复现 |
 
 搬运技术说明：[HBM/L2/L1/L0 数据流、ND/NZ 地址、分块与同步](notes/matmul-data-movement.md)。
 
 ## 最近一次记录的状态
 
-- 当前目标：**保持 BF16，依据 ms 工具证据调优单卡推理**。
-- DFlash2 已补完 [四份采样与 Insight 后端分析](experiments/dflash2/profiling.md)：每次返回更多 token，但 eager 草稿/准备流程也变贵，抵消多数收益；候选路径选择设备内核约 5.18 μs/轮，不是主热点。全部 778 个形状分组的调用数和总耗时与 CSV 一致，SQL TOP20 也核对通过。后续按用户要求另做双卡 SGLang 昇腾配方小样本复现，不与此前单卡结果混算。
+- 当前目标：**保持 BF16，依据 ms 工具证据调优推理**；新增按公开昇腾配方的双卡小样本验证。
+- 最新实验：[SGLang 昇腾方案，双卡 BF16、batch1、同四道 GSM8K](experiments/sglang-ascend/README.md)：AR **28.668**、MTP7 **69.748**、DFlash2 **57.560 token/s**，各 4/4 正确。DFlash2 为 AR 的 **2.008 倍**，吞吐相对 MTP 低 **17.475%**；其首题耗时偏长，第三题输出长度也不同。结果只覆盖四题，包含 prefill，不当作稳态解码上限，也不与旧单卡速度直接相除。[回执](evidence/2026-10-20/sglang-ascend-four-questions.json)。
+- DFlash2 已补完 [四份采样与 Insight 后端分析](experiments/dflash2/profiling.md)：每次返回更多 token，但 eager 草稿/准备流程也变贵，抵消多数收益；候选路径选择设备内核约 5.18 μs/轮，不是主热点。全部 778 个形状分组的调用数和总耗时与 CSV 一致，SQL TOP20 也核对通过。随后按用户要求完成双卡 SGLang 昇腾配方小样本复现，与此前单卡结果分别记录。
 - 模型：Qwen3.8-27B，Dense，每个服务单卡 TP=1；7 号卡保留基线，6 号卡启用 MTP。
-- 最新实验：[DFlash2 单卡 BF16 验证](experiments/dflash2/README.md) 已跑通；95% 框架预算下就绪时进程约 **58.64 GiB**。同一 0.27.1rc1 框架、4 次 256-token 请求，MTP **30.673**、DFlash2 **33.614 token/s（+9.59%）**，首 token **282→372 ms**；提示间收益不同。7 项正常响应前缀一致，固定长度测试中有 2 项在 EOS 之后的强制续写不同；新环境未替换默认服务。[过滤比较](evidence/2026-10-20/dflash2-comparison.json)。
+- 此前单卡实验：[DFlash2 单卡 BF16 验证](experiments/dflash2/README.md) 已跑通；95% 框架预算下就绪时进程约 **58.64 GiB**。同一 0.27.1rc1 框架、4 次 256-token 请求，MTP **30.673**、DFlash2 **33.614 token/s（+9.59%）**，首 token **282→372 ms**；提示间收益不同。7 项正常响应前缀一致，固定长度测试中有 2 项在 EOS 之后的强制续写不同；新环境未替换默认服务。[过滤比较](evidence/2026-10-20/dflash2-comparison.json)。
 - 已实施并验证：切换为 `FULL_DECODE_ONLY` 图模式，3 次无 profiler 基准的生成速度中位数 **5.55 → 20.28 token/s，约 3.66 倍**。
 - 已定位：门控＋升维、降维两组前馈矩阵乘合计占连续解码时间约 **55.9%**，主要负担是权重读取。
 - 已澄清：降维算子“多 21.6%”的计数由 **14.375% L1 清零＋7.1875% 输入 ND→NZ 写请求**构成，不能当作显存重复读量或提速比例。

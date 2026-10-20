@@ -6,4 +6,6 @@ experiments/nz-context/* text eol=lf
 experiments/nz-runtime/* text eol=lf
 experiments/nz-hardware/* text eol=lf
 experiments/dflash2/* text eol=lf
+experiments/dflash2/profile/* text eol=lf
+experiments/sglang-ascend/* text eol=lf
 evidence/2026-10-20/*.json text eol=lf

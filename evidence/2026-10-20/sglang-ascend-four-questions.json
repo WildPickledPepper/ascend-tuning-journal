@@ -1,0 +1,449 @@
+{
+  "model": "Qwen3.8-27B",
+  "target_and_draft_dtype": "BF16",
+  "physical_card_count": 2,
+  "hardware": "Ascend 910B2",
+  "TP": 2,
+  "concurrency": 1,
+  "protocol": "GSM8K zero-shot chat, first4 test questions, greedy T0/top_p1/top_k1, max2048, RadixCache off, no profiler",
+  "same_request_payloads": true,
+  "methods": {
+    "ar": {
+      "mode": "ar",
+      "protocol": "SGLang PR35629: GSM8K zero-shot/chat, greedy T0/top_p1/top_k1, 2048 output limit, concurrency1; 4 examples.",
+      "evaluator_source_commit": "bea986b2f91432e0bdf2c283527427b0e63fcda1",
+      "evaluator_source_sha256": "f71543a818dcc1ad4fa7263df76492bf76c971deeec3d4377aa72fea819c8ec1",
+      "example_count": 4,
+      "warmup_requests": 1,
+      "warmup_max_tokens": 64,
+      "latency_s": 40.91648920997977,
+      "output_tokens": 1173,
+      "throughput_tok_s": 28.668148774452977,
+      "accuracy": 1.0,
+      "requests": [
+        {
+          "question_index": 0,
+          "prompt_sha256": "aeaf0ef0034af52aa8339fc075b3de4f7d943f0cbb8f670399bd04600e5d9e9a",
+          "started_utc": "2026-10-20T03:56:06.008048+00:00",
+          "elapsed_s": 4.533810549997725,
+          "usage": {
+            "completion_tokens": 137,
+            "prompt_tokens": 121,
+            "total_tokens": 258,
+            "completion_tokens_details": null,
+            "prompt_tokens_details": null,
+            "reasoning_tokens": 0
+          },
+          "finish_reason": "stop",
+          "answer_sha256": "204cbba79cbe6922aff2960428fa490709ee005c2dfd5c46e004cb27b1b52694",
+          "meta": {}
+        },
+        {
+          "question_index": 1,
+          "prompt_sha256": "c34c3252e186b1c1f93a0931e1c6f5e190ae68c6c44e3b00c7cbc4b39dff1d90",
+          "started_utc": "2026-10-20T03:56:10.549795+00:00",
+          "elapsed_s": 1.7337476400425658,
+          "usage": {
+            "completion_tokens": 44,
+            "prompt_tokens": 83,
+            "total_tokens": 127,
+            "completion_tokens_details": null,
+            "prompt_tokens_details": null,
+            "reasoning_tokens": 0
+          },
+          "finish_reason": "stop",
+          "answer_sha256": "66e59be6d32fd0e15ae114835aaf13562508d4575175aef33bc7355e6e8c326e",
+          "meta": {}
+        },
+        {
+          "question_index": 2,
+          "prompt_sha256": "a1b3c077a5ffc275fef6fdbb3e97e22761e33c10514735353bc8f421763f40ba",
+          "started_utc": "2026-10-20T03:56:12.291103+00:00",
+          "elapsed_s": 27.17840435996186,
+          "usage": {
+            "completion_tokens": 904,
+            "prompt_tokens": 114,
+            "total_tokens": 1018,
+            "completion_tokens_details": null,
+            "prompt_tokens_details": null,
+            "reasoning_tokens": 0
+          },
+          "finish_reason": "stop",
+          "answer_sha256": "4c3b2626d6b56f009a204a038320d3b16963a06c4d7f368a624765e99aa89e24",
+          "meta": {}
+        },
+        {
+          "question_index": 3,
+          "prompt_sha256": "97b4b589a15891ad46094d47592df47c4f652420a1d222cf0eb9a300ab3f8285",
+          "started_utc": "2026-10-20T03:56:39.478116+00:00",
+          "elapsed_s": 7.43281551997643,
+          "usage": {
+            "completion_tokens": 88,
+            "prompt_tokens": 92,
+            "total_tokens": 180,
+            "completion_tokens_details": null,
+            "prompt_tokens_details": null,
+            "reasoning_tokens": 0
+          },
+          "finish_reason": "stop",
+          "answer_sha256": "eb7b38b03baf4f97839e26969a8ad23dc38209878bd676556d8d0ed0845e61c2",
+          "meta": {}
+        }
+      ]
+    },
+    "dflash2": {
+      "mode": "dflash2",
+      "protocol": "SGLang PR35629: GSM8K zero-shot/chat, greedy T0/top_p1/top_k1, 2048 output limit, concurrency1; 4 examples.",
+      "evaluator_source_commit": "bea986b2f91432e0bdf2c283527427b0e63fcda1",
+      "evaluator_source_sha256": "f71543a818dcc1ad4fa7263df76492bf76c971deeec3d4377aa72fea819c8ec1",
+      "example_count": 4,
+      "warmup_requests": 1,
+      "warmup_max_tokens": 64,
+      "latency_s": 15.149490120005794,
+      "output_tokens": 872,
+      "throughput_tok_s": 57.559692972667946,
+      "accuracy": 1.0,
+      "requests": [
+        {
+          "question_index": 0,
+          "prompt_sha256": "aeaf0ef0034af52aa8339fc075b3de4f7d943f0cbb8f670399bd04600e5d9e9a",
+          "started_utc": "2026-10-20T04:00:02.167946+00:00",
+          "elapsed_s": 5.566114880028181,
+          "usage": {
+            "completion_tokens": 137,
+            "prompt_tokens": 121,
+            "total_tokens": 258,
+            "completion_tokens_details": null,
+            "prompt_tokens_details": null,
+            "reasoning_tokens": 0
+          },
+          "finish_reason": "stop",
+          "answer_sha256": "204cbba79cbe6922aff2960428fa490709ee005c2dfd5c46e004cb27b1b52694",
+          "meta": {}
+        },
+        {
+          "question_index": 1,
+          "prompt_sha256": "c34c3252e186b1c1f93a0931e1c6f5e190ae68c6c44e3b00c7cbc4b39dff1d90",
+          "started_utc": "2026-10-20T04:00:07.741437+00:00",
+          "elapsed_s": 1.0036172000691295,
+          "usage": {
+            "completion_tokens": 44,
+            "prompt_tokens": 83,
+            "total_tokens": 127,
+            "completion_tokens_details": null,
+            "prompt_tokens_details": null,
+            "reasoning_tokens": 0
+          },
+          "finish_reason": "stop",
+          "answer_sha256": "66e59be6d32fd0e15ae114835aaf13562508d4575175aef33bc7355e6e8c326e",
+          "meta": {}
+        },
+        {
+          "question_index": 2,
+          "prompt_sha256": "a1b3c077a5ffc275fef6fdbb3e97e22761e33c10514735353bc8f421763f40ba",
+          "started_utc": "2026-10-20T04:00:08.751983+00:00",
+          "elapsed_s": 7.011145800002851,
+          "usage": {
+            "completion_tokens": 603,
+            "prompt_tokens": 114,
+            "total_tokens": 717,
+            "completion_tokens_details": null,
+            "prompt_tokens_details": null,
+            "reasoning_tokens": 0
+          },
+          "finish_reason": "stop",
+          "answer_sha256": "5350cf493978c5c7717fca615e8a76a696cda95fcb3ef520098849c89fe7d930",
+          "meta": {}
+        },
+        {
+          "question_index": 3,
+          "prompt_sha256": "97b4b589a15891ad46094d47592df47c4f652420a1d222cf0eb9a300ab3f8285",
+          "started_utc": "2026-10-20T04:00:15.770594+00:00",
+          "elapsed_s": 1.53481301991269,
+          "usage": {
+            "completion_tokens": 88,
+            "prompt_tokens": 92,
+            "total_tokens": 180,
+            "completion_tokens_details": null,
+            "prompt_tokens_details": null,
+            "reasoning_tokens": 0
+          },
+          "finish_reason": "stop",
+          "answer_sha256": "6a64e916d527c9b8e4ae4758c2e8b7f7e822d1090c1dec7ab483cd4de570002b",
+          "meta": {}
+        }
+      ]
+    },
+    "mtp": {
+      "mode": "mtp",
+      "protocol": "SGLang PR35629: GSM8K zero-shot/chat, greedy T0/top_p1/top_k1, 2048 output limit, concurrency1; 4 examples.",
+      "evaluator_source_commit": "bea986b2f91432e0bdf2c283527427b0e63fcda1",
+      "evaluator_source_sha256": "f71543a818dcc1ad4fa7263df76492bf76c971deeec3d4377aa72fea819c8ec1",
+      "example_count": 4,
+      "warmup_requests": 1,
+      "warmup_max_tokens": 64,
+      "latency_s": 16.516513720038347,
+      "output_tokens": 1152,
+      "throughput_tok_s": 69.748375445743,
+      "accuracy": 1.0,
+      "requests": [
+        {
+          "question_index": 0,
+          "prompt_sha256": "aeaf0ef0034af52aa8339fc075b3de4f7d943f0cbb8f670399bd04600e5d9e9a",
+          "started_utc": "2026-10-20T04:02:33.044801+00:00",
+          "elapsed_s": 2.073803919949569,
+          "usage": {
+            "completion_tokens": 137,
+            "prompt_tokens": 121,
+            "total_tokens": 258,
+            "completion_tokens_details": null,
+            "prompt_tokens_details": null,
+            "reasoning_tokens": 0
+          },
+          "finish_reason": "stop",
+          "answer_sha256": "204cbba79cbe6922aff2960428fa490709ee005c2dfd5c46e004cb27b1b52694",
+          "meta": {}
+        },
+        {
+          "question_index": 1,
+          "prompt_sha256": "c34c3252e186b1c1f93a0931e1c6f5e190ae68c6c44e3b00c7cbc4b39dff1d90",
+          "started_utc": "2026-10-20T04:02:35.126293+00:00",
+          "elapsed_s": 1.2083355999784544,
+          "usage": {
+            "completion_tokens": 44,
+            "prompt_tokens": 83,
+            "total_tokens": 127,
+            "completion_tokens_details": null,
+            "prompt_tokens_details": null,
+            "reasoning_tokens": 0
+          },
+          "finish_reason": "stop",
+          "answer_sha256": "66e59be6d32fd0e15ae114835aaf13562508d4575175aef33bc7355e6e8c326e",
+          "meta": {}
+        },
+        {
+          "question_index": 2,
+          "prompt_sha256": "a1b3c077a5ffc275fef6fdbb3e97e22761e33c10514735353bc8f421763f40ba",
+          "started_utc": "2026-10-20T04:02:36.341808+00:00",
+          "elapsed_s": 11.540414749993943,
+          "usage": {
+            "completion_tokens": 883,
+            "prompt_tokens": 114,
+            "total_tokens": 997,
+            "completion_tokens_details": null,
+            "prompt_tokens_details": null,
+            "reasoning_tokens": 0
+          },
+          "finish_reason": "stop",
+          "answer_sha256": "6e21e2a390e23c44eaabef3dcb003166638a757f87b945cb7accd77ca13f63d7",
+          "meta": {}
+        },
+        {
+          "question_index": 3,
+          "prompt_sha256": "97b4b589a15891ad46094d47592df47c4f652420a1d222cf0eb9a300ab3f8285",
+          "started_utc": "2026-10-20T04:02:47.889963+00:00",
+          "elapsed_s": 1.658804070088081,
+          "usage": {
+            "completion_tokens": 88,
+            "prompt_tokens": 92,
+            "total_tokens": 180,
+            "completion_tokens_details": null,
+            "prompt_tokens_details": null,
+            "reasoning_tokens": 0
+          },
+          "finish_reason": "stop",
+          "answer_sha256": "6a64e916d527c9b8e4ae4758c2e8b7f7e822d1090c1dec7ab483cd4de570002b",
+          "meta": {}
+        }
+      ]
+    }
+  },
+  "dflash2_over_ar": 2.0077924607382065,
+  "mtp_over_ar": 2.432957077015653,
+  "dflash2_over_mtp": 0.825247794014119,
+  "answer_content_equal_to_ar": {
+    "dflash2": [
+      true,
+      true,
+      false,
+      false
+    ],
+    "mtp": [
+      true,
+      true,
+      false,
+      false
+    ]
+  },
+  "started_utc": "2026-10-20T03:54:19.541294+00:00",
+  "restored_utc": "2026-10-20T04:09:22.603832+00:00",
+  "restored_health": {
+    "8038": 200,
+    "8039": 200
+  },
+  "restored_configuration": {
+    "health": {
+      "8038": 200,
+      "8039": 200,
+      "8040": 0
+    },
+    "services": [
+      {
+        "port": 8038,
+        "dtype": "bfloat16",
+        "TP": 1,
+        "visible_devices": "7",
+        "speculative_config": null,
+        "ld_preload_present": false,
+        "sglang_custom_opp_present": false
+      },
+      {
+        "port": 8039,
+        "dtype": "bfloat16",
+        "TP": 1,
+        "visible_devices": "6",
+        "speculative_config": {
+          "method": "qwen3_5_mtp",
+          "num_speculative_tokens": 1,
+          "enforce_eager": true
+        },
+        "ld_preload_present": false,
+        "sglang_custom_opp_present": false
+      }
+    ]
+  },
+  "sources": {
+    "sglang_source_commit": "30d0eb2ca9dfcfcfcec5eb86c2bb5a83132a766d",
+    "sgl_kernel_release": "2026.9.1",
+    "kernel_release_assets": [
+      {
+        "name": "custom-ops-2026.9.1-torch2.10.0-cann9.1.0-910b-aarch64.zip",
+        "url": "https://github.com/sgl-project/sgl-kernel-npu/releases/download/2026.9.1/custom-ops-2026.9.1-torch2.10.0-cann9.1.0-910b-aarch64.zip",
+        "size": 56501989,
+        "sha256": "a5e8a6472ef9e4382df1b57f19aa8dc8c1846b6f89496b87117dcc6971205d75"
+      },
+      {
+        "name": "ops-transformer-2026.9.1-torch2.10.0-cann9.1.0-910b-aarch64.zip",
+        "url": "https://github.com/sgl-project/sgl-kernel-npu/releases/download/2026.9.1/ops-transformer-2026.9.1-torch2.10.0-cann9.1.0-910b-aarch64.zip",
+        "size": 6336879,
+        "sha256": "2a4cce812c9d1feb85233999df31f8f64d5569907a58c16a1b7ffd1c6fc06755"
+      },
+      {
+        "name": "sgl-kernel-npu-2026.9.1-torch2.10.0-py312-cann9.1.0-910b-aarch64.zip",
+        "url": "https://github.com/sgl-project/sgl-kernel-npu/releases/download/2026.9.1/sgl-kernel-npu-2026.9.1-torch2.10.0-py312-cann9.1.0-910b-aarch64.zip",
+        "size": 12708396,
+        "sha256": "978e3049f6d171febe287f6e22555450a5a2ffed7ee8b3e55a32ee5b39080979"
+      }
+    ],
+    "files": [
+      {
+        "name": "start_sglang.sh",
+        "sha256": "fa5d63e521e0869685977bcd51d73e09e608322be0e177c6e0731c9ee5e5163b"
+      },
+      {
+        "name": "run_client.sh",
+        "sha256": "a6c8a384137645a0b0b0bcdb66a73e6bdc0cad1523edda841788ffc9f597c23a"
+      },
+      {
+        "name": "ascend_client.py",
+        "sha256": "358a279ede7b45fa17141f81b4ad657c9beffc44aff264c9a6efa00ab3f4f58f"
+      },
+      {
+        "name": "upstream/simple_eval_gsm8k.py",
+        "sha256": "f71543a818dcc1ad4fa7263df76492bf76c971deeec3d4377aa72fea819c8ec1"
+      },
+      {
+        "name": "upstream/simple_eval_common.py",
+        "sha256": "79cf22a48ff0069561289b5b437970bc21cdd1052c98a8a49dea2cb4efb1df14"
+      },
+      {
+        "name": "gsm8k-test.jsonl",
+        "sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14"
+      }
+    ]
+  },
+  "runtime_facts": {
+    "ar": {
+      "resolved_fields": {
+        "dtype": "bfloat16",
+        "tp_size": 2,
+        "max_running_requests": 1,
+        "speculative_algorithm": null,
+        "speculative_num_steps": null,
+        "speculative_num_draft_tokens": null,
+        "mamba_ssm_dtype": "bfloat16",
+        "disable_radix_cache": true
+      },
+      "graph_log_samples": [
+        "[2026-10-20 03:55:31 TP0] Capture target decode NPU graph begin. backend=full, num_tokens_per_req=1, bs=[1], avail mem=6.10 GB",
+        "[2026-10-20 03:55:31 TP1] Capture target decode NPU graph begin. backend=full, num_tokens_per_req=1, bs=[1], avail mem=6.15 GB"
+      ],
+      "scheduler_window_samples": [
+        "[2026-10-20 03:56:32 TP0] Decode batch, #running-req: 1, #full token: 896, full token usage: 0.00, mamba num: 1, mamba usage: 1.00, npu graph: True, gen throughput (token/s): 32.74, #queue-req: 0",
+        "[2026-10-20 03:56:33 TP0] Decode batch, #running-req: 1, #full token: 896, full token usage: 0.00, mamba num: 1, mamba usage: 1.00, npu graph: True, gen throughput (token/s): 34.02, #queue-req: 0",
+        "[2026-10-20 03:56:35 TP0] Decode batch, #running-req: 1, #full token: 896, full token usage: 0.00, mamba num: 1, mamba usage: 1.00, npu graph: True, gen throughput (token/s): 33.94, #queue-req: 0",
+        "[2026-10-20 03:56:36 TP0] Decode batch, #running-req: 1, #full token: 1024, full token usage: 0.00, mamba num: 1, mamba usage: 1.00, npu graph: True, gen throughput (token/s): 32.94, #queue-req: 0",
+        "[2026-10-20 03:56:37 TP0] Decode batch, #running-req: 1, #full token: 1024, full token usage: 0.00, mamba num: 1, mamba usage: 1.00, npu graph: True, gen throughput (token/s): 32.55, #queue-req: 0",
+        "[2026-10-20 03:56:38 TP0] Decode batch, #running-req: 1, #full token: 1024, full token usage: 0.00, mamba num: 1, mamba usage: 1.00, npu graph: True, gen throughput (token/s): 32.96, #queue-req: 0",
+        "[2026-10-20 03:56:44 TP0] Decode batch, #running-req: 1, #full token: 128, full token usage: 0.00, mamba num: 1, mamba usage: 1.00, npu graph: True, gen throughput (token/s): 6.68, #queue-req: 0",
+        "[2026-10-20 03:56:45 TP0] Decode batch, #running-req: 1, #full token: 256, full token usage: 0.00, mamba num: 1, mamba usage: 1.00, npu graph: True, gen throughput (token/s): 32.82, #queue-req: 0"
+      ]
+    },
+    "dflash2": {
+      "resolved_fields": {
+        "dtype": "bfloat16",
+        "tp_size": 2,
+        "max_running_requests": 1,
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_steps": 1,
+        "speculative_num_draft_tokens": 8,
+        "mamba_ssm_dtype": "bfloat16",
+        "disable_radix_cache": true
+      },
+      "graph_log_samples": [
+        "[2026-10-20 03:58:15 TP0] Capture target verify NPU graph begin. backend=full, num_tokens_per_req=8, bs=[1], avail mem=6.08 GB",
+        "[2026-10-20 03:58:15 TP1] Capture target verify NPU graph begin. backend=full, num_tokens_per_req=8, bs=[1], avail mem=6.13 GB",
+        "[2026-10-20 03:58:36 TP0] DFLASH selector decode folded into the draft cuda graph (sampling_enabled=False).",
+        "[2026-10-20 03:58:53 TP0] Capture draft verify NPU graph end. elapsed=17.04 s, mem usage=0.28 GB, avail mem=4.91 GB.",
+        "[2026-10-20 03:58:53 TP1] Capture draft verify NPU graph end. elapsed=17.06 s, mem usage=0.28 GB, avail mem=4.96 GB."
+      ],
+      "scheduler_window_samples": [
+        "[2026-10-20 04:00:07 TP0] Decode batch, #running-req: 1, #full token: 384, full token usage: 0.00, mamba num: 1, mamba usage: 1.00, accept len: 3.95, accept rate: 0.42, npu graph: True, gen throughput (token/s): 2.12, #queue-req: 0",
+        "[2026-10-20 04:00:10 TP0] Decode batch, #running-req: 1, #full token: 384, full token usage: 0.00, mamba num: 1, mamba usage: 1.00, accept len: 5.17, accept rate: 0.60, npu graph: True, gen throughput (token/s): 64.77, #queue-req: 0",
+        "[2026-10-20 04:00:13 TP0] Decode batch, #running-req: 1, #full token: 512, full token usage: 0.00, mamba num: 1, mamba usage: 1.00, accept len: 5.03, accept rate: 0.57, npu graph: True, gen throughput (token/s): 88.97, #queue-req: 0",
+        "[2026-10-20 04:00:15 TP0] Decode batch, #running-req: 1, #full token: 768, full token usage: 0.00, mamba num: 1, mamba usage: 1.00, accept len: 5.12, accept rate: 0.59, npu graph: True, gen throughput (token/s): 90.10, #queue-req: 0"
+      ]
+    },
+    "mtp": {
+      "resolved_fields": {
+        "dtype": "bfloat16",
+        "tp_size": 2,
+        "max_running_requests": 1,
+        "speculative_algorithm": "EAGLE",
+        "speculative_num_steps": 7,
+        "speculative_num_draft_tokens": 8,
+        "mamba_ssm_dtype": "bfloat16",
+        "disable_radix_cache": true
+      },
+      "graph_log_samples": [
+        "[2026-10-20 04:01:43 TP0] Capture target verify NPU graph begin. backend=full, num_tokens_per_req=8, bs=[1], avail mem=6.76 GB",
+        "[2026-10-20 04:01:43 TP1] Capture target verify NPU graph begin. backend=full, num_tokens_per_req=8, bs=[1], avail mem=6.82 GB"
+      ],
+      "scheduler_window_samples": [
+        "[2026-10-20 04:02:35 TP0] Decode batch, #running-req: 1, #full token: 128, full token usage: 0.00, mamba num: 1, mamba usage: 1.00, accept len: 4.90, accept rate: 0.56, npu graph: True, gen throughput (token/s): 4.19, #queue-req: 0",
+        "[2026-10-20 04:02:38 TP0] Decode batch, #running-req: 1, #full token: 384, full token usage: 0.00, mamba num: 1, mamba usage: 1.00, accept len: 4.38, accept rate: 0.48, npu graph: True, gen throughput (token/s): 63.96, #queue-req: 0",
+        "[2026-10-20 04:02:40 TP0] Decode batch, #running-req: 1, #full token: 512, full token usage: 0.00, mamba num: 1, mamba usage: 1.00, accept len: 3.75, accept rate: 0.39, npu graph: True, gen throughput (token/s): 65.92, #queue-req: 0",
+        "[2026-10-20 04:02:43 TP0] Decode batch, #running-req: 1, #full token: 640, full token usage: 0.00, mamba num: 1, mamba usage: 1.00, accept len: 4.05, accept rate: 0.44, npu graph: True, gen throughput (token/s): 71.45, #queue-req: 0",
+        "[2026-10-20 04:02:45 TP0] Decode batch, #running-req: 1, #full token: 896, full token usage: 0.00, mamba num: 1, mamba usage: 1.00, accept len: 4.75, accept rate: 0.54, npu graph: True, gen throughput (token/s): 83.56, #queue-req: 0",
+        "[2026-10-20 04:02:47 TP0] Decode batch, #running-req: 1, #full token: 1024, full token usage: 0.00, mamba num: 1, mamba usage: 1.00, accept len: 5.28, accept rate: 0.61, npu graph: True, gen throughput (token/s): 92.55, #queue-req: 0"
+      ]
+    }
+  },
+  "limits": [
+    "Four examples are a smoke benchmark, not a full accuracy or performance evaluation.",
+    "TP2 results cannot be treated as a framework-only speedup over previous TP1 runs.",
+    "The upstream Ascend PR used 910C; this run uses 910B2.",
+    "Upstream PR does not publish a complete dependency lockfile; source is pinned to its merge and kernel packages to the contemporaneous release.",
+    "OpenAI answer-content hashes do not include reasoning_content and are not full token-ID comparisons."
+  ]
+}
