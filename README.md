@@ -19,6 +19,7 @@
 
 - 当前目标：**保持 BF16，依据 ms 工具证据调优推理**；新增按公开昇腾配方的双卡小样本验证。
 - 最新同题单卡对照：[vLLM MTP1→MTP7草稿图](experiments/vllm-mtp7/README.md)，同四题均844 token、4/4正确，**30.443→59.389 token/s，1.951倍**；验证448→171轮。Insight四份128-token采样共720个形状分组核对通过：第1题主模型70→26轮，两组FFN累计1.966→0.753秒，单次矩阵乘没有更快，收益来自更少重复验证与权重读取。SSM状态FP32→BF16等因素同时改变，未做独立消融。15:38:46确认恢复原服务，卡7未重启；MTP7未设默认。[正常测速](evidence/2026-10-20/vllm-mtp1-vs-mtp7-gsm.json)、[采样](evidence/2026-10-20/vllm-mtp1-vs-mtp7-profiles.json)。
+- 新增两个skill复核：[数据校验与算子MFU](experiments/vllm-mtp7/mfu.md)。四份数据均valid；主模型升维MFU **0.702%→2.701%**，降维 **0.663%→2.615%**，按CANN平台约353.89TFLOP/s理论分母估算。M2→8提高权重计算复用，仍未消除搬运主导；这是算子逻辑FLOP口径，不是整模型有效输出MFU。本次复用旧采样，没有新增NPU请求。
 - 同四题vLLM新配置59.389相对此前SGLang单卡42.167高40.84%，但第三题输出575/692、首题耗时差异，不能视作普遍框架排名。[独立回执](evidence/2026-10-20/vllm-mtp7-vs-sglang.json)。
 - 此前SGLang单卡验证：[BF16、MTP7与草稿图](experiments/sglang-ascend/single-card.md)已在物理6跑通，同四题端到端**42.167 token/s**、4/4正确；长回答第三题**53.254 token/s**，未达到此前双卡69.748。静态预算0.97、上下文4096、缓存8192 token；就绪进程合计约55.90 GiB，非峰值。14:47:00已确认恢复原服务，卡7原进程未重启；没有新做profiler采样，不猜测剩余差额的算子归因。[回执](evidence/2026-10-20/sglang-single-mtp7.json)。
 - 最新实验：[SGLang 昇腾方案，双卡 BF16、batch1、同四道 GSM8K](experiments/sglang-ascend/README.md)：AR **28.668**、MTP7 **69.748**、DFlash2 **57.560 token/s**，各 4/4 正确。DFlash2 为 AR 的 **2.008 倍**，吞吐相对 MTP 低 **17.475%**；其首题耗时偏长，第三题输出长度也不同。结果只覆盖四题，包含 prefill，不当作稳态解码上限，也不与旧单卡速度直接相除。[回执](evidence/2026-10-20/sglang-ascend-four-questions.json)。

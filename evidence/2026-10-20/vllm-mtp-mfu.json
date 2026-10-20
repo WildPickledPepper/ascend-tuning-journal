@@ -1,0 +1,485 @@
+{
+  "source_hash_validation": {
+    "old-p0": {
+      "original_archive_db_matches_server": true,
+      "local_analysis_db_matches_previous_evidence": true,
+      "local_analysis_db_matches_server": false,
+      "note": "Local DB used for Insight analysis differs from archived server DB; MFU uses unchanged kernel CSV, not this DB."
+    },
+    "old-p1": {
+      "original_archive_db_matches_server": true,
+      "local_analysis_db_matches_previous_evidence": true,
+      "local_analysis_db_matches_server": false,
+      "note": "Local DB used for Insight analysis differs from archived server DB; MFU uses unchanged kernel CSV, not this DB."
+    },
+    "new-p0": {
+      "original_archive_db_matches_server": true,
+      "local_analysis_db_matches_previous_evidence": true,
+      "local_analysis_db_matches_server": false,
+      "note": "Local DB used for Insight analysis differs from archived server DB; MFU uses unchanged kernel CSV, not this DB."
+    },
+    "new-p1": {
+      "original_archive_db_matches_server": true,
+      "local_analysis_db_matches_previous_evidence": true,
+      "local_analysis_db_matches_server": false,
+      "note": "Local DB used for Insight analysis differs from archived server DB; MFU uses unchanged kernel CSV, not this DB."
+    }
+  },
+  "skills": [
+    "mindstudio_profiler_data_check",
+    "op-mfu-calculator"
+  ],
+  "data_check": {
+    "checked_utc": "2026-10-20T07:45:41.146337+00:00",
+    "check_channel": "Direct read of profiler_info JSON and parsed files; requested MCP get_profiler_config is not exposed in this session.",
+    "captures": {
+      "old-p0": {
+        "type": "PyTorch framework profiler",
+        "status": "valid",
+        "rank": 0,
+        "physical_devices": [
+          "6"
+        ],
+        "stop_metadata_present": true,
+        "end_info_present": true,
+        "parse_output_present": true,
+        "files": {
+          "trace_view.json": {
+            "bytes": 189897812,
+            "sha256": "e68d08ae5e71be8a0b2b497669cc6fda9de15647b22fc3a04440de3efa9179dd"
+          },
+          "kernel_details.csv": {
+            "bytes": 40832730,
+            "sha256": "1f3024a0721d8a613995a1b5252ed5c24ea8ed3197454a382d2055a170c35bd4"
+          },
+          "ascend_pytorch_profiler_0.db": {
+            "bytes": 102072320,
+            "sha256": "13cd6ba187026dd783329de1085d95b49c63db657c793bec588367672e65ac1f"
+          }
+        },
+        "profiler_info_sha256": "74fc974e0ad83da86df65ff4b5aa2d16310da47f6b5bd18cea2d13ab364d7003",
+        "config": {
+          "common_config": {
+            "activities": [
+              "ProfilerActivity.CPU",
+              "ProfilerActivity.NPU"
+            ],
+            "schedule": {},
+            "record_shapes": true,
+            "profile_memory": false,
+            "with_stack": false,
+            "with_flops": false,
+            "with_modules": false
+          },
+          "experimental_config": {
+            "_profiler_level": "Level1",
+            "_aic_metrics": "ACL_AICORE_PIPE_UTILIZATION",
+            "_l2_cache": false,
+            "_msprof_tx": false,
+            "_mstx": false,
+            "_data_simplification": true,
+            "record_op_args": false,
+            "_export_type": [
+              "text",
+              "db"
+            ],
+            "_host_sys": [],
+            "_op_attr": false,
+            "_gc_detect_threshold": null,
+            "_mstx_domain_include": [],
+            "_mstx_domain_exclude": [],
+            "_sys_io": false,
+            "_sys_interconnection": false
+          }
+        },
+        "torch_npu_version": "2.10.0.post4",
+        "cann_version": "9.1.0"
+      },
+      "old-p1": {
+        "type": "PyTorch framework profiler",
+        "status": "valid",
+        "rank": 0,
+        "physical_devices": [
+          "6"
+        ],
+        "stop_metadata_present": true,
+        "end_info_present": true,
+        "parse_output_present": true,
+        "files": {
+          "trace_view.json": {
+            "bytes": 179729842,
+            "sha256": "146b96ad0aea4b9e378f65d9fb285832332c6567635d008bed35d5dfd1072140"
+          },
+          "kernel_details.csv": {
+            "bytes": 38543431,
+            "sha256": "44554c2aaf4ee1b493cd318a83f0a899dc5a3274b4d8febf5279200e3e41e98e"
+          },
+          "ascend_pytorch_profiler_0.db": {
+            "bytes": 96215040,
+            "sha256": "bbcfe10802d1e3d97544c0630a79cbc6a6e92320a447c3338b022feee85011a7"
+          }
+        },
+        "profiler_info_sha256": "cda677d479e08f8390d32537231117d2a9a95293a8467d7a54978191a68e28d0",
+        "config": {
+          "common_config": {
+            "activities": [
+              "ProfilerActivity.CPU",
+              "ProfilerActivity.NPU"
+            ],
+            "schedule": {},
+            "record_shapes": true,
+            "profile_memory": false,
+            "with_stack": false,
+            "with_flops": false,
+            "with_modules": false
+          },
+          "experimental_config": {
+            "_profiler_level": "Level1",
+            "_aic_metrics": "ACL_AICORE_PIPE_UTILIZATION",
+            "_l2_cache": false,
+            "_msprof_tx": false,
+            "_mstx": false,
+            "_data_simplification": true,
+            "record_op_args": false,
+            "_export_type": [
+              "text",
+              "db"
+            ],
+            "_host_sys": [],
+            "_op_attr": false,
+            "_gc_detect_threshold": null,
+            "_mstx_domain_include": [],
+            "_mstx_domain_exclude": [],
+            "_sys_io": false,
+            "_sys_interconnection": false
+          }
+        },
+        "torch_npu_version": "2.10.0.post4",
+        "cann_version": "9.1.0"
+      },
+      "new-p0": {
+        "type": "PyTorch framework profiler",
+        "status": "valid",
+        "rank": 0,
+        "physical_devices": [
+          "6"
+        ],
+        "stop_metadata_present": true,
+        "end_info_present": true,
+        "parse_output_present": true,
+        "files": {
+          "trace_view.json": {
+            "bytes": 103256949,
+            "sha256": "6125e27247882aa8d356423d300547e7edfda9bb9bd4c8b23300458b55c0ffa5"
+          },
+          "kernel_details.csv": {
+            "bytes": 18922957,
+            "sha256": "3883f2cd908349740057daa910b2d0164b039c36d3226c5aa758373cb9c77576"
+          },
+          "ascend_pytorch_profiler_0.db": {
+            "bytes": 50204672,
+            "sha256": "66d7c1758304f8c55db987dab60650d1eb2fd57d9b6731aaee2ee67c209642ae"
+          }
+        },
+        "profiler_info_sha256": "c5c59aff8ae21d97a8a594ccf8ea29259d8caf9ff8affdf458b76255258695af",
+        "config": {
+          "common_config": {
+            "activities": [
+              "ProfilerActivity.CPU",
+              "ProfilerActivity.NPU"
+            ],
+            "schedule": {},
+            "record_shapes": true,
+            "profile_memory": false,
+            "with_stack": false,
+            "with_flops": false,
+            "with_modules": false
+          },
+          "experimental_config": {
+            "_profiler_level": "Level1",
+            "_aic_metrics": "ACL_AICORE_PIPE_UTILIZATION",
+            "_l2_cache": false,
+            "_msprof_tx": false,
+            "_mstx": false,
+            "_data_simplification": true,
+            "record_op_args": false,
+            "_export_type": [
+              "text",
+              "db"
+            ],
+            "_host_sys": [],
+            "_op_attr": false,
+            "_gc_detect_threshold": null,
+            "_mstx_domain_include": [],
+            "_mstx_domain_exclude": [],
+            "_sys_io": false,
+            "_sys_interconnection": false
+          }
+        },
+        "torch_npu_version": "2.10.0.post4",
+        "cann_version": "9.1.0"
+      },
+      "new-p1": {
+        "type": "PyTorch framework profiler",
+        "status": "valid",
+        "rank": 0,
+        "physical_devices": [
+          "6"
+        ],
+        "stop_metadata_present": true,
+        "end_info_present": true,
+        "parse_output_present": true,
+        "files": {
+          "trace_view.json": {
+            "bytes": 120614758,
+            "sha256": "6a5cc3f669c47c4395ebc055beac9340a2d289fc7cdfaf700290bebaad4421eb"
+          },
+          "kernel_details.csv": {
+            "bytes": 22388618,
+            "sha256": "5f76a7a508540a50694498959ab4dfc1bc239a5e16f7aa749e4aa53d873ca188"
+          },
+          "ascend_pytorch_profiler_0.db": {
+            "bytes": 59052032,
+            "sha256": "c21db2f0316fde62d3d206e8b41ca28b1d5cf69cf40aafc4ab45699cfcc00a95"
+          }
+        },
+        "profiler_info_sha256": "099c82b377da60259c7ec926f59ff61386df7cfccab58132f2ba34f51b62e99d",
+        "config": {
+          "common_config": {
+            "activities": [
+              "ProfilerActivity.CPU",
+              "ProfilerActivity.NPU"
+            ],
+            "schedule": {},
+            "record_shapes": true,
+            "profile_memory": false,
+            "with_stack": false,
+            "with_flops": false,
+            "with_modules": false
+          },
+          "experimental_config": {
+            "_profiler_level": "Level1",
+            "_aic_metrics": "ACL_AICORE_PIPE_UTILIZATION",
+            "_l2_cache": false,
+            "_msprof_tx": false,
+            "_mstx": false,
+            "_data_simplification": true,
+            "record_op_args": false,
+            "_export_type": [
+              "text",
+              "db"
+            ],
+            "_host_sys": [],
+            "_op_attr": false,
+            "_gc_detect_threshold": null,
+            "_mstx_domain_include": [],
+            "_mstx_domain_exclude": [],
+            "_sys_io": false,
+            "_sys_interconnection": false
+          }
+        },
+        "torch_npu_version": "2.10.0.post4",
+        "cann_version": "9.1.0"
+      }
+    }
+  },
+  "peak": {
+    "tflops": 353.8944,
+    "precision": "BF16 dense",
+    "source": "Installed CANN 9.1.0 Ascend910B2.ini plus op-mfu-calculator approximate 353.89 TFLOP/s reference",
+    "platform_config_sha256": "307315c7d531f2ed86549a095d525592a641f4e81c2d3404541f6400e9d2471e",
+    "cube_core_cnt": 24,
+    "cube_freq_mhz": 1800,
+    "cube_m": 16,
+    "cube_n": 16,
+    "cube_k": 16,
+    "formula": "24 * 1.8e9 * 2 * 16 * 16 * 16 / 1e12",
+    "measured_sustained_peak": false
+  },
+  "formula": {
+    "logical_flops": "2*M*N*K",
+    "achieved_tflops": "logical_flops/(mean_us*1e-6)/1e12",
+    "mfu_percent": "100*achieved_tflops/peak_tflops"
+  },
+  "rows": [
+    {
+      "capture": "old-p0",
+      "op": "down",
+      "input_shape": "2,17408;5120,17408",
+      "dtype": "BF16",
+      "M": 2,
+      "N": 5120,
+      "K": 17408,
+      "calls": 4480,
+      "mean_us": 151.87335714285715,
+      "logical_flops_per_call": 356515840,
+      "achieved_tflops": 2.3474547919859923,
+      "peak_tflops": 353.8944,
+      "mfu_percent": 0.6633206945309087,
+      "logical_weight_bytes_per_call": 178257920,
+      "logical_flops_per_weight_byte": 2.0
+    },
+    {
+      "capture": "old-p0",
+      "op": "up_gate",
+      "input_shape": "2,5120;34816,5120",
+      "dtype": "BF16",
+      "M": 2,
+      "N": 34816,
+      "K": 5120,
+      "calls": 4480,
+      "mean_us": 287.0277767857143,
+      "logical_flops_per_call": 713031680,
+      "achieved_tflops": 2.484190512796002,
+      "peak_tflops": 353.8944,
+      "mfu_percent": 0.7019581301077389,
+      "logical_weight_bytes_per_call": 356515840,
+      "logical_flops_per_weight_byte": 2.0
+    },
+    {
+      "capture": "old-p1",
+      "op": "down",
+      "input_shape": "2,17408;5120,17408",
+      "dtype": "BF16",
+      "M": 2,
+      "N": 5120,
+      "K": 17408,
+      "calls": 4224,
+      "mean_us": 151.89488162878789,
+      "logical_flops_per_call": 356515840,
+      "achieved_tflops": 2.3471221424779816,
+      "peak_tflops": 353.8944,
+      "mfu_percent": 0.6632266977036035,
+      "logical_weight_bytes_per_call": 178257920,
+      "logical_flops_per_weight_byte": 2.0
+    },
+    {
+      "capture": "old-p1",
+      "op": "up_gate",
+      "input_shape": "2,5120;34816,5120",
+      "dtype": "BF16",
+      "M": 2,
+      "N": 34816,
+      "K": 5120,
+      "calls": 4224,
+      "mean_us": 286.79532196969694,
+      "logical_flops_per_call": 713031680,
+      "achieved_tflops": 2.4862040116377475,
+      "peak_tflops": 353.8944,
+      "mfu_percent": 0.7025270848133645,
+      "logical_weight_bytes_per_call": 356515840,
+      "logical_flops_per_weight_byte": 2.0
+    },
+    {
+      "capture": "new-p0",
+      "op": "down",
+      "input_shape": "8,17408;5120,17408",
+      "dtype": "BF16",
+      "M": 8,
+      "N": 5120,
+      "K": 17408,
+      "calls": 1664,
+      "mean_us": 154.07831730769232,
+      "logical_flops_per_call": 1426063360,
+      "achieved_tflops": 9.255444795338533,
+      "peak_tflops": 353.8944,
+      "mfu_percent": 2.615312589105262,
+      "logical_weight_bytes_per_call": 178257920,
+      "logical_flops_per_weight_byte": 8.0
+    },
+    {
+      "capture": "new-p0",
+      "op": "up_gate",
+      "input_shape": "8,5120;34816,5120",
+      "dtype": "BF16",
+      "M": 8,
+      "N": 34816,
+      "K": 5120,
+      "calls": 1664,
+      "mean_us": 298.3206490384615,
+      "logical_flops_per_call": 2852126720,
+      "achieved_tflops": 9.560607786262509,
+      "peak_tflops": 353.8944,
+      "mfu_percent": 2.701542546664346,
+      "logical_weight_bytes_per_call": 356515840,
+      "logical_flops_per_weight_byte": 8.0
+    },
+    {
+      "capture": "new-p1",
+      "op": "down",
+      "input_shape": "8,17408;5120,17408",
+      "dtype": "BF16",
+      "M": 8,
+      "N": 5120,
+      "K": 17408,
+      "calls": 1984,
+      "mean_us": 154.12470766129033,
+      "logical_flops_per_call": 1426063360,
+      "achieved_tflops": 9.252658977520756,
+      "peak_tflops": 353.8944,
+      "mfu_percent": 2.6145254000969653,
+      "logical_weight_bytes_per_call": 178257920,
+      "logical_flops_per_weight_byte": 8.0
+    },
+    {
+      "capture": "new-p1",
+      "op": "up_gate",
+      "input_shape": "8,5120;34816,5120",
+      "dtype": "BF16",
+      "M": 8,
+      "N": 34816,
+      "K": 5120,
+      "calls": 1984,
+      "mean_us": 298.5179435483871,
+      "logical_flops_per_call": 2852126720,
+      "achieved_tflops": 9.554289052435792,
+      "peak_tflops": 353.8944,
+      "mfu_percent": 2.699757060986495,
+      "logical_weight_bytes_per_call": 356515840,
+      "logical_flops_per_weight_byte": 8.0
+    }
+  ],
+  "pooled": [
+    {
+      "mode": "new",
+      "op": "down",
+      "calls": 3648,
+      "mean_us": 154.10354714912282,
+      "achieved_tflops": 9.253929493394647,
+      "mfu_percent": 2.6148844099806743
+    },
+    {
+      "mode": "new",
+      "op": "up_gate",
+      "calls": 3648,
+      "mean_us": 298.4279495614035,
+      "achieved_tflops": 9.557170245587725,
+      "mfu_percent": 2.700571200218971
+    },
+    {
+      "mode": "old",
+      "op": "down",
+      "calls": 8704,
+      "mean_us": 151.8838028492647,
+      "achieved_tflops": 2.347293347361206,
+      "mfu_percent": 0.6632750750961885
+    },
+    {
+      "mode": "old",
+      "op": "up_gate",
+      "calls": 8704,
+      "mean_us": 286.91496783088235,
+      "achieved_tflops": 2.4851672444648676,
+      "mfu_percent": 0.7022341253393293
+    }
+  ],
+  "scope": "Two target-model FFN MatMulV2 groups, captured decode only; prefill and draft excluded.",
+  "limits": [
+    "Operator logical-FLOP MFU, not an end-to-end model MFU counting only accepted generated tokens.",
+    "M=8 includes computation of rejected candidates; increased MFU is not by itself increased useful accepted output.",
+    "Padding and hardware extra work are excluded from logical FLOPs; MFU is not MAC activity time ratio.",
+    "CANN nominal peak is a reference denominator, not a measured sustained device peak or a live frequency measurement.",
+    "Profiled durations are reused; this analysis does not start or reconfigure an NPU service.",
+    "Logical weight bytes/FLOPs are not measured HBM transaction counts or bandwidth."
+  ]
+}

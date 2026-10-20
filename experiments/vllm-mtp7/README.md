@@ -83,3 +83,5 @@ Prometheus 在64-token预热之后、正式四题之后分别取快照，观察�
 - [原SGLang单卡记录](../sglang-ascend/single-card.md)
 
 `start_vllm.sh`/`serve.py`/`graph_audit.py`保留新配置正常测试入口；使用私有环境变量定位源码和权重，实验RPC仅监听127.0.0.1。`ascend_client.py`对固定公开GSM8K评测器作计时外回执收集。`profile_factory.py`/`serve_profile.py`/`profile_gsm.py`为后续采样辅助；采样阶段用`graph_audit_profile.py`替代实验目录的`graph_audit.py`，其中额外的`enable_profile_scopes`只在正常计时之后开启CPU标签；`analyze_paired.py`区分两个图、执行只读SQL；`export_result.py`、`export_matched.py`、`validate_export_profiles.py`生成过滤证据。原始模型、回答、trace/DB、服务器路径均留在私有数据区。
+
+后续使用新增skill的复核见[四份数据校验与算子MFU](mfu.md)：升维0.702%→2.701%、降维0.663%→2.615%，只复用已有采样，没有新增测速。

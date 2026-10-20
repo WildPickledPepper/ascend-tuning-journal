@@ -52,3 +52,5 @@
 - `2026-10-20/vllm-mtp7-vs-sglang.json`：单卡七候选、草稿图，vLLM59.389与SGLang42.167四题回执、版本、实际捕获图与显存快照；包含输出长度和首题限制。
 - `2026-10-20/vllm-mtp1-vs-mtp7-gsm.json`：同四题旧配置30.443与新59.389，无profiler，各844token、4/4，正式接受计数和最终恢复。
 - `2026-10-20/vllm-mtp1-vs-mtp7-profiles.json`：四份128-token配对采样，720个Insight分组与SQL TOP20全核验、主/草稿图区分、FFN/周期时间和原始文件SHA256。
+
+- `2026-10-20/vllm-mtp-mfu.json`：新增data-check/MFU两个skill的四份Stop/解析配置校验、服务器/本地来源哈希口径、8组BF16矩阵乘MFU及调用加权汇总，理论峰值来自本机CANN平台配置。
