@@ -1,0 +1,756 @@
+{
+  "dtype": "BF16",
+  "physical_device": 6,
+  "M": 2,
+  "custom_kernel": false,
+  "counter_source": "msprof --l2 / PyTorch Profiler l2_cache=True; native socpmu.data records",
+  "smmu_record_format": "<8B4H8Q, 80 bytes, installed CANN platform_version=5",
+  "smmu_events": [
+    "0x2",
+    "0x8a",
+    "0x8b",
+    "0x8c",
+    "0x8d"
+  ],
+  "formulas": {
+    "requests": "event[1] (0x8a)",
+    "misses": "event[0] (0x2)",
+    "hits": "event[3]+event[4] (0x8c+0x8d)",
+    "miss_rate": "sum(misses)/sum(requests)"
+  },
+  "stability_selection": "Six graph replays; exclude first two replays within each shape/position group",
+  "profiles": {
+    "small": {
+      "up": {
+        "all": {
+          "samples": 256,
+          "requests_per_call": 697600.76953125,
+          "misses_per_call": 33.46875,
+          "miss_rate": 4.7976939621911815e-05,
+          "mean_duration_us": 236.043671875,
+          "mean_mte2_us": 227.725,
+          "mean_mac_us": 31.798992187499998
+        }
+      },
+      "down": {
+        "all": {
+          "samples": 256,
+          "requests_per_call": 354733.69140625,
+          "misses_per_call": 734.796875,
+          "miss_rate": 0.002071404247189174,
+          "mean_duration_us": 137.5921875,
+          "mean_mte2_us": 113.7046328125,
+          "mean_mac_us": 22.83827734375
+        }
+      }
+    },
+    "full": {
+      "up": {
+        "all": {
+          "samples": 256,
+          "requests_per_call": 697600.75,
+          "misses_per_call": 3926.23046875,
+          "miss_rate": 0.0056281912953075235,
+          "mean_duration_us": 293.088984375,
+          "mean_mte2_us": 270.36576953125,
+          "mean_mac_us": 31.79898828125
+        }
+      },
+      "down": {
+        "all": {
+          "samples": 256,
+          "requests_per_call": 354733.68359375,
+          "misses_per_call": 1967.39453125,
+          "miss_rate": 0.005546117051300688,
+          "mean_duration_us": 165.819609375,
+          "mean_mte2_us": 140.971296875,
+          "mean_mac_us": 22.772484375
+        }
+      }
+    },
+    "sweep2": {
+      "up": {
+        "all": {
+          "samples": 512,
+          "requests_per_call": 697590.87890625,
+          "misses_per_call": 3926.1796875,
+          "miss_rate": 0.005628198140514454,
+          "mean_duration_us": 293.3427734375,
+          "mean_mte2_us": 270.11148828125,
+          "mean_mac_us": 31.798992187499998
+        }
+      },
+      "down": {
+        "all": {
+          "samples": 512,
+          "requests_per_call": 354723.341796875,
+          "misses_per_call": 1967.3359375,
+          "miss_rate": 0.0055461135642620165,
+          "mean_duration_us": 165.5581640625,
+          "mean_mte2_us": 140.81005859375,
+          "mean_mac_us": 22.7739296875
+        }
+      }
+    },
+    "adjacent": {
+      "up": {
+        "0": {
+          "samples": 256,
+          "requests_per_call": 697599.99609375,
+          "misses_per_call": 3926.125,
+          "miss_rate": 0.005628046189771438,
+          "mean_duration_us": 293.32640625,
+          "mean_mte2_us": 270.17343359375,
+          "mean_mac_us": 31.798992187499998
+        },
+        "1": {
+          "samples": 256,
+          "requests_per_call": 697581.828125,
+          "misses_per_call": 176.8359375,
+          "miss_rate": 0.00025349848629989353,
+          "mean_duration_us": 241.558359375,
+          "mean_mte2_us": 227.82455859375,
+          "mean_mac_us": 31.79898828125
+        }
+      },
+      "down": {
+        "0": {
+          "samples": 256,
+          "requests_per_call": 354732.796875,
+          "misses_per_call": 1967.9296875,
+          "miss_rate": 0.00554763953273104,
+          "mean_duration_us": 165.5846875,
+          "mean_mte2_us": 140.73771484375,
+          "mean_mac_us": 22.77210546875
+        },
+        "1": {
+          "samples": 256,
+          "requests_per_call": 354713.875,
+          "misses_per_call": 88.453125,
+          "miss_rate": 0.00024936471684396333,
+          "mean_duration_us": 100.30453125,
+          "mean_mte2_us": 37.2082421875,
+          "mean_mac_us": 23.48627734375
+        }
+      }
+    }
+  },
+  "l2_cache": {
+    "small": {
+      "up": {
+        "all": {
+          "samples": 256,
+          "read_hit_rate": 0.0012933845131182214,
+          "hits_per_call": 3607.3125,
+          "misses_per_call": 2785441.46875
+        }
+      },
+      "down": {
+        "all": {
+          "samples": 256,
+          "read_hit_rate": 0.017328983505589347,
+          "hits_per_call": 24568.23046875,
+          "misses_per_call": 1393185.46875
+        }
+      }
+    },
+    "full": {
+      "up": {
+        "all": {
+          "samples": 256,
+          "read_hit_rate": 0.0012933831197969876,
+          "hits_per_call": 3607.30859375,
+          "misses_per_call": 2785441.45703125
+        }
+      },
+      "down": {
+        "all": {
+          "samples": 256,
+          "read_hit_rate": 0.017328961845642376,
+          "hits_per_call": 24568.19921875,
+          "misses_per_call": 1393185.46875
+        }
+      }
+    },
+    "sweep2": {
+      "up": {
+        "all": {
+          "samples": 512,
+          "read_hit_rate": 0.001289931086412494,
+          "hits_per_call": 3597.66796875,
+          "misses_per_call": 2785441.224609375
+        }
+      },
+      "down": {
+        "all": {
+          "samples": 512,
+          "read_hit_rate": 0.017321965788864496,
+          "hits_per_call": 24558.1015625,
+          "misses_per_call": 1393185.234375
+        }
+      }
+    },
+    "adjacent": {
+      "up": {
+        "0": {
+          "samples": 256,
+          "read_hit_rate": 0.0012931790082900418,
+          "hits_per_call": 3606.73828125,
+          "misses_per_call": 2785441.2265625
+        },
+        "1": {
+          "samples": 256,
+          "read_hit_rate": 0.0015491974237894222,
+          "hits_per_call": 4320.7578125,
+          "misses_per_call": 2784709.0625
+        }
+      },
+      "down": {
+        "0": {
+          "samples": 256,
+          "read_hit_rate": 0.017328523388669474,
+          "hits_per_call": 24567.5625,
+          "misses_per_call": 1393185.234375
+        },
+        "1": {
+          "samples": 256,
+          "read_hit_rate": 0.9999992946490046,
+          "hits_per_call": 1417732.875,
+          "misses_per_call": 1.0
+        }
+      }
+    }
+  },
+  "unprofiled_timing": {
+    "small": 186.70984357595444,
+    "full": 229.49734330177307,
+    "sweep2": 229.26871478557587,
+    "adjacent": 199.99749958515167
+  },
+  "source_hashes": {
+    "small/socpmu.data.6.slice_0": "6e400445f04f4247cd4cffc82a00ac9d33d641858ad3e5431c023ab8ad6ecefb",
+    "full/socpmu.data.6.slice_0": "f42d2d6c96b0b2bd07d832a6fb4eac5f4329a4f2fe42e1d6640935ff3f09d392",
+    "sweep2/socpmu.data.6.slice_0": "135a025bf65e173b07d70201bf4fce77ad09620e28f3f8a213ac890cfefd818e",
+    "adjacent/socpmu.data.6.slice_0": "0a870956e0e4ad6df58ad0a72bf5bd6e6fa2b237bcf8b11c54151c2e7184b4a0"
+  },
+  "same_addresses_verified": true,
+  "same_layer1_addresses": [
+    {
+      "name": "language_model.model.layers.1.mlp.gate_up_proj",
+      "x": "0x131800007e00",
+      "w": "0x12d3b4a20000",
+      "y": "0x131800054c00",
+      "shape": [
+        34816,
+        5120
+      ],
+      "x_stride": [
+        5120,
+        1
+      ],
+      "w_stride": [
+        5120,
+        1
+      ]
+    },
+    {
+      "name": "language_model.model.layers.1.mlp.down_proj",
+      "x": "0x131800076e00",
+      "w": "0x12d3c9e24000",
+      "y": "0x131800012200",
+      "shape": [
+        5120,
+        17408
+      ],
+      "x_stride": [
+        17408,
+        1
+      ],
+      "w_stride": [
+        17408,
+        1
+      ]
+    }
+  ],
+  "working_sets": {
+    "small": {
+      "calls_per_graph": 128,
+      "total_logical_weight_bytes": 34225520640,
+      "distinct_logical_weight_bytes": 1069547520
+    },
+    "full": {
+      "calls_per_graph": 128,
+      "total_logical_weight_bytes": 34225520640,
+      "distinct_logical_weight_bytes": 34225520640
+    },
+    "sweep2": {
+      "calls_per_graph": 256,
+      "total_logical_weight_bytes": 68451041280,
+      "distinct_logical_weight_bytes": 34225520640
+    },
+    "adjacent": {
+      "calls_per_graph": 256,
+      "total_logical_weight_bytes": 68451041280,
+      "distinct_logical_weight_bytes": 34225520640
+    }
+  },
+  "capture_utc": {
+    "small": {
+      "started_utc": "2026-10-20T01:12:08.697224+00:00",
+      "completed_utc": "2026-10-20T01:12:17.232033+00:00"
+    },
+    "full": {
+      "started_utc": "2026-10-20T01:12:17.283104+00:00",
+      "completed_utc": "2026-10-20T01:12:27.002052+00:00"
+    },
+    "sweep2": {
+      "started_utc": "2026-10-20T01:13:59.869264+00:00",
+      "completed_utc": "2026-10-20T01:14:09.733193+00:00"
+    },
+    "adjacent": {
+      "started_utc": "2026-10-20T01:14:09.778387+00:00",
+      "completed_utc": "2026-10-20T01:14:19.662937+00:00"
+    }
+  },
+  "insight_cross_checks": [
+    {
+      "profile": "tlb-small",
+      "shape": "\"2,5120;320,2176,16,16\"",
+      "samples": 384,
+      "backend_mean_us": 236.4,
+      "csv_mean_us": 236.39588541666666
+    },
+    {
+      "profile": "tlb-small",
+      "shape": "\"2,17408;1088,320,16,16\"",
+      "samples": 384,
+      "backend_mean_us": 137.95,
+      "csv_mean_us": 137.94833333333332
+    },
+    {
+      "profile": "tlb-full",
+      "shape": "\"2,5120;320,2176,16,16\"",
+      "samples": 384,
+      "backend_mean_us": 292.84,
+      "csv_mean_us": 292.83526041666664
+    },
+    {
+      "profile": "tlb-full",
+      "shape": "\"2,17408;1088,320,16,16\"",
+      "samples": 384,
+      "backend_mean_us": 165.66,
+      "csv_mean_us": 165.65713541666668
+    },
+    {
+      "profile": "tlb-sweep2",
+      "shape": "\"2,5120;320,2176,16,16\"",
+      "samples": 768,
+      "backend_mean_us": 293.43,
+      "csv_mean_us": 293.43486979166664
+    },
+    {
+      "profile": "tlb-sweep2",
+      "shape": "\"2,17408;1088,320,16,16\"",
+      "samples": 768,
+      "backend_mean_us": 165.69,
+      "csv_mean_us": 165.686875
+    },
+    {
+      "profile": "tlb-adjacent",
+      "shape": "\"2,5120;320,2176,16,16\"",
+      "samples": 768,
+      "backend_mean_us": 267.43,
+      "csv_mean_us": 267.4252604166667
+    },
+    {
+      "profile": "tlb-adjacent",
+      "shape": "\"2,17408;1088,320,16,16\"",
+      "samples": 768,
+      "backend_mean_us": 132.94,
+      "csv_mean_us": 132.94044270833334
+    },
+    {
+      "profile": "l2-small",
+      "shape": "\"2,5120;320,2176,16,16\"",
+      "samples": 384,
+      "backend_mean_us": 236.5,
+      "csv_mean_us": 236.49947916666667
+    },
+    {
+      "profile": "l2-small",
+      "shape": "\"2,17408;1088,320,16,16\"",
+      "samples": 384,
+      "backend_mean_us": 137.98,
+      "csv_mean_us": 137.98
+    },
+    {
+      "profile": "l2-full",
+      "shape": "\"2,5120;320,2176,16,16\"",
+      "samples": 384,
+      "backend_mean_us": 293.09,
+      "csv_mean_us": 293.0888541666667
+    },
+    {
+      "profile": "l2-full",
+      "shape": "\"2,17408;1088,320,16,16\"",
+      "samples": 384,
+      "backend_mean_us": 165.66,
+      "csv_mean_us": 165.66494791666668
+    },
+    {
+      "profile": "l2-sweep2",
+      "shape": "\"2,5120;320,2176,16,16\"",
+      "samples": 768,
+      "backend_mean_us": 293.08,
+      "csv_mean_us": 293.082109375
+    },
+    {
+      "profile": "l2-sweep2",
+      "shape": "\"2,17408;1088,320,16,16\"",
+      "samples": 768,
+      "backend_mean_us": 165.66,
+      "csv_mean_us": 165.66315104166668
+    },
+    {
+      "profile": "l2-adjacent",
+      "shape": "\"2,5120;320,2176,16,16\"",
+      "samples": 768,
+      "backend_mean_us": 267.27,
+      "csv_mean_us": 267.26903645833335
+    },
+    {
+      "profile": "l2-adjacent",
+      "shape": "\"2,17408;1088,320,16,16\"",
+      "samples": 768,
+      "backend_mean_us": 133.01,
+      "csv_mean_us": 133.00513020833333
+    }
+  ],
+  "restored_services": {
+    "checked_utc": "2026-10-20T01:26:51.143569+00:00",
+    "services": [
+      {
+        "role": "baseline",
+        "health_status": 200,
+        "physical_card": 7,
+        "bf16": true,
+        "tp1": true,
+        "nz_config_in_command": false,
+        "worker_extension_in_command": false,
+        "ld_preload_active": false,
+        "dev_mode_active": false,
+        "nz_trace_active": false,
+        "graph_config_in_command": true,
+        "mtp_in_command": false
+      },
+      {
+        "role": "mtp_nd_restored",
+        "health_status": 200,
+        "physical_card": 6,
+        "bf16": true,
+        "tp1": true,
+        "nz_config_in_command": false,
+        "worker_extension_in_command": false,
+        "ld_preload_active": false,
+        "dev_mode_active": false,
+        "nz_trace_active": false,
+        "graph_config_in_command": true,
+        "mtp_in_command": true,
+        "speculative_config": {
+          "method": "qwen3_5_mtp",
+          "num_speculative_tokens": 1,
+          "enforce_eager": true
+        }
+      }
+    ]
+  },
+  "hbm": [
+    {
+      "label": "hbm-complete-small-0",
+      "order": "small",
+      "active_start_ns": 1792458995247691510,
+      "active_end_ns": 1792458997249641070,
+      "trimmed_ns_each_edge": 100000000,
+      "graphs": 84,
+      "active_seconds": 2.00194956,
+      "read_TB_per_s": 1.436916273121682,
+      "max_unit_imbalance_fraction": 8.630757738093412e-05,
+      "units": [
+        {
+          "hbm_id": 0,
+          "mode": "read",
+          "samples": 180,
+          "mean_MiB_per_s": 342591.29969991307
+        },
+        {
+          "hbm_id": 0,
+          "mode": "write",
+          "samples": 180,
+          "mean_MiB_per_s": 111.9142614625903
+        },
+        {
+          "hbm_id": 1,
+          "mode": "read",
+          "samples": 180,
+          "mean_MiB_per_s": 342574.2430875692
+        },
+        {
+          "hbm_id": 1,
+          "mode": "write",
+          "samples": 180,
+          "mean_MiB_per_s": 110.31476407143025
+        },
+        {
+          "hbm_id": 2,
+          "mode": "read",
+          "samples": 180,
+          "mean_MiB_per_s": 342580.79072700127
+        },
+        {
+          "hbm_id": 2,
+          "mode": "write",
+          "samples": 180,
+          "mean_MiB_per_s": 106.88312006808356
+        },
+        {
+          "hbm_id": 3,
+          "mode": "read",
+          "samples": 180,
+          "mean_MiB_per_s": 342603.8109878531
+        },
+        {
+          "hbm_id": 3,
+          "mode": "write",
+          "samples": 180,
+          "mean_MiB_per_s": 104.92598449715257
+        }
+      ],
+      "hbm_clocks_MHz": [
+        1600
+      ],
+      "memory_telemetry_before": {
+        "DDR Clock Speed(MHz)": "0",
+        "HBM Clock Speed(MHz)": "1600",
+        "HBM Temperature(C)": "40"
+      }
+    },
+    {
+      "label": "hbm-complete-full-1",
+      "order": "full",
+      "active_start_ns": 1792459001124098890,
+      "active_end_ns": 1792459003237900750,
+      "trimmed_ns_each_edge": 100000000,
+      "graphs": 72,
+      "active_seconds": 2.11380186,
+      "read_TB_per_s": 1.1668340805742976,
+      "max_unit_imbalance_fraction": 6.04912352796986e-05,
+      "units": [
+        {
+          "hbm_id": 0,
+          "mode": "read",
+          "samples": 192,
+          "mean_MiB_per_s": 278198.65761096694
+        },
+        {
+          "hbm_id": 0,
+          "mode": "write",
+          "samples": 192,
+          "mean_MiB_per_s": 90.66723264822285
+        },
+        {
+          "hbm_id": 1,
+          "mode": "read",
+          "samples": 192,
+          "mean_MiB_per_s": 278201.4040637898
+        },
+        {
+          "hbm_id": 1,
+          "mode": "write",
+          "samples": 192,
+          "mean_MiB_per_s": 90.33162894040233
+        },
+        {
+          "hbm_id": 2,
+          "mode": "read",
+          "samples": 192,
+          "mean_MiB_per_s": 278195.0567672353
+        },
+        {
+          "hbm_id": 2,
+          "mode": "write",
+          "samples": 192,
+          "mean_MiB_per_s": 86.71844928025469
+        },
+        {
+          "hbm_id": 3,
+          "mode": "read",
+          "samples": 192,
+          "mean_MiB_per_s": 278184.5757092165
+        },
+        {
+          "hbm_id": 3,
+          "mode": "write",
+          "samples": 192,
+          "mean_MiB_per_s": 91.00777962669473
+        }
+      ],
+      "hbm_clocks_MHz": [
+        1600
+      ],
+      "memory_telemetry_before": {
+        "DDR Clock Speed(MHz)": "0",
+        "HBM Clock Speed(MHz)": "1600",
+        "HBM Temperature(C)": "41"
+      }
+    },
+    {
+      "label": "hbm-complete-small-2",
+      "order": "small",
+      "active_start_ns": 1792459007190892430,
+      "active_end_ns": 1792459009193839300,
+      "trimmed_ns_each_edge": 100000000,
+      "graphs": 84,
+      "active_seconds": 2.00294687,
+      "read_TB_per_s": 1.435562371798877,
+      "max_unit_imbalance_fraction": 0.0009828911891625264,
+      "units": [
+        {
+          "hbm_id": 0,
+          "mode": "read",
+          "samples": 180,
+          "mean_MiB_per_s": 342396.2510386857
+        },
+        {
+          "hbm_id": 0,
+          "mode": "write",
+          "samples": 180,
+          "mean_MiB_per_s": 112.7405179600025
+        },
+        {
+          "hbm_id": 1,
+          "mode": "read",
+          "samples": 180,
+          "mean_MiB_per_s": 342441.6503935604
+        },
+        {
+          "hbm_id": 1,
+          "mode": "write",
+          "samples": 180,
+          "mean_MiB_per_s": 111.89896206206019
+        },
+        {
+          "hbm_id": 2,
+          "mode": "read",
+          "samples": 180,
+          "mean_MiB_per_s": 342115.8207562099
+        },
+        {
+          "hbm_id": 2,
+          "mode": "write",
+          "samples": 180,
+          "mean_MiB_per_s": 108.97398922588845
+        },
+        {
+          "hbm_id": 3,
+          "mode": "read",
+          "samples": 180,
+          "mean_MiB_per_s": 342105.2413953728
+        },
+        {
+          "hbm_id": 3,
+          "mode": "write",
+          "samples": 180,
+          "mean_MiB_per_s": 112.39623454062372
+        }
+      ],
+      "hbm_clocks_MHz": [
+        1600
+      ],
+      "memory_telemetry_before": {
+        "DDR Clock Speed(MHz)": "0",
+        "HBM Clock Speed(MHz)": "1600",
+        "HBM Temperature(C)": "42"
+      }
+    },
+    {
+      "label": "hbm-complete-full-3",
+      "order": "full",
+      "active_start_ns": 1792459013187774930,
+      "active_end_ns": 1792459015301611050,
+      "trimmed_ns_each_edge": 100000000,
+      "graphs": 72,
+      "active_seconds": 2.11383612,
+      "read_TB_per_s": 1.1666911476163726,
+      "max_unit_imbalance_fraction": 9.393654299307473e-05,
+      "units": [
+        {
+          "hbm_id": 0,
+          "mode": "read",
+          "samples": 191,
+          "mean_MiB_per_s": 278170.541323082
+        },
+        {
+          "hbm_id": 0,
+          "mode": "write",
+          "samples": 191,
+          "mean_MiB_per_s": 92.83774937582946
+        },
+        {
+          "hbm_id": 1,
+          "mode": "read",
+          "samples": 191,
+          "mean_MiB_per_s": 278169.0294137167
+        },
+        {
+          "hbm_id": 1,
+          "mode": "write",
+          "samples": 191,
+          "mean_MiB_per_s": 91.8687162455403
+        },
+        {
+          "hbm_id": 2,
+          "mode": "read",
+          "samples": 191,
+          "mean_MiB_per_s": 278159.4000686244
+        },
+        {
+          "hbm_id": 2,
+          "mode": "write",
+          "samples": 191,
+          "mean_MiB_per_s": 90.71449717092783
+        },
+        {
+          "hbm_id": 3,
+          "mode": "read",
+          "samples": 191,
+          "mean_MiB_per_s": 278144.4118548442
+        },
+        {
+          "hbm_id": 3,
+          "mode": "write",
+          "samples": 191,
+          "mean_MiB_per_s": 90.4250389954833
+        }
+      ],
+      "hbm_clocks_MHz": [
+        1600
+      ],
+      "memory_telemetry_before": {
+        "DDR Clock Speed(MHz)": "0",
+        "HBM Clock Speed(MHz)": "1600",
+        "HBM Temperature(C)": "42"
+      }
+    }
+  ],
+  "hbm_query": "SELECT hbmid,event_type,COUNT(*),AVG(bandwidth),MIN(bandwidth),MAX(bandwidth)\nFROM HBMbwData WHERE timestamp BETWEEN ? AND ?\nGROUP BY hbmid,event_type ORDER BY hbmid,event_type LIMIT 12",
+  "hbm_units": "HBMbwData values interpreted as MiB/s from installed CANN HbmModel.SCALE; aggregated result converted to decimal TB/s",
+  "platform_l2_size_bytes": 201326592,
+  "limits": [
+    "SMMU/TLB miss events and reuse-order intervention identify translation locality as the main cause of this controlled working-set regression. No per-miss stall-cycle counter was collected, so latency is not apportioned cycle-by-cycle.",
+    "Adjacent second down-projection also hits the L2 data cache nearly completely; its extra speedup is not attributed exclusively to TLB.",
+    "HBM counters measure four memory-access units and clock snapshots; they are not per-bank queue-depth or row-conflict counters.",
+    "Initial 18-second HBM capture did not cover the fourth phase; all quantitative four-phase comparisons use the subsequent complete 36-second capture.",
+    "Instrumented kernel timing is distinct from unprofiled graph timing; these experiments do not claim a new model token/s result.",
+    "This does not yet explain every microsecond of the earlier full-model up-projection residual."
+  ]
+}

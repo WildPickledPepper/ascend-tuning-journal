@@ -40,3 +40,6 @@
 
 - `2026-10-19/nz-runtime-comparison.json`：真实 ELF/TilingData、同层 X/W/Y 地址、原生 DMA 仿真参数、两层反复读与 64 层工作集的上板 PMU/MemoryAccess、Insight 返回交叉验证；没有声称已取得 TLB 或 HBM 通道根因。
 - `2026-10-19/nz-runtime-source-manifest.json`：本次归档主机观察器、隔离探针、参数比较与后端查询脚本的 SHA256。
+
+- `2026-10-20/nz-hardware-comparison.json`：原始 SMMU/TLB 事件、官方 CSV 校验、稳定区间、L2 数据命中、同权重相邻重读干预、完整覆盖的四阶段 HBM、16 项 Insight 均值/次数核对和原服务恢复状态。
+- `2026-10-20/nz-hardware-source-manifest.json`：本次采集/分析脚本、过滤摘要、原始 SMMU 数据 SHA256 与安装源码依据。

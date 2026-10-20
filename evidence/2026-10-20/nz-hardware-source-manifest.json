@@ -1,0 +1,32 @@
+{
+  "source_kind": "Filtered device measurements, official raw SMMU/CSV agreement and compiled Insight backend statistics",
+  "scripts": {
+    "experiments/nz-hardware/analyze_hardware.py": "bab12fe241ff0bed8a14841f8304fd0772b379e944c830ab359ec0612d3b8029",
+    "experiments/nz-hardware/capture_hbm.py": "59fc8f112536e7ea3ebb578a4f8e4078255279381f2b8fe6aa554c5d167c0f99",
+    "experiments/nz-hardware/hardware_observe.py": "6b86685423aa86bb0b4d866043c160942035175c6670e5e3b29c2d3f027e7106",
+    "experiments/nz-hardware/hardware_probe.py": "747ac5da87887ac86a60abbb662dbca9a5c93056eba922c69b7b046f41b1c8a1",
+    "experiments/nz-hardware/start_capture.sh": "2f9342c47d7c9849138ceeefb80219bd2f81698b1bd7cd09ce773d3ec60edde0"
+  },
+  "filtered_summary_sha256": "2fdac08f0ec6e1277c2e198757149b6c0e67bcde2ecfb7abe594a010751c269d",
+  "official_parameter_reference": "https://www.hiascend.com/doc_center/source/en/CANNCommunityEdition/910/devaids/Profiling/atlasprofiling_16_0011.html",
+  "installed_primary_sources": [
+    "msconfig/soc_pmu_config.py",
+    "profiling_bean/struct_info/soc_pmu.py",
+    "msparser/data_struct_size_constant.py",
+    "msmodel/hardware/hbm_model.py",
+    "platform_config/Ascend910B2.ini"
+  ],
+  "raw_smmu_sha256": {
+    "small/socpmu.data.6.slice_0": "6e400445f04f4247cd4cffc82a00ac9d33d641858ad3e5431c023ab8ad6ecefb",
+    "full/socpmu.data.6.slice_0": "f42d2d6c96b0b2bd07d832a6fb4eac5f4329a4f2fe42e1d6640935ff3f09d392",
+    "sweep2/socpmu.data.6.slice_0": "135a025bf65e173b07d70201bf4fce77ad09620e28f3f8a213ac890cfefd818e",
+    "adjacent/socpmu.data.6.slice_0": "0a870956e0e4ad6df58ad0a72bf5bd6e6fa2b237bcf8b11c54151c2e7184b4a0"
+  },
+  "excluded": [
+    "server login paths",
+    "credentials",
+    "model weights",
+    "full traces/databases",
+    "CANN ELF binaries"
+  ]
+}
