@@ -1,0 +1,61 @@
+{
+  "framework_image": {
+    "tag": "quay.io/ascend/vllm-ascend:v0.27.1rc1",
+    "id": "sha256:4f75925e8f38e6d964768ae340c2433d08003e96fb37ceebc8cab10ec1a9ee06",
+    "vllm_commit": "6e448d0ea9bf3d88d898b65449ca6dc2aec170ac",
+    "vllm_ascend_commit": "3b31886237ed65c435e0965b10e8002ff5769766",
+    "checkouts_clean": true,
+    "qwen3_dflash2_sha256": "54bd02822861b6d86944f4d88f92b0f43685d18cb2aaab33e6737454c6bafdb8",
+    "dflash2_proposer_sha256": "f46d9d2b2559c5771dc76328002b8d31933308ed1345ea937cf6d8a9f3996f7a"
+  },
+  "draft_download": {
+    "model": "incoai/Qwen3.8-27B-DFlash2",
+    "revision": "015e795645c74b1a0eeef3b570031fb62e769bc5",
+    "weight_size_bytes": 3848817896,
+    "weight_download_mirror": "ModelScope",
+    "modelscope_revision": "5cfe71fd56ed83d5ca27f04c1345cc7d862bbe4f",
+    "weight_sha256": "67fc76d68dc5a9415511a4f394ef744d67510cd20e93b37cc2cc7d28e4bab65c",
+    "all_weights_bf16": true,
+    "tensor_count": 81,
+    "num_layers": 5,
+    "block_size": 8,
+    "started_utc": "2026-10-20T01:54:23.915295+00:00",
+    "completed_utc": "2026-10-20T01:55:20.724531+00:00"
+  },
+  "sources": [
+    "https://github.com/vllm-project/vllm-ascend/blob/3b31886237ed65c435e0965b10e8002ff5769766/vllm_ascend/models/qwen3_dflash2.py",
+    "https://github.com/vllm-project/vllm-ascend/blob/main/docs/source/user_guide/feature_guide/speculative_decoding.md",
+    "https://huggingface.co/incoai/Qwen3.8-27B-DFlash2/tree/015e795645c74b1a0eeef3b570031fb62e769bc5",
+    "https://github.com/vllm-project/vllm-ascend/issues/18240"
+  ],
+  "archived_scripts": [
+    {
+      "path": "experiments/dflash2/analyze.py",
+      "sha256": "64b956cda24a007d8e87a60ca02b677109e21975771522663c44c333d3c3a7a3"
+    },
+    {
+      "path": "experiments/dflash2/benchmark.py",
+      "sha256": "b2fda265c62f9a350eee267ed73cc3483af4bb0977bd13a1fc410bd9df3385b3"
+    },
+    {
+      "path": "experiments/dflash2/download_draft.py",
+      "sha256": "d79feb1a5674fb9613d5ea1139bc03184dc50868b2b539458b69db6c7657a8e1"
+    },
+    {
+      "path": "experiments/dflash2/export_receipts.py",
+      "sha256": "9b3e2b7007aaaf8bfb45fadb6b0d1374bcf6d9ac84db058714812c98301060d6"
+    },
+    {
+      "path": "experiments/dflash2/prepare_native.sh",
+      "sha256": "ef79877f4d56c434f714721606787817a971cbd162f8f435bb45e3653903354f"
+    },
+    {
+      "path": "experiments/dflash2/serve.py",
+      "sha256": "ec5b73b09bd4cfd8549964d99c1504bedd34bff292a6ccb38fe7a76fc755260a"
+    },
+    {
+      "path": "experiments/dflash2/start_native.sh",
+      "sha256": "a0e93962ba9f97c2147fd78e99a45245e40393bd4346c41df81924496969df1b"
+    }
+  ]
+}

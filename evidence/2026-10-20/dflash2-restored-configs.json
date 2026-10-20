@@ -1,0 +1,31 @@
+{
+  "recorded_utc": "2026-10-20T02:34:41.041473+00:00",
+  "restored_process_configs": [
+    {
+      "--dtype": "bfloat16",
+      "--tensor-parallel-size": "1",
+      "--gpu-memory-utilization": "0.90",
+      "--speculative-config": null,
+      "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\",\"cudagraph_capture_sizes\":[1]}",
+      "port": 8038,
+      "visible_devices": "7",
+      "ld_preload_present": false,
+      "nz_trace_present": false,
+      "server_dev_mode": null,
+      "additional_config_present": false
+    },
+    {
+      "--dtype": "bfloat16",
+      "--tensor-parallel-size": "1",
+      "--gpu-memory-utilization": "0.90",
+      "--speculative-config": "{\"method\":\"qwen3_5_mtp\",\"num_speculative_tokens\":1,\"enforce_eager\":true}",
+      "--compilation-config": "{\"cudagraph_mode\":\"FULL_DECODE_ONLY\",\"cudagraph_capture_sizes\":[2]}",
+      "port": 8039,
+      "visible_devices": "6",
+      "ld_preload_present": false,
+      "nz_trace_present": false,
+      "server_dev_mode": null,
+      "additional_config_present": false
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "attempts": [
+    {
+      "receipt": "attempt-01-state.json",
+      "started_utc": "2026-10-20T01:57:24.835203+00:00",
+      "error": "RuntimeError: Server exited with 1",
+      "restored_health": {
+        "mtp_8039": 200,
+        "baseline_8038": 200
+      },
+      "restored_utc": "2026-10-20T02:00:45.295558+00:00"
+    },
+    {
+      "receipt": "attempt-02-state.json",
+      "started_utc": "2026-10-20T02:02:13.648865+00:00",
+      "error": "RuntimeError: Server exited with 1",
+      "restored_health": {
+        "mtp_8039": 200,
+        "baseline_8038": 200
+      },
+      "restored_utc": "2026-10-20T02:05:58.166166+00:00"
+    },
+    {
+      "receipt": "attempt-03-state.json",
+      "started_utc": "2026-10-20T02:07:02.191368+00:00",
+      "error": "RuntimeError: Server exited with 1",
+      "restored_health": {
+        "mtp_8039": 200,
+        "baseline_8038": 200
+      },
+      "restored_utc": "2026-10-20T02:12:16.711305+00:00"
+    },
+    {
+      "receipt": "attempt-04-state.json",
+      "started_utc": "2026-10-20T02:12:28.856340+00:00",
+      "error": "RuntimeError: Server exited with 1",
+      "restored_health": {
+        "mtp_8039": 200,
+        "baseline_8038": 200
+      },
+      "restored_utc": "2026-10-20T02:19:04.487919+00:00"
+    },
+    {
+      "receipt": "experiment-state.json",
+      "started_utc": "2026-10-20T02:19:07.381832+00:00",
+      "restored_health": {
+        "mtp_8039": 200,
+        "baseline_8038": 200
+      },
+      "restored_utc": "2026-10-20T02:33:43.161668+00:00"
+    }
+  ],
+  "log_evidence": [
+    {
+      "name": "attempt-01-dflash2-server.log",
+      "sha256": "73ae34ee6cf206a10d1a9401f02ef4b93cb35f25f67e897ccc7f6ac259401c1e",
+      "selected_lines": []
+    },
+    {
+      "name": "attempt-02-dflash2-server.log",
+      "sha256": "c30681b36f4dabe0737ce4eb3c6085d81e0ec504233c32820f5099782109519a",
+      "selected_lines": []
+    },
+    {
+      "name": "attempt-03-dflash2-server.log",
+      "sha256": "c4b61d302a11fc53aee5a5f3176898af128443a4a9bcb973003d4a2ab5788c7b",
+      "selected_lines": []
+    },
+    {
+      "name": "attempt-04-dflash2-server.log",
+      "sha256": "7fee9a75e2d5f7955554fc0708f379563389ff01b530acf20660a5c80818ffdf",
+      "selected_lines": [
+        "(EngineCore pid=REDACTED) INFO 10-20 02:13:52 [model_runner_v1.py:4096] Loading model weights took 53.9677 GB",
+        "(EngineCore pid=REDACTED) INFO 10-20 02:15:55 [worker.py:628] Available KV cache memory: 0.77 GiB",
+        "(EngineCore pid=REDACTED) ERROR 10-20 02:15:55 [core.py:1349] ValueError: To serve at least one request with the model's max seq len (4096), (3.54 GiB KV cache is needed, which is larger than the available KV cache memory (0.77 GiB). Try increasing `gpu_memory_utilization` (which also controls CPU memory on the CPU backend) or decreasing `max_model_len` when initializing the engine. See https://docs.vllm.ai/en/latest/configuration/conserving_memory/ for more details.",
+        "(EngineCore pid=REDACTED) ValueError: To serve at least one request with the model's max seq len (4096), (3.54 GiB KV cache is needed, which is larger than the available KV cache memory (0.77 GiB). Try increasing `gpu_memory_utilization` (which also controls CPU memory on the CPU backend) or decreasing `max_model_len` when initializing the engine. See https://docs.vllm.ai/en/latest/configuration/conserving_memory/ for more details."
+      ]
+    },
+    {
+      "name": "dflash2-server.log",
+      "sha256": "5d1cf6ff3a4becb159ccce7a350fa713e86bdc7a0945f9a7934de416b68f16b6",
+      "selected_lines": [
+        "(EngineCore pid=REDACTED) INFO 10-20 02:20:30 [model_runner_v1.py:4096] Loading model weights took 53.9677 GB",
+        "(EngineCore pid=REDACTED) INFO 10-20 02:22:01 [worker.py:628] Available KV cache memory: 3.82 GiB",
+        "(EngineCore pid=REDACTED) INFO 10-20 02:22:01 [kv_cache_utils.py:2235] GPU KV cache size: 4,411 tokens",
+        "(EngineCore pid=REDACTED) INFO 10-20 02:22:01 [kv_cache_utils.py:2236] Maximum concurrency for 4,096 tokens per request: 1.08x",
+        "(EngineCore pid=REDACTED) INFO 10-20 02:23:06 [gpu_model_runner.py:6913] Graph capturing finished in 24 secs, took 0.56 GiB"
+      ]
+    },
+    {
+      "name": "mtp-server.log",
+      "sha256": "6441e31b52ae1559e43fd682bb9409bad61ac1b2c9c62bd169361c1fe2a612f3",
+      "selected_lines": [
+        "(EngineCore pid=REDACTED) INFO 10-20 02:26:49 [model_runner_v1.py:4096] Loading model weights took 53.3823 GB",
+        "(EngineCore pid=REDACTED) INFO 10-20 02:28:31 [worker.py:628] Available KV cache memory: 4.42 GiB",
+        "(EngineCore pid=REDACTED) INFO 10-20 02:28:31 [kv_cache_utils.py:2235] GPU KV cache size: 19,569 tokens",
+        "(EngineCore pid=REDACTED) INFO 10-20 02:28:31 [kv_cache_utils.py:2236] Maximum concurrency for 4,096 tokens per request: 4.78x",
+        "(EngineCore pid=REDACTED) INFO 10-20 02:29:28 [gpu_model_runner.py:6913] Graph capturing finished in 17 secs, took 0.56 GiB"
+      ]
+    }
+  ],
+  "ready_memory": [
+    {
+      "mode": "dflash2",
+      "ready_utc": "2026-10-20T02:23:16.370883+00:00",
+      "reported_process_hbm_mib": [
+        60046
+      ]
+    },
+    {
+      "mode": "mtp",
+      "ready_utc": "2026-10-20T02:29:39.339761+00:00",
+      "reported_process_hbm_mib": [
+        59942
+      ]
+    }
+  ],
+  "final_service_state": {
+    "recorded_utc": "2026-10-20T02:35:20.873030+00:00",
+    "mtp_8039_health": 200,
+    "baseline_8038_health": 200,
+    "experimental_8040_health": 0,
+    "mtp_served_model_ids": [
+      "Qwen3.8-27B"
+    ],
+    "baseline_served_model_ids": [
+      "Qwen3.8-27B"
+    ]
+  },
+  "raw_result_files": [
+    {
+      "name": "dflash2-metrics-after.txt",
+      "bytes": 52578,
+      "sha256": "b6cc9291ca9c5379cee0834637a6b496c3094ba0abf25e4f3e6581f72e747a2a"
+    },
+    {
+      "name": "dflash2-metrics-before.txt",
+      "bytes": 50273,
+      "sha256": "f72dd3039da36fb0526f21b02bcf3d0b1cd5a451cba24d7f4fab3f1dfbbf85bd"
+    },
+    {
+      "name": "dflash2-requests.json",
+      "bytes": 1064753,
+      "sha256": "cbebba088c97e5bbc7ad9df74451e79eb538295cb38d5da8296fe9842074c05b"
+    },
+    {
+      "name": "dflash2-summary.json",
+      "bytes": 491,
+      "sha256": "c4a1f5a2adaacaf9225ffd7d1e096e0775033463dec0afffa80442a66ad1ed29"
+    },
+    {
+      "name": "mtp-metrics-after.txt",
+      "bytes": 51170,
+      "sha256": "7eaac45393724fb94984b0ca02f00673eadc5a3cf5e3038281c645d266e9addd"
+    },
+    {
+      "name": "mtp-metrics-before.txt",
+      "bytes": 48893,
+      "sha256": "c6e34ab83bb494e78471993bba633481a9569fed31bf9dd5152bc39f5cabdc67"
+    },
+    {
+      "name": "mtp-requests.json",
+      "bytes": 1056874,
+      "sha256": "ba0a29da98dbbb59ea9cca5867b326d54dc1e4c8c98e53719e5b768ea9ab209c"
+    },
+    {
+      "name": "mtp-summary.json",
+      "bytes": 490,
+      "sha256": "03f2921cad6129ee8453554f64d88d361d9f727e8b7dacfc816aba187ca2b7d4"
+    }
+  ],
+  "privacy": "Raw server logs, login information, process IDs and weights remain on the host."
+}

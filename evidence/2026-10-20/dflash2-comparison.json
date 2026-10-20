@@ -1,0 +1,254 @@
+{
+  "model": "Qwen3.8-27B",
+  "target_dtype": "BF16",
+  "draft_dtype": "BF16",
+  "physical_device": 6,
+  "TP": 1,
+  "concurrency": 1,
+  "runtime": "Same vLLM 0.27.1 / vLLM-Ascend 0.27.1rc1 code extracted from the official image; native private CANN/PyTorch runtime.",
+  "speculative_configs": {
+    "mtp": {
+      "method": "qwen3_5_mtp",
+      "num_speculative_tokens": 1,
+      "enforce_eager": true
+    },
+    "dflash2": {
+      "method": "dflash",
+      "num_speculative_tokens": 7,
+      "enforce_eager": true
+    }
+  },
+  "summaries": {
+    "mtp": {
+      "mode": "mtp",
+      "requests": 4,
+      "tokens_per_benchmark": 256,
+      "dtype": "BF16",
+      "TP": 1,
+      "physical_device": 6,
+      "concurrency": 1,
+      "profiler_during_benchmark": false,
+      "median_decode_tokens_per_s": 30.672704408067045,
+      "median_ttft_s": 0.28203377505997196,
+      "median_elapsed_s": 8.595988675078843,
+      "metric": "Exclude all tokens in the first streamed token chunk; divide remaining tokens by first-to-last chunk time.",
+      "completed_utc": "2026-10-20T02:30:38.790876+00:00"
+    },
+    "dflash2": {
+      "mode": "dflash2",
+      "requests": 4,
+      "tokens_per_benchmark": 256,
+      "dtype": "BF16",
+      "TP": 1,
+      "physical_device": 6,
+      "concurrency": 1,
+      "profiler_during_benchmark": false,
+      "median_decode_tokens_per_s": 33.61399044886259,
+      "median_ttft_s": 0.371788660006132,
+      "median_elapsed_s": 8.023342505039182,
+      "metric": "Exclude all tokens in the first streamed token chunk; divide remaining tokens by first-to-last chunk time.",
+      "completed_utc": "2026-10-20T02:24:28.166066+00:00"
+    }
+  },
+  "acceptance": {
+    "mtp": {
+      "counters_delta": {
+        "vllm:spec_decode_num_drafts_total": 750.0,
+        "vllm:spec_decode_num_draft_tokens_total": 750.0,
+        "vllm:spec_decode_num_accepted_tokens_total": 630.0,
+        "vllm:spec_decode_num_accepted_tokens_per_pos_total": 630.0
+      },
+      "draft_token_acceptance_rate": 0.84,
+      "mean_tokens_per_verification": 1.8399999999999999,
+      "scope": "Warmups, four timed requests and three output checks; profiler disabled.",
+      "accepted_per_position": [
+        {
+          "position_zero_based": 0,
+          "accepted_count": 630.0,
+          "fraction_of_rounds": 0.84
+        }
+      ]
+    },
+    "dflash2": {
+      "counters_delta": {
+        "vllm:spec_decode_num_drafts_total": 498.0,
+        "vllm:spec_decode_num_draft_tokens_total": 3486.0,
+        "vllm:spec_decode_num_accepted_tokens_total": 885.0,
+        "vllm:spec_decode_num_accepted_tokens_per_pos_total": 885.0
+      },
+      "draft_token_acceptance_rate": 0.2538726333907057,
+      "mean_tokens_per_verification": 2.7771084337349397,
+      "scope": "Warmups, four timed requests and three output checks; profiler disabled.",
+      "accepted_per_position": [
+        {
+          "position_zero_based": 0,
+          "accepted_count": 328.0,
+          "fraction_of_rounds": 0.6586345381526104
+        },
+        {
+          "position_zero_based": 1,
+          "accepted_count": 192.0,
+          "fraction_of_rounds": 0.3855421686746988
+        },
+        {
+          "position_zero_based": 2,
+          "accepted_count": 135.0,
+          "fraction_of_rounds": 0.2710843373493976
+        },
+        {
+          "position_zero_based": 3,
+          "accepted_count": 93.0,
+          "fraction_of_rounds": 0.18674698795180722
+        },
+        {
+          "position_zero_based": 4,
+          "accepted_count": 74.0,
+          "fraction_of_rounds": 0.14859437751004015
+        },
+        {
+          "position_zero_based": 5,
+          "accepted_count": 38.0,
+          "fraction_of_rounds": 0.07630522088353414
+        },
+        {
+          "position_zero_based": 6,
+          "accepted_count": 25.0,
+          "fraction_of_rounds": 0.050200803212851405
+        }
+      ]
+    }
+  },
+  "output_comparisons": [
+    {
+      "label": "benchmark_p0_r0",
+      "mtp_tokens": 256,
+      "dflash2_tokens": 256,
+      "token_ids_equal": false,
+      "text_equal": false,
+      "first_difference_index": 253,
+      "mtp_first_eos_index": 246,
+      "dflash2_first_eos_index": 246,
+      "through_first_eos_or_output_limit_equal": true
+    },
+    {
+      "label": "benchmark_p1_r0",
+      "mtp_tokens": 256,
+      "dflash2_tokens": 256,
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "mtp_first_eos_index": null,
+      "dflash2_first_eos_index": null,
+      "through_first_eos_or_output_limit_equal": true
+    },
+    {
+      "label": "benchmark_p0_r1",
+      "mtp_tokens": 256,
+      "dflash2_tokens": 256,
+      "token_ids_equal": false,
+      "text_equal": false,
+      "first_difference_index": 253,
+      "mtp_first_eos_index": 246,
+      "dflash2_first_eos_index": 246,
+      "through_first_eos_or_output_limit_equal": true
+    },
+    {
+      "label": "benchmark_p1_r1",
+      "mtp_tokens": 256,
+      "dflash2_tokens": 256,
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "mtp_first_eos_index": null,
+      "dflash2_first_eos_index": null,
+      "through_first_eos_or_output_limit_equal": true
+    },
+    {
+      "label": "output_check_0",
+      "mtp_tokens": 96,
+      "dflash2_tokens": 96,
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "mtp_first_eos_index": null,
+      "dflash2_first_eos_index": null,
+      "through_first_eos_or_output_limit_equal": true
+    },
+    {
+      "label": "output_check_1",
+      "mtp_tokens": 96,
+      "dflash2_tokens": 96,
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "mtp_first_eos_index": null,
+      "dflash2_first_eos_index": null,
+      "through_first_eos_or_output_limit_equal": true
+    },
+    {
+      "label": "output_check_2",
+      "mtp_tokens": 25,
+      "dflash2_tokens": 25,
+      "token_ids_equal": true,
+      "text_equal": true,
+      "first_difference_index": null,
+      "mtp_first_eos_index": 24,
+      "dflash2_first_eos_index": 24,
+      "through_first_eos_or_output_limit_equal": true
+    }
+  ],
+  "all_tested_token_ids_equal": false,
+  "all_response_prefixes_equal": true,
+  "eos_token_ids": [
+    248046,
+    248044
+  ],
+  "generation_config_sha256": "e70c136c1b78ddc1fb0905bac8e733a4dc448d4f852a5dd75143fffc70be550e",
+  "decode_gain_pct": 9.589262171554624,
+  "limits": [
+    "Short deterministic single-user text requests; this is not a broad precision evaluation.",
+    "The new-version MTP arm controls the framework change; historical v0.26 results use different output lengths.",
+    "Chunk-normalized continuous decode metric excludes the entire first token chunk for both methods.",
+    "Fixed-length benchmarks ignore EOS; inspect first-EOS and first-difference indices before interpreting forced continuation mismatches.",
+    "Streaming times include HTTP and scheduler effects and are not kernel timings."
+  ],
+  "paired_benchmark_requests": [
+    {
+      "label": "benchmark_p0_r0",
+      "mtp_tokens_per_s": 30.395966503681432,
+      "dflash2_tokens_per_s": 30.470302960461662,
+      "decode_gain_pct": 0.24456026680785836,
+      "mtp_eos_or_limit_prefix_tokens_per_s": 30.4023413602235,
+      "dflash2_eos_or_limit_prefix_tokens_per_s": 31.43040710299175
+    },
+    {
+      "label": "benchmark_p1_r0",
+      "mtp_tokens_per_s": 30.927264257075908,
+      "dflash2_tokens_per_s": 37.546319568968215,
+      "decode_gain_pct": 21.40200716388265,
+      "mtp_eos_or_limit_prefix_tokens_per_s": 30.927264257075908,
+      "dflash2_eos_or_limit_prefix_tokens_per_s": 37.546319568968215
+    },
+    {
+      "label": "benchmark_p0_r1",
+      "mtp_tokens_per_s": 30.42079993818634,
+      "dflash2_tokens_per_s": 29.977233560679597,
+      "decode_gain_pct": -1.4581022800454035,
+      "mtp_eos_or_limit_prefix_tokens_per_s": 30.42107926750264,
+      "dflash2_eos_or_limit_prefix_tokens_per_s": 30.895653076221972
+    },
+    {
+      "label": "benchmark_p1_r1",
+      "mtp_tokens_per_s": 30.924608877947747,
+      "dflash2_tokens_per_s": 36.757677937263516,
+      "decode_gain_pct": 18.862224199302034,
+      "mtp_eos_or_limit_prefix_tokens_per_s": 30.924608877947747,
+      "dflash2_eos_or_limit_prefix_tokens_per_s": 36.757677937263516
+    }
+  ],
+  "eos_or_limit_prefix_median_tokens_per_s": {
+    "mtp": 30.672844072725194,
+    "dflash2": 34.09404252012763
+  },
+  "eos_or_limit_prefix_gain_pct": 11.153835096904574
+}

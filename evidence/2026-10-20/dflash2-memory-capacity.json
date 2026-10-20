@@ -1,0 +1,9 @@
+{
+  "recorded_utc": "2026-10-20T02:34:06.973179+00:00",
+  "physical_device": 6,
+  "runtime_visible_total_bytes": 65452113920,
+  "runtime_visible_total_gib": 60.95703125,
+  "free_bytes_after_original_mtp_restore": 5488304128,
+  "budget_95_percent_gib": 57.9091796875,
+  "note": "Queried after benchmarks; auxiliary context exits immediately. Not an experimental peak-memory sample."
+}

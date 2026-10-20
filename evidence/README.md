@@ -43,3 +43,8 @@
 
 - `2026-10-20/nz-hardware-comparison.json`：原始 SMMU/TLB 事件、官方 CSV 校验、稳定区间、L2 数据命中、同权重相邻重读干预、完整覆盖的四阶段 HBM、16 项 Insight 均值/次数核对和原服务恢复状态。
 - `2026-10-20/nz-hardware-source-manifest.json`：本次采集/分析脚本、过滤摘要、原始 SMMU 数据 SHA256 与安装源码依据。
+- `2026-10-20/dflash2-comparison.json`：单卡 BF16、同版本 MTP/DFlash2 四次正式请求、投机接受计数、原始 token 与 EOS 前缀比较，含强制续写边界。
+- `2026-10-20/dflash2-runtime-evidence.json`：过滤启动失败、显存预算和就绪进程占用、原服务最终恢复状态。
+- `2026-10-20/dflash2-source-manifest.json`：官方镜像/框架 commit、草稿固定版本与 SHA256、归档脚本哈希。
+- `2026-10-20/dflash2-memory-capacity.json`：测速结束后运行时可见容量与 95% 预算换算，不是峰值采样。
+- `2026-10-20/dflash2-restored-configs.json`：原基线/MTP 的卡号、BF16、90% 预算、图/投机配置及调试/NZ 环境清理状态。
