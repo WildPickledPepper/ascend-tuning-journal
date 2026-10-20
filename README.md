@@ -18,6 +18,7 @@
 ## 最近一次记录的状态
 
 - 当前目标：**保持 BF16，依据 ms 工具证据调优推理**；新增按公开昇腾配方的双卡小样本验证。
+- 最新单卡验证：[BF16、MTP7与草稿图](experiments/sglang-ascend/single-card.md)已在物理6跑通，同四题端到端**42.167 token/s**、4/4正确；长回答第三题**53.254 token/s**，未达到此前双卡69.748。静态预算0.97、上下文4096、缓存8192 token；就绪进程合计约55.90 GiB，非峰值。14:47:00已确认恢复原服务，卡7原进程未重启；没有新做profiler采样，不猜测剩余差额的算子归因。[回执](evidence/2026-10-20/sglang-single-mtp7.json)。
 - 最新实验：[SGLang 昇腾方案，双卡 BF16、batch1、同四道 GSM8K](experiments/sglang-ascend/README.md)：AR **28.668**、MTP7 **69.748**、DFlash2 **57.560 token/s**，各 4/4 正确。DFlash2 为 AR 的 **2.008 倍**，吞吐相对 MTP 低 **17.475%**；其首题耗时偏长，第三题输出长度也不同。结果只覆盖四题，包含 prefill，不当作稳态解码上限，也不与旧单卡速度直接相除。[回执](evidence/2026-10-20/sglang-ascend-four-questions.json)。
 - 接受率复核：本次MTP7日志窗口 **39%～61%**、DFlash2 **42%～60%**，每轮均约四五个token；不是全程平均，未显示明显接受率优势。旧MTP为单候选、草稿eager、单卡，约59毫秒返回1.8个token；新测试改为七候选、草稿图、双卡且题目/计时口径不同，不能把30→70全部归给框架，亦不能将旧30视为硬件上限。相同长度的第2、4题DFlash2更快，首题多3.492秒影响四题总吞吐，尚未采样其内部原因。[配置与结论复核](experiments/sglang-ascend/README.md#接受率与旧约-30-tokens-配置的复核)。
 - DFlash2 已补完 [四份采样与 Insight 后端分析](experiments/dflash2/profiling.md)：每次返回更多 token，但 eager 草稿/准备流程也变贵，抵消多数收益；候选路径选择设备内核约 5.18 μs/轮，不是主热点。全部 778 个形状分组的调用数和总耗时与 CSV 一致，SQL TOP20 也核对通过。随后按用户要求完成双卡 SGLang 昇腾配方小样本复现，与此前单卡结果分别记录。

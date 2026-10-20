@@ -1,0 +1,243 @@
+{
+  "model": "Qwen3.8-27B",
+  "hardware": "Ascend 910B2",
+  "physical_card_count": 1,
+  "physical_device": 6,
+  "target_and_draft_dtype": "BF16",
+  "profiler": false,
+  "same_request_payloads_as_tp2": true,
+  "resolved_runtime_fields": {
+    "tp_size": 1,
+    "dtype": "bfloat16",
+    "speculative_algorithm": "EAGLE",
+    "speculative_num_steps": 7,
+    "speculative_eagle_topk": 1,
+    "speculative_num_draft_tokens": 8,
+    "max_running_requests": 1,
+    "context_length": 4096,
+    "max_total_tokens": 8192,
+    "mem_fraction_static": 0.97,
+    "mamba_ssm_dtype": "bfloat16",
+    "disable_radix_cache": true,
+    "device": "npu",
+    "attention_backend": "ascend",
+    "disable_cuda_graph": false
+  },
+  "started_utc": "2026-10-20T06:38:37.566204+00:00",
+  "ready_utc": "2026-10-20T06:42:49.800081+00:00",
+  "restored_utc": "2026-10-20T06:47:00.406008+00:00",
+  "baseline_api_unchanged": true,
+  "restored_health": {
+    "8038": 200,
+    "8039": 200
+  },
+  "experiment_health": 0,
+  "restored_configuration": [
+    {
+      "port": 8038,
+      "--dtype": "bfloat16",
+      "--tensor-parallel-size": "1",
+      "physical_devices": "7",
+      "experimental_ld_preload": false,
+      "experimental_custom_opp": false
+    },
+    {
+      "port": 8039,
+      "--dtype": "bfloat16",
+      "--tensor-parallel-size": "1",
+      "--speculative-config": "{\"method\":\"qwen3_5_mtp\",\"num_speculative_tokens\":1,\"enforce_eager\":true}",
+      "physical_devices": "6",
+      "experimental_ld_preload": false,
+      "experimental_custom_opp": false
+    }
+  ],
+  "ready_process_memory_snapshot": {
+    "process_count": 2,
+    "total_mib": 57238,
+    "total_gib": 55.896484375,
+    "peak_measured": false
+  },
+  "benchmark": {
+    "protocol": "SGLang PR35629: GSM8K zero-shot/chat, greedy T0/top_p1/top_k1, 2048 output limit, concurrency1; 4 examples.",
+    "example_count": 4,
+    "warmup_requests": 1,
+    "warmup_max_tokens": 64,
+    "evaluator_source_commit": "bea986b2f91432e0bdf2c283527427b0e63fcda1",
+    "evaluator_source_sha256": "f71543a818dcc1ad4fa7263df76492bf76c971deeec3d4377aa72fea819c8ec1",
+    "latency_s": 22.790065279928967,
+    "output_tokens": 961,
+    "throughput_tok_s": 42.167496590996834,
+    "accuracy": 1.0
+  },
+  "requests": [
+    {
+      "question_index": 0,
+      "started_utc": "2026-10-20T06:43:10.339329+00:00",
+      "prompt_sha256": "aeaf0ef0034af52aa8339fc075b3de4f7d943f0cbb8f670399bd04600e5d9e9a",
+      "output_tokens": 137,
+      "elapsed_s": 6.051773949991912,
+      "request_throughput_tok_s": 22.637990303683285,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 137,
+        "prompt_tokens": 121,
+        "total_tokens": 258,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      },
+      "message_sha256": "baa6d3c47ce70b4ffbd8e54ced9dc735fbfa88566f99c81301df77f6c0c26851",
+      "same_message_as_previous_tp2": true,
+      "previous_tp2_output_tokens": 137,
+      "previous_tp2_elapsed_s": 2.073803919949569
+    },
+    {
+      "question_index": 1,
+      "started_utc": "2026-10-20T06:43:16.398449+00:00",
+      "prompt_sha256": "c34c3252e186b1c1f93a0931e1c6f5e190ae68c6c44e3b00c7cbc4b39dff1d90",
+      "output_tokens": 44,
+      "elapsed_s": 1.503642710042186,
+      "request_throughput_tok_s": 29.262270688470625,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 44,
+        "prompt_tokens": 83,
+        "total_tokens": 127,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      },
+      "message_sha256": "725d3c907ae0ec2ff32674f48bc172f3fdf0b07bb1cd1c18814750dc31260f1c",
+      "same_message_as_previous_tp2": true,
+      "previous_tp2_output_tokens": 44,
+      "previous_tp2_elapsed_s": 1.2083355999784544
+    },
+    {
+      "question_index": 2,
+      "started_utc": "2026-10-20T06:43:17.909064+00:00",
+      "prompt_sha256": "a1b3c077a5ffc275fef6fdbb3e97e22761e33c10514735353bc8f421763f40ba",
+      "output_tokens": 692,
+      "elapsed_s": 12.994275899953209,
+      "request_throughput_tok_s": 53.254217882390186,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 692,
+        "prompt_tokens": 114,
+        "total_tokens": 806,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      },
+      "message_sha256": "ec6d44b99454cb4f5e9ca184730ab3d722d4c32dda5373e2e630a592e687d9f4",
+      "same_message_as_previous_tp2": false,
+      "previous_tp2_output_tokens": 883,
+      "previous_tp2_elapsed_s": 11.540414749993943
+    },
+    {
+      "question_index": 3,
+      "started_utc": "2026-10-20T06:43:30.910767+00:00",
+      "prompt_sha256": "97b4b589a15891ad46094d47592df47c4f652420a1d222cf0eb9a300ab3f8285",
+      "output_tokens": 88,
+      "elapsed_s": 2.2066449200501665,
+      "request_throughput_tok_s": 39.879547089977386,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 88,
+        "prompt_tokens": 92,
+        "total_tokens": 180,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      },
+      "message_sha256": "9d4cf5d2cc6eb4a00c10c2a3b69fcd691b4dfcc35602ee6b88cd9d0b59b255e5",
+      "same_message_as_previous_tp2": true,
+      "previous_tp2_output_tokens": 88,
+      "previous_tp2_elapsed_s": 1.658804070088081
+    }
+  ],
+  "graph_and_memory_log": [
+    "[2026-10-20 06:39:50] Load weight end. elapsed=12.57 s, type=Qwen3_5ForConditionalGeneration, avail mem=9.49 GB, mem usage=51.01 GB.",
+    "[2026-10-20 06:39:52] Load weight end. elapsed=0.90 s, type=Qwen3_5ForCausalLMMTP, avail mem=3.97 GB, mem usage=5.53 GB.",
+    "[2026-10-20 06:39:53] Mamba Cache is allocated. max_mamba_cache_size: 1, conv_state size: 0.02GB, ssm_state size: 0.14GB intermediate_ssm_state_cache size: 1.12GB intermediate_conv_window_cache size: 0.04GB ",
+    "[2026-10-20 06:39:53] KV Cache is allocated. dtype: torch.bfloat16, #tokens: 8192, K size: 0.25 GB, V size: 0.25 GB",
+    "[2026-10-20 06:39:53] Memory pool end. avail mem=2.13 GB",
+    "[2026-10-20 06:39:53] KV Cache is allocated. dtype: torch.bfloat16, #tokens: 8192, K size: 0.02 GB, V size: 0.02 GB",
+    "[2026-10-20 06:39:53] Memory pool end. avail mem=2.09 GB",
+    "[2026-10-20 06:39:54] Capture target verify NPU graph begin. backend=full, num_tokens_per_req=8, bs=[1], avail mem=6.66 GB",
+    "[2026-10-20 06:40:27] Capture target verify NPU graph end. elapsed=33.38 s, mem usage=0.63 GB, avail mem=6.03 GB.",
+    "[2026-10-20 06:40:27] Capture draft decode CUDA graph begin. backend=full, num_tokens_per_req=1, bs=[1], avail mem=6.03 GB",
+    "[2026-10-20 06:40:42] Capture draft decode CUDA graph end. elapsed=15.17 s, mem usage=0.34 GB, avail mem=5.69 GB.",
+    "[2026-10-20 06:40:42] Capture draft extend CUDA graph begin. backend=full, num_tokens_per_req=8, bs=[1], avail mem=5.69 GB",
+    "[2026-10-20 06:40:43] Capture draft extend CUDA graph end. elapsed=0.95 s, mem usage=0.48 GB, avail mem=5.21 GB."
+  ],
+  "decode_windows": [
+    {
+      "log": "[2026-10-20 06:43:17] Decode batch, #running-req: 1, #full token: 128, full token usage: 0.02, mamba num: 1, mamba usage: 1.00, accept len: 4.72, accept rate: 0.53, npu graph: True, gen throughput (token/s): 1.23, #queue-req: 0",
+      "accept_length": 4.72,
+      "accept_rate": 0.53,
+      "throughput_tok_s": 1.23
+    },
+    {
+      "log": "[2026-10-20 06:43:20] Decode batch, #running-req: 1, #full token: 384, full token usage: 0.05, mamba num: 1, mamba usage: 1.00, accept len: 4.58, accept rate: 0.51, npu graph: True, gen throughput (token/s): 48.21, #queue-req: 0",
+      "accept_length": 4.58,
+      "accept_rate": 0.51,
+      "throughput_tok_s": 48.21
+    },
+    {
+      "log": "[2026-10-20 06:43:24] Decode batch, #running-req: 1, #full token: 512, full token usage: 0.06, mamba num: 1, mamba usage: 1.00, accept len: 4.28, accept rate: 0.47, npu graph: True, gen throughput (token/s): 51.73, #queue-req: 0",
+      "accept_length": 4.28,
+      "accept_rate": 0.47,
+      "throughput_tok_s": 51.73
+    },
+    {
+      "log": "[2026-10-20 06:43:27] Decode batch, #running-req: 1, #full token: 640, full token usage: 0.08, mamba num: 1, mamba usage: 1.00, accept len: 3.95, accept rate: 0.42, npu graph: True, gen throughput (token/s): 48.53, #queue-req: 0",
+      "accept_length": 3.95,
+      "accept_rate": 0.42,
+      "throughput_tok_s": 48.53
+    },
+    {
+      "log": "[2026-10-20 06:43:30] Decode batch, #running-req: 1, #full token: 0, full token usage: 0.00, mamba num: 0, mamba usage: 0.00, accept len: 5.35, accept rate: 0.62, npu graph: True, gen throughput (token/s): 63.91, #queue-req: 0",
+      "accept_length": 5.35,
+      "accept_rate": 0.62,
+      "throughput_tok_s": 63.91
+    }
+  ],
+  "server_info_spec_statistics": {
+    "before": [],
+    "after": [
+      {
+        "field": "internal_states[0].avg_spec_accept_length",
+        "value": 4.575
+      }
+    ]
+  },
+  "server_info_scope": "Cumulative flushed log-window counters only; includes any warmup rounds in those windows and omits the unflushed tail. Not a four-question-only acceptance rate. Confirmed in scheduler_components/metrics_reporter.py:922-925.",
+  "previous_tp2_summary": {
+    "latency_s": 16.516513720038347,
+    "output_tokens": 1152,
+    "throughput_tok_s": 69.748375445743,
+    "accuracy": 1.0
+  },
+  "throughput_ratio_to_previous_tp2": 0.6045660034590881,
+  "failed_attempt": {
+    "mem_fraction_static": 0.9,
+    "started_utc": "2026-10-20T06:33:54.509100+00:00",
+    "restored_utc": "2026-10-20T06:38:23.746648+00:00",
+    "benchmark_completed": false,
+    "reason": "Loaded target and draft weights plus state reservation exceed static budget; no performance result."
+  },
+  "source_manifest": {
+    "start_sglang.sh": "9795a6eaaa4191456b576765fef4ddbdcd905a2f58cadfcefd069d21bdd6159a",
+    "run_client.sh": "f07a8e932ca598e32e45f9107388d189c0710c905e85587020e7917e56516b42",
+    "ascend_client.py": "f148aace585221dc63641069b5e2a32e0da11a359683e73790ea7e557a1abec4",
+    "gsm8k-test.jsonl": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+    "controller.py": "8d0a73261d05a1881d4de6cb47a7f525e335688bdb3bb8a31e1d4149c4840720"
+  },
+  "limitations": [
+    "Four math questions, one run; not a full accuracy benchmark or a production speed guarantee.",
+    "Cache cap/context length/static budget differ from the previous TP2 setup; generation requests match exactly.",
+    "Natural output lengths may differ; totals include prefill and evaluator overhead.",
+    "Decode-window metrics are not the full-run mean and may include idle/request-boundary time.",
+    "No new profiler capture; do not infer a precise kernel or bandwidth contribution from this benchmark alone."
+  ]
+}
