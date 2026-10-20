@@ -54,3 +54,5 @@
 - `2026-10-20/vllm-mtp1-vs-mtp7-profiles.json`：四份128-token配对采样，720个Insight分组与SQL TOP20全核验、主/草稿图区分、FFN/周期时间和原始文件SHA256。
 
 - `2026-10-20/vllm-mtp-mfu.json`：新增data-check/MFU两个skill的四份Stop/解析配置校验、服务器/本地来源哈希口径、8组BF16矩阵乘MFU及调用加权汇总，理论峰值来自本机CANN平台配置。
+
+- `2026-10-20/vllm-mtp7-gsm128-result.json`：单卡BF16 MTP7草稿图完整128题，57.198token/s、服务端TTFT341.543ms、原评分121/128；逐题过滤数据、4个长度截断、3个解析误判、接受位置计数与恢复回执。
