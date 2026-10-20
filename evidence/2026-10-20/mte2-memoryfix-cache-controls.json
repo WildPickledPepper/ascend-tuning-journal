@@ -1,0 +1,358 @@
+{
+  "source_commit": "56632dc4a944410c791538451dc2156a151bd105",
+  "dtype": "BF16",
+  "M": 8,
+  "method": "host-side DBI key correction",
+  "captures": {
+    "full-up": {
+      "source": "OPPROF_20261020094850_FSUWZXIJWVUBAWXT",
+      "kernel_us": 278.325562,
+      "mte2_mean_us": 262.65157017391306,
+      "cube_mean_us": 28.11980647826087,
+      "l2_read_hit_rate": 0.0050527326290887836,
+      "l2_hits": 14148,
+      "l2_misses": 2785921,
+      "logical_weight_bytes": 356515840,
+      "physical_allocation_bytes": 402653184,
+      "GM_to_L1_source_bytes": 358400000,
+      "raw_records": 697592,
+      "raw_sha256": "b792827360d82b201533ed527fa0e1468475750f5fe1bdbe00c42dbb45a2c12f",
+      "old_formula_matches_all_23_rows": true,
+      "corrected_positive_blocks": 23,
+      "corrected_active_bandwidth_GiB_s": [
+        55.131371,
+        55.632788,
+        55.101459,
+        55.289966,
+        55.766576,
+        55.449592,
+        55.736557,
+        54.898874,
+        53.668513,
+        53.685471,
+        54.262277,
+        55.540802,
+        55.352317,
+        55.876856,
+        54.434567,
+        55.249859,
+        54.09063,
+        56.556843,
+        55.534288,
+        55.10008,
+        56.671119,
+        57.282785,
+        54.626241
+      ],
+      "launch": {
+        "key": 98499,
+        "blocks": 23,
+        "tiling_first152_sha256": "a2e938ecf3bfb153dd703ac8299ad835019e2ffb0e13b290a694349ac918969f"
+      },
+      "valid_output": {
+        "first": 51.25,
+        "reference": 51.25,
+        "finite": true
+      }
+    },
+    "alias64-up": {
+      "source": "OPPROF_20261020094921_PLGQSTQULWDTGISG",
+      "kernel_us": 128.542572,
+      "mte2_mean_us": 113.85280186956521,
+      "cube_mean_us": 28.11980647826087,
+      "l2_read_hit_rate": 0.812529976939854,
+      "l2_hits": 2275140,
+      "l2_misses": 524929,
+      "logical_weight_bytes": 356515840,
+      "physical_allocation_bytes": 67108864,
+      "GM_to_L1_source_bytes": 358400000,
+      "raw_records": 697592,
+      "raw_sha256": "9b18285badd30df132e25604e503a0c9f0d902fc13d3cf443900ade1c75e5078",
+      "old_formula_matches_all_23_rows": true,
+      "corrected_positive_blocks": 23,
+      "corrected_active_bandwidth_GiB_s": [
+        134.261262,
+        131.580463,
+        134.77535,
+        130.769617,
+        136.571236,
+        135.93663,
+        122.934893,
+        125.903225,
+        130.25933,
+        128.6009,
+        120.028242,
+        119.047053,
+        119.47205,
+        126.784326,
+        122.900119,
+        123.970483,
+        121.03348,
+        134.319783,
+        126.833467,
+        130.322738,
+        127.184031,
+        130.288138,
+        121.0924
+      ],
+      "launch": {
+        "key": 98499,
+        "blocks": 23,
+        "tiling_first152_sha256": "a2e938ecf3bfb153dd703ac8299ad835019e2ffb0e13b290a694349ac918969f"
+      },
+      "valid_output": {
+        "first": 51.25,
+        "reference": 51.25,
+        "finite": true
+      }
+    },
+    "full-down": {
+      "source": "OPPROF_20261020094955_ACYUIXUMUBGIHVRG",
+      "kernel_us": 147.942963,
+      "mte2_mean_us": 126.09108743478261,
+      "cube_mean_us": 18.895555739130433,
+      "l2_read_hit_rate": 0.065640187432384,
+      "l2_hits": 97988,
+      "l2_misses": 1394817,
+      "logical_weight_bytes": 178257920,
+      "physical_allocation_bytes": 201326592,
+      "GM_to_L1_source_bytes": 191070208,
+      "raw_records": 186960,
+      "raw_sha256": "47633bd0d02bc40b893ffcf62edface5588fc653882482597215996acdbe5ecc",
+      "old_formula_matches_all_23_rows": true,
+      "corrected_positive_blocks": 23,
+      "corrected_active_bandwidth_GiB_s": [
+        61.812184,
+        61.80782,
+        61.341462,
+        63.067324,
+        62.106802,
+        60.266527,
+        61.604764,
+        61.706261,
+        59.902873,
+        61.37748,
+        62.24009,
+        61.335018,
+        61.00512,
+        61.273575,
+        62.534904,
+        61.651674,
+        61.304951,
+        61.203968,
+        61.187392,
+        61.833741,
+        60.928431,
+        60.725578,
+        58.986209
+      ],
+      "launch": {
+        "key": 98513,
+        "blocks": 23,
+        "tiling_first152_sha256": "03e41fdcc99f5fa40274b8f540f963b44144defa6e9b8d2369687156f1903ddb"
+      },
+      "valid_output": {
+        "first": 174.0,
+        "reference": 174.0,
+        "finite": true
+      }
+    },
+    "alias64-down": {
+      "source": "OPPROF_20261020095027_TBKIJEOCFHREJGRS",
+      "kernel_us": 113.542274,
+      "mte2_mean_us": 76.23782582608696,
+      "cube_mean_us": 18.89845404347826,
+      "l2_read_hit_rate": 0.647331701059415,
+      "l2_hits": 966340,
+      "l2_misses": 526465,
+      "logical_weight_bytes": 178257920,
+      "physical_allocation_bytes": 67108864,
+      "GM_to_L1_source_bytes": 191070208,
+      "raw_records": 186960,
+      "raw_sha256": "47633bd0d02bc40b893ffcf62edface5588fc653882482597215996acdbe5ecc",
+      "old_formula_matches_all_23_rows": true,
+      "corrected_positive_blocks": 23,
+      "corrected_active_bandwidth_GiB_s": [
+        106.61548,
+        109.517982,
+        106.765008,
+        109.90034,
+        101.177126,
+        102.376541,
+        92.270392,
+        92.875451,
+        98.192611,
+        101.116505,
+        99.977652,
+        102.506155,
+        102.351115,
+        101.344755,
+        95.011655,
+        92.00071,
+        92.619371,
+        107.401885,
+        104.957838,
+        104.359644,
+        106.437251,
+        111.895832,
+        99.859282
+      ],
+      "launch": {
+        "key": 98513,
+        "blocks": 23,
+        "tiling_first152_sha256": "03e41fdcc99f5fa40274b8f540f963b44144defa6e9b8d2369687156f1903ddb"
+      },
+      "valid_output": {
+        "first": 174.0,
+        "reference": 174.0,
+        "finite": true
+      }
+    }
+  },
+  "same_virtual_weight_address_and_tiling_verified": true,
+  "repeat_controls": {
+    "full-nd-repeat": {
+      "calls": [
+        {
+          "kernel_us": 275.705505,
+          "mte2_mean_us": 261.9322947826087,
+          "l2_read_hit_rate": 0.0050527308245865285
+        },
+        {
+          "kernel_us": 277.285553,
+          "mte2_mean_us": 262.37439904347826,
+          "l2_read_hit_rate": 0.0050527326290887836
+        },
+        {
+          "kernel_us": 275.84552,
+          "mte2_mean_us": 260.1939610434783,
+          "l2_read_hit_rate": 0.0050527326290887836
+        }
+      ],
+      "kernel_mean_us": 276.27885933333334,
+      "kernel_median_us": 275.84552
+    },
+    "alias64-nd-repeat": {
+      "calls": [
+        {
+          "kernel_us": 133.002655,
+          "mte2_mean_us": 115.5225123478261,
+          "l2_read_hit_rate": 0.812529976939854
+        },
+        {
+          "kernel_us": 130.98262,
+          "mte2_mean_us": 113.16190804347826,
+          "l2_read_hit_rate": 0.812529976939854
+        },
+        {
+          "kernel_us": 127.802559,
+          "mte2_mean_us": 114.24857495652174,
+          "l2_read_hit_rate": 0.812529976939854
+        }
+      ],
+      "kernel_mean_us": 130.59594466666667,
+      "kernel_median_us": 130.98262
+    },
+    "full-nz-repeat": {
+      "calls": [
+        {
+          "kernel_us": 239.9048,
+          "mte2_mean_us": 231.4321262173913,
+          "l2_read_hit_rate": 0.0050527308245865285
+        },
+        {
+          "kernel_us": 239.244781,
+          "mte2_mean_us": 231.24156917391304,
+          "l2_read_hit_rate": 0.0050527308245865285
+        },
+        {
+          "kernel_us": 239.404785,
+          "mte2_mean_us": 231.4084537826087,
+          "l2_read_hit_rate": 0.0050527326290887836
+        }
+      ],
+      "kernel_mean_us": 239.518122,
+      "kernel_median_us": 239.404785
+    },
+    "alias64-nz-repeat": {
+      "calls": [
+        {
+          "kernel_us": 116.022324,
+          "mte2_mean_us": 89.69673826086957,
+          "l2_read_hit_rate": 0.812529976939854
+        },
+        {
+          "kernel_us": 114.942299,
+          "mte2_mean_us": 94.20942017391305,
+          "l2_read_hit_rate": 0.812529976939854
+        },
+        {
+          "kernel_us": 114.922302,
+          "mte2_mean_us": 91.82768152173914,
+          "l2_read_hit_rate": 0.812529976939854
+        }
+      ],
+      "kernel_mean_us": 115.29564166666667,
+      "kernel_median_us": 114.942299
+    }
+  },
+  "smmu_controls": {
+    "full": {
+      "calls": 3,
+      "requests": 2104746,
+      "misses": 356,
+      "raw_export_crosscheck": true,
+      "valid_end_info": true,
+      "kernel_durations_us": [
+        455.56,
+        282.48,
+        275.72
+      ],
+      "warning": "Incorrect schedule warning; complete end metadata and all three kernel/counter groups verified."
+    },
+    "alias64": {
+      "calls": 3,
+      "requests": 2104747,
+      "misses": 426,
+      "raw_export_crosscheck": true,
+      "valid_end_info": true,
+      "kernel_durations_us": [
+        102.06,
+        97.94,
+        98.74
+      ],
+      "warning": "Incorrect schedule warning; complete end metadata and all three kernel/counter groups verified."
+    }
+  },
+  "insight_validation": {
+    "full-up": {
+      "base_duration_matches_csv": true,
+      "l2_read_plus_write_hits_match_all_23_blocks": true
+    },
+    "alias64-up": {
+      "base_duration_matches_csv": true,
+      "l2_read_plus_write_hits_match_all_23_blocks": true
+    },
+    "full-down": {
+      "base_duration_matches_csv": true,
+      "l2_read_plus_write_hits_match_all_23_blocks": true
+    },
+    "alias64-down": {
+      "base_duration_matches_csv": true,
+      "l2_read_plus_write_hits_match_all_23_blocks": true
+    }
+  },
+  "service_actions": {
+    "card6_restored_utc": "2026-10-20T09:54:03.710296+00:00",
+    "card6_health_at_restore": 200,
+    "card7_stopped_utc": "2026-10-20T09:56:04.901964+00:00",
+    "remaining_owned_card7_processes": []
+  },
+  "limitations": [
+    "Constant synthetic weights and VMM aliases are diagnostic controls, not a model deployment.",
+    "Cold-cache native probes do not directly split a real-model 282 us into additive stages.",
+    "Changing physical backing also changes physical addressing; cache-hit improvement is measured.",
+    "GB/s in the original field uses binary GiB/s according to its source formula.",
+    "Host correction is a separate post-processor; the installed msOpProf binary is unchanged."
+  ]
+}

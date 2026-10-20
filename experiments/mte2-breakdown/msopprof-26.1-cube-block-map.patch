@@ -1,0 +1,35 @@
+diff --git a/csrc/op_profiling/profiling/device/data_parse/metric_data_handler.cpp b/csrc/op_profiling/profiling/device/data_parse/metric_data_handler.cpp
+index 8c9443b..c921de0 100644
+--- a/csrc/op_profiling/profiling/device/data_parse/metric_data_handler.cpp
++++ b/csrc/op_profiling/profiling/device/data_parse/metric_data_handler.cpp
+@@ -711,18 +711,24 @@ void DataHandlerOf910B::Statics(std::vector<MemRecord> &memoryRecords,
+     unordered_map<uint16_t, std::map<std::string, uint64_t>> gmDates;
+     for (const auto &record : memoryRecords) {
+         if (record.src == MemType::GM) {
++            // DBI Cube slots are [2, 5, 8, ...]; PMU block IDs are [0, 1, 2, ...].
++            // Only Cube GM routes are collected by this handler.
++            if (record.blockId % SUBLOCK_NUM != CUBE_SUBBLOCK_INDEX) {
++                continue;
++            }
++            const uint16_t cubeBlockId = record.blockId / SUBLOCK_NUM;
+             if (record.dst == MemType::L0A) {
+-                gmRequests[record.blockId][GM_TO_L0A] += getReq(record.srcMemSize,
++                gmRequests[cubeBlockId][GM_TO_L0A] += getReq(record.srcMemSize,
+                                                                 REQ_DATA_OF_910B.at(TransportType::GM_TO_L0A));
+-                gmDates[record.blockId][GM_TO_L0A_DATA] += record.srcMemSize;
++                gmDates[cubeBlockId][GM_TO_L0A_DATA] += record.srcMemSize;
+             } else if (record.dst == MemType::L0B) {
+-                gmRequests[record.blockId][GM_TO_L0B] += getReq(record.srcMemSize,
++                gmRequests[cubeBlockId][GM_TO_L0B] += getReq(record.srcMemSize,
+                                                                 REQ_DATA_OF_910B.at(TransportType::GM_TO_L0B));
+-                gmDates[record.blockId][GM_TO_L0B_DATA] += record.srcMemSize;
++                gmDates[cubeBlockId][GM_TO_L0B_DATA] += record.srcMemSize;
+             } else if (record.dst == MemType::L1) {
+-                gmRequests[record.blockId][GM_TO_L1] += getReq(record.srcMemSize,
++                gmRequests[cubeBlockId][GM_TO_L1] += getReq(record.srcMemSize,
+                                                                REQ_DATA_OF_910B.at(TransportType::GM_TO_L1));
+-                gmDates[record.blockId][GM_TO_L1_DATA] += record.srcMemSize;
++                gmDates[cubeBlockId][GM_TO_L1_DATA] += record.srcMemSize;
+             }
+         }
+     }

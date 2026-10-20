@@ -17,6 +17,8 @@
 
 ## 最近一次记录的状态
 
+- **HBM→L1链已取得受控定位证据**：[缓存对照与带宽解析修复](experiments/mte2-breakdown/cache-controls.md)。同一ND升维地址/分块/搬运字节，L2读命中0.505%→81.253%，MTE2活动262.652→113.853μs；主要成本在L2未命中后的HBM供数。保留转换仍大幅加快；TLB miss未改善。修正原始DBI核号错配后23核带宽均有效，与PMU字节完全一致。原装msprof未替换，无新整模型速度结果。**7号卡已按用户要求关闭，保持释放；6号卡原MTP服务已恢复**。[过滤证据](evidence/2026-10-20/mte2-memoryfix-cache-controls.json)。
+
 - **MTE2内部拆分尚未完成**：[原生ND/NZ补采](experiments/mte2-breakdown/README.md)。同形状升维279.046→240.965μs、主要分块参数相同，但该差额不是纯转换耗时。MemoryDetail排除内存不足失败轮后，仍有16/23核活跃带宽字段为零的覆盖或映射异常。不能把“供数通路主导”直接写成“HBM物理带宽已打满”。17:38:39确认原6/7服务均健康，7号卡未重启。[证据](evidence/2026-10-20/mte2-breakdown-native.json)。
 
 - **最新搬运实采已完成**：[当前ND/M8诊断](experiments/nd-m8-hardware/README.md)。15份采样、35个Insight分组核验通过。small/full的TLB miss虽增加，矩阵乘均约215.5μs/次、HBM约1.243TB/s，未复现旧NZ/M2的TLB退化；当前优先关注GM→L1权重读取。真实主FFN约28.82ms/轮，草稿词表投影另约13.34ms/轮。17:08:04已恢复原服务。[证据](evidence/2026-10-20/nd-m8-memory-diagnosis.json)。
