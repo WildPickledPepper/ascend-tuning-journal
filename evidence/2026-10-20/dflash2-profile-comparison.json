@@ -1,0 +1,3308 @@
+{
+  "model": "Qwen3.8-27B",
+  "dtype": "BF16 target and draft",
+  "TP": 1,
+  "concurrency": 1,
+  "framework": "vLLM 6e448d0ea9bf3d88d898b65449ca6dc2aec170ac / Ascend 3b31886237ed65c435e0965b10e8002ff5769766",
+  "sampling": "T=0, seed42, thinking off, forced 256 tokens",
+  "draft_execution": "eager for both",
+  "candidates": {
+    "mtp": 1,
+    "dflash2": 7
+  },
+  "captures": {
+    "mtp-p0": {
+      "decode_rounds": 143,
+      "decode_span_ms": 9338.64536,
+      "compute_union_ms": 7691.55398,
+      "no_compute_ms": 1647.09138,
+      "no_compute_pct": 17.637369409646368,
+      "phase_device_totals": {
+        "main_verification_graph": {
+          "calls": 194909,
+          "kernel_sum_ms": 6731.04428000097,
+          "union_ms": 6731.04428
+        },
+        "unattributed": {
+          "calls": 29744,
+          "kernel_sum_ms": 210.25758000001252,
+          "union_ms": 210.25758
+        },
+        "post process": {
+          "calls": 429,
+          "kernel_sum_ms": 275.5708,
+          "union_ms": 275.5708
+        },
+        "sample_token": {
+          "calls": 2145,
+          "kernel_sum_ms": 17.90747999999999,
+          "union_ms": 17.90748
+        },
+        "async_state_update": {
+          "calls": 721,
+          "kernel_sum_ms": 1.4961199999999977,
+          "union_ms": 1.49104
+        },
+        "draft_token": {
+          "calls": 9718,
+          "kernel_sum_ms": 421.60710000000125,
+          "union_ms": 421.6071,
+          "calls_per_round": 67.95804195804196,
+          "kernel_ms_per_round": 2.9483013986014073
+        },
+        "prepare input": {
+          "calls": 10934,
+          "kernel_sum_ms": 34.632779999999876,
+          "union_ms": 34.63278
+        }
+      },
+      "cpu_inclusive_scopes": {
+        "DFlash2::selector_walk": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "DFlash2::candidate_selector": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "DFlash2::lm_head_and_topk": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "draft_token": {
+          "calls": 143,
+          "inclusive_ms": 1140.36311
+        },
+        "sample_token": {
+          "calls": 143,
+          "inclusive_ms": 172.04099
+        },
+        "post process": {
+          "calls": 143,
+          "inclusive_ms": 46.41156
+        },
+        "forward": {
+          "calls": 142,
+          "inclusive_ms": 653.00125
+        },
+        "prepare input": {
+          "calls": 143,
+          "inclusive_ms": 6864.63742
+        },
+        "async_state_update": {
+          "calls": 143,
+          "inclusive_ms": 87.90105
+        }
+      },
+      "phase_device_types": [
+        {
+          "phase": "main_verification_graph",
+          "type": "MatMulV2",
+          "calls": 43472,
+          "total_ms": 5804.953720000108
+        },
+        {
+          "phase": "draft_token",
+          "type": "MatMulV2",
+          "calls": 858,
+          "total_ms": 374.9299599999999
+        },
+        {
+          "phase": "post process",
+          "type": "MatMulV2",
+          "calls": 143,
+          "total_ms": 273.86386
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "RecurrentGatedDeltaRule",
+          "calls": 6864,
+          "total_ms": 176.11727999999994
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Transpose",
+          "calls": 6864,
+          "total_ms": 146.67861999999974
+        },
+        {
+          "phase": "unattributed",
+          "type": "fused_gdn_gating_kernel",
+          "calls": 6864,
+          "total_ms": 128.39308
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ConcatD",
+          "calls": 6864,
+          "total_ms": 122.34568000000043
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Slice",
+          "calls": 52624,
+          "total_ms": 91.74569999999582
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "CausalConv1d",
+          "calls": 6864,
+          "total_ms": 89.53678
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "FusedInferAttentionScore",
+          "calls": 2288,
+          "total_ms": 65.19904000000005
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "AddRmsNormBias",
+          "calls": 18304,
+          "total_ms": 59.11252000000032
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "SwiGlu",
+          "calls": 9152,
+          "total_ms": 54.460080000000346
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Add",
+          "calls": 22880,
+          "total_ms": 46.42788000000108
+        },
+        {
+          "phase": "unattributed",
+          "type": "_layer_norm_fwd_1pass_kernel_npu",
+          "calls": 6864,
+          "total_ms": 34.63113999999942
+        },
+        {
+          "phase": "unattributed",
+          "type": "l2norm_fwd_kernel2",
+          "calls": 13728,
+          "total_ms": 27.982319999998847
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ZerosLike",
+          "calls": 6864,
+          "total_ms": 23.672960000000085
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Index",
+          "calls": 2288,
+          "total_ms": 20.516579999999966
+        },
+        {
+          "phase": "unattributed",
+          "type": "split_qkv_rmsnorm_mrope_kernel",
+          "calls": 2288,
+          "total_ms": 19.25104000000001
+        },
+        {
+          "phase": "prepare input",
+          "type": "Index",
+          "calls": 1420,
+          "total_ms": 11.608160000000014
+        },
+        {
+          "phase": "draft_token",
+          "type": "Transpose",
+          "calls": 572,
+          "total_ms": 8.788679999999996
+        },
+        {
+          "phase": "sample_token",
+          "type": "ArgMaxV2",
+          "calls": 286,
+          "total_ms": 8.493019999999998
+        },
+        {
+          "phase": "draft_token",
+          "type": "Index",
+          "calls": 858,
+          "total_ms": 7.98182000000001
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Mul",
+          "calls": 2288,
+          "total_ms": 7.803139999999996
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "IndexCheck",
+          "calls": 2288,
+          "total_ms": 7.660600000000031
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Sigmoid",
+          "calls": 2288,
+          "total_ms": 7.471280000000022
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ScatterPaKvCache",
+          "calls": 2288,
+          "total_ms": 6.113279999999993
+        },
+        {
+          "phase": "draft_token",
+          "type": "ArgMaxV2",
+          "calls": 143,
+          "total_ms": 5.1952
+        },
+        {
+          "phase": "sample_token",
+          "type": "Index",
+          "calls": 286,
+          "total_ms": 4.28294
+        },
+        {
+          "phase": "draft_token",
+          "type": "FusedInferAttentionScore",
+          "calls": 143,
+          "total_ms": 4.108040000000001
+        },
+        {
+          "phase": "prepare input",
+          "type": "IndexCheck",
+          "calls": 1420,
+          "total_ms": 3.3829200000000004
+        },
+        {
+          "phase": "draft_token",
+          "type": "IndexCheck",
+          "calls": 1001,
+          "total_ms": 2.7335799999999963
+        },
+        {
+          "phase": "prepare input",
+          "type": "Sub",
+          "calls": 1846,
+          "total_ms": 2.6835200000000046
+        },
+        {
+          "phase": "sample_token",
+          "type": "Cast",
+          "calls": 858,
+          "total_ms": 2.6572199999999997
+        },
+        {
+          "phase": "prepare input",
+          "type": "ViewCopy",
+          "calls": 284,
+          "total_ms": 2.514919999999998
+        },
+        {
+          "phase": "prepare input",
+          "type": "GatherV3",
+          "calls": 852,
+          "total_ms": 2.324739999999997
+        },
+        {
+          "phase": "prepare input",
+          "type": "Range",
+          "calls": 426,
+          "total_ms": 2.2851200000000005
+        },
+        {
+          "phase": "prepare input",
+          "type": "Add",
+          "calls": 710,
+          "total_ms": 1.8408399999999994
+        },
+        {
+          "phase": "draft_token",
+          "type": "GemmaRmsNorm",
+          "calls": 429,
+          "total_ms": 1.7313600000000002
+        },
+        {
+          "phase": "draft_token",
+          "type": "ViewCopy",
+          "calls": 143,
+          "total_ms": 1.5439399999999994
+        },
+        {
+          "phase": "draft_token",
+          "type": "Cast",
+          "calls": 1140,
+          "total_ms": 1.4877199999999988
+        }
+      ],
+      "cycle_medians": {
+        "span_ms": 65.31987,
+        "main_graph_window_ms": 48.84512,
+        "main_graph_kernel_sum_ms": 47.06931,
+        "after_graph_window_ms": 16.48605,
+        "outside_graph_kernel_sum_ms": 6.72647,
+        "no_compute_ms": 11.549320000000002
+      },
+      "top_decode_groups": [
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,5120;34816,5120",
+          "main_graph": true,
+          "calls": 9152,
+          "total_ms": 2628.05174,
+          "mean_us": 287.1560030594406,
+          "mte2_activity_ratio": 0.9876418091981721,
+          "mac_activity_ratio": 0.11538809887357836
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,17408;5120,17408",
+          "main_graph": true,
+          "calls": 9152,
+          "total_ms": 1392.20856,
+          "mean_us": 152.12069055944056,
+          "mte2_activity_ratio": 0.8840121148658971,
+          "mac_activity_ratio": 0.1547263747035136
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,5120;16384,5120",
+          "main_graph": true,
+          "calls": 6864,
+          "total_ms": 932.24772,
+          "mean_us": 135.81697552447554,
+          "mte2_activity_ratio": 0.9727834507763697,
+          "mac_activity_ratio": 0.12448047795708257
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,6144;5120,6144",
+          "main_graph": true,
+          "calls": 9152,
+          "total_ms": 516.07322,
+          "mean_us": 56.38911931818182,
+          "mte2_activity_ratio": 0.9405648693028501,
+          "mac_activity_ratio": 0.13226900969594962
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "1,5120;248320,5120",
+          "main_graph": false,
+          "calls": 143,
+          "total_ms": 274.2267,
+          "mean_us": 1917.6692307692308,
+          "mte2_activity_ratio": 0.9960000000000002,
+          "mac_activity_ratio": 0.11730709737600316
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,5120;248320,5120",
+          "main_graph": false,
+          "calls": 143,
+          "total_ms": 273.86386,
+          "mean_us": 1915.1318881118882,
+          "mte2_activity_ratio": 0.994937022577568,
+          "mac_activity_ratio": 0.11670563111175017
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,5120;14336,5120",
+          "main_graph": true,
+          "calls": 2288,
+          "total_ms": 268.16188,
+          "mean_us": 117.20361888111887,
+          "mte2_activity_ratio": 0.9690001849629024,
+          "mac_activity_ratio": 0.11900697496601714
+        },
+        {
+          "type": "RecurrentGatedDeltaRule",
+          "input_shape": "2,16,128;2,16,128;2,48,128;2,48;43,48,128,128;2;2;2,48;1",
+          "main_graph": true,
+          "calls": 6864,
+          "total_ms": 176.11728,
+          "mean_us": 25.65811188811189,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "Transpose",
+          "input_shape": "10240,4;2",
+          "main_graph": true,
+          "calls": 6864,
+          "total_ms": 146.67862,
+          "mean_us": 21.36926282051282,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "fused_gdn_gating_kernel",
+          "input_shape": "N/A",
+          "main_graph": false,
+          "calls": 6864,
+          "total_ms": 128.39308,
+          "mean_us": 18.705285547785547,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "ConcatD",
+          "input_shape": "4096;4096;12288",
+          "main_graph": true,
+          "calls": 6864,
+          "total_ms": 122.34568,
+          "mean_us": 17.82425407925408,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "CausalConv1d",
+          "input_shape": "2,10240;4,10240;;43,4,10240;2;1,2;;1",
+          "main_graph": true,
+          "calls": 6864,
+          "total_ms": 89.53678,
+          "mean_us": 13.04440268065268,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,5120;96,5120",
+          "main_graph": true,
+          "calls": 6864,
+          "total_ms": 68.2106,
+          "mean_us": 9.937441724941726,
+          "mte2_activity_ratio": 0.4942267269310064,
+          "mac_activity_ratio": 0.1514935593588071
+        },
+        {
+          "type": "FusedInferAttentionScore",
+          "input_shape": "2,24,256;516,128,1024;516,128,1024;;2048,2048;1;1;;;;;;;;1,36;;;;;;;;;;;;;;;;",
+          "main_graph": true,
+          "calls": 2288,
+          "total_ms": 65.19904,
+          "mean_us": 28.49608391608392,
+          "mte2_activity_ratio": 0.02998968635121006,
+          "mac_activity_ratio": 0.003659733026743949
+        },
+        {
+          "type": "AddRmsNormBias",
+          "input_shape": "2,5120;2,5120;5120;",
+          "main_graph": true,
+          "calls": 18304,
+          "total_ms": 59.11252,
+          "mean_us": 3.229486451048951,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "SwiGlu",
+          "input_shape": "2,34816",
+          "main_graph": true,
+          "calls": 9152,
+          "total_ms": 54.46008,
+          "mean_us": 5.950620629370629,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,5120;34816,5120",
+          "main_graph": false,
+          "calls": 143,
+          "total_ms": 39.77312,
+          "mean_us": 278.1337062937063,
+          "mte2_activity_ratio": 0.9876500671810504,
+          "mac_activity_ratio": 0.11775908402458736
+        },
+        {
+          "type": "Add",
+          "input_shape": "5120;",
+          "main_graph": true,
+          "calls": 18304,
+          "total_ms": 39.33222,
+          "mean_us": 2.1488319493006993,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "_layer_norm_fwd_1pass_kernel_npu",
+          "input_shape": "N/A",
+          "main_graph": false,
+          "calls": 6864,
+          "total_ms": 34.63114,
+          "mean_us": 5.045329254079254,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "Slice",
+          "input_shape": "2,10240;2;2",
+          "main_graph": true,
+          "calls": 20592,
+          "total_ms": 33.87936,
+          "mean_us": 1.6452680652680653,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "l2norm_fwd_kernel2",
+          "input_shape": "N/A",
+          "main_graph": false,
+          "calls": 13728,
+          "total_ms": 27.98232,
+          "mean_us": 2.038339160839161,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "Slice",
+          "input_shape": "2,96;2;2",
+          "main_graph": true,
+          "calls": 13728,
+          "total_ms": 24.208,
+          "mean_us": 1.7634032634032635,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "ZerosLike",
+          "input_shape": "2,48,128",
+          "main_graph": true,
+          "calls": 6864,
+          "total_ms": 23.67296,
+          "mean_us": 3.4488578088578086,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,17408;5120,17408",
+          "main_graph": false,
+          "calls": 143,
+          "total_ms": 21.57786,
+          "mean_us": 150.89412587412588,
+          "mte2_activity_ratio": 0.8848051104233694,
+          "mac_activity_ratio": 0.15390074363259382
+        },
+        {
+          "type": "Index",
+          "input_shape": "1048576,64;1;3;3,2",
+          "main_graph": true,
+          "calls": 2288,
+          "total_ms": 20.51658,
+          "mean_us": 8.967036713286713,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "split_qkv_rmsnorm_mrope_kernel",
+          "input_shape": "N/A",
+          "main_graph": false,
+          "calls": 2288,
+          "total_ms": 19.25104,
+          "mean_us": 8.413916083916083,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,5120;14336,5120",
+          "main_graph": false,
+          "calls": 143,
+          "total_ms": 18.21062,
+          "mean_us": 127.34699300699302,
+          "mte2_activity_ratio": 0.9723908235963409,
+          "mac_activity_ratio": 0.10860091419182877
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,10240;5120,10240",
+          "main_graph": false,
+          "calls": 143,
+          "total_ms": 13.77764,
+          "mean_us": 96.34713286713287,
+          "mte2_activity_ratio": 0.8328168859107946,
+          "mac_activity_ratio": 0.14555610394813626
+        },
+        {
+          "type": "ArgMaxV2",
+          "input_shape": "1,248320;",
+          "main_graph": false,
+          "calls": 429,
+          "total_ms": 13.68822,
+          "mean_us": 31.907272727272726,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "Slice",
+          "input_shape": "2,16384;2;2",
+          "main_graph": true,
+          "calls": 6864,
+          "total_ms": 11.53728,
+          "mean_us": 1.6808391608391609,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        }
+      ],
+      "whole_profile_compute_top": [
+        {
+          "op_type": "MatMulV2",
+          "calls": 44784,
+          "total_ms": 6501.75226
+        },
+        {
+          "op_type": "RecurrentGatedDeltaRule",
+          "calls": 6864,
+          "total_ms": 176.11728
+        },
+        {
+          "op_type": "Transpose",
+          "calls": 7486,
+          "total_ms": 156.5144
+        },
+        {
+          "op_type": "fused_gdn_gating_kernel",
+          "calls": 6912,
+          "total_ms": 129.29812
+        },
+        {
+          "op_type": "ConcatD",
+          "calls": 7056,
+          "total_ms": 123.5845
+        },
+        {
+          "op_type": "Slice",
+          "calls": 53569,
+          "total_ms": 93.8766
+        },
+        {
+          "op_type": "CausalConv1d",
+          "calls": 6912,
+          "total_ms": 90.92646
+        },
+        {
+          "op_type": "FusedInferAttentionScore",
+          "calls": 2448,
+          "total_ms": 69.8223
+        },
+        {
+          "op_type": "AddRmsNormBias",
+          "calls": 18720,
+          "total_ms": 60.91964
+        },
+        {
+          "op_type": "SwiGlu",
+          "calls": 9360,
+          "total_ms": 56.4123
+        },
+        {
+          "op_type": "Add",
+          "calls": 24334,
+          "total_ms": 49.65308
+        },
+        {
+          "op_type": "Index",
+          "calls": 5076,
+          "total_ms": 48.95452
+        },
+        {
+          "op_type": "_layer_norm_fwd_1pass_kernel_npu",
+          "calls": 6912,
+          "total_ms": 35.01058
+        },
+        {
+          "op_type": "l2norm_fwd_kernel2",
+          "calls": 13824,
+          "total_ms": 28.35986
+        },
+        {
+          "op_type": "ZerosLike",
+          "calls": 6921,
+          "total_ms": 24.11226
+        },
+        {
+          "op_type": "split_qkv_rmsnorm_mrope_kernel",
+          "calls": 2448,
+          "total_ms": 20.66878
+        },
+        {
+          "op_type": "IndexCheck",
+          "calls": 5268,
+          "total_ms": 15.45768
+        },
+        {
+          "op_type": "ArgMaxV2",
+          "calls": 431,
+          "total_ms": 13.75414
+        },
+        {
+          "op_type": "Mul",
+          "calls": 2448,
+          "total_ms": 8.49854
+        },
+        {
+          "op_type": "Sigmoid",
+          "calls": 2448,
+          "total_ms": 8.07416
+        }
+      ],
+      "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT op_type, COUNT(*) AS calls, ROUND(SUM(duration_ns)/1000000.0,6) AS total_ms\nFROM compute_view GROUP BY op_type ORDER BY total_ms DESC LIMIT 20;",
+      "db_tables": [
+        "AICORE_FREQ",
+        "CANN_API",
+        "COMPUTE_TASK_INFO",
+        "CONNECTION_IDS",
+        "ENUM_API_TYPE",
+        "ENUM_HCCL_DATA_TYPE",
+        "ENUM_HCCL_LINK_TYPE",
+        "ENUM_HCCL_RDMA_TYPE",
+        "ENUM_HCCL_TRANSPORT_TYPE",
+        "ENUM_MEMCPY_OPERATION",
+        "ENUM_MODULE",
+        "ENUM_MSTX_EVENT_TYPE",
+        "ENUM_OVERLAP_ANALYSIS_TYPE",
+        "HOST_INFO",
+        "META_DATA",
+        "NPU_INFO",
+        "OVERLAP_ANALYSIS",
+        "PYTORCH_API",
+        "RANK_DEVICE_MAP",
+        "SESSION_TIME_INFO",
+        "STRING_IDS",
+        "TASK",
+        "TASK_PMU_INFO"
+      ],
+      "flow_linked_hardware_events": 37536,
+      "boundary": "First hardware MODEL_EXECUTE to last compute completion; prefill excluded; final draft work retained.",
+      "limits": [
+        "Profiler timings are not unprofiled benchmark speed.",
+        "CPU scopes are inclusive and overlap; do not add them to device time.",
+        "Device groups contain cumulative kernel sums and interval unions; distinct phases may overlap.",
+        "No-compute includes DMA/control/wait and is not automatically host idle.",
+        "Main graph identity is inferred from dominant captured model ID and checked with FFN counts."
+      ],
+      "profiled_request_elapsed_s": 9.671902509988286,
+      "normal_elapsed_s": [
+        8.684461680008098,
+        8.664005910046399
+      ]
+    },
+    "mtp-p1": {
+      "decode_rounds": 140,
+      "decode_span_ms": 9136.99866,
+      "compute_union_ms": 7527.39452,
+      "no_compute_ms": 1609.60414,
+      "no_compute_pct": 17.616333326681257,
+      "phase_device_totals": {
+        "main_verification_graph": {
+          "calls": 190820,
+          "kernel_sum_ms": 6586.918200000833,
+          "union_ms": 6586.9182
+        },
+        "unattributed": {
+          "calls": 29120,
+          "kernel_sum_ms": 205.86850000001394,
+          "union_ms": 205.8685
+        },
+        "post process": {
+          "calls": 420,
+          "kernel_sum_ms": 269.69122,
+          "union_ms": 269.69122
+        },
+        "sample_token": {
+          "calls": 2100,
+          "kernel_sum_ms": 17.713700000000017,
+          "union_ms": 17.7137
+        },
+        "async_state_update": {
+          "calls": 708,
+          "kernel_sum_ms": 1.4765199999999992,
+          "union_ms": 1.46584
+        },
+        "draft_token": {
+          "calls": 9512,
+          "kernel_sum_ms": 412.74629999999945,
+          "union_ms": 412.7463,
+          "calls_per_round": 67.94285714285714,
+          "kernel_ms_per_round": 2.948187857142853
+        },
+        "prepare input": {
+          "calls": 10703,
+          "kernel_sum_ms": 33.931859999999965,
+          "union_ms": 33.93186
+        }
+      },
+      "cpu_inclusive_scopes": {
+        "DFlash2::selector_walk": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "DFlash2::candidate_selector": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "DFlash2::lm_head_and_topk": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "draft_token": {
+          "calls": 140,
+          "inclusive_ms": 1115.75175
+        },
+        "sample_token": {
+          "calls": 140,
+          "inclusive_ms": 170.03161
+        },
+        "post process": {
+          "calls": 140,
+          "inclusive_ms": 45.4793
+        },
+        "forward": {
+          "calls": 139,
+          "inclusive_ms": 631.1215
+        },
+        "prepare input": {
+          "calls": 140,
+          "inclusive_ms": 6730.2102
+        },
+        "async_state_update": {
+          "calls": 140,
+          "inclusive_ms": 84.89958
+        }
+      },
+      "phase_device_types": [
+        {
+          "phase": "main_verification_graph",
+          "type": "MatMulV2",
+          "calls": 42560,
+          "total_ms": 5680.114460000078
+        },
+        {
+          "phase": "draft_token",
+          "type": "MatMulV2",
+          "calls": 840,
+          "total_ms": 367.27946000000014
+        },
+        {
+          "phase": "post process",
+          "type": "MatMulV2",
+          "calls": 140,
+          "total_ms": 268.1013600000001
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "RecurrentGatedDeltaRule",
+          "calls": 6720,
+          "total_ms": 172.46895999999978
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Transpose",
+          "calls": 6720,
+          "total_ms": 143.4369400000001
+        },
+        {
+          "phase": "unattributed",
+          "type": "fused_gdn_gating_kernel",
+          "calls": 6720,
+          "total_ms": 125.71148000000048
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ConcatD",
+          "calls": 6720,
+          "total_ms": 119.79114000000034
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Slice",
+          "calls": 51520,
+          "total_ms": 89.77541999999569
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "CausalConv1d",
+          "calls": 6720,
+          "total_ms": 87.74940000000021
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "FusedInferAttentionScore",
+          "calls": 2240,
+          "total_ms": 64.06466000000009
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "AddRmsNormBias",
+          "calls": 17920,
+          "total_ms": 57.844180000000634
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "SwiGlu",
+          "calls": 8960,
+          "total_ms": 53.31354000000024
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Add",
+          "calls": 22400,
+          "total_ms": 45.413840000000604
+        },
+        {
+          "phase": "unattributed",
+          "type": "_layer_norm_fwd_1pass_kernel_npu",
+          "calls": 6720,
+          "total_ms": 33.90779999999957
+        },
+        {
+          "phase": "unattributed",
+          "type": "l2norm_fwd_kernel2",
+          "calls": 13440,
+          "total_ms": 27.39985999999898
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ZerosLike",
+          "calls": 6720,
+          "total_ms": 23.184279999999944
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Index",
+          "calls": 2240,
+          "total_ms": 20.092980000000004
+        },
+        {
+          "phase": "unattributed",
+          "type": "split_qkv_rmsnorm_mrope_kernel",
+          "calls": 2240,
+          "total_ms": 18.84935999999995
+        },
+        {
+          "phase": "prepare input",
+          "type": "Index",
+          "calls": 1390,
+          "total_ms": 11.462380000000007
+        },
+        {
+          "phase": "draft_token",
+          "type": "Transpose",
+          "calls": 560,
+          "total_ms": 8.520599999999988
+        },
+        {
+          "phase": "sample_token",
+          "type": "ArgMaxV2",
+          "calls": 280,
+          "total_ms": 8.31668
+        },
+        {
+          "phase": "draft_token",
+          "type": "Index",
+          "calls": 840,
+          "total_ms": 7.681779999999998
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Mul",
+          "calls": 2240,
+          "total_ms": 7.653640000000018
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "IndexCheck",
+          "calls": 2240,
+          "total_ms": 7.489020000000011
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Sigmoid",
+          "calls": 2240,
+          "total_ms": 7.313520000000024
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ScatterPaKvCache",
+          "calls": 2240,
+          "total_ms": 5.992260000000005
+        },
+        {
+          "phase": "draft_token",
+          "type": "ArgMaxV2",
+          "calls": 140,
+          "total_ms": 5.097299999999998
+        },
+        {
+          "phase": "sample_token",
+          "type": "Index",
+          "calls": 280,
+          "total_ms": 4.292340000000001
+        },
+        {
+          "phase": "draft_token",
+          "type": "FusedInferAttentionScore",
+          "calls": 140,
+          "total_ms": 3.99304
+        },
+        {
+          "phase": "prepare input",
+          "type": "IndexCheck",
+          "calls": 1390,
+          "total_ms": 3.312899999999999
+        },
+        {
+          "phase": "draft_token",
+          "type": "IndexCheck",
+          "calls": 980,
+          "total_ms": 2.668460000000005
+        },
+        {
+          "phase": "sample_token",
+          "type": "Cast",
+          "calls": 840,
+          "total_ms": 2.641799999999999
+        },
+        {
+          "phase": "prepare input",
+          "type": "Sub",
+          "calls": 1807,
+          "total_ms": 2.622780000000003
+        },
+        {
+          "phase": "prepare input",
+          "type": "ViewCopy",
+          "calls": 278,
+          "total_ms": 2.4689
+        },
+        {
+          "phase": "prepare input",
+          "type": "GatherV3",
+          "calls": 834,
+          "total_ms": 2.2807800000000005
+        },
+        {
+          "phase": "prepare input",
+          "type": "Range",
+          "calls": 417,
+          "total_ms": 2.15402
+        },
+        {
+          "phase": "prepare input",
+          "type": "Add",
+          "calls": 695,
+          "total_ms": 1.8113800000000004
+        },
+        {
+          "phase": "draft_token",
+          "type": "GemmaRmsNorm",
+          "calls": 420,
+          "total_ms": 1.6930800000000008
+        },
+        {
+          "phase": "draft_token",
+          "type": "ViewCopy",
+          "calls": 140,
+          "total_ms": 1.4891399999999997
+        },
+        {
+          "phase": "draft_token",
+          "type": "Cast",
+          "calls": 1117,
+          "total_ms": 1.4587999999999997
+        }
+      ],
+      "cycle_medians": {
+        "span_ms": 65.32804,
+        "main_graph_window_ms": 48.82426,
+        "main_graph_kernel_sum_ms": 47.04932,
+        "after_graph_window_ms": 16.50438,
+        "outside_graph_kernel_sum_ms": 6.72646,
+        "no_compute_ms": 11.55354
+      },
+      "top_decode_groups": [
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,5120;34816,5120",
+          "main_graph": true,
+          "calls": 8960,
+          "total_ms": 2569.66322,
+          "mean_us": 286.79277008928574,
+          "mte2_activity_ratio": 0.9876403485200654,
+          "mac_activity_ratio": 0.1153553375294056
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,17408;5120,17408",
+          "main_graph": true,
+          "calls": 8960,
+          "total_ms": 1363.0123,
+          "mean_us": 152.12190848214286,
+          "mte2_activity_ratio": 0.8842253609009992,
+          "mac_activity_ratio": 0.15474466645678792
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,5120;16384,5120",
+          "main_graph": true,
+          "calls": 6720,
+          "total_ms": 912.90674,
+          "mean_us": 135.84921726190476,
+          "mte2_activity_ratio": 0.9727696448160742,
+          "mac_activity_ratio": 0.1244522173645033
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,6144;5120,6144",
+          "main_graph": true,
+          "calls": 8960,
+          "total_ms": 505.30244,
+          "mean_us": 56.39536160714285,
+          "mte2_activity_ratio": 0.9405055481624035,
+          "mac_activity_ratio": 0.13226932583187176
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "1,5120;248320,5120",
+          "main_graph": false,
+          "calls": 140,
+          "total_ms": 268.6677,
+          "mean_us": 1919.055,
+          "mte2_activity_ratio": 0.996,
+          "mac_activity_ratio": 0.11724901139958395
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,5120;248320,5120",
+          "main_graph": false,
+          "calls": 140,
+          "total_ms": 268.10136,
+          "mean_us": 1915.0097142857144,
+          "mte2_activity_ratio": 0.9949643135715539,
+          "mac_activity_ratio": 0.11668504546191033
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,5120;14336,5120",
+          "main_graph": true,
+          "calls": 2240,
+          "total_ms": 262.4282,
+          "mean_us": 117.15544642857144,
+          "mte2_activity_ratio": 0.968986168788264,
+          "mac_activity_ratio": 0.1189898727347136
+        },
+        {
+          "type": "RecurrentGatedDeltaRule",
+          "input_shape": "2,16,128;2,16,128;2,48,128;2,48;43,48,128,128;2;2;2,48;1",
+          "main_graph": true,
+          "calls": 6720,
+          "total_ms": 172.46896,
+          "mean_us": 25.66502380952381,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "Transpose",
+          "input_shape": "10240,4;2",
+          "main_graph": true,
+          "calls": 6720,
+          "total_ms": 143.43694,
+          "mean_us": 21.344782738095237,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "fused_gdn_gating_kernel",
+          "input_shape": "N/A",
+          "main_graph": false,
+          "calls": 6720,
+          "total_ms": 125.71148,
+          "mean_us": 18.707065476190476,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "ConcatD",
+          "input_shape": "4096;4096;12288",
+          "main_graph": true,
+          "calls": 6720,
+          "total_ms": 119.79114,
+          "mean_us": 17.8260625,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "CausalConv1d",
+          "input_shape": "2,10240;4,10240;;43,4,10240;2;1,2;;1",
+          "main_graph": true,
+          "calls": 6720,
+          "total_ms": 87.7494,
+          "mean_us": 13.05794642857143,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,5120;96,5120",
+          "main_graph": true,
+          "calls": 6720,
+          "total_ms": 66.80156,
+          "mean_us": 9.940708333333333,
+          "mte2_activity_ratio": 0.493782811958284,
+          "mac_activity_ratio": 0.15157727364450643
+        },
+        {
+          "type": "FusedInferAttentionScore",
+          "input_shape": "2,24,256;516,128,1024;516,128,1024;;2048,2048;1;1;;;;;;;;1,36;;;;;;;;;;;;;;;;",
+          "main_graph": true,
+          "calls": 2240,
+          "total_ms": 64.06466,
+          "mean_us": 28.60029464285714,
+          "mte2_activity_ratio": 0.030576697979822192,
+          "mac_activity_ratio": 0.0037526018244692216
+        },
+        {
+          "type": "AddRmsNormBias",
+          "input_shape": "2,5120;2,5120;5120;",
+          "main_graph": true,
+          "calls": 17920,
+          "total_ms": 57.84418,
+          "mean_us": 3.227911830357143,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "SwiGlu",
+          "input_shape": "2,34816",
+          "main_graph": true,
+          "calls": 8960,
+          "total_ms": 53.31354,
+          "mean_us": 5.950171875,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,5120;34816,5120",
+          "main_graph": false,
+          "calls": 140,
+          "total_ms": 38.9251,
+          "mean_us": 278.0364285714286,
+          "mte2_activity_ratio": 0.9878289093669641,
+          "mac_activity_ratio": 0.11774069687682237
+        },
+        {
+          "type": "Add",
+          "input_shape": "5120;",
+          "main_graph": true,
+          "calls": 17920,
+          "total_ms": 38.47118,
+          "mean_us": 2.1468292410714285,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "_layer_norm_fwd_1pass_kernel_npu",
+          "input_shape": "N/A",
+          "main_graph": false,
+          "calls": 6720,
+          "total_ms": 33.9078,
+          "mean_us": 5.045803571428571,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "Slice",
+          "input_shape": "2,10240;2;2",
+          "main_graph": true,
+          "calls": 20160,
+          "total_ms": 33.16152,
+          "mean_us": 1.6449166666666668,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "l2norm_fwd_kernel2",
+          "input_shape": "N/A",
+          "main_graph": false,
+          "calls": 13440,
+          "total_ms": 27.39986,
+          "mean_us": 2.0386800595238097,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "Slice",
+          "input_shape": "2,96;2;2",
+          "main_graph": true,
+          "calls": 13440,
+          "total_ms": 23.67464,
+          "mean_us": 1.7615059523809522,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "ZerosLike",
+          "input_shape": "2,48,128",
+          "main_graph": true,
+          "calls": 6720,
+          "total_ms": 23.18428,
+          "mean_us": 3.4500416666666665,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,17408;5120,17408",
+          "main_graph": false,
+          "calls": 140,
+          "total_ms": 21.12552,
+          "mean_us": 150.89657142857143,
+          "mte2_activity_ratio": 0.8844368981213241,
+          "mac_activity_ratio": 0.15410590697885776
+        },
+        {
+          "type": "Index",
+          "input_shape": "1048576,64;1;3;3,2",
+          "main_graph": true,
+          "calls": 2240,
+          "total_ms": 20.09298,
+          "mean_us": 8.970080357142857,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "split_qkv_rmsnorm_mrope_kernel",
+          "input_shape": "N/A",
+          "main_graph": false,
+          "calls": 2240,
+          "total_ms": 18.84936,
+          "mean_us": 8.414892857142856,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,5120;14336,5120",
+          "main_graph": false,
+          "calls": 140,
+          "total_ms": 17.8104,
+          "mean_us": 127.21714285714286,
+          "mte2_activity_ratio": 0.9728718164667834,
+          "mac_activity_ratio": 0.10878087858779138
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,10240;5120,10240",
+          "main_graph": false,
+          "calls": 140,
+          "total_ms": 13.51694,
+          "mean_us": 96.54957142857144,
+          "mte2_activity_ratio": 0.8332001044615129,
+          "mac_activity_ratio": 0.14527219622192594
+        },
+        {
+          "type": "ArgMaxV2",
+          "input_shape": "1,248320;",
+          "main_graph": false,
+          "calls": 420,
+          "total_ms": 13.41398,
+          "mean_us": 31.93804761904762,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "Slice",
+          "input_shape": "2,16384;2;2",
+          "main_graph": true,
+          "calls": 6720,
+          "total_ms": 11.28562,
+          "mean_us": 1.6794077380952381,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        }
+      ],
+      "whole_profile_compute_top": [
+        {
+          "op_type": "MatMulV2",
+          "calls": 43851,
+          "total_ms": 6366.62898
+        },
+        {
+          "op_type": "RecurrentGatedDeltaRule",
+          "calls": 6720,
+          "total_ms": 172.46896
+        },
+        {
+          "op_type": "Transpose",
+          "calls": 7330,
+          "total_ms": 153.00434
+        },
+        {
+          "op_type": "fused_gdn_gating_kernel",
+          "calls": 6768,
+          "total_ms": 126.6239
+        },
+        {
+          "op_type": "ConcatD",
+          "calls": 6909,
+          "total_ms": 121.02162
+        },
+        {
+          "op_type": "Slice",
+          "calls": 52453,
+          "total_ms": 92.0019
+        },
+        {
+          "op_type": "CausalConv1d",
+          "calls": 6768,
+          "total_ms": 89.06418
+        },
+        {
+          "op_type": "FusedInferAttentionScore",
+          "calls": 2397,
+          "total_ms": 68.57226
+        },
+        {
+          "op_type": "AddRmsNormBias",
+          "calls": 18330,
+          "total_ms": 59.82554
+        },
+        {
+          "op_type": "SwiGlu",
+          "calls": 9165,
+          "total_ms": 55.18042
+        },
+        {
+          "op_type": "Add",
+          "calls": 23827,
+          "total_ms": 48.59764
+        },
+        {
+          "op_type": "Index",
+          "calls": 4971,
+          "total_ms": 48.10062
+        },
+        {
+          "op_type": "_layer_norm_fwd_1pass_kernel_npu",
+          "calls": 6768,
+          "total_ms": 34.3363
+        },
+        {
+          "op_type": "l2norm_fwd_kernel2",
+          "calls": 13536,
+          "total_ms": 27.83466
+        },
+        {
+          "op_type": "ZerosLike",
+          "calls": 6777,
+          "total_ms": 23.61942
+        },
+        {
+          "op_type": "split_qkv_rmsnorm_mrope_kernel",
+          "calls": 2397,
+          "total_ms": 20.25938
+        },
+        {
+          "op_type": "IndexCheck",
+          "calls": 5160,
+          "total_ms": 15.15292
+        },
+        {
+          "op_type": "ArgMaxV2",
+          "calls": 422,
+          "total_ms": 13.47966
+        },
+        {
+          "op_type": "Mul",
+          "calls": 2397,
+          "total_ms": 8.32976
+        },
+        {
+          "op_type": "Sigmoid",
+          "calls": 2397,
+          "total_ms": 7.90736
+        }
+      ],
+      "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT op_type, COUNT(*) AS calls, ROUND(SUM(duration_ns)/1000000.0,6) AS total_ms\nFROM compute_view GROUP BY op_type ORDER BY total_ms DESC LIMIT 20;",
+      "db_tables": [
+        "AICORE_FREQ",
+        "CANN_API",
+        "COMPUTE_TASK_INFO",
+        "CONNECTION_IDS",
+        "ENUM_API_TYPE",
+        "ENUM_HCCL_DATA_TYPE",
+        "ENUM_HCCL_LINK_TYPE",
+        "ENUM_HCCL_RDMA_TYPE",
+        "ENUM_HCCL_TRANSPORT_TYPE",
+        "ENUM_MEMCPY_OPERATION",
+        "ENUM_MODULE",
+        "ENUM_MSTX_EVENT_TYPE",
+        "ENUM_OVERLAP_ANALYSIS_TYPE",
+        "HOST_INFO",
+        "META_DATA",
+        "NPU_INFO",
+        "OVERLAP_ANALYSIS",
+        "PYTORCH_API",
+        "RANK_DEVICE_MAP",
+        "SESSION_TIME_INFO",
+        "STRING_IDS",
+        "TASK",
+        "TASK_PMU_INFO"
+      ],
+      "flow_linked_hardware_events": 36670,
+      "boundary": "First hardware MODEL_EXECUTE to last compute completion; prefill excluded; final draft work retained.",
+      "limits": [
+        "Profiler timings are not unprofiled benchmark speed.",
+        "CPU scopes are inclusive and overlap; do not add them to device time.",
+        "Device groups contain cumulative kernel sums and interval unions; distinct phases may overlap.",
+        "No-compute includes DMA/control/wait and is not automatically host idle.",
+        "Main graph identity is inferred from dominant captured model ID and checked with FFN counts."
+      ],
+      "profiled_request_elapsed_s": 9.554499419988133,
+      "normal_elapsed_s": [
+        8.527971440111287,
+        8.52322936989367
+      ]
+    },
+    "dflash2-p0": {
+      "decode_rounds": 109,
+      "decode_span_ms": 10052.19922,
+      "compute_union_ms": 6884.95602,
+      "no_compute_ms": 3167.2432,
+      "no_compute_pct": 31.507962891328372,
+      "phase_device_totals": {
+        "main_verification_graph": {
+          "calls": 149112,
+          "kernel_sum_ms": 5567.997880000749,
+          "union_ms": 5567.99788
+        },
+        "unattributed": {
+          "calls": 22672,
+          "kernel_sum_ms": 171.11522000000113,
+          "union_ms": 171.11522
+        },
+        "post process": {
+          "calls": 327,
+          "kernel_sum_ms": 212.2467400000002,
+          "union_ms": 212.24674
+        },
+        "sample_token": {
+          "calls": 1635,
+          "kernel_sum_ms": 20.40762,
+          "union_ms": 20.40762
+        },
+        "async_state_update": {
+          "calls": 557,
+          "kernel_sum_ms": 1.2105400000000004,
+          "union_ms": 1.199
+        },
+        "draft_token": {
+          "calls": 48057,
+          "kernel_sum_ms": 652.0519600000164,
+          "union_ms": 652.05196,
+          "calls_per_round": 440.88990825688074,
+          "kernel_ms_per_round": 5.982128073394645
+        },
+        "DFlash2::lm_head_and_topk": {
+          "calls": 654,
+          "kernel_sum_ms": 220.18679999999986,
+          "union_ms": 220.1868,
+          "calls_per_round": 6.0,
+          "kernel_ms_per_round": 2.0200623853210997
+        },
+        "DFlash2::selector_walk": {
+          "calls": 109,
+          "kernel_sum_ms": 0.5643800000000001,
+          "union_ms": 0.56438,
+          "calls_per_round": 1.0,
+          "kernel_ms_per_round": 0.005177798165137615
+        },
+        "prepare input": {
+          "calls": 14796,
+          "kernel_sum_ms": 39.93748000000015,
+          "union_ms": 39.93748
+        }
+      },
+      "cpu_inclusive_scopes": {
+        "DFlash2::selector_walk": {
+          "calls": 109,
+          "inclusive_ms": 38.54375
+        },
+        "DFlash2::candidate_selector": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "DFlash2::lm_head_and_topk": {
+          "calls": 109,
+          "inclusive_ms": 46.83376
+        },
+        "draft_token": {
+          "calls": 109,
+          "inclusive_ms": 4287.26705
+        },
+        "sample_token": {
+          "calls": 109,
+          "inclusive_ms": 137.66691
+        },
+        "post process": {
+          "calls": 109,
+          "inclusive_ms": 37.4404
+        },
+        "forward": {
+          "calls": 108,
+          "inclusive_ms": 503.61947
+        },
+        "prepare input": {
+          "calls": 109,
+          "inclusive_ms": 4711.05426
+        },
+        "async_state_update": {
+          "calls": 109,
+          "inclusive_ms": 66.89341
+        }
+      },
+      "phase_device_types": [
+        {
+          "phase": "main_verification_graph",
+          "type": "MatMulV2",
+          "calls": 33136,
+          "total_ms": 4618.90416000014
+        },
+        {
+          "phase": "draft_token",
+          "type": "MatMulV2",
+          "calls": 3597,
+          "total_ms": 347.65256000000085
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "RecurrentGatedDeltaRule",
+          "calls": 5232,
+          "total_ms": 258.7096799999988
+        },
+        {
+          "phase": "post process",
+          "type": "MatMulV2",
+          "calls": 109,
+          "total_ms": 210.70046000000008
+        },
+        {
+          "phase": "DFlash2::lm_head_and_topk",
+          "type": "MatMulV2",
+          "calls": 109,
+          "total_ms": 210.2154400000001
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Slice",
+          "calls": 40112,
+          "total_ms": 100.62872000000543
+        },
+        {
+          "phase": "unattributed",
+          "type": "fused_gdn_gating_kernel",
+          "calls": 5232,
+          "total_ms": 98.5763400000004
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Transpose",
+          "calls": 5232,
+          "total_ms": 96.52315999999993
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "SwiGlu",
+          "calls": 6976,
+          "total_ms": 78.8200400000001
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "CausalConv1d",
+          "calls": 5232,
+          "total_ms": 77.94398000000015
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ConcatD",
+          "calls": 5232,
+          "total_ms": 76.39151999999991
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "AddRmsNormBias",
+          "calls": 13952,
+          "total_ms": 56.01449999999996
+        },
+        {
+          "phase": "draft_token",
+          "type": "Mul",
+          "calls": 6758,
+          "total_ms": 54.61678000000022
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "FusedInferAttentionScore",
+          "calls": 1744,
+          "total_ms": 50.90052000000002
+        },
+        {
+          "phase": "draft_token",
+          "type": "Add",
+          "calls": 4578,
+          "total_ms": 44.05178000000008
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ZerosLike",
+          "calls": 5232,
+          "total_ms": 41.471519999999735
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Add",
+          "calls": 17985,
+          "total_ms": 38.135300000000235
+        },
+        {
+          "phase": "draft_token",
+          "type": "PadV3",
+          "calls": 2180,
+          "total_ms": 36.28121999999991
+        },
+        {
+          "phase": "unattributed",
+          "type": "_layer_norm_fwd_1pass_kernel_npu",
+          "calls": 5232,
+          "total_ms": 30.046480000000113
+        },
+        {
+          "phase": "unattributed",
+          "type": "l2norm_fwd_kernel2",
+          "calls": 10464,
+          "total_ms": 26.16933999999995
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Mul",
+          "calls": 1744,
+          "total_ms": 22.841359999999998
+        },
+        {
+          "phase": "draft_token",
+          "type": "MemSet",
+          "calls": 2180,
+          "total_ms": 22.42349999999999
+        },
+        {
+          "phase": "draft_token",
+          "type": "Index",
+          "calls": 1308,
+          "total_ms": 20.311200000000007
+        },
+        {
+          "phase": "draft_token",
+          "type": "Slice",
+          "calls": 8175,
+          "total_ms": 20.191199999999842
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Index",
+          "calls": 1744,
+          "total_ms": 18.87858
+        },
+        {
+          "phase": "draft_token",
+          "type": "Range",
+          "calls": 2180,
+          "total_ms": 18.534139999999926
+        },
+        {
+          "phase": "draft_token",
+          "type": "RmsNorm",
+          "calls": 1853,
+          "total_ms": 17.005340000000057
+        },
+        {
+          "phase": "unattributed",
+          "type": "split_qkv_rmsnorm_mrope_kernel",
+          "calls": 1744,
+          "total_ms": 16.323059999999963
+        },
+        {
+          "phase": "draft_token",
+          "type": "FusedInferAttentionScore",
+          "calls": 545,
+          "total_ms": 15.469600000000003
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Sigmoid",
+          "calls": 1744,
+          "total_ms": 13.355500000000044
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "IndexCheck",
+          "calls": 1744,
+          "total_ms": 10.945799999999986
+        },
+        {
+          "phase": "DFlash2::lm_head_and_topk",
+          "type": "TopKV2",
+          "calls": 109,
+          "total_ms": 9.11402
+        },
+        {
+          "phase": "prepare input",
+          "type": "Index",
+          "calls": 1080,
+          "total_ms": 9.054339999999996
+        },
+        {
+          "phase": "sample_token",
+          "type": "Index",
+          "calls": 218,
+          "total_ms": 8.505060000000002
+        },
+        {
+          "phase": "sample_token",
+          "type": "ArgMaxV2",
+          "calls": 218,
+          "total_ms": 6.618699999999998
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ScatterPaKvCache",
+          "calls": 1744,
+          "total_ms": 6.351579999999987
+        },
+        {
+          "phase": "draft_token",
+          "type": "SwiGlu",
+          "calls": 545,
+          "total_ms": 6.225519999999999
+        },
+        {
+          "phase": "prepare input",
+          "type": "Sub",
+          "calls": 4428,
+          "total_ms": 5.845660000000024
+        },
+        {
+          "phase": "draft_token",
+          "type": "copy_and_expand_dflash_and_dspark_inputs_kernel",
+          "calls": 109,
+          "total_ms": 5.630240000000001
+        },
+        {
+          "phase": "draft_token",
+          "type": "GreaterEqual",
+          "calls": 2180,
+          "total_ms": 5.535499999999986
+        }
+      ],
+      "cycle_medians": {
+        "span_ms": 92.43261,
+        "main_graph_window_ms": 52.965239999999994,
+        "main_graph_kernel_sum_ms": 51.08142,
+        "after_graph_window_ms": 39.46456,
+        "outside_graph_kernel_sum_ms": 12.090610000000002,
+        "no_compute_ms": 29.25104
+      },
+      "top_decode_groups": [
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,5120;34816,5120",
+          "main_graph": true,
+          "calls": 6976,
+          "total_ms": 2168.00326,
+          "mean_us": 310.7802838302752,
+          "mte2_activity_ratio": 0.9885757626305404,
+          "mac_activity_ratio": 0.10677251535129158
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,17408;5120,17408",
+          "main_graph": true,
+          "calls": 6976,
+          "total_ms": 1074.50612,
+          "mean_us": 154.0289736238532,
+          "mte2_activity_ratio": 0.8847920486297461,
+          "mac_activity_ratio": 0.15352121895778528
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,5120;16384,5120",
+          "main_graph": true,
+          "calls": 5232,
+          "total_ms": 719.89816,
+          "mean_us": 137.59521406727828,
+          "mte2_activity_ratio": 0.9734305920159596,
+          "mac_activity_ratio": 0.1231715379853172
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,6144;5120,6144",
+          "main_graph": true,
+          "calls": 6976,
+          "total_ms": 396.4545,
+          "mean_us": 56.83120699541285,
+          "mte2_activity_ratio": 0.9398915430143898,
+          "mac_activity_ratio": 0.12962718864333767
+        },
+        {
+          "type": "RecurrentGatedDeltaRule",
+          "input_shape": "8,16,128;8,16,128;8,48,128;8,48;126,48,128,128;2;8;8,48;1",
+          "main_graph": true,
+          "calls": 5232,
+          "total_ms": 258.70968,
+          "mean_us": 49.44756880733945,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,5120;248320,5120",
+          "main_graph": false,
+          "calls": 109,
+          "total_ms": 210.70046,
+          "mean_us": 1933.0317431192661,
+          "mte2_activity_ratio": 0.995,
+          "mac_activity_ratio": 0.11560496659570656
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "7,5120;248320,5120",
+          "main_graph": false,
+          "calls": 109,
+          "total_ms": 210.21544,
+          "mean_us": 1928.5820183486237,
+          "mte2_activity_ratio": 0.9960000000000008,
+          "mac_activity_ratio": 0.11588032953240732
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,5120;14336,5120",
+          "main_graph": true,
+          "calls": 1744,
+          "total_ms": 207.01104,
+          "mean_us": 118.69899082568807,
+          "mte2_activity_ratio": 0.9694616853284742,
+          "mac_activity_ratio": 0.1176707526323233
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,5120;34816,5120",
+          "main_graph": false,
+          "calls": 545,
+          "total_ms": 155.83986,
+          "mean_us": 285.9446972477064,
+          "mte2_activity_ratio": 0.9875227405876789,
+          "mac_activity_ratio": 0.11711132646038047
+        },
+        {
+          "type": "fused_gdn_gating_kernel",
+          "input_shape": "N/A",
+          "main_graph": false,
+          "calls": 5232,
+          "total_ms": 98.57634,
+          "mean_us": 18.84104357798165,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "Transpose",
+          "input_shape": "10240,4;2",
+          "main_graph": true,
+          "calls": 5232,
+          "total_ms": 96.52316,
+          "mean_us": 18.44861620795107,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,17408;5120,17408",
+          "main_graph": false,
+          "calls": 545,
+          "total_ms": 83.92976,
+          "mean_us": 153.99955963302753,
+          "mte2_activity_ratio": 0.8856103279694832,
+          "mac_activity_ratio": 0.15330739132341123
+        },
+        {
+          "type": "SwiGlu",
+          "input_shape": "8,34816",
+          "main_graph": true,
+          "calls": 6976,
+          "total_ms": 78.82004,
+          "mean_us": 11.298744266055046,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "CausalConv1d",
+          "input_shape": "8,10240;4,10240;;126,10,10240;2;1,8;;1",
+          "main_graph": true,
+          "calls": 5232,
+          "total_ms": 77.94398,
+          "mean_us": 14.897549694189602,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "ConcatD",
+          "input_shape": "16384;16384;49152",
+          "main_graph": true,
+          "calls": 5232,
+          "total_ms": 76.39152,
+          "mean_us": 14.600825688073396,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "AddRmsNormBias",
+          "input_shape": "8,5120;8,5120;5120;",
+          "main_graph": true,
+          "calls": 13952,
+          "total_ms": 56.0145,
+          "mean_us": 4.0148007454128445,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,5120;96,5120",
+          "main_graph": true,
+          "calls": 5232,
+          "total_ms": 53.03108,
+          "mean_us": 10.135909785932721,
+          "mte2_activity_ratio": 0.48292677501570913,
+          "mac_activity_ratio": 0.14842603959791062
+        },
+        {
+          "type": "FusedInferAttentionScore",
+          "input_shape": "8,24,256;1512,128,1024;1512,128,1024;;2048,2048;1;1;;;;;;;;1,36;;;;;;;;;;;;;;;;",
+          "main_graph": true,
+          "calls": 1744,
+          "total_ms": 50.90052,
+          "mean_us": 29.186077981651376,
+          "mte2_activity_ratio": 0.045812425098997,
+          "mac_activity_ratio": 0.007412688514773526
+        },
+        {
+          "type": "ZerosLike",
+          "input_shape": "8,48,128",
+          "main_graph": true,
+          "calls": 5232,
+          "total_ms": 41.47152,
+          "mean_us": 7.9265137614678896,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "Slice",
+          "input_shape": "8,10240;2;2",
+          "main_graph": true,
+          "calls": 15696,
+          "total_ms": 38.11092,
+          "mean_us": 2.428065749235474,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "PadV3",
+          "input_shape": "7,320,16;6;",
+          "main_graph": false,
+          "calls": 2180,
+          "total_ms": 36.28122,
+          "mean_us": 16.64276146788991,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "Mul",
+          "input_shape": "8,320,16;8,320,16",
+          "main_graph": false,
+          "calls": 4360,
+          "total_ms": 33.05364,
+          "mean_us": 7.58111009174312,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,5120;6144,5120",
+          "main_graph": false,
+          "calls": 545,
+          "total_ms": 30.58866,
+          "mean_us": 56.125981651376144,
+          "mte2_activity_ratio": 0.9410840749480366,
+          "mac_activity_ratio": 0.11057221467040397
+        },
+        {
+          "type": "_layer_norm_fwd_1pass_kernel_npu",
+          "input_shape": "N/A",
+          "main_graph": false,
+          "calls": 5232,
+          "total_ms": 30.04648,
+          "mean_us": 5.74282874617737,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "Add",
+          "input_shape": "5120;",
+          "main_graph": true,
+          "calls": 13952,
+          "total_ms": 28.91172,
+          "mean_us": 2.0722276376146787,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,25600;5120,25600",
+          "main_graph": false,
+          "calls": 109,
+          "total_ms": 28.34816,
+          "mean_us": 260.07486238532107,
+          "mte2_activity_ratio": 0.8873645294791617,
+          "mac_activity_ratio": 0.13265926889082041
+        },
+        {
+          "type": "Add",
+          "input_shape": "1,2,320,16;8,2,320,1",
+          "main_graph": false,
+          "calls": 2180,
+          "total_ms": 28.29448,
+          "mean_us": 12.979119266055045,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "Slice",
+          "input_shape": "8,96;2;2",
+          "main_graph": true,
+          "calls": 10464,
+          "total_ms": 28.08548,
+          "mean_us": 2.6840099388379204,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "l2norm_fwd_kernel2",
+          "input_shape": "N/A",
+          "main_graph": false,
+          "calls": 10464,
+          "total_ms": 26.16934,
+          "mean_us": 2.5008925840978593,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "Range",
+          "input_shape": ";;",
+          "main_graph": false,
+          "calls": 3260,
+          "total_ms": 23.97228,
+          "mean_us": 7.353460122699387,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        }
+      ],
+      "whole_profile_compute_top": [
+        {
+          "op_type": "MatMulV2",
+          "calls": 37290,
+          "total_ms": 5438.17166
+        },
+        {
+          "op_type": "RecurrentGatedDeltaRule",
+          "calls": 5232,
+          "total_ms": 258.70968
+        },
+        {
+          "op_type": "Slice",
+          "calls": 48950,
+          "total_ms": 122.48242
+        },
+        {
+          "op_type": "Transpose",
+          "calls": 5608,
+          "total_ms": 102.96694
+        },
+        {
+          "op_type": "fused_gdn_gating_kernel",
+          "calls": 5280,
+          "total_ms": 99.47872
+        },
+        {
+          "op_type": "SwiGlu",
+          "calls": 7590,
+          "total_ms": 86.15048
+        },
+        {
+          "op_type": "Add",
+          "calls": 23428,
+          "total_ms": 84.4455
+        },
+        {
+          "op_type": "CausalConv1d",
+          "calls": 5280,
+          "total_ms": 79.32362
+        },
+        {
+          "op_type": "ConcatD",
+          "calls": 5500,
+          "total_ms": 78.679
+        },
+        {
+          "op_type": "Mul",
+          "calls": 8690,
+          "total_ms": 78.35494
+        },
+        {
+          "op_type": "FusedInferAttentionScore",
+          "calls": 2310,
+          "total_ms": 66.92758
+        },
+        {
+          "op_type": "AddRmsNormBias",
+          "calls": 15180,
+          "total_ms": 61.21904
+        },
+        {
+          "op_type": "Index",
+          "calls": 4542,
+          "total_ms": 61.20458
+        },
+        {
+          "op_type": "ZerosLike",
+          "calls": 5310,
+          "total_ms": 41.8742
+        },
+        {
+          "op_type": "PadV3",
+          "calls": 2200,
+          "total_ms": 36.60194
+        },
+        {
+          "op_type": "_layer_norm_fwd_1pass_kernel_npu",
+          "calls": 5280,
+          "total_ms": 30.44666
+        },
+        {
+          "op_type": "l2norm_fwd_kernel2",
+          "calls": 10560,
+          "total_ms": 26.54946
+        },
+        {
+          "op_type": "Range",
+          "calls": 3290,
+          "total_ms": 24.19874
+        },
+        {
+          "op_type": "MemSet",
+          "calls": 2200,
+          "total_ms": 22.62994
+        },
+        {
+          "op_type": "IndexCheck",
+          "calls": 4590,
+          "total_ms": 20.83094
+        }
+      ],
+      "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT op_type, COUNT(*) AS calls, ROUND(SUM(duration_ns)/1000000.0,6) AS total_ms\nFROM compute_view GROUP BY op_type ORDER BY total_ms DESC LIMIT 20;",
+      "db_tables": [
+        "AICORE_FREQ",
+        "CANN_API",
+        "COMPUTE_TASK_INFO",
+        "CONNECTION_IDS",
+        "ENUM_API_TYPE",
+        "ENUM_HCCL_DATA_TYPE",
+        "ENUM_HCCL_LINK_TYPE",
+        "ENUM_HCCL_RDMA_TYPE",
+        "ENUM_HCCL_TRANSPORT_TYPE",
+        "ENUM_MEMCPY_OPERATION",
+        "ENUM_MODULE",
+        "ENUM_MSTX_EVENT_TYPE",
+        "ENUM_OVERLAP_ANALYSIS_TYPE",
+        "HOST_INFO",
+        "META_DATA",
+        "NPU_INFO",
+        "OVERLAP_ANALYSIS",
+        "PYTORCH_API",
+        "RANK_DEVICE_MAP",
+        "SESSION_TIME_INFO",
+        "STRING_IDS",
+        "TASK",
+        "TASK_PMU_INFO"
+      ],
+      "flow_linked_hardware_events": 84426,
+      "boundary": "First hardware MODEL_EXECUTE to last compute completion; prefill excluded; final draft work retained.",
+      "limits": [
+        "Profiler timings are not unprofiled benchmark speed.",
+        "CPU scopes are inclusive and overlap; do not add them to device time.",
+        "Device groups contain cumulative kernel sums and interval unions; distinct phases may overlap.",
+        "No-compute includes DMA/control/wait and is not automatically host idle.",
+        "Main graph identity is inferred from dominant captured model ID and checked with FFN counts."
+      ],
+      "profiled_request_elapsed_s": 10.479990900028497,
+      "normal_elapsed_s": [
+        8.73754567001015,
+        8.904176860000007
+      ]
+    },
+    "dflash2-p1": {
+      "decode_rounds": 89,
+      "decode_span_ms": 8202.67898,
+      "compute_union_ms": 5619.87018,
+      "no_compute_ms": 2582.8088,
+      "no_compute_pct": 31.487381211644102,
+      "phase_device_totals": {
+        "main_verification_graph": {
+          "calls": 121752,
+          "kernel_sum_ms": 4545.511760000592,
+          "union_ms": 4545.51176
+        },
+        "unattributed": {
+          "calls": 18512,
+          "kernel_sum_ms": 139.46079999999927,
+          "union_ms": 139.4608
+        },
+        "post process": {
+          "calls": 267,
+          "kernel_sum_ms": 173.2977000000001,
+          "union_ms": 173.2977
+        },
+        "sample_token": {
+          "calls": 1335,
+          "kernel_sum_ms": 16.622640000000015,
+          "union_ms": 16.62264
+        },
+        "async_state_update": {
+          "calls": 450,
+          "kernel_sum_ms": 0.9567000000000003,
+          "union_ms": 0.95224
+        },
+        "draft_token": {
+          "calls": 39244,
+          "kernel_sum_ms": 532.145420000001,
+          "union_ms": 532.14542,
+          "calls_per_round": 440.9438202247191,
+          "kernel_ms_per_round": 5.979162022471921
+        },
+        "DFlash2::lm_head_and_topk": {
+          "calls": 534,
+          "kernel_sum_ms": 179.52494000000002,
+          "union_ms": 179.52494,
+          "calls_per_round": 6.0,
+          "kernel_ms_per_round": 2.0171341573033708
+        },
+        "DFlash2::selector_walk": {
+          "calls": 89,
+          "kernel_sum_ms": 0.4631799999999999,
+          "union_ms": 0.46318,
+          "calls_per_round": 1.0,
+          "kernel_ms_per_round": 0.005204269662921347
+        },
+        "prepare input": {
+          "calls": 12056,
+          "kernel_sum_ms": 32.506439999999714,
+          "union_ms": 32.50644
+        }
+      },
+      "cpu_inclusive_scopes": {
+        "DFlash2::selector_walk": {
+          "calls": 89,
+          "inclusive_ms": 30.91129
+        },
+        "DFlash2::candidate_selector": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "DFlash2::lm_head_and_topk": {
+          "calls": 89,
+          "inclusive_ms": 37.94112
+        },
+        "draft_token": {
+          "calls": 89,
+          "inclusive_ms": 3493.8279
+        },
+        "sample_token": {
+          "calls": 89,
+          "inclusive_ms": 108.39156
+        },
+        "post process": {
+          "calls": 89,
+          "inclusive_ms": 29.17365
+        },
+        "forward": {
+          "calls": 88,
+          "inclusive_ms": 412.235175
+        },
+        "prepare input": {
+          "calls": 89,
+          "inclusive_ms": 3857.21501
+        },
+        "async_state_update": {
+          "calls": 89,
+          "inclusive_ms": 54.30558
+        }
+      },
+      "phase_device_types": [
+        {
+          "phase": "main_verification_graph",
+          "type": "MatMulV2",
+          "calls": 27056,
+          "total_ms": 3770.5283800000757
+        },
+        {
+          "phase": "draft_token",
+          "type": "MatMulV2",
+          "calls": 2937,
+          "total_ms": 283.78541999999965
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "RecurrentGatedDeltaRule",
+          "calls": 4272,
+          "total_ms": 211.12867999999986
+        },
+        {
+          "phase": "post process",
+          "type": "MatMulV2",
+          "calls": 89,
+          "total_ms": 172.0574
+        },
+        {
+          "phase": "DFlash2::lm_head_and_topk",
+          "type": "MatMulV2",
+          "calls": 89,
+          "total_ms": 171.37820000000002
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Slice",
+          "calls": 32752,
+          "total_ms": 82.21650000000211
+        },
+        {
+          "phase": "unattributed",
+          "type": "fused_gdn_gating_kernel",
+          "calls": 4272,
+          "total_ms": 80.4155200000001
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Transpose",
+          "calls": 4272,
+          "total_ms": 78.98450000000025
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "SwiGlu",
+          "calls": 5696,
+          "total_ms": 64.20233999999986
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "CausalConv1d",
+          "calls": 4272,
+          "total_ms": 63.599819999999944
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ConcatD",
+          "calls": 4272,
+          "total_ms": 62.33236000000014
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "AddRmsNormBias",
+          "calls": 11392,
+          "total_ms": 45.67993999999999
+        },
+        {
+          "phase": "draft_token",
+          "type": "Mul",
+          "calls": 5518,
+          "total_ms": 44.53796000000016
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "FusedInferAttentionScore",
+          "calls": 1424,
+          "total_ms": 41.39466000000003
+        },
+        {
+          "phase": "draft_token",
+          "type": "Add",
+          "calls": 3738,
+          "total_ms": 35.95125999999992
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ZerosLike",
+          "calls": 4272,
+          "total_ms": 33.79087999999989
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Add",
+          "calls": 14685,
+          "total_ms": 31.063240000000192
+        },
+        {
+          "phase": "draft_token",
+          "type": "PadV3",
+          "calls": 1780,
+          "total_ms": 29.60992000000002
+        },
+        {
+          "phase": "unattributed",
+          "type": "_layer_norm_fwd_1pass_kernel_npu",
+          "calls": 4272,
+          "total_ms": 24.270380000000003
+        },
+        {
+          "phase": "unattributed",
+          "type": "l2norm_fwd_kernel2",
+          "calls": 8544,
+          "total_ms": 21.46799999999991
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Mul",
+          "calls": 1424,
+          "total_ms": 18.648159999999947
+        },
+        {
+          "phase": "draft_token",
+          "type": "MemSet",
+          "calls": 1780,
+          "total_ms": 18.26340000000002
+        },
+        {
+          "phase": "draft_token",
+          "type": "Index",
+          "calls": 1068,
+          "total_ms": 16.644080000000006
+        },
+        {
+          "phase": "draft_token",
+          "type": "Slice",
+          "calls": 6675,
+          "total_ms": 16.46866000000002
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Index",
+          "calls": 1424,
+          "total_ms": 15.86997999999999
+        },
+        {
+          "phase": "draft_token",
+          "type": "Range",
+          "calls": 1780,
+          "total_ms": 15.143759999999915
+        },
+        {
+          "phase": "draft_token",
+          "type": "RmsNorm",
+          "calls": 1513,
+          "total_ms": 13.863720000000004
+        },
+        {
+          "phase": "unattributed",
+          "type": "split_qkv_rmsnorm_mrope_kernel",
+          "calls": 1424,
+          "total_ms": 13.3069
+        },
+        {
+          "phase": "draft_token",
+          "type": "FusedInferAttentionScore",
+          "calls": 445,
+          "total_ms": 12.579339999999997
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Sigmoid",
+          "calls": 1424,
+          "total_ms": 10.893920000000007
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "IndexCheck",
+          "calls": 1424,
+          "total_ms": 8.936199999999998
+        },
+        {
+          "phase": "DFlash2::lm_head_and_topk",
+          "type": "TopKV2",
+          "calls": 89,
+          "total_ms": 7.444420000000001
+        },
+        {
+          "phase": "prepare input",
+          "type": "Index",
+          "calls": 880,
+          "total_ms": 7.367040000000001
+        },
+        {
+          "phase": "sample_token",
+          "type": "Index",
+          "calls": 178,
+          "total_ms": 6.906840000000002
+        },
+        {
+          "phase": "sample_token",
+          "type": "ArgMaxV2",
+          "calls": 178,
+          "total_ms": 5.40696
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ScatterPaKvCache",
+          "calls": 1424,
+          "total_ms": 5.276379999999994
+        },
+        {
+          "phase": "draft_token",
+          "type": "SwiGlu",
+          "calls": 445,
+          "total_ms": 5.076960000000005
+        },
+        {
+          "phase": "prepare input",
+          "type": "Sub",
+          "calls": 3608,
+          "total_ms": 4.745780000000008
+        },
+        {
+          "phase": "draft_token",
+          "type": "copy_and_expand_dflash_and_dspark_inputs_kernel",
+          "calls": 89,
+          "total_ms": 4.59932
+        },
+        {
+          "phase": "draft_token",
+          "type": "GreaterEqual",
+          "calls": 1780,
+          "total_ms": 4.508479999999987
+        }
+      ],
+      "cycle_medians": {
+        "span_ms": 92.42661000000001,
+        "main_graph_window_ms": 52.95057,
+        "main_graph_kernel_sum_ms": 51.07164,
+        "after_graph_window_ms": 39.471810000000005,
+        "outside_graph_kernel_sum_ms": 12.08322,
+        "no_compute_ms": 29.273229999999998
+      },
+      "top_decode_groups": [
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,5120;34816,5120",
+          "main_graph": true,
+          "calls": 5696,
+          "total_ms": 1769.29732,
+          "mean_us": 310.621018258427,
+          "mte2_activity_ratio": 0.9885600676657322,
+          "mac_activity_ratio": 0.10677086987279238
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,17408;5120,17408",
+          "main_graph": true,
+          "calls": 5696,
+          "total_ms": 877.29478,
+          "mean_us": 154.01944873595505,
+          "mte2_activity_ratio": 0.8849859133095506,
+          "mac_activity_ratio": 0.1535077325548428
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,5120;16384,5120",
+          "main_graph": true,
+          "calls": 4272,
+          "total_ms": 588.11926,
+          "mean_us": 137.6683661048689,
+          "mte2_activity_ratio": 0.9734206061879345,
+          "mac_activity_ratio": 0.12313390290942
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,6144;5120,6144",
+          "main_graph": true,
+          "calls": 5696,
+          "total_ms": 323.52264,
+          "mean_us": 56.798216292134825,
+          "mte2_activity_ratio": 0.9398018957189526,
+          "mac_activity_ratio": 0.1296729064772718
+        },
+        {
+          "type": "RecurrentGatedDeltaRule",
+          "input_shape": "8,16,128;8,16,128;8,48,128;8,48;126,48,128,128;2;8;8,48;1",
+          "main_graph": true,
+          "calls": 4272,
+          "total_ms": 211.12868,
+          "mean_us": 49.4215074906367,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,5120;248320,5120",
+          "main_graph": false,
+          "calls": 89,
+          "total_ms": 172.0574,
+          "mean_us": 1933.2292134831462,
+          "mte2_activity_ratio": 0.995,
+          "mac_activity_ratio": 0.11569590694733267
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "7,5120;248320,5120",
+          "main_graph": false,
+          "calls": 89,
+          "total_ms": 171.3782,
+          "mean_us": 1925.5977528089888,
+          "mte2_activity_ratio": 0.9959999999999998,
+          "mac_activity_ratio": 0.11583132020291959
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,5120;14336,5120",
+          "main_graph": true,
+          "calls": 1424,
+          "total_ms": 169.00074,
+          "mean_us": 118.68029494382021,
+          "mte2_activity_ratio": 0.9694578964565465,
+          "mac_activity_ratio": 0.1176674440597125
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,5120;34816,5120",
+          "main_graph": false,
+          "calls": 445,
+          "total_ms": 127.3283,
+          "mean_us": 286.13101123595504,
+          "mte2_activity_ratio": 0.9875259509472754,
+          "mac_activity_ratio": 0.11705693706740763
+        },
+        {
+          "type": "fused_gdn_gating_kernel",
+          "input_shape": "N/A",
+          "main_graph": false,
+          "calls": 4272,
+          "total_ms": 80.41552,
+          "mean_us": 18.823857677902623,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "Transpose",
+          "input_shape": "10240,4;2",
+          "main_graph": true,
+          "calls": 4272,
+          "total_ms": 78.9845,
+          "mean_us": 18.48888108614232,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,17408;5120,17408",
+          "main_graph": false,
+          "calls": 445,
+          "total_ms": 68.45888,
+          "mean_us": 153.84017977528092,
+          "mte2_activity_ratio": 0.8857354353445456,
+          "mac_activity_ratio": 0.1534146258308636
+        },
+        {
+          "type": "SwiGlu",
+          "input_shape": "8,34816",
+          "main_graph": true,
+          "calls": 5696,
+          "total_ms": 64.20234,
+          "mean_us": 11.27147823033708,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "CausalConv1d",
+          "input_shape": "8,10240;4,10240;;126,10,10240;2;1,8;;1",
+          "main_graph": true,
+          "calls": 4272,
+          "total_ms": 63.59982,
+          "mean_us": 14.887598314606741,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "ConcatD",
+          "input_shape": "16384;16384;49152",
+          "main_graph": true,
+          "calls": 4272,
+          "total_ms": 62.33236,
+          "mean_us": 14.590908239700376,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "AddRmsNormBias",
+          "input_shape": "8,5120;8,5120;5120;",
+          "main_graph": true,
+          "calls": 11392,
+          "total_ms": 45.67994,
+          "mean_us": 4.009826193820225,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,5120;96,5120",
+          "main_graph": true,
+          "calls": 4272,
+          "total_ms": 43.29364,
+          "mean_us": 10.134279026217229,
+          "mte2_activity_ratio": 0.4832478576529941,
+          "mac_activity_ratio": 0.14839679315483695
+        },
+        {
+          "type": "FusedInferAttentionScore",
+          "input_shape": "8,24,256;1512,128,1024;1512,128,1024;;2048,2048;1;1;;;;;;;;1,36;;;;;;;;;;;;;;;;",
+          "main_graph": true,
+          "calls": 1424,
+          "total_ms": 41.39466,
+          "mean_us": 29.069283707865168,
+          "mte2_activity_ratio": 0.044496162548502693,
+          "mac_activity_ratio": 0.0071643482516827025
+        },
+        {
+          "type": "ZerosLike",
+          "input_shape": "8,48,128",
+          "main_graph": true,
+          "calls": 4272,
+          "total_ms": 33.79088,
+          "mean_us": 7.909850187265917,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "Slice",
+          "input_shape": "8,10240;2;2",
+          "main_graph": true,
+          "calls": 12816,
+          "total_ms": 31.12848,
+          "mean_us": 2.428876404494382,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "PadV3",
+          "input_shape": "7,320,16;6;",
+          "main_graph": false,
+          "calls": 1780,
+          "total_ms": 29.60992,
+          "mean_us": 16.634786516853932,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "Mul",
+          "input_shape": "8,320,16;8,320,16",
+          "main_graph": false,
+          "calls": 3560,
+          "total_ms": 26.98574,
+          "mean_us": 7.580264044943821,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,5120;6144,5120",
+          "main_graph": false,
+          "calls": 445,
+          "total_ms": 24.96596,
+          "mean_us": 56.1032808988764,
+          "mte2_activity_ratio": 0.9410319819466184,
+          "mac_activity_ratio": 0.11067042404938568
+        },
+        {
+          "type": "_layer_norm_fwd_1pass_kernel_npu",
+          "input_shape": "N/A",
+          "main_graph": false,
+          "calls": 4272,
+          "total_ms": 24.27038,
+          "mean_us": 5.68126872659176,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "Add",
+          "input_shape": "5120;",
+          "main_graph": true,
+          "calls": 11392,
+          "total_ms": 23.51636,
+          "mean_us": 2.0642872191011237,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,25600;5120,25600",
+          "main_graph": false,
+          "calls": 89,
+          "total_ms": 23.11332,
+          "mean_us": 259.70022471910113,
+          "mte2_activity_ratio": 0.8879646403026481,
+          "mac_activity_ratio": 0.1326601345025293
+        },
+        {
+          "type": "Add",
+          "input_shape": "1,2,320,16;8,2,320,1",
+          "main_graph": false,
+          "calls": 1780,
+          "total_ms": 23.08914,
+          "mean_us": 12.971426966292134,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "Slice",
+          "input_shape": "8,96;2;2",
+          "main_graph": true,
+          "calls": 8544,
+          "total_ms": 23.01898,
+          "mean_us": 2.694169007490637,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "l2norm_fwd_kernel2",
+          "input_shape": "N/A",
+          "main_graph": false,
+          "calls": 8544,
+          "total_ms": 21.468,
+          "mean_us": 2.5126404494382024,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        },
+        {
+          "type": "Range",
+          "input_shape": ";;",
+          "main_graph": false,
+          "calls": 2660,
+          "total_ms": 19.59016,
+          "mean_us": 7.364721804511278,
+          "mte2_activity_ratio": 0.0,
+          "mac_activity_ratio": 0.0
+        }
+      ],
+      "whole_profile_compute_top": [
+        {
+          "op_type": "MatMulV2",
+          "calls": 30510,
+          "total_ms": 4451.54386
+        },
+        {
+          "op_type": "RecurrentGatedDeltaRule",
+          "calls": 4272,
+          "total_ms": 211.12868
+        },
+        {
+          "op_type": "Slice",
+          "calls": 40050,
+          "total_ms": 100.3968
+        },
+        {
+          "op_type": "Transpose",
+          "calls": 4588,
+          "total_ms": 84.37446
+        },
+        {
+          "op_type": "fused_gdn_gating_kernel",
+          "calls": 4320,
+          "total_ms": 81.30854
+        },
+        {
+          "op_type": "SwiGlu",
+          "calls": 6210,
+          "total_ms": 70.33174
+        },
+        {
+          "op_type": "Add",
+          "calls": 19168,
+          "total_ms": 69.01272
+        },
+        {
+          "op_type": "CausalConv1d",
+          "calls": 4320,
+          "total_ms": 64.96278
+        },
+        {
+          "op_type": "ConcatD",
+          "calls": 4500,
+          "total_ms": 64.33354
+        },
+        {
+          "op_type": "Mul",
+          "calls": 7110,
+          "total_ms": 64.0447
+        },
+        {
+          "op_type": "FusedInferAttentionScore",
+          "calls": 1890,
+          "total_ms": 54.56236
+        },
+        {
+          "op_type": "Index",
+          "calls": 3722,
+          "total_ms": 51.10796
+        },
+        {
+          "op_type": "AddRmsNormBias",
+          "calls": 12420,
+          "total_ms": 50.2752
+        },
+        {
+          "op_type": "ZerosLike",
+          "calls": 4350,
+          "total_ms": 34.19904
+        },
+        {
+          "op_type": "PadV3",
+          "calls": 1800,
+          "total_ms": 29.9322
+        },
+        {
+          "op_type": "_layer_norm_fwd_1pass_kernel_npu",
+          "calls": 4320,
+          "total_ms": 24.74244
+        },
+        {
+          "op_type": "l2norm_fwd_kernel2",
+          "calls": 8640,
+          "total_ms": 21.89938
+        },
+        {
+          "op_type": "Range",
+          "calls": 2690,
+          "total_ms": 19.82102
+        },
+        {
+          "op_type": "MemSet",
+          "calls": 1800,
+          "total_ms": 18.47046
+        },
+        {
+          "op_type": "IndexCheck",
+          "calls": 3770,
+          "total_ms": 17.07238
+        }
+      ],
+      "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT op_type, COUNT(*) AS calls, ROUND(SUM(duration_ns)/1000000.0,6) AS total_ms\nFROM compute_view GROUP BY op_type ORDER BY total_ms DESC LIMIT 20;",
+      "db_tables": [
+        "AICORE_FREQ",
+        "CANN_API",
+        "COMPUTE_TASK_INFO",
+        "CONNECTION_IDS",
+        "ENUM_API_TYPE",
+        "ENUM_HCCL_DATA_TYPE",
+        "ENUM_HCCL_LINK_TYPE",
+        "ENUM_HCCL_RDMA_TYPE",
+        "ENUM_HCCL_TRANSPORT_TYPE",
+        "ENUM_MEMCPY_OPERATION",
+        "ENUM_MODULE",
+        "ENUM_MSTX_EVENT_TYPE",
+        "ENUM_OVERLAP_ANALYSIS_TYPE",
+        "HOST_INFO",
+        "META_DATA",
+        "NPU_INFO",
+        "OVERLAP_ANALYSIS",
+        "PYTORCH_API",
+        "RANK_DEVICE_MAP",
+        "SESSION_TIME_INFO",
+        "STRING_IDS",
+        "TASK",
+        "TASK_PMU_INFO"
+      ],
+      "flow_linked_hardware_events": 68860,
+      "boundary": "First hardware MODEL_EXECUTE to last compute completion; prefill excluded; final draft work retained.",
+      "limits": [
+        "Profiler timings are not unprofiled benchmark speed.",
+        "CPU scopes are inclusive and overlap; do not add them to device time.",
+        "Device groups contain cumulative kernel sums and interval unions; distinct phases may overlap.",
+        "No-compute includes DMA/control/wait and is not automatically host idle.",
+        "Main graph identity is inferred from dominant captured model ID and checked with FFN counts."
+      ],
+      "profiled_request_elapsed_s": 8.687817680067383,
+      "normal_elapsed_s": [
+        7.163706560037099,
+        7.309139340068214
+      ]
+    }
+  },
+  "unprofiled_return_batches": {
+    "mtp": [
+      {
+        "label": "benchmark_p0_r0",
+        "returned_batches": 143,
+        "decode_tokens_per_s": 30.395966503681432,
+        "tokens_per_return_after_first": 1.795774647887324,
+        "mean_return_interval_ms": 59.07937316847047
+      },
+      {
+        "label": "benchmark_p1_r0",
+        "returned_batches": 141,
+        "decode_tokens_per_s": 30.927264257075908,
+        "tokens_per_return_after_first": 1.8214285714285714,
+        "mean_return_interval_ms": 58.89394407110688
+      },
+      {
+        "label": "benchmark_p0_r1",
+        "returned_batches": 143,
+        "decode_tokens_per_s": 30.42079993818634,
+        "tokens_per_return_after_first": 1.795774647887324,
+        "mean_return_interval_ms": 59.03114485931517
+      },
+      {
+        "label": "benchmark_p1_r1",
+        "returned_batches": 141,
+        "decode_tokens_per_s": 30.924608877947747,
+        "tokens_per_return_after_first": 1.8214285714285714,
+        "mean_return_interval_ms": 58.89900107119631
+      }
+    ],
+    "dflash2": [
+      {
+        "label": "benchmark_p0_r0",
+        "returned_batches": 109,
+        "decode_tokens_per_s": 30.470302960461662,
+        "tokens_per_return_after_first": 2.361111111111111,
+        "mean_return_interval_ms": 77.48892796290521
+      },
+      {
+        "label": "benchmark_p1_r0",
+        "returned_batches": 89,
+        "decode_tokens_per_s": 37.546319568968215,
+        "tokens_per_return_after_first": 2.897727272727273,
+        "mean_return_interval_ms": 77.17739863702181
+      },
+      {
+        "label": "benchmark_p0_r1",
+        "returned_batches": 109,
+        "decode_tokens_per_s": 29.977233560679597,
+        "tokens_per_return_after_first": 2.361111111111111,
+        "mean_return_interval_ms": 78.76347583347794
+      },
+      {
+        "label": "benchmark_p1_r1",
+        "returned_batches": 89,
+        "decode_tokens_per_s": 36.757677937263516,
+        "tokens_per_return_after_first": 2.897727272727273,
+        "mean_return_interval_ms": 78.83325159094636
+      }
+    ]
+  },
+  "profile_vs_normal_output_checks": [
+    {
+      "capture": "mtp-p0",
+      "reference": "benchmark_p0_r0",
+      "raw_ids_equal": true,
+      "eos_prefix_ids_equal": true
+    },
+    {
+      "capture": "mtp-p0",
+      "reference": "benchmark_p0_r1",
+      "raw_ids_equal": true,
+      "eos_prefix_ids_equal": true
+    },
+    {
+      "capture": "mtp-p1",
+      "reference": "benchmark_p1_r0",
+      "raw_ids_equal": true,
+      "eos_prefix_ids_equal": true
+    },
+    {
+      "capture": "mtp-p1",
+      "reference": "benchmark_p1_r1",
+      "raw_ids_equal": true,
+      "eos_prefix_ids_equal": true
+    },
+    {
+      "capture": "dflash2-p0",
+      "reference": "benchmark_p0_r0",
+      "raw_ids_equal": true,
+      "eos_prefix_ids_equal": true
+    },
+    {
+      "capture": "dflash2-p0",
+      "reference": "benchmark_p0_r1",
+      "raw_ids_equal": true,
+      "eos_prefix_ids_equal": true
+    },
+    {
+      "capture": "dflash2-p1",
+      "reference": "benchmark_p1_r0",
+      "raw_ids_equal": true,
+      "eos_prefix_ids_equal": true
+    },
+    {
+      "capture": "dflash2-p1",
+      "reference": "benchmark_p1_r1",
+      "raw_ids_equal": true,
+      "eos_prefix_ids_equal": true
+    }
+  ],
+  "backend_validation": {
+    "mtp-p0": {
+      "groups_checked": 163,
+      "sql_types_checked": 20,
+      "csv_kernel_count": 250900,
+      "max_total_time_error_us": "0",
+      "insight_csv_counts_and_totals_match": true,
+      "sql_csv_counts_and_totals_match": true
+    },
+    "mtp-p1": {
+      "groups_checked": 166,
+      "sql_types_checked": 20,
+      "csv_kernel_count": 245813,
+      "max_total_time_error_us": "0",
+      "insight_csv_counts_and_totals_match": true,
+      "sql_csv_counts_and_totals_match": true
+    },
+    "dflash2-p0": {
+      "groups_checked": 223,
+      "sql_types_checked": 20,
+      "csv_kernel_count": 240728,
+      "max_total_time_error_us": "0",
+      "insight_csv_counts_and_totals_match": true,
+      "sql_csv_counts_and_totals_match": true
+    },
+    "dflash2-p1": {
+      "groups_checked": 226,
+      "sql_types_checked": 20,
+      "csv_kernel_count": 197176,
+      "max_total_time_error_us": "0",
+      "insight_csv_counts_and_totals_match": true,
+      "sql_csv_counts_and_totals_match": true
+    }
+  },
+  "limits": [
+    "No-compute is absence of compute tasks, not a direct CPU-idle or bandwidth measurement.",
+    "Profiler shape recording increases overhead, especially for many eager draft operations.",
+    "CPU scopes are inclusive and overlap; kernel sums, graph windows and CPU scopes must not be added together.",
+    "SSE return batches and hardware verification rounds can differ by one at the capture boundary.",
+    "No SQL MCP was available; the fixed compute macro ran on local read-only SQLite and was cross-checked against CSV."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "scope": "Profiler instrumentation and read-only analysis helpers; no NPU math or custom kernel changes.",
+  "sources": {
+    "vllm": "6e448d0ea9bf3d88d898b65449ca6dc2aec170ac",
+    "vllm_ascend": "3b31886237ed65c435e0965b10e8002ff5769766"
+  },
+  "files": [
+    {
+      "path": "experiments/dflash2/profile/analyze_capture.py",
+      "sha256": "2b5a8551bbc26f41e570fded558e955f1889378bf0737a50d5678663a0c5cad2"
+    },
+    {
+      "path": "experiments/dflash2/profile/backend-query.cjs",
+      "sha256": "a9363aa0235a137f8ecb97560953b6056652f95f99a780c5a1cd692ff46a562b"
+    },
+    {
+      "path": "experiments/dflash2/profile/export_profile.py",
+      "sha256": "1658609ad011ea7586d731efdf392379187c957a0f02ce9a1b507776418308ab"
+    },
+    {
+      "path": "experiments/dflash2/profile/profile_adapter.py",
+      "sha256": "148dbbe90ad28c2dab9884044a2d1f4cfd5be3fb17a1b4987061cd65157bc9a0"
+    },
+    {
+      "path": "experiments/dflash2/profile/serve_profile.py",
+      "sha256": "c588be1acc07aad11e270a79e6ee5301152e2f8fc4c321be877b937be0b7a529"
+    },
+    {
+      "path": "experiments/dflash2/profile/validate_backends.py",
+      "sha256": "05dca31fdae252d03bf0a46d601cc765a221baeead9e3ddd83e0eaac82876c1a"
+    }
+  ],
+  "raw_data_policy": "Raw DB, trace and CSV remain outside this repository."
+}

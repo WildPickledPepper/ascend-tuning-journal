@@ -18,6 +18,7 @@
 ## 最近一次记录的状态
 
 - 当前目标：**保持 BF16，依据 ms 工具证据调优单卡推理**。
+- DFlash2 已补完 [四份采样与 Insight 后端分析](experiments/dflash2/profiling.md)：每次返回更多 token，但 eager 草稿/准备流程也变贵，抵消多数收益；候选路径选择设备内核约 5.18 μs/轮，不是主热点。全部 778 个形状分组的调用数和总耗时与 CSV 一致，SQL TOP20 也核对通过。后续按用户要求另做双卡 SGLang 昇腾配方小样本复现，不与此前单卡结果混算。
 - 模型：Qwen3.8-27B，Dense，每个服务单卡 TP=1；7 号卡保留基线，6 号卡启用 MTP。
 - 最新实验：[DFlash2 单卡 BF16 验证](experiments/dflash2/README.md) 已跑通；95% 框架预算下就绪时进程约 **58.64 GiB**。同一 0.27.1rc1 框架、4 次 256-token 请求，MTP **30.673**、DFlash2 **33.614 token/s（+9.59%）**，首 token **282→372 ms**；提示间收益不同。7 项正常响应前缀一致，固定长度测试中有 2 项在 EOS 之后的强制续写不同；新环境未替换默认服务。[过滤比较](evidence/2026-10-20/dflash2-comparison.json)。
 - 已实施并验证：切换为 `FULL_DECODE_ONLY` 图模式，3 次无 profiler 基准的生成速度中位数 **5.55 → 20.28 token/s，约 3.66 倍**。
