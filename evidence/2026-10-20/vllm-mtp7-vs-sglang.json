@@ -1,0 +1,302 @@
+{
+  "model": "Qwen3.8-27B",
+  "hardware": "Ascend 910B2",
+  "physical_devices": [
+    6
+  ],
+  "tp_size": 1,
+  "target_and_draft_dtype": "BF16",
+  "profiler": false,
+  "same_request_payloads_as_sglang": true,
+  "runtime": {
+    "torch": "2.10.0+cpu",
+    "torch-npu": "2.10.0.post4",
+    "transformers": "5.14.1",
+    "triton-ascend": "3.2.2",
+    "vllm_source_version": "0.27.1",
+    "vllm_ascend_source_version": "0.27.1rc1"
+  },
+  "source_manifest": {
+    "controller.py": "fb47caf16c84a9b4764635454270689aac7cf02fb735847ed237c9de2694b529",
+    "ascend_client.py": "8479ddb54bd6d9dc287cae2e14a6b0dd0a3577452f565bf4f1539397332b7835",
+    "graph_audit.py": "dbaa015edb8c98cb80745e9f4da2c2a16276ecfd50d0814695ebc8457bf10de0",
+    "start_vllm.sh": "27934fe4b40a4800911562a3a11314d2993af8ed1083ee3ed35e998b0e97b12e",
+    "run_client.sh": "df25c5c808413b6e7bec767f79db16e7b05e3b0b4aa53ed56ccb0bb570fd92b8",
+    "serve.py": "ec5b73b09bd4cfd8549964d99c1504bedd34bff292a6ccb38fe7a76fc755260a",
+    "gsm8k-test.jsonl": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+    "runtime/vllm-ascend/vllm_ascend/spec_decode/llm_base_proposer.py": "edcc55d15f0f868b7da4f5ee8b63f91fc4f130b9b950e2734ab0d872a30d5f61",
+    "runtime/vllm-ascend/vllm_ascend/compilation/acl_graph.py": "c8ab2fe6aaae034b03e9e34b9c07fd445046564acd5d45e2c24b5ea5232c5a74",
+    "runtime/vllm-ascend/vllm_ascend/worker/model_runner_v1.py": "eaa40a2053be73e4f6ca6f54eddfb506f100790b1857a8d815c6db8756a32845",
+    "runtime/vllm/vllm/config/speculative.py": "83cbb26932b9ec0633753b58e8fe666f55c779580b32fba750cf569cde67c40c",
+    "runtime/vllm/vllm/config/cache.py": "0b603decec7487138e97b9cafbad9684ec22c8052f52a227236d1151a03aa34f"
+  },
+  "benchmark": {
+    "protocol": "SGLang PR35629: GSM8K zero-shot/chat, greedy T0/top_p1/top_k1, 2048 output limit, concurrency1; 4 examples.",
+    "example_count": 4,
+    "warmup_requests": 1,
+    "warmup_max_tokens": 64,
+    "evaluator_source_commit": "bea986b2f91432e0bdf2c283527427b0e63fcda1",
+    "evaluator_source_sha256": "f71543a818dcc1ad4fa7263df76492bf76c971deeec3d4377aa72fea819c8ec1",
+    "latency_s": 14.211409599985927,
+    "output_tokens": 844,
+    "throughput_tok_s": 59.388901154522756,
+    "accuracy": 1.0
+  },
+  "sglang_reference": {
+    "latency_s": 22.790065279928967,
+    "output_tokens": 961,
+    "throughput_tok_s": 42.167496590996834,
+    "accuracy": 1.0
+  },
+  "throughput_ratio_to_sglang": 1.4084047182256216,
+  "requests": [
+    {
+      "question_index": 0,
+      "started_utc": "2026-10-20T07:13:38.411276+00:00",
+      "prompt_sha256": "aeaf0ef0034af52aa8339fc075b3de4f7d943f0cbb8f670399bd04600e5d9e9a",
+      "usage": {
+        "completion_tokens": 137,
+        "prompt_tokens": 121,
+        "total_tokens": 258,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      },
+      "elapsed_s": 2.354153970023617,
+      "request_throughput_tok_s": 58.19500412652516,
+      "finish_reason": "stop",
+      "message_sha256": "7aa822be69e3388d25a4296ce7552f6339151e25bbe15065575e65fe1ee75fe9",
+      "prompt_tokens_equal_to_sglang": true,
+      "sglang_output_tokens": 137,
+      "sglang_elapsed_s": 6.051773949991912
+    },
+    {
+      "question_index": 1,
+      "started_utc": "2026-10-20T07:13:40.773525+00:00",
+      "prompt_sha256": "c34c3252e186b1c1f93a0931e1c6f5e190ae68c6c44e3b00c7cbc4b39dff1d90",
+      "usage": {
+        "completion_tokens": 44,
+        "prompt_tokens": 83,
+        "total_tokens": 127,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      },
+      "elapsed_s": 1.1799556000623852,
+      "request_throughput_tok_s": 37.289538689145324,
+      "finish_reason": "stop",
+      "message_sha256": "7f1cdc05cf083b6e6014db2c91f40cc3c91b962775655633945866178ef15942",
+      "prompt_tokens_equal_to_sglang": true,
+      "sglang_output_tokens": 44,
+      "sglang_elapsed_s": 1.503642710042186
+    },
+    {
+      "question_index": 2,
+      "started_utc": "2026-10-20T07:13:41.968260+00:00",
+      "prompt_sha256": "a1b3c077a5ffc275fef6fdbb3e97e22761e33c10514735353bc8f421763f40ba",
+      "usage": {
+        "completion_tokens": 575,
+        "prompt_tokens": 114,
+        "total_tokens": 689,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      },
+      "elapsed_s": 8.93226276000496,
+      "request_throughput_tok_s": 64.37338616756956,
+      "finish_reason": "stop",
+      "message_sha256": "8e745e407e901a7bf9d884f0246f02efc2beceb1d77e24a5d7d7898dc279156b",
+      "prompt_tokens_equal_to_sglang": true,
+      "sglang_output_tokens": 692,
+      "sglang_elapsed_s": 12.994275899953209
+    },
+    {
+      "question_index": 3,
+      "started_utc": "2026-10-20T07:13:50.908714+00:00",
+      "prompt_sha256": "97b4b589a15891ad46094d47592df47c4f652420a1d222cf0eb9a300ab3f8285",
+      "usage": {
+        "completion_tokens": 88,
+        "prompt_tokens": 92,
+        "total_tokens": 180,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      },
+      "elapsed_s": 1.700068710022606,
+      "request_throughput_tok_s": 51.76261375861088,
+      "finish_reason": "stop",
+      "message_sha256": "b028e895b3b010db65ac66ea9deeb3742bd42eabba121d2201d849d820a49572",
+      "prompt_tokens_equal_to_sglang": true,
+      "sglang_output_tokens": 88,
+      "sglang_elapsed_s": 2.2066449200501665
+    }
+  ],
+  "graph_audit": {
+    "before": {
+      "num_speculative_tokens": 7,
+      "draft_use_cuda_graph": true,
+      "draft_enforce_eager": false,
+      "main_graph_mode": "FULL_DECODE_ONLY",
+      "main_capture_sizes": [
+        8
+      ],
+      "dtype": "torch.bfloat16",
+      "kv_cache_dtype": "auto",
+      "mamba_cache_dtype": "bfloat16",
+      "mamba_ssm_cache_dtype": "bfloat16",
+      "tp_size": 1,
+      "context_length": 4096,
+      "max_num_seqs": 1,
+      "prefix_caching": false,
+      "gpu_memory_utilization": 0.97,
+      "wrappers": [
+        {
+          "is_draft_runnable": true,
+          "callable": "AscendSpecDecodeBaseProposer._run_merged_draft",
+          "runtime_mode": "FULL",
+          "entries": [
+            {
+              "batch_descriptor": "BatchDescriptor(num_tokens=8, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+              "captured": true
+            }
+          ]
+        },
+        {
+          "is_draft_runnable": false,
+          "callable": "Qwen3_5ForConditionalGeneration",
+          "runtime_mode": "FULL",
+          "entries": [
+            {
+              "batch_descriptor": "BatchDescriptor(num_tokens=8, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+              "captured": true
+            }
+          ]
+        }
+      ]
+    },
+    "after": {
+      "num_speculative_tokens": 7,
+      "draft_use_cuda_graph": true,
+      "draft_enforce_eager": false,
+      "main_graph_mode": "FULL_DECODE_ONLY",
+      "main_capture_sizes": [
+        8
+      ],
+      "dtype": "torch.bfloat16",
+      "kv_cache_dtype": "auto",
+      "mamba_cache_dtype": "bfloat16",
+      "mamba_ssm_cache_dtype": "bfloat16",
+      "tp_size": 1,
+      "context_length": 4096,
+      "max_num_seqs": 1,
+      "prefix_caching": false,
+      "gpu_memory_utilization": 0.97,
+      "wrappers": [
+        {
+          "is_draft_runnable": true,
+          "callable": "AscendSpecDecodeBaseProposer._run_merged_draft",
+          "runtime_mode": "FULL",
+          "entries": [
+            {
+              "batch_descriptor": "BatchDescriptor(num_tokens=8, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+              "captured": true
+            }
+          ]
+        },
+        {
+          "is_draft_runnable": false,
+          "callable": "Qwen3_5ForConditionalGeneration",
+          "runtime_mode": "FULL",
+          "entries": [
+            {
+              "batch_descriptor": "BatchDescriptor(num_tokens=8, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+              "captured": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "log_evidence": [
+    "(EngineCore pid=REDACTED) INFO 10-20 07:10:26 [llm_base_proposer.py:509] [spec_decode/base] Detected MTP model. Sharing target model embedding weights with the draft model.",
+    "(EngineCore pid=REDACTED) INFO 10-20 07:10:26 [llm_base_proposer.py:580] [spec_decode/base] Wrapping draft model with ACLGraphWrapper: runtime_mode=FULL, use_eagle=True, enable_enpu=False",
+    "(EngineCore pid=REDACTED) INFO 10-20 07:10:27 [model_runner_v1.py:4096] Loading model weights took 53.3823 GB",
+    "(EngineCore pid=REDACTED) INFO 10-20 07:12:06 [worker.py:628] Available KV cache memory: 5.64 GiB",
+    "(EngineCore pid=REDACTED) INFO 10-20 07:12:06 [kv_cache_utils.py:2235] GPU KV cache size: 14,472 tokens",
+    "(EngineCore pid=REDACTED) INFO 10-20 07:13:08 [gpu_model_runner.py:6913] Graph capturing finished in 18 secs, took 0.55 GiB",
+    "(EngineCore pid=REDACTED) INFO 10-20 07:13:37 [acl_graph.py:252] Replaying aclgraph",
+    "(APIServer pid=REDACTED) INFO 10-20 07:13:44 [loggers.py:310] Engine 000: Avg prompt throughput: 38.3 tokens/s, Avg generation throughput: 33.3 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 23.8%, Prefix cache hit rate: 0.0%",
+    "(APIServer pid=REDACTED) INFO 10-20 07:13:44 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 4.57, Accepted throughput: 8.17 tokens/s, Drafted throughput: 16.02 tokens/s, Accepted: 264 tokens, Drafted: 518 tokens, Per-position acceptance rate: 0.851, 0.716, 0.568, 0.514, 0.351, 0.311, 0.257, Avg Draft acceptance rate: 51.0%",
+    "(APIServer pid=REDACTED) INFO 10-20 07:13:54 [loggers.py:310] Engine 000: Avg prompt throughput: 9.2 tokens/s, Avg generation throughput: 52.4 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%",
+    "(APIServer pid=REDACTED) INFO 10-20 07:13:54 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 5.22, Accepted throughput: 42.60 tokens/s, Drafted throughput: 70.69 tokens/s, Accepted: 426 tokens, Drafted: 707 tokens, Per-position acceptance rate: 0.851, 0.762, 0.693, 0.604, 0.505, 0.436, 0.366, Avg Draft acceptance rate: 60.3%"
+  ],
+  "speculative_counter_delta": {
+    "vllm:spec_decode_num_accepted_tokens_per_pos_total": 681.0,
+    "vllm:spec_decode_num_draft_tokens_total": 1197.0,
+    "vllm:spec_decode_num_accepted_tokens_total": 681.0,
+    "vllm:spec_decode_num_drafts_total": 171.0
+  },
+  "accepted_per_position_delta": {
+    "1": 128.0,
+    "0": 147.0,
+    "5": 66.0,
+    "3": 98.0,
+    "6": 55.0,
+    "4": 76.0,
+    "2": 111.0
+  },
+  "candidate_acceptance_rate": 0.568922305764411,
+  "counter_tokens_per_round": 4.982456140350877,
+  "speculative_counter_scope": "Prometheus snapshots immediately after the 64-token warmup and after the four questions; audit and snapshot calls are outside timed evaluation.",
+  "ready_process_memory_snapshot": {
+    "process_count": 1,
+    "total_mib": 61266,
+    "total_gib": 59.830078125,
+    "peak_measured": false
+  },
+  "started_utc": "2026-10-20T07:08:57.140232+00:00",
+  "ready_utc": "2026-10-20T07:13:15.321093+00:00",
+  "restored_utc": "2026-10-20T07:16:59.760964+00:00",
+  "restored_health": {
+    "8038": 200,
+    "8039": 200
+  },
+  "baseline_api_unchanged": true,
+  "experiment_health": 0,
+  "restored_configuration": [
+    {
+      "port": 8038,
+      "physical_devices": "7",
+      "dtype": "bfloat16",
+      "tp_size": "1",
+      "experimental_preload": false,
+      "dev_rpc_enabled": false,
+      "worker_extension": false,
+      "experimental_custom_opp": false
+    },
+    {
+      "port": 8039,
+      "physical_devices": "6",
+      "dtype": "bfloat16",
+      "tp_size": "1",
+      "speculative_config": {
+        "method": "qwen3_5_mtp",
+        "num_speculative_tokens": 1,
+        "enforce_eager": true
+      },
+      "experimental_preload": false,
+      "dev_rpc_enabled": false,
+      "worker_extension": false,
+      "experimental_custom_opp": false
+    }
+  ],
+  "failed_attempt": {
+    "started_utc": "2026-10-20T07:03:09.351106+00:00",
+    "restored_utc": "2026-10-20T07:08:34.678945+00:00",
+    "reason": "Observer module path replaced CANN PYTHONPATH; acl import failed before weight loading. Preserve the inherited path when appending the observer.",
+    "benchmark_completed": false
+  },
+  "limitations": [
+    "Four math questions, one run per framework; not a universal framework ranking.",
+    "Natural generation lengths can differ; per-request and total timings include prefill.",
+    "SSM and model dtype, speculation count, graphs, context, concurrency, warmup and client protocol are aligned; cache layouts, dependencies and backend implementations differ.",
+    "vLLM uses the qwen3 response reasoning parser while the SGLang reference used no parser; generated-token totals include the whole generation.",
+    "Worker graph inspection is read-only and outside timed evaluation; no profiler or kernel rewrite was used."
+  ]
+}

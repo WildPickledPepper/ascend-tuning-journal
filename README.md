@@ -11,14 +11,16 @@
 | [早期记录](journal/undated-history.md) | MindStudio/Insight、示例仓库和分析环境准备，部分操作未保留准确时间 |
 | [2026-10-16](journal/2026-10-16.md) | 服务器环境、6 号卡小例子、9B 推理采样、27B 离线准备 |
 | [2026-10-19](journal/2026-10-19.md) | 27B 部署；图模式；HBM/矩阵乘；内核实验停止；MTP；NZ 回退与差异补采 |
-| [2026-10-20](journal/2026-10-20.md) | 实采 TLB/HBM 定位 NZ 退化；DFlash2/MTP 采样归因；SGLang 昇腾双卡四题复现 |
+| [2026-10-20](journal/2026-10-20.md) | 实采 TLB/HBM 定位 NZ 退化；DFlash2/MTP 采样归因；SGLang 昇腾双卡/单卡；vLLM MTP7同题对照及Insight归因 |
 
 搬运技术说明：[HBM/L2/L1/L0 数据流、ND/NZ 地址、分块与同步](notes/matmul-data-movement.md)。
 
 ## 最近一次记录的状态
 
 - 当前目标：**保持 BF16，依据 ms 工具证据调优推理**；新增按公开昇腾配方的双卡小样本验证。
-- 最新单卡验证：[BF16、MTP7与草稿图](experiments/sglang-ascend/single-card.md)已在物理6跑通，同四题端到端**42.167 token/s**、4/4正确；长回答第三题**53.254 token/s**，未达到此前双卡69.748。静态预算0.97、上下文4096、缓存8192 token；就绪进程合计约55.90 GiB，非峰值。14:47:00已确认恢复原服务，卡7原进程未重启；没有新做profiler采样，不猜测剩余差额的算子归因。[回执](evidence/2026-10-20/sglang-single-mtp7.json)。
+- 最新同题单卡对照：[vLLM MTP1→MTP7草稿图](experiments/vllm-mtp7/README.md)，同四题均844 token、4/4正确，**30.443→59.389 token/s，1.951倍**；验证448→171轮。Insight四份128-token采样共720个形状分组核对通过：第1题主模型70→26轮，两组FFN累计1.966→0.753秒，单次矩阵乘没有更快，收益来自更少重复验证与权重读取。SSM状态FP32→BF16等因素同时改变，未做独立消融。15:38:46确认恢复原服务，卡7未重启；MTP7未设默认。[正常测速](evidence/2026-10-20/vllm-mtp1-vs-mtp7-gsm.json)、[采样](evidence/2026-10-20/vllm-mtp1-vs-mtp7-profiles.json)。
+- 同四题vLLM新配置59.389相对此前SGLang单卡42.167高40.84%，但第三题输出575/692、首题耗时差异，不能视作普遍框架排名。[独立回执](evidence/2026-10-20/vllm-mtp7-vs-sglang.json)。
+- 此前SGLang单卡验证：[BF16、MTP7与草稿图](experiments/sglang-ascend/single-card.md)已在物理6跑通，同四题端到端**42.167 token/s**、4/4正确；长回答第三题**53.254 token/s**，未达到此前双卡69.748。静态预算0.97、上下文4096、缓存8192 token；就绪进程合计约55.90 GiB，非峰值。14:47:00已确认恢复原服务，卡7原进程未重启；没有新做profiler采样，不猜测剩余差额的算子归因。[回执](evidence/2026-10-20/sglang-single-mtp7.json)。
 - 最新实验：[SGLang 昇腾方案，双卡 BF16、batch1、同四道 GSM8K](experiments/sglang-ascend/README.md)：AR **28.668**、MTP7 **69.748**、DFlash2 **57.560 token/s**，各 4/4 正确。DFlash2 为 AR 的 **2.008 倍**，吞吐相对 MTP 低 **17.475%**；其首题耗时偏长，第三题输出长度也不同。结果只覆盖四题，包含 prefill，不当作稳态解码上限，也不与旧单卡速度直接相除。[回执](evidence/2026-10-20/sglang-ascend-four-questions.json)。
 - 接受率复核：本次MTP7日志窗口 **39%～61%**、DFlash2 **42%～60%**，每轮均约四五个token；不是全程平均，未显示明显接受率优势。旧MTP为单候选、草稿eager、单卡，约59毫秒返回1.8个token；新测试改为七候选、草稿图、双卡且题目/计时口径不同，不能把30→70全部归给框架，亦不能将旧30视为硬件上限。相同长度的第2、4题DFlash2更快，首题多3.492秒影响四题总吞吐，尚未采样其内部原因。[配置与结论复核](experiments/sglang-ascend/README.md#接受率与旧约-30-tokens-配置的复核)。
 - DFlash2 已补完 [四份采样与 Insight 后端分析](experiments/dflash2/profiling.md)：每次返回更多 token，但 eager 草稿/准备流程也变贵，抵消多数收益；候选路径选择设备内核约 5.18 μs/轮，不是主热点。全部 778 个形状分组的调用数和总耗时与 CSV 一致，SQL TOP20 也核对通过。随后按用户要求完成双卡 SGLang 昇腾配方小样本复现，与此前单卡结果分别记录。

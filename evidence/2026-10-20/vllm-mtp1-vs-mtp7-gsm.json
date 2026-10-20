@@ -1,0 +1,182 @@
+{
+  "model": "Qwen3.8-27B",
+  "hardware": "Ascend 910B2",
+  "physical_devices": [
+    6
+  ],
+  "weights_dtype": "BF16",
+  "profiler": false,
+  "same_request_payloads": true,
+  "old": {
+    "benchmark": {
+      "latency_s": 27.724121059989557,
+      "output_tokens": 844,
+      "throughput_tok_s": 30.442804595094273,
+      "accuracy": 1.0,
+      "warmup_requests": 1,
+      "warmup_max_tokens": 64,
+      "evaluator_source_sha256": "f71543a818dcc1ad4fa7263df76492bf76c971deeec3d4377aa72fea819c8ec1"
+    },
+    "configuration": {
+      "num_speculative_tokens": 1,
+      "draft_use_cuda_graph": false,
+      "draft_enforce_eager": true,
+      "tp_size": 1,
+      "context_length": 4096,
+      "dtype": "torch.bfloat16",
+      "mamba_cache_dtype": "bfloat16",
+      "mamba_ssm_cache_dtype": "float32",
+      "gpu_memory_utilization": 0.95,
+      "max_num_seqs": 1,
+      "prefix_caching": false,
+      "main_capture_sizes": [
+        2
+      ]
+    },
+    "counters": {
+      "rounds": 448.0,
+      "proposed": 448.0,
+      "accepted": 396.0,
+      "candidate_acceptance_rate": 0.8839285714285714,
+      "counter_tokens_per_round": 1.8839285714285714
+    },
+    "requests": [
+      {
+        "started_utc": "2026-10-20T07:28:05.368898+00:00",
+        "elapsed_s": 4.735073299962096,
+        "output_tokens": 137,
+        "prompt_tokens": 121,
+        "request_sha256": "1c814105c74ba05dc2711e63d3a756590860f0a61c09c9c5a0f382928ffe9250",
+        "message_sha256": "7aa822be69e3388d25a4296ce7552f6339151e25bbe15065575e65fe1ee75fe9"
+      },
+      {
+        "started_utc": "2026-10-20T07:28:10.111876+00:00",
+        "elapsed_s": 1.6850000999402255,
+        "output_tokens": 44,
+        "prompt_tokens": 83,
+        "request_sha256": "3b582af32c7ef5d136087b959498060df2dbd86e1b0ccd22167f0b9176a2c719",
+        "message_sha256": "7f1cdc05cf083b6e6014db2c91f40cc3c91b962775655633945866178ef15942"
+      },
+      {
+        "started_utc": "2026-10-20T07:28:11.804729+00:00",
+        "elapsed_s": 18.119241149979644,
+        "output_tokens": 575,
+        "prompt_tokens": 114,
+        "request_sha256": "89422f9bebe2e8fcf3374c22f6cf0d88d264345bb8e01532ce158aada2a136cf",
+        "message_sha256": "fe4db9a621f8e6b7fbf0237b31125921c2c0b193cd0e044070f337c7e590a4bb"
+      },
+      {
+        "started_utc": "2026-10-20T07:28:29.932594+00:00",
+        "elapsed_s": 3.143790979986079,
+        "output_tokens": 88,
+        "prompt_tokens": 92,
+        "request_sha256": "440ba48b29d6d74f9e9356fcedb500c0f35f45e39d4304838981f66f885aaa8c",
+        "message_sha256": "b028e895b3b010db65ac66ea9deeb3742bd42eabba121d2201d849d820a49572"
+      }
+    ]
+  },
+  "new": {
+    "benchmark": {
+      "latency_s": 14.211409599985927,
+      "output_tokens": 844,
+      "throughput_tok_s": 59.388901154522756,
+      "accuracy": 1.0,
+      "warmup_requests": 1,
+      "warmup_max_tokens": 64,
+      "evaluator_source_sha256": "f71543a818dcc1ad4fa7263df76492bf76c971deeec3d4377aa72fea819c8ec1"
+    },
+    "configuration": {
+      "num_speculative_tokens": 7,
+      "draft_use_cuda_graph": true,
+      "draft_enforce_eager": false,
+      "tp_size": 1,
+      "context_length": 4096,
+      "dtype": "torch.bfloat16",
+      "mamba_cache_dtype": "bfloat16",
+      "mamba_ssm_cache_dtype": "bfloat16",
+      "gpu_memory_utilization": 0.97,
+      "max_num_seqs": 1,
+      "prefix_caching": false,
+      "main_capture_sizes": [
+        8
+      ]
+    },
+    "counters": {
+      "rounds": 171.0,
+      "proposed": 1197.0,
+      "accepted": 681.0,
+      "candidate_acceptance_rate": 0.568922305764411,
+      "counter_tokens_per_round": 4.982456140350877
+    },
+    "requests": [
+      {
+        "started_utc": "2026-10-20T07:13:38.411276+00:00",
+        "elapsed_s": 2.354153970023617,
+        "output_tokens": 137,
+        "prompt_tokens": 121,
+        "request_sha256": "1c814105c74ba05dc2711e63d3a756590860f0a61c09c9c5a0f382928ffe9250",
+        "message_sha256": "7aa822be69e3388d25a4296ce7552f6339151e25bbe15065575e65fe1ee75fe9"
+      },
+      {
+        "started_utc": "2026-10-20T07:13:40.773525+00:00",
+        "elapsed_s": 1.1799556000623852,
+        "output_tokens": 44,
+        "prompt_tokens": 83,
+        "request_sha256": "3b582af32c7ef5d136087b959498060df2dbd86e1b0ccd22167f0b9176a2c719",
+        "message_sha256": "7f1cdc05cf083b6e6014db2c91f40cc3c91b962775655633945866178ef15942"
+      },
+      {
+        "started_utc": "2026-10-20T07:13:41.968260+00:00",
+        "elapsed_s": 8.93226276000496,
+        "output_tokens": 575,
+        "prompt_tokens": 114,
+        "request_sha256": "89422f9bebe2e8fcf3374c22f6cf0d88d264345bb8e01532ce158aada2a136cf",
+        "message_sha256": "8e745e407e901a7bf9d884f0246f02efc2beceb1d77e24a5d7d7898dc279156b"
+      },
+      {
+        "started_utc": "2026-10-20T07:13:50.908714+00:00",
+        "elapsed_s": 1.700068710022606,
+        "output_tokens": 88,
+        "prompt_tokens": 92,
+        "request_sha256": "440ba48b29d6d74f9e9356fcedb500c0f35f45e39d4304838981f66f885aaa8c",
+        "message_sha256": "b028e895b3b010db65ac66ea9deeb3742bd42eabba121d2201d849d820a49572"
+      }
+    ]
+  },
+  "throughput_ratio": 1.9508354090376097,
+  "total_latency_reduction": 0.4873990930412103,
+  "verification_round_reduction": 0.6183035714285714,
+  "per_question_equal_token_count": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "per_question_equal_message": [
+    true,
+    true,
+    false,
+    true
+  ],
+  "final_content_equal": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "limits": [
+    "Four questions, one normal timed run per configuration; not a general performance ceiling or broad precision evaluation.",
+    "Question 3 has identical final text and token count but different reasoning text; do not claim bitwise full generation equality.",
+    "Speculation count, draft graphs, SSM state dtype, memory budget and main capture size changed together; their independent contributions were not ablated.",
+    "End-to-end timing includes prefill. Counter tokens/round may include discarded EOS/tail tokens; do not equate it with exact returned output."
+  ],
+  "restoration": {
+    "restored_utc": "2026-10-20T07:38:46.943200+00:00",
+    "restored_health": {
+      "8038": 200,
+      "8039": 200
+    },
+    "baseline_api_unchanged": true,
+    "experiment_health": 0
+  }
+}

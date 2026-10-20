@@ -48,3 +48,7 @@
 - `2026-10-20/dflash2-source-manifest.json`：官方镜像/框架 commit、草稿固定版本与 SHA256、归档脚本哈希。
 - `2026-10-20/dflash2-memory-capacity.json`：测速结束后运行时可见容量与 95% 预算换算，不是峰值采样。
 - `2026-10-20/dflash2-restored-configs.json`：原基线/MTP 的卡号、BF16、90% 预算、图/投机配置及调试/NZ 环境清理状态。
+
+- `2026-10-20/vllm-mtp7-vs-sglang.json`：单卡七候选、草稿图，vLLM59.389与SGLang42.167四题回执、版本、实际捕获图与显存快照；包含输出长度和首题限制。
+- `2026-10-20/vllm-mtp1-vs-mtp7-gsm.json`：同四题旧配置30.443与新59.389，无profiler，各844token、4/4，正式接受计数和最终恢复。
+- `2026-10-20/vllm-mtp1-vs-mtp7-profiles.json`：四份128-token配对采样，720个Insight分组与SQL TOP20全核验、主/草稿图区分、FFN/周期时间和原始文件SHA256。

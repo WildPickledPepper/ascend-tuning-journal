@@ -1,0 +1,1998 @@
+{
+  "model": "Qwen3.8-27B",
+  "hardware": "Ascend 910B2",
+  "physical_devices": [
+    6
+  ],
+  "weights_dtype": "BF16",
+  "profiler": "PyTorch Level1/PipeUtilization CPU+NPU, record_shapes=True",
+  "query_channel": "Compiled Insight backend WebSocket operator/statistic; readonly local SQLite fallback for fixed skill CTE (no SQL MCP exposed).",
+  "profiles": {
+    "old-p0": {
+      "decode_rounds": 70,
+      "decode_span_ms": 4555.85756,
+      "graph_replay_commands": 70,
+      "target_ffn_calls_per_round": 64,
+      "main_graph_model_id": "1202",
+      "draft_graph_model_ids": [],
+      "compute_union_ms": 3781.32126,
+      "no_compute_ms": 774.5363,
+      "no_compute_pct": 17.000889290313985,
+      "cycle_medians": {
+        "span_ms": 65.21832,
+        "main_graph_window_ms": 49.05626,
+        "main_graph_kernel_sum_ms": 47.2984,
+        "after_graph_window_ms": 16.16096,
+        "outside_graph_kernel_sum_ms": 6.7284,
+        "no_compute_ms": 11.18774
+      },
+      "phase_device_totals": {
+        "main_verification_graph": {
+          "calls": 95410,
+          "kernel_sum_ms": 3311.105240000146,
+          "union_ms": 3311.10524
+        },
+        "unattributed": {
+          "calls": 14560,
+          "kernel_sum_ms": 101.59238000000167,
+          "union_ms": 101.59238
+        },
+        "post process": {
+          "calls": 210,
+          "kernel_sum_ms": 134.93258000000006,
+          "union_ms": 134.93258
+        },
+        "sample_token": {
+          "calls": 1050,
+          "kernel_sum_ms": 8.76054,
+          "union_ms": 8.76054
+        },
+        "async_state_update": {
+          "calls": 352,
+          "kernel_sum_ms": 0.7296800000000003,
+          "union_ms": 0.72814
+        },
+        "draft_token": {
+          "calls": 4758,
+          "kernel_sum_ms": 207.54754000000023,
+          "union_ms": 207.54754
+        },
+        "prepare input": {
+          "calls": 5313,
+          "kernel_sum_ms": 17.12379999999995,
+          "union_ms": 17.1238
+        }
+      },
+      "cpu_inclusive_scopes": {
+        "DFlash2::selector_walk": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "DFlash2::candidate_selector": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "DFlash2::lm_head_and_topk": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "draft_token": {
+          "calls": 70,
+          "inclusive_ms": 555.69414
+        },
+        "sample_token": {
+          "calls": 70,
+          "inclusive_ms": 83.35984
+        },
+        "post process": {
+          "calls": 70,
+          "inclusive_ms": 22.27451
+        },
+        "forward": {
+          "calls": 69,
+          "inclusive_ms": 322.66716
+        },
+        "prepare input": {
+          "calls": 70,
+          "inclusive_ms": 3330.73521
+        },
+        "async_state_update": {
+          "calls": 70,
+          "inclusive_ms": 41.64064
+        }
+      },
+      "phase_device_types": [
+        {
+          "phase": "main_verification_graph",
+          "type": "MatMulV2",
+          "calls": 21280,
+          "total_ms": 2838.6865999999927
+        },
+        {
+          "phase": "draft_token",
+          "type": "MatMulV2",
+          "calls": 420,
+          "total_ms": 184.60342000000003
+        },
+        {
+          "phase": "post process",
+          "type": "MatMulV2",
+          "calls": 70,
+          "total_ms": 133.97778000000002
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "RecurrentGatedDeltaRule",
+          "calls": 3360,
+          "total_ms": 87.98511999999951
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Transpose",
+          "calls": 3360,
+          "total_ms": 74.51077999999991
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ConcatD",
+          "calls": 3360,
+          "total_ms": 67.00811999999993
+        },
+        {
+          "phase": "unattributed",
+          "type": "fused_gdn_gating_kernel",
+          "calls": 3360,
+          "total_ms": 60.997659999999954
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "CausalConv1d",
+          "calls": 3360,
+          "total_ms": 46.343820000000086
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Slice",
+          "calls": 25760,
+          "total_ms": 45.724559999999926
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "FusedInferAttentionScore",
+          "calls": 1120,
+          "total_ms": 31.814979999999988
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "AddRmsNormBias",
+          "calls": 8960,
+          "total_ms": 29.207459999999948
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "SwiGlu",
+          "calls": 4480,
+          "total_ms": 27.99805999999998
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Add",
+          "calls": 11200,
+          "total_ms": 23.390499999999918
+        },
+        {
+          "phase": "unattributed",
+          "type": "_layer_norm_fwd_1pass_kernel_npu",
+          "calls": 3360,
+          "total_ms": 17.349380000000068
+        },
+        {
+          "phase": "unattributed",
+          "type": "l2norm_fwd_kernel2",
+          "calls": 6720,
+          "total_ms": 13.674179999999827
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ZerosLike",
+          "calls": 3360,
+          "total_ms": 11.55885999999994
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Index",
+          "calls": 1120,
+          "total_ms": 11.124740000000012
+        },
+        {
+          "phase": "unattributed",
+          "type": "split_qkv_rmsnorm_mrope_kernel",
+          "calls": 1120,
+          "total_ms": 9.571159999999995
+        },
+        {
+          "phase": "prepare input",
+          "type": "Index",
+          "calls": 690,
+          "total_ms": 5.6812000000000005
+        },
+        {
+          "phase": "draft_token",
+          "type": "Transpose",
+          "calls": 280,
+          "total_ms": 4.352099999999999
+        },
+        {
+          "phase": "sample_token",
+          "type": "ArgMaxV2",
+          "calls": 140,
+          "total_ms": 4.157420000000001
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Sigmoid",
+          "calls": 1120,
+          "total_ms": 4.144519999999998
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Mul",
+          "calls": 1120,
+          "total_ms": 4.014139999999996
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "IndexCheck",
+          "calls": 1120,
+          "total_ms": 3.8922000000000008
+        },
+        {
+          "phase": "draft_token",
+          "type": "Index",
+          "calls": 420,
+          "total_ms": 3.8241399999999968
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ScatterPaKvCache",
+          "calls": 1120,
+          "total_ms": 3.0769000000000006
+        },
+        {
+          "phase": "draft_token",
+          "type": "ArgMaxV2",
+          "calls": 70,
+          "total_ms": 2.5395000000000008
+        },
+        {
+          "phase": "sample_token",
+          "type": "Index",
+          "calls": 140,
+          "total_ms": 2.0444199999999992
+        },
+        {
+          "phase": "draft_token",
+          "type": "FusedInferAttentionScore",
+          "calls": 70,
+          "total_ms": 2.0012399999999997
+        },
+        {
+          "phase": "prepare input",
+          "type": "IndexCheck",
+          "calls": 690,
+          "total_ms": 1.6706200000000018
+        },
+        {
+          "phase": "draft_token",
+          "type": "IndexCheck",
+          "calls": 490,
+          "total_ms": 1.3714800000000016
+        },
+        {
+          "phase": "prepare input",
+          "type": "Range",
+          "calls": 207,
+          "total_ms": 1.32588
+        },
+        {
+          "phase": "prepare input",
+          "type": "Sub",
+          "calls": 897,
+          "total_ms": 1.3101000000000003
+        },
+        {
+          "phase": "sample_token",
+          "type": "Cast",
+          "calls": 420,
+          "total_ms": 1.268639999999999
+        },
+        {
+          "phase": "prepare input",
+          "type": "ViewCopy",
+          "calls": 138,
+          "total_ms": 1.1983400000000002
+        },
+        {
+          "phase": "prepare input",
+          "type": "GatherV3",
+          "calls": 414,
+          "total_ms": 1.1528400000000003
+        },
+        {
+          "phase": "prepare input",
+          "type": "Add",
+          "calls": 345,
+          "total_ms": 0.8941400000000003
+        },
+        {
+          "phase": "draft_token",
+          "type": "GemmaRmsNorm",
+          "calls": 210,
+          "total_ms": 0.88368
+        },
+        {
+          "phase": "post process",
+          "type": "Index",
+          "calls": 70,
+          "total_ms": 0.73956
+        },
+        {
+          "phase": "draft_token",
+          "type": "Cast",
+          "calls": 560,
+          "total_ms": 0.7322200000000001
+        }
+      ],
+      "whole_profile_compute_top": [
+        {
+          "op_type": "MatMulV2",
+          "calls": 22081,
+          "total_ms": 3212.56802
+        },
+        {
+          "op_type": "RecurrentGatedDeltaRule",
+          "calls": 3360,
+          "total_ms": 87.98512
+        },
+        {
+          "op_type": "Transpose",
+          "calls": 3690,
+          "total_ms": 79.9768
+        },
+        {
+          "op_type": "ConcatD",
+          "calls": 3479,
+          "total_ms": 68.13974
+        },
+        {
+          "op_type": "fused_gdn_gating_kernel",
+          "calls": 3408,
+          "total_ms": 61.8775
+        },
+        {
+          "op_type": "CausalConv1d",
+          "calls": 3408,
+          "total_ms": 48.15036
+        },
+        {
+          "op_type": "Slice",
+          "calls": 26413,
+          "total_ms": 47.75048
+        },
+        {
+          "op_type": "FusedInferAttentionScore",
+          "calls": 1207,
+          "total_ms": 34.53746
+        },
+        {
+          "op_type": "AddRmsNormBias",
+          "calls": 9230,
+          "total_ms": 31.73098
+        },
+        {
+          "op_type": "SwiGlu",
+          "calls": 4615,
+          "total_ms": 29.79696
+        },
+        {
+          "op_type": "Index",
+          "calls": 2521,
+          "total_ms": 26.9402
+        },
+        {
+          "op_type": "Add",
+          "calls": 11997,
+          "total_ms": 25.13954
+        },
+        {
+          "op_type": "_layer_norm_fwd_1pass_kernel_npu",
+          "calls": 3408,
+          "total_ms": 18.23236
+        },
+        {
+          "op_type": "l2norm_fwd_kernel2",
+          "calls": 6816,
+          "total_ms": 14.30626
+        },
+        {
+          "op_type": "ZerosLike",
+          "calls": 3417,
+          "total_ms": 12.0092
+        },
+        {
+          "op_type": "split_qkv_rmsnorm_mrope_kernel",
+          "calls": 1207,
+          "total_ms": 10.59162
+        },
+        {
+          "op_type": "ChunkGatedDeltaRule",
+          "calls": 48,
+          "total_ms": 8.79574
+        },
+        {
+          "op_type": "IndexCheck",
+          "calls": 2640,
+          "total_ms": 8.0762
+        },
+        {
+          "op_type": "ArgMaxV2",
+          "calls": 212,
+          "total_ms": 6.76258
+        },
+        {
+          "op_type": "Sigmoid",
+          "calls": 1207,
+          "total_ms": 4.58556
+        }
+      ],
+      "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT op_type, COUNT(*) AS calls, ROUND(SUM(duration_ns)/1000000.0,6) AS total_ms\nFROM compute_view GROUP BY op_type ORDER BY total_ms DESC LIMIT 20;",
+      "boundary": "First hardware MODEL_EXECUTE to last compute completion; prefill excluded; final draft work retained.",
+      "limits": [
+        "Profiler timings are not unprofiled benchmark speed.",
+        "CPU scopes are inclusive and overlap; do not add them to device time.",
+        "Device groups contain cumulative kernel sums and interval unions; distinct phases may overlap.",
+        "No-compute includes DMA/control/wait and is not automatically host idle.",
+        "Target graph identity uses FFN up-projections, with exactly 64 per replay; target first-kernel boundaries exclude merged draft replays."
+      ],
+      "question_index": 0,
+      "output_tokens": 128,
+      "profile_elapsed_s": 4.910222869948484,
+      "normal_prefix_elapsed_s": 4.3780139200389385,
+      "profile_started_utc": "2026-10-20T07:28:44.578876+00:00",
+      "normal_profile_token_ids_equal": true,
+      "main_ffn_groups": [
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,5120;34816,5120",
+          "main_graph": true,
+          "calls": 4480,
+          "total_ms": 1285.88444,
+          "mean_us": 287.02777678571425,
+          "mte2_activity_ratio": 0.9873285618262874,
+          "mac_activity_ratio": 0.11538766175598153
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,17408;5120,17408",
+          "main_graph": true,
+          "calls": 4480,
+          "total_ms": 680.39264,
+          "mean_us": 151.87335714285712,
+          "mte2_activity_ratio": 0.8837543254142215,
+          "mac_activity_ratio": 0.15471464279801736
+        }
+      ],
+      "main_ffn_total_ms": 1966.27708,
+      "main_ffn_ms_per_output_token": 15.3615396875,
+      "all_compute_ms_per_output_token": 29.545248125001155,
+      "backend_validation": {
+        "groups_checked": 167,
+        "kernel_count": 124084,
+        "sql_types_checked": 20,
+        "max_time_error_us": "0",
+        "counts_and_totals_match": true,
+        "draft_ffn_calls": 0
+      }
+    },
+    "old-p1": {
+      "decode_rounds": 66,
+      "decode_span_ms": 4289.01876,
+      "graph_replay_commands": 66,
+      "target_ffn_calls_per_round": 64,
+      "main_graph_model_id": "1202",
+      "draft_graph_model_ids": [],
+      "compute_union_ms": 3564.18724,
+      "no_compute_ms": 724.83152,
+      "no_compute_pct": 16.89970505048572,
+      "cycle_medians": {
+        "span_ms": 65.1499,
+        "main_graph_window_ms": 49.04224,
+        "main_graph_kernel_sum_ms": 47.2916,
+        "after_graph_window_ms": 16.0909,
+        "outside_graph_kernel_sum_ms": 6.72218,
+        "no_compute_ms": 11.12922
+      },
+      "phase_device_totals": {
+        "main_verification_graph": {
+          "calls": 89958,
+          "kernel_sum_ms": 3121.159720000109,
+          "union_ms": 3121.15972
+        },
+        "unattributed": {
+          "calls": 13728,
+          "kernel_sum_ms": 95.78902000000112,
+          "union_ms": 95.78902
+        },
+        "post process": {
+          "calls": 198,
+          "kernel_sum_ms": 127.20475999999996,
+          "union_ms": 127.20476
+        },
+        "sample_token": {
+          "calls": 990,
+          "kernel_sum_ms": 8.204819999999987,
+          "union_ms": 8.20482
+        },
+        "async_state_update": {
+          "calls": 334,
+          "kernel_sum_ms": 0.6940200000000005,
+          "union_ms": 0.69034
+        },
+        "draft_token": {
+          "calls": 4484,
+          "kernel_sum_ms": 195.53116000000028,
+          "union_ms": 195.53116
+        },
+        "prepare input": {
+          "calls": 5005,
+          "kernel_sum_ms": 16.04719999999997,
+          "union_ms": 16.0472
+        }
+      },
+      "cpu_inclusive_scopes": {
+        "DFlash2::selector_walk": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "DFlash2::candidate_selector": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "DFlash2::lm_head_and_topk": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "draft_token": {
+          "calls": 66,
+          "inclusive_ms": 531.64064
+        },
+        "sample_token": {
+          "calls": 66,
+          "inclusive_ms": 78.43383
+        },
+        "post process": {
+          "calls": 66,
+          "inclusive_ms": 20.9703
+        },
+        "forward": {
+          "calls": 65,
+          "inclusive_ms": 313.61642
+        },
+        "prepare input": {
+          "calls": 66,
+          "inclusive_ms": 3112.52037
+        },
+        "async_state_update": {
+          "calls": 66,
+          "inclusive_ms": 40.13962
+        }
+      },
+      "phase_device_types": [
+        {
+          "phase": "main_verification_graph",
+          "type": "MatMulV2",
+          "calls": 20064,
+          "total_ms": 2675.744419999993
+        },
+        {
+          "phase": "draft_token",
+          "type": "MatMulV2",
+          "calls": 396,
+          "total_ms": 173.93700000000013
+        },
+        {
+          "phase": "post process",
+          "type": "MatMulV2",
+          "calls": 66,
+          "total_ms": 126.32434000000002
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "RecurrentGatedDeltaRule",
+          "calls": 3168,
+          "total_ms": 82.9668599999996
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Transpose",
+          "calls": 3168,
+          "total_ms": 70.17702000000003
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ConcatD",
+          "calls": 3168,
+          "total_ms": 63.23457999999998
+        },
+        {
+          "phase": "unattributed",
+          "type": "fused_gdn_gating_kernel",
+          "calls": 3168,
+          "total_ms": 57.488040000000034
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "CausalConv1d",
+          "calls": 3168,
+          "total_ms": 43.70207999999995
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Slice",
+          "calls": 24288,
+          "total_ms": 43.11698000000051
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "FusedInferAttentionScore",
+          "calls": 1056,
+          "total_ms": 29.88194
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "AddRmsNormBias",
+          "calls": 8448,
+          "total_ms": 27.573699999999903
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "SwiGlu",
+          "calls": 4224,
+          "total_ms": 26.43835999999987
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Add",
+          "calls": 10560,
+          "total_ms": 22.08944000000002
+        },
+        {
+          "phase": "unattributed",
+          "type": "_layer_norm_fwd_1pass_kernel_npu",
+          "calls": 3168,
+          "total_ms": 16.356820000000027
+        },
+        {
+          "phase": "unattributed",
+          "type": "l2norm_fwd_kernel2",
+          "calls": 6336,
+          "total_ms": 12.918279999999834
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ZerosLike",
+          "calls": 3168,
+          "total_ms": 10.899619999999954
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Index",
+          "calls": 1056,
+          "total_ms": 10.493820000000012
+        },
+        {
+          "phase": "unattributed",
+          "type": "split_qkv_rmsnorm_mrope_kernel",
+          "calls": 1056,
+          "total_ms": 9.025880000000004
+        },
+        {
+          "phase": "prepare input",
+          "type": "Index",
+          "calls": 650,
+          "total_ms": 5.336860000000005
+        },
+        {
+          "phase": "draft_token",
+          "type": "Transpose",
+          "calls": 264,
+          "total_ms": 4.0777600000000005
+        },
+        {
+          "phase": "sample_token",
+          "type": "ArgMaxV2",
+          "calls": 132,
+          "total_ms": 3.920179999999998
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Sigmoid",
+          "calls": 1056,
+          "total_ms": 3.9074400000000056
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Mul",
+          "calls": 1056,
+          "total_ms": 3.786720000000003
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "IndexCheck",
+          "calls": 1056,
+          "total_ms": 3.668880000000004
+        },
+        {
+          "phase": "draft_token",
+          "type": "Index",
+          "calls": 396,
+          "total_ms": 3.6037799999999978
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ScatterPaKvCache",
+          "calls": 1056,
+          "total_ms": 2.8940599999999983
+        },
+        {
+          "phase": "draft_token",
+          "type": "ArgMaxV2",
+          "calls": 66,
+          "total_ms": 2.4070800000000006
+        },
+        {
+          "phase": "sample_token",
+          "type": "Index",
+          "calls": 132,
+          "total_ms": 1.9185599999999998
+        },
+        {
+          "phase": "draft_token",
+          "type": "FusedInferAttentionScore",
+          "calls": 66,
+          "total_ms": 1.8758600000000003
+        },
+        {
+          "phase": "prepare input",
+          "type": "IndexCheck",
+          "calls": 650,
+          "total_ms": 1.5659200000000013
+        },
+        {
+          "phase": "draft_token",
+          "type": "IndexCheck",
+          "calls": 462,
+          "total_ms": 1.2975199999999991
+        },
+        {
+          "phase": "prepare input",
+          "type": "Sub",
+          "calls": 845,
+          "total_ms": 1.2308199999999971
+        },
+        {
+          "phase": "prepare input",
+          "type": "Range",
+          "calls": 195,
+          "total_ms": 1.1795000000000009
+        },
+        {
+          "phase": "sample_token",
+          "type": "Cast",
+          "calls": 396,
+          "total_ms": 1.174
+        },
+        {
+          "phase": "prepare input",
+          "type": "ViewCopy",
+          "calls": 130,
+          "total_ms": 1.1210200000000003
+        },
+        {
+          "phase": "prepare input",
+          "type": "GatherV3",
+          "calls": 390,
+          "total_ms": 1.0922000000000003
+        },
+        {
+          "phase": "prepare input",
+          "type": "Add",
+          "calls": 325,
+          "total_ms": 0.8497799999999999
+        },
+        {
+          "phase": "draft_token",
+          "type": "GemmaRmsNorm",
+          "calls": 198,
+          "total_ms": 0.8315399999999996
+        },
+        {
+          "phase": "draft_token",
+          "type": "Cast",
+          "calls": 525,
+          "total_ms": 0.6868600000000007
+        },
+        {
+          "phase": "prepare input",
+          "type": "Cast",
+          "calls": 520,
+          "total_ms": 0.677579999999999
+        }
+      ],
+      "whole_profile_compute_top": [
+        {
+          "op_type": "MatMulV2",
+          "calls": 20837,
+          "total_ms": 3030.90942
+        },
+        {
+          "op_type": "RecurrentGatedDeltaRule",
+          "calls": 3168,
+          "total_ms": 82.96686
+        },
+        {
+          "op_type": "Transpose",
+          "calls": 3482,
+          "total_ms": 75.3799
+        },
+        {
+          "op_type": "ConcatD",
+          "calls": 3283,
+          "total_ms": 64.35838
+        },
+        {
+          "op_type": "fused_gdn_gating_kernel",
+          "calls": 3216,
+          "total_ms": 58.38362
+        },
+        {
+          "op_type": "CausalConv1d",
+          "calls": 3216,
+          "total_ms": 45.43984
+        },
+        {
+          "op_type": "Slice",
+          "calls": 24925,
+          "total_ms": 45.06208
+        },
+        {
+          "op_type": "FusedInferAttentionScore",
+          "calls": 1139,
+          "total_ms": 32.4698
+        },
+        {
+          "op_type": "AddRmsNormBias",
+          "calls": 8710,
+          "total_ms": 29.97768
+        },
+        {
+          "op_type": "SwiGlu",
+          "calls": 4355,
+          "total_ms": 28.2008
+        },
+        {
+          "op_type": "Index",
+          "calls": 2381,
+          "total_ms": 25.60312
+        },
+        {
+          "op_type": "Add",
+          "calls": 11321,
+          "total_ms": 23.78674
+        },
+        {
+          "op_type": "_layer_norm_fwd_1pass_kernel_npu",
+          "calls": 3216,
+          "total_ms": 17.22756
+        },
+        {
+          "op_type": "l2norm_fwd_kernel2",
+          "calls": 6432,
+          "total_ms": 13.53474
+        },
+        {
+          "op_type": "ZerosLike",
+          "calls": 3225,
+          "total_ms": 11.34092
+        },
+        {
+          "op_type": "split_qkv_rmsnorm_mrope_kernel",
+          "calls": 1139,
+          "total_ms": 10.00758
+        },
+        {
+          "op_type": "ChunkGatedDeltaRule",
+          "calls": 48,
+          "total_ms": 8.66622
+        },
+        {
+          "op_type": "IndexCheck",
+          "calls": 2496,
+          "total_ms": 7.6404
+        },
+        {
+          "op_type": "ArgMaxV2",
+          "calls": 200,
+          "total_ms": 6.39374
+        },
+        {
+          "op_type": "Sigmoid",
+          "calls": 1139,
+          "total_ms": 4.33006
+        }
+      ],
+      "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT op_type, COUNT(*) AS calls, ROUND(SUM(duration_ns)/1000000.0,6) AS total_ms\nFROM compute_view GROUP BY op_type ORDER BY total_ms DESC LIMIT 20;",
+      "boundary": "First hardware MODEL_EXECUTE to last compute completion; prefill excluded; final draft work retained.",
+      "limits": [
+        "Profiler timings are not unprofiled benchmark speed.",
+        "CPU scopes are inclusive and overlap; do not add them to device time.",
+        "Device groups contain cumulative kernel sums and interval unions; distinct phases may overlap.",
+        "No-compute includes DMA/control/wait and is not automatically host idle.",
+        "Target graph identity uses FFN up-projections, with exactly 64 per replay; target first-kernel boundaries exclude merged draft replays."
+      ],
+      "question_index": 2,
+      "output_tokens": 128,
+      "profile_elapsed_s": 4.620201540063135,
+      "normal_prefix_elapsed_s": 4.098865250009112,
+      "profile_started_utc": "2026-10-20T07:29:47.818544+00:00",
+      "normal_profile_token_ids_equal": true,
+      "main_ffn_groups": [
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,5120;34816,5120",
+          "main_graph": true,
+          "calls": 4224,
+          "total_ms": 1211.42344,
+          "mean_us": 286.79532196969694,
+          "mte2_activity_ratio": 0.9873436663731746,
+          "mac_activity_ratio": 0.11529581369170135
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "2,17408;5120,17408",
+          "main_graph": true,
+          "calls": 4224,
+          "total_ms": 641.60398,
+          "mean_us": 151.89488162878789,
+          "mte2_activity_ratio": 0.883780560214109,
+          "mac_activity_ratio": 0.1547023674946654
+        }
+      ],
+      "main_ffn_total_ms": 1853.02742,
+      "main_ffn_ms_per_output_token": 14.47677671875,
+      "all_compute_ms_per_output_token": 27.84867734375086,
+      "backend_validation": {
+        "groups_checked": 167,
+        "kernel_count": 117128,
+        "sql_types_checked": 20,
+        "max_time_error_us": "0",
+        "counts_and_totals_match": true,
+        "draft_ffn_calls": 0
+      }
+    },
+    "new-p0": {
+      "decode_rounds": 26,
+      "decode_span_ms": 1951.4277,
+      "graph_replay_commands": 52,
+      "target_ffn_calls_per_round": 64,
+      "main_graph_model_id": "1252",
+      "draft_graph_model_ids": [
+        "1253"
+      ],
+      "compute_union_ms": 1934.46962,
+      "no_compute_ms": 16.95808,
+      "no_compute_pct": 0.8690088800112861,
+      "cycle_medians": {
+        "span_ms": 75.08642,
+        "main_graph_window_ms": 52.15222,
+        "main_graph_kernel_sum_ms": 50.30716,
+        "after_graph_window_ms": 22.92468,
+        "outside_graph_kernel_sum_ms": 24.11786,
+        "no_compute_ms": 0.66336
+      },
+      "phase_device_totals": {
+        "main_verification_graph": {
+          "calls": 35438,
+          "kernel_sum_ms": 1307.6579600000243,
+          "union_ms": 1307.65796
+        },
+        "unattributed": {
+          "calls": 5590,
+          "kernel_sum_ms": 41.561600000000006,
+          "union_ms": 41.5616
+        },
+        "post process": {
+          "calls": 78,
+          "kernel_sum_ms": 50.64262000000001,
+          "union_ms": 50.64262
+        },
+        "sample_token": {
+          "calls": 390,
+          "kernel_sum_ms": 4.857140000000001,
+          "union_ms": 4.85714
+        },
+        "async_state_update": {
+          "calls": 131,
+          "kernel_sum_ms": 0.28058,
+          "union_ms": 0.2794
+        },
+        "draft_token": {
+          "calls": 4471,
+          "kernel_sum_ms": 11.899780000000016,
+          "union_ms": 11.89978
+        },
+        "merged_draft_graph": {
+          "calls": 6916,
+          "kernel_sum_ms": 511.51340000000215,
+          "union_ms": 511.5134
+        },
+        "prepare input": {
+          "calls": 1925,
+          "kernel_sum_ms": 6.235560000000009,
+          "union_ms": 6.23556
+        }
+      },
+      "cpu_inclusive_scopes": {
+        "DFlash2::selector_walk": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "DFlash2::candidate_selector": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "DFlash2::lm_head_and_topk": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "draft_token": {
+          "calls": 26,
+          "inclusive_ms": 487.31366
+        },
+        "sample_token": {
+          "calls": 26,
+          "inclusive_ms": 32.45701
+        },
+        "post process": {
+          "calls": 26,
+          "inclusive_ms": 9.12047
+        },
+        "forward": {
+          "calls": 25,
+          "inclusive_ms": 287.02998
+        },
+        "prepare input": {
+          "calls": 26,
+          "inclusive_ms": 1003.39075
+        },
+        "async_state_update": {
+          "calls": 26,
+          "inclusive_ms": 16.50215
+        }
+      },
+      "phase_device_types": [
+        {
+          "phase": "main_verification_graph",
+          "type": "MatMulV2",
+          "calls": 7904,
+          "total_ms": 1081.298220000001
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "MatMulV2",
+          "calls": 1092,
+          "total_ms": 475.82184000000086
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "RecurrentGatedDeltaRule",
+          "calls": 1248,
+          "total_ms": 59.259420000000006
+        },
+        {
+          "phase": "post process",
+          "type": "MatMulV2",
+          "calls": 26,
+          "total_ms": 50.29357999999999
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Transpose",
+          "calls": 1248,
+          "total_ms": 23.404699999999988
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Slice",
+          "calls": 9568,
+          "total_ms": 23.279740000000007
+        },
+        {
+          "phase": "unattributed",
+          "type": "fused_gdn_gating_kernel",
+          "calls": 1248,
+          "total_ms": 22.716699999999975
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ConcatD",
+          "calls": 1248,
+          "total_ms": 20.87455999999998
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "SwiGlu",
+          "calls": 1664,
+          "total_ms": 19.540559999999996
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "CausalConv1d",
+          "calls": 1248,
+          "total_ms": 19.47888
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "AddRmsNormBias",
+          "calls": 3328,
+          "total_ms": 13.242820000000057
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "FusedInferAttentionScore",
+          "calls": 416,
+          "total_ms": 11.483199999999997
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ZerosLike",
+          "calls": 1248,
+          "total_ms": 10.415639999999971
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Add",
+          "calls": 4160,
+          "total_ms": 8.243140000000011
+        },
+        {
+          "phase": "unattributed",
+          "type": "_layer_norm_fwd_1pass_kernel_npu",
+          "calls": 1248,
+          "total_ms": 6.849960000000003
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "ArgMaxV2",
+          "calls": 182,
+          "total_ms": 6.61256
+        },
+        {
+          "phase": "unattributed",
+          "type": "l2norm_fwd_kernel2",
+          "calls": 2496,
+          "total_ms": 6.362540000000011
+        },
+        {
+          "phase": "unattributed",
+          "type": "split_qkv_rmsnorm_mrope_kernel",
+          "calls": 598,
+          "total_ms": 5.632399999999998
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "FusedInferAttentionScore",
+          "calls": 182,
+          "total_ms": 5.160260000000003
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Mul",
+          "calls": 416,
+          "total_ms": 4.980459999999999
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Index",
+          "calls": 416,
+          "total_ms": 4.659720000000003
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "Index",
+          "calls": 416,
+          "total_ms": 3.9118399999999993
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Sigmoid",
+          "calls": 416,
+          "total_ms": 3.1393199999999983
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "GemmaRmsNorm",
+          "calls": 546,
+          "total_ms": 2.697019999999998
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "IndexCheck",
+          "calls": 416,
+          "total_ms": 2.5927999999999978
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "SwiGlu",
+          "calls": 182,
+          "total_ms": 2.1604799999999993
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "Mul",
+          "calls": 182,
+          "total_ms": 2.119920000000001
+        },
+        {
+          "phase": "prepare input",
+          "type": "Index",
+          "calls": 250,
+          "total_ms": 2.064739999999999
+        },
+        {
+          "phase": "sample_token",
+          "type": "Index",
+          "calls": 52,
+          "total_ms": 2.0379400000000003
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "IndexCheck",
+          "calls": 416,
+          "total_ms": 1.9373399999999996
+        },
+        {
+          "phase": "sample_token",
+          "type": "ArgMaxV2",
+          "calls": 52,
+          "total_ms": 1.5794400000000002
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "Add",
+          "calls": 884,
+          "total_ms": 1.5681400000000023
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "ViewCopy",
+          "calls": 156,
+          "total_ms": 1.5268400000000006
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ScatterPaKvCache",
+          "calls": 416,
+          "total_ms": 1.4902400000000005
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "AddRmsNormBias",
+          "calls": 364,
+          "total_ms": 1.4277800000000007
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "Sigmoid",
+          "calls": 182,
+          "total_ms": 1.3827000000000007
+        },
+        {
+          "phase": "draft_token",
+          "type": "Transpose",
+          "calls": 104,
+          "total_ms": 1.3721999999999999
+        },
+        {
+          "phase": "draft_token",
+          "type": "GatherElements",
+          "calls": 130,
+          "total_ms": 1.35514
+        },
+        {
+          "phase": "draft_token",
+          "type": "Cast",
+          "calls": 935,
+          "total_ms": 1.1546799999999993
+        },
+        {
+          "phase": "draft_token",
+          "type": "Index",
+          "calls": 104,
+          "total_ms": 1.0195400000000003
+        }
+      ],
+      "whole_profile_compute_top": [
+        {
+          "op_type": "MatMulV2",
+          "calls": 9369,
+          "total_ms": 1678.94312
+        },
+        {
+          "op_type": "RecurrentGatedDeltaRule",
+          "calls": 1248,
+          "total_ms": 59.25942
+        },
+        {
+          "op_type": "Transpose",
+          "calls": 1456,
+          "total_ms": 26.21226
+        },
+        {
+          "op_type": "Slice",
+          "calls": 10369,
+          "total_ms": 25.51536
+        },
+        {
+          "op_type": "fused_gdn_gating_kernel",
+          "calls": 1296,
+          "total_ms": 23.62018
+        },
+        {
+          "op_type": "SwiGlu",
+          "calls": 1917,
+          "total_ms": 23.29966
+        },
+        {
+          "op_type": "ConcatD",
+          "calls": 1485,
+          "total_ms": 22.3817
+        },
+        {
+          "op_type": "CausalConv1d",
+          "calls": 1296,
+          "total_ms": 21.3033
+        },
+        {
+          "op_type": "FusedInferAttentionScore",
+          "calls": 621,
+          "total_ms": 17.47554
+        },
+        {
+          "op_type": "AddRmsNormBias",
+          "calls": 3834,
+          "total_ms": 17.02262
+        },
+        {
+          "op_type": "Index",
+          "calls": 1359,
+          "total_ms": 16.6737
+        },
+        {
+          "op_type": "ZerosLike",
+          "calls": 1656,
+          "total_ms": 11.3219
+        },
+        {
+          "op_type": "Add",
+          "calls": 5857,
+          "total_ms": 11.1744
+        },
+        {
+          "op_type": "ArgMaxV2",
+          "calls": 242,
+          "total_ms": 8.4759
+        },
+        {
+          "op_type": "ChunkGatedDeltaRule",
+          "calls": 48,
+          "total_ms": 8.3345
+        },
+        {
+          "op_type": "_layer_norm_fwd_1pass_kernel_npu",
+          "calls": 1296,
+          "total_ms": 7.6707
+        },
+        {
+          "op_type": "Mul",
+          "calls": 783,
+          "total_ms": 7.63418
+        },
+        {
+          "op_type": "l2norm_fwd_kernel2",
+          "calls": 2592,
+          "total_ms": 7.03902
+        },
+        {
+          "op_type": "IndexCheck",
+          "calls": 1434,
+          "total_ms": 6.63728
+        },
+        {
+          "op_type": "split_qkv_rmsnorm_mrope_kernel",
+          "calls": 621,
+          "total_ms": 6.14616
+        }
+      ],
+      "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT op_type, COUNT(*) AS calls, ROUND(SUM(duration_ns)/1000000.0,6) AS total_ms\nFROM compute_view GROUP BY op_type ORDER BY total_ms DESC LIMIT 20;",
+      "boundary": "First hardware MODEL_EXECUTE to last compute completion; prefill excluded; final draft work retained.",
+      "limits": [
+        "Profiler timings are not unprofiled benchmark speed.",
+        "CPU scopes are inclusive and overlap; do not add them to device time.",
+        "Device groups contain cumulative kernel sums and interval unions; distinct phases may overlap.",
+        "No-compute includes DMA/control/wait and is not automatically host idle.",
+        "Target graph identity uses FFN up-projections, with exactly 64 per replay; target first-kernel boundaries exclude merged draft replays."
+      ],
+      "question_index": 0,
+      "output_tokens": 128,
+      "profile_elapsed_s": 2.2977448899764568,
+      "normal_prefix_elapsed_s": 3.7305190700571984,
+      "profile_started_utc": "2026-10-20T07:34:17.998225+00:00",
+      "normal_profile_token_ids_equal": true,
+      "main_ffn_groups": [
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,5120;34816,5120",
+          "main_graph": true,
+          "calls": 1664,
+          "total_ms": 496.40556,
+          "mean_us": 298.32064903846157,
+          "mte2_activity_ratio": 0.9881340163474402,
+          "mac_activity_ratio": 0.1116581142644733
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,17408;5120,17408",
+          "main_graph": true,
+          "calls": 1664,
+          "total_ms": 256.38632,
+          "mean_us": 154.07831730769232,
+          "mte2_activity_ratio": 0.8858007739258478,
+          "mac_activity_ratio": 0.15369522687481918
+        }
+      ],
+      "main_ffn_total_ms": 752.79188,
+      "main_ffn_ms_per_output_token": 5.8811865625,
+      "all_compute_ms_per_output_token": 15.114442500000209,
+      "backend_validation": {
+        "groups_checked": 193,
+        "kernel_count": 57653,
+        "sql_types_checked": 20,
+        "max_time_error_us": "0",
+        "counts_and_totals_match": true,
+        "draft_ffn_calls": 182
+      },
+      "old_new_profile_token_ids_equal": true
+    },
+    "new-p1": {
+      "decode_rounds": 31,
+      "decode_span_ms": 2327.58414,
+      "graph_replay_commands": 62,
+      "target_ffn_calls_per_round": 64,
+      "main_graph_model_id": "1252",
+      "draft_graph_model_ids": [
+        "1253"
+      ],
+      "compute_union_ms": 2307.12924,
+      "no_compute_ms": 20.4549,
+      "no_compute_pct": 0.8788038914889668,
+      "cycle_medians": {
+        "span_ms": 75.10882000000001,
+        "main_graph_window_ms": 52.15539,
+        "main_graph_kernel_sum_ms": 50.306380000000004,
+        "after_graph_window_ms": 22.95433,
+        "outside_graph_kernel_sum_ms": 24.127209999999998,
+        "no_compute_ms": 0.66913
+      },
+      "phase_device_totals": {
+        "main_verification_graph": {
+          "calls": 42253,
+          "kernel_sum_ms": 1559.3956800000233,
+          "union_ms": 1559.39568
+        },
+        "unattributed": {
+          "calls": 6665,
+          "kernel_sum_ms": 49.52132,
+          "union_ms": 49.52132
+        },
+        "post process": {
+          "calls": 93,
+          "kernel_sum_ms": 60.43624000000001,
+          "union_ms": 60.43624
+        },
+        "sample_token": {
+          "calls": 465,
+          "kernel_sum_ms": 5.798819999999998,
+          "union_ms": 5.79882
+        },
+        "async_state_update": {
+          "calls": 157,
+          "kernel_sum_ms": 0.3362200000000002,
+          "union_ms": 0.3337
+        },
+        "draft_token": {
+          "calls": 5330,
+          "kernel_sum_ms": 14.184160000000054,
+          "union_ms": 14.18416
+        },
+        "merged_draft_graph": {
+          "calls": 8246,
+          "kernel_sum_ms": 610.1659600000005,
+          "union_ms": 610.16596
+        },
+        "prepare input": {
+          "calls": 2310,
+          "kernel_sum_ms": 7.507599999999994,
+          "union_ms": 7.5076
+        }
+      },
+      "cpu_inclusive_scopes": {
+        "DFlash2::selector_walk": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "DFlash2::candidate_selector": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "DFlash2::lm_head_and_topk": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "draft_token": {
+          "calls": 31,
+          "inclusive_ms": 625.28774
+        },
+        "sample_token": {
+          "calls": 31,
+          "inclusive_ms": 41.75264
+        },
+        "post process": {
+          "calls": 31,
+          "inclusive_ms": 11.44267
+        },
+        "forward": {
+          "calls": 30,
+          "inclusive_ms": 327.207525
+        },
+        "prepare input": {
+          "calls": 31,
+          "inclusive_ms": 1174.12851
+        },
+        "async_state_update": {
+          "calls": 31,
+          "inclusive_ms": 20.54854
+        }
+      },
+      "phase_device_types": [
+        {
+          "phase": "main_verification_graph",
+          "type": "MatMulV2",
+          "calls": 9424,
+          "total_ms": 1289.5998999999974
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "MatMulV2",
+          "calls": 1302,
+          "total_ms": 567.5457399999987
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "RecurrentGatedDeltaRule",
+          "calls": 1488,
+          "total_ms": 70.68158000000003
+        },
+        {
+          "phase": "post process",
+          "type": "MatMulV2",
+          "calls": 31,
+          "total_ms": 60.01032
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Transpose",
+          "calls": 1488,
+          "total_ms": 27.85096
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Slice",
+          "calls": 11408,
+          "total_ms": 27.731980000000192
+        },
+        {
+          "phase": "unattributed",
+          "type": "fused_gdn_gating_kernel",
+          "calls": 1488,
+          "total_ms": 27.088720000000016
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ConcatD",
+          "calls": 1488,
+          "total_ms": 24.899420000000013
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "SwiGlu",
+          "calls": 1984,
+          "total_ms": 23.262279999999983
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "CausalConv1d",
+          "calls": 1488,
+          "total_ms": 23.221179999999965
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "AddRmsNormBias",
+          "calls": 3968,
+          "total_ms": 15.799920000000082
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "FusedInferAttentionScore",
+          "calls": 496,
+          "total_ms": 13.656399999999996
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ZerosLike",
+          "calls": 1488,
+          "total_ms": 12.397359999999983
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Add",
+          "calls": 4960,
+          "total_ms": 9.805960000000002
+        },
+        {
+          "phase": "unattributed",
+          "type": "_layer_norm_fwd_1pass_kernel_npu",
+          "calls": 1488,
+          "total_ms": 8.150360000000001
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "ArgMaxV2",
+          "calls": 217,
+          "total_ms": 7.87894
+        },
+        {
+          "phase": "unattributed",
+          "type": "l2norm_fwd_kernel2",
+          "calls": 2976,
+          "total_ms": 7.57220000000001
+        },
+        {
+          "phase": "unattributed",
+          "type": "split_qkv_rmsnorm_mrope_kernel",
+          "calls": 713,
+          "total_ms": 6.710039999999997
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "FusedInferAttentionScore",
+          "calls": 217,
+          "total_ms": 6.19882
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Mul",
+          "calls": 496,
+          "total_ms": 5.935579999999998
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Index",
+          "calls": 496,
+          "total_ms": 5.625339999999994
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "Index",
+          "calls": 496,
+          "total_ms": 4.6991000000000005
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "Sigmoid",
+          "calls": 496,
+          "total_ms": 3.7384199999999987
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "GemmaRmsNorm",
+          "calls": 651,
+          "total_ms": 3.215760000000003
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "IndexCheck",
+          "calls": 496,
+          "total_ms": 3.0878999999999976
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "SwiGlu",
+          "calls": 217,
+          "total_ms": 2.57374
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "Mul",
+          "calls": 217,
+          "total_ms": 2.5275800000000017
+        },
+        {
+          "phase": "prepare input",
+          "type": "Index",
+          "calls": 300,
+          "total_ms": 2.495180000000001
+        },
+        {
+          "phase": "sample_token",
+          "type": "Index",
+          "calls": 62,
+          "total_ms": 2.44782
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "IndexCheck",
+          "calls": 496,
+          "total_ms": 2.318420000000001
+        },
+        {
+          "phase": "sample_token",
+          "type": "ArgMaxV2",
+          "calls": 62,
+          "total_ms": 1.8833199999999997
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "Add",
+          "calls": 1054,
+          "total_ms": 1.8720400000000037
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "ViewCopy",
+          "calls": 186,
+          "total_ms": 1.8225200000000001
+        },
+        {
+          "phase": "main_verification_graph",
+          "type": "ScatterPaKvCache",
+          "calls": 496,
+          "total_ms": 1.7820000000000011
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "AddRmsNormBias",
+          "calls": 434,
+          "total_ms": 1.698300000000001
+        },
+        {
+          "phase": "draft_token",
+          "type": "Transpose",
+          "calls": 124,
+          "total_ms": 1.6612399999999994
+        },
+        {
+          "phase": "merged_draft_graph",
+          "type": "Sigmoid",
+          "calls": 217,
+          "total_ms": 1.6489600000000006
+        },
+        {
+          "phase": "draft_token",
+          "type": "GatherElements",
+          "calls": 155,
+          "total_ms": 1.6121600000000005
+        },
+        {
+          "phase": "draft_token",
+          "type": "Cast",
+          "calls": 1114,
+          "total_ms": 1.3718799999999993
+        },
+        {
+          "phase": "draft_token",
+          "type": "Index",
+          "calls": 124,
+          "total_ms": 1.2129400000000008
+        }
+      ],
+      "whole_profile_compute_top": [
+        {
+          "op_type": "MatMulV2",
+          "calls": 11104,
+          "total_ms": 1988.27704
+        },
+        {
+          "op_type": "RecurrentGatedDeltaRule",
+          "calls": 1488,
+          "total_ms": 70.68158
+        },
+        {
+          "op_type": "Transpose",
+          "calls": 1726,
+          "total_ms": 31.06612
+        },
+        {
+          "op_type": "Slice",
+          "calls": 12289,
+          "total_ms": 30.08442
+        },
+        {
+          "op_type": "fused_gdn_gating_kernel",
+          "calls": 1536,
+          "total_ms": 27.99412
+        },
+        {
+          "op_type": "SwiGlu",
+          "calls": 2272,
+          "total_ms": 27.43394
+        },
+        {
+          "op_type": "ConcatD",
+          "calls": 1760,
+          "total_ms": 26.51626
+        },
+        {
+          "op_type": "CausalConv1d",
+          "calls": 1536,
+          "total_ms": 25.01912
+        },
+        {
+          "op_type": "FusedInferAttentionScore",
+          "calls": 736,
+          "total_ms": 20.6498
+        },
+        {
+          "op_type": "AddRmsNormBias",
+          "calls": 4544,
+          "total_ms": 19.78064
+        },
+        {
+          "op_type": "Index",
+          "calls": 1604,
+          "total_ms": 19.48
+        },
+        {
+          "op_type": "ZerosLike",
+          "calls": 1961,
+          "total_ms": 13.38884
+        },
+        {
+          "op_type": "Add",
+          "calls": 6942,
+          "total_ms": 13.24376
+        },
+        {
+          "op_type": "ArgMaxV2",
+          "calls": 287,
+          "total_ms": 10.04804
+        },
+        {
+          "op_type": "Mul",
+          "calls": 928,
+          "total_ms": 9.0374
+        },
+        {
+          "op_type": "_layer_norm_fwd_1pass_kernel_npu",
+          "calls": 1536,
+          "total_ms": 8.97814
+        },
+        {
+          "op_type": "ChunkGatedDeltaRule",
+          "calls": 48,
+          "total_ms": 8.31032
+        },
+        {
+          "op_type": "l2norm_fwd_kernel2",
+          "calls": 3072,
+          "total_ms": 8.25544
+        },
+        {
+          "op_type": "IndexCheck",
+          "calls": 1684,
+          "total_ms": 7.7918
+        },
+        {
+          "op_type": "split_qkv_rmsnorm_mrope_kernel",
+          "calls": 736,
+          "total_ms": 7.22806
+        }
+      ],
+      "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT op_type, COUNT(*) AS calls, ROUND(SUM(duration_ns)/1000000.0,6) AS total_ms\nFROM compute_view GROUP BY op_type ORDER BY total_ms DESC LIMIT 20;",
+      "boundary": "First hardware MODEL_EXECUTE to last compute completion; prefill excluded; final draft work retained.",
+      "limits": [
+        "Profiler timings are not unprofiled benchmark speed.",
+        "CPU scopes are inclusive and overlap; do not add them to device time.",
+        "Device groups contain cumulative kernel sums and interval unions; distinct phases may overlap.",
+        "No-compute includes DMA/control/wait and is not automatically host idle.",
+        "Target graph identity uses FFN up-projections, with exactly 64 per replay; target first-kernel boundaries exclude merged draft replays."
+      ],
+      "question_index": 2,
+      "output_tokens": 128,
+      "profile_elapsed_s": 2.7480400200001895,
+      "normal_prefix_elapsed_s": 2.6079579200595617,
+      "profile_started_utc": "2026-10-20T07:34:55.389361+00:00",
+      "normal_profile_token_ids_equal": true,
+      "main_ffn_groups": [
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,5120;34816,5120",
+          "main_graph": true,
+          "calls": 1984,
+          "total_ms": 592.2596,
+          "mean_us": 298.5179435483871,
+          "mte2_activity_ratio": 0.9881466043944259,
+          "mac_activity_ratio": 0.11159008444945434
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,17408;5120,17408",
+          "main_graph": true,
+          "calls": 1984,
+          "total_ms": 305.78342,
+          "mean_us": 154.12470766129033,
+          "mte2_activity_ratio": 0.8857903716951042,
+          "mac_activity_ratio": 0.153706076804295
+        }
+      ],
+      "main_ffn_total_ms": 898.04302,
+      "main_ffn_ms_per_output_token": 7.01596109375,
+      "all_compute_ms_per_output_token": 18.026140625000185,
+      "backend_validation": {
+        "groups_checked": 193,
+        "kernel_count": 68233,
+        "sql_types_checked": 20,
+        "max_time_error_us": "0",
+        "counts_and_totals_match": true,
+        "draft_ffn_calls": 217
+      },
+      "old_new_profile_token_ids_equal": true
+    }
+  },
+  "source_sha256": {
+    "old-p0/kernel_details.csv": "1f3024a0721d8a613995a1b5252ed5c24ea8ed3197454a382d2055a170c35bd4",
+    "old-p0/task_time.csv": "ad2c7ae896e07a18c68e2f4928309993c58a3ec5caa073f248367a18476cea09",
+    "old-p0/trace_view.json": "e68d08ae5e71be8a0b2b497669cc6fda9de15647b22fc3a04440de3efa9179dd",
+    "old-p0/ascend_pytorch_profiler_0.db": "ba7728ef3ae777af58f8306e381caac0875a19c16e9df2cca32e526657a34cec",
+    "old-p1/kernel_details.csv": "44554c2aaf4ee1b493cd318a83f0a899dc5a3274b4d8febf5279200e3e41e98e",
+    "old-p1/task_time.csv": "a2c9c3483b418ea45f17a06be50b01c5ab6a6257675254e7f141e6a7bceba915",
+    "old-p1/trace_view.json": "146b96ad0aea4b9e378f65d9fb285832332c6567635d008bed35d5dfd1072140",
+    "old-p1/ascend_pytorch_profiler_0.db": "d7d242969a6cbfa7ea33a0b41673c1f87cbc1b8ee051f10298c9bcb0034e00ce",
+    "new-p0/kernel_details.csv": "3883f2cd908349740057daa910b2d0164b039c36d3226c5aa758373cb9c77576",
+    "new-p0/task_time.csv": "b1e4cc6ad5e2aa33a8ef85a885677d6d2628a58c4080ebe8085933f471efa2f1",
+    "new-p0/trace_view.json": "6125e27247882aa8d356423d300547e7edfda9bb9bd4c8b23300458b55c0ffa5",
+    "new-p0/ascend_pytorch_profiler_0.db": "d12074bf8eaf3a7adf4cd7cd382e1201c597b91762c7273e7d8064d0dc23fbf0",
+    "new-p1/kernel_details.csv": "5f76a7a508540a50694498959ab4dfc1bc239a5e16f7aa749e4aa53d873ca188",
+    "new-p1/task_time.csv": "d81ef49c0d05a176117815bda2933ac72e4cc843099b24faff946435e06b3923",
+    "new-p1/trace_view.json": "6a5cc3f669c47c4395ebc055beac9340a2d289fc7cdfaf700290bebaad4421eb",
+    "new-p1/ascend_pytorch_profiler_0.db": "1b7dfc12a7e7b55be6deca922a7edefc4273462063653247efc37d38264fe45f"
+  },
+  "limits": [
+    "The four-question unprofiled receipts determine the speedup; these 128-token prefixes diagnose the phases.",
+    "New target and merged draft graphs are separated; every target replay has 64 FFN up/down calls, every draft replay 7.",
+    "First new normal prefix took 3.731s versus profiled 2.298s, so it includes an unisolated startup effect; do not claim negative profiler overhead or compare that pair as steady-state performance.",
+    "No-compute means no recorded compute kernel: it can include DMA/control/wait and is not a direct CPU idle metric.",
+    "No isolated graph-only or SSM-dtype ablation; do not assign the entire idle-gap change solely to graph mode.",
+    "Model weights are BF16 in both; SSM cache changes FP32 to BF16. Four correct math answers do not establish broad precision equivalence."
+  ]
+}
