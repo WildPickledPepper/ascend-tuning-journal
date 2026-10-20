@@ -18,6 +18,7 @@
 ## 最近一次记录的状态
 
 - 当前目标：**保持 BF16，依据 ms 工具证据调优推理**；新增按公开昇腾配方的双卡小样本验证。
+- **进行中**：[最佳单卡配置完整128题](experiments/vllm-mtp7/gsm128/README.md)于15:58:41正式开始；GSM8K测试集前128题、单并发、BF16 MTP7草稿图、无profiler。启动快照12/128，后台继续；尚无最终成绩。[快照](evidence/2026-10-20/vllm-mtp7-gsm128-started.json)。
 - 最新同题单卡对照：[vLLM MTP1→MTP7草稿图](experiments/vllm-mtp7/README.md)，同四题均844 token、4/4正确，**30.443→59.389 token/s，1.951倍**；验证448→171轮。Insight四份128-token采样共720个形状分组核对通过：第1题主模型70→26轮，两组FFN累计1.966→0.753秒，单次矩阵乘没有更快，收益来自更少重复验证与权重读取。SSM状态FP32→BF16等因素同时改变，未做独立消融。15:38:46确认恢复原服务，卡7未重启；MTP7未设默认。[正常测速](evidence/2026-10-20/vllm-mtp1-vs-mtp7-gsm.json)、[采样](evidence/2026-10-20/vllm-mtp1-vs-mtp7-profiles.json)。
 - 新增两个skill复核：[数据校验与算子MFU](experiments/vllm-mtp7/mfu.md)。四份数据均valid；主模型升维MFU **0.702%→2.701%**，降维 **0.663%→2.615%**，按CANN平台约353.89TFLOP/s理论分母估算。M2→8提高权重计算复用，仍未消除搬运主导；这是算子逻辑FLOP口径，不是整模型有效输出MFU。本次复用旧采样，没有新增NPU请求。
 - 同四题vLLM新配置59.389相对此前SGLang单卡42.167高40.84%，但第三题输出575/692、首题耗时差异，不能视作普遍框架排名。[独立回执](evidence/2026-10-20/vllm-mtp7-vs-sglang.json)。
