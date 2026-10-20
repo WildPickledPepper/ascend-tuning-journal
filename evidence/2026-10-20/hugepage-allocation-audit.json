@@ -1,0 +1,439 @@
+{
+  "kind": "allocator capability probe, not model performance measurement",
+  "physical_device": 6,
+  "dtype": "BF16",
+  "driver_version": "25.3.rc1.2",
+  "cann_version": "9.1.0",
+  "torch_npu_version": "2.10.0.post4",
+  "source_commit": "5dd8ef3f9b375b5ae4a83538d5785754148c3302",
+  "physical_1g_page_allocation_succeeded": false,
+  "conclusion": "Both requested 1G modes fell back to 2M pages; ACL_HBM_MEM_HUGE1G free and total were zero. A 1GiB allocator segment is not proof of a physical 1GiB page.",
+  "results": {
+    "default": {
+      "utc": "2026-10-20T08:40:07.436258+00:00",
+      "config": "expandable_segments:True",
+      "torch_npu_version": "2.10.0.post4",
+      "before": {
+        "hbm": {
+          "return_code": 0,
+          "free_bytes": 5487411200,
+          "total_bytes": 65452113920
+        },
+        "hbm_2m": {
+          "return_code": 0,
+          "free_bytes": 92274688,
+          "total_bytes": 59678654464
+        },
+        "hbm_1g": {
+          "return_code": 0,
+          "free_bytes": 0,
+          "total_bytes": 0
+        }
+      },
+      "phases": [
+        {
+          "request_mib": 4,
+          "segments": [
+            {
+              "total_size": 20971520,
+              "allocated_size": 4194816,
+              "segment_type": "large",
+              "is_expandable": true
+            }
+          ],
+          "counters": {
+            "hbm": {
+              "return_code": 0,
+              "free_bytes": 5462245376,
+              "total_bytes": 65452113920
+            },
+            "hbm_2m": {
+              "return_code": 0,
+              "free_bytes": 67108864,
+              "total_bytes": 59678654464
+            },
+            "hbm_1g": {
+              "return_code": 0,
+              "free_bytes": 0,
+              "total_bytes": 0
+            }
+          },
+          "reserved_bytes": 20971520,
+          "allocated_bytes": 4194816
+        },
+        {
+          "request_mib": 170,
+          "segments": [
+            {
+              "total_size": 188743680,
+              "allocated_size": 182453248,
+              "segment_type": "large",
+              "is_expandable": true
+            }
+          ],
+          "counters": {
+            "hbm": {
+              "return_code": 0,
+              "free_bytes": 5294473216,
+              "total_bytes": 65452113920
+            },
+            "hbm_2m": {
+              "return_code": 0,
+              "free_bytes": 0,
+              "total_bytes": 59779317760
+            },
+            "hbm_1g": {
+              "return_code": 0,
+              "free_bytes": 0,
+              "total_bytes": 0
+            }
+          },
+          "reserved_bytes": 188743680,
+          "allocated_bytes": 182453248
+        },
+        {
+          "request_mib": 340,
+          "segments": [
+            {
+              "total_size": 545259520,
+              "allocated_size": 538969600,
+              "segment_type": "large",
+              "is_expandable": true
+            }
+          ],
+          "counters": {
+            "hbm": {
+              "return_code": 0,
+              "free_bytes": 4935860224,
+              "total_bytes": 65452113920
+            },
+            "hbm_2m": {
+              "return_code": 0,
+              "free_bytes": 0,
+              "total_bytes": 60135833600
+            },
+            "hbm_1g": {
+              "return_code": 0,
+              "free_bytes": 0,
+              "total_bytes": 0
+            }
+          },
+          "reserved_bytes": 545259520,
+          "allocated_bytes": 538969600
+        }
+      ],
+      "after": {
+        "hbm": {
+          "return_code": 0,
+          "free_bytes": 5481119744,
+          "total_bytes": 65452113920
+        },
+        "hbm_2m": {
+          "return_code": 0,
+          "free_bytes": 88080384,
+          "total_bytes": 59678654464
+        },
+        "hbm_1g": {
+          "return_code": 0,
+          "free_bytes": 0,
+          "total_bytes": 0
+        }
+      },
+      "reserved_after": 0,
+      "limitation": "Allocator probe only; no model throughput or TLB measurements",
+      "fallback_2m_warning": false,
+      "stderr_sha256": "fa4d06e1f06995f8ef46eb650010a225d618522e4c95fff75386e4a92191f208",
+      "receipt_sha256": "5aae5e79e94abedd8eb83fea179d33f43dd6f451c607efec0234ee51979d9f8c"
+    },
+    "huge1g": {
+      "utc": "2026-10-20T08:40:21.312121+00:00",
+      "config": "page_size:1g",
+      "torch_npu_version": "2.10.0.post4",
+      "before": {
+        "hbm": {
+          "return_code": 0,
+          "free_bytes": 5487325184,
+          "total_bytes": 65452113920
+        },
+        "hbm_2m": {
+          "return_code": 0,
+          "free_bytes": 92274688,
+          "total_bytes": 59678654464
+        },
+        "hbm_1g": {
+          "return_code": 0,
+          "free_bytes": 0,
+          "total_bytes": 0
+        }
+      },
+      "phases": [
+        {
+          "request_mib": 4,
+          "segments": [
+            {
+              "total_size": 1073741824,
+              "allocated_size": 4194816,
+              "segment_type": "large",
+              "is_expandable": false
+            }
+          ],
+          "counters": {
+            "hbm": {
+              "return_code": 0,
+              "free_bytes": 4407291904,
+              "total_bytes": 65452113920
+            },
+            "hbm_2m": {
+              "return_code": 0,
+              "free_bytes": 0,
+              "total_bytes": 60664315904
+            },
+            "hbm_1g": {
+              "return_code": 0,
+              "free_bytes": 0,
+              "total_bytes": 0
+            }
+          },
+          "reserved_bytes": 1073741824,
+          "allocated_bytes": 4194816
+        },
+        {
+          "request_mib": 170,
+          "segments": [
+            {
+              "total_size": 1073741824,
+              "allocated_size": 182453248,
+              "segment_type": "large",
+              "is_expandable": false
+            }
+          ],
+          "counters": {
+            "hbm": {
+              "return_code": 0,
+              "free_bytes": 4407291904,
+              "total_bytes": 65452113920
+            },
+            "hbm_2m": {
+              "return_code": 0,
+              "free_bytes": 0,
+              "total_bytes": 60664315904
+            },
+            "hbm_1g": {
+              "return_code": 0,
+              "free_bytes": 0,
+              "total_bytes": 0
+            }
+          },
+          "reserved_bytes": 1073741824,
+          "allocated_bytes": 182453248
+        },
+        {
+          "request_mib": 340,
+          "segments": [
+            {
+              "total_size": 1073741824,
+              "allocated_size": 538969600,
+              "segment_type": "large",
+              "is_expandable": false
+            }
+          ],
+          "counters": {
+            "hbm": {
+              "return_code": 0,
+              "free_bytes": 4407291904,
+              "total_bytes": 65452113920
+            },
+            "hbm_2m": {
+              "return_code": 0,
+              "free_bytes": 0,
+              "total_bytes": 60664315904
+            },
+            "hbm_1g": {
+              "return_code": 0,
+              "free_bytes": 0,
+              "total_bytes": 0
+            }
+          },
+          "reserved_bytes": 1073741824,
+          "allocated_bytes": 538969600
+        }
+      ],
+      "after": {
+        "hbm": {
+          "return_code": 0,
+          "free_bytes": 5480722432,
+          "total_bytes": 65452113920
+        },
+        "hbm_2m": {
+          "return_code": 0,
+          "free_bytes": 88080384,
+          "total_bytes": 59678654464
+        },
+        "hbm_1g": {
+          "return_code": 0,
+          "free_bytes": 0,
+          "total_bytes": 0
+        }
+      },
+      "reserved_after": 0,
+      "limitation": "Allocator probe only; no model throughput or TLB measurements",
+      "fallback_2m_warning": true,
+      "stderr_sha256": "4b2d23b8fdf754e5de8d5c5cab1ce8b422b2185ffa5631a481221e7e26475850",
+      "receipt_sha256": "d4bd2fd112eb7c9ec06452b5ae9dc116d247277dc95e0fa1f5f004b928a8d63b"
+    },
+    "huge1g_expandable": {
+      "utc": "2026-10-20T08:40:35.169654+00:00",
+      "config": "page_size:1g,expandable_segments:True",
+      "torch_npu_version": "2.10.0.post4",
+      "before": {
+        "hbm": {
+          "return_code": 0,
+          "free_bytes": 5487263744,
+          "total_bytes": 65452113920
+        },
+        "hbm_2m": {
+          "return_code": 0,
+          "free_bytes": 92274688,
+          "total_bytes": 59678654464
+        },
+        "hbm_1g": {
+          "return_code": 0,
+          "free_bytes": 0,
+          "total_bytes": 0
+        }
+      },
+      "phases": [
+        {
+          "request_mib": 4,
+          "segments": [
+            {
+              "total_size": 1073741824,
+              "allocated_size": 4194816,
+              "segment_type": "large",
+              "is_expandable": true
+            }
+          ],
+          "counters": {
+            "hbm": {
+              "return_code": 0,
+              "free_bytes": 4405133312,
+              "total_bytes": 65452113920
+            },
+            "hbm_2m": {
+              "return_code": 0,
+              "free_bytes": 0,
+              "total_bytes": 60664315904
+            },
+            "hbm_1g": {
+              "return_code": 0,
+              "free_bytes": 0,
+              "total_bytes": 0
+            }
+          },
+          "reserved_bytes": 1073741824,
+          "allocated_bytes": 4194816
+        },
+        {
+          "request_mib": 170,
+          "segments": [
+            {
+              "total_size": 1073741824,
+              "allocated_size": 182453248,
+              "segment_type": "large",
+              "is_expandable": true
+            }
+          ],
+          "counters": {
+            "hbm": {
+              "return_code": 0,
+              "free_bytes": 4405133312,
+              "total_bytes": 65452113920
+            },
+            "hbm_2m": {
+              "return_code": 0,
+              "free_bytes": 0,
+              "total_bytes": 60664315904
+            },
+            "hbm_1g": {
+              "return_code": 0,
+              "free_bytes": 0,
+              "total_bytes": 0
+            }
+          },
+          "reserved_bytes": 1073741824,
+          "allocated_bytes": 182453248
+        },
+        {
+          "request_mib": 340,
+          "segments": [
+            {
+              "total_size": 1073741824,
+              "allocated_size": 538969600,
+              "segment_type": "large",
+              "is_expandable": true
+            }
+          ],
+          "counters": {
+            "hbm": {
+              "return_code": 0,
+              "free_bytes": 4405133312,
+              "total_bytes": 65452113920
+            },
+            "hbm_2m": {
+              "return_code": 0,
+              "free_bytes": 0,
+              "total_bytes": 60664315904
+            },
+            "hbm_1g": {
+              "return_code": 0,
+              "free_bytes": 0,
+              "total_bytes": 0
+            }
+          },
+          "reserved_bytes": 1073741824,
+          "allocated_bytes": 538969600
+        }
+      ],
+      "after": {
+        "hbm": {
+          "return_code": 0,
+          "free_bytes": 5478875136,
+          "total_bytes": 65452113920
+        },
+        "hbm_2m": {
+          "return_code": 0,
+          "free_bytes": 88080384,
+          "total_bytes": 59678654464
+        },
+        "hbm_1g": {
+          "return_code": 0,
+          "free_bytes": 0,
+          "total_bytes": 0
+        }
+      },
+      "reserved_after": 0,
+      "limitation": "Allocator probe only; no model throughput or TLB measurements",
+      "fallback_2m_warning": true,
+      "stderr_sha256": "d2d445594480453ec8c8ce201884a568f4508dbc7811e300a6cbcb4b5a9af756",
+      "receipt_sha256": "596e99a0392009f2e44305f78627a1cfe941a2f134a3e9a39deeff89cfad80fd"
+    }
+  },
+  "final_check_utc": "2026-10-20T08:42:03.617745+00:00",
+  "original_service_processes_still_exist": true,
+  "service_health": {
+    "8038": 200,
+    "8039": 200
+  },
+  "service_config_modified": false,
+  "model_service_restarted": false,
+  "limitations": [
+    "No TLB/stall/throughput measurement in this probe.",
+    "Current services use original MTP1 and AR; the fastest MTP7 configuration was not relaunched.",
+    "No global driver configuration, host hugepages or device reset was changed.",
+    "Exact administrative provisioning procedure is not verified."
+  ],
+  "sources": [
+    "https://github.com/Ascend/pytorch/blob/5dd8ef3f9b375b5ae4a83538d5785754148c3302/torch_npu/csrc/core/npu/interface/AclInterface.cpp",
+    "https://github.com/Ascend/pytorch/blob/master/docs/zh/api/environment_variable/memory_management/PYTORCH_NPU_ALLOC_CONF.md"
+  ]
+}

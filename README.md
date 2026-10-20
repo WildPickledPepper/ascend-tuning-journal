@@ -17,6 +17,8 @@
 
 ## 最近一次记录的状态
 
+- 新核验：[1GB显存大页](experiments/hugepage-audit/README.md)软件支持，但两种1g子进程配置均因无可用预分配资源回退2MB；1GiB内存池块不代表物理大页。原服务未重启，未测加速。[证据](evidence/2026-10-20/hugepage-allocation-audit.json)。
+
 - 当前目标：**保持 BF16，依据 ms 工具证据调优推理**；新增按公开昇腾配方的双卡小样本验证。
 - **128题已完成**：[最佳单卡BF16 MTP7草稿图](experiments/vllm-mtp7/gsm128/README.md)，GSM8K前128题、单并发、无profiler：**57.198 token/s**、40767token/712.739秒，平均服务端TTFT **341.543ms**，就绪显存59.83GiB（非峰值）。原评测器 **121/128=94.53%**；7项未得分含4个2048-token截断及3个答案末尾数字误提取，原得分未改。16:13:44已恢复原服务，卡7未重启。[最终证据](evidence/2026-10-20/vllm-mtp7-gsm128-result.json)。
 - 最新同题单卡对照：[vLLM MTP1→MTP7草稿图](experiments/vllm-mtp7/README.md)，同四题均844 token、4/4正确，**30.443→59.389 token/s，1.951倍**；验证448→171轮。Insight四份128-token采样共720个形状分组核对通过：第1题主模型70→26轮，两组FFN累计1.966→0.753秒，单次矩阵乘没有更快，收益来自更少重复验证与权重读取。SSM状态FP32→BF16等因素同时改变，未做独立消融。15:38:46确认恢复原服务，卡7未重启；MTP7未设默认。[正常测速](evidence/2026-10-20/vllm-mtp1-vs-mtp7-gsm.json)、[采样](evidence/2026-10-20/vllm-mtp1-vs-mtp7-profiles.json)。
