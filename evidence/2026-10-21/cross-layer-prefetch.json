@@ -1,0 +1,408 @@
+{
+  "model": "Qwen3.8-27B",
+  "hardware": "Ascend910B2",
+  "dtype": "BF16",
+  "TP": 1,
+  "K": 7,
+  "source": "Existing native MTP7 profile; no new model requests, training or kernel changes.",
+  "profiler_valid": true,
+  "profiler_config": {
+    "common_config": {
+      "activities": [
+        "ProfilerActivity.CPU",
+        "ProfilerActivity.NPU"
+      ],
+      "schedule": {},
+      "record_shapes": true,
+      "profile_memory": false,
+      "with_stack": false,
+      "with_flops": false,
+      "with_modules": false
+    },
+    "experimental_config": {
+      "_profiler_level": "Level1",
+      "_aic_metrics": "ACL_AICORE_PIPE_UTILIZATION",
+      "_l2_cache": false,
+      "_msprof_tx": false,
+      "_mstx": false,
+      "_data_simplification": true,
+      "record_op_args": false,
+      "_export_type": [
+        "text",
+        "db"
+      ],
+      "_host_sys": [],
+      "_op_attr": false,
+      "_gc_detect_threshold": null,
+      "_mstx_domain_include": [],
+      "_mstx_domain_exclude": [],
+      "_sys_io": false,
+      "_sys_interconnection": false
+    }
+  },
+  "new_npu_requests": 0,
+  "kernel_csv_sha256": "f84ae45fd7b5181e51a8826bbaa3f5c6d84a193c6cd2694bff776f4e3b3f87ed",
+  "main_model_id": "54",
+  "verification_rounds": 26,
+  "layers_per_round": 64,
+  "boundaries_analyzed": 1638,
+  "boundary_patterns": [
+    {
+      "types": [
+        "Add",
+        "AddRmsNormBias"
+      ],
+      "count": 1638
+    }
+  ],
+  "down_end_to_next_projection_start_us": {
+    "count": 1638,
+    "min": 5.66,
+    "median": 6.14,
+    "mean": 6.158424908424909,
+    "p95": 6.52,
+    "max": 7.02,
+    "sum": 10087.500000000005
+  },
+  "no_compute_in_boundary_us": {
+    "count": 1638,
+    "min": 0.06,
+    "median": 0.06,
+    "mean": 0.07174603174603175,
+    "p95": 0.1,
+    "max": 0.12,
+    "sum": 117.51999999999855
+  },
+  "boundary_dma_tasks": 1,
+  "boundary_dma_overlap_us": 2.22,
+  "next_projection_kernel_us": {
+    "count": 1638,
+    "min": 114.48,
+    "median": 136.46,
+    "mean": 132.69343101343102,
+    "p95": 140.6,
+    "max": 143.06,
+    "sum": 217351.83999999994
+  },
+  "previous_down_mte2_ratio": {
+    "count": 1638,
+    "min": 0.867,
+    "median": 0.885,
+    "mean": 0.8848296703296703,
+    "p95": 0.887,
+    "max": 0.888,
+    "sum": 1449.3509999999735
+  },
+  "previous_down_mac_ratio": {
+    "count": 1638,
+    "min": 0.149,
+    "median": 0.153,
+    "mean": 0.15347496947496947,
+    "p95": 0.156,
+    "max": 0.157,
+    "sum": 251.39200000000176
+  },
+  "decode_span_ms": 1964.28154,
+  "main_graph_window_sum_ms": 1363.64934,
+  "boundary_window_percent_of_decode": 0.5135465458785509,
+  "boundary_no_compute_percent_of_decode": 0.005982849077734475,
+  "optimistic_bound": "Only for prefetch confined to the measured down-end to next-projection-start interval: time hidden cannot exceed the interval, even assuming all its HBM bandwidth is available and zero prefetch overhead. This is not a bound on prefetch started earlier inside the down kernel.",
+  "projection_weight_mib": [
+    140.0,
+    160.0
+  ],
+  "insight_operator_groups_verified": 193,
+  "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT op_type,COUNT(*) AS calls,SUM(duration_ns) AS total_ns\nFROM compute_view GROUP BY op_type ORDER BY total_ns DESC LIMIT 20;",
+  "sql_top20": [
+    {
+      "op_type": "MatMulV2",
+      "calls": 9369,
+      "total_ns": 1681498100.0
+    },
+    {
+      "op_type": "RecurrentGatedDeltaRule",
+      "calls": 1248,
+      "total_ns": 60013340.0
+    },
+    {
+      "op_type": "Transpose",
+      "calls": 1456,
+      "total_ns": 29501620.0
+    },
+    {
+      "op_type": "Slice",
+      "calls": 10369,
+      "total_ns": 25729100.0
+    },
+    {
+      "op_type": "fused_gdn_gating_kernel",
+      "calls": 1296,
+      "total_ns": 24144360.0
+    },
+    {
+      "op_type": "SwiGlu",
+      "calls": 1917,
+      "total_ns": 22641600.0
+    },
+    {
+      "op_type": "ConcatD",
+      "calls": 1485,
+      "total_ns": 22612180.0
+    },
+    {
+      "op_type": "CausalConv1d",
+      "calls": 1296,
+      "total_ns": 20861460.0
+    },
+    {
+      "op_type": "FusedInferAttentionScore",
+      "calls": 621,
+      "total_ns": 18861140.0
+    },
+    {
+      "op_type": "AddRmsNormBias",
+      "calls": 3834,
+      "total_ns": 17432220.0
+    },
+    {
+      "op_type": "Index",
+      "calls": 1359,
+      "total_ns": 16631800.0
+    },
+    {
+      "op_type": "ZerosLike",
+      "calls": 1656,
+      "total_ns": 13229160.0
+    },
+    {
+      "op_type": "Add",
+      "calls": 5857,
+      "total_ns": 11482880.0
+    },
+    {
+      "op_type": "Mul",
+      "calls": 783,
+      "total_ns": 8722460.0
+    },
+    {
+      "op_type": "ArgMaxV2",
+      "calls": 242,
+      "total_ns": 8495040.0
+    },
+    {
+      "op_type": "ChunkGatedDeltaRule",
+      "calls": 48,
+      "total_ns": 8410180.0
+    },
+    {
+      "op_type": "_layer_norm_fwd_1pass_kernel_npu",
+      "calls": 1296,
+      "total_ns": 7788620.0
+    },
+    {
+      "op_type": "l2norm_fwd_kernel2",
+      "calls": 2592,
+      "total_ns": 7020960.0
+    },
+    {
+      "op_type": "IndexCheck",
+      "calls": 1434,
+      "total_ns": 6939780.0
+    },
+    {
+      "op_type": "split_qkv_rmsnorm_mrope_kernel",
+      "calls": 621,
+      "total_ns": 6156260.0
+    }
+  ],
+  "pmu_metrics_available": [
+    {
+      "metric": "aiv_vec_time",
+      "entries": 57653
+    },
+    {
+      "metric": "aiv_vec_ratio",
+      "entries": 57653
+    },
+    {
+      "metric": "aiv_total_time",
+      "entries": 57653
+    },
+    {
+      "metric": "aiv_total_cycles",
+      "entries": 57653
+    },
+    {
+      "metric": "aiv_scalar_time",
+      "entries": 57653
+    },
+    {
+      "metric": "aiv_scalar_ratio",
+      "entries": 57653
+    },
+    {
+      "metric": "aiv_mte3_time",
+      "entries": 57653
+    },
+    {
+      "metric": "aiv_mte3_ratio",
+      "entries": 57653
+    },
+    {
+      "metric": "aiv_mte2_time",
+      "entries": 57653
+    },
+    {
+      "metric": "aiv_mte2_ratio",
+      "entries": 57653
+    },
+    {
+      "metric": "aiv_mte1_time",
+      "entries": 57653
+    },
+    {
+      "metric": "aiv_mte1_ratio",
+      "entries": 57653
+    },
+    {
+      "metric": "aiv_mac_time",
+      "entries": 57653
+    },
+    {
+      "metric": "aiv_mac_ratio",
+      "entries": 57653
+    },
+    {
+      "metric": "aiv_icache_miss_rate",
+      "entries": 57653
+    },
+    {
+      "metric": "aic_total_time",
+      "entries": 57653
+    },
+    {
+      "metric": "aic_total_cycles",
+      "entries": 57653
+    },
+    {
+      "metric": "aic_scalar_time",
+      "entries": 57653
+    },
+    {
+      "metric": "aic_scalar_ratio",
+      "entries": 57653
+    },
+    {
+      "metric": "aic_mte2_time",
+      "entries": 57653
+    },
+    {
+      "metric": "aic_mte2_ratio",
+      "entries": 57653
+    },
+    {
+      "metric": "aic_mte1_time",
+      "entries": 57653
+    },
+    {
+      "metric": "aic_mte1_ratio",
+      "entries": 57653
+    },
+    {
+      "metric": "aic_mac_time",
+      "entries": 57653
+    },
+    {
+      "metric": "aic_mac_ratio",
+      "entries": 57653
+    },
+    {
+      "metric": "aic_icache_miss_rate",
+      "entries": 57653
+    },
+    {
+      "metric": "aic_fixpipe_time",
+      "entries": 57653
+    },
+    {
+      "metric": "aic_fixpipe_ratio",
+      "entries": 57653
+    }
+  ],
+  "db_tables": [
+    "AICORE_FREQ",
+    "CANN_API",
+    "COMPUTE_TASK_INFO",
+    "CONNECTION_IDS",
+    "ENUM_API_TYPE",
+    "ENUM_HCCL_DATA_TYPE",
+    "ENUM_HCCL_LINK_TYPE",
+    "ENUM_HCCL_RDMA_TYPE",
+    "ENUM_HCCL_TRANSPORT_TYPE",
+    "ENUM_MEMCPY_OPERATION",
+    "ENUM_MODULE",
+    "ENUM_MSTX_EVENT_TYPE",
+    "ENUM_OVERLAP_ANALYSIS_TYPE",
+    "HOST_INFO",
+    "META_DATA",
+    "NPU_INFO",
+    "OVERLAP_ANALYSIS",
+    "PYTORCH_API",
+    "RANK_DEVICE_MAP",
+    "SESSION_TIME_INFO",
+    "STRING_IDS",
+    "TASK",
+    "TASK_PMU_INFO",
+    "connectionCats",
+    "sqlite_sequence",
+    "status_info"
+  ],
+  "example_first_boundary": {
+    "round": 0,
+    "from_layer": 0,
+    "to_layer": 1,
+    "window_us": 6.46,
+    "compute_us": 6.4,
+    "no_compute_us": 0.06,
+    "intervening_types": [
+      "Add",
+      "AddRmsNormBias"
+    ],
+    "dma_tasks": 0,
+    "dma_overlap_us": 0.0,
+    "previous_down_us": 156.54,
+    "next_projection_us": 137.52,
+    "next_projection_weight_mib": 160.0,
+    "previous_down_mte2_ratio": 0.873,
+    "previous_down_mac_ratio": 0.15
+  },
+  "limits": [
+    "Layer identities are reconstructed from 64 ordered attention projections and FFN pairs per main graph, not named module scopes.",
+    "PIPE_UTILIZATION gives per-task activity totals, not a time-resolved HBM-idle trace.",
+    "No-compute is not automatically no-DMA or no-HBM traffic; vector operators themselves read/write data.",
+    "No measured speedup: no cross-layer prefetch implementation was run."
+  ],
+  "insight_boundary_timeline_slices_verified": 4,
+  "example_timeline_relative_us": [
+    {
+      "name": "aclnnMatmul_MatMulCommon_MatMulV2",
+      "start_us": 0.0,
+      "duration_us": 156.54
+    },
+    {
+      "name": "aclnnAdds_AddAiCore_Add",
+      "start_us": 156.56,
+      "duration_us": 2.38
+    },
+    {
+      "name": "AddRmsNormBias",
+      "start_us": 158.96,
+      "duration_us": 4.02
+    },
+    {
+      "name": "aclnnMatmul_MatMulCommon_MatMulV2",
+      "start_us": 163.0,
+      "duration_us": 137.52
+    }
+  ]
+}

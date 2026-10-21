@@ -20,6 +20,8 @@
 
 ## 最近一次记录的状态
 
+- **跨层预取时序核验**：[1638个边界与Insight时间线](experiments/cross-layer-prefetch/README.md)。原生MTP7的26轮×63边界，降维结束→下层首投影中位6.14μs，其中无计算仅0.06μs，其余Add/归一化；仅此边界可重叠总量最多占采样0.514%，非实测提速。更早在降维内部预取仍未证实：MTE2中位88.5%不能反推HBM空闲，B2缺真实指令时序。未启动模型、未改内核。[证据](evidence/2026-10-21/cross-layer-prefetch.json)。
+
 - **单卡MTP小规模训练完成，未采用**：[训练与四题结果](experiments/mtp-small-train/README.md)。独立64题由27B生成答案与特征，8题验证；主干BF16冻结，仅头两轮32次更新。验证单步准确率92.606%→91.805%；同四题接受率56.892%→47.313%、59.386→52.861token/s，均4/4对。按用户要求未再跑128题、未重测基线；生成长度844→867，响应token-ID元数据有差异。16:17:49确认6/7释放，保留原生MTP7方案。[过滤证据](evidence/2026-10-21/mtp-small-train.json)。
 
 - **单卡原生MTP头训练组件验证通过**：[入口/兼容修复/实板](experiments/mtp-training-audit/README.md)。真实4.247亿BF16头＋冻结词表，在6号B2完成B1/S32合成前向、反向和AdamW更新，allocated峰值14.327GiB、reserved14.430GiB；只有头更新，冻结词表逐位不变、原checkpoint未写。独立SpecForge副本修复注意力布局和RoPE字段兼容；完整CLI语料训练与接受率收益尚未验证。单卡建议冻结target采特征后退出，再离线训练；未读取128题。15:41:54确认6/7释放。[过滤证据](evidence/2026-10-21/mtp-single-card-training-audit.json)。
