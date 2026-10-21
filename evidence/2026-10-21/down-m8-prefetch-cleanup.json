@@ -1,0 +1,9 @@
+{
+  "confirmed_utc": "2026-10-21T03:10:13.019553+00:00",
+  "confirmed_asia_shanghai": "2026-10-21T11:10:13.019553+08:00",
+  "controller_phase": "complete",
+  "physical_card_6_empty": true,
+  "physical_card_7_empty": true,
+  "services_restored": false,
+  "scope": "Only experiment-owned server process trees were stopped; model files retained."
+}

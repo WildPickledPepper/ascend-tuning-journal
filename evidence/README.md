@@ -2,6 +2,9 @@
 
 这里保存从原始 profiler 数据和编译版 Insight 后端响应提取的小型摘要，日志通过相对链接引用。
 
+- `2026-10-21/down-m8-prefetch.json`：BF16固定M8下一包预取，独立mode0/1与原生、24案例逐位验证、完整27B四题三轮、386个Insight/CSV分组和时间分摊；不含原始地址。
+- `2026-10-21/down-m8-prefetch-cleanup.json`：本次服务已关闭、6/7卡释放确认。
+
 - `2026-10-16/`：上板小例子、9B 采样、27B 离线准备。
 - `2026-10-19/eager-vs-graph.json`：同请求 3 次无 profiler 基准的中位数。
 - `2026-10-19/graph-phases.json`：Prefill/Decode 分阶段统计。

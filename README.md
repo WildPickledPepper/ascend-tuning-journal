@@ -20,6 +20,8 @@
 
 ## 最近一次记录的状态
 
+- **降维单包前视已完成算子与完整27B验证**：[实现、对照和结果](kernels/down-prefetch-m8/results.md)。用户新授权的BF16固定M8独立内核保持原K/MMAD顺序，所测输出逐位一致；独立154.680→145.222μs，模型内154.463→146.231μs。三轮同四题吞吐中位数59.386→59.774 token/s（+0.653%），全部token相同。Insight确认1846次设备替换、386个分组与CSV一致；目标只占窗口12.178%，局部节约折合总窗口0.649%。**未证明HBM带宽提高，未设为默认**。用户指出重复基线时三轮已结束，之后不再追加。11:10:13确认6/7均无活动进程、服务全部关闭。[过滤证据](evidence/2026-10-21/down-m8-prefetch.json)。
+
 - **原生跨分块预取已核对**：[CCU、地址、SET/WAIT及Insight逐项证据](experiments/wait-timeline/prefetch-audit.md)。检查原23核仿真的core0/1/22：升维13个输出块交界均有预取，降维3个均无；K包切换升维301/304提前、降维0/198提前。降维目标L1槽已释放且复用WAIT不阻塞，却在旧块最后MMAD后才下发新权重，存在单包前视调度候选。**这些是原生二进制仿真结构证据，不是上板WAIT时间或已实现的加速**。未改内核、未启动模型；10月21日10:37:28确认6/7无活动进程。[过滤证据](evidence/2026-10-21/native-prefetch-audit.json)。
 
 - **上板WAIT时序核验完成，尚未定位具体WAIT**：[实际采集与工具能力边界](experiments/wait-timeline/README.md)。910B2拒绝真实指令时序`instrTimeLine`；两份Default和一份Source已导入编译版Insight，基础计数有效但动态指令为空。核实`TimelineDetail`的指令时间来自仿真，不能当成上板WAIT实测；没有证明双缓冲的软件串行堵塞。10月21日10:08:08确认6/7卡均无活动进程，本次未启动模型服务。[过滤证据](evidence/2026-10-21/device-wait-timeline-capability.json)。
