@@ -1,0 +1,2339 @@
+{
+  "kind": "native ELF + simulator CCU issue / popped / completed + compiled Insight DB",
+  "timing_unit": "SIMULATED cycles, NOT measured board time",
+  "elf_sha256": "444d3ac5ab6c83b0321b32f7b2a66330de45b0eb215b0c44b8f62c3f2f2a227f",
+  "operators": {
+    "up": [
+      {
+        "core": 0,
+        "weight_copies": 120,
+        "MMAD_count": 480,
+        "output_tiles": 6,
+        "all_raw_transfer_and_MMAD_times_match_Insight": true,
+        "all_kept_opcodes_match_original_ELF": true,
+        "unique_opcodes_checked": 21,
+        "popped_sha256": "fb0120802f59866291651536368e2a355aa76a8f77f97d47d776dc08f92af8bc",
+        "completed_sha256": "98fa1425ea45c4a994b99f859584e3060a1ecc3c29ff7e5f6fe288c45f4b5fa4",
+        "ccu_sources_sha256": {
+          "core0.cubecore0.ccu_log.dump": "f5e16d16fca030538060f1e328d67d5def1de7569fdb3000bbbccc0e3aa0ed7d",
+          "core0.cubecore0.ccu_log.1.dump": "167047424f7ddcc8623f56de854024ac11afcca15dd495df4dcfe006a1930e88"
+        },
+        "cross_output_boundaries": [
+          {
+            "old_N": 0,
+            "next_N": 256,
+            "next_first_K": 0,
+            "next_weight_copy_index": 20,
+            "l1_slot_offset_bytes": 163840,
+            "copy_shape_NK": [
+              256,
+              256
+            ],
+            "next_weight_source_offset_bytes": 2621440,
+            "source_weight_row_pitch_bytes": 10240,
+            "prior_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 51724,
+              "end": 53478,
+              "issue": 51723,
+              "pc_offset": "0xd7200"
+            },
+            "prior_last_mmad": {
+              "name": "MMAD",
+              "start": 54640,
+              "end": 54725,
+              "issue": 53470,
+              "pc_offset": "0xd7904"
+            },
+            "prior_last_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 54348,
+              "end": 54638,
+              "issue": 53315,
+              "pc_offset": "0xd76ec"
+            },
+            "next_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 54433,
+              "end": 56251,
+              "issue": 54432,
+              "pc_offset": "0xd7200"
+            },
+            "next_input_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 9656,
+              "end": 10934,
+              "issue": 9655,
+              "pc_offset": "0xd6920"
+            },
+            "next_input_source_offset_bytes": 0,
+            "next_input_slot_offset_bytes": 0,
+            "prior_result_write": {
+              "name": "FIX_L0C_TO_DST",
+              "start": 54734,
+              "end": 55019,
+              "issue": 53659,
+              "pc_offset": "0xd7c90"
+            },
+            "next_first_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 56253,
+              "end": 56535,
+              "issue": 54734,
+              "pc_offset": "0xd76ec"
+            },
+            "next_first_mmad": {
+              "name": "MMAD",
+              "start": 56537,
+              "end": 56622,
+              "issue": 54889,
+              "pc_offset": "0xd7904"
+            },
+            "slot_release_set": {
+              "name": "SET_FLAG",
+              "start": 52316,
+              "end": 52636,
+              "pc_offset": "0xd7b78",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "slot_reuse_wait": {
+              "name": "WAIT_FLAG",
+              "start": 54328,
+              "end": 54328,
+              "pc_offset": "0xd6e5c",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "next_data_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 54659,
+              "end": 56252,
+              "pc_offset": "0xd7608",
+              "flag": [
+                "MTE2",
+                "MTE1",
+                0
+              ]
+            },
+            "next_cube_ready_set": {
+              "name": "SET_FLAG",
+              "start": 56254,
+              "end": 56535,
+              "pc_offset": "0xd7780",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "next_cube_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 54758,
+              "end": 56536,
+              "pc_offset": "0xd7784",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "copy_issue_before_old_last_mmad_end_cycles": 293,
+            "copy_start_before_old_last_mmad_end_cycles": 292,
+            "safe_slot_available_before_actual_issue_cycles": 1796,
+            "slot_and_prior_weight_transfer_done_before_actual_issue_cycles": 954,
+            "old_mmads_not_finished_when_next_copy_issued": 2
+          },
+          {
+            "old_N": 256,
+            "next_N": 512,
+            "next_first_K": 0,
+            "next_weight_copy_index": 40,
+            "l1_slot_offset_bytes": 163840,
+            "copy_shape_NK": [
+              256,
+              256
+            ],
+            "next_weight_source_offset_bytes": 5242880,
+            "source_weight_row_pitch_bytes": 10240,
+            "prior_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 93288,
+              "end": 95107,
+              "issue": 93287,
+              "pc_offset": "0xd7200"
+            },
+            "prior_last_mmad": {
+              "name": "MMAD",
+              "start": 96269,
+              "end": 96354,
+              "issue": 95034,
+              "pc_offset": "0xd7904"
+            },
+            "prior_last_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 95977,
+              "end": 96267,
+              "issue": 94879,
+              "pc_offset": "0xd76ec"
+            },
+            "next_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 95657,
+              "end": 97481,
+              "issue": 95656,
+              "pc_offset": "0xd7200"
+            },
+            "next_input_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 9656,
+              "end": 10934,
+              "issue": 9655,
+              "pc_offset": "0xd6920"
+            },
+            "next_input_source_offset_bytes": 0,
+            "next_input_slot_offset_bytes": 0,
+            "prior_result_write": {
+              "name": "FIX_L0C_TO_DST",
+              "start": 96363,
+              "end": 96648,
+              "issue": 95223,
+              "pc_offset": "0xd7c90"
+            },
+            "next_first_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 97483,
+              "end": 97765,
+              "issue": 95958,
+              "pc_offset": "0xd76ec"
+            },
+            "next_first_mmad": {
+              "name": "MMAD",
+              "start": 97767,
+              "end": 97852,
+              "issue": 96113,
+              "pc_offset": "0xd7904"
+            },
+            "slot_release_set": {
+              "name": "SET_FLAG",
+              "start": 93937,
+              "end": 94297,
+              "pc_offset": "0xd7b78",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "slot_reuse_wait": {
+              "name": "WAIT_FLAG",
+              "start": 95552,
+              "end": 95552,
+              "pc_offset": "0xd6e5c",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "next_data_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 96269,
+              "end": 97482,
+              "pc_offset": "0xd7608",
+              "flag": [
+                "MTE2",
+                "MTE1",
+                0
+              ]
+            },
+            "next_cube_ready_set": {
+              "name": "SET_FLAG",
+              "start": 97484,
+              "end": 97765,
+              "pc_offset": "0xd7780",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "next_cube_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 96358,
+              "end": 97766,
+              "pc_offset": "0xd7784",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "copy_issue_before_old_last_mmad_end_cycles": 698,
+            "copy_start_before_old_last_mmad_end_cycles": 697,
+            "safe_slot_available_before_actual_issue_cycles": 1359,
+            "slot_and_prior_weight_transfer_done_before_actual_issue_cycles": 549,
+            "old_mmads_not_finished_when_next_copy_issued": 3
+          },
+          {
+            "old_N": 512,
+            "next_N": 768,
+            "next_first_K": 0,
+            "next_weight_copy_index": 60,
+            "l1_slot_offset_bytes": 163840,
+            "copy_shape_NK": [
+              256,
+              256
+            ],
+            "next_weight_source_offset_bytes": 7864320,
+            "source_weight_row_pitch_bytes": 10240,
+            "prior_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 134512,
+              "end": 136321,
+              "issue": 134511,
+              "pc_offset": "0xd7200"
+            },
+            "prior_last_mmad": {
+              "name": "MMAD",
+              "start": 137485,
+              "end": 137570,
+              "issue": 136258,
+              "pc_offset": "0xd7904"
+            },
+            "prior_last_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 137191,
+              "end": 137483,
+              "issue": 136103,
+              "pc_offset": "0xd76ec"
+            },
+            "next_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 136881,
+              "end": 138705,
+              "issue": 136880,
+              "pc_offset": "0xd7200"
+            },
+            "next_input_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 9656,
+              "end": 10934,
+              "issue": 9655,
+              "pc_offset": "0xd6920"
+            },
+            "next_input_source_offset_bytes": 0,
+            "next_input_slot_offset_bytes": 0,
+            "prior_result_write": {
+              "name": "FIX_L0C_TO_DST",
+              "start": 137579,
+              "end": 137956,
+              "issue": 136447,
+              "pc_offset": "0xd7c90"
+            },
+            "next_first_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 138707,
+              "end": 138989,
+              "issue": 137182,
+              "pc_offset": "0xd76ec"
+            },
+            "next_first_mmad": {
+              "name": "MMAD",
+              "start": 138991,
+              "end": 139076,
+              "issue": 137337,
+              "pc_offset": "0xd7904"
+            },
+            "slot_release_set": {
+              "name": "SET_FLAG",
+              "start": 135165,
+              "end": 135530,
+              "pc_offset": "0xd7b78",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "slot_reuse_wait": {
+              "name": "WAIT_FLAG",
+              "start": 136776,
+              "end": 136776,
+              "pc_offset": "0xd6e5c",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "next_data_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 137485,
+              "end": 138706,
+              "pc_offset": "0xd7608",
+              "flag": [
+                "MTE2",
+                "MTE1",
+                0
+              ]
+            },
+            "next_cube_ready_set": {
+              "name": "SET_FLAG",
+              "start": 138708,
+              "end": 138989,
+              "pc_offset": "0xd7780",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "next_cube_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 137574,
+              "end": 138990,
+              "pc_offset": "0xd7784",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "copy_issue_before_old_last_mmad_end_cycles": 690,
+            "copy_start_before_old_last_mmad_end_cycles": 689,
+            "safe_slot_available_before_actual_issue_cycles": 1350,
+            "slot_and_prior_weight_transfer_done_before_actual_issue_cycles": 559,
+            "old_mmads_not_finished_when_next_copy_issued": 3
+          },
+          {
+            "old_N": 768,
+            "next_N": 1024,
+            "next_first_K": 0,
+            "next_weight_copy_index": 80,
+            "l1_slot_offset_bytes": 163840,
+            "copy_shape_NK": [
+              256,
+              256
+            ],
+            "next_weight_source_offset_bytes": 10485760,
+            "source_weight_row_pitch_bytes": 10240,
+            "prior_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 175736,
+              "end": 177540,
+              "issue": 175735,
+              "pc_offset": "0xd7200"
+            },
+            "prior_last_mmad": {
+              "name": "MMAD",
+              "start": 178702,
+              "end": 178787,
+              "issue": 177482,
+              "pc_offset": "0xd7904"
+            },
+            "prior_last_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 178410,
+              "end": 178700,
+              "issue": 177327,
+              "pc_offset": "0xd76ec"
+            },
+            "next_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 178105,
+              "end": 179923,
+              "issue": 178104,
+              "pc_offset": "0xd7200"
+            },
+            "next_input_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 9656,
+              "end": 10934,
+              "issue": 9655,
+              "pc_offset": "0xd6920"
+            },
+            "next_input_source_offset_bytes": 0,
+            "next_input_slot_offset_bytes": 0,
+            "prior_result_write": {
+              "name": "FIX_L0C_TO_DST",
+              "start": 178796,
+              "end": 179081,
+              "issue": 177671,
+              "pc_offset": "0xd7c90"
+            },
+            "next_first_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 179925,
+              "end": 180207,
+              "issue": 178406,
+              "pc_offset": "0xd76ec"
+            },
+            "next_first_mmad": {
+              "name": "MMAD",
+              "start": 180209,
+              "end": 180294,
+              "issue": 178561,
+              "pc_offset": "0xd7904"
+            },
+            "slot_release_set": {
+              "name": "SET_FLAG",
+              "start": 176387,
+              "end": 176700,
+              "pc_offset": "0xd7b78",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "slot_reuse_wait": {
+              "name": "WAIT_FLAG",
+              "start": 178000,
+              "end": 178000,
+              "pc_offset": "0xd6e5c",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "next_data_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 178702,
+              "end": 179924,
+              "pc_offset": "0xd7608",
+              "flag": [
+                "MTE2",
+                "MTE1",
+                0
+              ]
+            },
+            "next_cube_ready_set": {
+              "name": "SET_FLAG",
+              "start": 179926,
+              "end": 180207,
+              "pc_offset": "0xd7780",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "next_cube_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 178791,
+              "end": 180208,
+              "pc_offset": "0xd7784",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "copy_issue_before_old_last_mmad_end_cycles": 683,
+            "copy_start_before_old_last_mmad_end_cycles": 682,
+            "safe_slot_available_before_actual_issue_cycles": 1404,
+            "slot_and_prior_weight_transfer_done_before_actual_issue_cycles": 564,
+            "old_mmads_not_finished_when_next_copy_issued": 3
+          },
+          {
+            "old_N": 1024,
+            "next_N": 1280,
+            "next_first_K": 0,
+            "next_weight_copy_index": 100,
+            "l1_slot_offset_bytes": 163840,
+            "copy_shape_NK": [
+              256,
+              256
+            ],
+            "next_weight_source_offset_bytes": 13107200,
+            "source_weight_row_pitch_bytes": 10240,
+            "prior_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 216960,
+              "end": 218760,
+              "issue": 216959,
+              "pc_offset": "0xd7200"
+            },
+            "prior_last_mmad": {
+              "name": "MMAD",
+              "start": 219923,
+              "end": 220008,
+              "issue": 218706,
+              "pc_offset": "0xd7904"
+            },
+            "prior_last_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 219630,
+              "end": 219921,
+              "issue": 218551,
+              "pc_offset": "0xd76ec"
+            },
+            "next_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 219326,
+              "end": 221088,
+              "issue": 219325,
+              "pc_offset": "0xd7200"
+            },
+            "next_input_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 9656,
+              "end": 10934,
+              "issue": 9655,
+              "pc_offset": "0xd6920"
+            },
+            "next_input_source_offset_bytes": 0,
+            "next_input_slot_offset_bytes": 0,
+            "prior_result_write": {
+              "name": "FIX_L0C_TO_DST",
+              "start": 220017,
+              "end": 220303,
+              "issue": 218895,
+              "pc_offset": "0xd7c90"
+            },
+            "next_first_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 221090,
+              "end": 221372,
+              "issue": 219627,
+              "pc_offset": "0xd76ec"
+            },
+            "next_first_mmad": {
+              "name": "MMAD",
+              "start": 221374,
+              "end": 221459,
+              "issue": 219782,
+              "pc_offset": "0xd7904"
+            },
+            "slot_release_set": {
+              "name": "SET_FLAG",
+              "start": 217545,
+              "end": 217864,
+              "pc_offset": "0xd7b78",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "slot_reuse_wait": {
+              "name": "WAIT_FLAG",
+              "start": 219221,
+              "end": 219221,
+              "pc_offset": "0xd6e5c",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "next_data_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 219923,
+              "end": 221089,
+              "pc_offset": "0xd7608",
+              "flag": [
+                "MTE2",
+                "MTE1",
+                0
+              ]
+            },
+            "next_cube_ready_set": {
+              "name": "SET_FLAG",
+              "start": 221091,
+              "end": 221372,
+              "pc_offset": "0xd7780",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "next_cube_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 220012,
+              "end": 221373,
+              "pc_offset": "0xd7784",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "copy_issue_before_old_last_mmad_end_cycles": 683,
+            "copy_start_before_old_last_mmad_end_cycles": 682,
+            "safe_slot_available_before_actual_issue_cycles": 1461,
+            "slot_and_prior_weight_transfer_done_before_actual_issue_cycles": 565,
+            "old_mmads_not_finished_when_next_copy_issued": 3
+          }
+        ],
+        "within_K_transitions": {
+          "total": 114,
+          "next_copy_issued_before_prior_last_mmad_finishes": 113,
+          "copy_issue_lead_cycles_min_median_max": [
+            -89,
+            1000.0,
+            1109
+          ]
+        }
+      },
+      {
+        "core": 1,
+        "weight_copies": 120,
+        "MMAD_count": 480,
+        "output_tiles": 6,
+        "all_raw_transfer_and_MMAD_times_match_Insight": true,
+        "all_kept_opcodes_match_original_ELF": true,
+        "unique_opcodes_checked": 21,
+        "popped_sha256": "2ca4ac7f84e01d895238e3b783550d51febc81b25c68dda801892c883a42db98",
+        "completed_sha256": "aa0592d7ed1be3af466d51348d7c4ed323a16c023c38f2802126eed7fd97b0e1",
+        "ccu_sources_sha256": {
+          "core1.cubecore0.ccu_log.dump": "5acf0a16e536d9435c769ff56b31895bc0ea9d6f5bbf1f65dbdf83297152c78e",
+          "core1.cubecore0.ccu_log.1.dump": "9d25053ef2dd1791f0c26b2607714961a4db6129ebe0ef633a026f1be5ceb9a6"
+        },
+        "cross_output_boundaries": [
+          {
+            "old_N": 1536,
+            "next_N": 1792,
+            "next_first_K": 4864,
+            "next_weight_copy_index": 20,
+            "l1_slot_offset_bytes": 163840,
+            "copy_shape_NK": [
+              256,
+              256
+            ],
+            "next_weight_source_offset_bytes": 18359808,
+            "source_weight_row_pitch_bytes": 10240,
+            "prior_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 51717,
+              "end": 53459,
+              "issue": 51716,
+              "pc_offset": "0xd7200"
+            },
+            "prior_last_mmad": {
+              "name": "MMAD",
+              "start": 54621,
+              "end": 54706,
+              "issue": 53463,
+              "pc_offset": "0xd7904"
+            },
+            "prior_last_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 54329,
+              "end": 54619,
+              "issue": 53308,
+              "pc_offset": "0xd76ec"
+            },
+            "next_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 54423,
+              "end": 56227,
+              "issue": 54422,
+              "pc_offset": "0xd7200"
+            },
+            "next_input_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 9657,
+              "end": 10929,
+              "issue": 9656,
+              "pc_offset": "0xd6920"
+            },
+            "next_input_source_offset_bytes": 0,
+            "next_input_slot_offset_bytes": 0,
+            "prior_result_write": {
+              "name": "FIX_L0C_TO_DST",
+              "start": 54715,
+              "end": 55001,
+              "issue": 53652,
+              "pc_offset": "0xd7c90"
+            },
+            "next_first_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 56229,
+              "end": 56511,
+              "issue": 54724,
+              "pc_offset": "0xd76ec"
+            },
+            "next_first_mmad": {
+              "name": "MMAD",
+              "start": 56513,
+              "end": 56598,
+              "issue": 54879,
+              "pc_offset": "0xd7904"
+            },
+            "slot_release_set": {
+              "name": "SET_FLAG",
+              "start": 52289,
+              "end": 52603,
+              "pc_offset": "0xd7b78",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "slot_reuse_wait": {
+              "name": "WAIT_FLAG",
+              "start": 54318,
+              "end": 54318,
+              "pc_offset": "0xd6e5c",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "next_data_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 54649,
+              "end": 56228,
+              "pc_offset": "0xd7608",
+              "flag": [
+                "MTE2",
+                "MTE1",
+                0
+              ]
+            },
+            "next_cube_ready_set": {
+              "name": "SET_FLAG",
+              "start": 56230,
+              "end": 56511,
+              "pc_offset": "0xd7780",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "next_cube_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 54748,
+              "end": 56512,
+              "pc_offset": "0xd7784",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "copy_issue_before_old_last_mmad_end_cycles": 284,
+            "copy_start_before_old_last_mmad_end_cycles": 283,
+            "safe_slot_available_before_actual_issue_cycles": 1819,
+            "slot_and_prior_weight_transfer_done_before_actual_issue_cycles": 963,
+            "old_mmads_not_finished_when_next_copy_issued": 1
+          },
+          {
+            "old_N": 1792,
+            "next_N": 2048,
+            "next_first_K": 4864,
+            "next_weight_copy_index": 40,
+            "l1_slot_offset_bytes": 163840,
+            "copy_shape_NK": [
+              256,
+              256
+            ],
+            "next_weight_source_offset_bytes": 20981248,
+            "source_weight_row_pitch_bytes": 10240,
+            "prior_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 93278,
+              "end": 95079,
+              "issue": 93277,
+              "pc_offset": "0xd7200"
+            },
+            "prior_last_mmad": {
+              "name": "MMAD",
+              "start": 96242,
+              "end": 96327,
+              "issue": 95024,
+              "pc_offset": "0xd7904"
+            },
+            "prior_last_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 95949,
+              "end": 96240,
+              "issue": 94869,
+              "pc_offset": "0xd76ec"
+            },
+            "next_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 95647,
+              "end": 97458,
+              "issue": 95646,
+              "pc_offset": "0xd7200"
+            },
+            "next_input_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 9657,
+              "end": 10929,
+              "issue": 9656,
+              "pc_offset": "0xd6920"
+            },
+            "next_input_source_offset_bytes": 0,
+            "next_input_slot_offset_bytes": 0,
+            "prior_result_write": {
+              "name": "FIX_L0C_TO_DST",
+              "start": 96336,
+              "end": 96621,
+              "issue": 95213,
+              "pc_offset": "0xd7c90"
+            },
+            "next_first_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 97460,
+              "end": 97742,
+              "issue": 95948,
+              "pc_offset": "0xd76ec"
+            },
+            "next_first_mmad": {
+              "name": "MMAD",
+              "start": 97744,
+              "end": 97829,
+              "issue": 96103,
+              "pc_offset": "0xd7904"
+            },
+            "slot_release_set": {
+              "name": "SET_FLAG",
+              "start": 93906,
+              "end": 94272,
+              "pc_offset": "0xd7b78",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "slot_reuse_wait": {
+              "name": "WAIT_FLAG",
+              "start": 95542,
+              "end": 95542,
+              "pc_offset": "0xd6e5c",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "next_data_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 96242,
+              "end": 97459,
+              "pc_offset": "0xd7608",
+              "flag": [
+                "MTE2",
+                "MTE1",
+                0
+              ]
+            },
+            "next_cube_ready_set": {
+              "name": "SET_FLAG",
+              "start": 97461,
+              "end": 97742,
+              "pc_offset": "0xd7780",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "next_cube_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 96331,
+              "end": 97743,
+              "pc_offset": "0xd7784",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "copy_issue_before_old_last_mmad_end_cycles": 681,
+            "copy_start_before_old_last_mmad_end_cycles": 680,
+            "safe_slot_available_before_actual_issue_cycles": 1374,
+            "slot_and_prior_weight_transfer_done_before_actual_issue_cycles": 567,
+            "old_mmads_not_finished_when_next_copy_issued": 3
+          },
+          {
+            "old_N": 2048,
+            "next_N": 2304,
+            "next_first_K": 4864,
+            "next_weight_copy_index": 60,
+            "l1_slot_offset_bytes": 163840,
+            "copy_shape_NK": [
+              256,
+              256
+            ],
+            "next_weight_source_offset_bytes": 23602688,
+            "source_weight_row_pitch_bytes": 10240,
+            "prior_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 134502,
+              "end": 136311,
+              "issue": 134501,
+              "pc_offset": "0xd7200"
+            },
+            "prior_last_mmad": {
+              "name": "MMAD",
+              "start": 137473,
+              "end": 137558,
+              "issue": 136248,
+              "pc_offset": "0xd7904"
+            },
+            "prior_last_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 137181,
+              "end": 137471,
+              "issue": 136093,
+              "pc_offset": "0xd76ec"
+            },
+            "next_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 136871,
+              "end": 138681,
+              "issue": 136870,
+              "pc_offset": "0xd7200"
+            },
+            "next_input_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 9657,
+              "end": 10929,
+              "issue": 9656,
+              "pc_offset": "0xd6920"
+            },
+            "next_input_source_offset_bytes": 0,
+            "next_input_slot_offset_bytes": 0,
+            "prior_result_write": {
+              "name": "FIX_L0C_TO_DST",
+              "start": 137567,
+              "end": 137948,
+              "issue": 136437,
+              "pc_offset": "0xd7c90"
+            },
+            "next_first_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 138683,
+              "end": 138965,
+              "issue": 137172,
+              "pc_offset": "0xd76ec"
+            },
+            "next_first_mmad": {
+              "name": "MMAD",
+              "start": 138967,
+              "end": 139052,
+              "issue": 137327,
+              "pc_offset": "0xd7904"
+            },
+            "slot_release_set": {
+              "name": "SET_FLAG",
+              "start": 135143,
+              "end": 135514,
+              "pc_offset": "0xd7b78",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "slot_reuse_wait": {
+              "name": "WAIT_FLAG",
+              "start": 136766,
+              "end": 136766,
+              "pc_offset": "0xd6e5c",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "next_data_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 137473,
+              "end": 138682,
+              "pc_offset": "0xd7608",
+              "flag": [
+                "MTE2",
+                "MTE1",
+                0
+              ]
+            },
+            "next_cube_ready_set": {
+              "name": "SET_FLAG",
+              "start": 138684,
+              "end": 138965,
+              "pc_offset": "0xd7780",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "next_cube_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 137562,
+              "end": 138966,
+              "pc_offset": "0xd7784",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "copy_issue_before_old_last_mmad_end_cycles": 688,
+            "copy_start_before_old_last_mmad_end_cycles": 687,
+            "safe_slot_available_before_actual_issue_cycles": 1356,
+            "slot_and_prior_weight_transfer_done_before_actual_issue_cycles": 559,
+            "old_mmads_not_finished_when_next_copy_issued": 3
+          },
+          {
+            "old_N": 2304,
+            "next_N": 2560,
+            "next_first_K": 4864,
+            "next_weight_copy_index": 80,
+            "l1_slot_offset_bytes": 163840,
+            "copy_shape_NK": [
+              256,
+              256
+            ],
+            "next_weight_source_offset_bytes": 26224128,
+            "source_weight_row_pitch_bytes": 10240,
+            "prior_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 175726,
+              "end": 177532,
+              "issue": 175725,
+              "pc_offset": "0xd7200"
+            },
+            "prior_last_mmad": {
+              "name": "MMAD",
+              "start": 178694,
+              "end": 178779,
+              "issue": 177472,
+              "pc_offset": "0xd7904"
+            },
+            "prior_last_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 178402,
+              "end": 178692,
+              "issue": 177317,
+              "pc_offset": "0xd76ec"
+            },
+            "next_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 178095,
+              "end": 179907,
+              "issue": 178094,
+              "pc_offset": "0xd7200"
+            },
+            "next_input_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 9657,
+              "end": 10929,
+              "issue": 9656,
+              "pc_offset": "0xd6920"
+            },
+            "next_input_source_offset_bytes": 0,
+            "next_input_slot_offset_bytes": 0,
+            "prior_result_write": {
+              "name": "FIX_L0C_TO_DST",
+              "start": 178788,
+              "end": 179074,
+              "issue": 177661,
+              "pc_offset": "0xd7c90"
+            },
+            "next_first_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 179909,
+              "end": 180191,
+              "issue": 178396,
+              "pc_offset": "0xd76ec"
+            },
+            "next_first_mmad": {
+              "name": "MMAD",
+              "start": 180193,
+              "end": 180278,
+              "issue": 178551,
+              "pc_offset": "0xd7904"
+            },
+            "slot_release_set": {
+              "name": "SET_FLAG",
+              "start": 176354,
+              "end": 176658,
+              "pc_offset": "0xd7b78",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "slot_reuse_wait": {
+              "name": "WAIT_FLAG",
+              "start": 177990,
+              "end": 177990,
+              "pc_offset": "0xd6e5c",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "next_data_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 178694,
+              "end": 179908,
+              "pc_offset": "0xd7608",
+              "flag": [
+                "MTE2",
+                "MTE1",
+                0
+              ]
+            },
+            "next_cube_ready_set": {
+              "name": "SET_FLAG",
+              "start": 179910,
+              "end": 180191,
+              "pc_offset": "0xd7780",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "next_cube_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 178783,
+              "end": 180192,
+              "pc_offset": "0xd7784",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "copy_issue_before_old_last_mmad_end_cycles": 685,
+            "copy_start_before_old_last_mmad_end_cycles": 684,
+            "safe_slot_available_before_actual_issue_cycles": 1436,
+            "slot_and_prior_weight_transfer_done_before_actual_issue_cycles": 562,
+            "old_mmads_not_finished_when_next_copy_issued": 3
+          },
+          {
+            "old_N": 2560,
+            "next_N": 2816,
+            "next_first_K": 4864,
+            "next_weight_copy_index": 100,
+            "l1_slot_offset_bytes": 163840,
+            "copy_shape_NK": [
+              256,
+              256
+            ],
+            "next_weight_source_offset_bytes": 28845568,
+            "source_weight_row_pitch_bytes": 10240,
+            "prior_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 216950,
+              "end": 218767,
+              "issue": 216949,
+              "pc_offset": "0xd7200"
+            },
+            "prior_last_mmad": {
+              "name": "MMAD",
+              "start": 219929,
+              "end": 220014,
+              "issue": 218696,
+              "pc_offset": "0xd7904"
+            },
+            "prior_last_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 219637,
+              "end": 219927,
+              "issue": 218541,
+              "pc_offset": "0xd76ec"
+            },
+            "next_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 219316,
+              "end": 221061,
+              "issue": 219315,
+              "pc_offset": "0xd7200"
+            },
+            "next_input_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 9657,
+              "end": 10929,
+              "issue": 9656,
+              "pc_offset": "0xd6920"
+            },
+            "next_input_source_offset_bytes": 0,
+            "next_input_slot_offset_bytes": 0,
+            "prior_result_write": {
+              "name": "FIX_L0C_TO_DST",
+              "start": 220023,
+              "end": 220308,
+              "issue": 218885,
+              "pc_offset": "0xd7c90"
+            },
+            "next_first_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 221063,
+              "end": 221345,
+              "issue": 219617,
+              "pc_offset": "0xd76ec"
+            },
+            "next_first_mmad": {
+              "name": "MMAD",
+              "start": 221347,
+              "end": 221432,
+              "issue": 219772,
+              "pc_offset": "0xd7904"
+            },
+            "slot_release_set": {
+              "name": "SET_FLAG",
+              "start": 217523,
+              "end": 217835,
+              "pc_offset": "0xd7b78",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "slot_reuse_wait": {
+              "name": "WAIT_FLAG",
+              "start": 219211,
+              "end": 219211,
+              "pc_offset": "0xd6e5c",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "next_data_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 219929,
+              "end": 221062,
+              "pc_offset": "0xd7608",
+              "flag": [
+                "MTE2",
+                "MTE1",
+                0
+              ]
+            },
+            "next_cube_ready_set": {
+              "name": "SET_FLAG",
+              "start": 221064,
+              "end": 221345,
+              "pc_offset": "0xd7780",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "next_cube_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 220018,
+              "end": 221346,
+              "pc_offset": "0xd7784",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "copy_issue_before_old_last_mmad_end_cycles": 699,
+            "copy_start_before_old_last_mmad_end_cycles": 698,
+            "safe_slot_available_before_actual_issue_cycles": 1480,
+            "slot_and_prior_weight_transfer_done_before_actual_issue_cycles": 548,
+            "old_mmads_not_finished_when_next_copy_issued": 3
+          }
+        ],
+        "within_K_transitions": {
+          "total": 114,
+          "next_copy_issued_before_prior_last_mmad_finishes": 113,
+          "copy_issue_lead_cycles_min_median_max": [
+            -89,
+            989.0,
+            1100
+          ]
+        }
+      },
+      {
+        "core": 22,
+        "weight_copies": 80,
+        "MMAD_count": 320,
+        "output_tiles": 4,
+        "all_raw_transfer_and_MMAD_times_match_Insight": true,
+        "all_kept_opcodes_match_original_ELF": true,
+        "unique_opcodes_checked": 21,
+        "popped_sha256": "acf5832c9cb3de918d00c2213b76c1df790b7030a5247c208e4829d05a610f94",
+        "completed_sha256": "79a30590ee576c9efe705343958c5e526b334773ec0925241c70622f411d187c",
+        "ccu_sources_sha256": {
+          "core22.cubecore0.ccu_log.dump": "bb5d94f7c5e6b955dda380ba6b33ac710d56d71e12aaee6209fba0f0766cfe32"
+        },
+        "cross_output_boundaries": [
+          {
+            "old_N": 33792,
+            "next_N": 34048,
+            "next_first_K": 0,
+            "next_weight_copy_index": 20,
+            "l1_slot_offset_bytes": 163840,
+            "copy_shape_NK": [
+              256,
+              256
+            ],
+            "next_weight_source_offset_bytes": 348651520,
+            "source_weight_row_pitch_bytes": 10240,
+            "prior_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 51335,
+              "end": 53168,
+              "issue": 51334,
+              "pc_offset": "0xd7200"
+            },
+            "prior_last_mmad": {
+              "name": "MMAD",
+              "start": 54330,
+              "end": 54415,
+              "issue": 53081,
+              "pc_offset": "0xd7904"
+            },
+            "prior_last_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 54038,
+              "end": 54328,
+              "issue": 52926,
+              "pc_offset": "0xd76ec"
+            },
+            "next_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 54012,
+              "end": 55850,
+              "issue": 54011,
+              "pc_offset": "0xd7200"
+            },
+            "next_input_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 9684,
+              "end": 10963,
+              "issue": 9683,
+              "pc_offset": "0xd6920"
+            },
+            "next_input_source_offset_bytes": 0,
+            "next_input_slot_offset_bytes": 0,
+            "prior_result_write": {
+              "name": "FIX_L0C_TO_DST",
+              "start": 54424,
+              "end": 54731,
+              "issue": 53265,
+              "pc_offset": "0xd7c90"
+            },
+            "next_first_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 55852,
+              "end": 56134,
+              "issue": 54313,
+              "pc_offset": "0xd76ec"
+            },
+            "next_first_mmad": {
+              "name": "MMAD",
+              "start": 56136,
+              "end": 56221,
+              "issue": 54468,
+              "pc_offset": "0xd7904"
+            },
+            "slot_release_set": {
+              "name": "SET_FLAG",
+              "start": 52020,
+              "end": 52340,
+              "pc_offset": "0xd7b78",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "slot_reuse_wait": {
+              "name": "WAIT_FLAG",
+              "start": 53902,
+              "end": 53902,
+              "pc_offset": "0xd6e5c",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "next_data_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 54330,
+              "end": 55851,
+              "pc_offset": "0xd7608",
+              "flag": [
+                "MTE2",
+                "MTE1",
+                0
+              ]
+            },
+            "next_cube_ready_set": {
+              "name": "SET_FLAG",
+              "start": 55853,
+              "end": 56134,
+              "pc_offset": "0xd7780",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "next_cube_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 54418,
+              "end": 56135,
+              "pc_offset": "0xd7784",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "copy_issue_before_old_last_mmad_end_cycles": 404,
+            "copy_start_before_old_last_mmad_end_cycles": 403,
+            "safe_slot_available_before_actual_issue_cycles": 1671,
+            "slot_and_prior_weight_transfer_done_before_actual_issue_cycles": 843,
+            "old_mmads_not_finished_when_next_copy_issued": 2
+          },
+          {
+            "old_N": 34048,
+            "next_N": 34304,
+            "next_first_K": 0,
+            "next_weight_copy_index": 40,
+            "l1_slot_offset_bytes": 163840,
+            "copy_shape_NK": [
+              256,
+              256
+            ],
+            "next_weight_source_offset_bytes": 351272960,
+            "source_weight_row_pitch_bytes": 10240,
+            "prior_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 92487,
+              "end": 94337,
+              "issue": 92486,
+              "pc_offset": "0xd7200"
+            },
+            "prior_last_mmad": {
+              "name": "MMAD",
+              "start": 95499,
+              "end": 95584,
+              "issue": 94233,
+              "pc_offset": "0xd7904"
+            },
+            "prior_last_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 95207,
+              "end": 95497,
+              "issue": 94078,
+              "pc_offset": "0xd76ec"
+            },
+            "next_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 94834,
+              "end": 96668,
+              "issue": 94833,
+              "pc_offset": "0xd7200"
+            },
+            "next_input_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 9684,
+              "end": 10963,
+              "issue": 9683,
+              "pc_offset": "0xd6920"
+            },
+            "next_input_source_offset_bytes": 0,
+            "next_input_slot_offset_bytes": 0,
+            "prior_result_write": {
+              "name": "FIX_L0C_TO_DST",
+              "start": 95593,
+              "end": 95955,
+              "issue": 94417,
+              "pc_offset": "0xd7c90"
+            },
+            "next_first_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 96670,
+              "end": 96952,
+              "issue": 95135,
+              "pc_offset": "0xd76ec"
+            },
+            "next_first_mmad": {
+              "name": "MMAD",
+              "start": 96954,
+              "end": 97039,
+              "issue": 95290,
+              "pc_offset": "0xd7904"
+            },
+            "slot_release_set": {
+              "name": "SET_FLAG",
+              "start": 93185,
+              "end": 93524,
+              "pc_offset": "0xd7b78",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "slot_reuse_wait": {
+              "name": "WAIT_FLAG",
+              "start": 94724,
+              "end": 94724,
+              "pc_offset": "0xd6e5c",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "next_data_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 95499,
+              "end": 96669,
+              "pc_offset": "0xd7608",
+              "flag": [
+                "MTE2",
+                "MTE1",
+                0
+              ]
+            },
+            "next_cube_ready_set": {
+              "name": "SET_FLAG",
+              "start": 96671,
+              "end": 96952,
+              "pc_offset": "0xd7780",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "next_cube_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 95588,
+              "end": 96953,
+              "pc_offset": "0xd7784",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "copy_issue_before_old_last_mmad_end_cycles": 751,
+            "copy_start_before_old_last_mmad_end_cycles": 750,
+            "safe_slot_available_before_actual_issue_cycles": 1309,
+            "slot_and_prior_weight_transfer_done_before_actual_issue_cycles": 496,
+            "old_mmads_not_finished_when_next_copy_issued": 3
+          },
+          {
+            "old_N": 34304,
+            "next_N": 34560,
+            "next_first_K": 0,
+            "next_weight_copy_index": 60,
+            "l1_slot_offset_bytes": 163840,
+            "copy_shape_NK": [
+              256,
+              256
+            ],
+            "next_weight_source_offset_bytes": 353894400,
+            "source_weight_row_pitch_bytes": 10240,
+            "prior_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 133309,
+              "end": 135152,
+              "issue": 133308,
+              "pc_offset": "0xd7200"
+            },
+            "prior_last_mmad": {
+              "name": "MMAD",
+              "start": 136315,
+              "end": 136400,
+              "issue": 135055,
+              "pc_offset": "0xd7904"
+            },
+            "prior_last_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 136022,
+              "end": 136313,
+              "issue": 134900,
+              "pc_offset": "0xd76ec"
+            },
+            "next_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 135656,
+              "end": 137506,
+              "issue": 135655,
+              "pc_offset": "0xd7200"
+            },
+            "next_input_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 9684,
+              "end": 10963,
+              "issue": 9683,
+              "pc_offset": "0xd6920"
+            },
+            "next_input_source_offset_bytes": 0,
+            "next_input_slot_offset_bytes": 0,
+            "prior_result_write": {
+              "name": "FIX_L0C_TO_DST",
+              "start": 136409,
+              "end": 136694,
+              "issue": 135239,
+              "pc_offset": "0xd7c90"
+            },
+            "next_first_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 137508,
+              "end": 137790,
+              "issue": 135957,
+              "pc_offset": "0xd76ec"
+            },
+            "next_first_mmad": {
+              "name": "MMAD",
+              "start": 137792,
+              "end": 137877,
+              "issue": 136112,
+              "pc_offset": "0xd7904"
+            },
+            "slot_release_set": {
+              "name": "SET_FLAG",
+              "start": 134001,
+              "end": 134371,
+              "pc_offset": "0xd7b78",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "slot_reuse_wait": {
+              "name": "WAIT_FLAG",
+              "start": 135546,
+              "end": 135546,
+              "pc_offset": "0xd6e5c",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "next_data_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 136315,
+              "end": 137507,
+              "pc_offset": "0xd7608",
+              "flag": [
+                "MTE2",
+                "MTE1",
+                0
+              ]
+            },
+            "next_cube_ready_set": {
+              "name": "SET_FLAG",
+              "start": 137509,
+              "end": 137790,
+              "pc_offset": "0xd7780",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "next_cube_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 136404,
+              "end": 137791,
+              "pc_offset": "0xd7784",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "copy_issue_before_old_last_mmad_end_cycles": 745,
+            "copy_start_before_old_last_mmad_end_cycles": 744,
+            "safe_slot_available_before_actual_issue_cycles": 1284,
+            "slot_and_prior_weight_transfer_done_before_actual_issue_cycles": 503,
+            "old_mmads_not_finished_when_next_copy_issued": 3
+          }
+        ],
+        "within_K_transitions": {
+          "total": 76,
+          "next_copy_issued_before_prior_last_mmad_finishes": 75,
+          "copy_issue_lead_cycles_min_median_max": [
+            -59,
+            1055.0,
+            1164
+          ]
+        }
+      }
+    ],
+    "down": [
+      {
+        "core": 0,
+        "weight_copies": 68,
+        "MMAD_count": 544,
+        "output_tiles": 2,
+        "all_raw_transfer_and_MMAD_times_match_Insight": true,
+        "all_kept_opcodes_match_original_ELF": true,
+        "unique_opcodes_checked": 21,
+        "popped_sha256": "99a2bb8a1c472aec4f6ae3375e5673f655322d0222fe9c6623335e2af94d25ef",
+        "completed_sha256": "dcf057d3e0a402642918942443ddef7e3b6efb064dfef99729d875048fc00698",
+        "ccu_sources_sha256": {
+          "core0.cubecore0.ccu_log.dump": "67386a0c35722cae988bc8397adc02e2ab14949560cb408695652d88b5c01bf3",
+          "core0.cubecore0.ccu_log.1.dump": "001d54d9f4739945fcda631444fa50fdff154ba5e6efd399e64a28f5f8a6c4da"
+        },
+        "cross_output_boundaries": [
+          {
+            "old_N": 0,
+            "next_N": 112,
+            "next_first_K": 0,
+            "next_weight_copy_index": 34,
+            "l1_slot_offset_bytes": 32768,
+            "copy_shape_NK": [
+              112,
+              512
+            ],
+            "next_weight_source_offset_bytes": 3899392,
+            "source_weight_row_pitch_bytes": 34816,
+            "prior_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 144051,
+              "end": 145911,
+              "issue": 144050,
+              "pc_offset": "0xd0e34"
+            },
+            "prior_last_mmad": {
+              "name": "MMAD",
+              "start": 147619,
+              "end": 147668,
+              "issue": 147618,
+              "pc_offset": "0xd1708"
+            },
+            "prior_last_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 147465,
+              "end": 147603,
+              "issue": 147464,
+              "pc_offset": "0xd1388"
+            },
+            "next_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 148467,
+              "end": 150327,
+              "issue": 148466,
+              "pc_offset": "0xd0e34"
+            },
+            "next_input_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 148351,
+              "end": 148720,
+              "issue": 148350,
+              "pc_offset": "0xd0a64"
+            },
+            "next_input_source_offset_bytes": 0,
+            "next_input_slot_offset_bytes": 0,
+            "prior_result_write": {
+              "name": "FIX_L0C_TO_DST",
+              "start": 147814,
+              "end": 148075,
+              "issue": 147813,
+              "pc_offset": "0xd1940"
+            },
+            "next_first_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 150329,
+              "end": 150467,
+              "issue": 148772,
+              "pc_offset": "0xd1388"
+            },
+            "next_first_mmad": {
+              "name": "MMAD",
+              "start": 150469,
+              "end": 150518,
+              "issue": 148926,
+              "pc_offset": "0xd1708"
+            },
+            "slot_release_set": {
+              "name": "SET_FLAG",
+              "start": 143659,
+              "end": 143659,
+              "pc_offset": "0xd1838",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                2
+              ]
+            },
+            "slot_reuse_wait": {
+              "name": "WAIT_FLAG",
+              "start": 148367,
+              "end": 148367,
+              "pc_offset": "0xd0a98",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                2
+              ]
+            },
+            "next_data_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 148724,
+              "end": 150328,
+              "pc_offset": "0xd129c",
+              "flag": [
+                "MTE2",
+                "MTE1",
+                1
+              ]
+            },
+            "next_cube_ready_set": {
+              "name": "SET_FLAG",
+              "start": 150330,
+              "end": 150467,
+              "pc_offset": "0xd1584",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "next_cube_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 148793,
+              "end": 150468,
+              "pc_offset": "0xd1588",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "copy_issue_before_old_last_mmad_end_cycles": -798,
+            "copy_start_before_old_last_mmad_end_cycles": -799,
+            "safe_slot_available_before_actual_issue_cycles": 4807,
+            "slot_and_prior_weight_transfer_done_before_actual_issue_cycles": 2555,
+            "old_mmads_not_finished_when_next_copy_issued": 0,
+            "next_input_slot_release_set": {
+              "name": "SET_FLAG",
+              "start": 143645,
+              "end": 143645,
+              "pc_offset": "0xd1810",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "next_input_slot_reuse_wait": {
+              "name": "WAIT_FLAG",
+              "start": 148204,
+              "end": 148204,
+              "pc_offset": "0xd05a4",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "both_slots_and_prior_weight_transfer_done_before_actual_weight_issue_cycles": 2555
+          }
+        ],
+        "within_K_transitions": {
+          "total": 66,
+          "next_copy_issued_before_prior_last_mmad_finishes": 0,
+          "copy_issue_lead_cycles_min_median_max": [
+            -429,
+            -421.0,
+            -407
+          ]
+        }
+      },
+      {
+        "core": 1,
+        "weight_copies": 68,
+        "MMAD_count": 544,
+        "output_tiles": 2,
+        "all_raw_transfer_and_MMAD_times_match_Insight": true,
+        "all_kept_opcodes_match_original_ELF": true,
+        "unique_opcodes_checked": 21,
+        "popped_sha256": "c3b987c90f5c035b1899403778cfdfb001ca4f5246c5727248588e8a57a438d4",
+        "completed_sha256": "0f7551e4de6d3caba3e67388f49aa61bebd70fe32c796ffed9000f686957d854",
+        "ccu_sources_sha256": {
+          "core1.cubecore0.ccu_log.dump": "e7dd9135e3c3153853ca9d8dc31e223fd4c7c0b0cc37bf3934c647c46f33d3c5",
+          "core1.cubecore0.ccu_log.1.dump": "61959117fc9c70304ca043f905938c6391e1799758507a0b498fe45ea9f8007a"
+        },
+        "cross_output_boundaries": [
+          {
+            "old_N": 224,
+            "next_N": 336,
+            "next_first_K": 16896,
+            "next_weight_copy_index": 34,
+            "l1_slot_offset_bytes": 32768,
+            "copy_shape_NK": [
+              112,
+              512
+            ],
+            "next_weight_source_offset_bytes": 11731968,
+            "source_weight_row_pitch_bytes": 34816,
+            "prior_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 144075,
+              "end": 145949,
+              "issue": 144074,
+              "pc_offset": "0xd0e34"
+            },
+            "prior_last_mmad": {
+              "name": "MMAD",
+              "start": 147643,
+              "end": 147692,
+              "issue": 147642,
+              "pc_offset": "0xd1708"
+            },
+            "prior_last_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 147489,
+              "end": 147627,
+              "issue": 147488,
+              "pc_offset": "0xd1388"
+            },
+            "next_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 148491,
+              "end": 150370,
+              "issue": 148490,
+              "pc_offset": "0xd0e34"
+            },
+            "next_input_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 148375,
+              "end": 148744,
+              "issue": 148374,
+              "pc_offset": "0xd0a64"
+            },
+            "next_input_source_offset_bytes": 33792,
+            "next_input_slot_offset_bytes": 0,
+            "prior_result_write": {
+              "name": "FIX_L0C_TO_DST",
+              "start": 147838,
+              "end": 148107,
+              "issue": 147837,
+              "pc_offset": "0xd1940"
+            },
+            "next_first_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 150372,
+              "end": 150510,
+              "issue": 148796,
+              "pc_offset": "0xd1388"
+            },
+            "next_first_mmad": {
+              "name": "MMAD",
+              "start": 150512,
+              "end": 150561,
+              "issue": 148950,
+              "pc_offset": "0xd1708"
+            },
+            "slot_release_set": {
+              "name": "SET_FLAG",
+              "start": 143683,
+              "end": 143683,
+              "pc_offset": "0xd1838",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                2
+              ]
+            },
+            "slot_reuse_wait": {
+              "name": "WAIT_FLAG",
+              "start": 148391,
+              "end": 148391,
+              "pc_offset": "0xd0a98",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                2
+              ]
+            },
+            "next_data_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 148748,
+              "end": 150371,
+              "pc_offset": "0xd129c",
+              "flag": [
+                "MTE2",
+                "MTE1",
+                1
+              ]
+            },
+            "next_cube_ready_set": {
+              "name": "SET_FLAG",
+              "start": 150373,
+              "end": 150510,
+              "pc_offset": "0xd1584",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "next_cube_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 148817,
+              "end": 150511,
+              "pc_offset": "0xd1588",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "copy_issue_before_old_last_mmad_end_cycles": -798,
+            "copy_start_before_old_last_mmad_end_cycles": -799,
+            "safe_slot_available_before_actual_issue_cycles": 4807,
+            "slot_and_prior_weight_transfer_done_before_actual_issue_cycles": 2541,
+            "old_mmads_not_finished_when_next_copy_issued": 0,
+            "next_input_slot_release_set": {
+              "name": "SET_FLAG",
+              "start": 143669,
+              "end": 143669,
+              "pc_offset": "0xd1810",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "next_input_slot_reuse_wait": {
+              "name": "WAIT_FLAG",
+              "start": 148228,
+              "end": 148228,
+              "pc_offset": "0xd05a4",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "both_slots_and_prior_weight_transfer_done_before_actual_weight_issue_cycles": 2541
+          }
+        ],
+        "within_K_transitions": {
+          "total": 66,
+          "next_copy_issued_before_prior_last_mmad_finishes": 0,
+          "copy_issue_lead_cycles_min_median_max": [
+            -429,
+            -421.0,
+            -407
+          ]
+        }
+      },
+      {
+        "core": 22,
+        "weight_copies": 68,
+        "MMAD_count": 544,
+        "output_tiles": 2,
+        "all_raw_transfer_and_MMAD_times_match_Insight": true,
+        "all_kept_opcodes_match_original_ELF": true,
+        "unique_opcodes_checked": 21,
+        "popped_sha256": "775bc16a80c3a60011abcb1515dac0ed4332cba1904c9a3a009638d2b2d44a3a",
+        "completed_sha256": "d0fa35621e12fc79de0a3995cd1429a94dc08d52458326a705998599e5839e41",
+        "ccu_sources_sha256": {
+          "core22.cubecore0.ccu_log.1.dump": "68c4bcdd31450a35143beef2e29c971028d79875069d1332a74eab535360d2e1",
+          "core22.cubecore0.ccu_log.dump": "6c60618b9a8f7d1a647ccca4f2343be9dfb4182470e9d2bc4a66448f398c763f"
+        },
+        "cross_output_boundaries": [
+          {
+            "old_N": 4928,
+            "next_N": 5040,
+            "next_first_K": 0,
+            "next_weight_copy_index": 34,
+            "l1_slot_offset_bytes": 32768,
+            "copy_shape_NK": [
+              80,
+              512
+            ],
+            "next_weight_source_offset_bytes": 175472640,
+            "source_weight_row_pitch_bytes": 34816,
+            "prior_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 142787,
+              "end": 144911,
+              "issue": 142786,
+              "pc_offset": "0xd0e34"
+            },
+            "prior_last_mmad": {
+              "name": "MMAD",
+              "start": 146350,
+              "end": 146399,
+              "issue": 146349,
+              "pc_offset": "0xd1708"
+            },
+            "prior_last_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 146196,
+              "end": 146334,
+              "issue": 146195,
+              "pc_offset": "0xd1388"
+            },
+            "next_weight_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 147163,
+              "end": 148831,
+              "issue": 147162,
+              "pc_offset": "0xd0e34"
+            },
+            "next_input_copy": {
+              "name": "MOV_OUT_TO_L1_MULTI_ND2NZ",
+              "start": 147052,
+              "end": 147421,
+              "issue": 147051,
+              "pc_offset": "0xd0a64"
+            },
+            "next_input_source_offset_bytes": 0,
+            "next_input_slot_offset_bytes": 0,
+            "prior_result_write": {
+              "name": "FIX_L0C_TO_DST",
+              "start": 146545,
+              "end": 146806,
+              "issue": 146544,
+              "pc_offset": "0xd1940"
+            },
+            "next_first_L1_to_L0B": {
+              "name": "LOAD_2D",
+              "start": 148833,
+              "end": 148939,
+              "issue": 147463,
+              "pc_offset": "0xd1388"
+            },
+            "next_first_mmad": {
+              "name": "MMAD",
+              "start": 148941,
+              "end": 148982,
+              "issue": 147617,
+              "pc_offset": "0xd1708"
+            },
+            "slot_release_set": {
+              "name": "SET_FLAG",
+              "start": 142430,
+              "end": 142430,
+              "pc_offset": "0xd1838",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                2
+              ]
+            },
+            "slot_reuse_wait": {
+              "name": "WAIT_FLAG",
+              "start": 147068,
+              "end": 147068,
+              "pc_offset": "0xd0a98",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                2
+              ]
+            },
+            "next_data_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 147425,
+              "end": 148832,
+              "pc_offset": "0xd129c",
+              "flag": [
+                "MTE2",
+                "MTE1",
+                1
+              ]
+            },
+            "next_cube_ready_set": {
+              "name": "SET_FLAG",
+              "start": 148834,
+              "end": 148939,
+              "pc_offset": "0xd1584",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "next_cube_ready_wait": {
+              "name": "WAIT_FLAG",
+              "start": 147484,
+              "end": 148940,
+              "pc_offset": "0xd1588",
+              "flag": [
+                "MTE1",
+                "CUBE",
+                0
+              ]
+            },
+            "copy_issue_before_old_last_mmad_end_cycles": -763,
+            "copy_start_before_old_last_mmad_end_cycles": -764,
+            "safe_slot_available_before_actual_issue_cycles": 4732,
+            "slot_and_prior_weight_transfer_done_before_actual_issue_cycles": 2251,
+            "old_mmads_not_finished_when_next_copy_issued": 0,
+            "next_input_slot_release_set": {
+              "name": "SET_FLAG",
+              "start": 142416,
+              "end": 142416,
+              "pc_offset": "0xd1810",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "next_input_slot_reuse_wait": {
+              "name": "WAIT_FLAG",
+              "start": 146905,
+              "end": 146905,
+              "pc_offset": "0xd05a4",
+              "flag": [
+                "MTE1",
+                "MTE2",
+                0
+              ]
+            },
+            "both_slots_and_prior_weight_transfer_done_before_actual_weight_issue_cycles": 2251
+          }
+        ],
+        "within_K_transitions": {
+          "total": 66,
+          "next_copy_issued_before_prior_last_mmad_finishes": 0,
+          "copy_issue_lead_cycles_min_median_max": [
+            -399,
+            -392.5,
+            -380
+          ]
+        }
+      }
+    ]
+  },
+  "limitations": [
+    "Original same-shape F.linear probe: not a new capture of every model-layer launch.",
+    "Original blockDim=23; only cores 0, 1 and 22 dynamically inspected here.",
+    "CCU issue and simulator execution/completion are separate timestamps, all simulated.",
+    "No measured device WAIT latency, modified-kernel benchmark or new model throughput result.",
+    "Free L1 slots establish a scheduling opportunity, not a measured achievable speedup.",
+    "Direct llvm-objdump instruction text was unavailable; raw simulator opcode words were checked against ELF .text instead."
+  ]
+}
