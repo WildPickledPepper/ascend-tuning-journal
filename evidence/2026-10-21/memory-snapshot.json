@@ -1,0 +1,510 @@
+{
+  "model": "Qwen3.8-27B",
+  "hardware": "Ascend910B2",
+  "physical_device": 6,
+  "configuration": {
+    "num_speculative_tokens": 7,
+    "draft_use_cuda_graph": true,
+    "draft_enforce_eager": false,
+    "main_graph_mode": "FULL_DECODE_ONLY",
+    "main_capture_sizes": [
+      8
+    ],
+    "dtype": "torch.bfloat16",
+    "kv_cache_dtype": "auto",
+    "mamba_cache_dtype": "bfloat16",
+    "mamba_ssm_cache_dtype": "bfloat16",
+    "tp_size": 1,
+    "context_length": 4096,
+    "max_num_seqs": 1,
+    "prefix_caching": false,
+    "gpu_memory_utilization": 0.97,
+    "wrappers": [
+      {
+        "is_draft_runnable": false,
+        "callable": "Qwen3_5ForConditionalGeneration",
+        "runtime_mode": "FULL",
+        "entries": [
+          {
+            "batch_descriptor": "BatchDescriptor(num_tokens=8, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+            "captured": true
+          }
+        ]
+      },
+      {
+        "is_draft_runnable": true,
+        "callable": "AscendSpecDecodeBaseProposer._run_merged_draft",
+        "runtime_mode": "FULL",
+        "entries": [
+          {
+            "batch_descriptor": "BatchDescriptor(num_tokens=8, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+            "captured": true
+          }
+        ]
+      }
+    ]
+  },
+  "phases": [
+    {
+      "name": "01-load_model-before",
+      "utc": "2026-10-21T03:18:51.950106+00:00",
+      "allocated_bytes": 15855104,
+      "reserved_bytes": 23068672,
+      "max_allocated_bytes": 15868928,
+      "max_reserved_bytes": 23068672,
+      "device_free_bytes": 64994172928,
+      "device_total_bytes": 65452113920,
+      "msmemscope_available": true,
+      "event_count": 118,
+      "snapshot_sha256": "491922cbed644901d4f28bb3cfdef93cab1a9210fc0153f9c662a42c2dfb64fd",
+      "interval_peak_allocated_bytes": 15863884,
+      "interval_peak_reserved_bytes": 23068672,
+      "insight_endpoint_error_bytes": 4024
+    },
+    {
+      "name": "02-load_model-after",
+      "utc": "2026-10-21T03:19:09.904523+00:00",
+      "allocated_bytes": 57334623232,
+      "reserved_bytes": 59886272512,
+      "max_allocated_bytes": 57334623232,
+      "max_reserved_bytes": 59886272512,
+      "device_free_bytes": 5128978432,
+      "device_total_bytes": 65452113920,
+      "msmemscope_available": true,
+      "event_count": 1584,
+      "snapshot_sha256": "816b1f5f6d9c7967345c22efd338443d043a10f77acf9d8ef42e7d52c156bc4b",
+      "interval_peak_allocated_bytes": 59877416028,
+      "interval_peak_reserved_bytes": 59886272512,
+      "insight_endpoint_error_bytes": 4024
+    },
+    {
+      "name": "03-profile_run-before",
+      "utc": "2026-10-21T03:19:11.061829+00:00",
+      "allocated_bytes": 57334623232,
+      "reserved_bytes": 57348718592,
+      "max_allocated_bytes": 57334623232,
+      "max_reserved_bytes": 57348718592,
+      "device_free_bytes": 7658016768,
+      "device_total_bytes": 65452113920,
+      "msmemscope_available": true,
+      "event_count": 1586,
+      "snapshot_sha256": "d6c8c518263ca3513a53f7c432eabb9f679adf487cfa6805e295f211d093fa96",
+      "interval_peak_allocated_bytes": 57334619208,
+      "interval_peak_reserved_bytes": 59886272512,
+      "insight_endpoint_error_bytes": 4024
+    },
+    {
+      "name": "04-profile_run-after",
+      "utc": "2026-10-21T03:20:38.982324+00:00",
+      "allocated_bytes": 57334623232,
+      "reserved_bytes": 57453576192,
+      "max_allocated_bytes": 57421131264,
+      "max_reserved_bytes": 57453576192,
+      "device_free_bytes": 7534534656,
+      "device_total_bytes": 65452113920,
+      "msmemscope_available": true,
+      "event_count": 8090,
+      "snapshot_sha256": "cedfcc7d5e0cc3228fc51e6e5b5958d12c87f1f0f408f6c68f2df675f07e51c8",
+      "interval_peak_allocated_bytes": 57421119681,
+      "interval_peak_reserved_bytes": 57453576192,
+      "insight_endpoint_error_bytes": 4024
+    },
+    {
+      "name": "05-initialize_kv_cache-before",
+      "utc": "2026-10-21T03:20:40.344620+00:00",
+      "allocated_bytes": 57334623232,
+      "reserved_bytes": 57348718592,
+      "max_allocated_bytes": 57421131264,
+      "max_reserved_bytes": 57453576192,
+      "device_free_bytes": 7639392256,
+      "device_total_bytes": 65452113920,
+      "msmemscope_available": true,
+      "event_count": 8092,
+      "snapshot_sha256": "3b423a7679dcb065b4ec0c2e6b0b98a18d0f041cbe688ccd1f2ee01559c6a910",
+      "interval_peak_allocated_bytes": 57334619208,
+      "interval_peak_reserved_bytes": 57453576192,
+      "insight_endpoint_error_bytes": 4024
+    },
+    {
+      "name": "06-initialize_kv_cache-after",
+      "utc": "2026-10-21T03:20:41.182804+00:00",
+      "allocated_bytes": 63372311040,
+      "reserved_bytes": 63409487872,
+      "max_allocated_bytes": 63372311040,
+      "max_reserved_bytes": 63409487872,
+      "device_free_bytes": 1578622976,
+      "device_total_bytes": 65452113920,
+      "msmemscope_available": true,
+      "event_count": 8202,
+      "snapshot_sha256": "04fe1e96cbea4363a58af03c518b733cb5c4c5a397805532230e3a08a92e6099",
+      "interval_peak_allocated_bytes": 63372311040,
+      "interval_peak_reserved_bytes": 63409487872,
+      "insight_endpoint_error_bytes": 0
+    },
+    {
+      "name": "07-capture_model-before",
+      "utc": "2026-10-21T03:20:54.881287+00:00",
+      "allocated_bytes": 63372311040,
+      "reserved_bytes": 63432556544,
+      "max_allocated_bytes": 63389157888,
+      "max_reserved_bytes": 63432556544,
+      "device_free_bytes": 1555689472,
+      "device_total_bytes": 65452113920,
+      "msmemscope_available": true,
+      "event_count": 8475,
+      "snapshot_sha256": "743750c1843ba4ef7900a29e75f9fd6873e4cacdcca93754310101d7b6fcf6d1",
+      "interval_peak_allocated_bytes": 63389150398,
+      "interval_peak_reserved_bytes": 63432556544,
+      "insight_endpoint_error_bytes": 0
+    },
+    {
+      "name": "08-capture_model-after",
+      "utc": "2026-10-21T03:21:02.105266+00:00",
+      "allocated_bytes": 63376506880,
+      "reserved_bytes": 63961038848,
+      "max_allocated_bytes": 63882531328,
+      "max_reserved_bytes": 63963136000,
+      "device_free_bytes": 993394688,
+      "device_total_bytes": 65452113920,
+      "msmemscope_available": true,
+      "event_count": 25372,
+      "snapshot_sha256": "166aaef06258b1f43847c8cb32cb81d422b42d825b78018c47153e3f3906192f",
+      "interval_peak_allocated_bytes": 63882519737,
+      "interval_peak_reserved_bytes": 63963136000,
+      "insight_endpoint_error_bytes": 0
+    },
+    {
+      "name": "09-ready",
+      "utc": "2026-10-21T03:21:12.031742+00:00",
+      "allocated_bytes": 63376506880,
+      "reserved_bytes": 63961038848,
+      "max_allocated_bytes": 63882531328,
+      "max_reserved_bytes": 63963136000,
+      "device_free_bytes": 890421248,
+      "device_total_bytes": 65452113920,
+      "msmemscope_available": true,
+      "event_count": 25382,
+      "snapshot_sha256": "89a3db446ce45c34ad550c1e88858f8474ca60c020863750420d78ccd9ebbfb5",
+      "interval_peak_allocated_bytes": 63376506976,
+      "interval_peak_reserved_bytes": 63961038848,
+      "insight_endpoint_error_bytes": 0
+    },
+    {
+      "name": "10-request-1",
+      "utc": "2026-10-21T03:21:16.918098+00:00",
+      "allocated_bytes": 63376508416,
+      "reserved_bytes": 64426606592,
+      "max_allocated_bytes": 63882531328,
+      "max_reserved_bytes": 64426606592,
+      "device_free_bytes": 416370688,
+      "device_total_bytes": 65452113920,
+      "msmemscope_available": true,
+      "event_count": 52534,
+      "snapshot_sha256": "007972635e83054576142ff6b1a12d0b6e0e6d48578b4d3adb25b9976dfd7e73",
+      "interval_peak_allocated_bytes": 63846936023,
+      "interval_peak_reserved_bytes": 64426606592,
+      "insight_endpoint_error_bytes": 1460
+    },
+    {
+      "name": "11-request-2",
+      "utc": "2026-10-21T03:21:20.337211+00:00",
+      "allocated_bytes": 63376508416,
+      "reserved_bytes": 64426606592,
+      "max_allocated_bytes": 63882531328,
+      "max_reserved_bytes": 64426606592,
+      "device_free_bytes": 416370688,
+      "device_total_bytes": 65452113920,
+      "msmemscope_available": true,
+      "event_count": 79688,
+      "snapshot_sha256": "ae746b83f262338f0547af55b14d7d312e49b88afd2a5f1778cf4cdf99e4f956",
+      "interval_peak_allocated_bytes": 63846936035,
+      "interval_peak_reserved_bytes": 64426606592,
+      "insight_endpoint_error_bytes": 1460
+    },
+    {
+      "name": "12-request-3",
+      "utc": "2026-10-21T03:21:23.740735+00:00",
+      "allocated_bytes": 63376508416,
+      "reserved_bytes": 64426606592,
+      "max_allocated_bytes": 63882531328,
+      "max_reserved_bytes": 64426606592,
+      "device_free_bytes": 416444416,
+      "device_total_bytes": 65452113920,
+      "msmemscope_available": true,
+      "event_count": 106842,
+      "snapshot_sha256": "233625b6ae78ab5e935a770ab60cecb527aa6ec03f95c943d5d0cd2b620e6eb3",
+      "interval_peak_allocated_bytes": 63846936035,
+      "interval_peak_reserved_bytes": 64426606592,
+      "insight_endpoint_error_bytes": 0
+    }
+  ],
+  "insight": {
+    "parse_complete": true,
+    "event_count": 106842,
+    "allocation_events": 36076,
+    "final_state_segments": 8,
+    "final_counters_match_exactly": true,
+    "max_intermediate_replay_error_bytes": 4024,
+    "all_12_memscope_allocated_reserved_total_match_exactly": true,
+    "msmemscope_vs_later_device_free_differences_bytes": [
+      -3612672,
+      -225280,
+      -8515584,
+      258048,
+      0,
+      10485760,
+      32768,
+      2097152,
+      258048,
+      98304,
+      0,
+      49152
+    ],
+    "device_free_note": "msMemScope samples before pickle dump; metadata samples afterward. Device free changes outside framework pools, so these are not asserted simultaneous."
+  },
+  "memory_breakdown_bytes": {
+    "worker_initialized": 15855104,
+    "model_loading_net_increase": 57318768128,
+    "cache_initialization_net_increase": 6037687808,
+    "post_cache_other_live_increase": 4197376,
+    "allocator_reserved_but_inactive": 1050098176,
+    "device_used_outside_allocator_reservation": 609062912,
+    "device_free": 416444416
+  },
+  "live_categories_by_callstack": {
+    "other_live": {
+      "bytes": 155882496,
+      "requested_bytes": 155661681,
+      "allocations": 491
+    },
+    "weight_creation": {
+      "bytes": 57182965760,
+      "requested_bytes": 57182781440,
+      "allocations": 360
+    },
+    "cache_allocation": {
+      "bytes": 6037660160,
+      "requested_bytes": 6037651456,
+      "allocations": 17
+    }
+  },
+  "fragmentation": [
+    {
+      "pool": "default",
+      "reserved_bytes": 56623104,
+      "allocated_bytes": 52905472,
+      "inactive_bytes": 3717632,
+      "inactive_blocks": 7,
+      "largest_inactive_bytes": 3709952,
+      "awaiting_free_bytes": 0
+    },
+    {
+      "pool": "default",
+      "reserved_bytes": 56413388800,
+      "allocated_bytes": 56375695872,
+      "inactive_bytes": 37692928,
+      "inactive_blocks": 265,
+      "largest_inactive_bytes": 33504768,
+      "awaiting_free_bytes": 0
+    },
+    {
+      "pool": "default",
+      "reserved_bytes": 7402946560,
+      "allocated_bytes": 6943711232,
+      "inactive_bytes": 459235328,
+      "inactive_blocks": 17,
+      "largest_inactive_bytes": 456850944,
+      "awaiting_free_bytes": 0
+    },
+    {
+      "pool": "default",
+      "reserved_bytes": 20971520,
+      "allocated_bytes": 4194816,
+      "inactive_bytes": 16776704,
+      "inactive_blocks": 1,
+      "largest_inactive_bytes": 16776704,
+      "awaiting_free_bytes": 0
+    },
+    {
+      "pool": "default",
+      "reserved_bytes": 2097152,
+      "allocated_bytes": 0,
+      "inactive_bytes": 2097152,
+      "inactive_blocks": 1,
+      "largest_inactive_bytes": 2097152,
+      "awaiting_free_bytes": 0
+    },
+    {
+      "pool": "default",
+      "reserved_bytes": 2097152,
+      "allocated_bytes": 1024,
+      "inactive_bytes": 2096128,
+      "inactive_blocks": 1,
+      "largest_inactive_bytes": 2096128,
+      "awaiting_free_bytes": 0
+    },
+    {
+      "pool": "graph_private",
+      "reserved_bytes": 4194304,
+      "allocated_bytes": 0,
+      "inactive_bytes": 4194304,
+      "inactive_blocks": 1,
+      "largest_inactive_bytes": 4194304,
+      "awaiting_free_bytes": 0
+    },
+    {
+      "pool": "graph_private",
+      "reserved_bytes": 524288000,
+      "allocated_bytes": 0,
+      "inactive_bytes": 524288000,
+      "inactive_blocks": 1,
+      "largest_inactive_bytes": 524288000,
+      "awaiting_free_bytes": 0
+    }
+  ],
+  "largest_live_callstack_groups": [
+    {
+      "stack": "_device.py:__torch_function__ > linear.py:create_weights > linear.py:__init__ > linear.py:__init__ > qwen2_moe.py:__init__",
+      "bytes": 23173562880,
+      "allocations": 65
+    },
+    {
+      "stack": "_device.py:__torch_function__ > linear.py:create_weights > linear.py:__init__ > qwen2_moe.py:__init__ > qwen3_5.py:__init__",
+      "bytes": 11586798080,
+      "allocations": 65
+    },
+    {
+      "stack": "_device.py:__torch_function__ > linear.py:create_weights > linear.py:__init__ > linear.py:__init__ > qwen_gdn_linear_attn.py:create_qkvz_proj",
+      "bytes": 8053088256,
+      "allocations": 48
+    },
+    {
+      "stack": "model_runner_v1.py:_allocate_kv_cache_tensors > model_runner_v1.py:initialize_kv_cache_tensors > model_runner_v1.py:initialize_kv_cache > snapshot_extension.py:measured > worker.py:initialize_from_config",
+      "bytes": 6037660160,
+      "allocations": 17
+    },
+    {
+      "stack": "_device.py:__torch_function__ > linear.py:create_weights > linear.py:__init__ > qwen_gdn_linear_attn.py:__init__ > qwen3_5.py:__init__",
+      "bytes": 3023880192,
+      "allocations": 96
+    },
+    {
+      "stack": "_device.py:__torch_function__ > vocab_parallel_embedding.py:create_weights > vocab_parallel_embedding.py:__init__ > qwen3_5.py:__init__ > decorators.py:__init__",
+      "bytes": 2542797312,
+      "allocations": 1
+    },
+    {
+      "stack": "_device.py:__torch_function__ > vocab_parallel_embedding.py:create_weights > vocab_parallel_embedding.py:__init__ > vocab_parallel_embedding.py:__init__ > qwen3_5.py:__init__",
+      "bytes": 2542797312,
+      "allocations": 1
+    },
+    {
+      "stack": "_device.py:__torch_function__ > vocab_parallel_embedding.py:create_weights > vocab_parallel_embedding.py:__init__ > vocab_parallel_embedding.py:__init__ > qwen3_5_mtp.py:__init__",
+      "bytes": 2542797312,
+      "allocations": 1
+    },
+    {
+      "stack": "_device.py:__torch_function__ > linear.py:create_weights > linear.py:__init__ > linear.py:__init__ > qwen3_next.py:__init__",
+      "bytes": 2495619584,
+      "allocations": 17
+    },
+    {
+      "stack": "_device.py:__torch_function__ > linear.py:create_weights > linear.py:__init__ > qwen3_next.py:__init__ > qwen3_5.py:__init__",
+      "bytes": 1069556224,
+      "allocations": 17
+    },
+    {
+      "stack": "_device.py:__torch_function__ > base.py:__init__ > mrope.py:__init__ > __init__.py:get_rope > qwen3_next.py:__init__",
+      "bytes": 134218240,
+      "allocations": 1
+    },
+    {
+      "stack": "_device.py:__torch_function__ > linear.py:create_weights > linear.py:__init__ > qwen3_5_mtp.py:__init__ > decorators.py:__init__",
+      "bytes": 104858112,
+      "allocations": 1
+    },
+    {
+      "stack": "_device.py:__torch_function__ > linear.py:create_weights > linear.py:__init__ > linear.py:__init__ > qwen_gdn_linear_attn.py:create_ba_proj",
+      "bytes": 47210496,
+      "allocations": 48
+    },
+    {
+      "stack": "llm_base_proposer.py:__init__ > llm_base_proposer.py:__init__ > eagle_proposer.py:__init__ > __init__.py:get_spec_decode_method > model_runner_v1.py:_get_drafter",
+      "bytes": 10496512,
+      "allocations": 5
+    },
+    {
+      "stack": "utils.py:__init__ > gpu_model_runner.py:_make_buffer > gpu_model_runner.py:__init__ > model_runner_v1.py:__init__ > worker.py:init_device",
+      "bytes": 5272576,
+      "allocations": 13
+    },
+    {
+      "stack": "attention_mask.py:get_splitfuse_attn_mask > attention_mask.py:get_attention_mask > attention_v1.py:build > model_runner_v1.py:_build_attn_group_metadata > model_runner_v1.py:_build_attention_metadata",
+      "bytes": 4194816,
+      "allocations": 1
+    }
+  ],
+  "peaks": {
+    "whole_capture": {
+      "event_id": 24525,
+      "trigger_allocation_bytes": 16777216,
+      "allocator_allocated_bytes": 63882519737,
+      "stack_tail": [
+        "aot_compile.py:124 __call__",
+        "qwen3_5_mtp.py:281 forward",
+        "caching.py:217 __call__",
+        "<string>:5 execution_fn",
+        "piecewise_backend.py:380 __call__",
+        "compiler_interface.py:363 compiled_fn",
+        "npu_fx_compiler.py:511 __call__",
+        "<string>:130 kernel",
+        "acl_graph.py:826 __call__",
+        "acl_graph.py:897 fx_run_eagerly",
+        "<string>:58 forward",
+        "_ops.py:819 __call__"
+      ]
+    },
+    "first_request": {
+      "event_id": 25534,
+      "trigger_allocation_bytes": 453050880,
+      "allocator_allocated_bytes": 63846936023,
+      "stack_tail": [
+        "runtime_wrappers.py:729 inner_fn",
+        "utils.py:108 g",
+        "npu_fx_compiler.py:511 __call__",
+        "<string>:3075 kernel",
+        "acl_graph.py:826 __call__",
+        "acl_graph.py:897 fx_run_eagerly",
+        "<string>:39 forward",
+        "_ops.py:819 __call__",
+        "qwen_gdn_linear_attn.py:1651 qwen_gdn_attention_core",
+        "gdn.py:535 _forward_core",
+        "gdn.py:142 _chunk_gated_delta_rule_fused",
+        "_ops.py:1209 __call__"
+      ]
+    }
+  },
+  "request_growth": {
+    "first_request_net_allocated_bytes": 1536,
+    "subsequent_two_requests_net_allocated_bytes": 0,
+    "subsequent_two_requests_net_reserved_bytes": 0
+  },
+  "cleanup": {
+    "started_utc": "2026-10-21T03:17:46.208444+00:00",
+    "phase": "complete",
+    "restore_services": false,
+    "ready_utc": "2026-10-21T03:21:11.070830+00:00",
+    "ended_utc": "2026-10-21T03:21:27.139074+00:00",
+    "cards_empty": {
+      "6": true,
+      "7": true
+    }
+  },
+  "limits": [
+    "Three identical 128-token requests, not a long-run leak proof.",
+    "Allocator event peaks are not continuously sampled whole-process/device peaks.",
+    "Outside-allocator value is device total minus free minus framework reserved; not a per-component ownership breakdown.",
+    "Inactive graph-private pool reservations are not claimed to be safely releasable.",
+    "Worker-local hooks and memory tracing affect startup/profiling; no throughput benchmark was run."
+  ]
+}

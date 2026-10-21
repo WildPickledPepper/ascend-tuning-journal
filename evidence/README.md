@@ -4,6 +4,7 @@
 
 - `2026-10-21/down-m8-prefetch.json`：BF16固定M8下一包预取，独立mode0/1与原生、24案例逐位验证、完整27B四题三轮、386个Insight/CSV分组和时间分摊；不含原始地址。
 - `2026-10-21/down-m8-prefetch-cleanup.json`：本次服务已关闭、6/7卡释放确认。
+- `2026-10-21/memory-snapshot.json`：12份msMemScope阶段快照、Insight完整事件/末态与原始allocator交叉核对；权重/缓存/预留、GDN临时峰值、碎片及三次短请求增长检查，含清理状态。
 
 - `2026-10-16/`：上板小例子、9B 采样、27B 离线准备。
 - `2026-10-19/eager-vs-graph.json`：同请求 3 次无 profiler 基准的中位数。
