@@ -1,0 +1,342 @@
+{
+  "scope": "first compute start to last compute end, same 128-token request",
+  "category_policy": "Tiny cross-category overlaps assigned to other_compute; same-category overlaps merged.",
+  "gap_policy": "No compute kernel active; may contain non-compute tasks, dispatch and synchronization.",
+  "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT op_name, op_type, COUNT(*) AS calls, SUM(duration_ns) AS total_ns\nFROM compute_view GROUP BY op_name, op_type ORDER BY total_ns DESC LIMIT 20",
+  "runs": {
+    "baseline": {
+      "kernel_csv_sha256": "538e214ddf5fa722eb24441b6155e46cc97b76cb67f6b889e743036d961558b6",
+      "kernel_count": 57653,
+      "insight_groups_verified": 193,
+      "sqlite_top20_verified": true,
+      "window_ms": 2316.91716,
+      "cross_category_overlap_us": 12.2,
+      "categories": {
+        "other_compute": {
+          "exclusive_ms": 363.27144,
+          "window_percent": 15.67908625615255,
+          "cumulative_kernel_ms": 363.44802
+        },
+        "no_compute_interval": {
+          "exclusive_ms": 278.7523,
+          "window_percent": 12.031172491294424,
+          "cumulative_kernel_ms": 0.0
+        },
+        "other_matmul": {
+          "exclusive_ms": 432.65286,
+          "window_percent": 18.673643903608536,
+          "cumulative_kernel_ms": 432.65286
+        },
+        "vocabulary_projection": {
+          "exclusive_ms": 413.99066,
+          "window_percent": 17.868168407022374,
+          "cumulative_kernel_ms": 414.00286
+        },
+        "ffn_up": {
+          "exclusive_ms": 545.12672,
+          "window_percent": 23.528105769651255,
+          "cumulative_kernel_ms": 545.12672
+        },
+        "target_down": {
+          "exclusive_ms": 283.12318,
+          "window_percent": 12.219823172270864,
+          "cumulative_kernel_ms": 283.12318
+        }
+      },
+      "sql_top20": [
+        {
+          "name": "aclnnMatmul_MatMulCommon_MatMulV2",
+          "type": "MatMulV2",
+          "calls": 9369,
+          "total_ms": 1674.90562
+        },
+        {
+          "name": "aclnnRecurrentGatedDeltaRule_RecurrentGatedDeltaRule_RecurrentGatedDeltaRule",
+          "type": "RecurrentGatedDeltaRule",
+          "calls": 1248,
+          "total_ms": 59.31496
+        },
+        {
+          "name": "aclnnContiguous_TransposeAiCore_Transpose",
+          "type": "Transpose",
+          "calls": 1296,
+          "total_ms": 24.54222
+        },
+        {
+          "name": "fused_gdn_gating_kernel",
+          "type": "fused_gdn_gating_kernel",
+          "calls": 1296,
+          "total_ms": 24.37916
+        },
+        {
+          "name": "SwiGlu",
+          "type": "SwiGlu",
+          "calls": 1917,
+          "total_ms": 22.62522
+        },
+        {
+          "name": "CausalConv1d",
+          "type": "CausalConv1d",
+          "calls": 1296,
+          "total_ms": 20.89202
+        },
+        {
+          "name": "aclnnCat_ConcatD_ConcatD",
+          "type": "ConcatD",
+          "calls": 1485,
+          "total_ms": 19.8939
+        },
+        {
+          "name": "aclnnInplaceCopy_SliceAiCore_Slice",
+          "type": "Slice",
+          "calls": 7804,
+          "total_ms": 18.98938
+        },
+        {
+          "name": "FusedInferAttentionScore",
+          "type": "FusedInferAttentionScore",
+          "calls": 621,
+          "total_ms": 17.54256
+        },
+        {
+          "name": "AddRmsNormBias",
+          "type": "AddRmsNormBias",
+          "calls": 3834,
+          "total_ms": 17.2249
+        },
+        {
+          "name": "aclnnIndex_IndexAiCore_Index",
+          "type": "Index",
+          "calls": 1359,
+          "total_ms": 16.74642
+        },
+        {
+          "name": "aclnnInplaceZero_ZerosLikeAiCore_ZerosLike",
+          "type": "ZerosLike",
+          "calls": 1656,
+          "total_ms": 13.65976
+        },
+        {
+          "name": "aclnnAdds_AddAiCore_Add",
+          "type": "Add",
+          "calls": 5588,
+          "total_ms": 10.95584
+        },
+        {
+          "name": "aclnnArgMax_ArgMaxV2AiCore_ArgMaxV2",
+          "type": "ArgMaxV2",
+          "calls": 242,
+          "total_ms": 8.48266
+        },
+        {
+          "name": "aclnnMul_MulAiCore_Mul",
+          "type": "Mul",
+          "calls": 621,
+          "total_ms": 8.4682
+        },
+        {
+          "name": "aclnnChunkGatedDeltaRule_ChunkGatedDeltaRule_ChunkGatedDeltaRule",
+          "type": "ChunkGatedDeltaRule",
+          "calls": 48,
+          "total_ms": 8.21518
+        },
+        {
+          "name": "_layer_norm_fwd_1pass_kernel_npu",
+          "type": "_layer_norm_fwd_1pass_kernel_npu",
+          "calls": 1296,
+          "total_ms": 7.81958
+        },
+        {
+          "name": "aclnnIndex_IndexCheck_IndexCheck",
+          "type": "IndexCheck",
+          "calls": 1359,
+          "total_ms": 6.74578
+        },
+        {
+          "name": "l2norm_fwd_kernel2",
+          "type": "l2norm_fwd_kernel2",
+          "calls": 2592,
+          "total_ms": 6.71586
+        },
+        {
+          "name": "split_qkv_rmsnorm_mrope_kernel",
+          "type": "split_qkv_rmsnorm_mrope_kernel",
+          "calls": 621,
+          "total_ms": 6.17688
+        }
+      ]
+    },
+    "optimized_v3": {
+      "kernel_csv_sha256": "fb0f729ff135cb929daf9753938dbc757fe0e06c27012cd9f5b51ed0dea57348",
+      "kernel_count": 57653,
+      "insight_groups_verified": 193,
+      "sqlite_top20_verified": true,
+      "window_ms": 2306.00232,
+      "cross_category_overlap_us": 12.9,
+      "categories": {
+        "other_compute": {
+          "exclusive_ms": 364.5179,
+          "window_percent": 15.807351833019839,
+          "cumulative_kernel_ms": 364.69102
+        },
+        "no_compute_interval": {
+          "exclusive_ms": 274.85788,
+          "window_percent": 11.919236924271612,
+          "cumulative_kernel_ms": 0.0
+        },
+        "other_matmul": {
+          "exclusive_ms": 434.092,
+          "window_percent": 18.824438997095196,
+          "cumulative_kernel_ms": 434.092
+        },
+        "vocabulary_projection": {
+          "exclusive_ms": 413.44142,
+          "window_percent": 17.928924720249196,
+          "cumulative_kernel_ms": 413.45432
+        },
+        "ffn_up": {
+          "exclusive_ms": 547.20304,
+          "window_percent": 23.729509517579324,
+          "cumulative_kernel_ms": 547.20304
+        },
+        "target_down": {
+          "exclusive_ms": 271.89008,
+          "window_percent": 11.790538007784832,
+          "cumulative_kernel_ms": 271.89008
+        }
+      },
+      "sql_top20": [
+        {
+          "name": "aclnnMatmul_MatMulCommon_MatMulV2",
+          "type": "MatMulV2",
+          "calls": 9369,
+          "total_ms": 1666.63944
+        },
+        {
+          "name": "aclnnRecurrentGatedDeltaRule_RecurrentGatedDeltaRule_RecurrentGatedDeltaRule",
+          "type": "RecurrentGatedDeltaRule",
+          "calls": 1248,
+          "total_ms": 60.43026
+        },
+        {
+          "name": "aclnnContiguous_TransposeAiCore_Transpose",
+          "type": "Transpose",
+          "calls": 1296,
+          "total_ms": 26.2371
+        },
+        {
+          "name": "fused_gdn_gating_kernel",
+          "type": "fused_gdn_gating_kernel",
+          "calls": 1296,
+          "total_ms": 24.3217
+        },
+        {
+          "name": "SwiGlu",
+          "type": "SwiGlu",
+          "calls": 1917,
+          "total_ms": 22.78618
+        },
+        {
+          "name": "CausalConv1d",
+          "type": "CausalConv1d",
+          "calls": 1296,
+          "total_ms": 20.86954
+        },
+        {
+          "name": "aclnnCat_ConcatD_ConcatD",
+          "type": "ConcatD",
+          "calls": 1485,
+          "total_ms": 19.86926
+        },
+        {
+          "name": "aclnnInplaceCopy_SliceAiCore_Slice",
+          "type": "Slice",
+          "calls": 7804,
+          "total_ms": 19.00076
+        },
+        {
+          "name": "FusedInferAttentionScore",
+          "type": "FusedInferAttentionScore",
+          "calls": 621,
+          "total_ms": 18.50468
+        },
+        {
+          "name": "AddRmsNormBias",
+          "type": "AddRmsNormBias",
+          "calls": 3834,
+          "total_ms": 17.27336
+        },
+        {
+          "name": "aclnnIndex_IndexAiCore_Index",
+          "type": "Index",
+          "calls": 1359,
+          "total_ms": 16.87542
+        },
+        {
+          "name": "aclnnAdds_AddAiCore_Add",
+          "type": "Add",
+          "calls": 5588,
+          "total_ms": 11.00658
+        },
+        {
+          "name": "aclnnInplaceZero_ZerosLikeAiCore_ZerosLike",
+          "type": "ZerosLike",
+          "calls": 1656,
+          "total_ms": 10.43024
+        },
+        {
+          "name": "aclnnMul_MulAiCore_Mul",
+          "type": "Mul",
+          "calls": 621,
+          "total_ms": 8.50482
+        },
+        {
+          "name": "aclnnArgMax_ArgMaxV2AiCore_ArgMaxV2",
+          "type": "ArgMaxV2",
+          "calls": 242,
+          "total_ms": 8.46172
+        },
+        {
+          "name": "aclnnChunkGatedDeltaRule_ChunkGatedDeltaRule_ChunkGatedDeltaRule",
+          "type": "ChunkGatedDeltaRule",
+          "calls": 48,
+          "total_ms": 8.42994
+        },
+        {
+          "name": "_layer_norm_fwd_1pass_kernel_npu",
+          "type": "_layer_norm_fwd_1pass_kernel_npu",
+          "calls": 1296,
+          "total_ms": 7.86166
+        },
+        {
+          "name": "l2norm_fwd_kernel2",
+          "type": "l2norm_fwd_kernel2",
+          "calls": 2592,
+          "total_ms": 6.73734
+        },
+        {
+          "name": "aclnnIndex_IndexCheck_IndexCheck",
+          "type": "IndexCheck",
+          "calls": 1359,
+          "total_ms": 6.6854
+        },
+        {
+          "name": "split_qkv_rmsnorm_mrope_kernel",
+          "type": "split_qkv_rmsnorm_mrope_kernel",
+          "calls": 621,
+          "total_ms": 6.37052
+        }
+      ]
+    }
+  },
+  "explanation": {
+    "down_time_reduction_percent": 3.967566343384521,
+    "down_saved_ms": 11.233099999999979,
+    "observed_window_saved_ms": 10.914839999999913,
+    "predicted_window_reduction_percent_if_others_fixed": 0.48482959140412163,
+    "observed_window_reduction_percent": 0.47109323494327615,
+    "remaining_time_baseline_ms": 2033.79398,
+    "remaining_time_optimized_ms": 2034.11224,
+    "limitations": "Profile window includes prompt processing; timed four-question throughput is a separate unprofiled measurement."
+  }
+}
