@@ -1,0 +1,240 @@
+{
+  "model": "Qwen3.8-27B",
+  "hardware": "Ascend910B2",
+  "card_count": 1,
+  "dtype": "BF16",
+  "evaluation_examples": 4,
+  "new_baseline_requests": 0,
+  "new_profiler_requests": 0,
+  "generation_requests_equal": true,
+  "response_metadata_difference": "Old baseline requested return_token_ids=True; candidate omitted this response-only flag. Token-ID equality cannot be checked; not a byte-identical HTTP payload.",
+  "data_separation": {
+    "selected": 72,
+    "actual_evaluation_source_rows": 1319,
+    "normalized_overlap": 0,
+    "evaluation_source_sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+    "selected_file_sha256": "397d79f05530d601dff2d644a9a832ae1789317a9879d4cb33e1feb20aee166c",
+    "selection_has_no_reference_answer_field": true
+  },
+  "teacher": {
+    "phase": "complete",
+    "total": 72,
+    "generated": 72,
+    "captured": 72,
+    "started_utc": "2026-10-21T08:02:43.649667+00:00",
+    "output_tokens": 13228,
+    "ended_utc": "2026-10-21T08:07:02.551999+00:00"
+  },
+  "feature_verification": {
+    "feature_counts": {
+      "train": 64,
+      "validation": 8
+    },
+    "all_greedy_next_tokens_verified": true,
+    "total_sequence_tokens": 21537,
+    "sequence_length_min": 125,
+    "sequence_length_max": 431
+  },
+  "training": {
+    "phase": "complete",
+    "started_utc": "2026-10-21T08:08:30.661585+00:00",
+    "epochs": [
+      {
+        "epoch": 1,
+        "training_ce": 0.29389196956969194,
+        "validation": {
+          "ce": 0.273375078512428,
+          "teacher_forced_token_accuracy": 0.9088108441158349,
+          "supervised_positions": 1623.0
+        },
+        "checkpoint": "epoch-1.safetensors",
+        "sha256": "b9b766046c6c78056ab5edd6de70dfcd25d7c94374caeb1d3d68c7d664ff6449"
+      },
+      {
+        "epoch": 2,
+        "training_ce": 0.10161930755734161,
+        "validation": {
+          "ce": 0.25697065308662526,
+          "teacher_forced_token_accuracy": 0.9180529882932841,
+          "supervised_positions": 1623.0
+        },
+        "checkpoint": "epoch-2.safetensors",
+        "sha256": "1de67ef295d40043fb2ac270df33e53eb388c1423186113829b9219f268fd3f7"
+      }
+    ],
+    "initial_validation": {
+      "ce": 0.24132320464795853,
+      "teacher_forced_token_accuracy": 0.9260628465804066,
+      "supervised_positions": 1623.0
+    },
+    "epoch": 2,
+    "microbatches": 64,
+    "optimizer_updates": 32,
+    "train_ce_so_far": 0.10161930755734161,
+    "selected_checkpoint": "epoch-2.safetensors",
+    "selected_epoch": 2,
+    "selection": "lowest independent validation CE among trained epochs only",
+    "frozen_tables_exactly_unchanged": true,
+    "native_mtp_changed": true,
+    "memory": {
+      "memory_allocated": 11035381248,
+      "memory_reserved": 15590227968,
+      "max_memory_allocated": 15282614784,
+      "max_memory_reserved": 15590227968
+    },
+    "ended_utc": "2026-10-21T08:09:08.937230+00:00"
+  },
+  "candidate_integrity": {
+    "selected_epoch": 2,
+    "selected_head_sha256": "1de67ef295d40043fb2ac270df33e53eb388c1423186113829b9219f268fd3f7",
+    "head_tensors": 15,
+    "changed_head_tensors": 11,
+    "patched_shard_count": 1,
+    "other_weight_shards_symlinked": 17,
+    "non_head_tensors_in_patched_shards_verified": 1,
+    "non_head_tensors_exactly_unchanged": true,
+    "unchanged_tensor_hash_digest": "b7289a2bf14d793a49bbf21859dbb0d7b9b7d7e9f06c79474fa8e685fd8d50f5",
+    "original_directory_written": false,
+    "candidate_index_unchanged": true
+  },
+  "baseline_three_rates": [
+    59.11134021186746,
+    59.386318293794986,
+    59.44524187354447
+  ],
+  "baseline_median_tok_s": 59.386318293794986,
+  "baseline_accuracy": 1.0,
+  "trained_benchmark": {
+    "mode": "finetuned",
+    "protocol": "SGLang PR35629: GSM8K zero-shot/chat, greedy T0/top_p1/top_k1, 2048 output limit, concurrency1; 4 examples.",
+    "evaluator_source_commit": "bea986b2f91432e0bdf2c283527427b0e63fcda1",
+    "evaluator_source_sha256": "f71543a818dcc1ad4fa7263df76492bf76c971deeec3d4377aa72fea819c8ec1",
+    "example_count": 4,
+    "warmup_requests": 1,
+    "warmup_max_tokens": 64,
+    "latency_s": 16.401612780056894,
+    "output_tokens": 867,
+    "throughput_tok_s": 52.860655328615344,
+    "accuracy": 1.0,
+    "observer": "In-memory API response capture; public evaluator and sampler unchanged; prints one completion line per request."
+  },
+  "throughput_ratio": 0.8901150441268981,
+  "acceptance": {
+    "baseline": {
+      "verification_rounds": 171.0,
+      "proposed": 1197.0,
+      "accepted": 681.0,
+      "acceptance_rate": 0.568922305764411,
+      "counter_tokens_per_round": 4.982456140350877,
+      "accepted_per_position": {
+        "2": 111.0,
+        "0": 147.0,
+        "4": 76.0,
+        "5": 66.0,
+        "3": 98.0,
+        "6": 55.0,
+        "1": 128.0
+      },
+      "unconditional_per_position_acceptance": {
+        "2": 0.6491228070175439,
+        "0": 0.8596491228070176,
+        "4": 0.4444444444444444,
+        "5": 0.38596491228070173,
+        "3": 0.5730994152046783,
+        "6": 0.3216374269005848,
+        "1": 0.7485380116959064
+      },
+      "mean_server_ttft_ms": 313.7167692184448
+    },
+    "trained": {
+      "verification_rounds": 202.0,
+      "proposed": 1414.0,
+      "accepted": 669.0,
+      "acceptance_rate": 0.47312588401697314,
+      "counter_tokens_per_round": 4.311881188118812,
+      "accepted_per_position": {
+        "2": 111.0,
+        "0": 161.0,
+        "4": 71.0,
+        "5": 59.0,
+        "3": 89.0,
+        "6": 45.0,
+        "1": 133.0
+      },
+      "unconditional_per_position_acceptance": {
+        "2": 0.5495049504950495,
+        "0": 0.7970297029702971,
+        "4": 0.35148514851485146,
+        "5": 0.29207920792079206,
+        "3": 0.4405940594059406,
+        "6": 0.22277227722772278,
+        "1": 0.6584158415841584
+      },
+      "mean_server_ttft_ms": 328.57680320739746
+    }
+  },
+  "questions": [
+    {
+      "question": 1,
+      "baseline_tokens": 137,
+      "trained_tokens": 137,
+      "baseline_elapsed_s": 2.382131460006349,
+      "trained_elapsed_s": 2.573689220007509,
+      "token_ids_equal": null,
+      "final_content_equal": true,
+      "finish_reason": "stop"
+    },
+    {
+      "question": 2,
+      "baseline_tokens": 44,
+      "trained_tokens": 44,
+      "baseline_elapsed_s": 1.1427033599466085,
+      "trained_elapsed_s": 1.2196067300392315,
+      "token_ids_equal": null,
+      "final_content_equal": true,
+      "finish_reason": "stop"
+    },
+    {
+      "question": 3,
+      "baseline_tokens": 575,
+      "trained_tokens": 598,
+      "baseline_elapsed_s": 8.947780160000548,
+      "trained_elapsed_s": 10.738257999997586,
+      "token_ids_equal": null,
+      "final_content_equal": false,
+      "finish_reason": "stop"
+    },
+    {
+      "question": 4,
+      "baseline_tokens": 88,
+      "trained_tokens": 88,
+      "baseline_elapsed_s": 1.683621000032872,
+      "trained_elapsed_s": 1.8332500300602987,
+      "token_ids_equal": null,
+      "final_content_equal": true,
+      "finish_reason": "stop"
+    }
+  ],
+  "graph_audit_verified": true,
+  "ready_process_memory_mib": 61266,
+  "cleanup": {
+    "started_utc": "2026-10-21T08:14:11.080690+00:00",
+    "phase": "complete",
+    "restore_services": false,
+    "reuse_mtp_baseline": true,
+    "purpose": "Finetuned MTP7 held-out four-question evaluation only",
+    "ready_utc": "2026-10-21T08:17:14.845107+00:00",
+    "ended_utc": "2026-10-21T08:17:49.214438+00:00",
+    "cards_empty": {
+      "6": true,
+      "7": true
+    }
+  },
+  "limits": [
+    "Four questions only; existing baseline was measured earlier, not a simultaneous A/B.",
+    "Benchmark includes prefill and normal request overhead; no profiler during timing.",
+    "Training uses one-step teacher-forced CE, not seven-step recursive training.",
+    "Training CE is the online optimization average, not a fixed endpoint evaluation.",
+    "Small pilot does not establish long-run correctness or generalization."
+  ]
+}
