@@ -1,0 +1,237 @@
+{
+  "timing": {
+    "native": {
+      "gate": {
+        "graph_median_ms": 17.867289543151855,
+        "per_layer_us": 279.17639911174774,
+        "run_medians_us": [
+          279.28875386714935,
+          279.07420694828033
+        ],
+        "samples": 80,
+        "min_ms": 17.830839157104492,
+        "max_ms": 17.923219680786133
+      },
+      "interleaved": {
+        "graph_median_ms": 27.505610466003418,
+        "per_layer_us": 429.7751635313034,
+        "run_medians_us": [
+          429.6840578317642,
+          429.97045814991
+        ],
+        "samples": 80,
+        "min_ms": 27.45085906982422,
+        "max_ms": 27.60264015197754
+      }
+    },
+    "nz": {
+      "gate": {
+        "graph_median_ms": 18.935760498046875,
+        "per_layer_us": 295.8712577819824,
+        "run_medians_us": [
+          295.8146929740906,
+          295.90265452861786
+        ],
+        "samples": 80,
+        "min_ms": 18.89151954650879,
+        "max_ms": 18.998580932617188
+      },
+      "interleaved": {
+        "graph_median_ms": 28.652339935302734,
+        "per_layer_us": 447.6928114891052,
+        "run_medians_us": [
+          447.81577587127686,
+          447.5490599870682
+        ],
+        "samples": 80,
+        "min_ms": 28.61285972595215,
+        "max_ms": 28.698740005493164
+      }
+    },
+    "packed": {
+      "gate": {
+        "graph_median_ms": 15.313639640808105,
+        "per_layer_us": 239.27561938762665,
+        "run_medians_us": [
+          239.3062487244606,
+          239.25359547138214
+        ],
+        "samples": 80,
+        "min_ms": 15.295680046081543,
+        "max_ms": 15.360540390014648
+      },
+      "interleaved": {
+        "graph_median_ms": 25.006370544433594,
+        "per_layer_us": 390.7245397567749,
+        "run_medians_us": [
+          390.76702296733856,
+          390.69734513759613
+        ],
+        "samples": 80,
+        "min_ms": 24.97402000427246,
+        "max_ms": 25.048919677734375
+      }
+    }
+  },
+  "l2": {
+    "native": {
+      "gate": {
+        "calls": 128,
+        "read_hits": 1813439.0,
+        "read_misses": 356597948.0,
+        "read_hit_rate": 0.005059657884139713,
+        "mean_kernel_us": 277.425234375
+      },
+      "all_ffn": {
+        "calls": 256,
+        "read_hits": 14355157.0,
+        "read_misses": 535138204.0,
+        "read_hit_rate": 0.02612435020848232,
+        "mean_kernel_us": 215.15195703125
+      }
+    },
+    "nz": {
+      "gate": {
+        "calls": 128,
+        "read_hits": 1806232.0,
+        "read_misses": 356600866.0,
+        "read_hit_rate": 0.005039610013527132,
+        "mean_kernel_us": 295.018859375
+      },
+      "all_ffn": {
+        "calls": 256,
+        "read_hits": 14345692.0,
+        "read_misses": 535143242.0,
+        "read_hit_rate": 0.026107335584668934,
+        "mean_kernel_us": 224.0083046875
+      }
+    },
+    "packed": {
+      "gate": {
+        "calls": 128,
+        "read_hits": 1806137.0,
+        "read_misses": 356600861.0,
+        "read_hit_rate": 0.005039346357852087,
+        "mean_kernel_us": 238.185875
+      },
+      "all_ffn": {
+        "calls": 256,
+        "read_hits": 14347621.0,
+        "read_misses": 535141257.0,
+        "read_hit_rate": 0.026110848780455206,
+        "mean_kernel_us": 195.3228125
+      }
+    }
+  },
+  "hbm": {
+    "native": {
+      "read": {
+        "GB_s": 1245.3676595466236,
+        "bytes_per_ffn_layer": 535864512.87604356,
+        "samples": 506,
+        "half_window_bytes_per_layer": [
+          535963183.41517746,
+          535760996.40173316
+        ]
+      },
+      "write": {
+        "GB_s": 1.5147061964872592,
+        "bytes_per_ffn_layer": 651757.1673785564,
+        "samples": 506,
+        "half_window_bytes_per_layer": [
+          651590.836028039,
+          651942.6733078279
+        ]
+      },
+      "phase": {
+        "start_ns": 1792571747435197170,
+        "end_ns": 1792571753493626810,
+        "graphs": 220,
+        "layers": 14080,
+        "elapsed_s": 6.05842964
+      }
+    },
+    "nz": {
+      "read": {
+        "GB_s": 1198.553661565168,
+        "bytes_per_ffn_layer": 535948814.39503133,
+        "samples": 506,
+        "half_window_bytes_per_layer": [
+          535940935.8297331,
+          535962552.6473166
+        ]
+      },
+      "write": {
+        "GB_s": 1.4948233496740033,
+        "bytes_per_ffn_layer": 668429.6478987738,
+        "samples": 506,
+        "half_window_bytes_per_layer": [
+          668438.8867430425,
+          668446.1776287279
+        ]
+      },
+      "phase": {
+        "start_ns": 1792571809932213280,
+        "end_ns": 1792571815999320450,
+        "graphs": 212,
+        "layers": 13568,
+        "elapsed_s": 6.06710717
+      }
+    },
+    "packed": {
+      "read": {
+        "GB_s": 1371.4849348185758,
+        "bytes_per_ffn_layer": 535806201.0718085,
+        "samples": 500,
+        "half_window_bytes_per_layer": [
+          535892634.2834126,
+          535720427.7698219
+        ]
+      },
+      "write": {
+        "GB_s": 1.6996983873752827,
+        "bytes_per_ffn_layer": 664031.308537779,
+        "samples": 500,
+        "half_window_bytes_per_layer": [
+          663746.9090768686,
+          664319.8356435193
+        ]
+      },
+      "phase": {
+        "start_ns": 1792571874508400100,
+        "end_ns": 1792571880509182930,
+        "graphs": 240,
+        "layers": 15360,
+        "elapsed_s": 6.00078283
+      }
+    }
+  },
+  "comparisons": {
+    "gate_time_reduction_vs_native": 0.14292318351792244,
+    "gate_time_reduction_vs_matched_nz": 0.19128467840583285,
+    "gate_speedup_vs_native": 1.1667565622700649,
+    "gate_speedup_vs_matched_nz": 1.2365290644287115,
+    "ffn_time_reduction_vs_native": 0.09086291411924319,
+    "useful_gate_weight_delivery_TB_s": {
+      "native": 1.2770271453257591,
+      "nz": 1.204969494747964,
+      "packed": 1.4899798020058372
+    }
+  },
+  "scope": "64-layer linear replay with fixed inputs; not full FFN or model E2E",
+  "hardware": {
+    "model": "Qwen3.8-27B",
+    "chip": "910B2",
+    "physical_device": 7,
+    "dtype": "BF16",
+    "shape": [
+      8,
+      34816,
+      5120
+    ]
+  },
+  "weight_bytes": {
+    "all_ffn": 34225520640,
+    "gate_up": 22817013760
+  }
+}

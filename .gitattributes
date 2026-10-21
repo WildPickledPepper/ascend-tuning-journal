@@ -9,3 +9,6 @@ experiments/dflash2/* text eol=lf
 experiments/dflash2/profile/* text eol=lf
 experiments/sglang-ascend/* text eol=lf
 evidence/2026-10-20/*.json text eol=lf
+kernels/gateup-l1-layout/* text eol=lf
+experiments/gateup-l1-layout-e2e/* text eol=lf
+evidence/2026-10-21/gateup-l1-layout*.json text eol=lf

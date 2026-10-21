@@ -2,6 +2,13 @@
 
 这里保存从原始 profiler 数据和编译版 Insight 后端响应提取的小型摘要，日志通过相对链接引用。
 
+- `2026-10-21/gateup-l1-layout.json`：64层BF16 gate/up布局对照，无profiler计时与独立L2/HBM指标；不混同整网性能。
+- `2026-10-21/gateup-l1-layout-timings.json`：每布局80轮线性图计时样本，不含模型位置或设备指针。
+- `2026-10-21/gateup-l1-layout-validation.json`：最终逐位/图重放检查及真实64层权重还原检查。
+- `2026-10-21/gateup-l1-layout-e2e.json`：完整模型三组统计、token哈希、图审计与MTP计数；短输入单并发MTP7。
+- `2026-10-21/gateup-l1-layout-e2e-requests.json`：30条请求计时/usage与token哈希，支持离线复算，不含回答或token数组。
+- `2026-10-21/gateup-l1-layout-cleanup.json`、`gateup-l1-layout-sources.json`：17:17归档清理状态、必要源码的原始/归档哈希及参数化说明，不含其他进程信息。
+
 - `2026-10-21/down-m8-prefetch.json`：BF16固定M8下一包预取，独立mode0/1与原生、24案例逐位验证、完整27B四题三轮、386个Insight/CSV分组和时间分摊；不含原始地址。
 - `2026-10-21/down-m8-prefetch-cleanup.json`：本次服务已关闭、6/7卡释放确认。
 - `2026-10-21/memory-snapshot.json`：12份msMemScope阶段快照、Insight完整事件/末态与原始allocator交叉核对；权重/缓存/预留、GDN临时峰值、碎片及三次短请求增长检查，含清理状态。

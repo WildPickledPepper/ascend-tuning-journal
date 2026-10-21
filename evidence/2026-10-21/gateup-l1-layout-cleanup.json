@@ -1,0 +1,21 @@
+{
+  "recorded_utc": "2026-10-21T09:17:40.463712+00:00",
+  "timezone": "Asia/Shanghai",
+  "physical_device": 7,
+  "card7_no_running_processes": true,
+  "service_port": 8047,
+  "port_closed": true,
+  "port_note": "ss inspection immediately after archive returned no listener; the archive only retains the npu-smi snapshot",
+  "automatic_restore": false,
+  "runtime": {
+    "vllm": {
+      "commit": "6e448d0ea9bf3d88d898b65449ca6dc2aec170ac",
+      "worktree_clean": true
+    },
+    "vllm-ascend": {
+      "commit": "3b31886237ed65c435e0965b10e8002ff5769766",
+      "worktree_clean": true
+    }
+  },
+  "source_environment_sha256": "b9d8b572e16b9124dc513a65c5a7589e2847123fdfc295215baa201523bf7de9"
+}

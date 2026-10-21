@@ -1,0 +1,122 @@
+{
+  "type": "sanitized BF16 layout study; raw traces/checkpoints/addresses excluded",
+  "timezone": "Asia/Shanghai",
+  "copied_sources": [
+    {
+      "source_artifact": "kernel.asc",
+      "source_sha256": "6269428a81987ffabb1501e5b6ca756b3ffcd20319b94f72e0dbc231ea29b4e6",
+      "archived_path": "kernels/gateup-l1-layout/kernel.asc",
+      "archived_sha256": "6269428a81987ffabb1501e5b6ca756b3ffcd20319b94f72e0dbc231ea29b4e6",
+      "adaptation": "none"
+    },
+    {
+      "source_artifact": "bridge.cpp",
+      "source_sha256": "13748d948ee5f2a9e08ae9ee15e32a4f6fa81615197b5032a701dcb5a4d17e9a",
+      "archived_path": "kernels/gateup-l1-layout/bridge.cpp",
+      "archived_sha256": "13748d948ee5f2a9e08ae9ee15e32a4f6fa81615197b5032a701dcb5a4d17e9a",
+      "adaptation": "none"
+    },
+    {
+      "source_artifact": "build.py",
+      "source_sha256": "d89dbe0765aab1ab834eb77bfc4bbf69984bc5ae90add9b37cb0d939f880219d",
+      "archived_path": "kernels/gateup-l1-layout/build.py",
+      "archived_sha256": "d89dbe0765aab1ab834eb77bfc4bbf69984bc5ae90add9b37cb0d939f880219d",
+      "adaptation": "none"
+    },
+    {
+      "source_artifact": "suite.py",
+      "source_sha256": "fa9e59999e02b987f598317a17137689dc9c13267f75ea78e2f0fd8a1ff3c9d2",
+      "archived_path": "kernels/gateup-l1-layout/suite.py",
+      "archived_sha256": "fa9e59999e02b987f598317a17137689dc9c13267f75ea78e2f0fd8a1ff3c9d2",
+      "adaptation": "none"
+    },
+    {
+      "source_artifact": "collect.py",
+      "source_sha256": "40f36a2a906f9100f3f0638a708a38c09166fed29352574b4796a70ca127afb5",
+      "archived_path": "kernels/gateup-l1-layout/collect.py",
+      "archived_sha256": "40f36a2a906f9100f3f0638a708a38c09166fed29352574b4796a70ca127afb5",
+      "adaptation": "none"
+    },
+    {
+      "source_artifact": "analyze.py",
+      "source_sha256": "054558fa7b707b5f5d76ba96b48b5c80a154aa4640413ddfe9c77be4cfeca329",
+      "archived_path": "kernels/gateup-l1-layout/analyze.py",
+      "archived_sha256": "054558fa7b707b5f5d76ba96b48b5c80a154aa4640413ddfe9c77be4cfeca329",
+      "adaptation": "none"
+    },
+    {
+      "source_artifact": "run.py",
+      "source_sha256": "ae44ebd4dc89408e1a587570bf90a8a764e500a082206b6324ced69866e4eabf",
+      "archived_path": "kernels/gateup-l1-layout/run.py",
+      "archived_sha256": "670f82f0cd7da3f49daa2b4bfe39ee818a3d54deb96610c3d3021593595e11c3",
+      "adaptation": "private paths replaced by explicit environment inputs; documentation links updated"
+    },
+    {
+      "source_artifact": "serve.py",
+      "source_sha256": "4f4a7ccc308e177d0a17046b3db37e44c3e6fb008d897fdb5d1064b46119819a",
+      "archived_path": "experiments/gateup-l1-layout-e2e/serve.py",
+      "archived_sha256": "4f4a7ccc308e177d0a17046b3db37e44c3e6fb008d897fdb5d1064b46119819a",
+      "adaptation": "none"
+    },
+    {
+      "source_artifact": "graph_audit_base.py",
+      "source_sha256": "500ef150330dcd37b2a8559f33a3ce2e2e81e46655db1ab38c09b577c4ad2d39",
+      "archived_path": "experiments/gateup-l1-layout-e2e/graph_audit_base.py",
+      "archived_sha256": "500ef150330dcd37b2a8559f33a3ce2e2e81e46655db1ab38c09b577c4ad2d39",
+      "adaptation": "none"
+    },
+    {
+      "source_artifact": "smoke.py",
+      "source_sha256": "dd69de45de2b47ff674e02082791de266d835cf02b93d3c2c24db59fa64605bd",
+      "archived_path": "experiments/gateup-l1-layout-e2e/smoke.py",
+      "archived_sha256": "dd69de45de2b47ff674e02082791de266d835cf02b93d3c2c24db59fa64605bd",
+      "adaptation": "none"
+    },
+    {
+      "source_artifact": "controller.py",
+      "source_sha256": "a849c45e543109cfd659af3f0372b85e3924a65b8e7c06e4af517fa694b79249",
+      "archived_path": "experiments/gateup-l1-layout-e2e/controller.py",
+      "archived_sha256": "a849c45e543109cfd659af3f0372b85e3924a65b8e7c06e4af517fa694b79249",
+      "adaptation": "none"
+    },
+    {
+      "source_artifact": "analyze.py",
+      "source_sha256": "74fef7a24c83712ee80255edc4f6ac9143e74c7827215243bde8be0eb2acb73d",
+      "archived_path": "experiments/gateup-l1-layout-e2e/analyze.py",
+      "archived_sha256": "74fef7a24c83712ee80255edc4f6ac9143e74c7827215243bde8be0eb2acb73d",
+      "adaptation": "none"
+    },
+    {
+      "source_artifact": "model_extension.py",
+      "source_sha256": "822697a5e963b12f0b3ad51af413d069300d7214176487dc83743a80cc7e16da",
+      "archived_path": "experiments/gateup-l1-layout-e2e/model_extension.py",
+      "archived_sha256": "98fbd35d089b32c7c2508d42c6a7fffcf7a6f90ff790872d07c0d2bb0854314f",
+      "adaptation": "private paths replaced by explicit environment inputs; documentation links updated"
+    },
+    {
+      "source_artifact": "client.py",
+      "source_sha256": "1a52fe01b2ca0c1d09b2a76e21c5be7bf061564c52036b6db9aa11156d9a7b35",
+      "archived_path": "experiments/gateup-l1-layout-e2e/client.py",
+      "archived_sha256": "68ffaf6a204c0cd46424992173e1174fab273199d3b733bba2efdcc9dd493215",
+      "adaptation": "private paths replaced by explicit environment inputs; documentation links updated"
+    },
+    {
+      "source_artifact": "start.sh",
+      "source_sha256": "3b31327482adf1e9b36982b4aa535ff7385e1473224c40f2e10c41ba7ecc38fa",
+      "archived_path": "experiments/gateup-l1-layout-e2e/start.sh",
+      "archived_sha256": "a4d425d35b30aa715033c987132d557f1a9ca243c2e302756cc78f2b779116a6",
+      "adaptation": "private paths replaced by explicit environment inputs; documentation links updated"
+    }
+  ],
+  "raw_summary_sha256": {
+    "operator": "82031c1a20514d090360c18710fbd0ef86a76bc1eb289c78f19f872c859d3bf5",
+    "e2e": "eab059f70d61d08d35c0e8b02f2efd7372429f95e77dade9dce81ebb840c6e5f"
+  },
+  "external_evidence_archives": {
+    "operator": {
+      "manifest_sha256": "518687aa243f2692f974f6790040da115d1c38c8c47a9f17538f1fdb9e32fb54",
+      "note": "49 artifacts previously verified in private evidence store"
+    },
+    "e2e_sha256": "f6e92c8293d4c2bc61642b5619ecba464d332ded61cca0066f930b835f66c238"
+  }
+}
