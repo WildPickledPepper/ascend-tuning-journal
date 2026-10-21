@@ -1,0 +1,98 @@
+{
+  "mode": "device",
+  "soc": "Ascend910B2",
+  "dtype": "BF16",
+  "weight_layout": "ND",
+  "physical_device": 6,
+  "native_kernel_unchanged": true,
+  "model_service_started": false,
+  "default_start_utc": "2026-10-21T02:05:55+00:00",
+  "default_end_utc": "2026-10-21T02:06:37+00:00",
+  "tool_version": "msopprof is part of MindStudio Operator-dev Tools.\nmsopprof vesion is 26.1.0-56632dc4a944410c791538451dc2156a151bd105\nmsopscommon version is b4ffdb3d6ba7acdb7bbfcf359f6e4dd5b587a4f4",
+  "instruction_request": {
+    "metric": "instrTimeLine",
+    "accepted": false,
+    "error": "[ERROR] Unexpected argument in --aic-metrics, maybe in wrong soc platform\n[INFO]  Use msprof op --help or msprof op simulator --help for more details",
+    "note": "The command returns exit status 0 despite its error; log content determines validity."
+  },
+  "profiles": {
+    "default-up": {
+      "kernel": "MatMulV2_ND_ND_FP16_FP16_false_true_all_98499",
+      "task_duration_us": 277.585541,
+      "block_dim": 23,
+      "core0_pmu_us": {
+        "aic_time(us)": 261.796112,
+        "aic_cube_time(us)": 28.533333,
+        "aic_mte1_time(us)": 80.102776,
+        "aic_mte2_time(us)": 259.203339,
+        "aic_scalar_cube_stall_time(us)": 168.669449,
+        "aic_scalar_wait_time(us)": 0.0,
+        "aic_scalar_mte1_stall_time(us)": 0.0,
+        "aic_scalar_mte2_stall_time(us)": 0.0
+      },
+      "core0_l2_read_write_hit_percent": 0.001619,
+      "insight_duration_and_core0_cube_ratio_match_csv": true,
+      "insight_dynamic_instruction_count": 0,
+      "visualize_bin_sha256": "f9c6f25df145a2822253ae5cf2d59f599374ef0e8b2d6a8f35e1800313da5c34"
+    },
+    "default-down": {
+      "kernel": "MatMulV2_ND_ND_FP16_FP16_false_true_all_98513",
+      "task_duration_us": 148.942978,
+      "block_dim": 23,
+      "core0_pmu_us": {
+        "aic_time(us)": 145.793335,
+        "aic_cube_time(us)": 18.879999,
+        "aic_mte1_time(us)": 45.51889,
+        "aic_mte2_time(us)": 129.852219,
+        "aic_scalar_cube_stall_time(us)": 46.078335,
+        "aic_scalar_wait_time(us)": 0.0,
+        "aic_scalar_mte1_stall_time(us)": 0.0,
+        "aic_scalar_mte2_stall_time(us)": 0.0
+      },
+      "core0_l2_read_write_hit_percent": 6.530624,
+      "insight_duration_and_core0_cube_ratio_match_csv": true,
+      "insight_dynamic_instruction_count": 0,
+      "visualize_bin_sha256": "bfbd8059323eaa61d99c7f44c9e400aa0e4f022092aec36cf83b611c8f3c0f0c"
+    },
+    "source-down": {
+      "kernel": "MatMulV2_ND_ND_FP16_FP16_false_true_all_98513",
+      "task_duration_us": 151.043015,
+      "block_dim": 23,
+      "core0_pmu_us": {
+        "aic_time(us)": 139.182785,
+        "aic_cube_time(us)": 19.013334,
+        "aic_mte1_time(us)": 45.828888,
+        "aic_mte2_time(us)": 122.854446,
+        "aic_scalar_cube_stall_time(us)": 42.011112,
+        "aic_scalar_wait_time(us)": 0.0,
+        "aic_scalar_mte1_stall_time(us)": 0.0,
+        "aic_scalar_mte2_stall_time(us)": 0.0
+      },
+      "core0_l2_read_write_hit_percent": 6.518378,
+      "insight_duration_and_core0_cube_ratio_match_csv": true,
+      "insight_dynamic_instruction_count": 0,
+      "visualize_bin_sha256": "90434503e39d42616a27eae1583037214effe80f952938fc2d0c45aab7c70ae8"
+    }
+  },
+  "source_limitations": [
+    "[WARN]  Failed to parse pc to code, maybe kernel missed debug_line information. If you need code call stack, please recompile kernel with -g option",
+    "[WARN]  Hot spot function calculate data failed",
+    "[WARN]  Generate hot spot function failed"
+  ],
+  "capability_source_commit": "56632dc4a944410c791538451dc2156a151bd105",
+  "conclusion": {
+    "exact_wait_device_timeline_obtained": false,
+    "specific_wait_producer_transfer_pair_measured": false,
+    "software_serialization_defect_proven": false,
+    "TimelineDetail": "Device data plus SIMULATED instruction timing, not measured WAIT timing.",
+    "instrTimeLine_PipeTimeline_PcSampling": "Restricted to Ascend950 in matching tool source.",
+    "scalar_cube_stall": "Scalar stalls on full CUBE IQ; NOT Cube waiting for data.",
+    "scalar_wait_zero": "Does not establish zero WAIT_FLAG stalls inside other pipelines.",
+    "scope": "One profiled launch per shape; synthetic constants, no model workload or throughput benchmark."
+  },
+  "cleanup": {
+    "checked_utc": "2026-10-21T02:08:08+00:00",
+    "card6_active_processes": 0,
+    "card7_active_processes": 0
+  }
+}

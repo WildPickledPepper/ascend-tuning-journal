@@ -101,7 +101,7 @@
 
 - 最初主机采集器遗漏新 ACL launch 入口，第一次只有张量地址、没有 launch 记录；补齐实际 API 后取得有效记录。编译时缺少 profiling include 的首次构建也未产生有效采集。
 - 第一次模型采集启动因环境脚本覆盖 PYTHONPATH，worker extension 无法导入；修正实验启动脚本后重新启动，未把失败启动记为有效实验。
-- 上板 TimelineDetail 保存了输入、二进制和 tiling，但指令采集返回 `107001`；不采用其上板指令时序。随后原生二进制 simulator 成功完成两组 kernel，未编译 NPU 优化内核。
+- TimelineDetail 保存了输入、二进制和 tiling，但后续采集返回 `107001`，该次没有有效细粒度流水。随后原生二进制 simulator 成功完成两组 kernel，未编译 NPU 优化内核。10月21日补充更正：TimelineDetail生成的指令时序本就来自仿真，不是910B2逐指令实际上板时间；[能力核验](../wait-timeline/README.md)未取得本机真实WAIT时间。
 - simulator 的 `source/details/baseInfo` 和 `memoryGraph` 返回空内容，不作为证据；有效 `instructions/dynamic` 返回与 trace 交叉验证。
 - PyTorch 图回放解析提示缺少 ACL→NPU flow，只采用有效设备 kernel/PMU，未依赖 CPU 下发映射。
 - 本次保留了入口、参数、地址、指令和工作集对照证据；**没有证明具体 TLB/SMMU 或 HBM 通道机制，也没有新增整模型加速成绩**。

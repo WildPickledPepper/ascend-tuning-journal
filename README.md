@@ -20,6 +20,8 @@
 
 ## 最近一次记录的状态
 
+- **上板WAIT时序核验完成，尚未定位具体WAIT**：[实际采集与工具能力边界](experiments/wait-timeline/README.md)。910B2拒绝真实指令时序`instrTimeLine`；两份Default和一份Source已导入编译版Insight，基础计数有效但动态指令为空。核实`TimelineDetail`的指令时间来自仿真，不能当成上板WAIT实测；没有证明双缓冲的软件串行堵塞。10月21日10:08:08确认6/7卡均无活动进程，本次未启动模型服务。[过滤证据](evidence/2026-10-21/device-wait-timeline-capability.json)。
+
 - **原生M8三版优化已完成整模型验证**：[参数、指令与完整结果](experiments/mte2-breakdown/native-m8-audit.md)。大包、小M、错峰原生已有；仅放大L1反而变慢。最终仅调整降维L0分块，独立算子150.436→143.190μs，模型内153.430→147.308μs；完整27B同四题 **59.420→59.697 token/s（+0.466%，基本持平）**，4/4正确且全部token ID相同。BF16不变，保留实验方案、未设为默认；没有证明稳定的整网提速。三份Insight共579分组已核对。**先推送实验记录，再于19:42:23清理6号卡；6/7均无活动进程，服务全部关闭，模型文件保留。** [实验过滤证据](evidence/2026-10-20/native-m8-tiling-optimization.json)、[清理回执](evidence/2026-10-20/native-m8-cleanup.json)。
 
 - **BF16权重读取资料研究**：[论文、官方案例与本机适用性](notes/bf16-weight-bandwidth-research.md)。重点核对大包搬运、小M分块、错峰读取及当前M8的NZ路径；预加载有独立适用条件。无损压缩的公开实现未证明适合本机小批量提速。本次没有新上板实验或速度结果。
