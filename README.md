@@ -20,6 +20,8 @@
 
 ## 最近一次记录的状态
 
+- **单卡原生MTP头训练组件验证通过**：[入口/兼容修复/实板](experiments/mtp-training-audit/README.md)。真实4.247亿BF16头＋冻结词表，在6号B2完成B1/S32合成前向、反向和AdamW更新，allocated峰值14.327GiB、reserved14.430GiB；只有头更新，冻结词表逐位不变、原checkpoint未写。独立SpecForge副本修复注意力布局和RoPE字段兼容；完整CLI语料训练与接受率收益尚未验证。单卡建议冻结target采特征后退出，再离线训练；未读取128题。15:41:54确认6/7释放。[过滤证据](evidence/2026-10-21/mtp-single-card-training-audit.json)。
+
 - **继续MTP，已完成接受率与社区路线核对**：[分析与资料](notes/mtp-acceptance-research.md)。完整128题七候选接受率51.298%，第七位置条件通过率仍81.510%；低的全轮比例主要含前缀截断效应，不能据此认定后几步失效。当前原生MTP一层/4.247亿参数/810.05MiB，递归七步。优先研究冻结主干、任务匹配MTP微调；社区已有vLLM/SpecForge路线，27B两卡B2适配和收益尚未验证。未试K、未训练、未启动模型；15:25:40确认6/7释放。[过滤证据](evidence/2026-10-21/mtp-acceptance-research.json)。
 
 - **vLLM DFlash2 K7草稿图复测完成**：[配置、失败修复、接受率与Insight对照](experiments/dflash2-vllm-graph/README.md)。单卡BF16同四题，复用原生MTP7基线，59.386→51.368token/s（−13.502%）；接受率56.892%→47.546%，验证171→195轮，均844token/4题全对。128token采样主图单轮约52ms不变，草稿图计算更便宜，但验证轮数增加；额外Host标签使新旧profile间隙不能直接归正常运行。未实现接受率提升、不采用替换。15:09:23确认6/7均释放、不恢复旧服务。[过滤证据](evidence/2026-10-21/dflash2-vllm-graph.json)。

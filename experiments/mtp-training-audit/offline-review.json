@@ -1,0 +1,38 @@
+{
+  "model": {
+    "target_model_path": "/SET/PRIVATE/BF16/MODEL",
+    "draft_model_config": "qwen27b-mtp.json",
+    "target_backend": "sglang",
+    "embedding_key": "model.language_model.embed_tokens.weight",
+    "lm_head_key": "lm_head.weight",
+    "torch_dtype": "bfloat16"
+  },
+  "data": {
+    "hidden_states_path": "/SET/VERIFIED/TRAIN_ONLY/FEATURES",
+    "max_length": 256,
+    "chat_template": "qwen3.5",
+    "dataloader_num_workers": 0
+  },
+  "training": {
+    "strategy": "mtp",
+    "max_steps": 1,
+    "batch_size": 1,
+    "accumulation_steps": 1,
+    "attention_backend": "eager",
+    "mtp_objective_chunk_size": 16,
+    "optimizer_cpu_offload": false,
+    "fsdp_sharding": "NO_SHARD",
+    "learning_rate": 0.0001,
+    "warmup_ratio": 0,
+    "save_interval": 0
+  },
+  "deployment": {
+    "mode": "local_colocated",
+    "trainer": {
+      "nnodes": 1,
+      "nproc_per_node": 1
+    }
+  },
+  "run_id": "mtp-single-npu-review-only",
+  "output_dir": "/SET/PRIVATE/REVIEW_OUTPUT"
+}

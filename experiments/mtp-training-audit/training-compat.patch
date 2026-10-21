@@ -1,0 +1,23 @@
+--- a/specforge/modeling/draft/mtp/qwen3_5.py
++++ b/specforge/modeling/draft/mtp/qwen3_5.py
+@@ -94,7 +94,8 @@
+ 
+     def __init__(self, config, head_dim):
+         super().__init__()
+-        rope_theta = getattr(config, "rope_theta", 10000.0)
++        rope_parameters = getattr(config, "rope_parameters", None) or {}
++        rope_theta = getattr(config, "rope_theta", None) or rope_parameters.get("rope_theta", 10000.0)
+         partial_rotary_factor = getattr(config, "partial_rotary_factor", 1.0)
+         dim = int(head_dim * partial_rotary_factor)
+         inv_freq = 1.0 / (
+@@ -231,8 +232,8 @@
+             scaling=self.scaling,
+             **kwargs,
+         )
+-        attn_output = attn_output.transpose(1, 2).contiguous()
+-        attn_output = attn_output.view(bsz, q_len, -1)
++        # HF attention already returns [batch, sequence, heads, head_dim].
++        attn_output = attn_output.contiguous().view(bsz, q_len, -1)
+ 
+         if self.attn_output_gate:
+             attn_output = attn_output * torch.sigmoid(gate)

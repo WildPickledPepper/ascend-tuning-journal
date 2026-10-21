@@ -1,0 +1,139 @@
+{
+  "purpose": "Audit single-910B2 native BF16 MTP-head training; no corpus training.",
+  "framework_revision": "03f3682ea852b73488d62dab4cd539033cc60e3e",
+  "runtime": {
+    "torch": "2.10.0+cpu with torch_npu",
+    "torch_npu": "2.10.0.post4",
+    "transformers": "5.14.1"
+  },
+  "component_step": {
+    "started_utc": "2026-10-21T07:38:23.497171+00:00",
+    "phase": "complete",
+    "data": "Seeded synthetic ids/hidden states only; no corpus or evaluation questions loaded.",
+    "target_main_model_loaded": false,
+    "weights_saved": false,
+    "trainable_parameters": 424699392,
+    "frozen_parameters": 2542796800,
+    "dtype": "torch.bfloat16",
+    "config": {
+      "hidden_size": 5120,
+      "intermediate_size": 17408,
+      "num_attention_heads": 24,
+      "num_key_value_heads": 4,
+      "head_dim": 256,
+      "vocab_size": 248320,
+      "rms_norm_eps": 1e-06,
+      "attention_bias": false,
+      "hidden_act": "silu",
+      "num_hidden_layers": 1,
+      "max_position_embeddings": 4096,
+      "pad_token_id": null,
+      "tie_word_embeddings": false,
+      "attn_output_gate": true,
+      "partial_rotary_factor": 0.25,
+      "mtp_config": {
+        "share_lm_head": true
+      }
+    },
+    "rope_theta": 10000000,
+    "loaded_memory": {
+      "memory_allocated": 5935001600,
+      "memory_reserved": 5958008832,
+      "max_memory_allocated": 5935001600,
+      "max_memory_reserved": 5958008832
+    },
+    "loss": 15.193750381469727,
+    "trainable_gradients_finite": true,
+    "fc_weight_changed": true,
+    "optimizer_parameter_count": 424699392,
+    "final_memory": {
+      "memory_allocated": 11136606720,
+      "memory_reserved": 15493758976,
+      "max_memory_allocated": 15383625216,
+      "max_memory_reserved": 15493758976
+    },
+    "frozen_exactly_unchanged": {
+      "embed_tokens.weight": true,
+      "mtp.lm_head.weight": true
+    },
+    "checkpoint_files_unchanged": true,
+    "ended_utc": "2026-10-21T07:38:30.804470+00:00"
+  },
+  "source_changes": {
+    "revision": "03f3682ea852b73488d62dab4cd539033cc60e3e",
+    "upstream_sha256": "8400c8d7be4a4e39ff90ace651f3c9175d9b9a69644e8d2940e235c13472d97e",
+    "corrected_sha256": "fe598dd0916a44a2000ef861a39cf90738505bbe386ccf0d64220b56aa1269bb",
+    "change": "Remove redundant transpose of HF attention output; isolated training source only. Read migrated Transformers rope_parameters.rope_theta instead of silently defaulting to 10000."
+  },
+  "layout_probe_before": {
+    "hf_output_shape": [
+      1,
+      3,
+      2,
+      8
+    ],
+    "sequence_length": 3,
+    "heads": 2,
+    "projector_input_matches_standard_layout": false,
+    "max_abs_layout_difference": 0.6622037887573242,
+    "source": "Original CPU probe stdout retained in task tool record."
+  },
+  "layout_probe_after": {
+    "hf_output_shape": [
+      1,
+      3,
+      2,
+      8
+    ],
+    "sequence_length": 3,
+    "heads": 2,
+    "projector_input_matches_standard_layout": true,
+    "max_abs_layout_difference": 0.0
+  },
+  "rope_probe": {
+    "parsed_rope_theta_legacy": null,
+    "parsed_rope_parameters": {
+      "rope_theta": 10000000,
+      "partial_rotary_factor": 0.25,
+      "rope_type": "default"
+    },
+    "rotary_dimensions": 64,
+    "inv_freq_matches_native_1e7": true,
+    "upstream_fallback_theta_when_legacy_absent": 10000,
+    "native_theta": 10000000
+  },
+  "entry_schema": {
+    "schema_valid": true,
+    "strategy": "mtp",
+    "mode": "offline",
+    "trainer_processes": 1,
+    "dtype": "bfloat16",
+    "feature_keys": [
+      "input_ids",
+      "loss_mask",
+      "target_last_hidden_states"
+    ],
+    "formal_training_started": false,
+    "feature_data_prepared": false,
+    "evaluation_128_used": false,
+    "training_objective": "Current SpecForge OnlineMTPModel is one-step CE with shifted tokens and target final hidden states; no recursive seven-step rollout in forward."
+  },
+  "cleanup": {
+    "checked_utc": "2026-10-21T07:41:54.401046+00:00",
+    "cards_empty": {
+      "6": true,
+      "7": true
+    },
+    "services_started": false,
+    "training_checkpoints_saved": false
+  },
+  "limits": [
+    "Synthetic batch1 sequence32 only; no target feature extraction, genuine training dataset, full CLI training or acceptance improvement measured.",
+    "The corrected MTP component and repository BF16Optimizer were exercised directly; distributed trainer orchestration was not run.",
+    "The full 27B target was absent from accelerator during the head update. Single-card proposal is staged offline capture then training, not simultaneous residency.",
+    "Smoke config explicitly used native rope_theta=10000000; subsequent JSON parsing compatibility correction was checked on CPU against the same frequencies.",
+    "Smoke synthetic padding is ignored by the objective; review configuration resolves production pad_token_id=248044 explicitly.",
+    "Current native training objective is single-step; ttt_length=7 is not proof of recursive seven-step training.",
+    "Frozen embedding/head checked by exact tensor equality; checkpoint files opened read-only and size/mtime unchanged. No whole-checkpoint cryptographic before/after scan performed."
+  ]
+}
