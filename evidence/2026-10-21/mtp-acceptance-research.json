@@ -1,0 +1,226 @@
+{
+  "source_audit": {
+    "audit_utc": "2026-10-21T07:25:40.007067+00:00",
+    "main_layers": 64,
+    "mtp_layers": 1,
+    "mtp_tensors": 15,
+    "mtp_parameters": 424699392,
+    "mtp_bf16_bytes": 849398784,
+    "dtypes": [
+      "BF16"
+    ],
+    "source_sha256": {
+      "vllm/vllm/model_executor/models/qwen3_5_mtp.py": "41259149b519ad31feb5fa9bd99b1e808515f1b73410a31653ffd0d3d58ca713",
+      "vllm-ascend/vllm_ascend/spec_decode/llm_base_proposer.py": "edcc55d15f0f868b7da4f5ee8b63f91fc4f130b9b950e2734ab0d872a30d5f61",
+      "vllm-ascend/vllm_ascend/sample/rejection_sampler.py": "d62875a1c942255586b9bdd85abb820153be4731fa99406ebb0ab25b0d5c816b"
+    },
+    "cards_empty": {
+      "6": true,
+      "7": true
+    },
+    "scope": "Read-only checkpoint headers and source; no model startup or new inference."
+  },
+  "gsm128": {
+    "rounds": 8931,
+    "accepted": 32070,
+    "proposed": 62517,
+    "candidate_acceptance": 0.5129804693123471,
+    "counter_tokens_per_round": 4.59086328518643,
+    "per_position": [
+      {
+        "position": 1,
+        "accepted_prefix_rounds": 7608,
+        "prefix_survival": 0.8518642929123278,
+        "conditional_acceptance_given_prior_accepted": 0.8518642929123278
+      },
+      {
+        "position": 2,
+        "accepted_prefix_rounds": 6305,
+        "prefix_survival": 0.7059679767103348,
+        "conditional_acceptance_given_prior_accepted": 0.828732912723449
+      },
+      {
+        "position": 3,
+        "accepted_prefix_rounds": 5223,
+        "prefix_survival": 0.5848169297950957,
+        "conditional_acceptance_given_prior_accepted": 0.8283901665344965
+      },
+      {
+        "position": 4,
+        "accepted_prefix_rounds": 4301,
+        "prefix_survival": 0.48158100996528946,
+        "conditional_acceptance_given_prior_accepted": 0.823473099751101
+      },
+      {
+        "position": 5,
+        "accepted_prefix_rounds": 3489,
+        "prefix_survival": 0.39066174000671816,
+        "conditional_acceptance_given_prior_accepted": 0.8112066961171821
+      },
+      {
+        "position": 6,
+        "accepted_prefix_rounds": 2834,
+        "prefix_survival": 0.3173216885007278,
+        "conditional_acceptance_given_prior_accepted": 0.8122671252507881
+      },
+      {
+        "position": 7,
+        "accepted_prefix_rounds": 2310,
+        "prefix_survival": 0.2586496472959355,
+        "conditional_acceptance_given_prior_accepted": 0.8151023288637967
+      }
+    ],
+    "accepted_prefix_length_histogram_capped_at_7": [
+      1323,
+      1303,
+      1082,
+      922,
+      812,
+      655,
+      524,
+      2310
+    ],
+    "existing_round_prefixes": [
+      {
+        "prefix_length": 1,
+        "prefix_candidate_acceptance": 0.8518642929123278,
+        "counter_tokens_per_round": 1.8518642929123277
+      },
+      {
+        "prefix_length": 2,
+        "prefix_candidate_acceptance": 0.7789161348113314,
+        "counter_tokens_per_round": 2.5578322696226627
+      },
+      {
+        "prefix_length": 3,
+        "prefix_candidate_acceptance": 0.7142163998059194,
+        "counter_tokens_per_round": 3.1426491994177583
+      },
+      {
+        "prefix_length": 4,
+        "prefix_candidate_acceptance": 0.6560575523457619,
+        "counter_tokens_per_round": 3.6242302093830476
+      },
+      {
+        "prefix_length": 5,
+        "prefix_candidate_acceptance": 0.6029783898779532,
+        "counter_tokens_per_round": 4.0148919493897655
+      },
+      {
+        "prefix_length": 6,
+        "prefix_candidate_acceptance": 0.5553689396484156,
+        "counter_tokens_per_round": 4.332213637890494
+      },
+      {
+        "prefix_length": 7,
+        "prefix_candidate_acceptance": 0.5129804693123471,
+        "counter_tokens_per_round": 4.59086328518643
+      }
+    ]
+  },
+  "four_question": {
+    "rounds": 171,
+    "accepted": 681,
+    "proposed": 1197,
+    "candidate_acceptance": 0.568922305764411,
+    "counter_tokens_per_round": 4.982456140350877,
+    "per_position": [
+      {
+        "position": 1,
+        "accepted_prefix_rounds": 147,
+        "prefix_survival": 0.8596491228070176,
+        "conditional_acceptance_given_prior_accepted": 0.8596491228070176
+      },
+      {
+        "position": 2,
+        "accepted_prefix_rounds": 128,
+        "prefix_survival": 0.7485380116959064,
+        "conditional_acceptance_given_prior_accepted": 0.8707482993197279
+      },
+      {
+        "position": 3,
+        "accepted_prefix_rounds": 111,
+        "prefix_survival": 0.6491228070175439,
+        "conditional_acceptance_given_prior_accepted": 0.8671875
+      },
+      {
+        "position": 4,
+        "accepted_prefix_rounds": 98,
+        "prefix_survival": 0.5730994152046783,
+        "conditional_acceptance_given_prior_accepted": 0.8828828828828829
+      },
+      {
+        "position": 5,
+        "accepted_prefix_rounds": 76,
+        "prefix_survival": 0.4444444444444444,
+        "conditional_acceptance_given_prior_accepted": 0.7755102040816326
+      },
+      {
+        "position": 6,
+        "accepted_prefix_rounds": 66,
+        "prefix_survival": 0.38596491228070173,
+        "conditional_acceptance_given_prior_accepted": 0.868421052631579
+      },
+      {
+        "position": 7,
+        "accepted_prefix_rounds": 55,
+        "prefix_survival": 0.3216374269005848,
+        "conditional_acceptance_given_prior_accepted": 0.8333333333333334
+      }
+    ],
+    "accepted_prefix_length_histogram_capped_at_7": [
+      24,
+      19,
+      17,
+      13,
+      22,
+      10,
+      11,
+      55
+    ],
+    "existing_round_prefixes": [
+      {
+        "prefix_length": 1,
+        "prefix_candidate_acceptance": 0.8596491228070176,
+        "counter_tokens_per_round": 1.8596491228070176
+      },
+      {
+        "prefix_length": 2,
+        "prefix_candidate_acceptance": 0.804093567251462,
+        "counter_tokens_per_round": 2.608187134502924
+      },
+      {
+        "prefix_length": 3,
+        "prefix_candidate_acceptance": 0.7524366471734892,
+        "counter_tokens_per_round": 3.257309941520468
+      },
+      {
+        "prefix_length": 4,
+        "prefix_candidate_acceptance": 0.7076023391812866,
+        "counter_tokens_per_round": 3.8304093567251463
+      },
+      {
+        "prefix_length": 5,
+        "prefix_candidate_acceptance": 0.6549707602339181,
+        "counter_tokens_per_round": 4.2748538011695905
+      },
+      {
+        "prefix_length": 6,
+        "prefix_candidate_acceptance": 0.6101364522417154,
+        "counter_tokens_per_round": 4.6608187134502925
+      },
+      {
+        "prefix_length": 7,
+        "prefix_candidate_acceptance": 0.568922305764411,
+        "counter_tokens_per_round": 4.982456140350877
+      }
+    ]
+  },
+  "limits": [
+    "Counters include EOS/tail conventions, not exact HTTP output per round.",
+    "Conditional acceptance is on surviving prefixes; selection and tail effects remain.",
+    "Prefix rows reuse K7 rounds: changing K changes round boundaries, so these are not counterfactual K benchmark results.",
+    "Profiler/counters do not contain draft logits, entropy, top-2 margins, target ranks or per-round confidence.",
+    "No confidence-policy improvement, training benefit or new speed has been measured."
+  ]
+}

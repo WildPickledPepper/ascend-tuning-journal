@@ -20,6 +20,8 @@
 
 ## 最近一次记录的状态
 
+- **继续MTP，已完成接受率与社区路线核对**：[分析与资料](notes/mtp-acceptance-research.md)。完整128题七候选接受率51.298%，第七位置条件通过率仍81.510%；低的全轮比例主要含前缀截断效应，不能据此认定后几步失效。当前原生MTP一层/4.247亿参数/810.05MiB，递归七步。优先研究冻结主干、任务匹配MTP微调；社区已有vLLM/SpecForge路线，27B两卡B2适配和收益尚未验证。未试K、未训练、未启动模型；15:25:40确认6/7释放。[过滤证据](evidence/2026-10-21/mtp-acceptance-research.json)。
+
 - **vLLM DFlash2 K7草稿图复测完成**：[配置、失败修复、接受率与Insight对照](experiments/dflash2-vllm-graph/README.md)。单卡BF16同四题，复用原生MTP7基线，59.386→51.368token/s（−13.502%）；接受率56.892%→47.546%，验证171→195轮，均844token/4题全对。128token采样主图单轮约52ms不变，草稿图计算更便宜，但验证轮数增加；额外Host标签使新旧profile间隙不能直接归正常运行。未实现接受率提升、不采用替换。15:09:23确认6/7均释放、不恢复旧服务。[过滤证据](evidence/2026-10-21/dflash2-vllm-graph.json)。
 
 - **显存快照已分析**：[msMemScope＋编译版Insight结果](experiments/memory-snapshot/README.md)。12个阶段、106842事件：权重53.256GiB、缓存5.623GiB、其他活动张量0.145GiB，框架实际59.024GiB、预留60.002GiB；设备可用约0.388GiB。短请求框架峰值59.462GiB，峰值点432MiB分配定位在GDN注意力。三次请求后实际/预留不再增长；空闲普通池87.58%集中在一个436MiB连续块，未见碎片主导证据。未修改配置、未跑速度基线；11:21:27确认6/7释放。[过滤证据](evidence/2026-10-21/memory-snapshot.json)。
