@@ -1,0 +1,481 @@
+{
+  "model": "Qwen3.8-27B",
+  "hardware": "Ascend910B2",
+  "dtype": "BF16",
+  "single_physical_card": 6,
+  "mtp_baseline_reused": true,
+  "mtp_baseline_three_pass_tok_s": [
+    59.11134021186746,
+    59.386318293794986,
+    59.44524187354447
+  ],
+  "mtp_baseline_median_tok_s": 59.386318293794986,
+  "dflash2_benchmark": {
+    "mode": "dflash2",
+    "protocol": "SGLang PR35629: GSM8K zero-shot/chat, greedy T0/top_p1/top_k1, 2048 output limit, concurrency1; 4 examples.",
+    "evaluator_source_commit": "bea986b2f91432e0bdf2c283527427b0e63fcda1",
+    "evaluator_source_sha256": "f71543a818dcc1ad4fa7263df76492bf76c971deeec3d4377aa72fea819c8ec1",
+    "example_count": 4,
+    "warmup_requests": 1,
+    "warmup_max_tokens": 64,
+    "latency_s": 16.430433959932998,
+    "output_tokens": 844,
+    "throughput_tok_s": 51.36808936746073,
+    "accuracy": 1.0,
+    "observer": "In-memory API response capture; public evaluator and sampler unchanged; prints one completion line per request."
+  },
+  "dflash2_over_mtp_median_ratio": 0.8649818820781816,
+  "acceptance": {
+    "mtp7": {
+      "verification_rounds": 171.0,
+      "proposed": 1197.0,
+      "accepted": 681.0,
+      "acceptance_rate": 0.568922305764411,
+      "counter_tokens_per_round": 4.982456140350877,
+      "accepted_per_position": {
+        "2": 111.0,
+        "3": 98.0,
+        "6": 55.0,
+        "4": 76.0,
+        "5": 66.0,
+        "1": 128.0,
+        "0": 147.0
+      },
+      "unconditional_per_position_acceptance": {
+        "2": 0.6491228070175439,
+        "3": 0.5730994152046783,
+        "6": 0.3216374269005848,
+        "4": 0.4444444444444444,
+        "5": 0.38596491228070173,
+        "1": 0.7485380116959064,
+        "0": 0.8596491228070176
+      },
+      "mean_server_ttft_ms": 313.7167692184448
+    },
+    "dflash2": {
+      "verification_rounds": 195.0,
+      "proposed": 1365.0,
+      "accepted": 649.0,
+      "acceptance_rate": 0.47545787545787543,
+      "counter_tokens_per_round": 4.328205128205129,
+      "accepted_per_position": {
+        "2": 106.0,
+        "3": 82.0,
+        "6": 40.0,
+        "4": 67.0,
+        "5": 55.0,
+        "1": 135.0,
+        "0": 164.0
+      },
+      "unconditional_per_position_acceptance": {
+        "2": 0.5435897435897435,
+        "3": 0.4205128205128205,
+        "6": 0.20512820512820512,
+        "4": 0.3435897435897436,
+        "5": 0.28205128205128205,
+        "1": 0.6923076923076923,
+        "0": 0.841025641025641
+      },
+      "mean_server_ttft_ms": 364.14486169815063
+    }
+  },
+  "graph_audit": {
+    "mtp7": {
+      "num_speculative_tokens": 7,
+      "draft_use_cuda_graph": true,
+      "draft_enforce_eager": false,
+      "main_graph_mode": "FULL_DECODE_ONLY",
+      "main_capture_sizes": [
+        8
+      ],
+      "dtype": "torch.bfloat16",
+      "kv_cache_dtype": "auto",
+      "mamba_cache_dtype": "bfloat16",
+      "mamba_ssm_cache_dtype": "bfloat16",
+      "tp_size": 1,
+      "context_length": 4096,
+      "max_num_seqs": 1,
+      "prefix_caching": false,
+      "gpu_memory_utilization": 0.97,
+      "wrappers": [
+        {
+          "is_draft_runnable": true,
+          "callable": "AscendSpecDecodeBaseProposer._run_merged_draft",
+          "runtime_mode": "FULL",
+          "entries": [
+            {
+              "batch_descriptor": "BatchDescriptor(num_tokens=8, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+              "captured": true
+            }
+          ]
+        },
+        {
+          "is_draft_runnable": false,
+          "callable": "Qwen3_5ForConditionalGeneration",
+          "runtime_mode": "FULL",
+          "entries": [
+            {
+              "batch_descriptor": "BatchDescriptor(num_tokens=8, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+              "captured": true
+            }
+          ]
+        }
+      ],
+      "prefetch_m8": {
+        "enabled": false,
+        "eligible_layers": [],
+        "submitted_before_graph_replay": 0,
+        "scope": "Any matched M8 down projection, including main and draft if applicable."
+      }
+    },
+    "dflash2": {
+      "num_speculative_tokens": 7,
+      "draft_use_cuda_graph": true,
+      "draft_enforce_eager": false,
+      "main_graph_mode": "FULL_DECODE_ONLY",
+      "main_capture_sizes": [
+        8
+      ],
+      "dtype": "torch.bfloat16",
+      "kv_cache_dtype": "auto",
+      "mamba_cache_dtype": "bfloat16",
+      "mamba_ssm_cache_dtype": "bfloat16",
+      "tp_size": 1,
+      "context_length": 4096,
+      "max_num_seqs": 1,
+      "prefix_caching": false,
+      "gpu_memory_utilization": 0.97,
+      "wrappers": [
+        {
+          "is_draft_runnable": true,
+          "callable": "AscendSpecDecodeBaseProposer._run_merged_draft",
+          "runtime_mode": "FULL",
+          "entries": [
+            {
+              "batch_descriptor": "BatchDescriptor(num_tokens=8, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+              "captured": true
+            }
+          ]
+        },
+        {
+          "is_draft_runnable": false,
+          "callable": "Qwen3_5ForConditionalGeneration",
+          "runtime_mode": "FULL",
+          "entries": [
+            {
+              "batch_descriptor": "BatchDescriptor(num_tokens=8, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+              "captured": true
+            }
+          ]
+        }
+      ],
+      "method": "dflash",
+      "proposer_class": "AscendDflash2Proposer",
+      "selector_enabled": true,
+      "selector_top_k": 16,
+      "parallel_drafting": true,
+      "noncausal_capture_compat_calls": 5,
+      "allocated_bytes": 63367559168,
+      "reserved_bytes": 64434995200
+    }
+  },
+  "questions": [
+    {
+      "question": 1,
+      "mtp_tokens": 137,
+      "dflash2_tokens": 137,
+      "mtp_elapsed_s": 2.382131460006349,
+      "dflash2_elapsed_s": 3.0409206199692562,
+      "token_ids_equal": true,
+      "first_token_difference": null,
+      "final_content_equal": true,
+      "mtp_finish": "stop",
+      "dflash2_finish": "stop"
+    },
+    {
+      "question": 2,
+      "mtp_tokens": 44,
+      "dflash2_tokens": 44,
+      "mtp_elapsed_s": 1.1427033599466085,
+      "dflash2_elapsed_s": 1.227338319993578,
+      "token_ids_equal": true,
+      "first_token_difference": null,
+      "final_content_equal": true,
+      "mtp_finish": "stop",
+      "dflash2_finish": "stop"
+    },
+    {
+      "question": 3,
+      "mtp_tokens": 575,
+      "dflash2_tokens": 575,
+      "mtp_elapsed_s": 8.947780160000548,
+      "dflash2_elapsed_s": 10.14393718005158,
+      "token_ids_equal": false,
+      "first_token_difference": 311,
+      "final_content_equal": true,
+      "mtp_finish": "stop",
+      "dflash2_finish": "stop"
+    },
+    {
+      "question": 4,
+      "mtp_tokens": 88,
+      "dflash2_tokens": 88,
+      "mtp_elapsed_s": 1.683621000032872,
+      "dflash2_elapsed_s": 1.9788148599909618,
+      "token_ids_equal": true,
+      "first_token_difference": null,
+      "final_content_equal": true,
+      "mtp_finish": "stop",
+      "dflash2_finish": "stop"
+    }
+  ],
+  "profiles": {
+    "mtp7": {
+      "profiler_complete": true,
+      "insight_groups_verified": 193,
+      "sql_top20_verified": true,
+      "decode_rounds": 26,
+      "decode_span_ms": 1964.28154,
+      "cycle_medians": {
+        "span_ms": 75.5713,
+        "main_graph_window_ms": 52.4549,
+        "main_graph_kernel_sum_ms": 50.58766,
+        "after_graph_window_ms": 23.11374,
+        "outside_graph_kernel_sum_ms": 24.33352,
+        "no_compute_ms": 0.64888
+      },
+      "device_phase_totals": {
+        "main_verification_graph": {
+          "calls": 35438,
+          "kernel_sum_ms": 1315.1328800000208,
+          "union_ms": 1315.13288
+        },
+        "unattributed": {
+          "calls": 12585,
+          "kernel_sum_ms": 116.34172000000044,
+          "union_ms": 116.16164
+        },
+        "merged_draft_graph": {
+          "calls": 6916,
+          "kernel_sum_ms": 516.128320000002,
+          "union_ms": 516.12832
+        }
+      },
+      "cpu_inclusive_scopes": {
+        "DFlash2::selector_walk": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "DFlash2::candidate_selector": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "DFlash2::lm_head_and_topk": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "draft_token": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "sample_token": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "post process": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "forward": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "prepare input": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "async_state_update": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        }
+      },
+      "target_ffn_groups": [
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,5120;34816,5120",
+          "main_graph": true,
+          "calls": 1664,
+          "total_ms": 496.18012,
+          "mean_us": 298.18516826923076,
+          "mte2_activity_ratio": 0.9876467993518137,
+          "mac_activity_ratio": 0.11149033492111693
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,17408;5120,17408",
+          "main_graph": true,
+          "calls": 1664,
+          "total_ms": 256.33486,
+          "mean_us": 154.04739182692308,
+          "mte2_activity_ratio": 0.8848093781704126,
+          "mac_activity_ratio": 0.15349376007617546
+        }
+      ],
+      "merged_draft_kernel_sum_ms_per_round": 19.851089230769308,
+      "no_compute_percent": 0.8582629147958087,
+      "kernel_csv_sha256": "f84ae45fd7b5181e51a8826bbaa3f5c6d84a193c6cd2694bff776f4e3b3f87ed"
+    },
+    "dflash2": {
+      "profiler_complete": true,
+      "insight_groups_verified": 228,
+      "sql_top20_verified": true,
+      "decode_rounds": 33,
+      "decode_span_ms": 3094.69574,
+      "cycle_medians": {
+        "span_ms": 94.63719,
+        "main_graph_window_ms": 52.16129,
+        "main_graph_kernel_sum_ms": 50.2215,
+        "after_graph_window_ms": 42.475300000000004,
+        "outside_graph_kernel_sum_ms": 12.16947,
+        "no_compute_ms": 32.260419999999996
+      },
+      "device_phase_totals": {
+        "main_verification_graph": {
+          "calls": 45144,
+          "kernel_sum_ms": 1657.4369800000159,
+          "union_ms": 1657.43698
+        },
+        "unattributed": {
+          "calls": 7095,
+          "kernel_sum_ms": 55.09851999999975,
+          "union_ms": 55.09852
+        },
+        "post process": {
+          "calls": 99,
+          "kernel_sum_ms": 64.56094,
+          "union_ms": 64.56094
+        },
+        "sample_token": {
+          "calls": 495,
+          "kernel_sum_ms": 6.097559999999996,
+          "union_ms": 6.09756
+        },
+        "async_state_update": {
+          "calls": 165,
+          "kernel_sum_ms": 0.33855999999999986,
+          "union_ms": 0.33856
+        },
+        "draft_token": {
+          "calls": 1386,
+          "kernel_sum_ms": 16.429200000000012,
+          "union_ms": 16.4292
+        },
+        "merged_draft_graph": {
+          "calls": 13167,
+          "kernel_sum_ms": 246.6769600000015,
+          "union_ms": 246.67696
+        },
+        "prepare input": {
+          "calls": 4384,
+          "kernel_sum_ms": 11.97836000000001,
+          "union_ms": 11.97836
+        }
+      },
+      "cpu_inclusive_scopes": {
+        "DFlash2::selector_walk": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "DFlash2::candidate_selector": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "DFlash2::lm_head_and_topk": {
+          "calls": 0,
+          "inclusive_ms": 0.0
+        },
+        "draft_token": {
+          "calls": 33,
+          "inclusive_ms": 223.04178
+        },
+        "sample_token": {
+          "calls": 33,
+          "inclusive_ms": 44.27505
+        },
+        "post process": {
+          "calls": 33,
+          "inclusive_ms": 12.2106
+        },
+        "forward": {
+          "calls": 32,
+          "inclusive_ms": 158.06305
+        },
+        "prepare input": {
+          "calls": 33,
+          "inclusive_ms": 2489.75896
+        },
+        "async_state_update": {
+          "calls": 33,
+          "inclusive_ms": 21.91678
+        }
+      },
+      "target_ffn_groups": [
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,5120;34816,5120",
+          "main_graph": true,
+          "calls": 2112,
+          "total_ms": 627.83976,
+          "mean_us": 297.27261363636364,
+          "mte2_activity_ratio": 0.9884463315607805,
+          "mac_activity_ratio": 0.11134186614750258
+        },
+        {
+          "type": "MatMulV2",
+          "input_shape": "8,17408;5120,17408",
+          "main_graph": true,
+          "calls": 2112,
+          "total_ms": 324.06284,
+          "mean_us": 153.4388446969697,
+          "mte2_activity_ratio": 0.8862343686798535,
+          "mac_activity_ratio": 0.15384457428071682
+        }
+      ],
+      "merged_draft_kernel_sum_ms_per_round": 7.475059393939439,
+      "no_compute_percent": 33.48634654468487,
+      "kernel_csv_sha256": "c221b6f17e5c02475112fffd835b077bc3913f47419f59301b5a61132739b544"
+    }
+  },
+  "ready_process_memory_mib": 61244,
+  "matched_profile_tokens_equal": true,
+  "compatibility": {
+    "capture_adapter": "Unmasked noncausal draft graph uses sparse_mode=0 and unrestricted pre/next, matching installed eager branch.",
+    "scope": "Process-local Python adapter; no target causal attention, verification policy, checkpoint or NPU kernel changes.",
+    "failed_attempts": [
+      "Capture rejected with 561002: sparseMode must be 0 when mask absent.",
+      "Graphs captured; HTTP client failed before requests because libpython3.12 library path absent."
+    ],
+    "client_fix": "Provide private Python library path; disable torch device backend autoload in HTTP evaluator."
+  },
+  "cleanup": {
+    "started_utc": "2026-10-21T07:04:06.994749+00:00",
+    "phase": "complete",
+    "restore_services": false,
+    "reuse_mtp_baseline": true,
+    "ready_utc": "2026-10-21T07:07:40.777603+00:00",
+    "ended_utc": "2026-10-21T07:09:23.270533+00:00",
+    "cards_empty": {
+      "6": true,
+      "7": true
+    }
+  },
+  "limits": [
+    "Existing MTP baseline reused, not a simultaneous newly measured A/B.",
+    "Four GSM8K questions; generated lengths may differ. Include prefill in benchmark timing.",
+    "Acceptance is after 64-token warmup and before separate profiling; no acceptance thresholds changed.",
+    "Counter tokens per round includes candidate/tail counting conventions, not exact HTTP output per round.",
+    "Profile timings include overhead; CPU scopes are inclusive and not added to device time.",
+    "DFlash2 profile includes host labels enabled after normal benchmark; reused MTP profile has no such added labels. No-compute and host timing differences cannot be treated as unprofiled costs or a proven normal-run bottleneck.",
+    "Different draft shapes change numerical execution; report token differences and score without claiming universal equivalence."
+  ]
+}
