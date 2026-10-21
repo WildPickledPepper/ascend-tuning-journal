@@ -24,6 +24,8 @@ Qwen27B参数：hidden5120、FFN17408、24个Q头/4个KV头、head_dim256、voca
 
 ## 3. 查到并修正的两处训练副本兼容问题
 
+该补丁使用零上下文格式，在固定源码上使用`git apply --unidiff-zero training-compat.patch`应用；应用前先用`--check`核对。
+
 [training-compat.patch](training-compat.patch)只影响独立SpecForge源码，不改任何NPU内核或主模型安装：
 
 1. **重复交换注意力布局**：当前Transformers eager attention已经返回[B,S,H,D]，社区训练层又transpose(S,H)后reshape，使后续投影看到错排数据。独立CPU probe使用B1/S3/H2/D8捕获HF输出与o_proj输入：原版最大差0.6622037888、逐位不等；去掉多余transpose后最大差0、逐位相同。不能只做shape正确或loss有限检查就认为训练语义正确。
