@@ -1,0 +1,242 @@
+{
+  "model": "Qwen3.8-27B",
+  "dtype": "BF16",
+  "hardware": "Ascend910B2",
+  "TP": 1,
+  "physical_card": 6,
+  "native_mtp_only": true,
+  "new_k7_baseline_requests": 0,
+  "evaluation_examples_per_candidate": 4,
+  "summary": {
+    "k7": {
+      "k": 7,
+      "throughput_tok_s": 59.386318293794986,
+      "three_pass_rates": [
+        59.11134021186746,
+        59.386318293794986,
+        59.44524187354447
+      ],
+      "output_tokens": 844,
+      "accuracy": 1.0,
+      "counters": {
+        "verification_rounds": 171.0,
+        "proposed": 1197.0,
+        "accepted": 681.0,
+        "acceptance_rate": 0.568922305764411,
+        "counter_tokens_per_round": 4.982456140350877,
+        "accepted_per_position": {
+          "5": 66.0,
+          "2": 111.0,
+          "0": 147.0,
+          "6": 55.0,
+          "4": 76.0,
+          "3": 98.0,
+          "1": 128.0
+        },
+        "mean_server_ttft_ms": 313.7167692184448,
+        "server_decode_total_s": 12.840186859946698,
+        "server_decode_ms_per_verification_round": 75.08881204647192
+      }
+    },
+    "k6": {
+      "k": 6,
+      "benchmark": {
+        "mode": "k6",
+        "protocol": "SGLang PR35629: GSM8K zero-shot/chat, greedy T0/top_p1/top_k1, 2048 output limit, concurrency1; 4 examples.",
+        "evaluator_source_commit": "bea986b2f91432e0bdf2c283527427b0e63fcda1",
+        "evaluator_source_sha256": "f71543a818dcc1ad4fa7263df76492bf76c971deeec3d4377aa72fea819c8ec1",
+        "example_count": 4,
+        "warmup_requests": 1,
+        "warmup_max_tokens": 64,
+        "latency_s": 14.437105420045555,
+        "output_tokens": 844,
+        "throughput_tok_s": 58.4604721960489,
+        "accuracy": 1.0,
+        "observer": "In-memory API response capture; public evaluator and sampler unchanged; prints one completion line per request."
+      },
+      "throughput_tok_s": 58.4604721960489,
+      "over_k7_median_ratio": 0.9844097744338055,
+      "counters": {
+        "verification_rounds": 182.0,
+        "proposed": 1092.0,
+        "accepted": 674.0,
+        "acceptance_rate": 0.6172161172161172,
+        "counter_tokens_per_round": 4.7032967032967035,
+        "accepted_per_position": {
+          "5": 71.0,
+          "2": 119.0,
+          "0": 158.0,
+          "4": 85.0,
+          "3": 103.0,
+          "1": 138.0
+        },
+        "mean_server_ttft_ms": 347.23812341690063,
+        "server_decode_total_s": 12.949557149899192,
+        "server_decode_ms_per_verification_round": 71.15141291153402
+      },
+      "main_and_draft_graphs_verified": true,
+      "capture_sizes": [
+        7
+      ],
+      "ready_memory_mib": 61224,
+      "questions": [
+        {
+          "question": 1,
+          "baseline_output_tokens": 137,
+          "output_tokens": 137,
+          "elapsed_s": 2.579027559957467,
+          "token_ids_equal_to_k7": true,
+          "content_equal_to_k7": true,
+          "finish_reason": "stop"
+        },
+        {
+          "question": 2,
+          "baseline_output_tokens": 44,
+          "output_tokens": 44,
+          "elapsed_s": 1.127950929920189,
+          "token_ids_equal_to_k7": true,
+          "content_equal_to_k7": true,
+          "finish_reason": "stop"
+        },
+        {
+          "question": 3,
+          "baseline_output_tokens": 575,
+          "output_tokens": 575,
+          "elapsed_s": 9.055478289956227,
+          "token_ids_equal_to_k7": false,
+          "content_equal_to_k7": true,
+          "finish_reason": "stop"
+        },
+        {
+          "question": 4,
+          "baseline_output_tokens": 88,
+          "output_tokens": 88,
+          "elapsed_s": 1.6310584500897676,
+          "token_ids_equal_to_k7": true,
+          "content_equal_to_k7": true,
+          "finish_reason": "stop"
+        }
+      ],
+      "cleanup": {
+        "started_utc": "2026-10-21T08:42:32.462791+00:00",
+        "phase": "complete",
+        "k": 6,
+        "evaluation_examples": 4,
+        "restore_services": false,
+        "native_checkpoint": true,
+        "baseline_reused": true,
+        "ready_utc": "2026-10-21T08:48:12.489870+00:00",
+        "ended_utc": "2026-10-21T08:48:53.324271+00:00",
+        "cards_empty": {
+          "6": true,
+          "7": true
+        }
+      }
+    },
+    "k8": {
+      "k": 8,
+      "benchmark": {
+        "mode": "k8",
+        "protocol": "SGLang PR35629: GSM8K zero-shot/chat, greedy T0/top_p1/top_k1, 2048 output limit, concurrency1; 4 examples.",
+        "evaluator_source_commit": "bea986b2f91432e0bdf2c283527427b0e63fcda1",
+        "evaluator_source_sha256": "f71543a818dcc1ad4fa7263df76492bf76c971deeec3d4377aa72fea819c8ec1",
+        "example_count": 4,
+        "warmup_requests": 1,
+        "warmup_max_tokens": 64,
+        "latency_s": 15.12653984001372,
+        "output_tokens": 862,
+        "throughput_tok_s": 56.98593393578225,
+        "accuracy": 1.0,
+        "observer": "In-memory API response capture; public evaluator and sampler unchanged; prints one completion line per request."
+      },
+      "throughput_tok_s": 56.98593393578225,
+      "over_k7_median_ratio": 0.9595801789540548,
+      "counters": {
+        "verification_rounds": 175.0,
+        "proposed": 1400.0,
+        "accepted": 699.0,
+        "acceptance_rate": 0.4992857142857143,
+        "counter_tokens_per_round": 4.994285714285715,
+        "accepted_per_position": {
+          "6": 54.0,
+          "4": 79.0,
+          "5": 61.0,
+          "3": 89.0,
+          "1": 121.0,
+          "2": 106.0,
+          "0": 147.0,
+          "7": 42.0
+        },
+        "mean_server_ttft_ms": 350.6013751029968,
+        "server_decode_total_s": 13.633095719967969,
+        "server_decode_ms_per_verification_round": 77.90340411410268
+      },
+      "main_and_draft_graphs_verified": true,
+      "capture_sizes": [
+        9
+      ],
+      "ready_memory_mib": 61226,
+      "questions": [
+        {
+          "question": 1,
+          "baseline_output_tokens": 137,
+          "output_tokens": 137,
+          "elapsed_s": 2.434995079995133,
+          "token_ids_equal_to_k7": true,
+          "content_equal_to_k7": true,
+          "finish_reason": "stop"
+        },
+        {
+          "question": 2,
+          "baseline_output_tokens": 44,
+          "output_tokens": 44,
+          "elapsed_s": 1.2043002599384636,
+          "token_ids_equal_to_k7": true,
+          "content_equal_to_k7": true,
+          "finish_reason": "stop"
+        },
+        {
+          "question": 3,
+          "baseline_output_tokens": 575,
+          "output_tokens": 593,
+          "elapsed_s": 9.73103327001445,
+          "token_ids_equal_to_k7": false,
+          "content_equal_to_k7": false,
+          "finish_reason": "stop"
+        },
+        {
+          "question": 4,
+          "baseline_output_tokens": 88,
+          "output_tokens": 88,
+          "elapsed_s": 1.7152884199749678,
+          "token_ids_equal_to_k7": true,
+          "content_equal_to_k7": true,
+          "finish_reason": "stop"
+        }
+      ],
+      "cleanup": {
+        "started_utc": "2026-10-21T08:48:53.417119+00:00",
+        "phase": "complete",
+        "k": 8,
+        "evaluation_examples": 4,
+        "restore_services": false,
+        "native_checkpoint": true,
+        "baseline_reused": true,
+        "ready_utc": "2026-10-21T08:54:12.344898+00:00",
+        "ended_utc": "2026-10-21T08:54:51.024857+00:00",
+        "cards_empty": {
+          "6": true,
+          "7": true
+        }
+      }
+    }
+  },
+  "fastest_observed_k": 7,
+  "limits": [
+    "K7 reuses an earlier three-pass median; K6 and K8 each have one four-question pass, not a simultaneous new A/B.",
+    "Throughput includes prefill and client evaluator overhead; server decode/round is an aggregate wall-time ratio, not a measured kernel-cycle duration.",
+    "No profiler during timing, no kernel rewrite, no trained MTP checkpoint.",
+    "Candidate count changes round boundaries and can change numerical paths and output lengths.",
+    "This tests K6/7/8 on four questions, not a global optimum or a full accuracy evaluation."
+  ]
+}
