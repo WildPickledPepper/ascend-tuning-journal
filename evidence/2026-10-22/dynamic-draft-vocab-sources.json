@@ -1,0 +1,55 @@
+{
+  "files": [
+    {
+      "name": "dynamic_vocab.py",
+      "bytes": 7210,
+      "sha256": "3c69d5239086c9b5d795b92a70dd37a8fe3974a485c9dd93de32a37c4c968e99"
+    },
+    {
+      "name": "prepare_seed.py",
+      "bytes": 1253,
+      "sha256": "2afcdca794fb76fc574d9b03fc12dec64b99e4678248ed72199ae5d3ab782485"
+    },
+    {
+      "name": "model_extension.py",
+      "bytes": 5635,
+      "sha256": "b714181274f7610c493f11da49b047b0d5f2a00c0f86107032aaf564b9c9af4a"
+    },
+    {
+      "name": "start.sh",
+      "bytes": 1844,
+      "sha256": "a30b953fea838ad752820feeadeda8a5af21168b6879140f13376e44ededea9b"
+    },
+    {
+      "name": "serve.py",
+      "bytes": 173,
+      "sha256": "4f4a7ccc308e177d0a17046b3db37e44c3e6fb008d897fdb5d1064b46119819a"
+    },
+    {
+      "name": "controller.py",
+      "bytes": 2473,
+      "sha256": "2abf4a5c1cd9a31c07d9462566d7ba86b04afe0b370a54b1ecaf899416a2bbe7"
+    },
+    {
+      "name": "client.py",
+      "bytes": 4648,
+      "sha256": "8abc5e1b99c0da4045be1f500410b75d0e5e8b27452e724c6a6c7d7793c4a775"
+    },
+    {
+      "name": "bench.py",
+      "bytes": 1893,
+      "sha256": "f5d130bc10f14a2d4cf8b5b5c7bf5909ef2211851a737cd5f1e45c0aa56b01e8"
+    },
+    {
+      "name": "analyze.py",
+      "bytes": 5623,
+      "sha256": "38612eb1887fd9f6880938380219c5c86ada3d527af3725b2d0c2e0aa2d0c059"
+    },
+    {
+      "name": "seed-private.json",
+      "bytes": 15355,
+      "sha256": "46cdc6256344607e1ee8ec3d4b14e36233295e6ddf25a7288c9cec9c0228571f"
+    }
+  ],
+  "selection_source": "64 independent GSM8K train model-generated records; no test fitting"
+}

@@ -1,0 +1,290 @@
+{
+  "trace_analysis": {
+    "arms": {
+      "full-a": {
+        "tokens": 575,
+        "rounds_including_prefill": 117,
+        "aligned_target_positions": 576,
+        "sampling_mismatches": []
+      },
+      "masked": {
+        "tokens": 447,
+        "rounds_including_prefill": 104,
+        "aligned_target_positions": 448,
+        "sampling_mismatches": []
+      },
+      "full-b": {
+        "tokens": 575,
+        "rounds_including_prefill": 117,
+        "aligned_target_positions": 576,
+        "sampling_mismatches": []
+      }
+    },
+    "comparisons": {
+      "full-a__full-b": {
+        "left_tokens": 575,
+        "right_tokens": 575,
+        "tokens_equal": true,
+        "first_different_output_index": null,
+        "hidden_difference_count_before_output_split": 0,
+        "first_hidden_difference": null,
+        "last_hidden_difference_before_split": null,
+        "target_argmax_difference_positions_before_split": [],
+        "split_detail": null
+      },
+      "full-a__masked": {
+        "left_tokens": 575,
+        "right_tokens": 447,
+        "tokens_equal": false,
+        "first_different_output_index": 311,
+        "hidden_difference_count_before_output_split": 244,
+        "first_hidden_difference": {
+          "position": 68,
+          "different": 4277,
+          "max_abs": 0.21875,
+          "left_round": 15,
+          "left_row": 1,
+          "right_round": 16,
+          "right_row": 0
+        },
+        "last_hidden_difference_before_split": {
+          "position": 311,
+          "different": 4256,
+          "max_abs": 0.28125,
+          "left_round": 70,
+          "left_row": 0,
+          "right_round": 72,
+          "right_row": 1
+        },
+        "target_argmax_difference_positions_before_split": [
+          311
+        ],
+        "split_detail": {
+          "same_prefix": true,
+          "left_output_id": 10287,
+          "right_output_id": 3481,
+          "left_argmax": 10287,
+          "right_argmax": 3481,
+          "left_top8_ids": [
+            10287,
+            3481,
+            4087,
+            5129,
+            220,
+            1228,
+            13414,
+            40851
+          ],
+          "left_top8_values": [
+            21.125,
+            21.0,
+            21.0,
+            19.625,
+            18.875,
+            18.875,
+            18.0,
+            17.875
+          ],
+          "right_top8_ids": [
+            3481,
+            10287,
+            4087,
+            5129,
+            1228,
+            220,
+            13414,
+            40851
+          ],
+          "right_top8_values": [
+            21.125,
+            21.125,
+            21.0,
+            19.625,
+            19.0,
+            18.875,
+            18.0,
+            17.875
+          ],
+          "left_round": 70,
+          "left_row": 0,
+          "right_round": 72,
+          "right_row": 1,
+          "full_logits_different": 196875,
+          "full_logits_max_abs": 0.125,
+          "paired_candidate_scores": {
+            "3481": [
+              21.0,
+              21.125
+            ],
+            "10287": [
+              21.125,
+              21.125
+            ]
+          }
+        }
+      }
+    }
+  },
+  "state_segmentation": {
+    "torch.float32": {
+      "[4, 4]": {
+        "output": {
+          "different": 0,
+          "elements": 4096,
+          "max_abs": 0.0
+        },
+        "last_state": {
+          "different": 0,
+          "elements": 65536,
+          "max_abs": 0.0
+        },
+        "per_token_different": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "[1, 1, 1, 1, 1, 1, 1, 1]": {
+        "output": {
+          "different": 0,
+          "elements": 4096,
+          "max_abs": 0.0
+        },
+        "last_state": {
+          "different": 0,
+          "elements": 65536,
+          "max_abs": 0.0
+        },
+        "per_token_different": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "torch.bfloat16": {
+      "[4, 4]": {
+        "output": {
+          "different": 797,
+          "elements": 4096,
+          "max_abs": 0.000244140625
+        },
+        "last_state": {
+          "different": 16840,
+          "elements": 65536,
+          "max_abs": 0.00390625
+        },
+        "per_token_different": [
+          0,
+          0,
+          0,
+          0,
+          217,
+          227,
+          156,
+          197
+        ]
+      },
+      "[1, 1, 1, 1, 1, 1, 1, 1]": {
+        "output": {
+          "different": 1906,
+          "elements": 4096,
+          "max_abs": 0.000244140625
+        },
+        "last_state": {
+          "different": 34001,
+          "elements": 65536,
+          "max_abs": 0.00390625
+        },
+        "per_token_different": [
+          0,
+          214,
+          269,
+          239,
+          281,
+          331,
+          251,
+          321
+        ]
+      }
+    }
+  },
+  "same_process_controls": {
+    "same_main_head_ptr": true,
+    "same_draft_head_ptr": true,
+    "same_mask_ptr": true,
+    "same_draft_graph_wrapper_id": true,
+    "main_head_shapes": [
+      [
+        248320,
+        5120
+      ],
+      [
+        248320,
+        5120
+      ],
+      [
+        248320,
+        5120
+      ]
+    ],
+    "main_head_versions": [
+      0,
+      0,
+      0
+    ]
+  },
+  "private_summary_sources": [
+    {
+      "name": "full-a-audit.json",
+      "bytes": 373,
+      "sha256": "129f0c8891caa262ff5cfec2bf2e0fa60e114d44c88676924372c2d430264aa9"
+    },
+    {
+      "name": "full-a-request.json",
+      "bytes": 40958,
+      "sha256": "e3e56a805ed3ba9c357b9fd6949fb73413bf5c69d4fc2de4ccb3b2bfbf29f47f"
+    },
+    {
+      "name": "full-b-audit.json",
+      "bytes": 373,
+      "sha256": "1e0bf4ac897c548aed1967aa447d175066b5414f04e37b358be8714e7ad2a88e"
+    },
+    {
+      "name": "full-b-request.json",
+      "bytes": 40963,
+      "sha256": "3328af857c64896075f65a9aa204e477247e0eb50ac1726f18b800c408955312"
+    },
+    {
+      "name": "masked-audit.json",
+      "bytes": 375,
+      "sha256": "11ccf782d51d5a5e97cd73c24351a0491b2ab93afe95814c3a883c3434d995f8"
+    },
+    {
+      "name": "masked-request.json",
+      "bytes": 35970,
+      "sha256": "adebdbe3e00c2890143fdedc136a9bcd1ea0f08dc521b0371d04319a1448d2b2"
+    },
+    {
+      "name": "state-segmentation.json",
+      "bytes": 1576,
+      "sha256": "2eff2b6f2ff92cc3c00458e7f7057ed1965a116173c621a39f912c3c9af2e149"
+    },
+    {
+      "name": "trace-analysis.json",
+      "bytes": 2891,
+      "sha256": "a7bf95bde38aa52d6a0c39926c6761bc749fa441305846fe6f21d03abd888f9c"
+    }
+  ],
+  "scope": "Single process full-head mask diagnostic, not a speed benchmark. Operator FP32 is not a full-model fix test."
+}

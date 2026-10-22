@@ -1,0 +1,10 @@
+{
+  "recorded_utc": "2026-10-22T04:00:29.520299+00:00",
+  "recorded_beijing": "2026-10-22T12:00:29.520299+08:00",
+  "card7_released": true,
+  "port8047_closed": true,
+  "process_query": "\tNPU ID                         : 7\n\tChip Count                     : 1\n\n\tNo process in device.\n\tChip ID                        : 0\n\n",
+  "port_query": "State Recv-Q Send-Q Local Address:Port Peer Address:PortProcess\n",
+  "diagnostic_completed": true,
+  "benchmark_completed": true
+}

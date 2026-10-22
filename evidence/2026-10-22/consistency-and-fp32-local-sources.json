@@ -1,0 +1,135 @@
+{
+  "files": [
+    {
+      "name": "experiments/dynamic-vocab-consistency/analyze_traces.py",
+      "bytes": 4702,
+      "sha256": "0163d3bcc32035af68140f22ef5ddf9609513f38421fa22ec128d8edbabab66f"
+    },
+    {
+      "name": "experiments/dynamic-vocab-consistency/client.py",
+      "bytes": 4648,
+      "sha256": "8abc5e1b99c0da4045be1f500410b75d0e5e8b27452e724c6a6c7d7793c4a775"
+    },
+    {
+      "name": "experiments/dynamic-vocab-consistency/controller.py",
+      "bytes": 2734,
+      "sha256": "77d2d1b8bdc0c60c35f076eef147b8437dceec713be0cfee450eba66405c9925"
+    },
+    {
+      "name": "experiments/dynamic-vocab-consistency/diagnostic.py",
+      "bytes": 5899,
+      "sha256": "ac98fba11f86fb6851000fb7a3aea6a610d5a91c1c7e1c24b7a1e376304836e9"
+    },
+    {
+      "name": "experiments/dynamic-vocab-consistency/dynamic_vocab.py",
+      "bytes": 7210,
+      "sha256": "3c69d5239086c9b5d795b92a70dd37a8fe3974a485c9dd93de32a37c4c968e99"
+    },
+    {
+      "name": "experiments/dynamic-vocab-consistency/export_evidence.py",
+      "bytes": 1604,
+      "sha256": "8294b59905285a4768b1e9f0b1c91b223621322adcede4d1d72a3d8c2684a16b"
+    },
+    {
+      "name": "experiments/dynamic-vocab-consistency/graph_audit_base.py",
+      "bytes": 2390,
+      "sha256": "500ef150330dcd37b2a8559f33a3ce2e2e81e46655db1ab38c09b577c4ad2d39"
+    },
+    {
+      "name": "experiments/dynamic-vocab-consistency/model_extension.py",
+      "bytes": 5897,
+      "sha256": "137d5dc7508d4d697abe62fe19618371dbe7d817c56241d4dba71cda1fe36251"
+    },
+    {
+      "name": "experiments/dynamic-vocab-consistency/run_state_probe.sh",
+      "bytes": 721,
+      "sha256": "15f4b3faf9cf16ec828238392b75d784f457a2b9d9d1d5965962514c7760a090"
+    },
+    {
+      "name": "experiments/dynamic-vocab-consistency/serve.py",
+      "bytes": 173,
+      "sha256": "4f4a7ccc308e177d0a17046b3db37e44c3e6fb008d897fdb5d1064b46119819a"
+    },
+    {
+      "name": "experiments/dynamic-vocab-consistency/start.sh",
+      "bytes": 1826,
+      "sha256": "238ce1ab13d572e6907228561f2284d9b8686fe01c763fc96658806c7ff23718"
+    },
+    {
+      "name": "experiments/dynamic-vocab-consistency/state_probe.py",
+      "bytes": 3869,
+      "sha256": "8829560a3283847da8ff3870bb0588be1ec9b6ec5a73593d27a6a71e7e44a15f"
+    },
+    {
+      "name": "experiments/gdn-fp32-state/analyze.py",
+      "bytes": 5623,
+      "sha256": "38612eb1887fd9f6880938380219c5c86ada3d527af3725b2d0c2e0aa2d0c059"
+    },
+    {
+      "name": "experiments/gdn-fp32-state/analyze_traces.py",
+      "bytes": 4702,
+      "sha256": "0163d3bcc32035af68140f22ef5ddf9609513f38421fa22ec128d8edbabab66f"
+    },
+    {
+      "name": "experiments/gdn-fp32-state/bench.py",
+      "bytes": 1418,
+      "sha256": "67460145187b75cbd80437af6f198a8bbcff41bb6dfc7ce33f5ebd3226844f48"
+    },
+    {
+      "name": "experiments/gdn-fp32-state/benchmark_controller.py",
+      "bytes": 2544,
+      "sha256": "cd6230f70a982718706a8423dcaeed4d90218cbf6538d0d1c46b8ae4fb3db74d"
+    },
+    {
+      "name": "experiments/gdn-fp32-state/client.py",
+      "bytes": 4648,
+      "sha256": "8abc5e1b99c0da4045be1f500410b75d0e5e8b27452e724c6a6c7d7793c4a775"
+    },
+    {
+      "name": "experiments/gdn-fp32-state/collect_receipts.py",
+      "bytes": 1988,
+      "sha256": "c5c5b50f919f2747e84bffa8aa400b2fafd5b1fa22300da7ce87a9734900dd99"
+    },
+    {
+      "name": "experiments/gdn-fp32-state/controller.py",
+      "bytes": 2982,
+      "sha256": "eab657987ddff2780900fc27beb72766682cd769050b9e5ee7318394e3daae90"
+    },
+    {
+      "name": "experiments/gdn-fp32-state/diagnostic.py",
+      "bytes": 5899,
+      "sha256": "ac98fba11f86fb6851000fb7a3aea6a610d5a91c1c7e1c24b7a1e376304836e9"
+    },
+    {
+      "name": "experiments/gdn-fp32-state/dynamic_vocab.py",
+      "bytes": 7210,
+      "sha256": "3c69d5239086c9b5d795b92a70dd37a8fe3974a485c9dd93de32a37c4c968e99"
+    },
+    {
+      "name": "experiments/gdn-fp32-state/export_evidence.py",
+      "bytes": 5144,
+      "sha256": "0760a5d6f841769aa72ea4be923fabdd0fdad512d17c15e0d8a7b9c15000c2a2"
+    },
+    {
+      "name": "experiments/gdn-fp32-state/graph_audit_base.py",
+      "bytes": 2390,
+      "sha256": "500ef150330dcd37b2a8559f33a3ce2e2e81e46655db1ab38c09b577c4ad2d39"
+    },
+    {
+      "name": "experiments/gdn-fp32-state/model_extension.py",
+      "bytes": 6966,
+      "sha256": "74949775c8a0d7a116301538c579b9a3e12c6269353e615551fba09151b0b153"
+    },
+    {
+      "name": "experiments/gdn-fp32-state/serve.py",
+      "bytes": 173,
+      "sha256": "4f4a7ccc308e177d0a17046b3db37e44c3e6fb008d897fdb5d1064b46119819a"
+    },
+    {
+      "name": "experiments/gdn-fp32-state/start.sh",
+      "bytes": 1916,
+      "sha256": "f829b895af2adfae2ef76f68063b9e28a3a62293af9aff85a592ba2d148d39bc"
+    }
+  ],
+  "note": "Local archived source snapshots; measured remote files hashed separately; runtime source paths remain private."
+}

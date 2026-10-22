@@ -1,0 +1,72 @@
+{
+  "runtime_sources": [
+    {
+      "name": "analyze_traces.py",
+      "bytes": 4702,
+      "sha256": "0163d3bcc32035af68140f22ef5ddf9609513f38421fa22ec128d8edbabab66f"
+    },
+    {
+      "name": "client.py",
+      "bytes": 4648,
+      "sha256": "8abc5e1b99c0da4045be1f500410b75d0e5e8b27452e724c6a6c7d7793c4a775"
+    },
+    {
+      "name": "controller.py",
+      "bytes": 2734,
+      "sha256": "77d2d1b8bdc0c60c35f076eef147b8437dceec713be0cfee450eba66405c9925"
+    },
+    {
+      "name": "diagnostic.py",
+      "bytes": 5899,
+      "sha256": "ac98fba11f86fb6851000fb7a3aea6a610d5a91c1c7e1c24b7a1e376304836e9"
+    },
+    {
+      "name": "dynamic_vocab.py",
+      "bytes": 7210,
+      "sha256": "3c69d5239086c9b5d795b92a70dd37a8fe3974a485c9dd93de32a37c4c968e99"
+    },
+    {
+      "name": "graph_audit_base.py",
+      "bytes": 2390,
+      "sha256": "500ef150330dcd37b2a8559f33a3ce2e2e81e46655db1ab38c09b577c4ad2d39"
+    },
+    {
+      "name": "model_extension.py",
+      "bytes": 5897,
+      "sha256": "137d5dc7508d4d697abe62fe19618371dbe7d817c56241d4dba71cda1fe36251"
+    },
+    {
+      "name": "serve.py",
+      "bytes": 173,
+      "sha256": "4f4a7ccc308e177d0a17046b3db37e44c3e6fb008d897fdb5d1064b46119819a"
+    },
+    {
+      "name": "start.sh",
+      "bytes": 1826,
+      "sha256": "238ce1ab13d572e6907228561f2284d9b8686fe01c763fc96658806c7ff23718"
+    },
+    {
+      "name": "state_probe.py",
+      "bytes": 3442,
+      "sha256": "c8e018a271d5c7dcdd47b9535c73b3ca23916156cbf686d07177fe6a2fc6daa3"
+    }
+  ],
+  "traces": [
+    {
+      "name": "full-a-trace.pt",
+      "bytes": 63428544,
+      "sha256": "b8a968799af539060b6a66f31af6b7a4401fc9e2bb94af11d7674a03bcd66bf2"
+    },
+    {
+      "name": "full-b-trace.pt",
+      "bytes": 63428544,
+      "sha256": "eef5969c2c1e9535666a79741019f29b677918be22351dff73aa157a53461c3f"
+    },
+    {
+      "name": "masked-trace.pt",
+      "bytes": 62336473,
+      "sha256": "ed870ac37fd7db1ebecab8cee037fee5fcc93296fcfb2045e6b5074d9cf19634"
+    }
+  ],
+  "note": "Measured server sources; local state_probe adds a later pre-import ABI guard, documented separately."
+}
