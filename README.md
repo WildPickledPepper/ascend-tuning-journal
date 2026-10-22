@@ -13,12 +13,21 @@
 | [2026-10-19](journal/2026-10-19.md) | 27B 部署；图模式；HBM/矩阵乘；内核实验停止；MTP；NZ 回退与差异补采 |
 | [2026-10-20](journal/2026-10-20.md) | 实采 TLB/HBM 定位 NZ 退化；DFlash2/MTP 采样归因；SGLang 昇腾双卡/单卡；vLLM MTP7同题对照及Insight归因 |
 | [2026-10-21](journal/2026-10-21.md) | MTP/预取/显存分析与复盘；BF16按L1块重排，算子与完整请求验证 |
+| [2026-10-22](journal/2026-10-22.md) | 优化版本整网重新采样：decode主模型FFN、草稿词表投影与供数限制定位 |
 
 **完整过程：[Qwen3.8-27B在910B2上的定位与优化复盘](notes/qwen27b-tuning-retrospective.md)。** 按16步串联现象、假设、受控实验、Insight证据、实际改动与采用判断，保留失败和结论更正。最后附当前完整采样耗时分摊及复算代码。
 
 搬运技术说明：[HBM/L2/L1/L0 数据流、ND/NZ 地址、分块与同步](notes/matmul-data-movement.md)。
 
 ## 最近一次记录的状态
+
+- **下一步仅讨论草稿词表投影**：[方案与论文入口](notes/draft-vocabulary-projection-plan.md)。当前草稿head占decode18.58%，考虑保留主模型完整head、为草稿缩小候选词表；FR-Spec/NanoSpec已检索，尚未完成全文适配研究、实现或测试。接受率与映射/回退正确性须核对，理论收益不作为实测。
+
+- **已有profiling的FFN前后口径已统一**：[对照表](experiments/optimized-decode-profile/history-comparison.md)。没有重新上机。相同121输入/128输出、26轮：主模型FFN原生771.514ms/39.277%，已down预取758.812ms/38.978%，当前684.598ms/36.503%。最近阶段绝对时间−9.78%、占比−2.475个百分点，gate/up单次297.990→254.834μs（−14.48%）；若从原生算，FFN−11.27%、占比−2.775个百分点。旧6卡/当前7卡，跨卡跨日，不将全部差值唯一归因于重排。581个Insight分组与SQL核验；本次NPU请求0。[证据](evidence/2026-10-22/ffn-profile-history-comparison.json)。
+
+- **优化后 decode 已重新定位，只采集、未改推理实现**：[分析报告](experiments/optimized-decode-profile/results.md)。7号910B2、BF16/TP1/并发1/MTP7，保留packed gate/up、down预取和prefill直读。三个同输入128输出采样各26轮，主模型FFN约36.50%、词表投影21.28%（草稿18.58%）、主模型其他线性投影17.50%，无计算空隙0.92%。MTE2活动高、MAC活动较低、gate/up L2读命中0.53%，支持权重供给限制，不等于证明HBM峰值已满；没有发现大量host下发空等。195个Insight分组与SQL/CSV核验，服务器/本地复算一致；09:22:50服务退出，09:27:17确认7卡释放、8047关闭。保留通信端口告警记录；未改内核、未设默认、未推送Git。[过滤证据](evidence/2026-10-22/optimized-decode-profile.json)。
+
+- **Prefill gate/up直接读packed权重已验证**：[实现与完整请求结果](experiments/gateup-packed-prefill/results.md)。相对上一版“临时还原＋原生linear”，正常四题TTFT362.37→336.38ms（−7.17%），输出61.688→62.212 token/s（+0.85%）；固定512输出仅+0.11%；1513输入单样本TTFT1040.85→947.36ms（−8.98%）。22条输出token一致、64层65-token真实激活逐位一致；计时窗口832次直接读、还原0次。大M独立测试仍有少量BF16舍入差异；MTP总量相同但长输入位置计数各差1，未设默认、不宣称稳定通用收益。18:18:28确认7卡释放。[过滤证据](evidence/2026-10-21/packed-prefill-e2e.json)、[离线复核](experiments/gateup-packed-prefill/verify_evidence.py)。
 
 - **BF16按L1块重排已完成整网验证**：[算子原理与结果](kernels/gateup-l1-layout/README.md)、[完整请求结果](experiments/gateup-l1-layout-e2e/results.md)。7号910B2、64层真实FFN工作集，M8 gate/up原生279.176→239.276μs（耗时−14.29%），同模板跨步NZ295.871→239.276μs（−19.13%）；L2约0.5%、HBM读取字节接近。整网单卡BF16/MTP7/主草稿图，保留相同down预取，正常四题输出吞吐60.056→61.758 token/s（+2.834%），固定512输出44.785→46.244（+3.259%），E2E分别降低2.756%/3.156%；TTFT约多8–9ms。对应输出token及MTP计数一致，prefill临时还原成本已计入；未设默认、未测长输入/多并发。17:17归档确认7卡释放。压缩研究按用户要求等待950卡，当前成果归本调优仓库。[过滤证据](evidence/2026-10-21/gateup-l1-layout-e2e.json)、[只读复算](experiments/gateup-l1-layout-e2e/verify_evidence.py)。
 

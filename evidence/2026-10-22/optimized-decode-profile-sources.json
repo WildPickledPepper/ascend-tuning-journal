@@ -1,0 +1,261 @@
+{
+  "archive_sha256": "df98e0e26b319ae5b7c3535b8d80e1bcbdbf716ec275c3355270cabcde240745",
+  "archive_bytes": 116079307,
+  "runtime": {
+    "utc": "2026-10-22T01:21:24.317818+00:00",
+    "libraries": {
+      "gate_decode": {
+        "sha256": "3639d2408b560b8be778ca2b35d03857d9a8c4c6063f3a262515791a845a8708",
+        "bytes": 99784
+      },
+      "gate_kernel": {
+        "sha256": "0aeddf2e094adc6149516ec63c2875304e7906b46df64c3f6deaa2dae554267b",
+        "bytes": 718920
+      },
+      "down": {
+        "sha256": "a4bb64c2bee3a0a2e00d571e1a747578a52862c9f3d04342305a41e59e03d314",
+        "bytes": 111536
+      },
+      "prefill": {
+        "sha256": "ec15cface9cbdd36f75b409cc7e914e90f02355af87073d9b725cbead4e146ab",
+        "bytes": 100168
+      },
+      "prefill_kernel": {
+        "sha256": "865ba359631204df0d2116e2104b66e7be9107e6ccb107a0b2fc8c6cd1ce938f",
+        "bytes": 494664
+      }
+    },
+    "runtime": {
+      "vllm": {
+        "commit": "6e448d0ea9bf3d88d898b65449ca6dc2aec170ac",
+        "status": ""
+      },
+      "vllm-ascend": {
+        "commit": "3b31886237ed65c435e0965b10e8002ff5769766",
+        "status": ""
+      }
+    }
+  },
+  "artifacts": [
+    {
+      "metric": "PipeUtilization",
+      "artifact": "profiler_info_0.json",
+      "bytes": 1413,
+      "sha256": "0203c06d94bdba0bc2266c48ee641d85590423dbd02ce34812f86faa77989338"
+    },
+    {
+      "metric": "PipeUtilization",
+      "artifact": "analyse.done",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metric": "PipeUtilization",
+      "artifact": "analysis.db",
+      "bytes": 8192,
+      "sha256": "684b6f89c09e2c6715280b14820f4969176ee9d915a02bbae4c416227903b830"
+    },
+    {
+      "metric": "PipeUtilization",
+      "artifact": "api_statistic.csv",
+      "bytes": 10371,
+      "sha256": "238669d6b306d7db802491ea062a85ff03aa75c9041e67e95521188f6fddbd9a"
+    },
+    {
+      "metric": "PipeUtilization",
+      "artifact": "ascend_pytorch_profiler_0.db",
+      "bytes": 51544064,
+      "sha256": "50e0e9016026b701be64bf4f556b7b634a470df08d1ddc0e9e614a6ad776600c"
+    },
+    {
+      "metric": "PipeUtilization",
+      "artifact": "kernel_details.csv",
+      "bytes": 18745578,
+      "sha256": "c794b628df57546d6a7e3aa2be25069b0e08474c86cc2909be361623a95f2b38"
+    },
+    {
+      "metric": "PipeUtilization",
+      "artifact": "operator_details.csv",
+      "bytes": 4889948,
+      "sha256": "b6ff7de3f5c4a668d0a624b2352090f45541c2c6c1711c4d946d9466207e1e03"
+    },
+    {
+      "metric": "PipeUtilization",
+      "artifact": "op_statistic.csv",
+      "bytes": 3919,
+      "sha256": "400d2071717b1ea540c2501a0bad61d37754540fdfe61d1fda576712f1f53781"
+    },
+    {
+      "metric": "PipeUtilization",
+      "artifact": "step_trace_time.csv",
+      "bytes": 229,
+      "sha256": "b319e4a850124e50e7fd7ba3c3d0d994fca67482073f089965bbd95018ead068"
+    },
+    {
+      "metric": "PipeUtilization",
+      "artifact": "task_time.csv",
+      "bytes": 8713600,
+      "sha256": "9a056df9729dddb8e04e45b0e13d23cd4e5d97f9f4e2f7350e3198966cd31971"
+    },
+    {
+      "metric": "PipeUtilization",
+      "artifact": "trace_view.json",
+      "bytes": 111342650,
+      "sha256": "d6da68df50392d9fe6ce42f88ed866dd720c9fa1c662b0c463513288bace89e9"
+    },
+    {
+      "metric": "L2Cache",
+      "artifact": "profiler_info_0.json",
+      "bytes": 1405,
+      "sha256": "b46b209aac7a33f75897ef87eb77b25c5a298a9319134c86a6a598dce89999f4"
+    },
+    {
+      "metric": "L2Cache",
+      "artifact": "analyse.done",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metric": "L2Cache",
+      "artifact": "analysis.db",
+      "bytes": 8192,
+      "sha256": "ca44fd5ce0bb2b11242f1b703a92ec5675d9796dabd3447e148c26fb5a5c27fa"
+    },
+    {
+      "metric": "L2Cache",
+      "artifact": "api_statistic.csv",
+      "bytes": 10344,
+      "sha256": "000e78acd5121bdfc9de951018cdb9aee9913ca4144d7e8e3f9149d4d022d763"
+    },
+    {
+      "metric": "L2Cache",
+      "artifact": "ascend_pytorch_profiler_0.db",
+      "bytes": 37941248,
+      "sha256": "738cb7eb029ad230c03528805c9b6017830f1a85990c9470f4966fbc95c29de2"
+    },
+    {
+      "metric": "L2Cache",
+      "artifact": "kernel_details.csv",
+      "bytes": 15984983,
+      "sha256": "9c46fb62c2349c69edd89bb723c4e087476456c6030d71621cbd560d8fbdd46c"
+    },
+    {
+      "metric": "L2Cache",
+      "artifact": "operator_details.csv",
+      "bytes": 4890552,
+      "sha256": "14c30118d1da8de1d7ba9cffa7f386c77344261ba7ad23acd374a9e0c33dabe6"
+    },
+    {
+      "metric": "L2Cache",
+      "artifact": "op_statistic.csv",
+      "bytes": 3906,
+      "sha256": "59bd2ea90cdc3ec6e751dea82e6c5990edc4ae64e93fa10d1265965c3a9f634a"
+    },
+    {
+      "metric": "L2Cache",
+      "artifact": "step_trace_time.csv",
+      "bytes": 229,
+      "sha256": "5dfed1f1b763971f1a20bf1b4125946375d521bc6a3489304ef4c41f66be0c79"
+    },
+    {
+      "metric": "L2Cache",
+      "artifact": "task_time.csv",
+      "bytes": 8713937,
+      "sha256": "6b224fea2f9f317f7dfa74b2cc5f334cd349a1efa047fc438ce08a494bdef4df"
+    },
+    {
+      "metric": "L2Cache",
+      "artifact": "trace_view.json",
+      "bytes": 111344035,
+      "sha256": "71ba1f90d65b8bdc0395c963b9cf6c8d98c6c1d7e5a9f1df29a3dbaaac56fcdc"
+    },
+    {
+      "metric": "Memory",
+      "artifact": "profiler_info_0.json",
+      "bytes": 1413,
+      "sha256": "4e030acfcf16ab1cc9ef57b3ae5a08e5ca492591c76968ec8b895858bbcc9c9f"
+    },
+    {
+      "metric": "Memory",
+      "artifact": "analyse.done",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "metric": "Memory",
+      "artifact": "analysis.db",
+      "bytes": 8192,
+      "sha256": "867c4b80c981ac5dc565444d706eae25ab2d491e8b914e60daa0b3516ec44050"
+    },
+    {
+      "metric": "Memory",
+      "artifact": "api_statistic.csv",
+      "bytes": 10319,
+      "sha256": "27e49fe3173a224576bd01862ad56df8c117490b6c8449540cbf9e3f9e4907d2"
+    },
+    {
+      "metric": "Memory",
+      "artifact": "ascend_pytorch_profiler_0.db",
+      "bytes": 42602496,
+      "sha256": "2a2f8a179719d78991330cf91bd4abc733b1ee0f771f8551938985c75ced85de"
+    },
+    {
+      "metric": "Memory",
+      "artifact": "kernel_details.csv",
+      "bytes": 15978550,
+      "sha256": "36e3f17c033bb6c4d7c460686bcfcdc5ac59be25390358becbea906f36614e1c"
+    },
+    {
+      "metric": "Memory",
+      "artifact": "operator_details.csv",
+      "bytes": 4896439,
+      "sha256": "aa2da1c8758350f9bbd7b486e7f16a3c1a4413458d3518db0e98d98f8d1281e0"
+    },
+    {
+      "metric": "Memory",
+      "artifact": "op_statistic.csv",
+      "bytes": 3910,
+      "sha256": "6ec8d79e15b5a4a1983bdb0f21fb69ce98fd5dd72a69c51a99bcd63cb1173e88"
+    },
+    {
+      "metric": "Memory",
+      "artifact": "step_trace_time.csv",
+      "bytes": 226,
+      "sha256": "726ff6608d2946d9dfd836775117d6d26b28f581054a62dfb88bd711f5ded3fb"
+    },
+    {
+      "metric": "Memory",
+      "artifact": "task_time.csv",
+      "bytes": 8712677,
+      "sha256": "2d8d4886d656ca5a77acdeb823a877433ffb264d4b3730fc62190330bc6338cb"
+    },
+    {
+      "metric": "Memory",
+      "artifact": "trace_view.json",
+      "bytes": 111346164,
+      "sha256": "d01052b32739cac47cb4b8ad31952ccaf5b1df6bcea69af04ffa6f62c1036573"
+    }
+  ],
+  "analysis_sources": [
+    {
+      "artifact": "analyze.py",
+      "sha256": "475f8eaafa5d81c279965827e830da19a0b7853d252cb9b98cb08ebe687b9eaf"
+    },
+    {
+      "artifact": "capture.py",
+      "sha256": "862e42dd1bb0d81e0b96996c369cb7cb1e1451dadc73d5f30595841db51ba8d4"
+    },
+    {
+      "artifact": "export_evidence.py",
+      "sha256": "2d6d2de5595008dbae7353d3c285c6ed2397b0f980f5418a2be310ec20fcdd1a"
+    },
+    {
+      "artifact": "prepare.py",
+      "sha256": "6c08de2c01e2d618c1867ae3703ab8809fcea58ec06c25dd556b9fc6dd32d485"
+    },
+    {
+      "artifact": "profile_factory.py",
+      "sha256": "8ce1c01114af85c17e3ab6480b5b84cc18170e4a6549a1b3863846e7d3ed83e7"
+    }
+  ]
+}

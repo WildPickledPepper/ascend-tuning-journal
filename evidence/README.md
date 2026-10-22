@@ -2,6 +2,15 @@
 
 这里保存从原始 profiler 数据和编译版 Insight 后端响应提取的小型摘要，日志通过相对链接引用。
 
+- `2026-10-22/ffn-profile-history-comparison.json`：只读复算原生/已down预取/当前三份完整模型profile；统一26轮decode和FFN定义，绝对耗时/占比/每轮/流水活动对照、581组Insight与SQL核对及源文件SHA256。旧6卡/当前7卡，不作为同卡严格归因；新NPU请求0。
+
+- `2026-10-22/optimized-decode-profile.json`：优化版本三组整网采样的decode互斥分摊、PMU/L2、词表主/草稿拆分、195组Insight与SQL校验；不含完整请求和原始token。
+- `2026-10-22/optimized-decode-profile-sources.json`、`optimized-decode-profile-cleanup.json`：原始归档与产物哈希、版本/二进制来源及09:27:17释放确认，保留设备端口告警。
+
+- `2026-10-21/packed-prefill-e2e.json`、`packed-prefill-requests.json`：同卡一次还原路径对照与一次直接prefill候选，22请求；TTFT/E2E/输出哈希、832次路径替换及大M/MTP差异边界。
+- `2026-10-21/packed-prefill-validation.json`：真实两层权重20案例，不将较大M舍入差异写成全形状逐位一致。
+- `2026-10-21/packed-prefill-sources.json`、`packed-prefill-cleanup.json`：源码和原始证据包哈希、两次开发失败原因、18:18:28资源清理；不含原始回答或其他进程信息。
+
 - `2026-10-21/gateup-l1-layout.json`：64层BF16 gate/up布局对照，无profiler计时与独立L2/HBM指标；不混同整网性能。
 - `2026-10-21/gateup-l1-layout-timings.json`：每布局80轮线性图计时样本，不含模型位置或设备指针。
 - `2026-10-21/gateup-l1-layout-validation.json`：最终逐位/图重放检查及真实64层权重还原检查。

@@ -1,0 +1,1003 @@
+{
+  "comparison": {
+    "fixed512": {
+      "control": {
+        "requests": 6,
+        "output_tokens": 3072,
+        "input_tokens": [
+          121,
+          83,
+          121,
+          83,
+          121,
+          83
+        ],
+        "total_e2e_s": 66.35032077005599,
+        "mean_e2e_s": 11.058386795009332,
+        "mean_ttft_s": 0.357651981660941,
+        "output_tok_s": 46.29970080546165,
+        "weighted_tpot_ms": 20.94077262886182
+      },
+      "candidate": {
+        "requests": 6,
+        "output_tokens": 3072,
+        "input_tokens": [
+          121,
+          83,
+          121,
+          83,
+          121,
+          83
+        ],
+        "total_e2e_s": 66.28016196005046,
+        "mean_e2e_s": 11.04669366000841,
+        "mean_ttft_s": 0.35184756165836006,
+        "output_tok_s": 46.34870991793305,
+        "weighted_tpot_ms": 20.92924872475548
+      },
+      "e2e_reduction_pct": 0.10573997109776245,
+      "ttft_reduction_pct": 1.6229240435423065,
+      "ttft_saved_ms": 5.804420002580912,
+      "throughput_increase_pct": 0.1058518988650059,
+      "tokens_equal": true
+    },
+    "natural": {
+      "control": {
+        "requests": 4,
+        "output_tokens": 844,
+        "input_tokens": [
+          121,
+          83,
+          114,
+          92
+        ],
+        "total_e2e_s": 13.681699819979258,
+        "mean_e2e_s": 3.4204249549948145,
+        "mean_ttft_s": 0.36237022004206665,
+        "output_tok_s": 61.68824130810959,
+        "weighted_tpot_ms": 14.562165404536895
+      },
+      "candidate": {
+        "requests": 4,
+        "output_tokens": 844,
+        "input_tokens": [
+          121,
+          83,
+          114,
+          92
+        ],
+        "total_e2e_s": 13.56655705999583,
+        "mean_e2e_s": 3.3916392649989575,
+        "mean_ttft_s": 0.3363774574827403,
+        "output_tok_s": 62.2118048276767,
+        "weighted_tpot_ms": 14.548865750077224
+      },
+      "e2e_reduction_pct": 0.8415822704667564,
+      "ttft_reduction_pct": 7.172985284582422,
+      "ttft_saved_ms": 25.992762559326366,
+      "throughput_increase_pct": 0.8487249895034354,
+      "tokens_equal": true
+    },
+    "long-prefill": {
+      "control": {
+        "requests": 1,
+        "output_tokens": 128,
+        "input_tokens": [
+          1513
+        ],
+        "total_e2e_s": 3.2819931900594383,
+        "mean_e2e_s": 3.2819931900594383,
+        "mean_ttft_s": 1.0408512300346047,
+        "output_tok_s": 39.000690308465224,
+        "weighted_tpot_ms": 17.646787086809713
+      },
+      "candidate": {
+        "requests": 1,
+        "output_tokens": 128,
+        "input_tokens": [
+          1513
+        ],
+        "total_e2e_s": 3.186270779930055,
+        "mean_e2e_s": 3.186270779930055,
+        "mean_ttft_s": 0.9473644898971543,
+        "output_tok_s": 40.17235471832995,
+        "weighted_tpot_ms": 17.629183386085835
+      },
+      "e2e_reduction_pct": 2.9165938070593533,
+      "ttft_reduction_pct": 8.981758145623008,
+      "ttft_saved_ms": 93.4867401374504,
+      "throughput_increase_pct": 3.004214542352379,
+      "tokens_equal": true
+    }
+  },
+  "all_tokens_equal": true,
+  "token_checks": [
+    {
+      "kind": "fixed512",
+      "question_id": 0,
+      "all_equal": true,
+      "cases": [
+        {
+          "label": "packed-control",
+          "repeat": 0,
+          "tokens": 512,
+          "sha256": "bca33a0102322839ede04f13e89f37b810fa7f013805a749855eae9d96179c53"
+        },
+        {
+          "label": "packed-control",
+          "repeat": 1,
+          "tokens": 512,
+          "sha256": "bca33a0102322839ede04f13e89f37b810fa7f013805a749855eae9d96179c53"
+        },
+        {
+          "label": "packed-control",
+          "repeat": 2,
+          "tokens": 512,
+          "sha256": "bca33a0102322839ede04f13e89f37b810fa7f013805a749855eae9d96179c53"
+        },
+        {
+          "label": "prefill-direct",
+          "repeat": 0,
+          "tokens": 512,
+          "sha256": "bca33a0102322839ede04f13e89f37b810fa7f013805a749855eae9d96179c53"
+        },
+        {
+          "label": "prefill-direct",
+          "repeat": 1,
+          "tokens": 512,
+          "sha256": "bca33a0102322839ede04f13e89f37b810fa7f013805a749855eae9d96179c53"
+        },
+        {
+          "label": "prefill-direct",
+          "repeat": 2,
+          "tokens": 512,
+          "sha256": "bca33a0102322839ede04f13e89f37b810fa7f013805a749855eae9d96179c53"
+        }
+      ]
+    },
+    {
+      "kind": "fixed512",
+      "question_id": 1,
+      "all_equal": true,
+      "cases": [
+        {
+          "label": "packed-control",
+          "repeat": 0,
+          "tokens": 512,
+          "sha256": "3e95ca8c5ed3a87b2514592b92b13e7343f58b6bf94f91d855eb352a3366c811"
+        },
+        {
+          "label": "packed-control",
+          "repeat": 1,
+          "tokens": 512,
+          "sha256": "3e95ca8c5ed3a87b2514592b92b13e7343f58b6bf94f91d855eb352a3366c811"
+        },
+        {
+          "label": "packed-control",
+          "repeat": 2,
+          "tokens": 512,
+          "sha256": "3e95ca8c5ed3a87b2514592b92b13e7343f58b6bf94f91d855eb352a3366c811"
+        },
+        {
+          "label": "prefill-direct",
+          "repeat": 0,
+          "tokens": 512,
+          "sha256": "3e95ca8c5ed3a87b2514592b92b13e7343f58b6bf94f91d855eb352a3366c811"
+        },
+        {
+          "label": "prefill-direct",
+          "repeat": 1,
+          "tokens": 512,
+          "sha256": "3e95ca8c5ed3a87b2514592b92b13e7343f58b6bf94f91d855eb352a3366c811"
+        },
+        {
+          "label": "prefill-direct",
+          "repeat": 2,
+          "tokens": 512,
+          "sha256": "3e95ca8c5ed3a87b2514592b92b13e7343f58b6bf94f91d855eb352a3366c811"
+        }
+      ]
+    },
+    {
+      "kind": "natural",
+      "question_id": 0,
+      "all_equal": true,
+      "cases": [
+        {
+          "label": "packed-control",
+          "repeat": 0,
+          "tokens": 137,
+          "sha256": "4a02fbc6e08417534c0831592cb79ff9c1ca9f6e57fb0d6b8ac332a7e32a8fa9"
+        },
+        {
+          "label": "prefill-direct",
+          "repeat": 0,
+          "tokens": 137,
+          "sha256": "4a02fbc6e08417534c0831592cb79ff9c1ca9f6e57fb0d6b8ac332a7e32a8fa9"
+        }
+      ]
+    },
+    {
+      "kind": "natural",
+      "question_id": 1,
+      "all_equal": true,
+      "cases": [
+        {
+          "label": "packed-control",
+          "repeat": 0,
+          "tokens": 44,
+          "sha256": "3faa9e384a5c56baf75f19aa4beb8ea64fe69b2c0942a80780a5ba2d45a78ab6"
+        },
+        {
+          "label": "prefill-direct",
+          "repeat": 0,
+          "tokens": 44,
+          "sha256": "3faa9e384a5c56baf75f19aa4beb8ea64fe69b2c0942a80780a5ba2d45a78ab6"
+        }
+      ]
+    },
+    {
+      "kind": "natural",
+      "question_id": 2,
+      "all_equal": true,
+      "cases": [
+        {
+          "label": "packed-control",
+          "repeat": 0,
+          "tokens": 575,
+          "sha256": "2e8d7988e84dfe94f940c10bf1d2c26821ef5248db7ee11a9c3c13cb587b81f2"
+        },
+        {
+          "label": "prefill-direct",
+          "repeat": 0,
+          "tokens": 575,
+          "sha256": "2e8d7988e84dfe94f940c10bf1d2c26821ef5248db7ee11a9c3c13cb587b81f2"
+        }
+      ]
+    },
+    {
+      "kind": "natural",
+      "question_id": 3,
+      "all_equal": true,
+      "cases": [
+        {
+          "label": "packed-control",
+          "repeat": 0,
+          "tokens": 88,
+          "sha256": "e3e447770acd0c60da4249fc2c463952b321eed5cd017f3223782eb6cdacfd22"
+        },
+        {
+          "label": "prefill-direct",
+          "repeat": 0,
+          "tokens": 88,
+          "sha256": "e3e447770acd0c60da4249fc2c463952b321eed5cd017f3223782eb6cdacfd22"
+        }
+      ]
+    },
+    {
+      "kind": "long-prefill",
+      "question_id": 0,
+      "all_equal": true,
+      "cases": [
+        {
+          "label": "packed-control",
+          "repeat": 0,
+          "tokens": 128,
+          "sha256": "4a33dd0dc98f783e8c41673b2ccde5deaacd24d14aab310a2943c6de037caefd"
+        },
+        {
+          "label": "prefill-direct",
+          "repeat": 0,
+          "tokens": 128,
+          "sha256": "4a33dd0dc98f783e8c41673b2ccde5deaacd24d14aab310a2943c6de037caefd"
+        }
+      ]
+    }
+  ],
+  "audits": {
+    "packed-control": {
+      "num_speculative_tokens": 7,
+      "draft_use_cuda_graph": true,
+      "draft_enforce_eager": false,
+      "main_graph_mode": "FULL_DECODE_ONLY",
+      "main_capture_sizes": [
+        8
+      ],
+      "dtype": "torch.bfloat16",
+      "kv_cache_dtype": "auto",
+      "mamba_cache_dtype": "bfloat16",
+      "mamba_ssm_cache_dtype": "bfloat16",
+      "tp_size": 1,
+      "context_length": 4096,
+      "max_num_seqs": 1,
+      "prefix_caching": false,
+      "gpu_memory_utilization": 0.97,
+      "wrappers": [
+        {
+          "is_draft_runnable": true,
+          "callable": "AscendSpecDecodeBaseProposer._run_merged_draft",
+          "runtime_mode": "FULL",
+          "entries": [
+            {
+              "batch_descriptor": "BatchDescriptor(num_tokens=8, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+              "captured": true
+            }
+          ]
+        },
+        {
+          "is_draft_runnable": false,
+          "callable": "Qwen3_5ForConditionalGeneration",
+          "runtime_mode": "FULL",
+          "entries": [
+            {
+              "batch_descriptor": "BatchDescriptor(num_tokens=8, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+              "captured": true
+            }
+          ]
+        }
+      ],
+      "layout_experiment": {
+        "enabled": true,
+        "eligible": [
+          "language_model.model.layers.0.mlp.gate_up_proj",
+          "language_model.model.layers.1.mlp.gate_up_proj",
+          "language_model.model.layers.2.mlp.gate_up_proj",
+          "language_model.model.layers.3.mlp.gate_up_proj",
+          "language_model.model.layers.4.mlp.gate_up_proj",
+          "language_model.model.layers.5.mlp.gate_up_proj",
+          "language_model.model.layers.6.mlp.gate_up_proj",
+          "language_model.model.layers.7.mlp.gate_up_proj",
+          "language_model.model.layers.8.mlp.gate_up_proj",
+          "language_model.model.layers.9.mlp.gate_up_proj",
+          "language_model.model.layers.10.mlp.gate_up_proj",
+          "language_model.model.layers.11.mlp.gate_up_proj",
+          "language_model.model.layers.12.mlp.gate_up_proj",
+          "language_model.model.layers.13.mlp.gate_up_proj",
+          "language_model.model.layers.14.mlp.gate_up_proj",
+          "language_model.model.layers.15.mlp.gate_up_proj",
+          "language_model.model.layers.16.mlp.gate_up_proj",
+          "language_model.model.layers.17.mlp.gate_up_proj",
+          "language_model.model.layers.18.mlp.gate_up_proj",
+          "language_model.model.layers.19.mlp.gate_up_proj",
+          "language_model.model.layers.20.mlp.gate_up_proj",
+          "language_model.model.layers.21.mlp.gate_up_proj",
+          "language_model.model.layers.22.mlp.gate_up_proj",
+          "language_model.model.layers.23.mlp.gate_up_proj",
+          "language_model.model.layers.24.mlp.gate_up_proj",
+          "language_model.model.layers.25.mlp.gate_up_proj",
+          "language_model.model.layers.26.mlp.gate_up_proj",
+          "language_model.model.layers.27.mlp.gate_up_proj",
+          "language_model.model.layers.28.mlp.gate_up_proj",
+          "language_model.model.layers.29.mlp.gate_up_proj",
+          "language_model.model.layers.30.mlp.gate_up_proj",
+          "language_model.model.layers.31.mlp.gate_up_proj",
+          "language_model.model.layers.32.mlp.gate_up_proj",
+          "language_model.model.layers.33.mlp.gate_up_proj",
+          "language_model.model.layers.34.mlp.gate_up_proj",
+          "language_model.model.layers.35.mlp.gate_up_proj",
+          "language_model.model.layers.36.mlp.gate_up_proj",
+          "language_model.model.layers.37.mlp.gate_up_proj",
+          "language_model.model.layers.38.mlp.gate_up_proj",
+          "language_model.model.layers.39.mlp.gate_up_proj",
+          "language_model.model.layers.40.mlp.gate_up_proj",
+          "language_model.model.layers.41.mlp.gate_up_proj",
+          "language_model.model.layers.42.mlp.gate_up_proj",
+          "language_model.model.layers.43.mlp.gate_up_proj",
+          "language_model.model.layers.44.mlp.gate_up_proj",
+          "language_model.model.layers.45.mlp.gate_up_proj",
+          "language_model.model.layers.46.mlp.gate_up_proj",
+          "language_model.model.layers.47.mlp.gate_up_proj",
+          "language_model.model.layers.48.mlp.gate_up_proj",
+          "language_model.model.layers.49.mlp.gate_up_proj",
+          "language_model.model.layers.50.mlp.gate_up_proj",
+          "language_model.model.layers.51.mlp.gate_up_proj",
+          "language_model.model.layers.52.mlp.gate_up_proj",
+          "language_model.model.layers.53.mlp.gate_up_proj",
+          "language_model.model.layers.54.mlp.gate_up_proj",
+          "language_model.model.layers.55.mlp.gate_up_proj",
+          "language_model.model.layers.56.mlp.gate_up_proj",
+          "language_model.model.layers.57.mlp.gate_up_proj",
+          "language_model.model.layers.58.mlp.gate_up_proj",
+          "language_model.model.layers.59.mlp.gate_up_proj",
+          "language_model.model.layers.60.mlp.gate_up_proj",
+          "language_model.model.layers.61.mlp.gate_up_proj",
+          "language_model.model.layers.62.mlp.gate_up_proj",
+          "language_model.model.layers.63.mlp.gate_up_proj"
+        ],
+        "packed_count": 64,
+        "pack_seconds_startup": 15.529501059907489,
+        "counts": {
+          "packed_M512": 192,
+          "gate_unpack_fallback_host_calls": 1024,
+          "packed_M8": 128,
+          "gate_custom_host_calls": 128,
+          "down_custom_host_calls": 142,
+          "packed_M65": 64,
+          "packed_M121": 320,
+          "packed_M83": 256,
+          "packed_M114": 64,
+          "packed_M92": 64,
+          "packed_M489": 64
+        },
+        "down_prefetch_in_both_arms": true,
+        "counter_note": "Host dispatch counts include capture, not graph replay executions.",
+        "npu_allocated_bytes": 63034754560,
+        "npu_reserved_bytes": 64139296768,
+        "prefill_direct_enabled": false,
+        "prefill_real_checks": {}
+      }
+    },
+    "prefill-direct": {
+      "num_speculative_tokens": 7,
+      "draft_use_cuda_graph": true,
+      "draft_enforce_eager": false,
+      "main_graph_mode": "FULL_DECODE_ONLY",
+      "main_capture_sizes": [
+        8
+      ],
+      "dtype": "torch.bfloat16",
+      "kv_cache_dtype": "auto",
+      "mamba_cache_dtype": "bfloat16",
+      "mamba_ssm_cache_dtype": "bfloat16",
+      "tp_size": 1,
+      "context_length": 4096,
+      "max_num_seqs": 1,
+      "prefix_caching": false,
+      "gpu_memory_utilization": 0.97,
+      "wrappers": [
+        {
+          "is_draft_runnable": false,
+          "callable": "Qwen3_5ForConditionalGeneration",
+          "runtime_mode": "FULL",
+          "entries": [
+            {
+              "batch_descriptor": "BatchDescriptor(num_tokens=8, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+              "captured": true
+            }
+          ]
+        },
+        {
+          "is_draft_runnable": true,
+          "callable": "AscendSpecDecodeBaseProposer._run_merged_draft",
+          "runtime_mode": "FULL",
+          "entries": [
+            {
+              "batch_descriptor": "BatchDescriptor(num_tokens=8, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+              "captured": true
+            }
+          ]
+        }
+      ],
+      "layout_experiment": {
+        "enabled": true,
+        "eligible": [
+          "language_model.model.layers.0.mlp.gate_up_proj",
+          "language_model.model.layers.1.mlp.gate_up_proj",
+          "language_model.model.layers.2.mlp.gate_up_proj",
+          "language_model.model.layers.3.mlp.gate_up_proj",
+          "language_model.model.layers.4.mlp.gate_up_proj",
+          "language_model.model.layers.5.mlp.gate_up_proj",
+          "language_model.model.layers.6.mlp.gate_up_proj",
+          "language_model.model.layers.7.mlp.gate_up_proj",
+          "language_model.model.layers.8.mlp.gate_up_proj",
+          "language_model.model.layers.9.mlp.gate_up_proj",
+          "language_model.model.layers.10.mlp.gate_up_proj",
+          "language_model.model.layers.11.mlp.gate_up_proj",
+          "language_model.model.layers.12.mlp.gate_up_proj",
+          "language_model.model.layers.13.mlp.gate_up_proj",
+          "language_model.model.layers.14.mlp.gate_up_proj",
+          "language_model.model.layers.15.mlp.gate_up_proj",
+          "language_model.model.layers.16.mlp.gate_up_proj",
+          "language_model.model.layers.17.mlp.gate_up_proj",
+          "language_model.model.layers.18.mlp.gate_up_proj",
+          "language_model.model.layers.19.mlp.gate_up_proj",
+          "language_model.model.layers.20.mlp.gate_up_proj",
+          "language_model.model.layers.21.mlp.gate_up_proj",
+          "language_model.model.layers.22.mlp.gate_up_proj",
+          "language_model.model.layers.23.mlp.gate_up_proj",
+          "language_model.model.layers.24.mlp.gate_up_proj",
+          "language_model.model.layers.25.mlp.gate_up_proj",
+          "language_model.model.layers.26.mlp.gate_up_proj",
+          "language_model.model.layers.27.mlp.gate_up_proj",
+          "language_model.model.layers.28.mlp.gate_up_proj",
+          "language_model.model.layers.29.mlp.gate_up_proj",
+          "language_model.model.layers.30.mlp.gate_up_proj",
+          "language_model.model.layers.31.mlp.gate_up_proj",
+          "language_model.model.layers.32.mlp.gate_up_proj",
+          "language_model.model.layers.33.mlp.gate_up_proj",
+          "language_model.model.layers.34.mlp.gate_up_proj",
+          "language_model.model.layers.35.mlp.gate_up_proj",
+          "language_model.model.layers.36.mlp.gate_up_proj",
+          "language_model.model.layers.37.mlp.gate_up_proj",
+          "language_model.model.layers.38.mlp.gate_up_proj",
+          "language_model.model.layers.39.mlp.gate_up_proj",
+          "language_model.model.layers.40.mlp.gate_up_proj",
+          "language_model.model.layers.41.mlp.gate_up_proj",
+          "language_model.model.layers.42.mlp.gate_up_proj",
+          "language_model.model.layers.43.mlp.gate_up_proj",
+          "language_model.model.layers.44.mlp.gate_up_proj",
+          "language_model.model.layers.45.mlp.gate_up_proj",
+          "language_model.model.layers.46.mlp.gate_up_proj",
+          "language_model.model.layers.47.mlp.gate_up_proj",
+          "language_model.model.layers.48.mlp.gate_up_proj",
+          "language_model.model.layers.49.mlp.gate_up_proj",
+          "language_model.model.layers.50.mlp.gate_up_proj",
+          "language_model.model.layers.51.mlp.gate_up_proj",
+          "language_model.model.layers.52.mlp.gate_up_proj",
+          "language_model.model.layers.53.mlp.gate_up_proj",
+          "language_model.model.layers.54.mlp.gate_up_proj",
+          "language_model.model.layers.55.mlp.gate_up_proj",
+          "language_model.model.layers.56.mlp.gate_up_proj",
+          "language_model.model.layers.57.mlp.gate_up_proj",
+          "language_model.model.layers.58.mlp.gate_up_proj",
+          "language_model.model.layers.59.mlp.gate_up_proj",
+          "language_model.model.layers.60.mlp.gate_up_proj",
+          "language_model.model.layers.61.mlp.gate_up_proj",
+          "language_model.model.layers.62.mlp.gate_up_proj",
+          "language_model.model.layers.63.mlp.gate_up_proj"
+        ],
+        "packed_count": 64,
+        "pack_seconds_startup": 13.657465270138346,
+        "counts": {
+          "packed_M512": 192,
+          "prefill_direct_host_calls": 1024,
+          "packed_M8": 128,
+          "gate_custom_host_calls": 128,
+          "down_custom_host_calls": 142,
+          "packed_M65": 64,
+          "packed_M121": 320,
+          "packed_M83": 256,
+          "packed_M114": 64,
+          "packed_M92": 64,
+          "packed_M489": 64
+        },
+        "down_prefetch_in_both_arms": true,
+        "counter_note": "Host dispatch counts include capture, not graph replay executions.",
+        "npu_allocated_bytes": 63376508416,
+        "npu_reserved_bytes": 64474841088,
+        "prefill_direct_enabled": true,
+        "prefill_real_checks": {
+          "language_model.model.layers.0.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.1.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.2.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.3.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.4.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.5.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.6.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.7.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.8.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.9.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.10.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.11.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.12.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.13.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.14.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.15.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.16.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.17.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.18.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.19.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.20.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.21.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.22.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.23.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.24.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.25.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.26.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.27.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.28.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.29.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.30.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.31.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.32.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.33.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.34.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.35.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.36.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.37.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.38.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.39.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.40.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.41.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.42.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.43.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.44.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.45.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.46.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.47.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.48.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.49.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.50.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.51.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.52.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.53.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.54.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.55.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.56.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.57.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.58.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.59.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.60.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.61.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.62.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          },
+          "language_model.model.layers.63.mlp.gate_up_proj": {
+            "M": 65,
+            "different": 0,
+            "max_abs_diff": 0.0,
+            "finite": true
+          }
+        }
+      }
+    }
+  },
+  "counter_deltas": {
+    "packed-control": {
+      "gate_unpack_fallback_host_calls": 832,
+      "packed_M489": 64,
+      "packed_M65": 0,
+      "packed_M8": 0,
+      "packed_M83": 256,
+      "packed_M114": 64,
+      "gate_custom_host_calls": 0,
+      "packed_M512": 128,
+      "packed_M121": 256,
+      "packed_M92": 64,
+      "down_custom_host_calls": 0
+    },
+    "prefill-direct": {
+      "packed_M489": 64,
+      "packed_M65": 0,
+      "packed_M8": 0,
+      "packed_M83": 256,
+      "packed_M114": 64,
+      "gate_custom_host_calls": 0,
+      "packed_M512": 128,
+      "prefill_direct_host_calls": 832,
+      "packed_M121": 256,
+      "packed_M92": 64,
+      "down_custom_host_calls": 0
+    }
+  },
+  "speculative_counter_deltas": {
+    "packed-control": {
+      "vllm:spec_decode_num_drafts_total{engine=\"0\",model_name=\"Qwen3.8-27B\"}": 1100.0,
+      "vllm:spec_decode_num_draft_tokens_total{engine=\"0\",model_name=\"Qwen3.8-27B\"}": 7700.0,
+      "vllm:spec_decode_num_accepted_tokens_total{engine=\"0\",model_name=\"Qwen3.8-27B\"}": 2957.0,
+      "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"0\"}": 833.0,
+      "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"1\"}": 637.0,
+      "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"2\"}": 486.0,
+      "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"3\"}": 375.0,
+      "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"4\"}": 262.0,
+      "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"5\"}": 197.0,
+      "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"6\"}": 167.0
+    },
+    "prefill-direct": {
+      "vllm:spec_decode_num_drafts_total{engine=\"0\",model_name=\"Qwen3.8-27B\"}": 1100.0,
+      "vllm:spec_decode_num_draft_tokens_total{engine=\"0\",model_name=\"Qwen3.8-27B\"}": 7700.0,
+      "vllm:spec_decode_num_accepted_tokens_total{engine=\"0\",model_name=\"Qwen3.8-27B\"}": 2957.0,
+      "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"0\"}": 832.0,
+      "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"1\"}": 636.0,
+      "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"2\"}": 486.0,
+      "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"3\"}": 375.0,
+      "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"4\"}": 263.0,
+      "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"5\"}": 198.0,
+      "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"6\"}": 167.0
+    }
+  },
+  "speculative_counters_equal": false
+}

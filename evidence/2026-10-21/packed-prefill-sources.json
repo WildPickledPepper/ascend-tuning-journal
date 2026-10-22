@@ -1,0 +1,83 @@
+{
+  "sources": [
+    {
+      "artifact": "kernel.asc",
+      "runtime_source_sha256": "cd51bd7e49a35c413df4635f230e62d41ee4f4fba43ee9e7f4f563fd2973a6ba",
+      "archived_path": "kernels/gateup-packed-prefill/kernel.asc",
+      "archived_sha256": "cd51bd7e49a35c413df4635f230e62d41ee4f4fba43ee9e7f4f563fd2973a6ba"
+    },
+    {
+      "artifact": "bridge.cpp",
+      "runtime_source_sha256": "241dc0e41164925c50c34d098e1afc5fccb4051ddd17379c9a87e8abfc590fb7",
+      "archived_path": "kernels/gateup-packed-prefill/bridge.cpp",
+      "archived_sha256": "241dc0e41164925c50c34d098e1afc5fccb4051ddd17379c9a87e8abfc590fb7"
+    },
+    {
+      "artifact": "build.py",
+      "runtime_source_sha256": "ef1a418e92f3fc5577aed42cb17845e15d893c8bf78d6ea5106f3a2b46003a26",
+      "archived_path": "kernels/gateup-packed-prefill/build.py",
+      "archived_sha256": "ef1a418e92f3fc5577aed42cb17845e15d893c8bf78d6ea5106f3a2b46003a26"
+    },
+    {
+      "artifact": "validate.py",
+      "runtime_source_sha256": "052ebfec2147649c142c96ffebcde675fe8c9a8e3e70ac0563e55516752a3b6d",
+      "archived_path": "kernels/gateup-packed-prefill/validate.py",
+      "archived_sha256": "052ebfec2147649c142c96ffebcde675fe8c9a8e3e70ac0563e55516752a3b6d"
+    },
+    {
+      "artifact": "client.py",
+      "runtime_source_sha256": "8abc5e1b99c0da4045be1f500410b75d0e5e8b27452e724c6a6c7d7793c4a775",
+      "archived_path": "experiments/gateup-packed-prefill/client.py",
+      "archived_sha256": "8abc5e1b99c0da4045be1f500410b75d0e5e8b27452e724c6a6c7d7793c4a775"
+    },
+    {
+      "artifact": "controller.py",
+      "runtime_source_sha256": "2862f3f0d7ce290647848d10a1eacb97a9198e931c905575f5aeac5b2826aecc",
+      "archived_path": "experiments/gateup-packed-prefill/controller.py",
+      "archived_sha256": "2862f3f0d7ce290647848d10a1eacb97a9198e931c905575f5aeac5b2826aecc"
+    },
+    {
+      "artifact": "model_extension.py",
+      "runtime_source_sha256": "f8dadf9b951f9c499c5ba8be27e016c986712bd2ae4f26ab1bd21f5f13bf16d6",
+      "archived_path": "experiments/gateup-packed-prefill/model_extension.py",
+      "archived_sha256": "f8dadf9b951f9c499c5ba8be27e016c986712bd2ae4f26ab1bd21f5f13bf16d6"
+    },
+    {
+      "artifact": "start.sh",
+      "runtime_source_sha256": "ec33f77c6936da55ba4556bd1ea5ecc46cf65c8942198e32af11037de50548f5",
+      "archived_path": "experiments/gateup-packed-prefill/start.sh",
+      "archived_sha256": "ec33f77c6936da55ba4556bd1ea5ecc46cf65c8942198e32af11037de50548f5"
+    },
+    {
+      "artifact": "graph_audit_base.py",
+      "runtime_source_sha256": "500ef150330dcd37b2a8559f33a3ce2e2e81e46655db1ab38c09b577c4ad2d39",
+      "archived_path": "experiments/gateup-packed-prefill/graph_audit_base.py",
+      "archived_sha256": "500ef150330dcd37b2a8559f33a3ce2e2e81e46655db1ab38c09b577c4ad2d39"
+    },
+    {
+      "artifact": "serve.py",
+      "runtime_source_sha256": "4f4a7ccc308e177d0a17046b3db37e44c3e6fb008d897fdb5d1064b46119819a",
+      "archived_path": "experiments/gateup-packed-prefill/serve.py",
+      "archived_sha256": "4f4a7ccc308e177d0a17046b3db37e44c3e6fb008d897fdb5d1064b46119819a"
+    },
+    {
+      "artifact": "analyze.py",
+      "runtime_source_sha256": "7a47fec0d9257569046c873047f568a4324ffb896fa6743ca141368241d7df39",
+      "archived_path": "experiments/gateup-packed-prefill/analyze.py",
+      "archived_sha256": "7a47fec0d9257569046c873047f568a4324ffb896fa6743ca141368241d7df39"
+    }
+  ],
+  "archive_sha256": "4589598fc4adf67be9daedaaa51a0cbe6786632f02a07cee69359ac157f6330c",
+  "summary_sha256": "30f8d302a97109dfba07ea7479f8e67ef09025536a18aebfb2c3ea411789ea0b",
+  "failures": [
+    {
+      "attempt": 1,
+      "reason": "Fixed 128-row source stride used for a shorter L0C result; failed correctness, excluded from timing."
+    },
+    {
+      "attempt": 2,
+      "reason": "m=1 MMAD input interpretation did not match padded matrix storage; fixed by 16-row internal alignment and revalidated."
+    }
+  ],
+  "precision_boundary": "Actual short-request M65/83/92/114/121 are bit equal in the isolated tested cases; M1/128/257/512 are not universally bit equal. See per-case validation and full-model token checks."
+}

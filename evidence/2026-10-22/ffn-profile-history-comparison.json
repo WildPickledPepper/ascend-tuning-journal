@@ -1,0 +1,1246 @@
+{
+  "analyzed_at_beijing": "2026-10-22T09:45:19.074559+08:00",
+  "analysis_source_sha256": "8521f9ea0b7bbf2c1975fe7ed4932d54d3b340ccbdfb18ce96bb582d550aebbe",
+  "offline_only": true,
+  "new_npu_requests": 0,
+  "input_tokens": 121,
+  "output_tokens": 128,
+  "all_output_tokens_identical": true,
+  "sequence_sha256": "ab80ecf00bf9c61f946a259e93f2f71f69a7c5853d75bf87c4a566175bd2099e",
+  "ffn_definition": "Gate/up matrix multiplication + SwiGlu + down matrix multiplication; main and draft separately.",
+  "window": "First main MODEL_EXECUTE to last compute end; exclude earlier prompt/eager work; include main/draft/logits/postprocessing.",
+  "limits": [
+    "Historical native and down-prefetch profiles used card 6; latest used card 7 on the next day. Observed differences are not a same-card controlled isolation of packing.",
+    "Profiler metrics match PipeUtilization and Level1, but op_attr and source instrumentation settings differ.",
+    "Latest profile includes both gate packing and direct prefill; there is no full-model profile from the immediately preceding same-card packed-control E2E run.",
+    "Pipeline activities overlap and cannot be added or interpreted as exclusive memory wait time."
+  ],
+  "runs": {
+    "native": {
+      "physical_devices": [
+        "6"
+      ],
+      "rounds": 26,
+      "config": {
+        "common_config": {
+          "activities": [
+            "ProfilerActivity.CPU",
+            "ProfilerActivity.NPU"
+          ],
+          "schedule": {},
+          "record_shapes": true,
+          "profile_memory": false,
+          "with_stack": false,
+          "with_flops": false,
+          "with_modules": false
+        },
+        "experimental_config": {
+          "_profiler_level": "Level1",
+          "_aic_metrics": "ACL_AICORE_PIPE_UTILIZATION",
+          "_l2_cache": false,
+          "_msprof_tx": false,
+          "_mstx": false,
+          "_data_simplification": true,
+          "record_op_args": false,
+          "_export_type": [
+            "text",
+            "db"
+          ],
+          "_host_sys": [],
+          "_op_attr": false,
+          "_gc_detect_threshold": null,
+          "_mstx_domain_include": [],
+          "_mstx_domain_exclude": [],
+          "_sys_io": false,
+          "_sys_interconnection": false
+        }
+      },
+      "decode_window_ms": 1964.28154,
+      "decode_ms_per_round": 75.54929,
+      "exclusive": {
+        "no_compute": {
+          "exclusive_ms": 16.8587,
+          "window_percent": 0.8582629147958087
+        },
+        "other_compute": {
+          "exclusive_ms": 238.61028,
+          "window_percent": 12.147458250816733
+        },
+        "main_other_linear": {
+          "exclusive_ms": 328.31936,
+          "window_percent": 16.714475665234833
+        },
+        "attention_kernels": {
+          "exclusive_ms": 77.92586,
+          "window_percent": 3.9671431214488733
+        },
+        "main_ffn_gate_up": {
+          "exclusive_ms": 496.18012,
+          "window_percent": 25.260132516441608
+        },
+        "main_ffn_activation": {
+          "exclusive_ms": 18.99934,
+          "window_percent": 0.9672411827481716
+        },
+        "main_ffn_down": {
+          "exclusive_ms": 256.33486,
+          "window_percent": 13.049802422925586
+        },
+        "vocabulary_projection": {
+          "exclusive_ms": 399.40984,
+          "window_percent": 20.33363506536848
+        },
+        "draft_other_linear": {
+          "exclusive_ms": 49.14662,
+          "window_percent": 2.502015062464009
+        },
+        "draft_ffn_gate_up": {
+          "exclusive_ms": 51.55942,
+          "window_percent": 2.624848778042276
+        },
+        "draft_ffn_activation": {
+          "exclusive_ms": 2.1332,
+          "window_percent": 0.10859950351109036
+        },
+        "draft_ffn_down": {
+          "exclusive_ms": 28.80394,
+          "window_percent": 1.4663855162025297
+        }
+      },
+      "ffn": {
+        "main": {
+          "total_ms": 771.51432,
+          "ms_per_round": 29.673627692307694,
+          "decode_percent": 39.27717612211537,
+          "parts": {
+            "gate_up": {
+              "kernel_us": {
+                "count": 1664,
+                "sum": 496180.11999999994,
+                "mean": 298.18516826923076,
+                "median": 301.47,
+                "min": 275.44,
+                "max": 311.72,
+                "p95": 307.52
+              },
+              "total_ms": 496.1801200000005,
+              "decode_percent": 25.260132516441637,
+              "mte2_activity_mean_us": 281.73223557692313,
+              "mte2_activity_sum_ms": 468.8024400000001,
+              "mac_activity_mean_us": 31.79899999999949
+            },
+            "down": {
+              "kernel_us": {
+                "count": 1664,
+                "sum": 256334.8600000001,
+                "mean": 154.04739182692308,
+                "median": 153.4,
+                "min": 148.68,
+                "max": 162.18,
+                "p95": 158.82
+              },
+              "total_ms": 256.33485999999976,
+              "decode_percent": 13.049802422925575,
+              "mte2_activity_mean_us": 129.15174218750002,
+              "mte2_activity_sum_ms": 214.90849900000003,
+              "mac_activity_mean_us": 22.402725961538458
+            },
+            "activation": {
+              "kernel_us": {
+                "count": 1664,
+                "sum": 18999.340000000037,
+                "mean": 11.417872596153845,
+                "median": 11.38,
+                "min": 9.76,
+                "max": 13.54,
+                "p95": 12.58
+              },
+              "total_ms": 18.99934000000004,
+              "decode_percent": 0.9672411827481737,
+              "mte2_activity_mean_us": 0.0,
+              "mte2_activity_sum_ms": 0.0,
+              "mac_activity_mean_us": 0.0
+            }
+          },
+          "percent_of_own_graph_windows": 56.57390092809834
+        },
+        "draft": {
+          "total_ms": 82.49656,
+          "ms_per_round": 3.1729446153846155,
+          "decode_percent": 4.199833797755897,
+          "parts": {
+            "gate_up": {
+              "kernel_us": {
+                "count": 182,
+                "sum": 51559.42000000001,
+                "mean": 283.2935164835165,
+                "median": 283.19,
+                "min": 278.08,
+                "max": 291.92,
+                "p95": 286.78
+              },
+              "total_ms": 51.559420000000024,
+              "decode_percent": 2.6248487780422773,
+              "mte2_activity_mean_us": 267.58278021978015,
+              "mte2_activity_sum_ms": 48.70006599999999,
+              "mac_activity_mean_us": 31.79899999999998
+            },
+            "down": {
+              "kernel_us": {
+                "count": 182,
+                "sum": 28803.939999999977,
+                "mean": 158.2634065934066,
+                "median": 158.18,
+                "min": 155.58,
+                "max": 162.44,
+                "p95": 160.48
+              },
+              "total_ms": 28.803939999999983,
+              "decode_percent": 1.466385516202529,
+              "mte2_activity_mean_us": 127.40263736263735,
+              "mte2_activity_sum_ms": 23.187279999999998,
+              "mac_activity_mean_us": 22.424554945054943
+            },
+            "activation": {
+              "kernel_us": {
+                "count": 182,
+                "sum": 2133.2000000000003,
+                "mean": 11.72087912087912,
+                "median": 11.59,
+                "min": 10.58,
+                "max": 13.18,
+                "p95": 12.76
+              },
+              "total_ms": 2.1332,
+              "decode_percent": 0.10859950351109035,
+              "mte2_activity_mean_us": 0.0,
+              "mte2_activity_sum_ms": 0.0,
+              "mac_activity_mean_us": 0.0
+            }
+          },
+          "percent_of_own_graph_windows": 15.892694218748073
+        },
+        "all": {
+          "total_ms": 854.01088,
+          "decode_percent": 43.477009919871264
+        }
+      },
+      "source": {
+        "kernel_csv_sha256": "f84ae45fd7b5181e51a8826bbaa3f5c6d84a193c6cd2694bff776f4e3b3f87ed",
+        "task_csv_sha256": "efb63370c6a80c9df32077ddae6ad39b1870f74b02413b4052d67a6b16fb1122",
+        "info_sha256": "f4d03bab30ed648ebcd13e14ff34e22abf7faff1962f969694841f34240fd293",
+        "insight_reply_sha256": "8db32328af37920724f62b9b175596e0b9fed415cacb36503c11bda115b09640",
+        "insight_groups_verified": 193
+      },
+      "graph_windows_ms": {
+        "main": {
+          "count": 26,
+          "sum": 1363.72834,
+          "mean": 52.45109,
+          "median": 52.45411,
+          "min": 52.39288,
+          "max": 52.51234,
+          "p95": 52.48002
+        },
+        "draft": {
+          "count": 26,
+          "sum": 519.0848000000001,
+          "mean": 19.9648,
+          "median": 19.96104,
+          "min": 19.89362,
+          "max": 20.02236,
+          "p95": 20.00348
+        }
+      },
+      "decode_sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT op_name, op_type, COUNT(*) AS calls, SUM(duration_ns) AS total_ns\nFROM (SELECT * FROM compute_view LIMIT -1)\nWHERE globalTaskId IN (SELECT globalTaskId FROM TASK WHERE startNs >= ?)\nGROUP BY op_name, op_type ORDER BY total_ns DESC LIMIT 20;",
+      "sql_top20_decode": [
+        {
+          "op_name": "aclnnMatmul_MatMulCommon_MatMulV2",
+          "op_type": "MatMulV2",
+          "calls": 9022,
+          "total_ns": 1609754160.0
+        },
+        {
+          "op_name": "aclnnRecurrentGatedDeltaRule_RecurrentGatedDeltaRule_RecurrentGatedDeltaRule",
+          "op_type": "RecurrentGatedDeltaRule",
+          "calls": 1248,
+          "total_ns": 60013340.0
+        },
+        {
+          "op_name": "aclnnContiguous_TransposeAiCore_Transpose",
+          "op_type": "Transpose",
+          "calls": 1248,
+          "total_ns": 26338540.0
+        },
+        {
+          "op_name": "fused_gdn_gating_kernel",
+          "op_type": "fused_gdn_gating_kernel",
+          "calls": 1248,
+          "total_ns": 23218060.0
+        },
+        {
+          "op_name": "aclnnCat_ConcatD_ConcatD",
+          "op_type": "ConcatD",
+          "calls": 1430,
+          "total_ns": 21741600.0
+        },
+        {
+          "op_name": "SwiGlu",
+          "op_type": "SwiGlu",
+          "calls": 1846,
+          "total_ns": 21132540.0
+        },
+        {
+          "op_name": "CausalConv1d",
+          "op_type": "CausalConv1d",
+          "calls": 1248,
+          "total_ns": 19107940.0
+        },
+        {
+          "op_name": "aclnnInplaceCopy_SliceAiCore_Slice",
+          "op_type": "Slice",
+          "calls": 7513,
+          "total_ns": 18572180.0
+        },
+        {
+          "op_name": "FusedInferAttentionScore",
+          "op_type": "FusedInferAttentionScore",
+          "calls": 598,
+          "total_ns": 17912520.0
+        },
+        {
+          "op_name": "AddRmsNormBias",
+          "op_type": "AddRmsNormBias",
+          "calls": 3692,
+          "total_ns": 15162220.0
+        },
+        {
+          "op_name": "aclnnIndex_IndexAiCore_Index",
+          "op_type": "Index",
+          "calls": 1264,
+          "total_ns": 13886140.0
+        },
+        {
+          "op_name": "aclnnInplaceZero_ZerosLikeAiCore_ZerosLike",
+          "op_type": "ZerosLike",
+          "calls": 1586,
+          "total_ns": 12697720.0
+        },
+        {
+          "op_name": "aclnnAdds_AddAiCore_Add",
+          "op_type": "Add",
+          "calls": 5381,
+          "total_ns": 10622840.0
+        },
+        {
+          "op_name": "aclnnArgMax_ArgMaxV2AiCore_ArgMaxV2",
+          "op_type": "ArgMaxV2",
+          "calls": 234,
+          "total_ns": 8210420.0
+        },
+        {
+          "op_name": "aclnnMul_MulAiCore_Mul",
+          "op_type": "Mul",
+          "calls": 598,
+          "total_ns": 8153360.0
+        },
+        {
+          "op_name": "_layer_norm_fwd_1pass_kernel_npu",
+          "op_type": "_layer_norm_fwd_1pass_kernel_npu",
+          "calls": 1248,
+          "total_ns": 6972740.0
+        },
+        {
+          "op_name": "l2norm_fwd_kernel2",
+          "op_type": "l2norm_fwd_kernel2",
+          "calls": 2496,
+          "total_ns": 6338280.0
+        },
+        {
+          "op_name": "aclnnIndex_IndexCheck_IndexCheck",
+          "op_type": "IndexCheck",
+          "calls": 1264,
+          "total_ns": 6202980.0
+        },
+        {
+          "op_name": "split_qkv_rmsnorm_mrope_kernel",
+          "op_type": "split_qkv_rmsnorm_mrope_kernel",
+          "calls": 598,
+          "total_ns": 5631860.0
+        },
+        {
+          "op_name": "aclnnSigmoid_SigmoidAiCore_Sigmoid",
+          "op_type": "Sigmoid",
+          "calls": 598,
+          "total_ns": 5304840.0
+        }
+      ]
+    },
+    "down_prefetch": {
+      "physical_devices": [
+        "6"
+      ],
+      "rounds": 26,
+      "config": {
+        "common_config": {
+          "activities": [
+            "ProfilerActivity.CPU",
+            "ProfilerActivity.NPU"
+          ],
+          "schedule": {},
+          "record_shapes": true,
+          "profile_memory": false,
+          "with_stack": false,
+          "with_flops": false,
+          "with_modules": false
+        },
+        "experimental_config": {
+          "_profiler_level": "Level1",
+          "_aic_metrics": "ACL_AICORE_PIPE_UTILIZATION",
+          "_l2_cache": false,
+          "_msprof_tx": false,
+          "_mstx": false,
+          "_data_simplification": true,
+          "record_op_args": false,
+          "_export_type": [
+            "text",
+            "db"
+          ],
+          "_host_sys": [],
+          "_op_attr": false,
+          "_gc_detect_threshold": null,
+          "_mstx_domain_include": [],
+          "_mstx_domain_exclude": [],
+          "_sys_io": false,
+          "_sys_interconnection": false
+        }
+      },
+      "decode_window_ms": 1946.7731,
+      "decode_ms_per_round": 74.87588846153847,
+      "exclusive": {
+        "no_compute": {
+          "exclusive_ms": 17.14682,
+          "window_percent": 0.8807816380861231
+        },
+        "other_compute": {
+          "exclusive_ms": 235.9778,
+          "window_percent": 12.121484522258912
+        },
+        "main_other_linear": {
+          "exclusive_ms": 328.95924,
+          "window_percent": 16.897667221721935
+        },
+        "attention_kernels": {
+          "exclusive_ms": 77.37088,
+          "window_percent": 3.9743142125808086
+        },
+        "main_ffn_gate_up": {
+          "exclusive_ms": 495.85612,
+          "window_percent": 25.470668358834423
+        },
+        "main_ffn_activation": {
+          "exclusive_ms": 19.64176,
+          "window_percent": 1.008939357134121
+        },
+        "main_ffn_down": {
+          "exclusive_ms": 243.31416,
+          "window_percent": 12.498331726486256
+        },
+        "vocabulary_projection": {
+          "exclusive_ms": 398.14326,
+          "window_percent": 20.451446550191186
+        },
+        "draft_other_linear": {
+          "exclusive_ms": 49.59544,
+          "window_percent": 2.5475716712954375
+        },
+        "draft_ffn_gate_up": {
+          "exclusive_ms": 51.91834,
+          "window_percent": 2.6668922022807897
+        },
+        "draft_ffn_activation": {
+          "exclusive_ms": 2.2213,
+          "window_percent": 0.11410163824433366
+        },
+        "draft_ffn_down": {
+          "exclusive_ms": 26.62798,
+          "window_percent": 1.367800900885676
+        }
+      },
+      "ffn": {
+        "main": {
+          "total_ms": 758.81204,
+          "ms_per_round": 29.185078461538463,
+          "decode_percent": 38.9779394424548,
+          "parts": {
+            "gate_up": {
+              "kernel_us": {
+                "count": 1664,
+                "sum": 495856.12000000017,
+                "mean": 297.9904567307692,
+                "median": 300.99,
+                "min": 277.6,
+                "max": 312.76,
+                "p95": 307.78
+              },
+              "total_ms": 495.8561199999996,
+              "decode_percent": 25.4706683588344,
+              "mte2_activity_mean_us": 281.6365673076926,
+              "mte2_activity_sum_ms": 468.6432480000005,
+              "mac_activity_mean_us": 31.79899999999949
+            },
+            "down": {
+              "kernel_us": {
+                "count": 1664,
+                "sum": 243314.1600000001,
+                "mean": 146.22245192307693,
+                "median": 145.48,
+                "min": 140.44,
+                "max": 155.62,
+                "p95": 151.62
+              },
+              "total_ms": 243.3141600000003,
+              "decode_percent": 12.49833172648627,
+              "mte2_activity_mean_us": 134.9716826923077,
+              "mte2_activity_sum_ms": 224.59288,
+              "mac_activity_mean_us": 22.911159855769235
+            },
+            "activation": {
+              "kernel_us": {
+                "count": 1664,
+                "sum": 19641.759999999995,
+                "mean": 11.803942307692308,
+                "median": 11.78,
+                "min": 9.68,
+                "max": 14.4,
+                "p95": 13.32
+              },
+              "total_ms": 19.641759999999998,
+              "decode_percent": 1.008939357134121,
+              "mte2_activity_mean_us": 0.0,
+              "mte2_activity_sum_ms": 0.0,
+              "mac_activity_mean_us": 0.0
+            }
+          },
+          "percent_of_own_graph_windows": 56.262136706251766
+        },
+        "draft": {
+          "total_ms": 80.76762,
+          "ms_per_round": 3.106446923076923,
+          "decode_percent": 4.148794741410799,
+          "parts": {
+            "gate_up": {
+              "kernel_us": {
+                "count": 182,
+                "sum": 51918.340000000004,
+                "mean": 285.2656043956044,
+                "median": 285.09000000000003,
+                "min": 280.74,
+                "max": 292.68,
+                "p95": 289.0
+              },
+              "total_ms": 51.91833999999998,
+              "decode_percent": 2.6668922022807884,
+              "mte2_activity_mean_us": 265.8917032967033,
+              "mte2_activity_sum_ms": 48.39229,
+              "mac_activity_mean_us": 31.79899999999998
+            },
+            "down": {
+              "kernel_us": {
+                "count": 182,
+                "sum": 26627.979999999992,
+                "mean": 146.3075824175824,
+                "median": 146.28,
+                "min": 143.5,
+                "max": 149.88,
+                "p95": 148.48
+              },
+              "total_ms": 26.627979999999994,
+              "decode_percent": 1.3678009008856753,
+              "mte2_activity_mean_us": 134.37876373626375,
+              "mte2_activity_sum_ms": 24.456935,
+              "mac_activity_mean_us": 22.914758241758232
+            },
+            "activation": {
+              "kernel_us": {
+                "count": 182,
+                "sum": 2221.299999999999,
+                "mean": 12.204945054945055,
+                "median": 11.96,
+                "min": 10.88,
+                "max": 14.32,
+                "p95": 13.96
+              },
+              "total_ms": 2.2213000000000003,
+              "decode_percent": 0.11410163824433367,
+              "mte2_activity_mean_us": 0.0,
+              "mte2_activity_sum_ms": 0.0,
+              "mac_activity_mean_us": 0.0
+            }
+          },
+          "percent_of_own_graph_windows": 15.648120988319267
+        },
+        "all": {
+          "total_ms": 839.57966,
+          "decode_percent": 43.126734183865594
+        }
+      },
+      "source": {
+        "kernel_csv_sha256": "36bef784f20a1c8910947ae00ba818d200d77e4741db327449383a6c8245ec41",
+        "task_csv_sha256": "7f3ec38792074a063fd277497e359355404b2218c0213df8020f2a748aec488d",
+        "info_sha256": "48fb02c701750d2fa9aabc1be647af560e4f3cd59852ccb29cfe48d00a7d815e",
+        "insight_reply_sha256": "cc7bc418243ee41e61c1e05b941665bb9e3b49b37ca9840b58856463adfd827e",
+        "insight_groups_verified": 193
+      },
+      "graph_windows_ms": {
+        "main": {
+          "count": 26,
+          "sum": 1348.7081799999996,
+          "mean": 51.87339153846154,
+          "median": 51.86895,
+          "min": 51.8274,
+          "max": 51.91602,
+          "p95": 51.9106
+        },
+        "draft": {
+          "count": 26,
+          "sum": 516.1489999999999,
+          "mean": 19.851884615384616,
+          "median": 19.84976,
+          "min": 19.82268,
+          "max": 19.89974,
+          "p95": 19.8859
+        }
+      },
+      "decode_sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT op_name, op_type, COUNT(*) AS calls, SUM(duration_ns) AS total_ns\nFROM (SELECT * FROM compute_view LIMIT -1)\nWHERE globalTaskId IN (SELECT globalTaskId FROM TASK WHERE startNs >= ?)\nGROUP BY op_name, op_type ORDER BY total_ns DESC LIMIT 20;",
+      "sql_top20_decode": [
+        {
+          "op_name": "aclnnMatmul_MatMulCommon_MatMulV2",
+          "op_type": "MatMulV2",
+          "calls": 7176,
+          "total_ns": 1324472400.0
+        },
+        {
+          "op_name": "down_m8_prefetch",
+          "op_type": "down_m8_prefetch",
+          "calls": 1846,
+          "total_ns": 269942140.0
+        },
+        {
+          "op_name": "aclnnRecurrentGatedDeltaRule_RecurrentGatedDeltaRule_RecurrentGatedDeltaRule",
+          "op_type": "RecurrentGatedDeltaRule",
+          "calls": 1248,
+          "total_ns": 59492800.0
+        },
+        {
+          "op_name": "aclnnContiguous_TransposeAiCore_Transpose",
+          "op_type": "Transpose",
+          "calls": 1248,
+          "total_ns": 28338980.0
+        },
+        {
+          "op_name": "fused_gdn_gating_kernel",
+          "op_type": "fused_gdn_gating_kernel",
+          "calls": 1248,
+          "total_ns": 23923740.0
+        },
+        {
+          "op_name": "SwiGlu",
+          "op_type": "SwiGlu",
+          "calls": 1846,
+          "total_ns": 21863060.0
+        },
+        {
+          "op_name": "aclnnCat_ConcatD_ConcatD",
+          "op_type": "ConcatD",
+          "calls": 1430,
+          "total_ns": 19488220.0
+        },
+        {
+          "op_name": "CausalConv1d",
+          "op_type": "CausalConv1d",
+          "calls": 1248,
+          "total_ns": 19382200.0
+        },
+        {
+          "op_name": "FusedInferAttentionScore",
+          "op_type": "FusedInferAttentionScore",
+          "calls": 598,
+          "total_ns": 17878080.0
+        },
+        {
+          "op_name": "aclnnInplaceCopy_SliceAiCore_Slice",
+          "op_type": "Slice",
+          "calls": 7513,
+          "total_ns": 17791360.0
+        },
+        {
+          "op_name": "AddRmsNormBias",
+          "op_type": "AddRmsNormBias",
+          "calls": 3692,
+          "total_ns": 14899520.0
+        },
+        {
+          "op_name": "aclnnIndex_IndexAiCore_Index",
+          "op_type": "Index",
+          "calls": 1264,
+          "total_ns": 13997220.0
+        },
+        {
+          "op_name": "aclnnInplaceZero_ZerosLikeAiCore_ZerosLike",
+          "op_type": "ZerosLike",
+          "calls": 1586,
+          "total_ns": 11587660.0
+        },
+        {
+          "op_name": "aclnnAdds_AddAiCore_Add",
+          "op_type": "Add",
+          "calls": 5381,
+          "total_ns": 10376280.0
+        },
+        {
+          "op_name": "aclnnArgMax_ArgMaxV2AiCore_ArgMaxV2",
+          "op_type": "ArgMaxV2",
+          "calls": 234,
+          "total_ns": 8201900.0
+        },
+        {
+          "op_name": "aclnnMul_MulAiCore_Mul",
+          "op_type": "Mul",
+          "calls": 598,
+          "total_ns": 7096320.0
+        },
+        {
+          "op_name": "_layer_norm_fwd_1pass_kernel_npu",
+          "op_type": "_layer_norm_fwd_1pass_kernel_npu",
+          "calls": 1248,
+          "total_ns": 7059100.0
+        },
+        {
+          "op_name": "l2norm_fwd_kernel2",
+          "op_type": "l2norm_fwd_kernel2",
+          "calls": 2496,
+          "total_ns": 6133160.0
+        },
+        {
+          "op_name": "aclnnIndex_IndexCheck_IndexCheck",
+          "op_type": "IndexCheck",
+          "calls": 1264,
+          "total_ns": 5918360.0
+        },
+        {
+          "op_name": "aclnnSigmoid_SigmoidAiCore_Sigmoid",
+          "op_type": "Sigmoid",
+          "calls": 598,
+          "total_ns": 5827960.0
+        }
+      ]
+    },
+    "current": {
+      "physical_devices": [
+        "7"
+      ],
+      "rounds": 26,
+      "config": {
+        "common_config": {
+          "activities": [
+            "ProfilerActivity.CPU",
+            "ProfilerActivity.NPU"
+          ],
+          "schedule": {},
+          "record_shapes": true,
+          "profile_memory": false,
+          "with_stack": false,
+          "with_flops": false,
+          "with_modules": false
+        },
+        "experimental_config": {
+          "_profiler_level": "Level1",
+          "_aic_metrics": "ACL_AICORE_PIPE_UTILIZATION",
+          "_l2_cache": false,
+          "_msprof_tx": false,
+          "_mstx": false,
+          "_data_simplification": false,
+          "record_op_args": false,
+          "_export_type": [
+            "text",
+            "db"
+          ],
+          "_host_sys": [],
+          "_op_attr": true,
+          "_gc_detect_threshold": null,
+          "_mstx_domain_include": [],
+          "_mstx_domain_exclude": [],
+          "_sys_io": false,
+          "_sys_interconnection": false
+        }
+      },
+      "decode_window_ms": 1875.480452,
+      "decode_ms_per_round": 72.13386353846154,
+      "exclusive": {
+        "no_compute": {
+          "exclusive_ms": 17.300212,
+          "window_percent": 0.9224416059122966
+        },
+        "other_compute": {
+          "exclusive_ms": 239.308255,
+          "window_percent": 12.759837339003093
+        },
+        "main_other_linear": {
+          "exclusive_ms": 328.218818,
+          "window_percent": 17.500519274940434
+        },
+        "attention_kernels": {
+          "exclusive_ms": 77.191874,
+          "window_percent": 4.115845298077252
+        },
+        "main_ffn_gate_up": {
+          "exclusive_ms": 424.043648,
+          "window_percent": 22.60986765006282
+        },
+        "main_ffn_activation": {
+          "exclusive_ms": 17.862714,
+          "window_percent": 0.9524340272889179
+        },
+        "main_ffn_down": {
+          "exclusive_ms": 242.691823,
+          "window_percent": 12.940248070364852
+        },
+        "vocabulary_projection": {
+          "exclusive_ms": 399.073197,
+          "window_percent": 21.278451426909353
+        },
+        "draft_other_linear": {
+          "exclusive_ms": 49.320353,
+          "window_percent": 2.6297449780084405
+        },
+        "draft_ffn_gate_up": {
+          "exclusive_ms": 52.011829,
+          "window_percent": 2.773253591874814
+        },
+        "draft_ffn_activation": {
+          "exclusive_ms": 1.997848,
+          "window_percent": 0.10652459735688037
+        },
+        "draft_ffn_down": {
+          "exclusive_ms": 26.459881,
+          "window_percent": 1.4108321402008406
+        }
+      },
+      "ffn": {
+        "main": {
+          "total_ms": 684.598185,
+          "ms_per_round": 26.330699423076922,
+          "decode_percent": 36.502549747716586,
+          "parts": {
+            "gate_up": {
+              "kernel_us": {
+                "count": 1664,
+                "sum": 424043.6480000005,
+                "mean": 254.83392307692307,
+                "median": 258.085,
+                "min": 241.125,
+                "max": 262.165,
+                "p95": 260.226
+              },
+              "total_ms": 424.0436480000002,
+              "decode_percent": 22.60986765006283,
+              "mte2_activity_mean_us": 246.29143149038507,
+              "mte2_activity_sum_ms": 409.8289420000007,
+              "mac_activity_mean_us": 31.79899999999949
+            },
+            "down": {
+              "kernel_us": {
+                "count": 1664,
+                "sum": 242691.82300000056,
+                "mean": 145.84845132211538,
+                "median": 145.503,
+                "min": 139.803,
+                "max": 158.524,
+                "p95": 150.463
+              },
+              "total_ms": 242.69182300000008,
+              "decode_percent": 12.940248070364856,
+              "mte2_activity_mean_us": 135.05280829326944,
+              "mte2_activity_sum_ms": 224.72787300000033,
+              "mac_activity_mean_us": 22.908634014423082
+            },
+            "activation": {
+              "kernel_us": {
+                "count": 1664,
+                "sum": 17862.714,
+                "mean": 10.734804086538462,
+                "median": 10.62,
+                "min": 9.36,
+                "max": 13.441,
+                "p95": 12.021
+              },
+              "total_ms": 17.862714000000018,
+              "decode_percent": 0.9524340272889188,
+              "mte2_activity_mean_us": 0.0,
+              "mte2_activity_sum_ms": 0.0,
+              "mac_activity_mean_us": 0.0
+            }
+          },
+          "percent_of_own_graph_windows": 53.5569426524076
+        },
+        "draft": {
+          "total_ms": 80.469558,
+          "ms_per_round": 3.094983,
+          "decode_percent": 4.2906103294325355,
+          "parts": {
+            "gate_up": {
+              "kernel_us": {
+                "count": 182,
+                "sum": 52011.829,
+                "mean": 285.7792802197802,
+                "median": 285.8455,
+                "min": 280.526,
+                "max": 291.886,
+                "p95": 289.346
+              },
+              "total_ms": 52.011829,
+              "decode_percent": 2.773253591874814,
+              "mte2_activity_mean_us": 269.6279670329671,
+              "mte2_activity_sum_ms": 49.07229000000002,
+              "mac_activity_mean_us": 31.79899999999998
+            },
+            "down": {
+              "kernel_us": {
+                "count": 182,
+                "sum": 26459.880999999994,
+                "mean": 145.38396153846153,
+                "median": 145.303,
+                "min": 142.382,
+                "max": 149.483,
+                "p95": 147.643
+              },
+              "total_ms": 26.459881000000003,
+              "decode_percent": 1.4108321402008406,
+              "mte2_activity_mean_us": 134.3643681318682,
+              "mte2_activity_sum_ms": 24.45431500000001,
+              "mac_activity_mean_us": 22.911016483516477
+            },
+            "activation": {
+              "kernel_us": {
+                "count": 182,
+                "sum": 1997.848,
+                "mean": 10.977186813186814,
+                "median": 10.8705,
+                "min": 9.94,
+                "max": 12.56,
+                "p95": 11.96
+              },
+              "total_ms": 1.9978479999999992,
+              "decode_percent": 0.10652459735688033,
+              "mte2_activity_mean_us": 0.0,
+              "mte2_activity_sum_ms": 0.0,
+              "mac_activity_mean_us": 0.0
+            }
+          },
+          "percent_of_own_graph_windows": 15.604059386835985
+        },
+        "all": {
+          "total_ms": 765.067743,
+          "decode_percent": 40.793160077149125
+        }
+      },
+      "source": {
+        "kernel_csv_sha256": "c794b628df57546d6a7e3aa2be25069b0e08474c86cc2909be361623a95f2b38",
+        "task_csv_sha256": "9a056df9729dddb8e04e45b0e13d23cd4e5d97f9f4e2f7350e3198966cd31971",
+        "info_sha256": "0203c06d94bdba0bc2266c48ee641d85590423dbd02ce34812f86faa77989338",
+        "insight_reply_sha256": "b1be171ddcf5e152cc16698bf5dfa95a2060d3c103d4c27a2baba562b257968a",
+        "insight_groups_verified": 195
+      },
+      "graph_windows_ms": {
+        "main": {
+          "count": 26,
+          "sum": 1278.262259,
+          "mean": 49.163933038461536,
+          "median": 49.161851999999996,
+          "min": 49.113782,
+          "max": 49.218143,
+          "p95": 49.214583
+        },
+        "draft": {
+          "count": 26,
+          "sum": 515.6963069999999,
+          "mean": 19.834473346153846,
+          "median": 19.832046,
+          "min": 19.802656,
+          "max": 19.889038,
+          "p95": 19.864677
+        }
+      },
+      "decode_sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT op_name, op_type, COUNT(*) AS calls, SUM(duration_ns) AS total_ns\nFROM (SELECT * FROM compute_view LIMIT -1)\nWHERE globalTaskId IN (SELECT globalTaskId FROM TASK WHERE startNs >= ?)\nGROUP BY op_name, op_type ORDER BY total_ns DESC LIMIT 20;",
+      "sql_top20_decode": [
+        {
+          "op_name": "aclnnMatmul_MatMulCommon_MatMulV2",
+          "op_type": "MatMulV2",
+          "calls": 5512,
+          "total_ns": 828624197.0
+        },
+        {
+          "op_name": "gateup_packed",
+          "op_type": "gateup_packed",
+          "calls": 1664,
+          "total_ns": 424043648.0
+        },
+        {
+          "op_name": "down_m8_prefetch",
+          "op_type": "down_m8_prefetch",
+          "calls": 1846,
+          "total_ns": 269151704.0
+        },
+        {
+          "op_name": "aclnnRecurrentGatedDeltaRule_RecurrentGatedDeltaRule_RecurrentGatedDeltaRule",
+          "op_type": "RecurrentGatedDeltaRule",
+          "calls": 1248,
+          "total_ns": 59625234.0
+        },
+        {
+          "op_name": "aclnnContiguous_TransposeAiCore_Transpose",
+          "op_type": "Transpose",
+          "calls": 1248,
+          "total_ns": 29097660.0
+        },
+        {
+          "op_name": "fused_gdn_gating_kernel",
+          "op_type": "fused_gdn_gating_kernel",
+          "calls": 1248,
+          "total_ns": 23884912.0
+        },
+        {
+          "op_name": "aclnnCat_ConcatD_ConcatD",
+          "op_type": "ConcatD",
+          "calls": 1430,
+          "total_ns": 21819066.0
+        },
+        {
+          "op_name": "SwiGlu",
+          "op_type": "SwiGlu",
+          "calls": 1846,
+          "total_ns": 19860562.0
+        },
+        {
+          "op_name": "CausalConv1d",
+          "op_type": "CausalConv1d",
+          "calls": 1248,
+          "total_ns": 19313808.0
+        },
+        {
+          "op_name": "aclnnInplaceCopy_SliceAiCore_Slice",
+          "op_type": "Slice",
+          "calls": 7513,
+          "total_ns": 19134750.0
+        },
+        {
+          "op_name": "FusedInferAttentionScore",
+          "op_type": "FusedInferAttentionScore",
+          "calls": 598,
+          "total_ns": 17566640.0
+        },
+        {
+          "op_name": "AddRmsNormBias",
+          "op_type": "AddRmsNormBias",
+          "calls": 3692,
+          "total_ns": 14908529.0
+        },
+        {
+          "op_name": "aclnnIndex_IndexAiCore_Index",
+          "op_type": "Index",
+          "calls": 1264,
+          "total_ns": 13459645.0
+        },
+        {
+          "op_name": "aclnnAdds_AddAiCore_Add",
+          "op_type": "Add",
+          "calls": 5381,
+          "total_ns": 10476438.0
+        },
+        {
+          "op_name": "aclnnInplaceZero_ZerosLikeAiCore_ZerosLike",
+          "op_type": "ZerosLike",
+          "calls": 1586,
+          "total_ns": 10138240.0
+        },
+        {
+          "op_name": "aclnnArgMax_ArgMaxV2AiCore_ArgMaxV2",
+          "op_type": "ArgMaxV2",
+          "calls": 234,
+          "total_ns": 8218261.0
+        },
+        {
+          "op_name": "aclnnMul_MulAiCore_Mul",
+          "op_type": "Mul",
+          "calls": 598,
+          "total_ns": 8120479.0
+        },
+        {
+          "op_name": "_layer_norm_fwd_1pass_kernel_npu",
+          "op_type": "_layer_norm_fwd_1pass_kernel_npu",
+          "calls": 1248,
+          "total_ns": 7056891.0
+        },
+        {
+          "op_name": "l2norm_fwd_kernel2",
+          "op_type": "l2norm_fwd_kernel2",
+          "calls": 2496,
+          "total_ns": 6551927.0
+        },
+        {
+          "op_name": "aclnnIndex_IndexCheck_IndexCheck",
+          "op_type": "IndexCheck",
+          "calls": 1264,
+          "total_ns": 5941212.0
+        }
+      ]
+    }
+  },
+  "comparisons": {
+    "native_to_down_prefetch": {
+      "decode_window_reduction_percent": 0.8913406578162864,
+      "ffn": {
+        "main": {
+          "saved_ms": 12.702279999999973,
+          "time_reduction_percent": 1.6464088443620795,
+          "share_change_percentage_points": -0.29923667966057366,
+          "parts": {
+            "gate_up": {
+              "saved_ms": 0.3240000000009218,
+              "time_reduction_percent": 0.06529886767751014
+            },
+            "down": {
+              "saved_ms": 13.020699999999465,
+              "time_reduction_percent": 5.079566626247978
+            },
+            "activation": {
+              "saved_ms": -0.6424199999999587,
+              "time_reduction_percent": -3.381275349564561
+            }
+          }
+        },
+        "draft": {
+          "saved_ms": 1.7289400000000086,
+          "time_reduction_percent": 2.0957722358362685,
+          "share_change_percentage_points": -0.051039056345097755,
+          "parts": {
+            "gate_up": {
+              "saved_ms": -0.35891999999995505,
+              "time_reduction_percent": -0.6961288548241074
+            },
+            "down": {
+              "saved_ms": 2.1759599999999892,
+              "time_reduction_percent": 7.554383185078118
+            },
+            "activation": {
+              "saved_ms": -0.08810000000000029,
+              "time_reduction_percent": -4.129945621601361
+            }
+          }
+        },
+        "all": {
+          "saved_ms": 14.431220000000053,
+          "time_reduction_percent": 1.689816879147965,
+          "share_change_percentage_points": -0.3502757360056705
+        }
+      }
+    },
+    "down_prefetch_to_current": {
+      "decode_window_reduction_percent": 3.6620933379447274,
+      "ffn": {
+        "main": {
+          "saved_ms": 74.21385500000008,
+          "time_reduction_percent": 9.78026851023609,
+          "share_change_percentage_points": -2.4753896947382117,
+          "parts": {
+            "gate_up": {
+              "saved_ms": 71.81247199999939,
+              "time_reduction_percent": 14.482522067086611
+            },
+            "down": {
+              "saved_ms": 0.6223370000002149,
+              "time_reduction_percent": 0.25577508518214165
+            },
+            "activation": {
+              "saved_ms": 1.7790459999999797,
+              "time_reduction_percent": 9.057467355267445
+            }
+          }
+        },
+        "draft": {
+          "saved_ms": 0.2980619999999874,
+          "time_reduction_percent": 0.3690365024993758,
+          "share_change_percentage_points": 0.14181558802173644,
+          "parts": {
+            "gate_up": {
+              "saved_ms": -0.09348900000001947,
+              "time_reduction_percent": -0.18006931654597214
+            },
+            "down": {
+              "saved_ms": 0.1680989999999909,
+              "time_reduction_percent": 0.6312870897454137
+            },
+            "activation": {
+              "saved_ms": 0.2234520000000011,
+              "time_reduction_percent": 10.059514698599969
+            }
+          }
+        },
+        "all": {
+          "saved_ms": 74.51191700000004,
+          "time_reduction_percent": 8.874907355425933,
+          "share_change_percentage_points": -2.333574106716469
+        }
+      }
+    },
+    "native_to_current": {
+      "decode_window_reduction_percent": 4.520792268912732,
+      "ffn": {
+        "main": {
+          "saved_ms": 86.91613500000005,
+          "time_reduction_percent": 11.265654148843286,
+          "share_change_percentage_points": -2.7746263743987853,
+          "parts": {
+            "gate_up": {
+              "saved_ms": 72.13647200000031,
+              "time_reduction_percent": 14.538364011843164
+            },
+            "down": {
+              "saved_ms": 13.64303699999968,
+              "time_reduction_percent": 5.322349445564956
+            },
+            "activation": {
+              "saved_ms": 1.136626000000021,
+              "time_reduction_percent": 5.982449916681409
+            }
+          }
+        },
+        "draft": {
+          "saved_ms": 2.027001999999996,
+          "time_reduction_percent": 2.4570745737761635,
+          "share_change_percentage_points": 0.09077653167663868,
+          "parts": {
+            "gate_up": {
+              "saved_ms": -0.4524089999999745,
+              "time_reduction_percent": -0.8774516858412573
+            },
+            "down": {
+              "saved_ms": 2.34405899999998,
+              "time_reduction_percent": 8.13798042906624
+            },
+            "activation": {
+              "saved_ms": 0.1353520000000008,
+              "time_reduction_percent": 6.345021563847775
+            }
+          }
+        },
+        "all": {
+          "saved_ms": 88.94313700000009,
+          "time_reduction_percent": 10.41475455207317,
+          "share_change_percentage_points": -2.6838498427221396
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+__pycache__/
+results/
+profiles/
+cache-*/
+*.db
+*.so
+*.log
+*.tar.gz

@@ -1,0 +1,8 @@
+{
+  "utc": "2026-10-22T01:27:17.558436+00:00",
+  "physical_device": 7,
+  "no_device_process": true,
+  "port_8047_free": true,
+  "health": "Health Status                  : Warning\n\tError Code                     : 81078603\n\tError Information              : node type=PORT, sensor type=Safety State, event state=port link status change(up to down)",
+  "scope": "Only card 7 queried; other services left intact"
+}
