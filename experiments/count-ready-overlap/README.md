@@ -4,6 +4,8 @@
 
 已完成：[实际结果与限制](results.md)。同服务采样空隙13.821%→0.940%，输入准备从晚10.573ms变为早6.423ms；同服务四题无profiler吞吐仅+0.805%，32题实验版63.990 token/s。保留采样扰动、共享Host波动和接受轨迹差异，不设默认。
 
+后续[TTFT追查](ttft-analysis.md)与`analyze_ttft.py`只复用已有数据：核对客户端流式记录、服务端指标、后续同题记录和首轮采样；首轮阶段变慢已定位，原499ms请求的内部根因尚未确定，没有新增NPU请求。
+
 本轮仍使用物理6卡、Qwen3.8-27B、BF16权重/conv、FP32 SSM、TP1/并发1/MTP7，保留既有FFN重排、prefill直读及down预取。所有改动仅当前服务进程，不改安装源码、权重、数学计算或NPU内核。同轮候选策略代码保持不变。
 
 `explain_waits.py`只读上一轮trace，以CPU memcpy scope → torch_to_npu flow → 设备MEMCPY_ASYNC建立链路。第二份计数的实际设备拷贝约1.9µs、就绪时间约60.19ms未变；CPU到达第三同步从62.44ms提前到54.10ms，因此暴露约6ms等待。长同步不能直接解释为拷贝慢。

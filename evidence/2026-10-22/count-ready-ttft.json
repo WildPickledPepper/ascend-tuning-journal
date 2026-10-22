@@ -1,0 +1,392 @@
+{
+  "model": "Qwen3.8-27B",
+  "physical_card": 6,
+  "TP": 1,
+  "concurrency": 1,
+  "MTP": 7,
+  "dynamic_vocabulary": 4096,
+  "weights": "BF16",
+  "ssm_state": "FP32",
+  "new_npu_requests": 0,
+  "analysis_source_sha256": "45128abf7de46eff0ef3ada240e40291e11185d8c39564bbaa8be8fbd76131fd",
+  "arms": {
+    "control4": {
+      "per_request": [
+        {
+          "question_id": 0,
+          "input_tokens": 121,
+          "output_tokens": 137,
+          "ttft_ms": 326.00234006531537,
+          "role_chunk_ms": 325.0503200106323,
+          "role_to_first_token_ms": 0.9520200546830893,
+          "e2e_s": 2.243371010059491
+        },
+        {
+          "question_id": 1,
+          "input_tokens": 83,
+          "output_tokens": 44,
+          "ttft_ms": 376.6933000879362,
+          "role_chunk_ms": 375.79628999810666,
+          "role_to_first_token_ms": 0.8970100898295641,
+          "e2e_s": 1.0604943101061508
+        },
+        {
+          "question_id": 2,
+          "input_tokens": 114,
+          "output_tokens": 575,
+          "ttft_ms": 367.4584600375965,
+          "role_chunk_ms": 366.4858100237325,
+          "role_to_first_token_ms": 0.9726500138640404,
+          "e2e_s": 8.585141699993983
+        },
+        {
+          "question_id": 3,
+          "input_tokens": 92,
+          "output_tokens": 88,
+          "ttft_ms": 375.99992007017136,
+          "role_chunk_ms": 374.99822000972927,
+          "role_to_first_token_ms": 1.00170006044209,
+          "e2e_s": 1.6176810200558975
+        }
+      ],
+      "metric_deltas": {
+        "time_to_first_token_seconds": {
+          "count": 4,
+          "sum_s": 1.4103384017944336,
+          "mean_ms": 352.5846004486084
+        },
+        "request_queue_time_seconds": {
+          "count": 4,
+          "sum_s": 0.00011402007658034563,
+          "mean_ms": 0.028505019145086408
+        },
+        "request_prefill_time_seconds": {
+          "count": 4,
+          "sum_s": 1.295047160005197,
+          "mean_ms": 323.76179000129923
+        },
+        "request_decode_time_seconds": {
+          "count": 4,
+          "sum_s": 12.069405989954248,
+          "mean_ms": 3017.351497488562
+        },
+        "request_inference_time_seconds": {
+          "count": 4,
+          "sum_s": 13.364453149959445,
+          "mean_ms": 3341.1132874898612
+        },
+        "e2e_request_latency_seconds": {
+          "count": 4,
+          "sum_s": 13.47851014137268,
+          "mean_ms": 3369.62753534317
+        }
+      },
+      "layout_dispatch_deltas": {
+        "prefill_direct_host_calls": 256,
+        "packed_M121": 64,
+        "packed_M114": 64,
+        "packed_M83": 64,
+        "packed_M92": 64
+      },
+      "counter_guards": {
+        "request_success_total": 4.0,
+        "prompt_tokens_total": 410.0,
+        "prompt_tokens_cached_total": 0.0,
+        "num_preemptions_total": 0.0,
+        "request_prefill_kv_computed_tokens_sum": 410.0
+      },
+      "client_ttft_mean_ms": 361.53850506525487
+    },
+    "fast4": {
+      "per_request": [
+        {
+          "question_id": 0,
+          "input_tokens": 121,
+          "output_tokens": 137,
+          "ttft_ms": 320.0461301021278,
+          "role_chunk_ms": 319.13516006898135,
+          "role_to_first_token_ms": 0.910970033146441,
+          "e2e_s": 2.2614704800071195
+        },
+        {
+          "question_id": 1,
+          "input_tokens": 83,
+          "output_tokens": 44,
+          "ttft_ms": 390.3869199566543,
+          "role_chunk_ms": 389.48544999584556,
+          "role_to_first_token_ms": 0.901469960808754,
+          "e2e_s": 1.0676212599501014
+        },
+        {
+          "question_id": 2,
+          "input_tokens": 114,
+          "output_tokens": 575,
+          "ttft_ms": 499.22096997033805,
+          "role_chunk_ms": 498.192340019159,
+          "role_to_first_token_ms": 1.0286299511790276,
+          "e2e_s": 8.432279329979792
+        },
+        {
+          "question_id": 3,
+          "input_tokens": 92,
+          "output_tokens": 88,
+          "ttft_ms": 421.48735001683235,
+          "role_chunk_ms": 420.43864994775504,
+          "role_to_first_token_ms": 1.048700069077313,
+          "e2e_s": 1.6375053999945521
+        }
+      ],
+      "metric_deltas": {
+        "time_to_first_token_seconds": {
+          "count": 4,
+          "sum_s": 1.5913848876953125,
+          "mean_ms": 397.8462219238281
+        },
+        "request_queue_time_seconds": {
+          "count": 4,
+          "sum_s": 8.657982107251883e-05,
+          "mean_ms": 0.021644955268129706
+        },
+        "request_prefill_time_seconds": {
+          "count": 4,
+          "sum_s": 1.502690500114113,
+          "mean_ms": 375.6726250285283
+        },
+        "request_decode_time_seconds": {
+          "count": 4,
+          "sum_s": 11.77395954017993,
+          "mean_ms": 2943.4898850449827
+        },
+        "request_inference_time_seconds": {
+          "count": 4,
+          "sum_s": 13.276650040294044,
+          "mean_ms": 3319.162510073511
+        },
+        "e2e_request_latency_seconds": {
+          "count": 4,
+          "sum_s": 13.365597486495972,
+          "mean_ms": 3341.399371623993
+        }
+      },
+      "layout_dispatch_deltas": {
+        "prefill_direct_host_calls": 256,
+        "packed_M121": 64,
+        "packed_M114": 64,
+        "packed_M83": 64,
+        "packed_M92": 64
+      },
+      "counter_guards": {
+        "request_success_total": 4.0,
+        "prompt_tokens_total": 410.0,
+        "prompt_tokens_cached_total": 0.0,
+        "num_preemptions_total": 0.0,
+        "request_prefill_kv_computed_tokens_sum": 410.0
+      },
+      "client_ttft_mean_ms": 407.7853425114881
+    }
+  },
+  "private_input_sha256": {
+    "control4.json": "7213a765980b2d3305f8fa1d7738400c7689e532936bb1af772f1f48c423bc5c",
+    "control4-before-metrics.txt": "8566a5784bb446d00a3489dd052f55470b5df4b169614fa3d61a3e312b643102",
+    "control4-after-metrics.txt": "b2216ab9d71c5694a9dbeabdba491ba8642f80dde9a9e9314a6ed3e999ebbfc4",
+    "control4-before-audit.json": "b6e84326e09ec213de4eea6a4279cb2d7f80175e2e51e3ce5900d7044e0302ea",
+    "control4-after-audit.json": "89b6dc4aa17d9f4477cb5ffb3fb417a1f1db32f9be3b6adb0ef9d80a654aa3a8",
+    "fast4.json": "d2743303e9bf6c3425d1f93cc45f128e3cd6b7879752e03cc536faa8e5caa053",
+    "fast4-before-metrics.txt": "4c4583d8d91f255775ebe0457132b8ad6e854b1f70a827a41d6765c63e11e348",
+    "fast4-after-metrics.txt": "7db152bd03c527ca529a7d6b1316e46564a631c664ce904f676d61075b3693dd",
+    "fast4-before-audit.json": "10c0d75bf6d13bae40fc9498aff9f8d7ca2845b08b02daa6901a1e57ef59164c",
+    "fast4-after-audit.json": "daeba2639316d8d745c7c866aff6c12e6f61e1f82c72d47441e42aa91f9c8f7f"
+  },
+  "same_outputs_and_prompt_lengths": true,
+  "same_layout_dispatch_counts": true,
+  "additional_existing_observations": {
+    "check-0-base1": {
+      "ttft_ms": 567.2818400198594,
+      "e2e_s": 2.5664746799739078
+    },
+    "check-0-base2": {
+      "ttft_ms": 372.2286899574101,
+      "e2e_s": 2.3504213099367917
+    },
+    "check-0-ready3": {
+      "ttft_ms": 454.781929962337,
+      "e2e_s": 2.3367473799735308
+    },
+    "check-2-base1": {
+      "ttft_ms": 408.9075899682939,
+      "e2e_s": 8.72112714999821
+    },
+    "check-2-base2": {
+      "ttft_ms": 418.4680200414732,
+      "e2e_s": 8.684377240017056
+    },
+    "check-2-ready3": {
+      "ttft_ms": 340.1551899733022,
+      "e2e_s": 8.262257619993761
+    },
+    "baseline-unprofiled-prefix": {
+      "ttft_ms": 380.4603200405836,
+      "e2e_s": 2.1546042000409216
+    },
+    "ready3-unprofiled-prefix": {
+      "ttft_ms": 337.33111002948135,
+      "e2e_s": 2.146023100009188
+    },
+    "later32_first4": [
+      {
+        "question_id": 0,
+        "ttft_ms": 378.13188997097313
+      },
+      {
+        "question_id": 1,
+        "ttft_ms": 349.7709500370547
+      },
+      {
+        "question_id": 2,
+        "ttft_ms": 349.78519997093827
+      },
+      {
+        "question_id": 3,
+        "ttft_ms": 337.84579997882247
+      }
+    ],
+    "later32_first4_mean_ms": 353.88345998944715,
+    "limitations": "Later32 is same service/stage with diagnostics off, but a later sequential run, not a randomized repeated A/B. Preflight uses diagnostics and is not a benchmark. Prefix requests have different output limits."
+  },
+  "sampled_question0": {
+    "baseline": {
+      "valid_framework_stop": true,
+      "profiler_config": {
+        "common_config": {
+          "activities": [
+            "ProfilerActivity.CPU",
+            "ProfilerActivity.NPU"
+          ],
+          "schedule": {},
+          "record_shapes": true,
+          "profile_memory": false,
+          "with_stack": false,
+          "with_flops": false,
+          "with_modules": false
+        },
+        "experimental_config": {
+          "_profiler_level": "Level1",
+          "_aic_metrics": "ACL_AICORE_PIPE_UTILIZATION",
+          "_l2_cache": false,
+          "_msprof_tx": false,
+          "_mstx": false,
+          "_data_simplification": false,
+          "record_op_args": false,
+          "_export_type": [
+            "db",
+            "text"
+          ],
+          "_host_sys": [],
+          "_op_attr": true,
+          "_gc_detect_threshold": null,
+          "_mstx_domain_include": [],
+          "_mstx_domain_exclude": [],
+          "_sys_io": false,
+          "_sys_interconnection": false
+        }
+      },
+      "trace_sha256": "67cbaae3ea03413866557faa19d16da031c237fd58cc914b085c79d4d9bb648e",
+      "kernel_csv_sha256": "c5ab8af052ee3afc245342cf0c211a842c28c3d98a212d6b5384756768bb4d03",
+      "first_cpu_scopes_ms": {
+        "prepare input": 27.507,
+        "forward": 413.56313,
+        "sample_token": 4.36737,
+        "draft_token": 74.52908000000001,
+        "async_state_update": 1.06065
+      },
+      "prefill_forward_cpu_op_count": 15298,
+      "prefill_forward_cpu_op_sequence_sha256": "a1c77d0b34c7dbeae832e36a90fe5c671c2eff0f4e20ef386b57669a5ba1b1e3",
+      "main_prefill_through_full_head_kernel_count": 2265,
+      "main_prefill_through_full_head_kernel_sequence_sha256": "c7ef6d59f50cbe78ecdf47812601012a93352f20057faab1f5340fb5fd4770a7",
+      "main_prefill_through_full_head_kernel_duration_sum_ms": 80.42589999999994,
+      "snapshot_clones_before_first_sampling": 0,
+      "snapshot_clone_cpu_scope_sum_ms": 0.0,
+      "sample_start_to_draft_submission_end_ms": 79.28278,
+      "boundary_note": "The sampled request is question 0, not the unprofiled question-2 outlier. CPU scopes include submission; kernel duration sums are not wall time or a full TTFT decomposition.",
+      "client_ttft_ms": 607.6222100527957
+    },
+    "ready3": {
+      "valid_framework_stop": true,
+      "profiler_config": {
+        "common_config": {
+          "activities": [
+            "ProfilerActivity.CPU",
+            "ProfilerActivity.NPU"
+          ],
+          "schedule": {},
+          "record_shapes": true,
+          "profile_memory": false,
+          "with_stack": false,
+          "with_flops": false,
+          "with_modules": false
+        },
+        "experimental_config": {
+          "_profiler_level": "Level1",
+          "_aic_metrics": "ACL_AICORE_PIPE_UTILIZATION",
+          "_l2_cache": false,
+          "_msprof_tx": false,
+          "_mstx": false,
+          "_data_simplification": false,
+          "record_op_args": false,
+          "_export_type": [
+            "db",
+            "text"
+          ],
+          "_host_sys": [],
+          "_op_attr": true,
+          "_gc_detect_threshold": null,
+          "_mstx_domain_include": [],
+          "_mstx_domain_exclude": [],
+          "_sys_io": false,
+          "_sys_interconnection": false
+        }
+      },
+      "trace_sha256": "077c1ee12f570733593eab8750d061c2fb3fa7f11e4264fe517223e4c98322c3",
+      "kernel_csv_sha256": "7167eafcff830380a2947b648ec66486407c07be336e1b7d80eed9c1c8337c45",
+      "first_cpu_scopes_ms": {
+        "prepare input": 32.42443,
+        "forward": 424.95189,
+        "sample_token": 0.77228,
+        "draft_token": 68.91581,
+        "async_state_update": 1.1515499999999999
+      },
+      "prefill_forward_cpu_op_count": 15298,
+      "prefill_forward_cpu_op_sequence_sha256": "a1c77d0b34c7dbeae832e36a90fe5c671c2eff0f4e20ef386b57669a5ba1b1e3",
+      "main_prefill_through_full_head_kernel_count": 2265,
+      "main_prefill_through_full_head_kernel_sequence_sha256": "c7ef6d59f50cbe78ecdf47812601012a93352f20057faab1f5340fb5fd4770a7",
+      "main_prefill_through_full_head_kernel_duration_sum_ms": 80.31596000000009,
+      "snapshot_clones_before_first_sampling": 2,
+      "snapshot_clone_cpu_scope_sum_ms": 0.18554,
+      "sample_start_to_draft_submission_end_ms": 76.17125999999999,
+      "boundary_note": "The sampled request is question 0, not the unprofiled question-2 outlier. CPU scopes include submission; kernel duration sums are not wall time or a full TTFT decomposition.",
+      "client_ttft_ms": 613.0625399528071
+    }
+  },
+  "timing_metric_definition": {
+    "queue": "first SCHEDULED timestamp minus first QUEUED timestamp",
+    "prefill": "first NEW_TOKEN engine timestamp minus first SCHEDULED timestamp; includes first-iteration preparation, submission, sampling/draft and output processing, not just model kernels",
+    "server_ttft": "API output processor iteration timestamp minus request arrival timestamp",
+    "client_ttft": "request start to first SSE choice containing token_ids; empty role event is excluded"
+  },
+  "timing_runtime_source_verification": {
+    "commit": "6e448d0ea9bf3d88d898b65449ca6dc2aec170ac",
+    "tracked_diff": "",
+    "files": {
+      "v1/metrics/stats.py": "7682d3086bf5395f163f423677485432ee2c035aada2f370c0f82b291e53ca47",
+      "v1/metrics/loggers.py": "d5a91626cf79118f98ae6438c842cb30fc44ca14463c7e2af5871e3da8e51bcf",
+      "v1/engine/output_processor.py": "7cd99f14e0c0dc5f8cd69100d12489abfddee21d5fb3d6594a713beeefe3cdb0"
+    }
+  },
+  "limitations": [
+    "Only four-request aggregate server histograms were saved; the question-2 server prefill duration is not individually known.",
+    "No unprofiled request-stage timestamps, worker OS scheduling/GC trace, or device counters were saved for the 499ms outlier.",
+    "Existing detailed traces are profiled question 0; cannot identify the exact source of the unprofiled question-2 extra 132ms.",
+    "Variation of the same optimized request supports a transient component, but does not prove absence of a systematic first-token regression.",
+    "Early-count scheduling also runs on the first/prefill iteration; only the fast metadata builder is decode-only. Clone CPU scope durations do not measure total asynchronous impact."
+  ]
+}
