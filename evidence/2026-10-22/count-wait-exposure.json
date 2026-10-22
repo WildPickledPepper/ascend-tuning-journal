@@ -1,0 +1,788 @@
+{
+  "baseline": {
+    "steady_rounds": 27,
+    "copies": {
+      "valid_count": {
+        "host_submit_ms": {
+          "count": 27,
+          "sum": 283.789135,
+          "mean": 10.510708703703704,
+          "median": 10.480565,
+          "min": 10.094795,
+          "max": 11.055445,
+          "p95": 11.006355
+        },
+        "device_start_ms": {
+          "count": 27,
+          "sum": 1625.19256,
+          "mean": 60.192317037037036,
+          "median": 60.19918,
+          "min": 60.11008,
+          "max": 60.24234,
+          "p95": 60.23856
+        },
+        "device_end_ms": {
+          "count": 27,
+          "sum": 1625.2437200000002,
+          "mean": 60.194211851851854,
+          "median": 60.20104,
+          "min": 60.11198,
+          "max": 60.2442,
+          "p95": 60.24038
+        },
+        "copy_device_us": {
+          "count": 27,
+          "sum": 51.16,
+          "mean": 1.8948148148148147,
+          "median": 1.86,
+          "min": 1.8,
+          "max": 2.08,
+          "p95": 2.04
+        },
+        "host_submit_to_device_start_ms": {
+          "count": 27,
+          "sum": 1341.4034249999997,
+          "mean": 49.68160833333334,
+          "median": 49.726885,
+          "min": 49.114755,
+          "max": 50.092605,
+          "p95": 50.059705
+        }
+      },
+      "accepted_count": {
+        "host_submit_ms": {
+          "count": 27,
+          "sum": 899.8507750000001,
+          "mean": 33.32780648148148,
+          "median": 33.330045,
+          "min": 32.668275,
+          "max": 34.563125,
+          "p95": 33.750995
+        },
+        "device_start_ms": {
+          "count": 27,
+          "sum": 1624.5654200000001,
+          "mean": 60.16908962962963,
+          "median": 60.17686,
+          "min": 60.08602,
+          "max": 60.21942,
+          "p95": 60.21458
+        },
+        "device_end_ms": {
+          "count": 27,
+          "sum": 1624.61662,
+          "mean": 60.170985925925926,
+          "median": 60.17874,
+          "min": 60.08792,
+          "max": 60.22132,
+          "p95": 60.21656
+        },
+        "copy_device_us": {
+          "count": 27,
+          "sum": 51.19999999999998,
+          "mean": 1.8962962962962964,
+          "median": 1.88,
+          "min": 1.82,
+          "max": 2.04,
+          "p95": 2.04
+        },
+        "host_submit_to_device_start_ms": {
+          "count": 27,
+          "sum": 724.714645,
+          "mean": 26.841283148148147,
+          "median": 26.849935,
+          "min": 25.656295,
+          "max": 27.469645,
+          "p95": 27.439765
+        }
+      },
+      "async_sampled_ids": {
+        "host_submit_ms": {
+          "count": 27,
+          "sum": 915.0067149999999,
+          "mean": 33.88913759259259,
+          "median": 33.878905,
+          "min": 33.245465,
+          "max": 35.107685,
+          "p95": 34.303895
+        },
+        "device_start_ms": {
+          "count": 27,
+          "sum": 1816.4592799999998,
+          "mean": 67.27626962962962,
+          "median": 67.27852,
+          "min": 67.19368,
+          "max": 67.33222,
+          "p95": 67.32542
+        },
+        "device_end_ms": {
+          "count": 27,
+          "sum": 1816.5143199999998,
+          "mean": 67.27830814814814,
+          "median": 67.28052,
+          "min": 67.19566,
+          "max": 67.33426,
+          "p95": 67.32736
+        },
+        "copy_device_us": {
+          "count": 27,
+          "sum": 55.040000000000006,
+          "mean": 2.0385185185185186,
+          "median": 2.04,
+          "min": 1.84,
+          "max": 2.2,
+          "p95": 2.2
+        },
+        "host_submit_to_device_start_ms": {
+          "count": 27,
+          "sum": 901.4525650000003,
+          "mean": 33.387132037037034,
+          "median": 33.418735,
+          "min": 32.217615,
+          "max": 34.019655,
+          "p95": 33.958505
+        }
+      }
+    },
+    "syncs": {
+      "1": {
+        "arrive_ms": {
+          "count": 27,
+          "sum": 952.9598750000001,
+          "mean": 35.294810185185185,
+          "median": 35.258875,
+          "min": 34.551045,
+          "max": 36.465315,
+          "p95": 35.681145
+        },
+        "return_ms": {
+          "count": 27,
+          "sum": 954.4226050000002,
+          "mean": 35.34898537037037,
+          "median": 35.312505,
+          "min": 34.602835,
+          "max": 36.518625,
+          "p95": 35.733515
+        },
+        "wait_ms": {
+          "count": 27,
+          "sum": 1.4627299999999996,
+          "mean": 0.05417518518518519,
+          "median": 0.05306,
+          "min": 0.05118,
+          "max": 0.06828,
+          "p95": 0.05984
+        }
+      },
+      "2": {
+        "arrive_ms": {
+          "count": 27,
+          "sum": 1025.979365,
+          "mean": 37.99923574074074,
+          "median": 38.015655,
+          "min": 37.148025,
+          "max": 39.361875,
+          "p95": 38.482985
+        },
+        "return_ms": {
+          "count": 27,
+          "sum": 1626.3294649999996,
+          "mean": 60.23442462962963,
+          "median": 60.244525,
+          "min": 60.151335,
+          "max": 60.285725,
+          "p95": 60.277835
+        },
+        "wait_ms": {
+          "count": 27,
+          "sum": 600.3500999999999,
+          "mean": 22.23518888888889,
+          "median": 22.21545,
+          "min": 20.92385,
+          "max": 23.05161,
+          "p95": 22.92963
+        }
+      },
+      "3": {
+        "arrive_ms": {
+          "count": 27,
+          "sum": 1685.8133950000001,
+          "mean": 62.43753314814815,
+          "median": 62.410355,
+          "min": 62.323915,
+          "max": 62.648595,
+          "p95": 62.645995
+        },
+        "return_ms": {
+          "count": 27,
+          "sum": 1687.891345,
+          "mean": 62.51449425925926,
+          "median": 62.490605,
+          "min": 62.404605,
+          "max": 62.729665,
+          "p95": 62.728735
+        },
+        "wait_ms": {
+          "count": 27,
+          "sum": 2.0779500000000004,
+          "mean": 0.07696111111111112,
+          "median": 0.07387,
+          "min": 0.0703,
+          "max": 0.0935,
+          "p95": 0.08744
+        }
+      }
+    },
+    "valid_ready_minus_sync3_arrival_ms": {
+      "count": 27,
+      "sum": -60.56967499999999,
+      "mean": -2.243321296296296,
+      "median": -2.211934999999997,
+      "min": -2.441935000000001,
+      "max": -2.1343850000000018,
+      "p95": -2.1520950000000028
+    },
+    "sync3_return_minus_valid_copy_end_ms": {
+      "count": 27,
+      "sum": 62.647625000000005,
+      "mean": 2.3202824074074075,
+      "median": 2.2881649999999993,
+      "min": 2.215395000000001,
+      "max": 2.524675000000002,
+      "p95": 2.5104849999999956
+    },
+    "examples": [
+      {
+        "round": 0,
+        "copies": {
+          "valid_count": {
+            "host_submit_ms": 11.006355,
+            "device_start_ms": 60.24234,
+            "device_end_ms": 60.2442,
+            "copy_device_us": 1.86,
+            "host_submit_to_device_start_ms": 49.235985
+          },
+          "accepted_count": {
+            "host_submit_ms": 34.563125,
+            "device_start_ms": 60.21942,
+            "device_end_ms": 60.22132,
+            "copy_device_us": 1.9,
+            "host_submit_to_device_start_ms": 25.656295
+          },
+          "async_sampled_ids": {
+            "host_submit_ms": 35.107685,
+            "device_start_ms": 67.3253,
+            "device_end_ms": 67.32736,
+            "copy_device_us": 2.06,
+            "host_submit_to_device_start_ms": 32.217615
+          }
+        },
+        "syncs": {
+          "1": {
+            "arrive_ms": 36.465315,
+            "return_ms": 36.518625,
+            "wait_ms": 0.05331
+          },
+          "2": {
+            "arrive_ms": 39.361875,
+            "return_ms": 60.285725,
+            "wait_ms": 20.92385
+          },
+          "3": {
+            "arrive_ms": 62.396295,
+            "return_ms": 62.483485,
+            "wait_ms": 0.08719
+          }
+        },
+        "valid_ready_minus_sync3_arrival_ms": -2.1520950000000028,
+        "sync3_return_minus_valid_copy_end_ms": 2.2392850000000024
+      },
+      {
+        "round": 1,
+        "copies": {
+          "valid_count": {
+            "host_submit_ms": 10.412335,
+            "device_start_ms": 60.2306,
+            "device_end_ms": 60.23246,
+            "copy_device_us": 1.86,
+            "host_submit_to_device_start_ms": 49.818265
+          },
+          "accepted_count": {
+            "host_submit_ms": 33.358425,
+            "device_start_ms": 60.20836,
+            "device_end_ms": 60.2104,
+            "copy_device_us": 2.04,
+            "host_submit_to_device_start_ms": 26.849935
+          },
+          "async_sampled_ids": {
+            "host_submit_ms": 33.902705,
+            "device_start_ms": 67.32144,
+            "device_end_ms": 67.32364,
+            "copy_device_us": 2.2,
+            "host_submit_to_device_start_ms": 33.418735
+          }
+        },
+        "syncs": {
+          "1": {
+            "arrive_ms": 35.233605,
+            "return_ms": 35.284855,
+            "wait_ms": 0.05125
+          },
+          "2": {
+            "arrive_ms": 37.787225,
+            "return_ms": 60.276815,
+            "wait_ms": 22.48959
+          },
+          "3": {
+            "arrive_ms": 62.453345,
+            "return_ms": 62.525495,
+            "wait_ms": 0.07215
+          }
+        },
+        "valid_ready_minus_sync3_arrival_ms": -2.2208849999999956,
+        "sync3_return_minus_valid_copy_end_ms": 2.293034999999996
+      },
+      {
+        "round": 2,
+        "copies": {
+          "valid_count": {
+            "host_submit_ms": 10.689885,
+            "device_start_ms": 60.11008,
+            "device_end_ms": 60.11198,
+            "copy_device_us": 1.9,
+            "host_submit_to_device_start_ms": 49.420195
+          },
+          "accepted_count": {
+            "host_submit_ms": 33.125115,
+            "device_start_ms": 60.08602,
+            "device_end_ms": 60.08792,
+            "copy_device_us": 1.9,
+            "host_submit_to_device_start_ms": 26.960905
+          },
+          "async_sampled_ids": {
+            "host_submit_ms": 33.673025,
+            "device_start_ms": 67.213,
+            "device_end_ms": 67.21506,
+            "copy_device_us": 2.06,
+            "host_submit_to_device_start_ms": 33.539975
+          }
+        },
+        "syncs": {
+          "1": {
+            "arrive_ms": 35.051265,
+            "return_ms": 35.103215,
+            "wait_ms": 0.05195
+          },
+          "2": {
+            "arrive_ms": 37.642285,
+            "return_ms": 60.151335,
+            "wait_ms": 22.50905
+          },
+          "3": {
+            "arrive_ms": 62.323915,
+            "return_ms": 62.404605,
+            "wait_ms": 0.08069
+          }
+        },
+        "valid_ready_minus_sync3_arrival_ms": -2.211934999999997,
+        "sync3_return_minus_valid_copy_end_ms": 2.292624999999994
+      }
+    ],
+    "method": "CPU memcpy scope -> torch_to_npu flow -> device MEMCPY_ASYNC; roles from enclosing original scopes/source. All times relative to the preceding main MODEL_EXECUTE. Copy duration excludes queue/dependency waiting."
+  },
+  "early": {
+    "steady_rounds": 27,
+    "copies": {
+      "accepted_count": {
+        "host_submit_ms": {
+          "count": 27,
+          "sum": 225.68046999999996,
+          "mean": 8.358535925925926,
+          "median": 8.25087,
+          "min": 8.11042,
+          "max": 9.87149,
+          "p95": 8.66323
+        },
+        "device_start_ms": {
+          "count": 27,
+          "sum": 1400.4302800000003,
+          "mean": 51.86778814814815,
+          "median": 51.85874,
+          "min": 51.79996,
+          "max": 51.95534,
+          "p95": 51.92154
+        },
+        "device_end_ms": {
+          "count": 27,
+          "sum": 1400.4814599999997,
+          "mean": 51.8696837037037,
+          "median": 51.86062,
+          "min": 51.80184,
+          "max": 51.95722,
+          "p95": 51.9235
+        },
+        "copy_device_us": {
+          "count": 27,
+          "sum": 51.17999999999998,
+          "mean": 1.8955555555555554,
+          "median": 1.88,
+          "min": 1.82,
+          "max": 2.0,
+          "p95": 1.98
+        },
+        "host_submit_to_device_start_ms": {
+          "count": 27,
+          "sum": 1174.74981,
+          "mean": 43.50925222222222,
+          "median": 43.59616,
+          "min": 41.97179,
+          "max": 43.74995,
+          "p95": 43.7471
+        }
+      },
+      "valid_count": {
+        "host_submit_ms": {
+          "count": 27,
+          "sum": 319.32755,
+          "mean": 11.826946296296295,
+          "median": 11.69138,
+          "min": 11.44985,
+          "max": 13.26426,
+          "p95": 12.3525
+        },
+        "device_start_ms": {
+          "count": 27,
+          "sum": 1625.0055200000002,
+          "mean": 60.18538962962963,
+          "median": 60.18772,
+          "min": 60.07776,
+          "max": 60.28562,
+          "p95": 60.2665
+        },
+        "device_end_ms": {
+          "count": 27,
+          "sum": 1625.0562000000002,
+          "mean": 60.187266666666666,
+          "median": 60.18962,
+          "min": 60.07964,
+          "max": 60.28744,
+          "p95": 60.26868
+        },
+        "copy_device_us": {
+          "count": 27,
+          "sum": 50.68,
+          "mean": 1.877037037037037,
+          "median": 1.86,
+          "min": 1.82,
+          "max": 2.18,
+          "p95": 1.9
+        },
+        "host_submit_to_device_start_ms": {
+          "count": 27,
+          "sum": 1305.6779700000002,
+          "mean": 48.358443333333334,
+          "median": 48.4978,
+          "min": 46.92346,
+          "max": 48.73215,
+          "p95": 48.72703
+        }
+      },
+      "async_sampled_ids": {
+        "host_submit_ms": {
+          "count": 27,
+          "sum": 940.0183599999998,
+          "mean": 34.81549481481481,
+          "median": 34.62002,
+          "min": 34.05767,
+          "max": 37.61411,
+          "p95": 35.48226
+        },
+        "device_start_ms": {
+          "count": 27,
+          "sum": 1816.4156199999998,
+          "mean": 67.27465259259259,
+          "median": 67.27352,
+          "min": 67.18058,
+          "max": 67.3771,
+          "p95": 67.3497
+        },
+        "device_end_ms": {
+          "count": 27,
+          "sum": 1816.4702599999998,
+          "mean": 67.2766762962963,
+          "median": 67.27552,
+          "min": 67.1826,
+          "max": 67.37922,
+          "p95": 67.35174
+        },
+        "copy_device_us": {
+          "count": 27,
+          "sum": 54.639999999999986,
+          "mean": 2.0237037037037036,
+          "median": 2.04,
+          "min": 1.9,
+          "max": 2.14,
+          "p95": 2.12
+        },
+        "host_submit_to_device_start_ms": {
+          "count": 27,
+          "sum": 876.3972600000002,
+          "mean": 32.459157777777776,
+          "median": 32.60195,
+          "min": 29.65941,
+          "max": 33.18158,
+          "p95": 33.17225
+        }
+      }
+    },
+    "syncs": {
+      "1": {
+        "arrive_ms": {
+          "count": 27,
+          "sum": 979.76739,
+          "mean": 36.28768111111111,
+          "median": 36.15074,
+          "min": 35.47355,
+          "max": 39.22659,
+          "p95": 36.93534
+        },
+        "return_ms": {
+          "count": 27,
+          "sum": 981.37192,
+          "mean": 36.347108148148145,
+          "median": 36.20524,
+          "min": 35.52829,
+          "max": 39.29215,
+          "p95": 36.99959
+        },
+        "wait_ms": {
+          "count": 27,
+          "sum": 1.6045300000000005,
+          "mean": 0.059427037037037035,
+          "median": 0.05371,
+          "min": 0.0517,
+          "max": 0.11341,
+          "p95": 0.09606
+        }
+      },
+      "2": {
+        "arrive_ms": {
+          "count": 27,
+          "sum": 1055.13383,
+          "mean": 39.07903074074074,
+          "median": 38.9688,
+          "min": 38.16743,
+          "max": 42.15705,
+          "p95": 39.88013
+        },
+        "return_ms": {
+          "count": 27,
+          "sum": 1402.0465199999996,
+          "mean": 51.92764888888889,
+          "median": 51.92318,
+          "min": 51.86077,
+          "max": 52.01468,
+          "p95": 51.98612
+        },
+        "wait_ms": {
+          "count": 27,
+          "sum": 346.91269,
+          "mean": 12.848618148148148,
+          "median": 12.9306,
+          "min": 9.74527,
+          "max": 13.73359,
+          "p95": 13.66493
+        }
+      },
+      "3": {
+        "arrive_ms": {
+          "count": 27,
+          "sum": 1460.8010399999998,
+          "mean": 54.10374222222222,
+          "median": 54.08481,
+          "min": 54.01102,
+          "max": 54.32627,
+          "p95": 54.20039
+        },
+        "return_ms": {
+          "count": 27,
+          "sum": 1626.5383100000001,
+          "mean": 60.24215962962963,
+          "median": 60.24283,
+          "min": 60.13413,
+          "max": 60.34132,
+          "p95": 60.32563
+        },
+        "wait_ms": {
+          "count": 27,
+          "sum": 165.73726999999997,
+          "mean": 6.138417407407408,
+          "median": 6.15554,
+          "min": 5.98038,
+          "max": 6.21991,
+          "p95": 6.21452
+        }
+      }
+    },
+    "valid_ready_minus_sync3_arrival_ms": {
+      "count": 27,
+      "sum": 164.25516000000002,
+      "mean": 6.083524444444444,
+      "median": 6.097439999999999,
+      "min": 5.924950000000003,
+      "max": 6.166029999999999,
+      "p95": 6.1595999999999975
+    },
+    "sync3_return_minus_valid_copy_end_ms": {
+      "count": 27,
+      "sum": 1.4821100000000271,
+      "mean": 0.05489296296296397,
+      "median": 0.054920000000002744,
+      "min": 0.05205000000000126,
+      "max": 0.06139000000000294,
+      "p95": 0.058610000000001605
+    },
+    "examples": [
+      {
+        "round": 0,
+        "copies": {
+          "accepted_count": {
+            "host_submit_ms": 9.87149,
+            "device_start_ms": 51.84328,
+            "device_end_ms": 51.8451,
+            "copy_device_us": 1.82,
+            "host_submit_to_device_start_ms": 41.97179
+          },
+          "valid_count": {
+            "host_submit_ms": 13.26426,
+            "device_start_ms": 60.18772,
+            "device_end_ms": 60.18962,
+            "copy_device_us": 1.9,
+            "host_submit_to_device_start_ms": 46.92346
+          },
+          "async_sampled_ids": {
+            "host_submit_ms": 37.61411,
+            "device_start_ms": 67.27352,
+            "device_end_ms": 67.27552,
+            "copy_device_us": 2.0,
+            "host_submit_to_device_start_ms": 29.65941
+          }
+        },
+        "syncs": {
+          "1": {
+            "arrive_ms": 39.22659,
+            "return_ms": 39.29215,
+            "wait_ms": 0.06556
+          },
+          "2": {
+            "arrive_ms": 42.15705,
+            "return_ms": 51.90232,
+            "wait_ms": 9.74527
+          },
+          "3": {
+            "arrive_ms": 54.07197,
+            "return_ms": 60.24625,
+            "wait_ms": 6.17428
+          }
+        },
+        "valid_ready_minus_sync3_arrival_ms": 6.117649999999998,
+        "sync3_return_minus_valid_copy_end_ms": 0.05663000000000551
+      },
+      {
+        "round": 1,
+        "copies": {
+          "accepted_count": {
+            "host_submit_ms": 8.19304,
+            "device_start_ms": 51.83896,
+            "device_end_ms": 51.84094,
+            "copy_device_us": 1.98,
+            "host_submit_to_device_start_ms": 43.64592
+          },
+          "valid_count": {
+            "host_submit_ms": 11.49975,
+            "device_start_ms": 60.2319,
+            "device_end_ms": 60.23374,
+            "copy_device_us": 1.84,
+            "host_submit_to_device_start_ms": 48.73215
+          },
+          "async_sampled_ids": {
+            "host_submit_ms": 34.62002,
+            "device_start_ms": 67.31534,
+            "device_end_ms": 67.31738,
+            "copy_device_us": 2.04,
+            "host_submit_to_device_start_ms": 32.69532
+          }
+        },
+        "syncs": {
+          "1": {
+            "arrive_ms": 36.15074,
+            "return_ms": 36.20524,
+            "wait_ms": 0.0545
+          },
+          "2": {
+            "arrive_ms": 38.9688,
+            "return_ms": 51.90191,
+            "wait_ms": 12.93311
+          },
+          "3": {
+            "arrive_ms": 54.08981,
+            "return_ms": 60.28613,
+            "wait_ms": 6.19632
+          }
+        },
+        "valid_ready_minus_sync3_arrival_ms": 6.1439299999999974,
+        "sync3_return_minus_valid_copy_end_ms": 0.0523900000000026
+      },
+      {
+        "round": 2,
+        "copies": {
+          "accepted_count": {
+            "host_submit_ms": 8.15579,
+            "device_start_ms": 51.79996,
+            "device_end_ms": 51.80184,
+            "copy_device_us": 1.88,
+            "host_submit_to_device_start_ms": 43.64417
+          },
+          "valid_count": {
+            "host_submit_ms": 11.526,
+            "device_start_ms": 60.07776,
+            "device_end_ms": 60.07964,
+            "copy_device_us": 1.88,
+            "host_submit_to_device_start_ms": 48.55176
+          },
+          "async_sampled_ids": {
+            "host_submit_ms": 34.57863,
+            "device_start_ms": 67.18058,
+            "device_end_ms": 67.1826,
+            "copy_device_us": 2.02,
+            "host_submit_to_device_start_ms": 32.60195
+          }
+        },
+        "syncs": {
+          "1": {
+            "arrive_ms": 36.00238,
+            "return_ms": 36.05805,
+            "wait_ms": 0.05567
+          },
+          "2": {
+            "arrive_ms": 38.72827,
+            "return_ms": 51.86077,
+            "wait_ms": 13.1325
+          },
+          "3": {
+            "arrive_ms": 54.0549,
+            "return_ms": 60.13413,
+            "wait_ms": 6.07923
+          }
+        },
+        "valid_ready_minus_sync3_arrival_ms": 6.024739999999994,
+        "sync3_return_minus_valid_copy_end_ms": 0.05449000000000126
+      }
+    ],
+    "method": "CPU memcpy scope -> torch_to_npu flow -> device MEMCPY_ASYNC; roles from enclosing original scopes/source. All times relative to the preceding main MODEL_EXECUTE. Copy duration excludes queue/dependency waiting."
+  },
+  "source": {
+    "archive_sha256": "416f8f4566373c1b7c04548a1c7484475773c7121e5b1bb6fd23f48c7d88d43d",
+    "analysis_sha256": "b82c5bc04157494d621f694d6ca98237c01266ad231e9c48edfdb3d04ec6cf7e"
+  }
+}

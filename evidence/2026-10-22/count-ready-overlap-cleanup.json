@@ -1,0 +1,32 @@
+{
+  "stage2": {
+    "utc": "2026-10-22T09:44:08.104414+00:00",
+    "beijing": "2026-10-22T17:44:08.104414+08:00",
+    "physical_card": 6,
+    "own_service_stopped": true,
+    "recorded_own_process_ids_absent": true,
+    "port8047_closed": true,
+    "physical_card_no_process_at_check": true,
+    "other_processes_stopped": false
+  },
+  "stage3": {
+    "utc": "2026-10-22T10:07:53.673432+00:00",
+    "beijing": "2026-10-22T18:07:53.673432+08:00",
+    "physical_card": 6,
+    "own_service_stopped": true,
+    "recorded_own_process_ids_absent": true,
+    "port8047_closed": true,
+    "physical_card_no_process_at_check": true,
+    "other_processes_stopped": false
+  },
+  "completion_recheck": {
+    "utc": "2026-10-22T10:22:40.816964+00:00",
+    "beijing": "2026-10-22T18:22:40.816964+08:00",
+    "physical_card": 6,
+    "own_service_stopped": true,
+    "recorded_own_process_ids_absent": true,
+    "port8047_closed": true,
+    "physical_card_no_process_at_check": true,
+    "other_processes_stopped": false
+  }
+}
