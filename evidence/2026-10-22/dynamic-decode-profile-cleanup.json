@@ -1,0 +1,10 @@
+{
+  "recorded_utc": "2026-10-22T07:34:51.967275+00:00",
+  "recorded_beijing": "2026-10-22T15:34:51.967275+08:00",
+  "own_service_stopped": true,
+  "recorded_own_process_ids_absent": true,
+  "port8047_closed": true,
+  "card7_no_process_at_later_check": false,
+  "other_device_process_present_at_later_check": true,
+  "scope": "Own capture service stopped. A later unrelated device process is only observed, never inspected further or stopped."
+}

@@ -1,0 +1,778 @@
+{
+  "definitions": {
+    "quantiles": "Linear interpolation at (n-1)*p; request percentile estimates use 32 observations.",
+    "TPOT_stream_end": "(HTTP stream E2E - first token arrival)/(output tokens-1); matches prior client reports.",
+    "TPOT_last_token": "(last token arrival - first token arrival)/(output tokens-1).",
+    "client_token_delivery_interval": "Adjacent token arrival timestamps; all IDs in one SSE event share that event's timestamp, hence zero gaps within a group. Not device-internal token generation ITL.",
+    "nonempty_stream_event_interval": "Gap between consecutive SSE events containing token IDs; not divided by group size. Not single-token ITL.",
+    "common": "Window throughput includes inter-request client serialization/file-writing gaps; request-E2E throughput excludes those gaps. Startup, warmup, audits and metrics excluded."
+  },
+  "arms": {
+    "full-vocab": {
+      "distributions": {
+        "E2E": {
+          "unit": "ms",
+          "n": 32,
+          "mean": 4520.678564687842,
+          "min": 1162.9766100086272,
+          "max": 22720.424760016613,
+          "p50": 3004.1150149772875,
+          "p75": 4645.323154982179,
+          "p90": 7450.208713940811,
+          "p95": 12690.193875960533,
+          "p99": 21128.294200695826
+        },
+        "TTFT": {
+          "unit": "ms",
+          "n": 32,
+          "mean": 338.14618781616446,
+          "min": 318.89688002411276,
+          "max": 369.5775100495666,
+          "p50": 334.15794995380566,
+          "p75": 342.0848899986595,
+          "p90": 359.2278670403175,
+          "p95": 364.60093799978495,
+          "p99": 368.7762840115465
+        },
+        "TPOT_stream_end": {
+          "unit": "ms/token",
+          "n": 32,
+          "mean": 15.436071704391889,
+          "min": 11.53396368112438,
+          "max": 25.743707856496,
+          "p50": 14.714685796958715,
+          "p75": 16.397813757338014,
+          "p90": 18.465321268280224,
+          "p95": 18.83844276052869,
+          "p99": 23.709730248326334
+        },
+        "TPOT_last_token": {
+          "unit": "ms/token",
+          "n": 32,
+          "mean": 15.426536608386368,
+          "min": 11.524450429572376,
+          "max": 25.714934761968575,
+          "p50": 14.701289845551042,
+          "p75": 16.390627554868644,
+          "p90": 18.419509724531352,
+          "p95": 18.82678592581259,
+          "p99": 23.68706375680372
+        },
+        "client_token_delivery_interval": {
+          "unit": "ms",
+          "n": 8732,
+          "mean": 15.322798132137883,
+          "min": 0.0,
+          "max": 82.04749005381018,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 72.33912199735641,
+          "p95": 72.78671248350292,
+          "p99": 74.8343314556405
+        },
+        "nonempty_stream_event_interval": {
+          "unit": "ms",
+          "n": 1850,
+          "mean": 72.32360718369081,
+          "min": 59.10362000577152,
+          "max": 82.04749005381018,
+          "p50": 72.30524503393099,
+          "p75": 72.75034999474883,
+          "p90": 73.66380409803241,
+          "p95": 74.79365597246215,
+          "p99": 78.70753993978724
+        },
+        "InputTokens": {
+          "unit": "token",
+          "n": 32,
+          "mean": 115.40625,
+          "min": 83.0,
+          "max": 168.0,
+          "p50": 114.0,
+          "p75": 122.5,
+          "p90": 125.9,
+          "p95": 155.5,
+          "p99": 165.83
+        },
+        "OutputTokens": {
+          "unit": "token",
+          "n": 32,
+          "mean": 273.875,
+          "min": 43.0,
+          "max": 1377.0,
+          "p50": 187.5,
+          "p75": 307.0,
+          "p90": 503.5000000000001,
+          "p95": 746.4499999999997,
+          "p99": 1246.4900000000005
+        },
+        "request_output_throughput": {
+          "unit": "token/s",
+          "n": 32,
+          "mean": 58.84264628343097,
+          "min": 30.307664663298503,
+          "max": 74.19600183079054,
+          "p50": 60.612532300983545,
+          "p75": 65.74553480681686,
+          "p90": 68.04751600784627,
+          "p95": 70.42519826723213,
+          "p99": 73.2367470385702
+        },
+        "tokens_per_nonempty_stream_event": {
+          "unit": "token/event",
+          "n": 1882,
+          "mean": 4.656748140276302,
+          "min": 1.0,
+          "max": 8.0,
+          "p50": 4.0,
+          "p75": 8.0,
+          "p90": 8.0,
+          "p95": 8.0,
+          "p99": 8.0
+        },
+        "nonempty_events_per_request": {
+          "unit": "event",
+          "n": 32,
+          "mean": 58.8125,
+          "min": 12.0,
+          "max": 310.0,
+          "p50": 38.0,
+          "p75": 60.75,
+          "p90": 99.20000000000002,
+          "p95": 171.3499999999999,
+          "p99": 287.9900000000001
+        }
+      },
+      "common": {
+        "successful_requests": 32,
+        "failed_requests": 0,
+        "concurrency": 1,
+        "input_tokens": 3693,
+        "output_tokens": 8764,
+        "request_e2e_sum_s": 144.66171407001093,
+        "benchmark_window_s": 145.04562433995306,
+        "client_inter_request_gap_s": 0.3839102699421346,
+        "output_throughput_by_request_e2e": 60.582719182758666,
+        "request_throughput_by_window": 0.22062023687801485,
+        "input_throughput_by_window": 25.4609542122034,
+        "output_throughput_by_window": 60.42236737496631,
+        "total_token_throughput_by_window": 85.88332158716972,
+        "weighted_TPOT_stream_end_ms": 15.327649571678156,
+        "weighted_TPOT_last_token_ms": 15.322798132137883,
+        "zero_delivery_intervals": 6882,
+        "finish_reasons": {
+          "stop": 32
+        }
+      },
+      "delivery_validation": [
+        {
+          "question_id": 0,
+          "events": 28,
+          "tokens": 137,
+          "last_token_arrival_s": 2.2754318099468946,
+          "stream_end_tail_ms": 1.1285600485280156
+        },
+        {
+          "question_id": 1,
+          "events": 12,
+          "tokens": 44,
+          "last_token_arrival_s": 1.1607938199304044,
+          "stream_end_tail_ms": 2.1827900782227516
+        },
+        {
+          "question_id": 2,
+          "events": 116,
+          "tokens": 575,
+          "last_token_arrival_s": 8.684422970050946,
+          "stream_end_tail_ms": 1.3224799185991287
+        },
+        {
+          "question_id": 3,
+          "events": 19,
+          "tokens": 88,
+          "last_token_arrival_s": 1.6513726400444284,
+          "stream_end_tail_ms": 2.1304499823600054
+        },
+        {
+          "question_id": 4,
+          "events": 33,
+          "tokens": 139,
+          "last_token_arrival_s": 2.6605201199417934,
+          "stream_end_tail_ms": 1.182990032248199
+        },
+        {
+          "question_id": 5,
+          "events": 88,
+          "tokens": 408,
+          "last_token_arrival_s": 6.643723260029219,
+          "stream_end_tail_ms": 1.3333000242710114
+        },
+        {
+          "question_id": 6,
+          "events": 21,
+          "tokens": 115,
+          "last_token_arrival_s": 1.8012527900282294,
+          "stream_end_tail_ms": 1.1596899712458253
+        },
+        {
+          "question_id": 7,
+          "events": 81,
+          "tokens": 402,
+          "last_token_arrival_s": 6.126748549984768,
+          "stream_end_tail_ms": 1.869529951363802
+        },
+        {
+          "question_id": 8,
+          "events": 100,
+          "tokens": 508,
+          "last_token_arrival_s": 7.508236789959483,
+          "stream_end_tail_ms": 1.169529976323247
+        },
+        {
+          "question_id": 9,
+          "events": 41,
+          "tokens": 208,
+          "last_token_arrival_s": 3.23600793001242,
+          "stream_end_tail_ms": 1.2449700152501464
+        },
+        {
+          "question_id": 10,
+          "events": 27,
+          "tokens": 158,
+          "last_token_arrival_s": 2.2201159599935636,
+          "stream_end_tail_ms": 2.0552700152620673
+        },
+        {
+          "question_id": 11,
+          "events": 27,
+          "tokens": 164,
+          "last_token_arrival_s": 2.2088110300246626,
+          "stream_end_tail_ms": 1.550660002976656
+        },
+        {
+          "question_id": 12,
+          "events": 239,
+          "tokens": 956,
+          "last_token_arrival_s": 17.58332368999254,
+          "stream_end_tail_ms": 1.1960399569943547
+        },
+        {
+          "question_id": 13,
+          "events": 310,
+          "tokens": 1377,
+          "last_token_arrival_s": 22.719243310042657,
+          "stream_end_tail_ms": 1.1814499739557505
+        },
+        {
+          "question_id": 14,
+          "events": 30,
+          "tokens": 117,
+          "last_token_arrival_s": 2.4239662799518555,
+          "stream_end_tail_ms": 1.167900045402348
+        },
+        {
+          "question_id": 15,
+          "events": 50,
+          "tokens": 235,
+          "last_token_arrival_s": 3.8755367200355977,
+          "stream_end_tail_ms": 1.1481900000944734
+        },
+        {
+          "question_id": 16,
+          "events": 47,
+          "tokens": 194,
+          "last_token_arrival_s": 3.655954669928178,
+          "stream_end_tail_ms": 1.1705399956554174
+        },
+        {
+          "question_id": 17,
+          "events": 41,
+          "tokens": 202,
+          "last_token_arrival_s": 3.217590649961494,
+          "stream_end_tail_ms": 1.1528900358825922
+        },
+        {
+          "question_id": 18,
+          "events": 35,
+          "tokens": 129,
+          "last_token_arrival_s": 2.7883249699370936,
+          "stream_end_tail_ms": 1.1615200201049447
+        },
+        {
+          "question_id": 19,
+          "events": 72,
+          "tokens": 382,
+          "last_token_arrival_s": 5.466009509982541,
+          "stream_end_tail_ms": 1.1497399536892772
+        },
+        {
+          "question_id": 20,
+          "events": 92,
+          "tokens": 463,
+          "last_token_arrival_s": 6.916248740046285,
+          "stream_end_tail_ms": 1.1815199395641685
+        },
+        {
+          "question_id": 21,
+          "events": 56,
+          "tokens": 245,
+          "last_token_arrival_s": 4.302207809989341,
+          "stream_end_tail_ms": 1.6406900249421597
+        },
+        {
+          "question_id": 22,
+          "events": 14,
+          "tokens": 59,
+          "last_token_arrival_s": 1.2634447599994019,
+          "stream_end_tail_ms": 1.1877500219270587
+        },
+        {
+          "question_id": 23,
+          "events": 16,
+          "tokens": 43,
+          "last_token_arrival_s": 1.417574550025165,
+          "stream_end_tail_ms": 1.208469970151782
+        },
+        {
+          "question_id": 24,
+          "events": 29,
+          "tokens": 159,
+          "last_token_arrival_s": 2.3561175499344245,
+          "stream_end_tail_ms": 1.1828900314867496
+        },
+        {
+          "question_id": 25,
+          "events": 57,
+          "tokens": 282,
+          "last_token_arrival_s": 4.3701393799856305,
+          "stream_end_tail_ms": 1.2384100118651986
+        },
+        {
+          "question_id": 26,
+          "events": 22,
+          "tokens": 112,
+          "last_token_arrival_s": 1.8514924499904737,
+          "stream_end_tail_ms": 1.2147800298407674
+        },
+        {
+          "question_id": 27,
+          "events": 29,
+          "tokens": 136,
+          "last_token_arrival_s": 2.347235570079647,
+          "stream_end_tail_ms": 1.1887300061061978
+        },
+        {
+          "question_id": 28,
+          "events": 22,
+          "tokens": 83,
+          "last_token_arrival_s": 1.8609078000299633,
+          "stream_end_tail_ms": 1.1291200062260032
+        },
+        {
+          "question_id": 29,
+          "events": 49,
+          "tokens": 230,
+          "last_token_arrival_s": 3.7947207500692457,
+          "stream_end_tail_ms": 1.2172600254416466
+        },
+        {
+          "question_id": 30,
+          "events": 46,
+          "tokens": 233,
+          "last_token_arrival_s": 3.5748605099506676,
+          "stream_end_tail_ms": 1.1544900480657816
+        },
+        {
+          "question_id": 31,
+          "events": 33,
+          "tokens": 181,
+          "last_token_arrival_s": 2.6570139600662515,
+          "stream_end_tail_ms": 1.1601699516177177
+        }
+      ]
+    },
+    "dynamic4096": {
+      "distributions": {
+        "E2E": {
+          "unit": "ms",
+          "n": 32,
+          "mean": 4365.5267009417,
+          "min": 1063.5842899791896,
+          "max": 21764.339039917104,
+          "p50": 2935.1830650120974,
+          "p75": 4485.402669990435,
+          "p90": 7196.749265037944,
+          "p95": 12225.448944489466,
+          "p99": 20219.21905062977
+        },
+        "TTFT": {
+          "unit": "ms",
+          "n": 32,
+          "mean": 351.42355093557853,
+          "min": 325.975289917551,
+          "max": 390.9722500247881,
+          "p50": 348.5437500057742,
+          "p75": 365.5250200245064,
+          "p90": 372.6547899655998,
+          "p95": 381.1094495584257,
+          "p99": 389.15249423356727
+        },
+        "TPOT_stream_end": {
+          "unit": "ms/token",
+          "n": 32,
+          "mean": 14.804798100622305,
+          "min": 11.766859554169569,
+          "max": 27.53945857208843,
+          "p50": 14.060349727830216,
+          "p75": 15.707424903664776,
+          "p90": 16.5963418418479,
+          "p95": 17.912762818691043,
+          "p99": 24.831976219447835
+        },
+        "TPOT_last_token": {
+          "unit": "ms/token",
+          "n": 32,
+          "mean": 14.79482885931671,
+          "min": 11.756995540841892,
+          "max": 27.5119688095791,
+          "p50": 14.051699773388574,
+          "p75": 15.700077192909259,
+          "p90": 16.581946512262103,
+          "p95": 17.90612671247638,
+          "p99": 24.809111292678228
+        },
+        "client_token_delivery_interval": {
+          "unit": "ms",
+          "n": 8732,
+          "mean": 14.704874670170325,
+          "min": 0.0,
+          "max": 81.03462995495647,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 68.68185497587547,
+          "p95": 69.20094397501089,
+          "p99": 70.33101536915638
+        },
+        "nonempty_stream_event_interval": {
+          "unit": "ms",
+          "n": 1870,
+          "mean": 68.66468749728732,
+          "min": 59.77119004819542,
+          "max": 81.03462995495647,
+          "p50": 68.61828500404954,
+          "p75": 69.15600749198347,
+          "p90": 69.78907692246139,
+          "p95": 70.30149351339787,
+          "p99": 72.3102083185222
+        },
+        "InputTokens": {
+          "unit": "token",
+          "n": 32,
+          "mean": 115.40625,
+          "min": 83.0,
+          "max": 168.0,
+          "p50": 114.0,
+          "p75": 122.5,
+          "p90": 125.9,
+          "p95": 155.5,
+          "p99": 165.83
+        },
+        "OutputTokens": {
+          "unit": "token",
+          "n": 32,
+          "mean": 273.875,
+          "min": 43.0,
+          "max": 1377.0,
+          "p50": 187.5,
+          "p75": 307.0,
+          "p90": 503.5000000000001,
+          "p95": 746.4499999999997,
+          "p99": 1246.4900000000005
+        },
+        "request_output_throughput": {
+          "unit": "token/s",
+          "n": 32,
+          "mean": 60.76671292892491,
+          "min": 28.899886245028526,
+          "max": 71.63658177792321,
+          "p50": 63.6860262365326,
+          "p75": 67.85711101792609,
+          "p90": 70.13300196704989,
+          "p95": 71.06930442993512,
+          "p99": 71.59916354496171
+        },
+        "tokens_per_nonempty_stream_event": {
+          "unit": "token/event",
+          "n": 1902,
+          "mean": 4.607781282860147,
+          "min": 1.0,
+          "max": 8.0,
+          "p50": 4.0,
+          "p75": 8.0,
+          "p90": 8.0,
+          "p95": 8.0,
+          "p99": 8.0
+        },
+        "nonempty_events_per_request": {
+          "unit": "event",
+          "n": 32,
+          "mean": 59.4375,
+          "min": 11.0,
+          "max": 312.0,
+          "p50": 38.5,
+          "p75": 61.5,
+          "p90": 100.4,
+          "p95": 173.44999999999993,
+          "p99": 289.68000000000006
+        }
+      },
+      "common": {
+        "successful_requests": 32,
+        "failed_requests": 0,
+        "concurrency": 1,
+        "input_tokens": 3693,
+        "output_tokens": 8764,
+        "request_e2e_sum_s": 139.6968544301344,
+        "benchmark_window_s": 140.13195042009465,
+        "client_inter_request_gap_s": 0.4350959899602458,
+        "output_throughput_by_request_e2e": 62.735843521681275,
+        "request_throughput_by_window": 0.22835620216566443,
+        "input_throughput_by_window": 26.35373295618121,
+        "output_throughput_by_window": 62.54105486812135,
+        "total_token_throughput_by_window": 88.89478782430255,
+        "weighted_TPOT_stream_end_ms": 14.710410077896919,
+        "weighted_TPOT_last_token_ms": 14.704874670170325,
+        "zero_delivery_intervals": 6862,
+        "finish_reasons": {
+          "stop": 32
+        }
+      },
+      "delivery_validation": [
+        {
+          "question_id": 0,
+          "events": 29,
+          "tokens": 137,
+          "last_token_arrival_s": 2.2877755399094895,
+          "stream_end_tail_ms": 1.751700066961348
+        },
+        {
+          "question_id": 1,
+          "events": 11,
+          "tokens": 44,
+          "last_token_arrival_s": 1.0617904999526218,
+          "stream_end_tail_ms": 1.7937900265678763
+        },
+        {
+          "question_id": 2,
+          "events": 119,
+          "tokens": 575,
+          "last_token_arrival_s": 8.49722473998554,
+          "stream_end_tail_ms": 1.7070600297302008
+        },
+        {
+          "question_id": 3,
+          "events": 19,
+          "tokens": 88,
+          "last_token_arrival_s": 1.6320013500517234,
+          "stream_end_tail_ms": 1.6051999991759658
+        },
+        {
+          "question_id": 4,
+          "events": 34,
+          "tokens": 139,
+          "last_token_arrival_s": 2.6454412400489673,
+          "stream_end_tail_ms": 1.843529986217618
+        },
+        {
+          "question_id": 5,
+          "events": 91,
+          "tokens": 408,
+          "last_token_arrival_s": 6.543534750002436,
+          "stream_end_tail_ms": 1.7718600574880838
+        },
+        {
+          "question_id": 6,
+          "events": 21,
+          "tokens": 115,
+          "last_token_arrival_s": 1.7350028000073507,
+          "stream_end_tail_ms": 1.587209990248084
+        },
+        {
+          "question_id": 7,
+          "events": 81,
+          "tokens": 402,
+          "last_token_arrival_s": 5.899351899977773,
+          "stream_end_tail_ms": 1.6332999803125858
+        },
+        {
+          "question_id": 8,
+          "events": 101,
+          "tokens": 508,
+          "last_token_arrival_s": 7.241728289984167,
+          "stream_end_tail_ms": 1.2024800525978208
+        },
+        {
+          "question_id": 9,
+          "events": 43,
+          "tokens": 208,
+          "last_token_arrival_s": 3.245514199952595,
+          "stream_end_tail_ms": 1.5845299931243062
+        },
+        {
+          "question_id": 10,
+          "events": 28,
+          "tokens": 158,
+          "last_token_arrival_s": 2.2040283899987116,
+          "stream_end_tail_ms": 1.548650092445314
+        },
+        {
+          "question_id": 11,
+          "events": 29,
+          "tokens": 164,
+          "last_token_arrival_s": 2.291564719984308,
+          "stream_end_tail_ms": 1.6323300078511238
+        },
+        {
+          "question_id": 12,
+          "events": 240,
+          "tokens": 956,
+          "last_token_arrival_s": 16.778380789910443,
+          "stream_end_tail_ms": 1.7002200474962592
+        },
+        {
+          "question_id": 13,
+          "events": 312,
+          "tokens": 1377,
+          "last_token_arrival_s": 21.76211492996663,
+          "stream_end_tail_ms": 2.2241099504753947
+        },
+        {
+          "question_id": 14,
+          "events": 28,
+          "tokens": 117,
+          "last_token_arrival_s": 2.1847210900159553,
+          "stream_end_tail_ms": 1.6749999485909939
+        },
+        {
+          "question_id": 15,
+          "events": 49,
+          "tokens": 235,
+          "last_token_arrival_s": 3.613831349997781,
+          "stream_end_tail_ms": 1.9786999328061938
+        },
+        {
+          "question_id": 16,
+          "events": 46,
+          "tokens": 194,
+          "last_token_arrival_s": 3.4442711499286816,
+          "stream_end_tail_ms": 1.1836399789899588
+        },
+        {
+          "question_id": 17,
+          "events": 41,
+          "tokens": 202,
+          "last_token_arrival_s": 3.1143373500090092,
+          "stream_end_tail_ms": 1.5952299581840634
+        },
+        {
+          "question_id": 18,
+          "events": 36,
+          "tokens": 129,
+          "last_token_arrival_s": 2.7528244700515643,
+          "stream_end_tail_ms": 1.6090800054371357
+        },
+        {
+          "question_id": 19,
+          "events": 75,
+          "tokens": 382,
+          "last_token_arrival_s": 5.448014930007048,
+          "stream_end_tail_ms": 1.8225800013169646
+        },
+        {
+          "question_id": 20,
+          "events": 95,
+          "tokens": 463,
+          "last_token_arrival_s": 6.779289790079929,
+          "stream_end_tail_ms": 1.8259299686178565
+        },
+        {
+          "question_id": 21,
+          "events": 57,
+          "tokens": 245,
+          "last_token_arrival_s": 4.146915910067037,
+          "stream_end_tail_ms": 1.2160299811512232
+        },
+        {
+          "question_id": 22,
+          "events": 14,
+          "tokens": 59,
+          "last_token_arrival_s": 1.2343963199527934,
+          "stream_end_tail_ms": 1.193090109154582
+        },
+        {
+          "question_id": 23,
+          "events": 18,
+          "tokens": 43,
+          "last_token_arrival_s": 1.4867405599216,
+          "stream_end_tail_ms": 1.1545700253918767
+        },
+        {
+          "question_id": 24,
+          "events": 30,
+          "tokens": 159,
+          "last_token_arrival_s": 2.3450349700869992,
+          "stream_end_tail_ms": 1.2025299947708845
+        },
+        {
+          "question_id": 25,
+          "events": 57,
+          "tokens": 282,
+          "last_token_arrival_s": 4.162729420000687,
+          "stream_end_tail_ms": 1.1949699837714434
+        },
+        {
+          "question_id": 26,
+          "events": 22,
+          "tokens": 112,
+          "last_token_arrival_s": 1.7677501100115478,
+          "stream_end_tail_ms": 1.1866699205711484
+        },
+        {
+          "question_id": 27,
+          "events": 29,
+          "tokens": 136,
+          "last_token_arrival_s": 2.2391458300407976,
+          "stream_end_tail_ms": 1.1939300457015634
+        },
+        {
+          "question_id": 28,
+          "events": 21,
+          "tokens": 83,
+          "last_token_arrival_s": 1.6920229700626805,
+          "stream_end_tail_ms": 1.18985993321985
+        },
+        {
+          "question_id": 29,
+          "events": 48,
+          "tokens": 230,
+          "last_token_arrival_s": 3.527031990000978,
+          "stream_end_tail_ms": 1.1700200848281384
+        },
+        {
+          "question_id": 30,
+          "events": 45,
+          "tokens": 233,
+          "last_token_arrival_s": 3.3252327499212697,
+          "stream_end_tail_ms": 1.1605400359258056
+        },
+        {
+          "question_id": 31,
+          "events": 33,
+          "tokens": 181,
+          "last_token_arrival_s": 2.5587741499766707,
+          "stream_end_tail_ms": 1.1968400795012712
+        }
+      ]
+    }
+  }
+}

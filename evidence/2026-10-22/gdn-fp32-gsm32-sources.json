@@ -1,0 +1,73 @@
+{
+  "benchmark_sources": [
+    {
+      "name": "analyze.py",
+      "bytes": 5623,
+      "sha256": "38612eb1887fd9f6880938380219c5c86ada3d527af3725b2d0c2e0aa2d0c059"
+    },
+    {
+      "name": "bench.py",
+      "bytes": 2405,
+      "sha256": "7e42fe8b14414ca4cd4468f809a4ae3b01f910d9d5166e168bb893c3cb031a0f"
+    },
+    {
+      "name": "benchmark_controller.py",
+      "bytes": 2649,
+      "sha256": "36aa5b528f7118529586995763a9806847ad772993832f61babca5749da80572"
+    },
+    {
+      "name": "client.py",
+      "bytes": 3220,
+      "sha256": "78fc68914d40857f204c9d7c5c07f3e8a8a7d4874f6d5515c9fad6ff5a7d8760"
+    },
+    {
+      "name": "collect_receipts.py",
+      "bytes": 2231,
+      "sha256": "15761899d64afaf304a4033839487591f09d86437bcfa057a47e5e8fdb064a0d"
+    },
+    {
+      "name": "export_evidence.py",
+      "bytes": 4925,
+      "sha256": "5a9cf6653f1bc08ca2662ae7c4b7bb5cda5134eb48b69f83b79a7e28a91e80d8"
+    },
+    {
+      "name": "latency_statistics.py",
+      "bytes": 6032,
+      "sha256": "57830fd0e3068876398d621af5fc5b7d5be5e2e9573054b0cc2b06039b4b132b"
+    }
+  ],
+  "serving_sources": [
+    {
+      "name": "start.sh",
+      "bytes": 1916,
+      "sha256": "f829b895af2adfae2ef76f68063b9e28a3a62293af9aff85a592ba2d148d39bc"
+    },
+    {
+      "name": "model_extension.py",
+      "bytes": 6966,
+      "sha256": "74949775c8a0d7a116301538c579b9a3e12c6269353e615551fba09151b0b153"
+    },
+    {
+      "name": "dynamic_vocab.py",
+      "bytes": 7210,
+      "sha256": "3c69d5239086c9b5d795b92a70dd37a8fe3974a485c9dd93de32a37c4c968e99"
+    },
+    {
+      "name": "graph_audit_base.py",
+      "bytes": 2390,
+      "sha256": "500ef150330dcd37b2a8559f33a3ce2e2e81e46655db1ab38c09b577c4ad2d39"
+    },
+    {
+      "name": "serve.py",
+      "bytes": 173,
+      "sha256": "4f4a7ccc308e177d0a17046b3db37e44c3e6fb008d897fdb5d1064b46119819a"
+    }
+  ],
+  "private_seed": {
+    "name": "seed-private.json",
+    "bytes": 15355,
+    "sha256": "46cdc6256344607e1ee8ec3d4b14e36233295e6ddf25a7288c9cec9c0228571f"
+  },
+  "serving_entry": "../gdn-fp32-state/start.sh; unchanged source and separate existing full/dynamic caches",
+  "discarded_launch_attempt": "Windows CRLF prevented bash launch before serving or timing; normalized to LF and restarted."
+}

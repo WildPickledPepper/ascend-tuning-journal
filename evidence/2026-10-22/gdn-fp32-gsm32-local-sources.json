@@ -1,0 +1,45 @@
+{
+  "files": [
+    {
+      "name": "analyze.py",
+      "bytes": 5623,
+      "sha256": "38612eb1887fd9f6880938380219c5c86ada3d527af3725b2d0c2e0aa2d0c059"
+    },
+    {
+      "name": "bench.py",
+      "bytes": 2405,
+      "sha256": "7e42fe8b14414ca4cd4468f809a4ae3b01f910d9d5166e168bb893c3cb031a0f"
+    },
+    {
+      "name": "benchmark_controller.py",
+      "bytes": 2649,
+      "sha256": "36aa5b528f7118529586995763a9806847ad772993832f61babca5749da80572"
+    },
+    {
+      "name": "client.py",
+      "bytes": 3220,
+      "sha256": "78fc68914d40857f204c9d7c5c07f3e8a8a7d4874f6d5515c9fad6ff5a7d8760"
+    },
+    {
+      "name": "collect_receipts.py",
+      "bytes": 2231,
+      "sha256": "15761899d64afaf304a4033839487591f09d86437bcfa057a47e5e8fdb064a0d"
+    },
+    {
+      "name": "export_evidence.py",
+      "bytes": 4925,
+      "sha256": "5a9cf6653f1bc08ca2662ae7c4b7bb5cda5134eb48b69f83b79a7e28a91e80d8"
+    },
+    {
+      "name": "latency_statistics.py",
+      "bytes": 6032,
+      "sha256": "57830fd0e3068876398d621af5fc5b7d5be5e2e9573054b0cc2b06039b4b132b"
+    },
+    {
+      "name": "render_report.py",
+      "bytes": 8000,
+      "sha256": "5cac74ef31c079d7ee4aea1cfefb5a7a483fad93e3db447fb3d8466841633160"
+    }
+  ],
+  "note": "Local archived benchmark/analysis/report sources. Server-measured source hashes are in the separate sources receipt."
+}

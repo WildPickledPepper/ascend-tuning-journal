@@ -1,0 +1,1470 @@
+{
+  "baseline": {
+    "natural": {
+      "requests": 32,
+      "input_tokens": [
+        121,
+        83,
+        114,
+        92,
+        168,
+        111,
+        97,
+        126,
+        161,
+        117,
+        117,
+        121,
+        124,
+        114,
+        109,
+        151,
+        110,
+        114,
+        85,
+        122,
+        120,
+        102,
+        112,
+        97,
+        96,
+        124,
+        125,
+        113,
+        107,
+        124,
+        96,
+        120
+      ],
+      "output_tokens": 8764,
+      "e2e_total_s": 144.66171407001093,
+      "e2e_mean_s": 4.520678564687842,
+      "output_tok_s": 60.582719182758666,
+      "ttft_mean_ms": 338.14618781616446,
+      "weighted_tpot_ms": 15.327649571678156,
+      "acceptance": {
+        "rounds": 1850.0,
+        "drafted": 12950.0,
+        "accepted": 6980.0,
+        "accepted_per_round": 3.772972972972973,
+        "acceptance_fraction": 0.538996138996139,
+        "one_plus_accepted_per_round": 4.772972972972973,
+        "raw_counter_deltas": {
+          "vllm:spec_decode_num_drafts_total{engine=\"0\",model_name=\"Qwen3.8-27B\"}": 1850.0,
+          "vllm:spec_decode_num_draft_tokens_total{engine=\"0\",model_name=\"Qwen3.8-27B\"}": 12950.0,
+          "vllm:spec_decode_num_accepted_tokens_total{engine=\"0\",model_name=\"Qwen3.8-27B\"}": 6980.0,
+          "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"0\"}": 1620.0,
+          "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"1\"}": 1368.0,
+          "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"2\"}": 1141.0,
+          "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"3\"}": 937.0,
+          "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"4\"}": 766.0,
+          "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"5\"}": 626.0,
+          "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"6\"}": 522.0
+        }
+      },
+      "client_decode_ms_per_draft_round": 72.3465059783209
+    }
+  },
+  "candidate": {
+    "natural": {
+      "requests": 32,
+      "input_tokens": [
+        121,
+        83,
+        114,
+        92,
+        168,
+        111,
+        97,
+        126,
+        161,
+        117,
+        117,
+        121,
+        124,
+        114,
+        109,
+        151,
+        110,
+        114,
+        85,
+        122,
+        120,
+        102,
+        112,
+        97,
+        96,
+        124,
+        125,
+        113,
+        107,
+        124,
+        96,
+        120
+      ],
+      "output_tokens": 8764,
+      "e2e_total_s": 139.6968544301344,
+      "e2e_mean_s": 4.3655267009417,
+      "output_tok_s": 62.735843521681275,
+      "ttft_mean_ms": 351.42355093557853,
+      "weighted_tpot_ms": 14.710410077896919,
+      "acceptance": {
+        "rounds": 1870.0,
+        "drafted": 13090.0,
+        "accepted": 6960.0,
+        "accepted_per_round": 3.72192513368984,
+        "acceptance_fraction": 0.5317035905271199,
+        "one_plus_accepted_per_round": 4.72192513368984,
+        "raw_counter_deltas": {
+          "vllm:spec_decode_num_drafts_total{engine=\"0\",model_name=\"Qwen3.8-27B\"}": 1870.0,
+          "vllm:spec_decode_num_draft_tokens_total{engine=\"0\",model_name=\"Qwen3.8-27B\"}": 13090.0,
+          "vllm:spec_decode_num_accepted_tokens_total{engine=\"0\",model_name=\"Qwen3.8-27B\"}": 6960.0,
+          "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"0\"}": 1610.0,
+          "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"1\"}": 1362.0,
+          "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"2\"}": 1137.0,
+          "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"3\"}": 934.0,
+          "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"4\"}": 767.0,
+          "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"5\"}": 629.0,
+          "vllm:spec_decode_num_accepted_tokens_per_pos_total{engine=\"0\",model_name=\"Qwen3.8-27B\",position=\"6\"}": 521.0
+        }
+      },
+      "client_decode_ms_per_draft_round": 68.69053518727053
+    }
+  },
+  "comparison": {
+    "natural": {
+      "throughput_change_pct": 3.5540239328434975,
+      "e2e_change_pct": -3.432048121228337,
+      "accepted_per_round_change_pct": -1.3529871443237362
+    }
+  },
+  "paired_output_check": [
+    {
+      "kind": "natural",
+      "question_id": 0,
+      "repeat": 0,
+      "baseline_output": 137,
+      "candidate_output": 137,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "4a02fbc6e08417534c0831592cb79ff9c1ca9f6e57fb0d6b8ac332a7e32a8fa9",
+      "candidate_ids_sha256": "4a02fbc6e08417534c0831592cb79ff9c1ca9f6e57fb0d6b8ac332a7e32a8fa9"
+    },
+    {
+      "kind": "natural",
+      "question_id": 1,
+      "repeat": 0,
+      "baseline_output": 44,
+      "candidate_output": 44,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "3faa9e384a5c56baf75f19aa4beb8ea64fe69b2c0942a80780a5ba2d45a78ab6",
+      "candidate_ids_sha256": "3faa9e384a5c56baf75f19aa4beb8ea64fe69b2c0942a80780a5ba2d45a78ab6"
+    },
+    {
+      "kind": "natural",
+      "question_id": 2,
+      "repeat": 0,
+      "baseline_output": 575,
+      "candidate_output": 575,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "15c11e7e4f99545b5bf9c3a8186291fd54f519d3f82f0d0cd2eaffd9e1e4fad0",
+      "candidate_ids_sha256": "15c11e7e4f99545b5bf9c3a8186291fd54f519d3f82f0d0cd2eaffd9e1e4fad0"
+    },
+    {
+      "kind": "natural",
+      "question_id": 3,
+      "repeat": 0,
+      "baseline_output": 88,
+      "candidate_output": 88,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "e3e447770acd0c60da4249fc2c463952b321eed5cd017f3223782eb6cdacfd22",
+      "candidate_ids_sha256": "e3e447770acd0c60da4249fc2c463952b321eed5cd017f3223782eb6cdacfd22"
+    },
+    {
+      "kind": "natural",
+      "question_id": 4,
+      "repeat": 0,
+      "baseline_output": 139,
+      "candidate_output": 139,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "85bd312926ab2d4edd5b0ff7548bf2598501d627e31c40d76ffb259a35b5346c",
+      "candidate_ids_sha256": "85bd312926ab2d4edd5b0ff7548bf2598501d627e31c40d76ffb259a35b5346c"
+    },
+    {
+      "kind": "natural",
+      "question_id": 5,
+      "repeat": 0,
+      "baseline_output": 408,
+      "candidate_output": 408,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "3a0dc65b687c9b6053161c812c943cc2a2f2fec55554062fd0a07b27bde92af0",
+      "candidate_ids_sha256": "3a0dc65b687c9b6053161c812c943cc2a2f2fec55554062fd0a07b27bde92af0"
+    },
+    {
+      "kind": "natural",
+      "question_id": 6,
+      "repeat": 0,
+      "baseline_output": 115,
+      "candidate_output": 115,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "5a2c875e220f8d3cfc7f5446d2d682841564ed30b8ce84978febb7785c6a74f4",
+      "candidate_ids_sha256": "5a2c875e220f8d3cfc7f5446d2d682841564ed30b8ce84978febb7785c6a74f4"
+    },
+    {
+      "kind": "natural",
+      "question_id": 7,
+      "repeat": 0,
+      "baseline_output": 402,
+      "candidate_output": 402,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "6583e634899461e3e7ac63eb280c2b1fa1ddfdd4242e53e5069b7f459a40b94d",
+      "candidate_ids_sha256": "6583e634899461e3e7ac63eb280c2b1fa1ddfdd4242e53e5069b7f459a40b94d"
+    },
+    {
+      "kind": "natural",
+      "question_id": 8,
+      "repeat": 0,
+      "baseline_output": 508,
+      "candidate_output": 508,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "e8c169769042c4042939ae98ebb2ba9d8f5f816f364c1804e6ee7cc0ea808066",
+      "candidate_ids_sha256": "e8c169769042c4042939ae98ebb2ba9d8f5f816f364c1804e6ee7cc0ea808066"
+    },
+    {
+      "kind": "natural",
+      "question_id": 9,
+      "repeat": 0,
+      "baseline_output": 208,
+      "candidate_output": 208,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "a690116bbba749e9e96fc4d2f5b96c898337352ff064dd4dbeced0502aa9714d",
+      "candidate_ids_sha256": "a690116bbba749e9e96fc4d2f5b96c898337352ff064dd4dbeced0502aa9714d"
+    },
+    {
+      "kind": "natural",
+      "question_id": 10,
+      "repeat": 0,
+      "baseline_output": 158,
+      "candidate_output": 158,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "c91cf0c535d97836496796f8b8c35ff884d29bb7a286c5de9d74e233b5dbc9a7",
+      "candidate_ids_sha256": "c91cf0c535d97836496796f8b8c35ff884d29bb7a286c5de9d74e233b5dbc9a7"
+    },
+    {
+      "kind": "natural",
+      "question_id": 11,
+      "repeat": 0,
+      "baseline_output": 164,
+      "candidate_output": 164,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "96df54339511da51ad18112f8c8d4e273965b2e40c0c997150e38503f699864d",
+      "candidate_ids_sha256": "96df54339511da51ad18112f8c8d4e273965b2e40c0c997150e38503f699864d"
+    },
+    {
+      "kind": "natural",
+      "question_id": 12,
+      "repeat": 0,
+      "baseline_output": 956,
+      "candidate_output": 956,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "d530f42353f53576d5067cc4ed603847e1548d6e192b4c1265c1570fb136760e",
+      "candidate_ids_sha256": "d530f42353f53576d5067cc4ed603847e1548d6e192b4c1265c1570fb136760e"
+    },
+    {
+      "kind": "natural",
+      "question_id": 13,
+      "repeat": 0,
+      "baseline_output": 1377,
+      "candidate_output": 1377,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "c6b297f445270652407ab9226d56af2a73605b18a65dde818edcee50089d4418",
+      "candidate_ids_sha256": "c6b297f445270652407ab9226d56af2a73605b18a65dde818edcee50089d4418"
+    },
+    {
+      "kind": "natural",
+      "question_id": 14,
+      "repeat": 0,
+      "baseline_output": 117,
+      "candidate_output": 117,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "df9b4a2aa207b2bef60fce47f0af6087120e91c3701ef46460c7c5fedcf095e6",
+      "candidate_ids_sha256": "df9b4a2aa207b2bef60fce47f0af6087120e91c3701ef46460c7c5fedcf095e6"
+    },
+    {
+      "kind": "natural",
+      "question_id": 15,
+      "repeat": 0,
+      "baseline_output": 235,
+      "candidate_output": 235,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "1336c3e078671d214515c6736f36d5197d683e41a5235ab336822c3f9a3bd145",
+      "candidate_ids_sha256": "1336c3e078671d214515c6736f36d5197d683e41a5235ab336822c3f9a3bd145"
+    },
+    {
+      "kind": "natural",
+      "question_id": 16,
+      "repeat": 0,
+      "baseline_output": 194,
+      "candidate_output": 194,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "682406d652e6fd93feddbf59418ff0ed30b1b22d8961f12591bf3ac44384cfcf",
+      "candidate_ids_sha256": "682406d652e6fd93feddbf59418ff0ed30b1b22d8961f12591bf3ac44384cfcf"
+    },
+    {
+      "kind": "natural",
+      "question_id": 17,
+      "repeat": 0,
+      "baseline_output": 202,
+      "candidate_output": 202,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "c4a4e1c93a8fa774b8ae21b12764727a888343f2d6b2403934fdebc0447b13e2",
+      "candidate_ids_sha256": "c4a4e1c93a8fa774b8ae21b12764727a888343f2d6b2403934fdebc0447b13e2"
+    },
+    {
+      "kind": "natural",
+      "question_id": 18,
+      "repeat": 0,
+      "baseline_output": 129,
+      "candidate_output": 129,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "cf2df6aa60c6eaf9a657e2c192b3ea572304eeb7bb0e23063b4296e9e2575bb4",
+      "candidate_ids_sha256": "cf2df6aa60c6eaf9a657e2c192b3ea572304eeb7bb0e23063b4296e9e2575bb4"
+    },
+    {
+      "kind": "natural",
+      "question_id": 19,
+      "repeat": 0,
+      "baseline_output": 382,
+      "candidate_output": 382,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "3b23cb07efa9e0abe376d8b4ef2bf0597186e03496bd1c9e8fd360eff93653a3",
+      "candidate_ids_sha256": "3b23cb07efa9e0abe376d8b4ef2bf0597186e03496bd1c9e8fd360eff93653a3"
+    },
+    {
+      "kind": "natural",
+      "question_id": 20,
+      "repeat": 0,
+      "baseline_output": 463,
+      "candidate_output": 463,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "337934ad4640ae368a77080454d4d9ced441483e65ff22b3e37eac4d63f6ce06",
+      "candidate_ids_sha256": "337934ad4640ae368a77080454d4d9ced441483e65ff22b3e37eac4d63f6ce06"
+    },
+    {
+      "kind": "natural",
+      "question_id": 21,
+      "repeat": 0,
+      "baseline_output": 245,
+      "candidate_output": 245,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "24514e77ee13e88a47b9bcb42f5ce8e7fe68f1ad36ebf6f2d8acc5ffd8a356d3",
+      "candidate_ids_sha256": "24514e77ee13e88a47b9bcb42f5ce8e7fe68f1ad36ebf6f2d8acc5ffd8a356d3"
+    },
+    {
+      "kind": "natural",
+      "question_id": 22,
+      "repeat": 0,
+      "baseline_output": 59,
+      "candidate_output": 59,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "0acb7d8a59691408ffd6855c5b5cd487e60569c2f161a9a97c2175bde05df029",
+      "candidate_ids_sha256": "0acb7d8a59691408ffd6855c5b5cd487e60569c2f161a9a97c2175bde05df029"
+    },
+    {
+      "kind": "natural",
+      "question_id": 23,
+      "repeat": 0,
+      "baseline_output": 43,
+      "candidate_output": 43,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "7277439d6ae930f466226039c59d8907391cf59a5a21278feabadf3250827f47",
+      "candidate_ids_sha256": "7277439d6ae930f466226039c59d8907391cf59a5a21278feabadf3250827f47"
+    },
+    {
+      "kind": "natural",
+      "question_id": 24,
+      "repeat": 0,
+      "baseline_output": 159,
+      "candidate_output": 159,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "fc34c5cd95988e69b424bb64b982d74f726f42b8f3423a90926f20f0857b43da",
+      "candidate_ids_sha256": "fc34c5cd95988e69b424bb64b982d74f726f42b8f3423a90926f20f0857b43da"
+    },
+    {
+      "kind": "natural",
+      "question_id": 25,
+      "repeat": 0,
+      "baseline_output": 282,
+      "candidate_output": 282,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "76235e304028b2fcdc8dc6441e1a28a0186471fefeeaf49db01c98469834e38a",
+      "candidate_ids_sha256": "76235e304028b2fcdc8dc6441e1a28a0186471fefeeaf49db01c98469834e38a"
+    },
+    {
+      "kind": "natural",
+      "question_id": 26,
+      "repeat": 0,
+      "baseline_output": 112,
+      "candidate_output": 112,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "1e41f4f425f6c96b8c02bfc3c50c91d25a201eb634205efe20d8a9c38d15498d",
+      "candidate_ids_sha256": "1e41f4f425f6c96b8c02bfc3c50c91d25a201eb634205efe20d8a9c38d15498d"
+    },
+    {
+      "kind": "natural",
+      "question_id": 27,
+      "repeat": 0,
+      "baseline_output": 136,
+      "candidate_output": 136,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "bb10ade2926d8cca7c6a31ae0747b810abe0187290a083679cfb7e10a3193c96",
+      "candidate_ids_sha256": "bb10ade2926d8cca7c6a31ae0747b810abe0187290a083679cfb7e10a3193c96"
+    },
+    {
+      "kind": "natural",
+      "question_id": 28,
+      "repeat": 0,
+      "baseline_output": 83,
+      "candidate_output": 83,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "92c92c3a914f976da1bc063818ed39cc86653933ba30807ebb30468bdc8c76c3",
+      "candidate_ids_sha256": "92c92c3a914f976da1bc063818ed39cc86653933ba30807ebb30468bdc8c76c3"
+    },
+    {
+      "kind": "natural",
+      "question_id": 29,
+      "repeat": 0,
+      "baseline_output": 230,
+      "candidate_output": 230,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "dfc5deea7e696689a03f417e81887209873a04ec53da8d14c462222a0e7307a6",
+      "candidate_ids_sha256": "dfc5deea7e696689a03f417e81887209873a04ec53da8d14c462222a0e7307a6"
+    },
+    {
+      "kind": "natural",
+      "question_id": 30,
+      "repeat": 0,
+      "baseline_output": 233,
+      "candidate_output": 233,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "61841323a4770725db0bbe90e78423fb41f0c7da60e207bc24edc250e83f6b2e",
+      "candidate_ids_sha256": "61841323a4770725db0bbe90e78423fb41f0c7da60e207bc24edc250e83f6b2e"
+    },
+    {
+      "kind": "natural",
+      "question_id": 31,
+      "repeat": 0,
+      "baseline_output": 181,
+      "candidate_output": 181,
+      "tokens_equal": true,
+      "first_different_token_index": null,
+      "baseline_ids_sha256": "90719b9bf437b716f66a23e5ebf02f99315ebd64bff1a8dbf9ce27355ee4f116",
+      "candidate_ids_sha256": "90719b9bf437b716f66a23e5ebf02f99315ebd64bff1a8dbf9ce27355ee4f116"
+    }
+  ],
+  "all_output_sequences_equal": true,
+  "timing": "HTTP streaming E2E; output tokens divided by sum of request E2E; no profiler",
+  "acceptance_note": "accepted_per_round excludes one target correction/bonus token; counters include terminal wasted draft work",
+  "matched_natural_subset": {
+    "requests": 32,
+    "question_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "output_tokens": 8764,
+    "baseline_e2e_s": 144.66171407001093,
+    "candidate_e2e_s": 139.6968544301344,
+    "baseline_output_tok_s": 60.582719182758666,
+    "candidate_output_tok_s": 62.735843521681275,
+    "throughput_change_pct": 3.5540239328434975,
+    "note": "Post-hoc subset selected by exact token equality; not the full benchmark score"
+  },
+  "cohort": {
+    "source_split": "test",
+    "selection": "first 32 rows, original order",
+    "source_sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+    "question_sha256": [
+      "2b2e3f9639f6fa282a0b0c1d622e0c75cc03797b43268945f32b134da4fee344",
+      "de563650cee0d9af13492eae156046720df4ca9c1f177f29d4ea25b2c9d82c83",
+      "d3c6224db7dd6691e29bc2962559f2e3a24bdfacba0eb526357d59462b7ea046",
+      "94ff3611e184b3ba921a04a94b9310b4a3ada972c4966ff11054d227cc6d7c3c",
+      "d28df8f7b843b4df5e4f44d0f267a8d90f9bd47e0ccb23c848b1462f4abffd88",
+      "f76242d8ac82991c0a510d65901528f165ea57ae3b2653ff9be9c0d0c6c79fae",
+      "6e9d9c1d48eaa2d8bf8146d69832151bf2840b741813d8e5a8a34c3b68844533",
+      "6710fc83e60aca754f988ee29df093f21bef44b7019c137c6320573c88e04fa3",
+      "d458d13913f72049e0a432d2c5b6412639ef6609a5d9ccebe0995be35306e4f9",
+      "9b7b776974cef0b5a4a3a3749ce52c6c7862757e777c5a694e1b5e55968239e2",
+      "e526372b2e960c6d1575e76cca4759a9c393a66949d1fd1a727a3ff239b13f03",
+      "cd592c76560429690583f9a79b8a7c0c6ea234b4053d964b41323a6eb2dac2cf",
+      "4451889603253c7c1ec40de0f19ef03b7f718c15b9e130df18b15f07f5141b36",
+      "0f494281748adc026d7361db6898808fd97dfe58ffa65f7b91193bfa437474e9",
+      "8aba72e5533aaf2c7e62b0a22bcef10ca8b597ce2b045683dd4489528d1d0d3d",
+      "149e6bcf771ff89fc0cf3387830bf7add1d859fec98d9f07a9d284e3c8b5cfd4",
+      "3ee80dabaf97dbcfd78b5695fc00d3ba2e9e1f072ee837d2310c9aaef9d08257",
+      "43177c162ef15f623d9e71244f9a264b48153bbbf34d9af1912e797fb9a5b863",
+      "851e6439f44e55eecd8d0ae494751c927b1fe964507c75e5709fd09fb2dab402",
+      "154c8df41aba1614e0af88f0bdbc3d2dc10e0e76789989a6c3c7c011bdb9309b",
+      "701ed18140eeba19a6367b42a737e0777d0a5bc15b15bd59d196ae2da6d6f9b5",
+      "7240d8c12e010b82e0622bcbfef7ecd4a9f53f017ae4e48a5c553406d16a5fea",
+      "ef98dac17ebd63387a8fae1845ba2bb83250cfd936ed87fb0305fd8a30374761",
+      "fe06ee435f2baa145d56dca77766523e9dc0b63062b40b042a498f3e7e4b10c4",
+      "22cafa0b53b364100303eed8e14121d98c5e05a2687d063f5f650b1672e6572b",
+      "776216f99c34dbd04b49299583cd78f11c8c7a443d6f0288b1f8b0c092ad2091",
+      "43b2c24727802a1c39e04506803752ec2e9f26cf3e894cb21b1c78188365d240",
+      "4b21e8a399668c636de5129d98d9e97e0683f311dff045f4a42e0fd2cb824094",
+      "d24440763988694e30a619e1d7b2374adaa0d5edad6d3b3c24753f6aa9d44c64",
+      "b41cc7b74e66b5972a8575426d0318010c05db8ff7a0549c27e9f99610ceec7b",
+      "d48d64857c030e034f71da94f5e35cff47fb2a5ccd1fb851966e89a2659bb45d",
+      "2e203ecfb155ce3e67c787a3b80cb06953260d5b4373623abc67d5aa14c07490"
+    ],
+    "count": 32,
+    "concurrency": 1,
+    "max_output_tokens": 2048,
+    "ignore_eos": false,
+    "diagnostics": false,
+    "profiler": false
+  },
+  "request_statistics": {
+    "full-vocab": {
+      "finish_reasons": {
+        "stop": 32
+      },
+      "capped_question_ids": [],
+      "input_range": [
+        83,
+        168
+      ],
+      "output_range": [
+        43,
+        1377
+      ],
+      "mean_request_output_tok_s": 58.84264628343097,
+      "median_request_output_tok_s": 60.612532300983545,
+      "wall_window": {
+        "wall_s": 145.04562433995306,
+        "output_tokens": 8764,
+        "wall_output_tok_s": 60.42236737496631,
+        "note": "Includes client inter-request serialization and file-write gaps; excludes startup, warmup and metrics/audits."
+      },
+      "per_request": [
+        {
+          "question_id": 0,
+          "input_tokens": 121,
+          "output_tokens": 137,
+          "e2e_s": 2.2765603699954227,
+          "ttft_s": 0.334188099950552,
+          "output_tok_s": 60.1785051719386,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 1,
+          "input_tokens": 83,
+          "output_tokens": 44,
+          "e2e_s": 1.1629766100086272,
+          "ttft_s": 0.36699290992692113,
+          "output_tok_s": 37.83395093360786,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 2,
+          "input_tokens": 114,
+          "output_tokens": 575,
+          "e2e_s": 8.685745449969545,
+          "ttft_s": 0.3695775100495666,
+          "output_tok_s": 66.20042036829621,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 3,
+          "input_tokens": 92,
+          "output_tokens": 88,
+          "e2e_s": 1.6535030900267884,
+          "ttft_s": 0.35361224005464464,
+          "output_tok_s": 53.220342030672775,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 4,
+          "input_tokens": 168,
+          "output_tokens": 139,
+          "e2e_s": 2.6617031099740416,
+          "ttft_s": 0.354326709988527,
+          "output_tok_s": 52.22220294935734,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 5,
+          "input_tokens": 111,
+          "output_tokens": 408,
+          "e2e_s": 6.64505656005349,
+          "ttft_s": 0.3626438700594008,
+          "output_tok_s": 61.39902592442581,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 6,
+          "input_tokens": 97,
+          "output_tokens": 115,
+          "e2e_s": 1.8024124799994752,
+          "ttft_s": 0.359772440046072,
+          "output_tok_s": 63.80337535170278,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 7,
+          "input_tokens": 126,
+          "output_tokens": 402,
+          "e2e_s": 6.128618079936132,
+          "ttft_s": 0.3413692699978128,
+          "output_tok_s": 65.59390628632374,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 8,
+          "input_tokens": 161,
+          "output_tokens": 508,
+          "e2e_s": 7.509406319935806,
+          "ttft_s": 0.34423175000119954,
+          "output_tok_s": 67.64849022104089,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 9,
+          "input_tokens": 117,
+          "output_tokens": 208,
+          "e2e_s": 3.23725290002767,
+          "ttft_s": 0.33963826997205615,
+          "output_tok_s": 64.25200823767032,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 10,
+          "input_tokens": 117,
+          "output_tokens": 158,
+          "e2e_s": 2.2221712300088257,
+          "ttft_s": 0.33410938002634794,
+          "output_tok_s": 71.10163153330559,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 11,
+          "input_tokens": 121,
+          "output_tokens": 164,
+          "e2e_s": 2.2103616900276393,
+          "ttft_s": 0.33032561000436544,
+          "output_tok_s": 74.19600183079054,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 12,
+          "input_tokens": 124,
+          "output_tokens": 956,
+          "e2e_s": 17.584519729949534,
+          "ttft_s": 0.3448853900190443,
+          "output_tok_s": 54.36600002056147,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 13,
+          "input_tokens": 114,
+          "output_tokens": 1377,
+          "e2e_s": 22.720424760016613,
+          "ttft_s": 0.3304651400540024,
+          "output_tok_s": 60.606261306489465,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 14,
+          "input_tokens": 109,
+          "output_tokens": 117,
+          "e2e_s": 2.425134179997258,
+          "ttft_s": 0.33289413002785295,
+          "output_tok_s": 48.24475320377213,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 15,
+          "input_tokens": 151,
+          "output_tokens": 235,
+          "e2e_s": 3.876684910035692,
+          "ttft_s": 0.33863689994905144,
+          "output_tok_s": 60.618803295477626,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 16,
+          "input_tokens": 110,
+          "output_tokens": 194,
+          "e2e_s": 3.6571252099238336,
+          "ttft_s": 0.33296987996436656,
+          "output_tok_s": 53.04713097423328,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 17,
+          "input_tokens": 114,
+          "output_tokens": 202,
+          "e2e_s": 3.2187435399973765,
+          "ttft_s": 0.3311113700037822,
+          "output_tok_s": 62.75740750695678,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 18,
+          "input_tokens": 85,
+          "output_tokens": 129,
+          "e2e_s": 2.7894864899571985,
+          "ttft_s": 0.3341277999570593,
+          "output_tok_s": 46.245070719800964,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 19,
+          "input_tokens": 122,
+          "output_tokens": 382,
+          "e2e_s": 5.4671592499362305,
+          "ttft_s": 0.3354331699665636,
+          "output_tok_s": 69.87175286771749,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 20,
+          "input_tokens": 120,
+          "output_tokens": 463,
+          "e2e_s": 6.917430259985849,
+          "ttft_s": 0.3295247199712321,
+          "output_tok_s": 66.93236976717235,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 21,
+          "input_tokens": 102,
+          "output_tokens": 245,
+          "e2e_s": 4.303848500014283,
+          "ttft_s": 0.32899608998559415,
+          "output_tok_s": 56.925795598796505,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 22,
+          "input_tokens": 112,
+          "output_tokens": 59,
+          "e2e_s": 1.264632510021329,
+          "ttft_s": 0.3261573100462556,
+          "output_tok_s": 46.65386943042048,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 23,
+          "input_tokens": 97,
+          "output_tokens": 43,
+          "e2e_s": 1.4187830199953169,
+          "ttft_s": 0.33754729002248496,
+          "output_tok_s": 30.307664663298503,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 24,
+          "input_tokens": 96,
+          "output_tokens": 159,
+          "e2e_s": 2.357300439965911,
+          "ttft_s": 0.3293606599327177,
+          "output_tok_s": 67.45003619576777,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 25,
+          "input_tokens": 124,
+          "output_tokens": 282,
+          "e2e_s": 4.371377789997496,
+          "ttft_s": 0.3211983198998496,
+          "output_tok_s": 64.51055331919997,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 26,
+          "input_tokens": 125,
+          "output_tokens": 112,
+          "e2e_s": 1.8527072300203145,
+          "ttft_s": 0.3292249400401488,
+          "output_tok_s": 60.452076931103655,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 27,
+          "input_tokens": 113,
+          "output_tokens": 136,
+          "e2e_s": 2.348424300085753,
+          "ttft_s": 0.32464991009328514,
+          "output_tok_s": 57.91117047930135,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 28,
+          "input_tokens": 107,
+          "output_tokens": 83,
+          "e2e_s": 1.8620369200361893,
+          "ttft_s": 0.34036704001482576,
+          "output_tok_s": 44.574841189715436,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 29,
+          "input_tokens": 124,
+          "output_tokens": 230,
+          "e2e_s": 3.7959380100946873,
+          "ttft_s": 0.31889688002411276,
+          "output_tok_s": 60.59108430863517,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 30,
+          "input_tokens": 96,
+          "output_tokens": 233,
+          "e2e_s": 3.5760149999987334,
+          "ttft_s": 0.32252702000550926,
+          "output_tok_s": 65.15632624585818,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 31,
+          "input_tokens": 120,
+          "output_tokens": 181,
+          "e2e_s": 2.658174130017869,
+          "ttft_s": 0.34091599006205797,
+          "output_tok_s": 68.0918522063802,
+          "finish_reason": "stop"
+        }
+      ]
+    },
+    "dynamic4096": {
+      "finish_reasons": {
+        "stop": 32
+      },
+      "capped_question_ids": [],
+      "input_range": [
+        83,
+        168
+      ],
+      "output_range": [
+        43,
+        1377
+      ],
+      "mean_request_output_tok_s": 60.76671292892491,
+      "median_request_output_tok_s": 63.6860262365326,
+      "wall_window": {
+        "wall_s": 140.13195042009465,
+        "output_tokens": 8764,
+        "wall_output_tok_s": 62.54105486812135,
+        "note": "Includes client inter-request serialization and file-write gaps; excludes startup, warmup and metrics/audits."
+      },
+      "per_request": [
+        {
+          "question_id": 0,
+          "input_tokens": 121,
+          "output_tokens": 137,
+          "e2e_s": 2.289527239976451,
+          "ttft_s": 0.3487526399549097,
+          "output_tok_s": 59.83768072635341,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 1,
+          "input_tokens": 83,
+          "output_tokens": 44,
+          "e2e_s": 1.0635842899791896,
+          "ttft_s": 0.37143672991078347,
+          "output_tok_s": 41.36954674355045,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 2,
+          "input_tokens": 114,
+          "output_tokens": 575,
+          "e2e_s": 8.49893180001527,
+          "ttft_s": 0.3727901299716905,
+          "output_tok_s": 67.65556113757341,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 3,
+          "input_tokens": 92,
+          "output_tokens": 88,
+          "e2e_s": 1.6336065500508994,
+          "ttft_s": 0.3909722500247881,
+          "output_tok_s": 53.86854013119507,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 4,
+          "input_tokens": 168,
+          "output_tokens": 139,
+          "e2e_s": 2.647284770035185,
+          "ttft_s": 0.3778427600627765,
+          "output_tok_s": 52.50662927288799,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 5,
+          "input_tokens": 111,
+          "output_tokens": 408,
+          "e2e_s": 6.545306610059924,
+          "ttft_s": 0.35832703998312354,
+          "output_tok_s": 62.33474217585425,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 6,
+          "input_tokens": 97,
+          "output_tokens": 115,
+          "e2e_s": 1.7365900099975988,
+          "ttft_s": 0.3554478599689901,
+          "output_tok_s": 66.22173301581932,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 7,
+          "input_tokens": 126,
+          "output_tokens": 402,
+          "e2e_s": 5.900985199958086,
+          "ttft_s": 0.3698011500528082,
+          "output_tok_s": 68.1242176311263,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 8,
+          "input_tokens": 161,
+          "output_tokens": 508,
+          "e2e_s": 7.242930770036764,
+          "ttft_s": 0.38510207005310804,
+          "output_tok_s": 70.13735408069094,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 9,
+          "input_tokens": 117,
+          "output_tokens": 208,
+          "e2e_s": 3.2470987299457192,
+          "ttft_s": 0.35636715998407453,
+          "output_tok_s": 64.05718375045439,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 10,
+          "input_tokens": 117,
+          "output_tokens": 158,
+          "e2e_s": 2.205577040091157,
+          "ttft_s": 0.3581800900865346,
+          "output_tok_s": 71.63658177792321,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 11,
+          "input_tokens": 121,
+          "output_tokens": 164,
+          "e2e_s": 2.293197049992159,
+          "ttft_s": 0.36788889998570085,
+          "output_tok_s": 71.51587780062806,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 12,
+          "input_tokens": 124,
+          "output_tokens": 956,
+          "e2e_s": 16.78008100995794,
+          "ttft_s": 0.3710578199243173,
+          "output_tok_s": 56.97231136325702,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 13,
+          "input_tokens": 114,
+          "output_tokens": 1377,
+          "e2e_s": 21.764339039917104,
+          "ttft_s": 0.33636067993938923,
+          "output_tok_s": 63.26863395550397,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 14,
+          "input_tokens": 109,
+          "output_tokens": 117,
+          "e2e_s": 2.1863960899645463,
+          "ttft_s": 0.3413871299708262,
+          "output_tok_s": 53.512719189823116,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 15,
+          "input_tokens": 151,
+          "output_tokens": 235,
+          "e2e_s": 3.6158100499305874,
+          "ttft_s": 0.34218629996757954,
+          "output_tok_s": 64.99235212992211,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 16,
+          "input_tokens": 110,
+          "output_tokens": 194,
+          "e2e_s": 3.4454547899076715,
+          "ttft_s": 0.34116104000713676,
+          "output_tok_s": 56.306064606698456,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 17,
+          "input_tokens": 114,
+          "output_tokens": 202,
+          "e2e_s": 3.1159325799671933,
+          "ttft_s": 0.36473706003744155,
+          "output_tok_s": 64.82810356638936,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 18,
+          "input_tokens": 85,
+          "output_tokens": 129,
+          "e2e_s": 2.7544335500570014,
+          "ttft_s": 0.3473110500490293,
+          "output_tok_s": 46.83358580109163,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 19,
+          "input_tokens": 122,
+          "output_tokens": 382,
+          "e2e_s": 5.449837510008365,
+          "ttft_s": 0.3553332600276917,
+          "output_tok_s": 70.0938329442805,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 20,
+          "input_tokens": 120,
+          "output_tokens": 463,
+          "e2e_s": 6.781115720048547,
+          "ttft_s": 0.3483348600566387,
+          "output_tok_s": 68.27784971006,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 21,
+          "input_tokens": 102,
+          "output_tokens": 245,
+          "e2e_s": 4.148131940048188,
+          "ttft_s": 0.3316100100055337,
+          "output_tok_s": 59.062730776387475,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 22,
+          "input_tokens": 112,
+          "output_tokens": 59,
+          "e2e_s": 1.235589410061948,
+          "ttft_s": 0.3376826699823141,
+          "output_tok_s": 47.75049018673764,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 23,
+          "input_tokens": 97,
+          "output_tokens": 43,
+          "e2e_s": 1.4878951299469918,
+          "ttft_s": 0.3312378699192777,
+          "output_tok_s": 28.899886245028526,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 24,
+          "input_tokens": 96,
+          "output_tokens": 159,
+          "e2e_s": 2.34623750008177,
+          "ttft_s": 0.3421499599935487,
+          "output_tok_s": 67.76807548019269,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 25,
+          "input_tokens": 124,
+          "output_tokens": 282,
+          "e2e_s": 4.163924389984459,
+          "ttft_s": 0.33383541996590793,
+          "output_tok_s": 67.7245726839561,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 26,
+          "input_tokens": 125,
+          "output_tokens": 112,
+          "e2e_s": 1.768936779932119,
+          "ttft_s": 0.3325268799671903,
+          "output_tok_s": 63.31486872261081,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 27,
+          "input_tokens": 113,
+          "output_tokens": 136,
+          "e2e_s": 2.240339760086499,
+          "ttft_s": 0.3326744200894609,
+          "output_tok_s": 60.70507805242409,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 28,
+          "input_tokens": 107,
+          "output_tokens": 83,
+          "e2e_s": 1.6932128299959004,
+          "ttft_s": 0.330936020007357,
+          "output_tok_s": 49.019236406448066,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 29,
+          "input_tokens": 124,
+          "output_tokens": 230,
+          "e2e_s": 3.5282020100858063,
+          "ttft_s": 0.32605517003685236,
+          "output_tok_s": 65.1890111004178,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 30,
+          "input_tokens": 96,
+          "output_tokens": 233,
+          "e2e_s": 3.3263932899571955,
+          "ttft_s": 0.325975289917551,
+          "output_tok_s": 70.04583634276098,
+          "finish_reason": "stop"
+        },
+        {
+          "question_id": 31,
+          "input_tokens": 120,
+          "output_tokens": 181,
+          "e2e_s": 2.559970990056172,
+          "ttft_s": 0.3600919400341809,
+          "output_tok_s": 70.70392621754999,
+          "finish_reason": "stop"
+        }
+      ]
+    }
+  },
+  "audits": {
+    "full-vocab": {
+      "dtype": "torch.bfloat16",
+      "mamba_cache_dtype": "bfloat16",
+      "mamba_ssm_cache_dtype": "float32",
+      "tp_size": 1,
+      "max_num_seqs": 1,
+      "context_length": 4096,
+      "num_speculative_tokens": 7,
+      "prefix_caching": false,
+      "main_capture_sizes": [
+        8
+      ],
+      "draft_use_cuda_graph": true,
+      "draft_enforce_eager": false,
+      "gpu_memory_utilization": 0.97,
+      "state_summary": {
+        "layer_count": 48,
+        "all_ssm_fp32": true,
+        "all_conv_bf16": true,
+        "allocated_bytes": 63302419968,
+        "reserved_bytes": 64349011968
+      },
+      "dynamic_vocabulary": {
+        "enabled": false,
+        "vocabulary": 248320
+      },
+      "graph_wrappers": [
+        {
+          "is_draft_runnable": true,
+          "callable": "AscendSpecDecodeBaseProposer._run_merged_draft",
+          "runtime_mode": "FULL",
+          "entries": [
+            {
+              "batch_descriptor": "BatchDescriptor(num_tokens=8, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+              "captured": true
+            }
+          ]
+        },
+        {
+          "is_draft_runnable": false,
+          "callable": "Qwen3_5ForConditionalGeneration",
+          "runtime_mode": "FULL",
+          "entries": [
+            {
+              "batch_descriptor": "BatchDescriptor(num_tokens=8, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+              "captured": true
+            }
+          ]
+        }
+      ],
+      "layout": {
+        "packed_count": 64,
+        "prefill_direct_enabled": true,
+        "down_prefetch_in_both_arms": true
+      }
+    },
+    "dynamic4096": {
+      "dtype": "torch.bfloat16",
+      "mamba_cache_dtype": "bfloat16",
+      "mamba_ssm_cache_dtype": "float32",
+      "tp_size": 1,
+      "max_num_seqs": 1,
+      "context_length": 4096,
+      "num_speculative_tokens": 7,
+      "prefix_caching": false,
+      "main_capture_sizes": [
+        8
+      ],
+      "draft_use_cuda_graph": true,
+      "draft_enforce_eager": false,
+      "gpu_memory_utilization": 0.97,
+      "state_summary": {
+        "layer_count": 48,
+        "all_ssm_fp32": true,
+        "all_conv_bf16": true,
+        "allocated_bytes": 63345403904,
+        "reserved_bytes": 64388857856
+      },
+      "dynamic_vocabulary": {
+        "enabled": true,
+        "capacity": 4096,
+        "target_topk": 8,
+        "seed_tokens": 1032,
+        "active_tokens": 1282,
+        "updates": 1969,
+        "requests_including_startup": 35,
+        "packed_bytes": 41943040,
+        "validation": {
+          "max_abs_diff": 0.0001220703125,
+          "different": 2,
+          "finite": true
+        },
+        "selection": "protected train-only seed + prompt + recency-ranked target TopK",
+        "gather": "once per target round, same stream, included in E2E",
+        "limitations": "greedy TP1 concurrency1; no all-position prefill logits; no async overlap",
+        "updates_in_measured_group": 1934,
+        "buffers_stable": true
+      },
+      "graph_wrappers": [
+        {
+          "is_draft_runnable": true,
+          "callable": "AscendSpecDecodeBaseProposer._run_merged_draft",
+          "runtime_mode": "FULL",
+          "entries": [
+            {
+              "batch_descriptor": "BatchDescriptor(num_tokens=8, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+              "captured": true
+            }
+          ]
+        },
+        {
+          "is_draft_runnable": false,
+          "callable": "Qwen3_5ForConditionalGeneration",
+          "runtime_mode": "FULL",
+          "entries": [
+            {
+              "batch_descriptor": "BatchDescriptor(num_tokens=8, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+              "captured": true
+            }
+          ]
+        }
+      ],
+      "layout": {
+        "packed_count": 64,
+        "prefill_direct_enabled": true,
+        "down_prefetch_in_both_arms": true
+      }
+    }
+  },
+  "paired_timing": {
+    "candidate_faster_requests": 28,
+    "requests": 32,
+    "note": "Descriptive paired count; arms ran sequentially, not interleaved; no confidence interval implied."
+  },
+  "exported_utc": "2026-10-22T07:01:08.599169+00:00",
+  "hardware": {
+    "soc": "Ascend910B2",
+    "physical_card": 7
+  },
+  "private_summary_sources": [
+    {
+      "name": "detailed-statistics.json",
+      "bytes": 23433,
+      "sha256": "54c52334a9dbde670108c3213b3ebe8bc9f42b65bde1cc0dc8bf1db2ff1372d3"
+    },
+    {
+      "name": "dynamic4096-after-audit.json",
+      "bytes": 35810,
+      "sha256": "ef987d84a617fc25ca0d34a1eabb94d12fd8bfe710660012e0ad14ba841f036f"
+    },
+    {
+      "name": "dynamic4096-after-metrics.txt",
+      "bytes": 54018,
+      "sha256": "9fe5f9d1bb0a28ef7d3febee06da3f4eb13f2697fff8ebbe1369cac0dcc93153"
+    },
+    {
+      "name": "dynamic4096-before-audit.json",
+      "bytes": 35166,
+      "sha256": "19ddafceb3421ab500e2128ee5890d9515c4ea09a44f54395c92d3be4b56dd25"
+    },
+    {
+      "name": "dynamic4096-before-metrics.txt",
+      "bytes": 53738,
+      "sha256": "7a8ff8426a28026136c66ef2f3c86d269cf40f0020c055bcce7609a01ce30178"
+    },
+    {
+      "name": "dynamic4096-cohort.json",
+      "bytes": 2626,
+      "sha256": "c5f80e0b256cb24374843c83ad610b262850ec3eb59f67a2c3b5c6442949c4d7"
+    },
+    {
+      "name": "dynamic4096-natural-after-metrics.txt",
+      "bytes": 54016,
+      "sha256": "261afb7675d8f689bbae7fbfb8d5fb9f5a57df73c19ee253db257951223c9a01"
+    },
+    {
+      "name": "dynamic4096-natural-before-metrics.txt",
+      "bytes": 53739,
+      "sha256": "984b2af8762a65f165da5132f13238a8cb81d18f629fd2c568a5096a37bdbb51"
+    },
+    {
+      "name": "dynamic4096-pid.json",
+      "bytes": 65,
+      "sha256": "8242d4bb3f11786c404e819a5127c7c1ac05ecd32e7ffe1b2d04069b4f080633"
+    },
+    {
+      "name": "dynamic4096-summary.json",
+      "bytes": 19440,
+      "sha256": "8e8f9ca86a558d56f99c7466f5393d2edf16cea040ef0399afd6c187d94c7c30"
+    },
+    {
+      "name": "dynamic4096-window.json",
+      "bytes": 224,
+      "sha256": "740496069f1a11179d650779d91d6f96b0580a81d6fe1e1764c6fdecaef2da6b"
+    },
+    {
+      "name": "dynamic4096.json",
+      "bytes": 708433,
+      "sha256": "5b4b750e8bd8da82f499813361054c32b535a383eda23184c847771aae85f9bf"
+    },
+    {
+      "name": "full-vocab-after-audit.json",
+      "bytes": 35157,
+      "sha256": "750f4204c23cf066f27c6411bf3c4e76b5dbb6739f6d81457359cccd66a5e2d8"
+    },
+    {
+      "name": "full-vocab-after-metrics.txt",
+      "bytes": 54029,
+      "sha256": "18576a2f982b3b3b67fdd9c9971ac231ef8510a9225243e0156860c1ded28763"
+    },
+    {
+      "name": "full-vocab-before-audit.json",
+      "bytes": 34516,
+      "sha256": "6338ee86bd9d3aa4deb35bf377092c1157d85412f738d35173e050e691389308"
+    },
+    {
+      "name": "full-vocab-before-metrics.txt",
+      "bytes": 53741,
+      "sha256": "a9e0b59ee6279c53ba5187d06a45ac6bd151214606efca8e43a626f46b912a0a"
+    },
+    {
+      "name": "full-vocab-cohort.json",
+      "bytes": 2626,
+      "sha256": "c5f80e0b256cb24374843c83ad610b262850ec3eb59f67a2c3b5c6442949c4d7"
+    },
+    {
+      "name": "full-vocab-detailed-statistics.json",
+      "bytes": 10117,
+      "sha256": "d963190d44045a4fa77e8cd529211dee210d8660ca49766d5b502e7425cd9508"
+    },
+    {
+      "name": "full-vocab-natural-after-metrics.txt",
+      "bytes": 54015,
+      "sha256": "8f4f1bc09c85d826f4bcca8d5c9f5f134ae1efb561068d892a7d1bc52b69a5e2"
+    },
+    {
+      "name": "full-vocab-natural-before-metrics.txt",
+      "bytes": 53755,
+      "sha256": "35de0dca1266d1266ec1f32076a03ba5755333f99a047276b1e7b22a2538f422"
+    },
+    {
+      "name": "full-vocab-pid.json",
+      "bytes": 65,
+      "sha256": "9ea2870bd5f9a8f8cd243968cfdf67ecc502a3ab91bd5c505dee0666006475e5"
+    },
+    {
+      "name": "full-vocab-window.json",
+      "bytes": 224,
+      "sha256": "a40f01742b4a7503d383fb7375852a62dd302db1a6c7e032d553e19fb97b6dc7"
+    },
+    {
+      "name": "full-vocab.json",
+      "bytes": 702873,
+      "sha256": "b0b867bf0fd19b18648e6ecb4f3f45c45795420ab70fc64ab28c3323459d6e03"
+    }
+  ]
+}
